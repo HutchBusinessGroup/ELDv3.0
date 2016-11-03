@@ -1,0 +1,229 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hutchgroup.elog.fragments.CanBusDataFragment">
+
+    <LinearLayout
+        android:id="@+id/layoutSelectingProtocol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvSelectedProtocol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_protocol"
+            style="@style/TextLabelStyle" />
+        <LinearLayout
+            android:id="@+id/lJ1708"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_row"
+            android:elevation="2dp"
+            android:orientation="horizontal">
+
+            <ToggleButton
+                android:id="@+id/swJ1708"
+                style="@style/list_serial_no"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:background="@drawable/serial_no"
+                android:gravity="center"
+                android:textOff=""
+                android:textOn="" />
+
+            <TextView
+                style="@style/list_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="@string/j1708_protocol" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lJ1939"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_row"
+            android:elevation="2dp"
+            android:orientation="horizontal">
+
+            <ToggleButton
+                android:id="@+id/swJ1939"
+                style="@style/list_serial_no"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:background="@drawable/serial_no"
+                android:gravity="center"
+                android:textOff=""
+                android:textOn="" />
+
+            <TextView
+                style="@style/list_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="@string/j1939_protocol" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lBoth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_row"
+            android:elevation="2dp"
+            android:orientation="horizontal">
+
+            <ToggleButton
+                android:id="@+id/swBoth"
+                style="@style/list_serial_no"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:background="@drawable/serial_no"
+                android:gravity="center"
+                android:textOff=""
+                android:textOn="" />
+
+            <TextView
+                style="@style/list_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:text="@string/both_protocols" />
+        </LinearLayout>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/btnOK"
+            style="@style/buttonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_bg"
+            android:text="OK" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutCanData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/vin_number"
+            style="@style/TextLabelStyle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edSetupVinNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/btnCheckVIN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/falt_buttons"
+                android:visibility="gone"
+                android:text="Check again"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/odometer"
+            style="@style/TextLabelStyle" />
+
+        <EditText
+            android:id="@+id/edSetupOdometer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/speed"
+            android:visibility="gone"
+            style="@style/TextLabelStyle" />
+
+        <EditText
+            android:id="@+id/edSetupSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rpm"
+            style="@style/TextLabelStyle" />
+
+        <EditText
+            android:id="@+id/edSetupRPM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/engine_hours"
+            style="@style/TextLabelStyle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edSetupEngineHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/btnCheckEngineHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/falt_buttons"
+                android:visibility="gone"
+                android:text="Check again"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvInformation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/can_data_ok"
+            android:visibility="gone"
+            style="@style/TextLabelStyle" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/btnNext"
+            style="@style/buttonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_bg"
+            android:text="Next" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item name="ic_drawer_daliy_log" type="drawable">@drawable/ic_drawer_daliy_log</item>
+    <item name="ic_drawer_create_event" type="drawable">@drawable/ic_drawer_create_event</item>
+    <item name="ic_drawer_violation_history" type="drawable">@drawable/ic_drawer_violation_history</item>
+    <item name="ic_drawer_certified_logbook" type="drawable">@drawable/ic_drawer_certified_logbook</item>
+    <item name="ic_drawer_non_authenticated" type="drawable">@drawable/ic_drawer_non_authenticated_records</item>
+    <item name="ic_drawer_logout" type="drawable">@drawable/ic_drawer_logout</item>
+</resources>

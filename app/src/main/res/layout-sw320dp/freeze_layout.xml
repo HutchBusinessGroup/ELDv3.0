@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/flagBarFreeze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/flagbar_freeze_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <ImageView
+                android:id="@+id/icFreezeDriver"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_driver_inactive"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/icFreezeGPS"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_gps_off" />
+
+            <ImageView
+                android:id="@+id/icFreezeNetwork"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_network_off" />
+
+            <ImageView
+                android:id="@+id/icFreezeWifi"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_wifi_on" />
+
+            <ImageView
+                android:id="@+id/icFreezeWebService"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_web_service_on" />
+
+            <ImageView
+                android:id="@+id/icFreezeCanbus"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_canbus_disconnect" />
+
+            <ImageView
+                android:id="@+id/icFreezeBattery"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:src="@drawable/ic_flagbar_battery_full" />
+
+            <ImageView
+                android:id="@+id/icFreezeInspection"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_dvir_pending" />
+
+            <ImageView
+                android:id="@+id/icFreezeMessage"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_message" />
+
+            <ImageView
+                android:id="@+id/icFreezeViolation"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_violation" />
+
+            <ImageView
+                android:id="@+id/icFreezeTPMS"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/ic_flagbar_tpms" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+            <TextView
+                android:id="@+id/tvFreezeLoginName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green2"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/tvLoginFreeze"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="15dp"
+                android:text="Login"
+                android:textColor="@color/colorPrimary"
+                android:textSize="42sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutGauge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="458dp"
+            android:visibility="visible">
+
+
+            <FrameLayout
+                android:id="@+id/frameMalfunction"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="4dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_freeze_malfunction" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:gravity="center_horizontal"
+                    android:text="Malfunction"
+                    android:textSize="11sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameDiagnostic"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="4dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_freeze_diagnostic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:gravity="center_horizontal"
+                    android:text="Diagnostic"
+                    android:textSize="11sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameSpeedometer"
+                android:layout_width="260dp"
+                android:layout_height="260dp"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@drawable/speedometer_gauge"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgreezeSpeed"
+                    android:layout_width="124dp"
+                    android:layout_height="124dp"
+                    android:layout_gravity="center"
+                    android:rotation="0"
+                    android:src="@drawable/speedometer_needle_full" />
+
+
+                <TextView
+                    android:id="@+id/tvSpeed"
+                    style="@style/SpeedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="36dp"
+                    android:text="554 kph"
+                    android:textSize="16sp" />
+
+                <com.hutchgroup.elog.util.LetterSpacingTextView
+                    android:id="@+id/tvOdometer"
+                    style="@style/ButtonStyle"
+                    android:layout_width="112dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="64dp"
+                    android:background="@drawable/odometer_bg"
+                    android:gravity="center"
+                    android:text="98765413"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="false"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="198dp"
+                android:background="@drawable/battery_voltage_gauge"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgFreezeVoltage"
+                    android:layout_width="51dp"
+                    android:layout_height="51dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-6dp"
+                    android:rotation="0"
+                    android:src="@drawable/battery_volt_needle" />
+
+
+                <TextView
+                    android:id="@+id/tvVoltage"
+                    style="@style/RPMStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="14.2 v"
+                    android:textSize="15sp" />
+
+                <TextView
+                    style="@style/RPMStyle.small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="-2sp"
+                    android:text="Battery Volt."
+                    android:textSize="10sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="198dp"
+                android:background="@drawable/coolant_gauge"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgFreezeCoolantTemp"
+                    android:layout_width="51dp"
+                    android:layout_height="51dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-6dp"
+                    android:rotation="0"
+                    android:src="@drawable/battery_volt_needle" />
+
+
+                <TextView
+                    android:id="@+id/tvCoolant"
+                    style="@style/RPMStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="75° c"
+                    android:textSize="15sp" />
+
+                <TextView
+                    style="@style/RPMStyle.small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="-2sp"
+                    android:text="Coolant Temp"
+                    android:textSize="10sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameBoost"
+                android:layout_width="151dp"
+                android:layout_height="151dp"
+                android:layout_gravity="top|right"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="296dp"
+                android:background="@drawable/throttle_gauge"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/imgFreezeThrPos"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center"
+                    android:rotation="105"
+                    android:src="@drawable/rpm_needle" />
+
+
+                <TextView
+                    android:id="@+id/tvPosition"
+                    style="@style/RPMStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="22dp"
+                    android:text="65%"
+                    android:textSize="15sp" />
+
+                <TextView
+                    style="@style/RPMStyle.small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="36dp"
+                    android:lineSpacingExtra="-2sp"
+                    android:text="Boost"
+                    android:textSize="10sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameRPM"
+                android:layout_width="151dp"
+                android:layout_height="151dp"
+                android:layout_gravity="left|top"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="296dp"
+                android:background="@drawable/rpm_gauge"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/RPMStyle.extrasmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="52dp"
+                    android:text="x1000"
+                    android:textSize="8sp" />
+
+                <ImageView
+                    android:id="@+id/imgFreezeRPM"
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center"
+                    android:rotation="0"
+                    android:src="@drawable/rpm_needle" />
+
+
+                <TextView
+                    android:id="@+id/tvRPM"
+                    style="@style/RPMStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="22dp"
+                    android:text="1500"
+                    android:textSize="15sp" />
+
+                <TextView
+                    style="@style/RPMStyle.small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="36dp"
+                    android:lineSpacingExtra="-2sp"
+                    android:text="RPM"
+                    android:textSize="10sp" />
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="316dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/ButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_margin="0dp"
+                    android:gravity="center"
+                    android:text="Engine Hours"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue2"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp" />
+
+                <com.hutchgroup.elog.util.LetterSpacingTextView
+                    android:id="@+id/tvEngineHours"
+                    style="@style/ButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:background="@drawable/engine_hours_bg"
+                    android:gravity="center"
+                    android:text="88556688"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="match_parent"></View>
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/ButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_margin="0dp"
+                    android:gravity="center"
+                    android:text="Driving Remaining"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue2"
+                    android:textIsSelectable="true"
+                    android:textSize="14sp" />
+
+                <com.hutchgroup.elog.util.LetterSpacingTextView
+                    android:id="@+id/tvDrivingRemainingFreeze"
+                    style="@style/ButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:background="@drawable/remaining_driving_hours_bg"
+                    android:gravity="center"
+                    android:text="07:25:59"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="false"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

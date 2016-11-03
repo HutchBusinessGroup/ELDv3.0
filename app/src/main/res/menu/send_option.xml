@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_usb_drive"
+        android:icon="@drawable/ic_driver"
+        android:orderInCategory="101"
+        android:title="@string/action_usb_drive"
+        app:showAsAction="never|withText" />
+    <item
+        android:id="@+id/action_bluetooth"
+        android:icon="@drawable/ic_driver"
+        android:orderInCategory="102"
+        android:title="@string/action_bluetooth"
+        app:showAsAction="never|withText" />
+    <item
+        android:id="@+id/action_email"
+        android:icon="@drawable/ic_driver"
+        android:orderInCategory="103"
+        android:title="@string/action_email"
+        app:showAsAction="never|withText" />
+    <item
+        android:id="@+id/action_webservice"
+        android:icon="@drawable/ic_driver"
+        android:orderInCategory="104"
+        android:title="@string/action_webservice"
+        app:showAsAction="never|withText" />
+</menu>

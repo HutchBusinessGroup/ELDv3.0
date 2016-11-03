@@ -1,0 +1,262 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/GreyLight"
+    android:orientation="vertical"
+    tools:context="com.hutchgroup.elog.fragments.DriverProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_percent_48"
+                android:background="@color/light_blue"
+                android:gravity="center|bottom">
+
+                <ImageView
+                    android:layout_width="@dimen/height_percent_18"
+                    android:layout_height="@dimen/height_percent_18"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/height_percent_6"
+                    android:padding="@dimen/height_percent_3"
+                    android:background="@drawable/blue_circle_bg"
+                    android:src="@drawable/ic_drawer_driver_profile" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    style="@style/DriverProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="34dp"
+                    android:layout_weight="1"
+                    android:text="Deepak Sharma" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    style="@style/DriverProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="58dp"
+                    android:layout_weight="1"
+                    android:text="deepak.sharma@kmaxsystems.com" />
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_bg_round_nine"
+                android:orientation="vertical"
+                android:paddingBottom="32dp"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp"
+                android:layout_marginTop="-42dp"
+                android:paddingTop="24dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="User Name" /><TextView
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mobile No" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvUserName"
+                    style="@style/BigTextLabelStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="deepak" />
+
+                    <TextView
+                        android:id="@+id/tvMobileNo"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+
+
+                        android:text="9023875659" />
+                </LinearLayout>
+
+                <View
+                    style="@style/SettingSeprator.MarginLeft0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="DL Number" />
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="DL Jurisdiction " />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLicenseNo"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:text="45532" />
+
+                    <TextView
+                        android:id="@+id/tvJurisdiction"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:text="BC" />
+                </LinearLayout>
+
+
+                <View
+                    style="@style/SettingSeprator.MarginLeft0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></View>
+                <LinearLayout
+                    android:id="@+id/tableRow5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="DL Expiry" />
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="DOT Password" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLicenseExpiry"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:text="01 July 2020" />
+
+                    <TextView
+                        android:id="@+id/tvDOTPassword"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:text="N/A" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/layout_bg_round_nine"
+                    android:orientation="vertical"
+                    android:paddingBottom="32dp"
+                    android:paddingEnd="24dp"
+                    android:paddingStart="24dp"
+                    android:paddingTop="24dp">
+                <TextView
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Exemption" />
+
+                <TextView
+                    android:id="@+id/tvExemptFg"
+                    style="@style/BigTextLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:text="No Exemption" />
+
+
+                <View
+                    style="@style/SettingSeprator.MarginLeft0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></View>
+                <TextView
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Special Category" />
+
+                <TextView
+                    android:id="@+id/tvSpecialCategory"
+                    style="@style/BigTextLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="Authorized Personal Use of CMV, Yard Move" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

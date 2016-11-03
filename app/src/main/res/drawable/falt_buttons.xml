@@ -1,0 +1,16 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/blue4"></solid>
+            <padding android:top="1dp" android:right="12dp" android:bottom="1dp" android:left="12dp"></padding>
+            <corners android:radius="4dp"></corners>
+        </shape>
+    </item>
+    <item android:state_enabled="true">
+        <shape>
+            <solid android:color="@color/light_blue"></solid>
+            <padding android:top="1dp" android:right="12dp" android:bottom="1dp" android:left="12dp"></padding>
+            <corners android:radius="4dp"></corners>
+        </shape>
+    </item>
+</selector>

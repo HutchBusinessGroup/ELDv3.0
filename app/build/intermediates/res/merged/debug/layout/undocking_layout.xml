@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/restView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/layout_floating_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="invisible">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchMode="columnWidth"
+            android:layout_gravity="center"
+            android:useDefaultMargins="true"
+            android:alignmentMode="alignBounds"
+            android:columnOrderPreserved="false"
+            android:background="@drawable/layout_bg_nine"
+            android:shrinkColumns="*"
+            android:stretchColumns="*"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="6dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/layout_fab1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical"
+                    android:layout_column="1">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_sync"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/fab_but_margin"
+                        android:src="@drawable/ic_sync"
+                        android:visibility="visible"
+                        app:backgroundTint="@color/orange" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Sync"
+                        android:textColor="@color/sixsix"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_fab7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_fab6"
+            android:layout_gravity="right"
+            android:orientation="vertical" android:visibility="gone">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_stop"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/fab_but_margin"
+                android:src="@android:drawable/ic_lock_power_off"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

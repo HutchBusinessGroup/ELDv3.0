@@ -1,0 +1,145 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hutchgroup.elog.fragments.BluetoothConnectivityFragment">
+
+    <LinearLayout
+        android:id="@+id/layoutBluetooth"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search for devices"
+                android:layout_gravity="bottom"
+                style="@style/buttonStyle"
+                android:background="@drawable/button_bg"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvPairedDevicesLabel"
+            android:text="@string/paired_devices"
+            style="@style/TextLabelStyle" />
+        <ListView
+            android:id="@+id/lvPairedDevices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/eee"
+            android:dividerHeight="1dp"
+            android:listSelector="@android:color/transparent"></ListView>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/tvAvailableDevicesLabel"
+                android:text="@string/available_devices"
+                style="@style/TextLabelStyle" />
+
+            <RelativeLayout
+                android:id="@+id/loadingPanel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:visibility="gone"
+                android:gravity="center" >
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/android:progressBarStyleSmall"
+                    android:indeterminate="true" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lvAvailableDevices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:divider="@color/eee"
+            android:dividerHeight="1dp"
+            android:listSelector="@android:color/transparent"></ListView>
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutBluetoothConnecting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:orientation="vertical" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/tvBluetoothConnectionInfos"
+                android:text="@string/bluetooth_connection_infos"
+                style="@style/BigTextLabelStyle" />
+
+            <LinearLayout
+                android:id="@+id/connectionPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:layout_weight="1"
+                android:gravity="center" >
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1" />
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/android:progressBarStyleLarge"
+                    android:indeterminate="true" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnNext"
+                style="@style/buttonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_bg_primary"
+                android:text="Next" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,528 @@
+<resources>
+    <string name="app_name">ELD</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">username</string>
+    <string name="prompt_password">password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_back">Back</string>
+    <string name="action_installer_id">Done</string>
+    <string name="action_dock">Dock</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_drawer">Drawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="current_rule">Current rule</string>
+    <string name="time_zone">Time Zone</string>
+    <string name="co_driver">Co-Driver</string>
+    <string name="vehicle_miles">Vehicle Miles</string>
+    <string name="total_distance">Total Distance</string>
+    <string name="total_miles_hours">Veh. Mi/Hrs</string>
+
+
+    <!-- strings for Hours & Rules Status -->
+    <string name="driving_hours">Driving Hours</string>
+    <string name="work_shift_hour">Work Shift Hour</string>
+    <string name="driving_hours_phone">Driving</string>
+    <string name="work_shift_hour_phone">Work Shift</string>
+
+    <!-- strings for Duty Status Change -->
+    <string name="button_back">BACK</string>
+    <string name="button_save">SAVE</string>
+    <string name="duty_status_change_activity_title">Duty Status Change</string>
+    <string name="duty_status_label">Select Duty Status</string>
+    <string name="annotation">Annotation</string>
+    <string name="annotation_string_1">Border Crossing</string>
+    <string name="annotation_string_2">Cargo Check</string>
+    <string name="annotation_string_3">DOT Inspection</string>
+    <string name="annotation_string_4">DVIR</string>
+    <string name="annotation_string_5">Fueling</string>
+    <string name="annotation_string_6">Loading</string>
+    <string name="annotation_string_7">Unloading</string>
+    <string name="instruction_text">Type Text here...</string>
+    <string name="button_skip">SKIP</string>
+    <string name="location_man">Location</string>
+
+    <string name="off_duty">OFF</string>
+    <string name="sleeper">SB</string>
+    <string name="driving">D</string>
+    <string name="on_duty">ON</string>
+    <string name="personal_use">PC</string>
+    <string name="yard_move">YM</string>
+    <string name="ILC">ILC</string>
+    <string name="ILR">ILR</string>
+
+    <string name="off_duty_long">OFF DUTY</string>
+    <string name="sleeper_long">SLEEPER-BERTH</string>
+    <string name="driving_long">DRIVING</string>
+    <string name="on_duty_long">ON DUTY</string>
+    <string name="personal_use_long">PERSONAL USE</string>
+    <string name="yard_move_long">YARD MOVE</string>
+
+    <!-- strings for Rule Change -->
+    <string name="rule_change_activity_title">Rule Change</string>
+    <string name="rule_label">Select Rule</string>
+    <!-- strings for Rules -->
+    <string name="canada_rule_1">Canada 70hr/7days</string>
+    <string name="canada_rule_2">Canada 120hr/14days</string>
+    <string name="us_rule_1">US 70hr/8days</string>
+
+    <string name="phone_canada_rule_1">Canada\n70hr/7days</string>
+    <string name="phone_canada_rule_2">Canada\n120hr/14days</string>
+    <string name="phone_us_rule_1">US\n70hr/8days</string>
+    <!--<string name="us_rule_2">US 60hr/7days</string> -->
+
+    <string name="login">IN</string>
+    <string name="logout">OUT</string>
+    <string name="certified_record">CR</string>
+    <string name="engine_up">EU</string>
+    <string name="engine_down">ED</string>
+    <string name="malfunction">MF</string>
+    <string name="data_diagnostic">DD</string>
+
+    <!-- strings for New Event -->
+    <string name="new_event_activity_title">New Event</string>
+    <string name="event_type">Event Type</string>
+    <string name="event_time">Time</string>
+    <string name="odometer">Odometer</string>
+    <string name="engine_hours">Engine Hours</string>
+    <string name="shipping_document_number">Shipping Document Number</string>
+    <string name="latitude">Latitude</string>
+    <string name="longtitude">Longtitude</string>
+    <string name="origin">Origin</string>
+    <string name="location_description">Location Description</string>
+    <string name="comments">Comments</string>
+
+    <string name="odo">Odo</string>
+    <string name="eng_hrs">Eng Hr</string>
+    <string name="phone_eventtype">Type</string>
+    <string name="phone_shipping_number">Shipping</string>
+    <string name="hrs">Hrs</string>
+    <string name="record_automatically">Automatic</string>
+    <string name="record_manually">Manual</string>
+
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="duty_status_changed_to_off_duty">Driver\'s Duty Status changed to OFF DUTY</string>
+    <string name="duty_status_changed_to_sleeper_berth">Driver\'s Duty Status changed to SLEEPER BERTH</string>
+    <string name="duty_status_changed_to_driving">Driver\'s Duty Status changed to DRIVING</string>
+    <string name="duty_status_changed_to_on_duty">Driver\'s Duty Status changed to ON DUTY</string>
+    <string name="duty_status_changed_to_personal_use">Driver indicates "Authorized Personal Use of CMV"</string>
+    <string name="duty_status_changed_to_yard_move">Driver indicates "Yard Moves"</string>
+
+    <string name="texttospeech_duty_status_changed_to_off_duty">you have changed the duty status to Off Duty</string>
+    <string name="texttospeech_duty_status_changed_to_sleeper_berth">you have changed the duty status to SLEEPER BERTH</string>
+    <string name="texttospeech_duty_status_changed_to_driving">you have changed the duty status to Driving</string>
+    <string name="texttospeech_duty_status_changed_to_on_duty">you have changed the duty status to ON DUTY</string>
+    <string name="texttospeech_duty_status_changed_to_personal_use">you have changed the duty status to Personal Use</string>
+    <string name="texttospeech_duty_status_changed_to_yard_move">you have changed the duty status to Yard Moves</string>
+
+    <string name="hours">Hours</string>
+    <string name="record_status_active">Active</string>
+    <string name="record_status_inactive">Inactive-Changed</string>
+    <string name="record_status_inactive_change_request">Inactive – Change Requested</string>
+    <string name="record_status_inactive_change_rejected">Inactive – Change Rejected</string>
+    <string name="event">Event</string>
+    <string name="record_origin_automatically">Automatically Recorded by the Driver </string>
+    <string name="record_origin_edited">Edited or entered by the Driver </string>
+    <string name="record_origin_edited_by_other">Edit Requested by an Authenticated User (not-driver) </string>
+    <string name="record_origin_assumed">Assumed from Unidentified Driver Profile </string>
+
+    <string name="record_date">Record Date</string>
+    <string name="usdot">USDOT</string>
+    <string name="carrier">Carrier</string>
+    <string name="current_location">Current Location</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="driver_id">Driver ID</string>
+    <string name="start_end_odometer">Start End Odometer</string>
+    <string name="driver_license_number">Driver License Number</string>
+    <string name="driver_license_number_and_state">Driver License / State</string>
+    <string name="co_driver_name">Co-Driver Name</string>
+    <string name="co_driver_id">Co-Driver ID</string>
+    <string name="miles_today">Miles Today</string>
+    <string name="driver_license_state">Driver License State</string>
+    <string name="eld_manufacturer">ELD Manufacturer</string>
+    <string name="truck_tractor_id">Truck Tractor ID</string>
+    <string name="truck_tractor_vin">Truck Tractor VIN</string>
+    <string name="eld_id">ELD ID</string>
+    <string name="shipping_id">Shipping ID</string>
+    <string name="unidentified_driver_records">Unidentified Driver Records</string>
+    <string name="exempt_driver_status">Exempt Driver Status</string>
+    <string name="trailer_id">Trailer ID</string>
+    <string name="data_diagnostic_indicators">Data Diagnostic Indicators</string>
+    <string name="eld_malfunction_indicators">ELD Malfunction Indicators</string>
+    <string name="start_end_engine_hours">Start End Engine Hours</string>
+    <string name="commodity">Commodity</string>
+    <string name="shipping_number">Shipping Number/Commodity</string>
+    <string name="trailer_number">Trailer Number</string>
+
+    <string name="rule">Used Rule</string>
+
+    <string name="menu_daily_log">Daily Log</string>
+    <string name="menu_inspect_dailylog">Inspect Dailylog</string>
+    <string name="menu_create_event">Create Event</string>
+    <string name="menu_uncertified_log_book">Uncertified Log Book</string>
+    <string name="menu_unidentified_data">Unidentified Data</string>
+    <string name="menu_edit_request">Edit Request</string>
+    <string name="menu_violation_history">Violation History</string>
+    <string name="menu_driver_profile">Driver Profile</string>
+    <string name="menu_Message">Message</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_unidentified_event">Unidentified Event</string>
+    <string name="menu_send_report">Send Email</string>
+    <string name="menu_dvir">DVIR</string>
+    <string name="menu_tpms">TPMS</string>
+
+    <string name="title_eld">ELD</string>
+    <string name="title_daily_log">Daily Log</string>
+    <string name="title_inspect_elog">Inspect eLog</string>
+    <string name="title_create_event">Create Event</string>
+    <string name="title_certify_log_book">Certify Logbook</string>
+    <string name="title_edit_request">Edit Request</string>
+    <string name="title_violation_history">Violation History</string>
+    <string name="title_driver_profile">Driver Profile</string>
+    <string name="title_Message">Message</string>
+    <string name="title_unidentified_event">Unidentified Event</string>
+    <string name="title_dvir">DVIR</string>
+    <string name="title_new_inspection">New Inspection</string>
+    <string name="title_inspection">View Inspection</string>
+    <string name="title_shipping_trailers">Shipping &amp; Trailers</string>
+    <string name="title_tpms">TPMS</string>
+    <string name="title_edit_event">Edit Event</string>
+    <string name="title_inspect_dailylog">Log date:</string>
+
+    <string name="event_origin_automatically">Automatically</string>
+    <string name="event_origin_edited">Edited</string>
+
+    <string name="action_confirm_web_event">Confirm</string>
+    <string name="action_reject_web_event">Reject</string>
+    <string name="action_back_edit_event">Back</string>
+    <string name="action_edit_event">Edit</string>
+    <string name="action_back_one_day">Back</string>
+    <string name="action_forward_one_day">Forward</string>
+    <string name="action_set_active">Set Active</string>
+    <string name="action_post_all">Post</string>
+    <string name="action_sync_all">Sync</string>
+    <string name="action_change_rule">Change Rule</string>
+    <string name="action_certify_log">Certify Log</string>
+    <string name="action_usb_drive">USB Drive</string>
+    <string name="action_bluetooth">Bluetooth</string>
+    <string name="action_email">Email</string>
+    <string name="action_webservice">Web Service</string>
+    <string name="input_information_activity_title">Input Information</string>
+
+    <string name="button_change_status">Change\nStatus</string>
+    <string name="button_keep_driving">Keep\nDriving</string>
+
+    <string name="paired_devices">PAIRED DEVICES</string>
+    <string name="available_devices">AVAILABLE DEVICES</string>
+    <string name="bluetooth_connection_infos">Please wait while Hutch ELD connects to your vehicle!</string>
+    <string name="setup_error_msg">We are sorry, connection with the vehicle could not be established. Please contact Hutch System!</string>
+    <string name="bluetooth_connection_ok">Connection is established successfully! Please click on OK button to continue!</string>
+
+    <string name="can_bus_error">We are sorry, connection failed. Please contact Hutch System!</string>
+
+    <string name="vin_number">VIN Number</string>
+    <string name="speed">Speed</string>
+    <string name="rpm">RPM</string>
+    <string name="select_protocol">Hutch System has detected following protocol on your vehicle</string>
+    <string name="j1708_protocol">J1708</string>
+    <string name="j1939_protocol">J1939</string>
+    <string name="both_protocols">J1708 and J1939</string>
+
+    <string name="internet_connection">Checking Internet Connection...</string>
+    <string name="no_internet">Hutch ELD is not connected to Internet. Please try again later!</string>
+    <string name="web_service">Checking Web Service...</string>
+    <string name="web_service_ok">Web service is good. Please click on Next to continue!</string>
+    <string name="no_web_service">Web service is not available. Please try again later!</string>
+    <string name="latitude_longitude">Latitude/Longitude</string>
+
+    <string name="can_data_ok">Please click on Next to continue!</string>
+
+    <string name="default_cycle">Default Cycle/Default Rule</string>
+    <string name="unit_no">Unit No.</string>
+    <string name="start_time">Start Time</string>
+
+    <string name="datetime">Date/Time</string>
+    <string name="location">Location</string>
+    <string name="dvir_type">Type</string>
+    <string name="truck_number">Truck#</string>
+    <string name="trailer">Trailer(s)</string>
+    <string name="defect">Defect</string>
+    <string name="defect_repaired">Defect Repaired</string>
+    <string name="safe_to_drive">Safe to Drive</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="button_certify">Certify</string>
+    <string name="button_add_defect">Add Defect</string>
+    <string name="button_add_picture">Add Picture</string>
+    <string name="inspection_activity_title">New Inspection</string>
+    <string name="defect_item">Defect Items</string>
+    <string name="button_close">Close</string>
+
+    <string-array name="dvir_types">
+        <item>Pre</item>
+        <item>Post</item>
+        <item>Inter</item>
+    </string-array>
+
+    <string-array name="sync_time">
+        <item>5 Mins</item>
+        <item>10 Mins</item>
+        <item>20 Mins</item>
+        <item>30 Mins</item>
+        <item>60 Mins</item>
+    </string-array>
+
+    <string-array name="graph_line">
+        <item>End time</item>
+        <item>Current time</item>
+    </string-array>
+
+    <string-array name="vision_mode">
+        <item>Day</item>
+        <item>Night</item>
+    </string-array>
+
+    <string-array name="font_size">
+        <item>Small</item>
+        <item>Normal</item>
+        <item>Large</item>
+    </string-array>
+
+    <string name="defect1">1) Air Brake System</string>
+    <string name="defect2">2) Cab</string>
+    <string name="defect3">3) Cargo Securement</string>
+    <string name="defect4">4) Coupling Devices</string>
+    <string name="defect5">5) Dangerous Goods (If Any)</string>
+    <string name="defect6">6) Driver Controls</string>
+    <string name="defect7">7) Driver Seat</string>
+    <string name="defect8">8) Electric Brake System</string>
+    <string name="defect9">9) Emergency Equipment &amp; Safety Devices</string>
+    <string name="defect10">10) Exhaust System</string>
+    <string name="defect11">11) Frame &amp; Cargo Body</string>
+    <string name="defect12">12) Fuel System</string>
+    <string name="defect13">13) General Defects</string>
+    <string name="defect14">14) Glass &amp; Mirrors</string>
+    <string name="defect15">15) Heater/Defroster</string>
+    <string name="defect16">16) Horn</string>
+    <string name="defect17">17) Hybraulic Brake System</string>
+    <string name="defect18">18) Lamps &amp; Reflectors</string>
+    <string name="defect19">19) Steering</string>
+    <string name="defect20">20) Suspension System</string>
+    <string name="defect21">21) Tires</string>
+    <string name="defect22">22) Wheels/Hubs/Fasteners</string>
+    <string name="defect23">23) Windshield Wipers &amp; Washers</string>
+    <string name="defect24">24) Other</string>
+
+    <string-array name="defect_items">
+        <item>@string/defect1</item>
+        <item>@string/defect2</item>
+        <item>@string/defect3</item>
+        <item>@string/defect4</item>
+        <item>@string/defect5</item>
+        <item>@string/defect6</item>
+        <item>@string/defect7</item>
+        <item>@string/defect8</item>
+        <item>@string/defect9</item>
+        <item>@string/defect10</item>
+        <item>@string/defect11</item>
+        <item>@string/defect12</item>
+        <item>@string/defect13</item>
+        <item>@string/defect14</item>
+        <item>@string/defect15</item>
+        <item>@string/defect16</item>
+        <item>@string/defect17</item>
+        <item>@string/defect18</item>
+        <item>@string/defect19</item>
+        <item>@string/defect20</item>
+        <item>@string/defect21</item>
+        <item>@string/defect22</item>
+        <item>@string/defect23</item>
+        <item>@string/defect24</item>
+    </string-array>
+
+    <string name="defect_msg">I found no defect in my vehicle.</string>
+    <string name="repaired_msg">Defect(s) found in DVIR have been corrected.</string>
+    <string name="safetodrive_msg">Defect(s) found in DVIR not need to be corrected for safe operation of the vehicle.</string>
+    <string name="no_safetodrive_msg">Please do not drive the vehicle.</string>
+    <string name="button_view">View</string>
+
+
+    <string name="settings_time_zone">Time zone</string>
+    <string name="settings_default_rule">Default rule</string>
+    <string name="settings_graph_line">Graph line</string>
+    <string name="settings_color_line">Line color</string>
+    <string name="settings_us_color">US</string>
+    <string name="settings_canada_color">Canada</string>
+    <string name="settings_violation_on_grid">Show violation on grid</string>
+    <string name="settings_time_format">Time format</string>
+    <string name="settings_reading_violation">Read the violation</string>
+    <string name="settings_automatic_change_rule">Automatic rule change</string>
+    <string name="settings_reading_message">Reading message</string>
+    <string name="settings_reading_status_change">Read duty status change </string>
+    <string name="settings_start_time">Start time</string>
+    <string name="settings_orientation">Orientation</string>
+    <string name="settings_vision_mode">Vision mode</string>
+    <string name="settings_font_size">Font size</string>
+    <string name="settings_brightness">Brightness</string>
+    <string name="settings_check_update">Check update</string>
+    <string name="settings_system_infor">System information</string>
+    <string name="settings_legal">View legal document</string>
+    <string name="settings_sync_time">Sync time</string>
+    <string name="settings_copy_trailers">Copy trailer(s)</string>
+    <string name="settings_volume_level">Volume level</string>
+    <string name="settings_list_violation">Show violations in Duty Status</string>
+    <string name="settings_android_version">Android version</string>
+    <string name="settings_imei">IMEI</string>
+    <string name="settings_app_version">ELD version</string>
+    <string name="settings_battery_level">Battery level</string>
+    <string name="settings_bluetooth_name">Bluetooth name</string>
+    <string name="settings_default_battery">80%</string>
+
+
+    <!-- GPS Activity -->
+    <string name="gps_status_tab">Status</string>
+    <string name="gps_map_tab">Map</string>
+    <string name="gps_sky_tab">Sky</string>
+
+    <string name="gps_start">Start</string>
+    <string name="gps_pause">Pause</string>
+    <string name="menu_settings">Settings</string>
+    <string name="delete_aiding_data">Clear Aiding Data</string>
+    <string name="delete_aiding_data_success">Successfully deleted aiding data.</string>
+    <string name="delete_aiding_data_failure">Platform does not support deleting aiding data.
+    </string>
+    <string name="send_location">Send Location</string>
+    <string name="set_fix_frequency">Set Fix Frequency</string>
+    <string name="force_time_injection">Inject Time</string>
+    <string name="force_time_injection_success">Successfully injected time data.</string>
+    <string name="force_time_injection_failure">Platform does not support injecting time data.
+    </string>
+    <string name="force_xtra_injection">Inject XTRA Data</string>
+    <string name="force_xtra_injection_success">Successfully injected XTRA data.</string>
+    <string name="force_xtra_injection_failure">Platform does not support injecting XTRA data.
+    </string>
+
+    <string name="zoom_in">Zoom In</string>
+    <string name="zoom_out">Zoom Out</string>
+    <string name="mode_map">Map</string>
+    <string name="mode_satellite">Satellite</string>
+
+    <string name="gps_latitude_label">Lat:</string>
+    <string name="gps_longitude_label">Long:</string>
+    <string name="gps_fix_time_label">Time:</string>
+    <string name="gps_ttff_label">TTFF:</string>
+    <string name="gps_altitude_label">Alt:</string>
+    <string name="gps_accuracy_label">Acc:</string>
+    <string name="gps_speed_label">Speed:</string>
+    <string name="gps_bearing_label">Bearing:</string>
+    <string name="gps_fix_label">No fix</string>
+    <string name="gps_utc_time_label">System Time:</string>
+
+    <string name="gps_prn_column_label">PRN</string>
+    <string name="gps_flag_image_label">GNSS</string>
+    <string name="gps_snr_column_label">SNR</string>
+    <string name="gps_elevation_column_label">Elev</string>
+    <string name="gps_azimuth_column_label">Azim</string>
+    <string name="gps_flags_column_label">Flags</string>
+    <string name="gps_not_supported">GPS not supported. Exiting app&#8230;</string>
+    <string name="install">Install</string>
+    <string name="please_install_google_maps">Please install Google Maps</string>
+    <string name="enable_gps_message">GPS is disabled. Enable it now?</string>
+    <string name="enable_gps_positive_button">Enable GPS</string>
+    <string name="enable_gps_negative_button">No</string>
+    <string name="gps_set_location_listener">Started GPS with interval = %1$ss, min. dist. = %2$sm
+    </string>
+
+    <!-- User tutorial -->
+    <string name="showcase_gps_on_off_title">Controls</string>
+    <string name="showcase_gps_on_off_message">&#8226; The On/Off switch starts/stops GPS\n&#8226;
+        The \"Share\" button sends a location (shown after getting a GPS fix)\n\n
+        <i>(tap to dismiss)</i>
+    </string>
+
+    <!-- Preferences -->
+    <string name="pref_title">Settings</string>
+    <string name="pref_map_category_title">Map</string>
+    <string name="pref_map_type_title">Map Type</string>
+    <string name="pref_map_type_summary">Sets the type of map tiles shown</string>
+    <string name="pref_map_type_dialog_title">Choose Map Type</string>
+
+    <string name="pref_rotate_map_with_compass_title">Rotate Map with Compass</string>
+    <string name="pref_rotate_map_with_compass_summary">Change the map orientation based on your
+        direction
+    </string>
+
+    <string name="pref_tilt_map_with_sensors_title">Tilt Map with Device</string>
+    <string name="pref_tilt_map_with_sensors_summary">Change to a first-person map view when you
+        hold up the device
+    </string>
+
+    <string name="pref_gps_category_title">GPS</string>
+    <string name="pref_auto_start_gps_title">Auto-Start GPS</string>
+    <string name="pref_auto_start_gps_summary">Start GPS when the app starts</string>
+
+    <string name="pref_gps_min_time_title">Interval</string>
+    <string name="pref_gps_min_time_summary">Time between GPS fixes, in seconds</string>
+    <string name="pref_gps_min_time_dialog_title">Enter an interval, in seconds</string>
+    <string name="pref_gps_min_time_invalid_entry">Interval must be a number</string>
+
+    <string name="pref_gps_min_distance_title">Min. Distance</string>
+    <string name="pref_gps_min_distance_summary">Minimum distance between GPS fixes, in meters
+    </string>
+    <string name="pref_gps_min_distance_dialog_title">Enter a min. distance, in meters</string>
+    <string name="pref_gps_min_distance_invalid_entry">Min. Distance must be a number</string>
+
+    <string name="pref_analyze_gps_accuracy_title">Analyze GPS Accuracy</string>
+    <string name="pref_analyze_gps_accuracy_summary">Use GPS Benchmark to measure GPS error</string>
+
+    <string name="pref_display_category_title">Display</string>
+    <string name="pref_keep_screen_on_title">Keep Screen On</string>
+    <string name="pref_keep_screen_on_summary">Prevents the screen from turning off</string>
+    <string name="pref_true_north_title">Point Compass to True North</string>
+    <string name="pref_true_north_summary">Compass will face true north instead of magnetic north
+    </string>
+
+    <string name="pref_about_category_title">About</string>
+    <string name="pref_show_tutorial_title">Show tutorial</string>
+    <string name="pref_show_tutorial_summary">Shows instructions for using the app</string>
+    <!-- End GPS activity -->
+
+
+    <!-- Wireless connectivity check -->
+    <string name="cellular_connection">Checking Cellular connection</string>
+    <string name="wifi_connection">Checking Wi-Fi connection</string>
+    <string name="hutch_connection">Establishing connection with Hutch Systems</string>
+    <string name="download_configuration">Downloading configurations</string>
+
+    <string name="bluetooth_enable_checking">Checking Bluetooth on/off</string>
+    <string name="bluetooth_searching">Searching for Bluetooth Bridge</string>
+    <string name="bluetooth_established_connection">Establishing connection with BTB</string>
+    <string name="bluetooth_checking_heartbeat">Checking BTB Heartbeat</string>
+    <string name="bluetooth_information">Please start the vehicle!</string>
+
+
+    <string name="finding_gps_satellite">Finding GPS Satellite</string>
+    <string name="checking_utc_time">Checking UTC Time</string>
+    <string name="checking_latitude_longitude">Checking Latitude and Longtitude</string>
+    <string name="checking_current_location">Checking Current Location</string>
+    <string name="your_location">Your current location</string>
+    <string name="terms_of_service_01">Hutch Systems owns or licenses certain technology that it has developed and makes commercially available to users through mobile services and/or web applications to assist in efficient operations of truck and motor coach fleets in North America. In connection with the use of the Applications and the provision of Support, or the purchase or rental of Hardware (all as further defined below), you and/or your organization or corporation (the “Customer”) hereby agree to the terms of service and conditions contained herein (collectively, the “Terms of Service”).</string>
+
+</resources>

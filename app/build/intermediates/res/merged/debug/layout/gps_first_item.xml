@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    style="@style/Thead"
+    android:weightSum="6" >
+
+    <TextView
+        android:id="@+id/tvPRN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:text="PRN"
+        android:layout_weight="1"
+        style="@style/TableTH" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+        <TextView
+            android:id="@+id/tvGNSS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="center_vertical"
+            android:text="GNSS"
+            style="@style/TableTH" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSNR"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:text="SNR"
+        android:layout_weight="1"
+        style="@style/TableTH" />
+
+    <TextView
+        android:id="@+id/tvELEVATION"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:text="Elev"
+        android:layout_weight="1"
+        style="@style/TableTH" />
+
+    <TextView
+        android:id="@+id/tvAZIMUTH"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:text="Azim"
+        android:layout_weight="1"
+        style="@style/TableTH" />
+
+    <TextView
+        android:id="@+id/tvFLAGS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:text="Flags"
+        android:layout_weight="1"
+        style="@style/TableTH" />
+</LinearLayout>

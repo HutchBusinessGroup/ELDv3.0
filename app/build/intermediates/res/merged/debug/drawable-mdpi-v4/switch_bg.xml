@@ -1,0 +1,8 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_active="true">
+        <bitmap android:src="@drawable/checkbox_check"></bitmap>
+    </item>
+    <item>
+        <bitmap android:src="@drawable/checkbox"></bitmap>
+    </item>
+</selector>

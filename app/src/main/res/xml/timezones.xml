@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timezones>
+    <timezone id="Pacific/Honolulu">Hawaii</timezone>
+    <timezone id="America/Anchorage">Alaska</timezone>
+    <timezone id="America/Los_Angeles">Pacific Time</timezone>
+    <timezone id="America/Denver">Mountain Time</timezone>
+    <timezone id="America/Chicago">Central Time</timezone>
+    <timezone id="America/New_York">Eastern Time</timezone>
+    <timezone id="America/Halifax">Atlantic Time (Canada)</timezone>
+    <timezone id="America/St_Johns">Newfoundland</timezone>
+    <timezone id="America/Godthab">Greenland</timezone>
+</timezones>

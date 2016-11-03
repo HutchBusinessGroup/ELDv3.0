@@ -1,0 +1,324 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/f5f5f5"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/DialogIconStyle"
+            android:layout_width="@dimen/dialog_icon_size"
+            android:layout_height="@dimen/dialog_icon_size" />
+
+        <TextView
+            style="@style/DialogTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="Select Duty Status" />
+
+        <ImageButton
+            android:id="@+id/imgCancel"
+            style="@style/DialogCloseStyle"
+            android:layout_width="@dimen/dialog_close_icon_size"
+            android:layout_height="@dimen/dialog_close_icon_size" />
+    </LinearLayout>
+
+    <View
+        style="@style/DialogTitleSeprator"
+        android:layout_width="match_parent"
+        android:layout_height="2dp">
+
+    </View>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="18dp">
+
+                <LinearLayout
+                    android:id="@+id/lOffDuty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.16"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/butOffDuty"
+                        style="@style/CircleButtonTextStyle"
+                        android:layout_width="@dimen/circle_button_size_portrait"
+                        android:layout_height="@dimen/circle_button_size_portrait"
+                        android:background="@drawable/circle_button"
+                        android:text="@string/off_duty" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lSleeper"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.16"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/butSleeper"
+                        style="@style/CircleButtonTextStyle"
+                        android:layout_width="@dimen/circle_button_size_portrait"
+                        android:layout_height="@dimen/circle_button_size_portrait"
+                        android:background="@drawable/circle_button"
+                        android:text="@string/sleeper" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lDriving"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.16"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/butDriving"
+                        style="@style/CircleButtonTextStyle"
+                        android:layout_width="@dimen/circle_button_size_portrait"
+                        android:layout_height="@dimen/circle_button_size_portrait"
+                        android:background="@drawable/circle_button"
+                        android:text="@string/driving" />
+
+                    <Button
+                        android:id="@+id/butDisableDriving"
+                        style="@style/DisableCircleButtonTextStyle"
+                        android:layout_width="@dimen/circle_button_size_portrait"
+                        android:layout_height="@dimen/circle_button_size_portrait"
+                        android:background="@drawable/disable_circle_button"
+                        android:text="@string/driving"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lOnDuty"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.16"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/butOnDuty"
+                        style="@style/CircleButtonTextStyle"
+                        android:layout_width="@dimen/circle_button_size_portrait"
+                        android:layout_height="@dimen/circle_button_size_portrait"
+                        android:background="@drawable/circle_button"
+                        android:text="@string/on_duty" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lPersonalUse"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.16"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/butPersonalUse"
+                        style="@style/CircleButtonTextStyle"
+                        android:layout_width="@dimen/circle_button_size_portrait"
+                        android:layout_height="@dimen/circle_button_size_portrait"
+                        android:background="@drawable/circle_button"
+                        android:text="@string/personal_use" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lYardMove"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.16"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/butYardMove"
+                        style="@style/CircleButtonTextStyle"
+                        android:layout_width="@dimen/circle_button_size_portrait"
+                        android:layout_height="@dimen/circle_button_size_portrait"
+                        android:background="@drawable/circle_button"
+                        android:text="@string/yard_move" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="top"
+                        android:hint="@string/location_man"
+                        android:imeActionLabel="Done"
+                        android:singleLine="true"
+                        android:textColorHint="@color/GreyLight"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                   <!-- <AutoCompleteTextView
+                        android:id="@+id/tvAnnotation"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="top"
+                        android:hint="@string/annotation"
+                        android:imeActionLabel="Done"
+                        android:singleLine="false"
+                        android:textColorHint="@color/GreyLight"
+                        android:textSize="16sp" />-->
+
+                    <EditText
+                        android:id="@+id/edDutyStatusAnnotation"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:gravity="top"
+                        android:hint="@string/annotation"
+                        android:imeActionLabel="Done"
+                        android:singleLine="true"
+                        android:textColorHint="@color/GreyLight"
+                        android:textSize="16sp"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="4"
+                        android:orientation="horizontal">
+
+                        <Button android:id="@+id/btnAnnotation1"
+                            style="@style/AnnotationStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="18dp"
+                            android:paddingRight="18dp"
+                            android:layout_height="@dimen/annotation_string_height"
+                            android:text="@string/annotation_string_6" />
+
+                        <Button android:id="@+id/btnAnnotation2"
+                            style="@style/AnnotationStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="18dp"
+                            android:paddingRight="18dp"
+                            android:layout_height="@dimen/annotation_string_height"
+                            android:text="@string/annotation_string_7" />
+
+                        <Button android:id="@+id/btnAnnotation3"
+                            style="@style/AnnotationStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="18dp"
+                            android:paddingRight="18dp"
+                            android:layout_height="@dimen/annotation_string_height"
+                            android:clickable="true"
+                            android:text="@string/annotation_string_5" />
+
+                        <Button android:id="@+id/btnAnnotation4"
+                            style="@style/AnnotationStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="18dp"
+                            android:paddingRight="18dp"
+                            android:layout_height="@dimen/annotation_string_height"
+                            android:clickable="true"
+                            android:text="@string/annotation_string_4" />
+
+                        <Button android:id="@+id/btnAnnotation5"
+                            style="@style/AnnotationStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="18dp"
+                            android:paddingRight="18dp"
+                            android:layout_height="@dimen/annotation_string_height"
+                            android:clickable="true"
+                            android:text="@string/annotation_string_3" />
+
+                        <Button android:id="@+id/btnAnnotation6"
+                            style="@style/AnnotationStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="18dp"
+                            android:paddingRight="18dp"
+                            android:layout_height="@dimen/annotation_string_height"
+                            android:clickable="true"
+                            android:text="@string/annotation_string_2" />
+
+                        <Button android:id="@+id/btnAnnotation7"
+                            style="@style/AnnotationStyle"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="18dp"
+                            android:paddingRight="18dp"
+                            android:layout_height="@dimen/annotation_string_height"
+                            android:clickable="true"
+                            android:layout_marginRight="0dp"
+                            android:text="@string/annotation_string_1" />
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/butDutyStatusSave"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footer_button_height"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_bg"
+        android:text="@string/button_save" />
+</LinearLayout>

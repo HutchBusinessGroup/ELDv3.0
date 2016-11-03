@@ -1,0 +1,133 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hutchgroup.elog.fragments.WirelessConnectivityFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvCheckingCellularConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/cellular_connection"
+            android:layout_weight="1"
+            style="@style/BigTextLabelStyle" />
+
+        <TextView
+            android:id="@+id/tvCellularType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
+            android:visibility="gone"
+            android:text="LTE"/>
+
+        <ImageView
+            android:id="@+id/icCellularChecking"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/ic_flagbar_canbus_disconnect" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvCheckingWiFiConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/wifi_connection"
+            android:layout_weight="1"
+            android:visibility="gone"
+            style="@style/BigTextLabelStyle" />
+
+        <ImageView
+            android:id="@+id/icWifiChecking"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="6dp"
+            android:visibility="gone"
+            android:background="@drawable/ic_flagbar_canbus_disconnect" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvHutchConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/hutch_connection"
+            android:layout_weight="1"
+            android:visibility="gone"
+            style="@style/BigTextLabelStyle" />
+
+        <ImageView
+            android:id="@+id/icHutchConnectionChecking"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="6dp"
+            android:visibility="gone"
+            android:background="@drawable/ic_flagbar_canbus_disconnect" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvDownloadConfiguration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/download_configuration"
+            android:layout_weight="1"
+            android:visibility="gone"
+            style="@style/BigTextLabelStyle" />
+
+        <ImageView
+            android:id="@+id/icDownloadConfiguration"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="6dp"
+            android:visibility="gone"
+            android:background="@drawable/ic_flagbar_canbus_disconnect" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnTryAgain"
+        style="@style/buttonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:background="@drawable/button_bg"
+        android:text="Retry" />
+
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:gravity="center" >
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/android:progressBarStyleLarge"
+            android:indeterminate="true" />
+
+    </RelativeLayout>
+</LinearLayout>

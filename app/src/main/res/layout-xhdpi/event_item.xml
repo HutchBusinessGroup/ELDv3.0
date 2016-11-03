@@ -1,0 +1,181 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_slide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/width_32_neg"
+        android:layout_weight="1"
+        android:background="@color/red1"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/butEditEvent"
+            android:layout_width="@dimen/width_24"
+            android:layout_height="@dimen/width_24"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/width_4"
+            android:layout_marginRight="@dimen/width_4"
+            android:background="@drawable/event_edit_button"
+            android:padding="@dimen/width_8"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_mode_edit_white_18dp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/layoutInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp">
+
+            <RelativeLayout
+                android:layout_width="@dimen/width_32"
+                android:layout_height="@dimen/width_32"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/width_4"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/butEventIcon"
+                    style="@style/EventIconTextStyle"
+                    android:layout_width="@dimen/width_24"
+                    android:layout_height="@dimen/width_24"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/event_icon"
+                    android:text="@string/off_duty" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTime"
+                            style="@style/EventInformationTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:gravity="center_vertical"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvTrip"
+                            style="@style/EventInformationTextStyle.small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="48dp"
+                            android:ellipsize="marquee"
+                            android:singleLine="false"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imgOrigin"
+                        android:layout_width="@dimen/width_24"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_stay_current_portrait_black_24dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgShipmentIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_event_shipment_24" />
+
+                    <TextView
+                        android:id="@+id/tvShipment"
+                        style="@style/EventInformationTextStyle.small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:singleLine="false"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvShipStatus"
+                        style="@style/EventInformationTextStyle.small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="6dp"
+                        android:singleLine="false"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgLocationIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_event_location_24" />
+
+                    <TextView
+                        android:id="@+id/tvLocation"
+                        style="@style/EventInformationTextStyle.small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="1"
+                        android:textStyle="bold|italic" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvComments"
+                    style="@style/EventInformationTextStyle.small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="2dp"
+                    android:alpha=".65"
+                    android:ellipsize="marquee"
+                    android:singleLine="false"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

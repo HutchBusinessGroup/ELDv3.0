@@ -1,0 +1,305 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentTop="true">
+
+    <LinearLayout
+        android:id="@+id/layout_floating_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/fab_size"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="@dimen/width_percent_75"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/layout_bg_round_nine"
+                    android:orientation="vertical"
+                    android:paddingBottom="48dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="48dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/layout_fab1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/fab_post"
+                                android:layout_width="@dimen/fab_size"
+                                android:layout_height="@dimen/fab_size"
+                                android:adjustViewBounds="true"
+                                android:background="@drawable/cyan_fab_button_bg"
+                                android:padding="22dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_post"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Post"
+                                android:textColor="@color/sixsix"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_fab5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/fab_active"
+                                android:layout_width="@dimen/fab_size"
+                                android:layout_height="@dimen/fab_size"
+                                android:adjustViewBounds="true"
+                                android:background="@drawable/blue_fab_button_bg"
+                                android:padding="22dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_steering_wheel"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Active"
+                                android:textColor="@color/sixsix"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_fab4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+
+                            <ImageButton
+                                android:id="@+id/fab_certify"
+                                android:layout_width="@dimen/fab_size"
+                                android:layout_height="@dimen/fab_size"
+                                android:adjustViewBounds="true"
+                                android:background="@drawable/green_fab_button_bg"
+                                android:padding="20dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_certified"
+                                android:visibility="gone" />
+
+                            <ImageButton
+                                android:id="@+id/fab_uncertify"
+                                android:layout_width="@dimen/fab_size"
+                                android:layout_height="@dimen/fab_size"
+                                android:adjustViewBounds="true"
+                                android:background="@drawable/red_fab_button_bg"
+                                android:padding="22dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_fab_uncertified"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Certify"
+                                android:textColor="@color/sixsix"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_fab2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/fab_sync"
+                                android:layout_width="@dimen/fab_size"
+                                android:layout_height="@dimen/fab_size"
+                                android:adjustViewBounds="true"
+                                android:background="@drawable/orange_fab_button_bg"
+                                android:padding="22dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_fab_sync"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Sync"
+                                android:textColor="@color/sixsix"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:id="@+id/layout_fab3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/fab_change_rule"
+                                android:layout_width="@dimen/fab_size"
+                                android:layout_height="@dimen/fab_size"
+                                android:adjustViewBounds="true"
+                                android:background="@drawable/grey_fab_button_bg"
+                                android:padding="22dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_change_horiz"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Change Rule"
+                                android:textColor="@color/sixsix"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_fab6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/fab_switch_user"
+                                android:layout_width="@dimen/fab_size"
+                                android:layout_height="@dimen/fab_size"
+                                android:adjustViewBounds="true"
+                                android:background="@drawable/red_fab_button_bg"
+                                android:padding="22dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_fab_driver_switch"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Switch User"
+                                android:textColor="@color/sixsix"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_fab_undocking"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/fab_undocking"
+                                android:layout_width="@dimen/fab_size"
+                                android:layout_height="@dimen/fab_size"
+                                android:adjustViewBounds="true"
+                                android:background="@drawable/dark_blue_fab_button_bg"
+                                android:padding="22dp"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_fab_undocking"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Undocking"
+                                android:textColor="@color/sixsix"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_fab8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_fab_undocking"
+                    android:layout_gravity="right"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <android.support.design.widget.FloatingActionButton
+                        android:id="@+id/fab_stop"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/fab_but_margin"
+                        android:src="@android:drawable/ic_lock_power_off"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/fab_layout_close_btn"
+            android:layout_width="@dimen/fab_size"
+            android:layout_height="@dimen/fab_size"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="@dimen/fab_margin_bottom"
+            android:layout_marginEnd="@dimen/fab_margin_right"
+            android:background="@drawable/orange_fab_button_bg"
+            android:clickable="false"
+            android:src="@drawable/ic_fab_close" />
+    </LinearLayout>
+
+</RelativeLayout>

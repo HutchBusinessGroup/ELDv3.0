@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hutchgroup.elog.WirelessConnectivityCheck"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_percent_25"
+        android:gravity="center"
+        android:background="@drawable/setup_screen_bg">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_setup_wifi" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SetupTitle"
+        android:textColor="@color/colorPrimary"
+        android:text="Establishing Wireless Connection..."/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icCellularChecking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/ic_setup_processing"/>
+                <TextView
+                    android:id="@+id/tvCheckingCellularConnection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    style="@style/SetupList"
+                    android:textColor="@color/green2"
+                    android:layout_weight="1"
+                    android:text="Cellular connection"/>
+
+                <TextView
+                    android:id="@+id/tvCellularType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    style="@style/SetupList"
+                    android:textColor="@color/green2"
+                    android:text="LTE"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icWifiChecking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/ic_setup_processing"/>
+                <TextView
+                    android:id="@+id/tvCheckingWiFiConnection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    style="@style/SetupList"
+                    android:textColor="@color/green2"
+                    android:layout_weight="1"
+                    android:text="Wi-Fi connection "/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icHutchConnectionChecking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/ic_setup_processing"/>
+                <TextView
+                    android:id="@+id/tvHutchConnection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    style="@style/SetupList"
+                    android:textColor="@color/green2"
+                    android:layout_weight="1"
+                    android:text="Connection with Hutch Systems"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icDownloadConfiguration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/ic_setup_processing"/>
+                <TextView
+                    android:id="@+id/tvDownloadConfiguration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/green2"
+                    style="@style/SetupList"
+                    android:layout_weight="1"
+                    android:text="Downloading configurations"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/btnWirelessConnectionTryAgain"
+        android:layout_width="@dimen/width_32"
+        android:layout_height="@dimen/width_32"
+        android:layout_marginTop="@dimen/width_4"
+        android:layout_marginBottom="@dimen/width_4"
+        android:background="@drawable/setup_screen_button"
+        android:layout_gravity="center"
+        android:elevation="6dp"
+        android:text="Retry"
+        android:src="@drawable/ic_arrow_retry_white_48dp" />
+
+
+</LinearLayout>

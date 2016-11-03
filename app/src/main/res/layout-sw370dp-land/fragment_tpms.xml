@@ -1,0 +1,952 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tpms_bg"
+    android:orientation="vertical"
+    tools:context="com.hutchgroup.elog.fragments.TpmsFragment"
+    android:gravity="center_horizontal">
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/tpms_truck_trailer_height"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/tyre_margin_1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TPMSValue.Margin0"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tpms_value_height"
+                android:background="@drawable/tpms_value_bg_white"
+                android:gravity="center"
+                android:text="32" />
+
+            <TextView
+                style="@style/TPMSTemp.Margin0"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tpms_temp_height"
+                android:background="@drawable/tpms_temp_bg_white"
+                android:gravity="center"
+                android:text="75° F" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/tyre_margin_2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_red"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/tyre_margin_3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/tyre_margin_bottom_3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/tyre_margin_bottom_2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/tyre_margin_bottom_1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/tpms_truck_trailer_height"
+        android:layout_height="@dimen/tpms_truck_trailer_width">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/tpms_truck_trailer"
+            android:scaleType="fitCenter" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/tpms_tyre_margin_left_right_1"
+            android:layout_marginBottom="@dimen/tpms_tyre_margin_left_right_1"
+            android:layout_marginLeft="@dimen/tyre_margin_1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height_small"
+                android:layout_height="@dimen/tpms_tyre_width_small"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height_small"
+                android:layout_height="@dimen/tpms_tyre_width_small"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/tyre_margin_2"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/error_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/tyre_margin_3">
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/tyre_margin_bottom_3"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:layout_gravity="clip_horizontal|center_horizontal"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/warning_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:background="@drawable/tyre_jointer"
+                android:layout_gravity="center_horizontal"></ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/tyre_margin_bottom_2"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:layout_gravity="clip_horizontal|center_horizontal"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:background="@drawable/tyre_jointer"
+                android:layout_gravity="center_horizontal"></ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/tyre_margin_bottom_1"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:layout_gravity="clip_horizontal|center_horizontal"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_jointer_height"
+                android:layout_height="2dp"
+                android:background="@drawable/tyre_jointer"
+                android:layout_gravity="center_horizontal"></ImageView>
+
+            <ImageView
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/tpms_truck_trailer_height"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/tyre_margin_1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TPMSValue.Margin0"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tpms_value_height"
+                android:background="@drawable/tpms_value_bg_white"
+                android:gravity="center"
+                android:text="32" />
+
+            <TextView
+                style="@style/TPMSTemp.Margin0"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tpms_temp_height"
+                android:background="@drawable/tpms_temp_bg_white"
+                android:gravity="center"
+                android:text="75° F" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/tyre_margin_2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/tyre_margin_3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/tyre_margin_bottom_3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_yellow"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/tyre_margin_bottom_2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:textColor="@color/red1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_tyre_height"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/tyre_margin_bottom_1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TPMSValue.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    style="@style/TPMSTemp.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

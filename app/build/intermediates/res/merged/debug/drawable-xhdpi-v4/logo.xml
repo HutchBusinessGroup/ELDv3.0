@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <padding android:top="30dp" android:right="30dp" android:bottom="30dp" android:left="30dp"></padding>
+        </shape>
+    </item>
+</selector>

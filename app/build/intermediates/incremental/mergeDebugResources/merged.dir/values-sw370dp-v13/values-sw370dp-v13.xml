@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ListTextSize">16sp</dimen>
+    <dimen name="driver_name_text_size">20sp</dimen>
+    <dimen name="fab_margin_bottom">24dp</dimen>
+    <dimen name="fab_margin_right">24dp</dimen>
+    <dimen name="fab_size">72dp</dimen>
+    <dimen name="font_size_12">14sp</dimen>
+    <dimen name="font_size_14">14sp</dimen>
+    <dimen name="font_size_18">18sp</dimen>
+    <dimen name="list_content_text_size">16sp</dimen>
+    <dimen name="list_title_text_size">17sp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="text_lab_size">14sp</dimen>
+    <dimen name="text_size_1">20sp</dimen>
+    <dimen name="text_size_11">14sp</dimen>
+    <dimen name="text_size_12">14sp</dimen>
+    <dimen name="text_size_13">16sp</dimen>
+    <dimen name="text_size_14">18sp</dimen>
+    <dimen name="text_val_size">18sp</dimen>
+    <dimen name="two_or_four_pixel">2dp</dimen>
+    <dimen name="width_12">12dp</dimen>
+    <dimen name="width_16">16dp</dimen>
+    <dimen name="width_2">2dp</dimen>
+    <dimen name="width_24">24dp</dimen>
+    <dimen name="width_2dp">3dp</dimen>
+    <dimen name="width_32">32dp</dimen>
+    <dimen name="width_32_neg">-32dp</dimen>
+    <dimen name="width_4">4dp</dimen>
+    <dimen name="width_4dp">6dp</dimen>
+    <dimen name="width_8">8dp</dimen>
+</resources>

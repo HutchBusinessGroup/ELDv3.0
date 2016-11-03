@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hutchgroup.elog.ViolationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_bg_round_nine"
+        android:padding="24dp"
+        android:layout_margin="12dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvSetupWebServiceInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/internet_connection"
+            android:layout_weight="1"
+            style="@style/BigTextLabelStyle" />
+
+        <Button
+            android:id="@+id/btnTryAgain"
+            style="@style/buttonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/button_bg"
+            android:text="Try Again" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnNext"
+        style="@style/buttonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_bg"
+        android:text="Next" />
+
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:gravity="center" >
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/android:progressBarStyleLarge"
+            android:indeterminate="true" />
+
+    </RelativeLayout>
+</RelativeLayout>

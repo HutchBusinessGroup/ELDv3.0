@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.hutchgroup.elog.MainActivity">
+
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:theme="@style/AppTheme.AppBarOverlay">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary" />
+
+                <LinearLayout
+                    android:id="@+id/flagBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:background="@drawable/flag_bar_img"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp">
+
+                    <ImageView
+                        android:id="@+id/ivDriver"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_driver_inactive" />
+
+                    <ImageView
+                        android:id="@+id/icGPS"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_gps_off" />
+
+                    <ImageView
+                        android:id="@+id/icNetwork"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_network_off" />
+
+                    <ImageView
+                        android:id="@+id/icWifi"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_wifi_on" />
+
+                    <ImageView
+                        android:id="@+id/icWebService"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_web_service_on" />
+
+                    <ImageView
+                        android:id="@+id/icCanbus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_canbus_disconnect" />
+
+                    <ImageView
+                        android:id="@+id/icBattery"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="6dp"
+                        android:src="@drawable/ic_flagbar_battery_full" />
+
+                    <ImageView
+                        android:id="@+id/icInspection"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_dvir_pending" />
+
+                    <ImageView
+                        android:id="@+id/icMessage"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_message" />
+
+                    <ImageView
+                        android:id="@+id/icViolation"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_violation" />
+
+                    <ImageView
+                        android:id="@+id/icCertify_Log"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_certify" />
+
+                    <ImageView
+                        android:id="@+id/icTPMS"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/ic_flagbar_tpms" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="" />
+
+                    <TextView
+                        android:id="@+id/tvLoginName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gary"
+                        android:textColor="@color/green2"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </android.support.design.widget.AppBarLayout>
+
+            <include layout="@layout/content_drawer" />
+
+        </android.support.design.widget.CoordinatorLayout>
+
+
+        <!--  <include
+              layout="@layout/app_bar_drawer"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" />-->
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="@dimen/drawer_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/my"
+                    layout="@layout/nav_header_drawer" />
+
+                <ListView
+
+                    android:id="@+id/lvDrawer"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="7"
+                    android:divider="#1A000000"
+                    android:dividerHeight="1dp"></ListView>
+            </LinearLayout>
+        </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>
+
+    <View
+        android:id="@+id/restView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:clickable="true"
+        android:visibility="invisible" />
+
+    <include
+        android:id="@+id/fab_layout"
+        layout="@layout/fab_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/loadingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/tvFreeze"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/freeze_background"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include
+            layout="@layout/freeze_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/alertlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        layout="@layout/alertbtb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

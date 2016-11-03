@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_inspector_mode"
+        android:icon="@drawable/ic_actionbar_inspector"
+        android:orderInCategory="98"
+        android:title="Inspector Mode"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_malfunction"
+        android:icon="@drawable/ic_freeze_malfunction"
+        android:orderInCategory="99"
+        android:title="Malfunction"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_diagnostic"
+        android:icon="@drawable/ic_freeze_diagnostic"
+        android:orderInCategory="100"
+        android:title="Diagnostic"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_confirm_web_event"
+        android:icon="@drawable/ic_driver"
+        android:orderInCategory="101"
+        android:title="@string/action_confirm_web_event"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/action_reject_web_event"
+        android:icon="@drawable/ic_driver"
+        android:orderInCategory="102"
+        android:title="@string/action_reject_web_event"
+        app:showAsAction="always|withText" />
+
+    <item
+        android:id="@+id/action_back_one_day"
+        android:icon="@drawable/ic_back"
+        android:orderInCategory="105"
+        android:title="@string/action_back_one_day"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_forward_one_day"
+        android:icon="@drawable/ic_forward"
+        android:orderInCategory="106"
+        android:title="@string/action_forward_one_day"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_send"
+        android:icon="@drawable/ic_share_24"
+        android:orderInCategory="108"
+        android:title="Send CSV"
+        app:showAsAction="always" />
+</menu>

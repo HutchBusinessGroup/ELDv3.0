@@ -1,0 +1,315 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/GreyLight"
+    tools:context="com.hutchgroup.elog.fragments.SettingsFragment">
+
+    <ScrollView
+        android:id="@+id/layoutSystemInfor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg_round_nine"
+            android:orientation="vertical"
+            android:layout_marginTop="6dp"
+            android:paddingBottom="32dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SettingsTitleStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="System Information - System" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="@dimen/height_percent_4"
+                    android:layout_marginTop="@dimen/height_percent_4"></View>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/width_8"
+                    android:layout_marginStart="@dimen/width_8"
+                    android:src="@drawable/ic_setting_android_ver" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_android_version" />
+
+                    <TextView
+                        android:id="@+id/tvAndroidVersion"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_default_rule" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/SettingSeprator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/width_8"
+                    android:layout_marginStart="@dimen/width_8"
+                    android:src="@drawable/ic_setting_eld_ver" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_app_version" />
+
+                    <TextView
+                        android:id="@+id/tvAppVersion"
+                        android:text="@string/settings_default_rule"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/SettingSeprator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/width_8"
+                    android:layout_marginStart="@dimen/width_8"
+                    android:src="@drawable/ic_setting_imei" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_imei" />
+
+                    <TextView
+                        android:id="@+id/tvIMEI"
+                        android:text="@string/settings_default_rule"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/SettingSeprator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/width_8"
+                    android:layout_marginStart="@dimen/width_8"
+                    android:src="@drawable/ic_setting_battery" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_battery_level" />
+
+                    <TextView
+                        android:id="@+id/tvBatteryLevel"
+                        android:text="@string/settings_default_battery"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/SettingSeprator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"></LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/width_8"
+                    android:layout_marginStart="@dimen/width_8"
+                    android:src="@drawable/ic_setting_bluetooth" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings_bluetooth_name" />
+
+                    <TextView
+                        android:id="@+id/tvBluetoothName"
+                        android:text="@string/settings_default_rule"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/layoutSettingsScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fillViewport="false"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/layoutSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_percent_40"
+                    android:background="@color/light_blue"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="@dimen/height_percent_40"
+                    android:background="@color/colorPrimary"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/height_percent_16"
+                    android:layout_height="@dimen/height_percent_16"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="@dimen/height_percent_5"
+                    android:background="@drawable/circle_button_white"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/height_percent_12"
+                        android:layout_height="@dimen/height_percent_12"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_drawer_settings" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/height_percent_25"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/height_percent_1"
+                    android:paddingRight="@dimen/height_percent_1">
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="?attr/actionBarSize"
+                        app:tabMaxWidth="0dp"
+                        app:tabGravity="fill"
+                        app:tabMode="fixed" />
+
+                    <com.hutchgroup.elog.fragments.ScrollableViewpager
+                        android:id="@+id/pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/butBack"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footer_button_height"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_bg"
+        android:text="@string/button_back"
+        android:visibility="gone"/>
+</LinearLayout>

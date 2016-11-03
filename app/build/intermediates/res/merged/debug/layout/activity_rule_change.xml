@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/f5f5f5"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dialog_icon_size"
+            android:layout_height="@dimen/dialog_icon_size"
+            style="@style/DialogIconStyle" />
+
+        <TextView
+            style="@style/DialogTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="Hutch ELD supported rules" />
+
+        <ImageButton
+            android:id="@+id/imgCancel"
+            android:layout_width="@dimen/dialog_close_icon_size"
+            android:layout_height="@dimen/dialog_close_icon_size"
+            style="@style/DialogCloseStyle"/>
+    </LinearLayout>
+
+    <View
+        style="@style/DialogTitleSeprator"
+        android:layout_width="match_parent"
+        android:layout_height="2dp">
+
+    </View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="12dp">
+
+        <LinearLayout
+            android:id="@+id/layoutCanadaRule1"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/rule_selector">
+
+            <TextView
+                android:id="@+id/tvCanadaRule1"
+                style="@style/RuleTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/canada_rule_1" />
+        </LinearLayout>
+
+        <View
+            style="@style/SettingSeprator.ChangeRule"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+
+        </View>
+
+        <LinearLayout
+            android:id="@+id/layoutCanadaRule2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/rule_selector">
+
+            <TextView
+                android:id="@+id/tvCanadaRule2"
+                style="@style/RuleTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/canada_rule_2" />
+        </LinearLayout>
+
+        <View
+            style="@style/SettingSeprator.ChangeRule"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+
+        </View>
+
+        <LinearLayout
+            android:id="@+id/layoutUSRule1"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/rule_selector">
+
+            <TextView
+                android:id="@+id/tvUSRule1"
+                style="@style/RuleTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/us_rule_1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/butRuleSave"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/footer_button_height"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg"
+            android:text="@string/button_save" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

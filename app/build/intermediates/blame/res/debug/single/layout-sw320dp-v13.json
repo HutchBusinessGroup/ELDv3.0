@@ -1,0 +1,242 @@
+[
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\inspection_item.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\inspection_item.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\nav_header_drawer.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\nav_header_drawer.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\uncertified_row_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\uncertified_row_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_new_inspection.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\activity_new_inspection.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\diagnostic_item.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\diagnostic_item.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\violation_row_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\violation_row_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\diagnostic_item.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\diagnostic_item.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\freeze_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\freeze_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\elog_scrollview_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\elog_scrollview_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_daily_log_dashboard.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\fragment_daily_log_dashboard.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\nav_header_drawer.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\nav_header_drawer.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_daily_log_dashboard.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\fragment_daily_log_dashboard.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_new_inspection.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\activity_new_inspection.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_new_inspection.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\activity_new_inspection.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\violation_row_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\violation_row_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_duty_status_change.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\activity_duty_status_change.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_defect_selection.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\activity_defect_selection.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\freeze_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\freeze_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_detail_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\fragment_detail_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\inspection_item.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\inspection_item.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_duty_status_change.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\activity_duty_status_change.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_daily_log_dashboard_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\fragment_daily_log_dashboard_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\uncertified_row_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\uncertified_row_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\uncertified_row_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\uncertified_row_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\elog_scrollview_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\elog_scrollview_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_new_inspection.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\activity_new_inspection.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\dialog_color_picker.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\dialog_color_picker.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\violation_row_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\violation_row_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_daily_log_dashboard_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\fragment_daily_log_dashboard_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fab_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\fab_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_daily_log_dashboard_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\fragment_daily_log_dashboard_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\inspection_item.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\inspection_item.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fab_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\fab_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\dialog_color_picker.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\dialog_color_picker.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fab_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\fab_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_daily_log_dashboard.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\fragment_daily_log_dashboard.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\diagnostic_item.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\diagnostic_item.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\freeze_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\freeze_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_duty_status_change.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\activity_duty_status_change.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\nav_header_drawer.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\nav_header_drawer.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\nav_header_drawer.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\nav_header_drawer.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\inspection_item.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\inspection_item.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_detail_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\fragment_detail_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_defect_selection.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\activity_defect_selection.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\dialog_color_picker.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\dialog_color_picker.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_detail_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\fragment_detail_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\diagnostic_item.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\diagnostic_item.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\elog_scrollview_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\elog_scrollview_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\uncertified_row_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\uncertified_row_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_detail_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\fragment_detail_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\freeze_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\freeze_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_defect_selection.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\activity_defect_selection.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\elog_scrollview_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\elog_scrollview_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\dialog_color_picker.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\dialog_color_picker.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_defect_selection.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout-sw320dp\\activity_defect_selection.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\activity_duty_status_change.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\activity_duty_status_change.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_daily_log_dashboard.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\fragment_daily_log_dashboard.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\violation_row_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\layout-sw320dp\\violation_row_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fragment_daily_log_dashboard_portrait.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout-sw320dp\\fragment_daily_log_dashboard_portrait.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw320dp-v13\\fab_layout.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout-sw320dp\\fab_layout.xml"
+    }
+]
