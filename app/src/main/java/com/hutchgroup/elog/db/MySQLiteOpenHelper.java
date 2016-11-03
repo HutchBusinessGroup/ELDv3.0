@@ -26,6 +26,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String TABLE_VERSION_INFORMATION = "Version_Information";
     public static final String TABLE_SETTINGS = "Settings";
     public static final String TABLE_DIAGNOSTIC_INDICATOR = "DiagnosticIndicator";
+    public static final String TABLE_DTC = "DTCCODE";
 
     public static final String COLUMN_ID = "_id";
     private static final String DATABASE_NAME = "EDL.db";
@@ -112,6 +113,11 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + TABLE_DIAGNOSTIC_INDICATOR
             + "("
             + "_id INTEGER PRIMARY KEY AUTOINCREMENT,PowerDiagnosticFg INTEGER, EngineSynchronizationDiagnosticFg INTEGER, MissingElementDiagnosticFg INTEGER, DataTransferDiagnosticFg INTEGER, UnidentifiedDrivingDiagnosticFg INTEGER, OtherELDIdentifiedDiagnosticFg INTEGER, PowerMalfunctionFg INTEGER, EngineSynchronizationMalfunctionFg INTEGER, TimingMalfunctionFg INTEGER, PositioningMalfunctionFg INTEGER, DataRecordingMalfunctionFg INTEGER, DataTransferMalfunctionFg INTEGER, OtherELDDetectedMalfunctionFg INTEGER)";
+
+    private static final String TABLE_CREATE_DTC = "create table "
+            + TABLE_DTC
+            + "("
+            + "_id INTEGER PRIMARY KEY AUTOINCREMENT,DateTime text,spn INTEGER, Protocol text, spnDescription text, fmi INTEGER, fmiDescription text,Occurrence INTEGER, SyncFg INTEGER, status INTEGER)";
 
     private static final String DATABASE_ALTER_DAILYLOG_DRIVINGTIMEREMAINING = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN DrivingTimeRemaining INTEGER";
     private static final String DATABASE_ALTER_DAILYLOG_WORKSHIFTTIMEREMAINING = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN WorkShiftTimeRemaining INTEGER";
