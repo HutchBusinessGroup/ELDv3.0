@@ -33,6 +33,7 @@ import android.widget.Toast;
 import com.hutchgroup.elog.ELogApplication;
 import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.beans.AppSettings;
+import com.hutchgroup.elog.beans.DTCBean;
 import com.hutchgroup.elog.beans.DutyStatusBean;
 import com.hutchgroup.elog.beans.LocationBean;
 import com.hutchgroup.elog.beans.SettingsBean;
@@ -99,6 +100,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static boolean NightModeFg = false;
     public static boolean InspectorModeFg = false;
     public static int LogId = 0;
+    public static ArrayList<DTCBean> dtcList = new ArrayList<>();
 
     public static boolean hasPermissions(String... permissions) {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {

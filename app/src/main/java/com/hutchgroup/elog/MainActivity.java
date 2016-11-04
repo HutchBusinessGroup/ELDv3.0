@@ -105,6 +105,7 @@ import com.hutchgroup.elog.fragments.DockingFragment;
 import com.hutchgroup.elog.fragments.DriverProfileFragment;
 import com.hutchgroup.elog.fragments.DvirFragment;
 import com.hutchgroup.elog.fragments.ELogFragment;
+import com.hutchgroup.elog.fragments.ExtraFragment;
 import com.hutchgroup.elog.fragments.InspectLogFragment;
 import com.hutchgroup.elog.fragments.LoginFragment;
 import com.hutchgroup.elog.fragments.MessageFragment;
@@ -167,6 +168,7 @@ public class MainActivity extends ELogMainActivity
     private final int TPMS = 11;
     public final int Login_Screen = 12;
     public final int Driver_Profile_Screen = 13;
+    private final int Extra = 14;
     public static Date ViolationDT;
 
     BluetoothAdapter adapter = null;
@@ -683,8 +685,6 @@ public class MainActivity extends ELogMainActivity
             bean.setId(R.id.daily_log);
             bean.setItem("ELD");
             bean.setIcon(R.drawable.ic_drawer_eld);
-
-
         }
 
         lstDrawerItems.add(bean);
@@ -710,6 +710,12 @@ public class MainActivity extends ELogMainActivity
             bean.setId(R.id.settings);
             bean.setItem("Settings");
             bean.setIcon(R.drawable.ic_drawer_settings);
+            lstDrawerItems.add(bean);
+
+            bean = new DrawerItemBean();
+            bean.setId(R.id.extra);
+            bean.setItem("Extra");
+            bean.setIcon(R.drawable.ic_drawer_eld);
             lstDrawerItems.add(bean);
         }
 
@@ -768,7 +774,15 @@ public class MainActivity extends ELogMainActivity
             getSupportActionBar().setTitle("Settings");
             previousScreen = currentScreen;
             currentScreen = TPMS;
-        } else if (id == R.id.message) {
+        } else if (id == R.id.extra) {
+            isOnDailyLog = false;
+            bInspectDailylog = false;
+            replaceFragment(ExtraFragment.newInstance());
+            getSupportActionBar().setTitle("Extra");
+            previousScreen = currentScreen;
+            currentScreen = TPMS;
+        }
+        else if (id == R.id.message) {
             isOnDailyLog = false;
             bInspectDailylog = false;
             replaceFragment(UserListFragment.newInstance());

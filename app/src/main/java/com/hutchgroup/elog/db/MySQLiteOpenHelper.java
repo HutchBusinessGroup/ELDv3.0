@@ -30,7 +30,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     public static final String COLUMN_ID = "_id";
     private static final String DATABASE_NAME = "EDL.db";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     private static final String TABLE_CREATE_CARRIER = "create table "
             + TABLE_CARRIER
@@ -152,6 +152,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(TABLE_CREATE_VERSION_INFORMATION);
         db.execSQL(TABLE_CREATE_SETTINGS);
         db.execSQL(TABLE_CREATE_DIAGNOSTIC_INDICATOR);
+        db.execSQL(TABLE_CREATE_DTC);
     }
 
     @Override
@@ -180,6 +181,11 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         if (oldVersion<5)
         {
             db.execSQL(DATABASE_DELETE_EVENTS_DIAGNOSTIC);
+        }
+
+        if (oldVersion<6)
+        {
+            db.execSQL(TABLE_CREATE_DTC);
         }
     }
 }

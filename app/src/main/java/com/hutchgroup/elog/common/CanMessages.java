@@ -6,6 +6,7 @@ import java.io.OutputStream;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.UUID;
 
 import android.bluetooth.BluetoothAdapter;
@@ -14,7 +15,9 @@ import android.bluetooth.BluetoothSocket;
 import android.util.Log;
 
 import com.hutchgroup.elog.MainActivity;
+import com.hutchgroup.elog.beans.DTCBean;
 import com.hutchgroup.elog.beans.DiagnosticIndicatorBean;
+import com.hutchgroup.elog.db.DTCDB;
 
 public class CanMessages {
     String TAG = "CanMessages";
@@ -663,11 +666,13 @@ public class CanMessages {
                     //newData.put("TripOdo", out); /* SPN 918 */
                     Log.i(TAG, "Trip Odo = " + out);
                     break;
-               /* case 65226:
+                case 65226:
                     //packet[10] bits 1-2: protect lamp, bits 3-4: amber lamp, bits 5-6: red lamp, bits 7-8: MIL
                     //packet[11] reserved lamp
                     int length = (packet[1] - 11) / 4;
+                    String dtcDateTime = Utility.getCurrentDateTime();
 
+                    ArrayList<DTCBean> newDtcCode = new ArrayList<>();
                     for (i = 0; i < length; i++) {
                         Integer weird = (packet[14 + i * 4] & 0xff);
                         Integer spn = (packet[12 + i * 4] & 0xff);
@@ -679,20 +684,50 @@ public class CanMessages {
 
                         String spnDescription = null;
                         String fmiDescription = null;
-                        if (0 < spn && spn < 7576) {
-                            spnDescription = SPNMap.map[spn];
-                        }
-                        if (0 < fmi && fmi < 32) {
-                            fmiDescription = SPNMap.fmi[fmi];
+
+
+                        boolean dExists = false;
+
+                        for (DTCBean dtc : Utility.dtcList) {
+                            if (spn == dtc.getSpn() && dtc.getStatus() == 1) {
+                                dExists = true;
+                                break;
+                            }
                         }
 
-                        if (spnDescription != null && fmiDescription != null)
+                        if (!dExists) {
+                            if (0 < spn && spn < 7576) {
+                                spnDescription = SPNMap.map[spn];
+                            }
+                            if (0 < fmi && fmi < 32) {
+                                fmiDescription = SPNMap.fmi[fmi];
+                            }
+                            DTCBean dtcBean = new DTCBean();
+                            dtcBean.setSpn(spn);
+                            dtcBean.setSpnDescription(spnDescription);
+                            dtcBean.setFmi(fmi);
+                            dtcBean.setFmiDescription(fmiDescription);
+                            dtcBean.setDateTime(dtcDateTime);
+                            dtcBean.setProtocol("J1939");
+                            dtcBean.setOccurence(oc);
+                            dtcBean.setStatus(1);
+                            Utility.dtcList.add(dtcBean);
+                            newDtcCode.add(dtcBean);
+                        }
+
+
+                        /*if (spnDescription != null && fmiDescription != null)
                             out = String.format("%s, %s, OC %d", spnDescription, fmiDescription, oc);
                         else {
                             out = String.format("SPN %d, FMI %d, OC %d", spn, fmi, oc);
-                        }
+                        }*/
                         // add to database here
 
+                    }
+
+                    if (newDtcCode.size() > 0) {
+                        DTCDB.Save(newDtcCode);
+                        newDtcCode.clear();
                     }
                     // notifyt to ui here
                     break;
@@ -724,7 +759,7 @@ public class CanMessages {
                         // add to database here
                     }
                     // notifyt to ui here
-                    break;*/
+                    break;
                 case 65253:
                     i = (((packet[13] & 0xFF) << 24) | ((packet[12] & 0xFF) << 16)
                             | ((packet[11] & 0xFF) << 8) | ((packet[10] & 0xFF)));
@@ -1303,7 +1338,7 @@ public class CanMessages {
         m_buffer = new byte[4096];
         m_count = 0;
 
-        long[] initPGN_AddFilter = {65265, 65217, 65262, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244};//, 65226, 65227
+        long[] initPGN_AddFilter = {65265, 65217, 65262, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244, 65226, 65227};
 
         long[] initPGN_TxFilter = {65253, 65260, 65257, 65266, 65209, 65244};
 

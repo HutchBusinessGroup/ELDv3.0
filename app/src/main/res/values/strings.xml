@@ -404,6 +404,7 @@
     <string name="gps_start">Start</string>
     <string name="gps_pause">Pause</string>
     <string name="menu_settings">Settings</string>
+    <string name="menu_extra">Extra</string>
     <string name="delete_aiding_data">Clear Aiding Data</string>
     <string name="delete_aiding_data_success">Successfully deleted aiding data.</string>
     <string name="delete_aiding_data_failure">Platform does not support deleting aiding data.

@@ -432,6 +432,10 @@
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\layout\\listview_dialog.xml"
     },
     {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_blank.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_blank.xml"
+    },
+    {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_gps_list.xml",
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_gps_list.xml"
     },
@@ -2138,6 +2142,10 @@
     {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\legal_dialog.xml",
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\layout\\legal_dialog.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_extra.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_extra.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_input_infos.xml",
