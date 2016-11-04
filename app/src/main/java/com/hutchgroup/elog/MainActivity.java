@@ -144,7 +144,7 @@ public class MainActivity extends ELogMainActivity
         NewEventFragment.OnFragmentInteractionListener, DetailFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener,
         UserListFragment.OnFragmentInteractionListener, BluetoothConnectivityFragment.OnFragmentInteractionListener, OutputFileSendDialog.OutputFileDialogInterface,
         DvirFragment.OnFragmentInteractionListener, DailyLogDashboardFragment.OnFragmentInteractionListener, TpmsFragment.OnFragmentInteractionListener, TabSystemFragment.OnFragmentInteractionListener,
-        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener {
+        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener,DTCFragment.OnFragmentInteractionListener {
 
     private PopupDialog ponDutyChangeDialog;
     private boolean onDutyChangeDialogResponse, autoDismissOnDutyChangeDialog, isDialogShown;

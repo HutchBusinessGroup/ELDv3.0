@@ -42,6 +42,7 @@ public class ExtraFragment extends Fragment implements View.OnClickListener {
 
     private void initialize(View view) {
         btnDTC = (ImageButton) view.findViewById(R.id.btnDTC);
+        btnDTC.setOnClickListener(this);
     }
 
     @Override

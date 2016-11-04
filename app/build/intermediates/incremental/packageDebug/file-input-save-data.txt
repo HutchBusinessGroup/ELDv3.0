@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Nov 04 06:11:04 PDT 2016
+#Fri Nov 04 07:10:55 PDT 2016
 100.set=ANDROID_RESOURCE
 57.file=D\:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\trans.png
 145.file=D\:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\design_navigation_menu_item.xml

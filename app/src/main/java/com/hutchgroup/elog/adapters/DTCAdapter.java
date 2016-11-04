@@ -57,7 +57,7 @@ public class DTCAdapter extends ArrayAdapter<DTCBean> {
 
             DTCBean bean = data.get(position);
 
-            viewHolder.tvSerialNo.setText(position + 1);
+            viewHolder.tvSerialNo.setText((position + 1) + "");
             viewHolder.tvSPNDescription.setText(bean.getSpnDescription());
             viewHolder.tvFMIDescription.setText(bean.getFmiDescription());
             viewHolder.tvOccurence.setText(bean.getOccurence());
