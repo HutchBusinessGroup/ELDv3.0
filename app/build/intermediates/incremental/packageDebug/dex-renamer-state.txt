@@ -1,4 +1,4 @@
-#Thu Nov 03 05:34:04 PDT 2016
-base.0=D\:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Fri Nov 04 06:11:01 PDT 2016
+base.0=D\:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=D\:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.0=D\:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

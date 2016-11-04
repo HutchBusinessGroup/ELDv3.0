@@ -28,6 +28,7 @@ public class AutoSyncData extends AsyncTask<String, Void, Boolean> {
                 if (status)
                 {
                     PostCall.PostDVIR();
+                    PostCall.PostDTC();
                 }
 
             }

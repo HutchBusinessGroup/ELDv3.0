@@ -26,6 +26,7 @@ public class PostData extends AsyncTask<String, Void, Boolean> {
             if (status)
             {
                 PostCall.PostDVIR();
+                PostCall.PostDTC();
             }
         }
         return status;

@@ -1,34 +1,10 @@
 [
     {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\xml\\preferences.xml"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\xml\\timezones.xml",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\xml\\timezones.xml"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\xml\\preferences.xml"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\timezones.xml",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\xml\\timezones.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\timezones.xml",
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\xml\\timezones.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\xml\\preferences.xml"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\timezones.xml",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\xml\\timezones.xml"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\xml\\preferences.xml"
     }
 ]

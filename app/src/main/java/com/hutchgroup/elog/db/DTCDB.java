@@ -139,10 +139,12 @@ public class DTCDB {
                 obj.put("SpnDescription", cursor.getString(cursor.getColumnIndex("spnDescription")));
                 obj.put("FMI", cursor.getInt(cursor.getColumnIndex("fmi")));
                 obj.put("FmiDescription", cursor.getString(cursor.getColumnIndex("fmiDescription")));
-                obj.put("DateTime", cursor.getString(cursor.getColumnIndex("DateTime")));
+                obj.put("DTCDateTime", Utility.getDateTimeForServer(cursor.getString(cursor.getColumnIndex("DateTime"))));
                 obj.put("Protocol", cursor.getString(cursor.getColumnIndex("Protocol")));
                 obj.put("Occurrence", cursor.getInt(cursor.getColumnIndex("Occurrence")));
-                obj.put("Status", cursor.getInt(cursor.getColumnIndex("status")));
+                obj.put("DTCStatus", cursor.getInt(cursor.getColumnIndex("status")));
+                obj.put("VehicleId", Utility.vehicleId);
+                obj.put("DriverId", Utility.onScreenUserId);
                 array.put(obj);
             }
 
@@ -157,6 +159,38 @@ public class DTCDB {
 
             } catch (Exception e2) {
                 // TODO: handle exception
+            }
+        }
+        return array;
+    }
+
+    // Created By: Deepak Sharma
+    // Created Date: 27 July 2016
+    // Purpose: update DVIR for web sync
+    public static JSONArray DTCSyncUpdate() {
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+        JSONArray array = new JSONArray();
+        int inspectionId = 0;
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("SyncFg", 1);
+            database.update(MySQLiteOpenHelper.TABLE_DTC, values,
+                    " SyncFg=?", new String[]{"0"});
+
+        } catch (Exception exe) {
+            Utility.printError(exe.getMessage());
+            LogFile.write(DTCDB.class.getName() + "::DVIRSyncUpdate Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                cursor.close();
+                database.close();
+                helper.close();
+            } catch (Exception e) {
+                Utility.printError(e.getMessage());
             }
         }
         return array;

@@ -23,4 +23,5 @@ public class WebUrl {
     public final static String POST_MESSAGE_SYNC= BASE_URL+ "Post/MessageSync";
     public final static String POST_ACCOUNT= BASE_URL+ "Account/Post";
     public final static String POST_DVIR= BASE_URL+ "DVIR/Post";
+    public final static String POST_DTC= BASE_URL+ "DTC/Post";
 }

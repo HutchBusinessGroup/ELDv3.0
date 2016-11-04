@@ -1,18 +1,6 @@
 [
     {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-v8\\freeze_background.jpg",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-3.0.0\\app\\src\\main\\res\\drawable-night\\freeze_background.jpg"
-    },
-    {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-v8\\freeze_background.jpg",
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\drawable-night\\freeze_background.jpg"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-v8\\freeze_background.jpg",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\E-Log\\app\\src\\main\\res\\drawable-night\\freeze_background.jpg"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-night-v8\\freeze_background.jpg",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELD-v3.0.0\\app\\src\\main\\res\\drawable-night\\freeze_background.jpg"
     }
 ]

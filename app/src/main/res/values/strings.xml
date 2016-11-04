@@ -205,6 +205,7 @@
     <string name="title_tpms">TPMS</string>
     <string name="title_edit_event">Edit Event</string>
     <string name="title_inspect_dailylog">Log date:</string>
+    <string name="title_dtc">DTC</string>
 
     <string name="event_origin_automatically">Automatically</string>
     <string name="event_origin_edited">Edited</string>

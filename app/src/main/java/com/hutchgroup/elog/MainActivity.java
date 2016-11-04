@@ -99,6 +99,7 @@ import com.hutchgroup.elog.db.TripInspectionDB;
 import com.hutchgroup.elog.db.UserDB;
 import com.hutchgroup.elog.db.VersionInformationDB;
 import com.hutchgroup.elog.fragments.BluetoothConnectivityFragment;
+import com.hutchgroup.elog.fragments.DTCFragment;
 import com.hutchgroup.elog.fragments.DailyLogDashboardFragment;
 import com.hutchgroup.elog.fragments.DetailFragment;
 import com.hutchgroup.elog.fragments.DockingFragment;
@@ -143,7 +144,7 @@ public class MainActivity extends ELogMainActivity
         NewEventFragment.OnFragmentInteractionListener, DetailFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener,
         UserListFragment.OnFragmentInteractionListener, BluetoothConnectivityFragment.OnFragmentInteractionListener, OutputFileSendDialog.OutputFileDialogInterface,
         DvirFragment.OnFragmentInteractionListener, DailyLogDashboardFragment.OnFragmentInteractionListener, TpmsFragment.OnFragmentInteractionListener, TabSystemFragment.OnFragmentInteractionListener,
-        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage {
+        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener {
 
     private PopupDialog ponDutyChangeDialog;
     private boolean onDutyChangeDialogResponse, autoDismissOnDutyChangeDialog, isDialogShown;
@@ -169,6 +170,7 @@ public class MainActivity extends ELogMainActivity
     public final int Login_Screen = 12;
     public final int Driver_Profile_Screen = 13;
     private final int Extra = 14;
+    private final int DTC = 15;
     public static Date ViolationDT;
 
     BluetoothAdapter adapter = null;
@@ -780,9 +782,8 @@ public class MainActivity extends ELogMainActivity
             replaceFragment(ExtraFragment.newInstance());
             getSupportActionBar().setTitle("Extra");
             previousScreen = currentScreen;
-            currentScreen = TPMS;
-        }
-        else if (id == R.id.message) {
+            currentScreen = Extra;
+        } else if (id == R.id.message) {
             isOnDailyLog = false;
             bInspectDailylog = false;
             replaceFragment(UserListFragment.newInstance());
@@ -4499,4 +4500,18 @@ public class MainActivity extends ELogMainActivity
         } catch (Exception exe) {
         }
     }
+
+    @Override
+    public void onLoadDTC() {
+        isOnDailyLog = false;
+        bInspectDailylog = false;
+
+        replaceFragment(DTCFragment.newInstance());
+        previousScreen = currentScreen;
+        currentScreen = DTC;
+        title = getApplicationContext().getResources().getString(R.string.title_dtc);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(title);
+    }
+
 }
