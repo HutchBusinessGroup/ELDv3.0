@@ -84,7 +84,7 @@ public class CanMessages {
             TotalIdleFuelConsumed = "0", TotalIdleHours = "0", TotalAverage = "0";
     private static int supportedProtocol;
 
-    public static long diagnosticEngineSynchronizationTime = 0;
+    public static long diagnosticEngineSynchronizationTime = System.currentTimeMillis();
 
     public CanMessages() {
         mAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -1538,7 +1538,7 @@ public class CanMessages {
                 } else if (timeDifference > BTB_ERROR_INTERVAL) {
                     if (!btbError) {
                         btbError = true;
-                        if (mCanListner != null) {
+                        if (mCanListner != null && !ConstantFlag.Flag_Development) {
                             mCanListner.onAlertError();
                         }
                     }
@@ -1551,7 +1551,7 @@ public class CanMessages {
                         // startDiagnosticTimer();
                         Utility.saveDiagnosticTime(true);
 
-                        if (mCanListner != null) {
+                        if (mCanListner != null && !ConstantFlag.Flag_Development) {
                             mCanListner.onAlertWarning();
                         }
                     }

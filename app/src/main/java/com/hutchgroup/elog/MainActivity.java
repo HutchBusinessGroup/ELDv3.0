@@ -1290,7 +1290,7 @@ public class MainActivity extends ELogMainActivity
         vAlertBorder = findViewById(R.id.vBorder);
         tvAlertHeader = (TextView) findViewById(R.id.tvHeader);
         tvAlertMessage = (TextView) findViewById(R.id.tvMessage);
-        if (CanMessages.mState != CanMessages.STATE_CONNECTED) {
+        if (CanMessages.mState != CanMessages.STATE_CONNECTED && !ConstantFlag.Flag_Development) {
             onAlertWarning();
         }
     }

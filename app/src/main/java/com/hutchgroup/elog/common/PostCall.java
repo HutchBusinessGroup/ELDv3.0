@@ -99,6 +99,9 @@ public class PostCall {
         try {
 
             String data = UserDB.accountSyncGet();
+
+            if (data.equals(""))
+                return status;
             String result = ws.doPost(
                     WebUrl.POST_ACCOUNT,
                     data);
@@ -123,6 +126,11 @@ public class PostCall {
 
         try {
             String data = TripInspectionDB.getDVIRSync().toString();
+
+            if (data.equals("[]")) {
+                return status;
+            }
+
             String result = ws.doPost(
                     WebUrl.POST_DVIR,
                     data);
@@ -147,6 +155,10 @@ public class PostCall {
 
         try {
             String data = DTCDB.getDTCCodeSync().toString();
+            if (data.equals("[]")) {
+                return status;
+            }
+
             String result = ws.doPost(
                     WebUrl.POST_DTC,
                     data);

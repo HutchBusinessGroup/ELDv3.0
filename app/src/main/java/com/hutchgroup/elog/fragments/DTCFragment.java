@@ -63,7 +63,7 @@ public class DTCFragment extends Fragment {
         list.add(dtcBean);
 
         dtcBean = new DTCBean();
-        dtcBean.setSpn(2322);
+        dtcBean.setSpn(2323);
         dtcBean.setSpnDescription("Transmission Synchronizer Clutch Value");
         dtcBean.setFmi(322);
         dtcBean.setFmiDescription("Special Instructions");
@@ -75,7 +75,7 @@ public class DTCFragment extends Fragment {
         list.add(dtcBean);
 
         dtcBean = new DTCBean();
-        dtcBean.setSpn(2322);
+        dtcBean.setSpn(2324);
         dtcBean.setSpnDescription("Engine Blower Bypass Valve Position");
         dtcBean.setFmi(322);
         dtcBean.setFmiDescription("Current Below Normal");
@@ -87,7 +87,7 @@ public class DTCFragment extends Fragment {
         list.add(dtcBean);
 
         dtcBean = new DTCBean();
-        dtcBean.setSpn(2322);
+        dtcBean.setSpn(2325);
         dtcBean.setSpnDescription("Engine Oil Filter Differential Pressure");
         dtcBean.setFmi(322);
         dtcBean.setFmiDescription("Root Cause Unknown");
@@ -99,7 +99,7 @@ public class DTCFragment extends Fragment {
         list.add(dtcBean);
 
         dtcBean = new DTCBean();
-        dtcBean.setSpn(2322);
+        dtcBean.setSpn(2326);
         dtcBean.setSpnDescription("Engine Governor Droop");
         dtcBean.setFmi(322);
         dtcBean.setFmiDescription("Reserved");
@@ -111,7 +111,7 @@ public class DTCFragment extends Fragment {
         list.add(dtcBean);
 
         dtcBean = new DTCBean();
-        dtcBean.setSpn(2322);
+        dtcBean.setSpn(2327);
         dtcBean.setSpnDescription("Engine Injector Metering Rail 2 Pressure");
         dtcBean.setFmi(322);
         dtcBean.setFmiDescription("Reserved");
@@ -138,8 +138,9 @@ public class DTCFragment extends Fragment {
 
     private void initialize(View view) {
         ArrayList<DTCBean> list = DTCDB.getDTCCode();
-        list = testList();
-
+       /* list = testList();
+        DTCDB.Save(list);
+*/
         ArrayList<DTCBean> activeList = new ArrayList<>();
         ArrayList<DTCBean> inactiveList = new ArrayList<>();
         for (DTCBean bean : list) {

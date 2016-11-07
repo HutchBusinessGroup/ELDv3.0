@@ -131,7 +131,7 @@ public class DTCDB {
 
             cursor = database.rawQuery("select DateTime, spn, Protocol, spnDescription ,fmi ,fmiDescription ,Occurrence, status from "
                             + MySQLiteOpenHelper.TABLE_DTC + " Where SyncFg=0"
-                    , new String[]{Utility.getCurrentDate()});
+                    , null);
 
             while (cursor.moveToNext()) {
                 JSONObject obj = new JSONObject();
