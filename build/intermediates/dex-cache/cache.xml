@@ -3,6 +3,24 @@
 
     <item
         is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-23.3.0_15400be5edfe22e0cfa4da3c17b090cc856d654d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\libs\additionnal.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\additionnal_00853795ce97ed6e99c52e8abc709571dd3a531d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -21,6 +39,33 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.3.0_cd12fa36c7a890191f4e53128b0624d319125d94.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Dev-1\.gradle\caches\modules-2\files-2.1\org.jbundle.util.osgi.wrapped\org.jbundle.util.osgi.wrapped.org.apache.http.client\4.1.2\98c86e42679fe7ac066f6c242e0d14f0bce0bb7c\org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="98c86e42679fe7ac066f6c242e0d14f0bce0bb7c">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\org.jbundle.util.osgi.wrapped.org.apache.http.client-4.1.2_2f08b74c86eac42a59be7bd4e300739862dc326b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\com.android.support-design-23.3.0_26c7f7b0072474793eca15ec2d9bd09ed703336b.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\Projects\Android\AndroidStudioProjects\E-Log\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -36,6 +81,15 @@
         revision="23.0.1"
         sha1="debf30ce0a7560396b6235edef77e447006454c2">
         <dex dex="D:\Projects\Android\AndroidStudioProjects\E-Log\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.3.0_dd0311f8bcb9b0183a37fb5ee82dd932db09502b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Dev-1\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\support-annotations-23.3.0_59ff3d0820db89904595ee82e53acbdc021d79d6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -84,6 +138,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\libs\mail.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\mail_1dee257d0b8d72f57d2bcd541183a16914fda812.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\Projects\Android\AndroidStudioProjects\E-Log\app\libs\mail.jar"
         jumboMode="true"
         optimize="true"
@@ -129,6 +192,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\com.android.support-recyclerview-v7-23.3.0_7bcc32c8d184ed63bb54aaa07f5b06b99847eabb.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\libs\activation.jar"
         jumboMode="true"
         optimize="true"
@@ -138,12 +210,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.3.0_91ecd4c9ff17b4848168f2ee8ed3a663bfa90b12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.3.0_c018b458fdd33b7ca64a8ab6cc30aab29c0e13e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\Projects\Android\AndroidStudioProjects\E-Log\app\libs\activation.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
         sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
         <dex dex="D:\Projects\Android\AndroidStudioProjects\E-Log\app\build\intermediates\pre-dexed\debug\activation_c64828699d202368acee1e34b055a9874e3e11c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\libs\activation.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\activation_91271e76677b84cf8557d76ecc19cdb570757fe0.jar" />
     </item>
     <item
         is-multidex="false"
@@ -162,6 +261,15 @@
         revision="23.0.1"
         sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
         <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.3.0_91ecd4c9ff17b4848168f2ee8ed3a663bfa90b12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\release\internal_impl-23.3.0_ddfbf25171f7ad18c65eb7725fde072a54d10bb5.jar" />
     </item>
     <item
         is-multidex="false"
@@ -196,7 +304,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="6885f93704249956f3b3d1966cec4fea64a5e088">
+        sha1="40185a3c19430e290017ef1b04074b1e10090ba1">
         <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_bd1c1a57832177e88a20b6e6a5f5f0ce0e493b65.jar" />
     </item>
     <item
@@ -232,7 +340,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="b5905abb5c573fc83a00816ada56e83aa6f85a1f">
+        sha1="0c4f25ce03773573b8ac4d07165fd9d0d062bf2a">
         <dex dex="D:\Projects\Android\AndroidStudioProjects\ELDv3.0\app\build\intermediates\pre-dexed\debug\instant-run_5d8097cfa329d3f337f989387b8917e0b47605a1.jar" />
     </item>
 

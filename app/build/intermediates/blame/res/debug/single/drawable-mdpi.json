@@ -124,12 +124,12 @@
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_messages.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_user.png",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_user.png"
-    },
-    {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_add.png",
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_add.png"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_user.png",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_user.png"
     },
     {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_unchecked_hover.png",
