@@ -689,7 +689,7 @@ public class CanMessages {
                         boolean dExists = false;
 
                         for (DTCBean dtc : Utility.dtcList) {
-                            if (spn == dtc.getSpn() && dtc.getStatus() == 1) {
+                            if (spn == dtc.getSpn() && fmi == dtc.getFmi() && oc == dtc.getOccurence() && dtc.getStatus() == 1) {
                                 dExists = true;
                                 break;
                             }
@@ -698,10 +698,15 @@ public class CanMessages {
                         if (!dExists) {
                             if (0 < spn && spn < 7576) {
                                 spnDescription = SPNMap.map[spn];
-                            }
+                            } else
+                                spnDescription = "Contact manufacture";
+
                             if (0 < fmi && fmi < 32) {
                                 fmiDescription = SPNMap.fmi[fmi];
+                            } else {
+                                fmiDescription = "Contact manufacture";
                             }
+
                             DTCBean dtcBean = new DTCBean();
                             dtcBean.setSpn(spn);
                             dtcBean.setSpnDescription(spnDescription);
@@ -733,7 +738,9 @@ public class CanMessages {
                     break;
                 case 65227:
                     length = (packet[1] - 11) / 4;
+                    dtcDateTime = Utility.getCurrentDateTime();
 
+                    newDtcCode = new ArrayList<>();
                     for (i = 0; i < length; i++) {
                         Integer weird = (packet[14 + i * 4] & 0xff);
                         Integer spn = (packet[12 + i * 4] & 0xff);
@@ -744,19 +751,53 @@ public class CanMessages {
                         if (spn == 0) break;
                         String spnDescription = null;
                         String fmiDescription = null;
-                        if (0 < spn && spn < 7576) {
-                            spnDescription = SPNMap.map[spn];
-                        }
-                        if (0 < fmi && fmi < 32) {
-                            fmiDescription = SPNMap.fmi[fmi];
+
+                        boolean dExists = false;
+
+                        for (DTCBean dtc : Utility.dtcList) {
+                            if (spn == dtc.getSpn() && fmi == dtc.getFmi() && oc == dtc.getOccurence() && dtc.getStatus() == 0) {
+                                dExists = true;
+                                break;
+                            }
                         }
 
-                        if (spnDescription != null && fmiDescription != null)
+                        if (!dExists) {
+                            if (0 < spn && spn < 7576) {
+                                spnDescription = SPNMap.map[spn];
+                            } else
+                                spnDescription =  "Contact manufacture";
+
+                            if (0 < fmi && fmi < 32) {
+                                fmiDescription = SPNMap.fmi[fmi];
+                            } else {
+                                fmiDescription = "Contact manufacture";
+                            }
+
+                            DTCBean dtcBean = new DTCBean();
+                            dtcBean.setSpn(spn);
+                            dtcBean.setSpnDescription(spnDescription);
+                            dtcBean.setFmi(fmi);
+                            dtcBean.setFmiDescription(fmiDescription);
+                            dtcBean.setDateTime(dtcDateTime);
+                            dtcBean.setProtocol("J1939");
+                            dtcBean.setOccurence(oc);
+                            dtcBean.setStatus(0);
+                            Utility.dtcList.add(dtcBean);
+                            newDtcCode.add(dtcBean);
+                        }
+
+
+                        /*if (spnDescription != null && fmiDescription != null)
                             out = String.format("%s, %s, OC %d", spnDescription, fmiDescription, oc);
                         else {
                             out = String.format("SPN %d, FMI %d, OC %d", spn, fmi, oc);
-                        }
+                        }*/
                         // add to database here
+                    }
+
+                    if (newDtcCode.size() > 0) {
+                        DTCDB.Save(newDtcCode);
+                        newDtcCode.clear();
                     }
                     // notifyt to ui here
                     break;

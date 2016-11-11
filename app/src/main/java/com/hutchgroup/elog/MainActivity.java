@@ -144,7 +144,7 @@ public class MainActivity extends ELogMainActivity
         NewEventFragment.OnFragmentInteractionListener, DetailFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener,
         UserListFragment.OnFragmentInteractionListener, BluetoothConnectivityFragment.OnFragmentInteractionListener, OutputFileSendDialog.OutputFileDialogInterface,
         DvirFragment.OnFragmentInteractionListener, DailyLogDashboardFragment.OnFragmentInteractionListener, TpmsFragment.OnFragmentInteractionListener, TabSystemFragment.OnFragmentInteractionListener,
-        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener,DTCFragment.OnFragmentInteractionListener {
+        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener {
 
     private PopupDialog ponDutyChangeDialog;
     private boolean onDutyChangeDialogResponse, autoDismissOnDutyChangeDialog, isDialogShown;
@@ -1330,6 +1330,27 @@ public class MainActivity extends ELogMainActivity
 
                 tvAlertHeader.setText("BTB Connection in progress");
                 tvAlertMessage.setText("Please wait while ELD is connecting to BTB...");
+
+
+                layoutAlertBTB.setVisibility(View.VISIBLE);
+            }
+        });
+    }
+
+
+    @Override
+    public void onAlertVehicleStart() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+
+                imgAlertIcon.setImageResource(R.drawable.ic_warning_36dp);
+                vAlertBorder.setBackgroundColor(getResources().getColor(R.color.yellow2));
+                tvAlertHeader.setTextColor(getResources().getColor(R.color.yellow3));
+
+                tvAlertHeader.setText("Start Engine");
+                tvAlertMessage.setText("Please start vehicle to continue...");
 
 
                 layoutAlertBTB.setVisibility(View.VISIBLE);

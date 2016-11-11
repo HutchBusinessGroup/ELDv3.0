@@ -89,6 +89,62 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     RelativeLayout rlLoadingPanel;
 
     AlertDialog alertDialog;
+    Thread thBTB = null;
+
+    boolean vehicleStarted = false, vehicleStopped = false;
+
+    // Deepak Sharma
+    // 3 Aug 2016
+    // send request to bluetooth device every 5 seconds
+    private void startBTBThread() {
+
+        if (thBTB != null) {
+            thBTB.interrupt();
+            thBTB = null;
+        }
+        thBTB = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException exe) {
+                    }
+
+                    if (CanMessages.mState == CanMessages.STATE_CONNECTED) {
+                        if (Float.valueOf(CanMessages.RPM) > 0f) {
+                            if (!vehicleStarted) {
+                                vehicleStarted = true;
+                                vehicleStopped = false;
+                                if (mListener != null) {
+                                    mListener.onAlertClear();
+                                }
+                            }
+                        } else {
+                            if (!vehicleStopped) {
+                                vehicleStopped = true;
+                                vehicleStarted = false;
+                                if (mListener != null) {
+                                    mListener.onAlertVehicleStart();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        thBTB.setName("thBTB");
+        thBTB.start();
+    }
+
+    private void stopBTBThread() {
+        if (thBTB != null) {
+            thBTB.interrupt();
+            thBTB = null;
+        }
+    }
+
 
     Handler checkLoginHandler = new Handler();
     Runnable checkLogin = new Runnable() {
@@ -110,6 +166,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private void initialize(View view) {
         try {
+
             tvVersion = (TextView) view.findViewById(R.id.tvVersion);
             rlLoadingPanel = (RelativeLayout) getActivity().findViewById(R.id.loadingPanel);
 
@@ -195,6 +252,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
             if (InspectorModeFg) {
                 btnBack.setVisibility(View.GONE);
+            } else {
+                if (firstLogin) {
+                    startBTBThread();
+                }
             }
 
             if (mListener != null) {
@@ -373,6 +434,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         }
         diagnosticDlg = null;
         malfunctionDlg = null;
+        stopBTBThread();
     }
 
     public void updateDiagnosticMalfunction() {
@@ -540,6 +602,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         void backFromLogin();
 
         void updateFlagbar(boolean status);
+
+        void onAlertVehicleStart();
+
+        void onAlertClear();
     }
 
 
@@ -564,7 +630,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         try {
             Process proc = Runtime.getRuntime().exec(new String[]{"su", "-c", "reboot"});
             proc.waitFor();
-        } catch (Exception exe){
+        } catch (Exception exe) {
             Utility.showAlertMsg(exe.getMessage());
         }
     }

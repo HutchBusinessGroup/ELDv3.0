@@ -74,6 +74,19 @@ public class DTCFragment extends Fragment {
 
         list.add(dtcBean);
 
+
+        dtcBean = new DTCBean();
+        dtcBean.setSpn(2323);
+        dtcBean.setSpnDescription("Transmission Synchronizer Clutch Value");
+        dtcBean.setFmi(323);
+        dtcBean.setFmiDescription("Special Instructions");
+        dtcBean.setDateTime(Utility.getCurrentDateTime());
+        dtcBean.setProtocol("J1939");
+        dtcBean.setOccurence(4);
+        dtcBean.setStatus(1);
+
+        list.add(dtcBean);
+
         dtcBean = new DTCBean();
         dtcBean.setSpn(2324);
         dtcBean.setSpnDescription("Engine Blower Bypass Valve Position");

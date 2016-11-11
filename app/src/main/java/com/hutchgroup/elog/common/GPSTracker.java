@@ -269,7 +269,6 @@ public class GPSTracker extends Service implements LocationListener {
         }
     }
 
-
     // Created By: Deepak Sharma
     // Created Date: 14 July 2016
     // Purpose: check for positioning compliance

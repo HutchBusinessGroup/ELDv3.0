@@ -228,12 +228,12 @@
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\drawable\\duty_status_circle_button_text.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_circle_progressbar.xml",
-        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\drawable\\red_circle_progressbar.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\green_circle_progressbar_xhdpi.xml",
         "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\drawable\\green_circle_progressbar_xhdpi.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_circle_progressbar.xml",
+        "source": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\src\\main\\res\\drawable\\red_circle_progressbar.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\AndroidStudioProjects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\event_selector.xml",

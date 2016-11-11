@@ -34,7 +34,7 @@ public class DTCDB {
                 DTCBean bean = lst.get(i);
                 Cursor cursor = database.rawQuery("select DateTime from "
                         + MySQLiteOpenHelper.TABLE_DTC
-                        + " where spn=? order by DateTime desc LIMIT 1", new String[]{bean.getSpn() + ""});
+                        + " where spn=? and fmi=? and Occurrence=? order by DateTime desc LIMIT 1", new String[]{bean.getSpn() + "", bean.getFmi() + "", bean.getOccurence() + ""});
 
                 boolean isExist = false;
                 if (cursor.moveToFirst()) {
