@@ -1425,7 +1425,7 @@ public class CanMessages {
 
     private void request1939() {
         // long[] initPGN_TxFilter = {65253, 65260};
-        long[] initPGN_TxFilter = {65266, 65257, 65209, 65244, 65253, 65260};
+        long[] initPGN_TxFilter = {65266, 65257, 65209, 65244, 65253, 65260,65227};
         ConnectedThread r;
         synchronized (this) {
             r = mConnectedThread;

@@ -39,6 +39,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hutchgroup.elog.FirstTimeUser;
+import com.hutchgroup.elog.MainActivity;
 import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.adapters.DiagnosticMalfunctionAdapter;
 import com.hutchgroup.elog.beans.EventBean;
@@ -110,6 +111,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException exe) {
+                    }
+                    if (MainActivity.undockingMode) {
+                        continue;
                     }
 
                     if (CanMessages.mState == CanMessages.STATE_CONNECTED) {

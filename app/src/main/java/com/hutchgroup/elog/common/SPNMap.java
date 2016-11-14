@@ -52,14 +52,14 @@ public class SPNMap {
 
 
     /* package */
-    SPNMap(Context context) {
+    public SPNMap(Context context) {
         try {
             BufferedReader stream = new BufferedReader(new InputStreamReader(context.getAssets().open("SPNMap.txt")));
             map = new String[7576];
             String str;
             Matcher m;
             Pattern p = Pattern.compile(",");
-            while( (str = stream.readLine()) != null ){
+            while ((str = stream.readLine()) != null) {
                 String[] items = p.split(str);
                 map[Integer.parseInt(items[0])] = items[1];
             }

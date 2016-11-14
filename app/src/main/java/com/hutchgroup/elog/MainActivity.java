@@ -87,6 +87,7 @@ import com.hutchgroup.elog.common.CustomDateFormat;
 import com.hutchgroup.elog.common.DiagnosticMalfunction;
 import com.hutchgroup.elog.common.GetCall;
 import com.hutchgroup.elog.common.LogFile;
+import com.hutchgroup.elog.common.SPNMap;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.common.ZoneList;
 import com.hutchgroup.elog.db.CarrierInfoDB;
@@ -832,6 +833,7 @@ public class MainActivity extends ELogMainActivity
                 Utility.as.SetAlarm(this);
             }
 
+            SPNMap map = new SPNMap(this);
             stopService = false;
             SharedPreferences prefs = getSharedPreferences("HutchGroup", getBaseContext().MODE_PRIVATE);
             String upgradeFile = prefs.getString("upgrade_file", "");
@@ -1290,7 +1292,7 @@ public class MainActivity extends ELogMainActivity
         vAlertBorder = findViewById(R.id.vBorder);
         tvAlertHeader = (TextView) findViewById(R.id.tvHeader);
         tvAlertMessage = (TextView) findViewById(R.id.tvMessage);
-        if (CanMessages.mState != CanMessages.STATE_CONNECTED && !ConstantFlag.Flag_Development) {
+        if (CanMessages.mState != CanMessages.STATE_CONNECTED && !ConstantFlag.Flag_Development && !undockingMode) {
             onAlertWarning();
         }
     }
@@ -2912,6 +2914,7 @@ public class MainActivity extends ELogMainActivity
             @Override
             public void run() {
                 if (ConstantFlag.Flag_Development == false) {
+                    connectDevice(true);
                     while (CanMessages.mState != CanMessages.STATE_CONNECTED) {
                         try {
 
