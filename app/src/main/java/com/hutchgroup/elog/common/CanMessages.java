@@ -1381,7 +1381,7 @@ public class CanMessages {
 
         long[] initPGN_AddFilter = {65265, 65217, 65262, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244, 65226, 65227};
 
-        long[] initPGN_TxFilter = {65253, 65260, 65257, 65266, 65209, 65244};
+        long[] initPGN_TxFilter = {65253, 65260, 65257, 65266, 65209, 65244, 65227};
 
         for (long pgn : initPGN_AddFilter) {
             byte[] message = filterAddDelJ1939((byte) 0, pgn, true);
