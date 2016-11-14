@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.hutchgroup.elog.beans.DTCBean;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.Utility;
+import com.hutchgroup.elog.tracklocations.GPSSQLiteOpenHelper;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -172,7 +173,7 @@ public class DTCDB {
         SQLiteDatabase database = null;
         Cursor cursor = null;
         JSONArray array = new JSONArray();
-        int inspectionId = 0;
+
         try {
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getWritableDatabase();
@@ -195,4 +196,31 @@ public class DTCDB {
         }
         return array;
     }
+
+    public static long removeDTCPreviousDay() {
+
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        long res = -1;
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+            String date = Utility.getPreviousDateOnly(-1);
+            database = helper.getWritableDatabase();
+            res = database.delete(MySQLiteOpenHelper.TABLE_DTC,
+                    "SyncFg=1 and DateTime<?", new String[]{date});
+
+        } catch (Exception e) {
+
+        } finally {
+            try {
+                database.close();
+                helper.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return res;
+    }
+
 }

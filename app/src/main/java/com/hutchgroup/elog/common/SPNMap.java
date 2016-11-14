@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  */
 
 
-public class SPNMap {
+public  class SPNMap {
     /* package */ static String[] map;
     /* package */ static String[] fmi = {
             "Above Normal Operational Range - Severe",

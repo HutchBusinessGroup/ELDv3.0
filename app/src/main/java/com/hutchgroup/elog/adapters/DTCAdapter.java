@@ -45,40 +45,31 @@ public class DTCAdapter extends ArrayAdapter<DTCBean> {
                         R.layout.dtc_item, parent,
                         false);
                 viewHolder = new ViewHolderItem();
-                viewHolder.tvSerialNo = (TextView) convertView.findViewById(R.id.tvSerialNo);
                 viewHolder.tvSPNDescription = (TextView) convertView.findViewById(R.id.tvSPNDescription);
                 viewHolder.tvFMIDescription = (TextView) convertView.findViewById(R.id.tvFMIDescription);
                 viewHolder.tvOccurence = (TextView) convertView.findViewById(R.id.tvOccurence);
-                viewHolder.tvTime = (TextView) convertView.findViewById(R.id.tvTime);
-                viewHolder.tvDate = (TextView) convertView.findViewById(R.id.tvDate);
+                viewHolder.tvFMI = (TextView) convertView.findViewById(R.id.tvFMI);
+                viewHolder.tvSPN = (TextView) convertView.findViewById(R.id.tvSPN);
+                viewHolder.tvSPNText = (TextView) convertView.findViewById(R.id.tvSPNText);
             } else {
                 viewHolder = (ViewHolderItem) convertView.getTag();
             }
 
             DTCBean bean = data.get(position);
 
-            viewHolder.tvSerialNo.setText((position + 1) + "");
             viewHolder.tvSPNDescription.setText(bean.getSpnDescription());
             viewHolder.tvFMIDescription.setText(bean.getFmiDescription());
-            viewHolder.tvOccurence.setText(bean.getOccurence());
+            viewHolder.tvFMI.setText(bean.getFmi() + "");
+            viewHolder.tvSPN.setText(bean.getSpn() + "");
+            viewHolder.tvOccurence.setText(bean.getOccurence() + "");
 
-            try {
-                viewHolder.tvDate.setText(new SimpleDateFormat("MMM dd,yyyy").format(Utility.sdf.parse(bean.getDateTime())));
-                String format = "hh:mm a"; //12hr
-                if (Utility._appSetting.getTimeFormat() == AppSettings.AppTimeFormat.HR24.ordinal()) {
-                    format = "HH:mm";
-                }
-                viewHolder.tvTime.setText(new SimpleDateFormat(format).format(Utility.sdf.parse(bean.getDateTime())));
-            } catch (Exception exe) {
-
-            }
         } catch (Exception exe) {
         }
         return convertView;
     }
 
     static class ViewHolderItem {
-        TextView tvSerialNo, tvSPNDescription, tvFMIDescription, tvOccurence, tvTime, tvDate;
+        TextView tvSPNDescription, tvFMIDescription, tvOccurence, tvFMI, tvSPN, tvSPNText;
 
     }
 }
