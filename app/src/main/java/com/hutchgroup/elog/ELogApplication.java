@@ -67,8 +67,8 @@ public class ELogApplication extends Application {
     public void onCreate() {
         super.onCreate();
         try {
-            Utility.context = getApplicationContext();
-            Utility.checkAndGrantPermissions();
+            Utility.context = this;
+
             initializeUserPreferences();
             currentStatus = 1;
 

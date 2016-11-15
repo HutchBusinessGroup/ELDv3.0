@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 
 import com.hutchgroup.elog.common.ConstantFlag;
+import com.hutchgroup.elog.common.Utility;
 
 public class FirstActivity extends ActionBarActivity {
 
@@ -22,6 +23,8 @@ public class FirstActivity extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Utility.context=this;
+        Utility.checkAndGrantPermissions();
         if (ConstantFlag.Flag_Development) {
 
             SharedPreferences prefs = this.getSharedPreferences("HutchGroup", MODE_PRIVATE);

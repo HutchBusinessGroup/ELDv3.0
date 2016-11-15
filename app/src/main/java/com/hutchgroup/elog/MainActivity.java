@@ -2914,7 +2914,12 @@ public class MainActivity extends ELogMainActivity
             @Override
             public void run() {
                 if (ConstantFlag.Flag_Development == false) {
-                    connectDevice(true);
+                    if (CanMessages.deviceAddress == null) {
+                        //Log.d(TAG, "initializeBluetooth");
+                        adapter = BluetoothAdapter.getDefaultAdapter();
+                        initializeBluetooth();
+                    } else
+                        connectDevice(true);
                     while (CanMessages.mState != CanMessages.STATE_CONNECTED) {
                         try {
 
