@@ -2678,6 +2678,7 @@ public class MainActivity extends ELogMainActivity
                     if (tvVoltage != null)
                         tvVoltage.setText(Float.parseFloat(CanMessages.Voltage) + " V");
                 }
+
                 if (tvDrivingRemainingFreeze != null && activeCurrentDutyStatus == 3 && ViolationDT != null) {
                     int secondsLeft = (int) (ViolationDT.getTime() - (new Date()).getTime()) / 1000;
                     if (secondsLeft < 0) {
@@ -2908,7 +2909,6 @@ public class MainActivity extends ELogMainActivity
         SharedPreferences prefs = getSharedPreferences("HutchGroup", getBaseContext().MODE_PRIVATE);
         prefs.edit().putBoolean("undocking", false).commit();
         undockingMode = false;
-
         showLoaderAnimation(true);
         Thread thOnDocking = new Thread(new Runnable() {
             @Override

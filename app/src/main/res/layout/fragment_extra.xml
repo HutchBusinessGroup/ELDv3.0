@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_drawer_daliy_log" />
+            android:src="@drawable/ic_drawer_dtc" />
 
         <TextView
             style="@style/DrawerMenuLink"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_drawer_daliy_log_inspect" />
+            android:src="@drawable/ic_drawer_maintenance" />
 
         <TextView
             style="@style/DrawerMenuLink"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_drawer_create_event" />
+            android:src="@drawable/ic_drawer_incident" />
 
         <TextView
             style="@style/DrawerMenuLink"

@@ -57,7 +57,7 @@ public class DTCFragment extends Fragment {
         dtcBean.setFmiDescription("Below Normal Operational Range - Moderate");
         dtcBean.setDateTime(Utility.getCurrentDateTime());
         dtcBean.setProtocol("J1939");
-        dtcBean.setOccurence(1);
+        dtcBean.setOccurence(13);
         dtcBean.setStatus(1);
 
         list.add(dtcBean);
@@ -106,7 +106,7 @@ public class DTCFragment extends Fragment {
         dtcBean.setFmiDescription("Root Cause Unknown");
         dtcBean.setDateTime(Utility.getCurrentDateTime());
         dtcBean.setProtocol("J1939");
-        dtcBean.setOccurence(2);
+        dtcBean.setOccurence(32);
         dtcBean.setStatus(0);
 
         list.add(dtcBean);
@@ -118,7 +118,7 @@ public class DTCFragment extends Fragment {
         dtcBean.setFmiDescription("Reserved");
         dtcBean.setDateTime(Utility.getCurrentDateTime());
         dtcBean.setProtocol("J1939");
-        dtcBean.setOccurence(2);
+        dtcBean.setOccurence(21);
         dtcBean.setStatus(1);
 
         list.add(dtcBean);
@@ -130,7 +130,7 @@ public class DTCFragment extends Fragment {
         dtcBean.setFmiDescription("Reserved");
         dtcBean.setDateTime(Utility.getCurrentDateTime());
         dtcBean.setProtocol("J1939");
-        dtcBean.setOccurence(2);
+        dtcBean.setOccurence(12);
         dtcBean.setStatus(0);
 
         list.add(dtcBean);
@@ -150,10 +150,10 @@ public class DTCFragment extends Fragment {
     int activeCount = 0, inactiveCount = 0;
 
     private void initialize(View view) {
+        DTCDB.removeDTCPreviousDay();
         ArrayList<DTCBean> list = DTCDB.getDTCCode();
        /* list = testList();
-        DTCDB.Save(list);
-*/
+        DTCDB.Save(list);*/
         ArrayList<DTCBean> activeList = new ArrayList<>();
         ArrayList<DTCBean> inactiveList = new ArrayList<>();
         for (DTCBean bean : list) {

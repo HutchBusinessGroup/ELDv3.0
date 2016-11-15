@@ -832,4 +832,23 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+
+    <style name="DTC_list_label">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/_999</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="DTC_list_val">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">#5b8ed2</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="DTC_list_val.green">
+        <item name="android:textColor">#48cfae</item>
+    </style>
+    <style name="DTC_list_val.red">
+        <item name="android:textColor">#ed5564</item>
+    </style>
 </resources>
