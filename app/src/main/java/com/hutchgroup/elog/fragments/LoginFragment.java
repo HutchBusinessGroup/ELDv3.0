@@ -287,6 +287,12 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         View mainView = inflater.inflate(R.layout.fragment_login, container, false);
         coDriver = getArguments().getBoolean("CoDriverFg");
         InspectorModeFg = getArguments().getBoolean("InspectorModeFg");
+        if (Utility.user1.getAccountId() == 0) {
+            if (autoLogin())
+            {
+                return mainView;
+            }
+        }
         initialize(mainView);
 
         textToSpeech = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
@@ -468,6 +474,52 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    private boolean autoLogin() {
+        SharedPreferences prefs = getContext().getSharedPreferences("HutchGroup", getContext().MODE_PRIVATE);
+        int driverId = prefs.getInt("driverid", 0);
+        int coDriverId = prefs.getInt("codriverid", 0);
+        int activeUserId = prefs.getInt("activeuserid", 0);
+        int onScreenUserId = prefs.getInt("onscreenuserid", 0);
+        if (driverId > 0) {
+            LoginDB.autoLoginUser(driverId, coDriverId, activeUserId, onScreenUserId);
+            boolean logSent = prefs.getBoolean("logfile_sent", false);
+            if (!logSent) {
+                LogFile.sendLogFile(LogFile.AFTER_MID_NIGHT);
+            }
+
+            boolean userConfigured = prefs.getBoolean("user_configured", false);
+
+            if (userConfigured) {
+                DailyLogDB.DailyLogUserPreferenceRuleSave(driverId, UserPreferences.getCurrentRule(), Utility.getCurrentDateTime(), Utility.getCurrentDateTime());
+                prefs.edit().putBoolean("user_configured", false).commit();
+            }
+
+            // we'll have to fetch setting on each time switching user as driver and codriver may have different settings
+            getSettings(driverId);
+            HourOfService.InvokeRule(new Date(), Utility.onScreenUserId);
+            try {
+
+
+                int shippingDriverId = prefs.getInt("driverid", -1);
+                if (shippingDriverId == Utility.user1.getAccountId() || shippingDriverId == Utility.user2.getAccountId()) {
+                    Utility.ShippingNumber = prefs.getString("shipping_number", "");
+                    Utility.TrailerNumber = prefs.getString("trailer_number", "");
+                }
+            } catch (Exception exe) {
+            }
+            Utility.LastEventDate = EventDB.getLastEventDate(Utility.onScreenUserId);
+            EventDB.getEngineHourOdometerSincePowerOn(driverId);
+
+            //connect to server and make driver online
+
+            // connect to chat server
+            ChatClient.connect();
+            ChatClient.checkConnection();
+            mListener.autologinSuccessfully();
+        }
+        return driverId > 0;
+    }
+
     private void login() {
         String userName = etUserName.getText().toString().trim();
         String password = etPassword.getText().toString();
@@ -491,6 +543,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 int driverId = coDriver ? Utility.user2.getAccountId() : Utility.user1.getAccountId();
                 // set on screen userid
                 Utility.onScreenUserId = driverId;
+                prefs.edit().putInt("onscreenuserid", driverId).commit();
                 Utility.activeUserId = Utility.user2.isActive() ? Utility.user2.getAccountId() : Utility.user1.getAccountId();
                 if (userConfigured) {
                     DailyLogDB.DailyLogUserPreferenceRuleSave(driverId, UserPreferences.getCurrentRule(), Utility.getCurrentDateTime(), Utility.getCurrentDateTime());
@@ -532,12 +585,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
 
                     if (coDriver) {
+                        Utility.saveLoginInfo(Utility.user1.getAccountId(), driverId, Utility.activeUserId, Utility.onScreenUserId);
                         // add codriver record
                         DailyLogDB.AddDriver(Utility.user1.getAccountId(), driverId, 0);
 
                         MessageBean bean = MessageDB.CreateMessage(Utility.IMEI, Utility.user2.getAccountId(), Utility.user2.getAccountId(), "Connect");
                         MessageDB.Send(bean);
                     } else {
+                        Utility.saveLoginInfo(driverId, 0, Utility.activeUserId, Utility.onScreenUserId);
                         //connect to server and make driver online
                         if (ChatClient.in == null) {
                             // connect to chat server
@@ -602,7 +657,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     public interface OnFragmentInteractionListener {
         void loginSuccessfully(boolean firstLogin);
-
+        void autologinSuccessfully();
         void backFromLogin();
 
         void updateFlagbar(boolean status);

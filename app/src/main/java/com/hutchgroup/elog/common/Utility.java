@@ -914,6 +914,18 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     }
 
 
+    // save odometer reading and engine hours
+    public static void saveLoginInfo(int driverId, int coDriverId, int activeUserId, int onScreenUserId) {
+        SharedPreferences.Editor e = (context.getSharedPreferences("HutchGroup", context.MODE_PRIVATE)).edit();
+        e.putInt("driverid", driverId);
+        e.putInt("codriverid", coDriverId);
+        e.putInt("activeuserid", activeUserId);
+        e.putInt("onscreenuserid", onScreenUserId);
+        e.commit();
+    }
+
+
+
     public static void hideKeyboard(Activity activity, View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);

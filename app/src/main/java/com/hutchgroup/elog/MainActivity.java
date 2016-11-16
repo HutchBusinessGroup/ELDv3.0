@@ -1729,7 +1729,7 @@ public class MainActivity extends ELogMainActivity
             Utility.user1.setActive(!Utility.user1.isActive());
             Utility.user2.setActive(!Utility.user2.isActive());
             Utility.activeUserId = Utility.user1.isActive() ? Utility.user1.getAccountId() : Utility.user2.getAccountId();
-
+            getSharedPreferences("HutchGroup", MODE_PRIVATE).edit().putInt("activeuserid", Utility.activeUserId).commit();
             updateActiveIcon();
         }
     }
@@ -2232,12 +2232,14 @@ public class MainActivity extends ELogMainActivity
                 Utility.activeUserId = Utility.onScreenUserId = Utility.user1.getAccountId();
                 Utility.user2 = new UserBean();
                 RedirectToMain();
+                Utility.saveLoginInfo(Utility.user1.getAccountId(), 0, Utility.activeUserId, Utility.onScreenUserId);
             } else {
                 Utility.user1 = new UserBean();
                 Utility.activeUserId = Utility.onScreenUserId = 0;
                 RedirectToLogin(false);
                 // disconnect chat server when both of the users are offline
                 ChatClient.disconnect();
+                Utility.saveLoginInfo(0, 0, Utility.activeUserId, Utility.onScreenUserId);
             }
         } else {
             Utility.user2 = new UserBean();
@@ -2245,6 +2247,7 @@ public class MainActivity extends ELogMainActivity
             Utility.user1.setOnScreenFg(true);
             Utility.activeUserId = Utility.onScreenUserId = Utility.user1.getAccountId();
             RedirectToMain();
+            Utility.saveLoginInfo(Utility.user1.getAccountId(), 0, Utility.activeUserId, Utility.onScreenUserId);
         }
     }
 
@@ -3641,6 +3644,7 @@ public class MainActivity extends ELogMainActivity
         invalidateOptionsMenu();
 
         drawer.closeDrawer(GravityCompat.START);
+        setDriverName();
     }
 
     @Override
@@ -3707,6 +3711,69 @@ public class MainActivity extends ELogMainActivity
                 }
             }
         });
+    }
+
+
+    @Override
+    public void autologinSuccessfully() {
+
+        //update inspection icon
+        boolean inspections = TripInspectionDB.getInspections(Utility.getCurrentDate(), Utility.onScreenUserId);
+        if (inspections) {
+            GPSData.TripInspectionCompletedFg = 1;
+            onUpdateInspectionIcon();
+        } else {
+            GPSData.TripInspectionCompletedFg = 0;
+            resetInspectionIcon();
+
+        }
+        updateFlagbar(true);
+        setCertify(1);
+
+
+        if (firstLogin) {
+            showSpecialCategory(false);
+            // sync message
+            new MessageSyncData(messageSyncDataPostTaskListener).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        }
+
+        //Log.d(TAG, "loginSuccessfully");
+        this.firstLogin = true;
+        setDrawerState(true);
+        //already login
+        setDriverName();
+        bLogin = false;
+        int userIcon = Utility.onScreenUserId == Utility.activeUserId ? R.drawable.ic_flagbar_driver_active : R.drawable.ic_flagbar_driver_inactive;
+        if (ivActiveUser != null) {
+            ivActiveUser.setBackgroundResource(userIcon);
+        }
+        if (icFreezeActiveUser != null) {
+            icFreezeActiveUser.setBackgroundResource(userIcon);
+        }
+
+        bHaveUnAssignedEvent = false;
+        bHaveLogbookToCertify = false;
+
+        isOnDailyLog = false;
+
+        if (undockingMode) {
+            replaceFragment(new DockingFragment());
+            getSupportActionBar().setTitle(getApplicationContext().getResources().getString(R.string.title_eld));
+        } else {
+            if (elogFragment == null) {
+                elogFragment = new ELogFragment();
+            }
+            elogFragment.setFirstLogin(firstLogin);
+            replaceFragment(elogFragment);
+            isOnDailyLog = true;
+            previousScreen = -1;
+            currentScreen = DailyLog_Screen;
+
+        }
+
+        toolbar.setVisibility(View.VISIBLE);
+        flagBar.setVisibility(View.VISIBLE);
+
     }
 
     @Override

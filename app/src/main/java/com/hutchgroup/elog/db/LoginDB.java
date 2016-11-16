@@ -148,7 +148,7 @@ public class LoginDB {
     // Created By: Deepak Sharma
     // Created Date: 20 April 2015
     // Purpose: relogin
-    public static void autoLoginUser(int driverId, int coDriverId, int activeDriverId) {
+    public static void autoLoginUser(int driverId, int coDriverId, int activeDriverId, int onScreenUserId) {
         MySQLiteOpenHelper helper = null;
         SQLiteDatabase database = null;
         Cursor cursor = null;
@@ -177,15 +177,17 @@ public class LoginDB {
                 user.setDrivingLicense(cursor.getString(cursor.getColumnIndex("DrivingLicense")));
                 user.setDlIssueState(cursor.getString(cursor.getColumnIndex("DLIssueState")));
                 user.setFirstLoginFg(false);
+                Utility.onScreenUserId = onScreenUserId;
+                Utility.activeUserId = activeDriverId;
                 if (user.getAccountId() == driverId) {
-                    Utility.onScreenUserId = driverId;
+
                     Utility.user1 = user;
                     Utility.user1.setActive(user.getAccountId() == activeDriverId);
-                    Utility.user1.setOnScreenFg(true);
+                    Utility.user1.setOnScreenFg(user.getAccountId() == onScreenUserId);
                 } else {
                     Utility.user2 = user;
                     Utility.user2.setActive(user.getAccountId() == activeDriverId);
-                    Utility.user2.setOnScreenFg(false);
+                    Utility.user2.setOnScreenFg(user.getAccountId() == onScreenUserId);
 
                 }
             }
