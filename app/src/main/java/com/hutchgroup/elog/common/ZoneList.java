@@ -127,7 +127,7 @@ public class ZoneList {
 
     // Created By: Deepak Sharma
     // Created Date: 11 Aug 2016
-    // Purpose: get time zone offset of device
+    // Purpose: get time zone offset by timeZoneId
     public static String getTimeZoneOffset(String timeZoneId) {
         StringBuilder name = new StringBuilder();
         name.append("UTC ");
@@ -157,5 +157,16 @@ public class ZoneList {
         name.append(min);
 
         return name.toString();
+    }
+
+    // Created By: Deepak Sharma
+    // Created Date: 11 Aug 2016
+    // Purpose: get time zone offset of device
+    public static int getOffset(String timeZoneId) {
+
+        long date = Calendar.getInstance().getTimeInMillis();
+        TimeZone timeZone = TimeZone.getTimeZone(timeZoneId);
+        int offset = timeZone.getOffset(date);
+        return offset;
     }
 }

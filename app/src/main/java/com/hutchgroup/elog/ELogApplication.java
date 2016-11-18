@@ -24,12 +24,14 @@ import com.hutchgroup.elog.common.GPSTracker;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.UserPreferences;
 import com.hutchgroup.elog.common.Utility;
+import com.hutchgroup.elog.common.ZoneList;
 import com.hutchgroup.elog.db.DailyLogDB;
 import com.hutchgroup.elog.db.EventDB;
 import com.hutchgroup.elog.db.SettingsDB;
 
 import java.util.Locale;
 import java.util.Set;
+import java.util.TimeZone;
 
 
 public class ELogApplication extends Application {
@@ -84,6 +86,9 @@ public class ELogApplication extends Application {
             CanMessages.OdometerReading = prefs.getString("odometer", "0");
             CanMessages.EngineHours = prefs.getString("engine_hours", "0");
 
+            Utility.TimeZoneId = prefs.getString("timezoneid", TimeZone.getDefault().getID());
+            Utility.TimeZoneOffset = ZoneList.getOffset(Utility.TimeZoneId);
+            Utility.TimeZoneOffsetUTC = ZoneList.getTimeZoneOffset(Utility.TimeZoneId);
 
             // start gps thread
             objGps.startUsingGPS(getApplicationContext());
