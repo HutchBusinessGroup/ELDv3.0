@@ -124,4 +124,38 @@ public class ZoneList {
 
         return name.toString();
     }
+
+    // Created By: Deepak Sharma
+    // Created Date: 11 Aug 2016
+    // Purpose: get time zone offset of device
+    public static String getTimeZoneOffset(String timeZoneId) {
+        StringBuilder name = new StringBuilder();
+        name.append("UTC ");
+        long date = Calendar.getInstance().getTimeInMillis();
+        TimeZone timeZone = TimeZone.getTimeZone(timeZoneId);
+        int offset = timeZone.getOffset(date);
+        int p = Math.abs(offset);
+        if (offset < 0) {
+            name.append('-');
+        } else {
+            name.append('+');
+        }
+        int hours = p / (HOURS_1);
+        if (hours < 10) {
+            name.append('0');
+        }
+
+        name.append(hours);
+        name.append(':');
+
+        int min = p / 60000;
+        min %= 60;
+
+        if (min < 10) {
+            name.append('0');
+        }
+        name.append(min);
+
+        return name.toString();
+    }
 }
