@@ -84,6 +84,7 @@ public class ELogApplication extends Application {
             CanMessages.OdometerReading = prefs.getString("odometer", "0");
             CanMessages.EngineHours = prefs.getString("engine_hours", "0");
 
+
             // start gps thread
             objGps.startUsingGPS(getApplicationContext());
 

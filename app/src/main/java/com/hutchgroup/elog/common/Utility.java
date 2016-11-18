@@ -73,6 +73,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static ArrayList<String> onlineUserList = new ArrayList<>();
     public static boolean malFunctionIndicatorFg, dataDiagnosticIndicatorFg;
     public static String CarrierName = "", ELDManufacturer = "", USDOT = "", UnitNo = "", VIN = "", TimeZoneOffsetUTC = "08", ShippingNumber = "", TrailerNumber = "", MACAddress = "", PlateNo = "", TimeZoneId;
+    public static int TimeZoneOffset=0;
 
     public static String OdometerReadingSincePowerOn = "0", EngineHourSincePowerOn = "0", DiagnosticCode = "";
 
