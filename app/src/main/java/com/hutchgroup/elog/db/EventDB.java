@@ -1046,7 +1046,6 @@ public class EventDB {
             Log.i("EventDB", "EventCreate Error:" + e.getMessage());
             LogFile.write(EventDB.class.getName() + "::EventCreate Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         }
-
     }
 
     // Created By: Deepak Sharma

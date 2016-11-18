@@ -12,6 +12,7 @@ public class CarrierInfoBean {
     String PlateNo;
     String VIN;
     String MACAddress;
+    String TimeZoneId;
 
     public String getSerailNo() {
         return SerailNo;
@@ -101,5 +102,13 @@ public class CarrierInfoBean {
 
     public void setPlateNo(String plateNo) {
         PlateNo = plateNo;
+    }
+
+    public String getTimeZoneId() {
+        return TimeZoneId;
+    }
+
+    public void setTimeZoneId(String timeZoneId) {
+        TimeZoneId = timeZoneId;
     }
 }

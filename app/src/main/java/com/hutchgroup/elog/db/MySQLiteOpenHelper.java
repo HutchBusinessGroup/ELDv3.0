@@ -30,11 +30,11 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     public static final String COLUMN_ID = "_id";
     private static final String DATABASE_NAME = "EDL.db";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
 
     private static final String TABLE_CREATE_CARRIER = "create table "
             + TABLE_CARRIER
-            + "(CompanyId INTEGER,CarrierName text,ELDManufacturer text,USDOT text,VehicleId INTEGER,UnitNo text,PlateNo text,VIN text,StatusId INTEGER,SerialNo text,MACAddress text)";
+            + "(CompanyId INTEGER,CarrierName text,ELDManufacturer text,USDOT text,VehicleId INTEGER,UnitNo text,PlateNo text,VIN text,StatusId INTEGER,SerialNo text,MACAddress text,TimeZoneId text)";
 
     private static final String TABLE_CREATE_ACCOUNT = "create table "
             + TABLE_ACCOUNT
@@ -128,6 +128,8 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String DATABASE_ALTER_CARRIER_PLATENO = "ALTER TABLE " + TABLE_CARRIER + " ADD COLUMN PlateNo text";
     private static final String DATABASE_ALTER_TABLE_ACCOUNT = "ALTER TABLE " + TABLE_ACCOUNT + " ADD COLUMN DotPassword text";
     private static final String DATABASE_DELETE_EVENTS_DIAGNOSTIC = "DELETE FROM " + TABLE_DAILYLOG_EVENT + " WHERE EventType=7";
+    private static final String DATABASE_ALTER_CARRIER_TIMEZONEID = "ALTER TABLE " + TABLE_CARRIER + " ADD COLUMN TimeZoneId text";
+
 
     public MySQLiteOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -186,6 +188,13 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         if (oldVersion<6)
         {
             db.execSQL(TABLE_CREATE_DTC);
+        }
+
+
+        if (oldVersion<7)
+        {
+            db.execSQL(DATABASE_ALTER_CARRIER_TIMEZONEID);
+            CarrierInfoDB.UpdateTimeZone();
         }
     }
 }

@@ -72,7 +72,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static int onScreenUserId = 0, vehicleId = 0, companyId = 0, unIdentifiedDriverId = 0, multiDayBasisUsed = 8, activeUserId = 0;
     public static ArrayList<String> onlineUserList = new ArrayList<>();
     public static boolean malFunctionIndicatorFg, dataDiagnosticIndicatorFg;
-    public static String CarrierName = "", ELDManufacturer = "", USDOT = "", UnitNo = "", VIN = "", TimeZoneOffsetUTC = "08", ShippingNumber = "", TrailerNumber = "", MACAddress = "", PlateNo = "";
+    public static String CarrierName = "", ELDManufacturer = "", USDOT = "", UnitNo = "", VIN = "", TimeZoneOffsetUTC = "08", ShippingNumber = "", TrailerNumber = "", MACAddress = "", PlateNo = "", TimeZoneId;
 
     public static String OdometerReadingSincePowerOn = "0", EngineHourSincePowerOn = "0", DiagnosticCode = "";
 
@@ -923,7 +923,6 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         e.putInt("onscreenuserid", onScreenUserId);
         e.commit();
     }
-
 
 
     public static void hideKeyboard(Activity activity, View view) {

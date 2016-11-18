@@ -25,6 +25,7 @@ public class FirstActivity extends ActionBarActivity {
         super.onResume();
         Utility.context=this;
         Utility.checkAndGrantPermissions();
+
         if (ConstantFlag.Flag_Development) {
 
             SharedPreferences prefs = this.getSharedPreferences("HutchGroup", MODE_PRIVATE);

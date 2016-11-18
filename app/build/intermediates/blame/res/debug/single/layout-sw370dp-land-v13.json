@@ -1,11 +1,63 @@
 [
     {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fab_layout.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fab_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\elog_scrollview.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\elog_scrollview.xml"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\freeze_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\freeze_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fragment_daily_log_dashboard.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fragment_daily_log_dashboard.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fragment_detail.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fragment_detail.xml"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fab_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fab_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fragment_tpms.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fragment_tpms.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\nav_header_drawer.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\nav_header_drawer.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\freeze_layout.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\freeze_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\activity_duty_status_change.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\activity_duty_status_change.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\activity_new_inspection.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\activity_new_inspection.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fragment_driver_profile.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fragment_driver_profile.xml"
+    },
+    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\activity_new_inspection.xml",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\activity_new_inspection.xml"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fragment_daily_log_dashboard.xml",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fragment_daily_log_dashboard.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fragment_daily_log_dashboard_portrait.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fragment_daily_log_dashboard_portrait.xml"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\activity_duty_status_change.xml",
@@ -20,20 +72,16 @@
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fragment_driver_profile.xml"
     },
     {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\diagnostic_item.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\diagnostic_item.xml"
+    },
+    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\nav_header_drawer.xml",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\nav_header_drawer.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\freeze_layout.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\freeze_layout.xml"
-    },
-    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\diagnostic_item.xml",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\diagnostic_item.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fab_layout.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp-land\\fab_layout.xml"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-land-v13\\fragment_detail.xml",

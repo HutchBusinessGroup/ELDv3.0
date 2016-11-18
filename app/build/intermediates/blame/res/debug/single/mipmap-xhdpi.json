@@ -1,7 +1,15 @@
 [
     {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_driver.png",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\mipmap-xhdpi\\ic_driver.png"
+    },
+    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_lanucher.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\mipmap-xhdpi\\ic_lanucher.png"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_lanucher.png",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\mipmap-xhdpi\\ic_lanucher.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_driver.png",
