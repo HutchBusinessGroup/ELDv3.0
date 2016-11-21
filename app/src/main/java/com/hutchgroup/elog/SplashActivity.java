@@ -32,6 +32,7 @@ public class SplashActivity extends Activity implements Runnable {
                 Editor e = (getSharedPreferences("HutchGroup", MODE_PRIVATE))
                         .edit();
                 e.putBoolean("syncStatus", true);
+                e.putString("timezoneid", Utility.TimeZoneId);
                 e.commit();
                 NavigateToLogin();
             } else {
@@ -89,7 +90,7 @@ public class SplashActivity extends Activity implements Runnable {
 
         Utility.IMEIGet(SplashActivity.this);
         Utility.VersionGet(SplashActivity.this);
-        Utility.TimeZoneOffsetUTC = ZoneList.getTimeZoneOffset();
+        //Utility.TimeZoneOffsetUTC = ZoneList.getTimeZoneOffset();
         if (!Utility.isLargeScreen(getApplicationContext())) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }

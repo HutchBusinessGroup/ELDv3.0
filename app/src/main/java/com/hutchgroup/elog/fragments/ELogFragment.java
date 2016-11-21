@@ -144,6 +144,12 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             }
             ELogFragment.this.refresh();
             showLoaderAnimation(false);
+            try {
+                if (getContext() != null)
+                    getContext().getSharedPreferences("HutchGroup", getContext().MODE_PRIVATE).edit().putString("timezoneid", Utility.TimeZoneId).commit();
+            } catch (Exception e) {
+
+            }
         }
     };
 

@@ -26,7 +26,8 @@ public class SettingsDB {
         int driverId = Utility.user1.isOnScreenFg() ? Utility.user1.getAccountId() : Utility.user2.getAccountId();
         Log.i("Settings", "Save for driverId=" + driverId);
         bean.setDriverId(driverId);
-        bean.setTimeZone(Utility._appSetting.getTimeZone());
+        float offset = Utility.TimeZoneOffset * 1f;
+        bean.setTimeZone(offset);
         bean.setDefaultRule(Utility._appSetting.getDefaultRule());
         bean.setGraphLine(Utility._appSetting.getGraphLine());
         bean.setColorLineUS(Utility._appSetting.getColorLineUS());
@@ -117,7 +118,7 @@ public class SettingsDB {
 
 
             cursor = database.rawQuery("select _id, TimeZone, DefaultRule, GraphLine, ColorLineUS, ColorLineCanada, TimeFormat, ViolationReading, ViolationOnGrid, MessageReading, " +
-                    "StartTime, Orientation, VisionMode, CopyTrailer, ShowViolation, SyncTime, AutomaticRuleChange, FontSize, DutyStatusReading from " + MySQLiteOpenHelper.TABLE_SETTINGS + " where DriverId=?",  new String[]{Integer.toString(driverId)});
+                    "StartTime, Orientation, VisionMode, CopyTrailer, ShowViolation, SyncTime, AutomaticRuleChange, FontSize, DutyStatusReading from " + MySQLiteOpenHelper.TABLE_SETTINGS + " where DriverId=?", new String[]{Integer.toString(driverId)});
             if (cursor.getCount() == 0) {
                 Log.i("SettingsDB", "Get nothing from Settings table");
                 CreateSettings(); //save default bean
@@ -187,7 +188,7 @@ public class SettingsDB {
             database = helper.getReadableDatabase();
 
             cursor = database.rawQuery("select _id from " +
-                    MySQLiteOpenHelper.TABLE_SETTINGS + " where DriverId=?",  new String[]{Integer.toString(driverId)});
+                    MySQLiteOpenHelper.TABLE_SETTINGS + " where DriverId=?", new String[]{Integer.toString(driverId)});
             if (cursor.moveToLast()) {
                 id = cursor.getInt(0);
             }

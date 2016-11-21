@@ -44,6 +44,7 @@ import com.hutchgroup.elog.db.UserDB;
 import java.io.File;
 import java.security.NoSuchAlgorithmException;
 import java.text.DateFormatSymbols;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -73,7 +74,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static ArrayList<String> onlineUserList = new ArrayList<>();
     public static boolean malFunctionIndicatorFg, dataDiagnosticIndicatorFg;
     public static String CarrierName = "", ELDManufacturer = "", USDOT = "", UnitNo = "", VIN = "", TimeZoneOffsetUTC = "08", ShippingNumber = "", TrailerNumber = "", MACAddress = "", PlateNo = "", TimeZoneId;
-    public static int TimeZoneOffset=0;
+    public static int TimeZoneOffset = 0;
 
     public static String OdometerReadingSincePowerOn = "0", EngineHourSincePowerOn = "0", DiagnosticCode = "";
 
@@ -265,64 +266,62 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         return false;
     }
 
+    // Created By: Deepak Sharma
+    // Created Date: 21 Nov 2016 4:31 PM
+    // get current system date time and format it using User TimeZoneId
     public static String getCurrentDateTime() {
         Date d = new Date();
         return sdf.format(d);
     }
 
-    public static String getDate(String dateTime) {
-        String str = "";
+    static Date parse(String dateTime) {
         try {
-            Date d = sdf.parse(dateTime);
-
-            str = new SimpleDateFormat("yyyy-MM-dd").format(d);
-        } catch (Exception e) {
-            e.printStackTrace();
+            return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(dateTime);
+        } catch (ParseException pe) {
+            return new Date();
         }
-        return str;
+    }
+
+    static Date parse(String dateTime, String format) {
+        try {
+            return new SimpleDateFormat(format).parse(dateTime);
+        } catch (ParseException pe) {
+            return new Date();
+        }
+    }
+
+    static String format(Date date) {
+        return sdf.format(date);
+    }
+
+    static String format(Date date, String format) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+        return dateFormat.format(date);
+    }
+
+    static String format(String dateTime, String format) {
+
+        Date date = parse(dateTime);
+        return format(date, format);
     }
 
     public static String getTime(String dateTime) {
-        String str = "";
-        try {
-            Date d = sdf.parse(dateTime);
-
-            str = new SimpleDateFormat("HH:mm:ss").format(d);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return str;
+        return format(dateTime, "HH:mm:ss");
     }
 
     public static String getStringTime(String dateTime) {
-        String str = "";
-        try {
-            Date d = sdf.parse(dateTime);
-
-            str = new SimpleDateFormat("HHmmss").format(d);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return str;
+        return format(dateTime, "HHmmss");
     }
 
     public static String getTimeHHMM(String dateTime) {
-        String str = "";
-        try {
-            Date d = sdf.parse(dateTime);
-
-            str = new SimpleDateFormat("hh:mm a").format(d);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return str;
+        return format(dateTime, "hh:mm a");
     }
 
     public static float getDiffMins(String dateTime1, String dateTime2) {
         float mins = 0f;
         try {
-            Date d1 = sdf.parse(dateTime1);
-            Date d2 = sdf.parse(dateTime2);
+            Date d1 = parse(dateTime1);
+            Date d2 = parse(dateTime2);
 
             long millis = d2.getTime() - d1.getTime();
             mins = (1.0f * millis) / (1000f * 60);
@@ -336,8 +335,8 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static float getDiffTime(String dateTime1, String dateTime2) {
         float hours = 0f;
         try {
-            Date d1 = sdf.parse(dateTime1);
-            Date d2 = sdf.parse(dateTime2);
+            Date d1 = parse(dateTime1);
+            Date d2 = parse(dateTime2);
 
             long millis = d2.getTime() - d1.getTime();
             hours = (1.0f * millis) / (1000f * 60 * 60);
@@ -368,13 +367,11 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static String getTimeByFormat(String dateTime) {
         String str = "";
         try {
-            Date d = sdf.parse(dateTime);
-
             String format = "hh:mm:ss a"; //12hr
             if (Utility._appSetting.getTimeFormat() == AppSettings.AppTimeFormat.HR24.ordinal()) {
                 format = "HH:mm:ss";
             }
-            str = new SimpleDateFormat(format).format(d);
+            str = format(dateTime, format);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -384,13 +381,10 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static String getDateTimeForServer(String date) {
         String str = "";
         try {
-            TimeZone tz = TimeZone.getDefault();
-            Date d = sdf.parse(date);
+            Date d = parse(date);
 
-            Calendar c = Calendar.getInstance();
-            c.setTime(d);
+            int offset = Utility.TimeZoneOffset;
 
-            int offset = tz.getOffset(c.getTimeInMillis());
             String gmtTZ = String.format("%s%02d%02d", offset < 0 ? "-" : "+",
                     Math.abs(offset) / 3600000, Math.abs(offset) / 60000 % 60);
             str = "/Date(" + d.getTime() + "" + gmtTZ + ")/";
@@ -406,13 +400,10 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String str = "";
         try {
-            TimeZone tz = TimeZone.getDefault();
-            Date d = sdf.parse(date);
 
-            Calendar c = Calendar.getInstance();
-            c.setTime(d);
+            Date d = parse(date);
+            int offset = Utility.TimeZoneOffset;
 
-            int offset = tz.getOffset(c.getTimeInMillis());
             String gmtTZ = String.format("%s%02d%02d", offset < 0 ? "-" : "+",
                     Math.abs(offset) / 3600000, Math.abs(offset) / 60000 % 60);
             str = "/Date(" + d.getTime() + "" + gmtTZ + ")/";
@@ -448,21 +439,24 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     }
 
     public static String getStringCurrentDate() {
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd,yyyy");
-        return sdf.format(d);
+        String dateTime = getCurrentDateTime();
+        return format(dateTime, "MMM dd,yyyy");
+
     }
 
     public static String getCurrentDate() {
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        return sdf.format(d);
+        String dateTime = getCurrentDateTime();
+        return format(dateTime, "yyyy-MM-dd");
     }
 
     public static String getCurrentTime() {
-        Date d = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-        return sdf.format(d);
+        String dateTime = getCurrentDateTime();
+        return format(dateTime, "HH:mm:ss");
+    }
+
+
+    public static String getDate(String dateTime) {
+        return format(dateTime, "yyyy-MM-dd");
     }
 
     public static Date getDate(Date date, int numGapDays) {
@@ -541,7 +535,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
 
         try {
             Calendar c = Calendar.getInstance();
-            c.setTime(new Date());
+            c.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
             c.add(Calendar.DATE, timeFrequency);
             return sdf.format(c.getTime());
         } catch (Exception e) {
@@ -554,9 +548,9 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Calendar c = Calendar.getInstance();
-            c.setTime(new Date());
+            c.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
             c.add(Calendar.DATE, timeFrequency);
-            return sdf.format(c.getTime());
+            return format(c.getTime(), "yyyy-MM-dd");
         } catch (Exception e) {
             return getCurrentDateTime();
         }
@@ -564,7 +558,6 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
 
     public static Date dateOnlyGet(Date date) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
         try {
             Calendar c = Calendar.getInstance();
             c.setTime(sdf.parse(sdf.format(date)));
@@ -575,42 +568,15 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     }
 
     public static Date dateOnlyGet(String date) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String d = sdf.format(new Date());
-        try {
-            Calendar c = Calendar.getInstance();
-            c.setTime(sdf.parse(date));
-            return c.getTime();
-        } catch (Exception e) {
-            String message = e.getMessage();
-        }
-        return null;
+        return parse(date,"yyyy-MM-dd");
     }
 
     public static String dateOnlyStringGet(String date) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-        try {
-            Calendar c = Calendar.getInstance();
-            c.setTime(sdf.parse(date));
-            return sdf.format(c.getTime());
-        } catch (Exception e) {
-            String message = e.getMessage();
-        }
-        return date;
+        return format(date,"yyyy-MM-dd");
     }
 
     public static String parseDate(String date) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            //Calendar c = Calendar.getInstance();
-            //c.setTime(sdf.parse(date));
-            //return c.getTime().toString();
-            return sdf.format(sdf.parse(date));
-        } catch (Exception e) {
-            String message = e.getMessage();
-        }
-        return "";
+        return format(date,"yyyy-MM-dd");
     }
 
     public static String timeOnlyGet(String date) {
@@ -647,23 +613,11 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     }
 
     public static String ConverDateFormat(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat("MMM dd,yyyy hh:mm a");
-        try {
-            return format.format(date);
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-        return date.toString();
+        return format(date,"MMM dd,yyyy hh:mm a");
     }
 
     public static String ConverDateFormat(String date) {
-        SimpleDateFormat format = new SimpleDateFormat("MMM dd,yyyy hh:mm a");
-        try {
-            return format.format(sdf.parse(date));
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-        return date.toString();
+        return format(date,"MMM dd,yyyy hh:mm a");
     }
 
     public static String getTimeFromMinute(int totalMinutes) {

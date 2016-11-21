@@ -126,7 +126,7 @@ public class TabSystemFragment extends Fragment implements View.OnClickListener,
                     TimeZoneBean selectedZone = timeZoneList.get(position);
                     AlarmManager am = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
                     am.setTimeZone(selectedZone.getTimeZoneId());
-                    Utility.TimeZoneOffsetUTC = selectedZone.getTimeZoneValue();
+                    //Utility.TimeZoneOffsetUTC = selectedZone.getTimeZoneValue();
                     UserDB.Update("TimeZoneOffsetUTC", Utility.TimeZoneOffsetUTC);
                     Utility._appSetting.setTimeZone(selectedZone.getTimeZoneOffset());
                     SettingsDB.CreateSettings();

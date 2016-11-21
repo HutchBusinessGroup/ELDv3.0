@@ -4,12 +4,12 @@
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_dvir.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_first_time_user.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_first_time_user.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\diagnostic_item.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\diagnostic_item.xml"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_first_time_user.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_first_time_user.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
@@ -56,12 +56,12 @@
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_bluetooth_connectivity_check.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setup_complete.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_setup_complete.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_new_inspection.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_new_inspection.xml"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setup_complete.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_setup_complete.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_summary.xml",
@@ -92,12 +92,12 @@
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_media_cancel_action.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message_row_layout.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\message_row_layout.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_can_data.xml",
@@ -192,12 +192,12 @@
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_defect_selection.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_daily_log_dashboard_portrait.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_daily_log_dashboard_portrait.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_inspectdailylog.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_inspectdailylog.xml"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_daily_log_dashboard_portrait.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_daily_log_dashboard_portrait.xml"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\event_item.xml",

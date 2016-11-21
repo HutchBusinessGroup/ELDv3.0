@@ -833,7 +833,7 @@ public class MainActivity extends ELogMainActivity
                 Utility.as.SetAlarm(this);
             }
 
-            SPNMap map = new SPNMap(this);
+            new SPNMap(this);
             stopService = false;
             SharedPreferences prefs = getSharedPreferences("HutchGroup", getBaseContext().MODE_PRIVATE);
             String upgradeFile = prefs.getString("upgrade_file", "");
@@ -1119,7 +1119,7 @@ public class MainActivity extends ELogMainActivity
                 DiagnosticMalfunction.getDiagnosticIndicator();
                 CarrierInfoDB.getCompanyInfo();
                 Utility.unIdentifiedDriverId = LoginDB.getUnidentifiedDriverId();
-                Utility.TimeZoneOffsetUTC = ZoneList.getTimeZoneOffset();
+                //Utility.TimeZoneOffsetUTC = ZoneList.getTimeZoneOffset();
             }
 
             if (isLoginCall) {

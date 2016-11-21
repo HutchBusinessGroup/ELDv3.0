@@ -89,7 +89,7 @@ public class ELogApplication extends Application {
             Utility.TimeZoneId = prefs.getString("timezoneid", TimeZone.getDefault().getID());
             Utility.TimeZoneOffset = ZoneList.getOffset(Utility.TimeZoneId);
             Utility.TimeZoneOffsetUTC = ZoneList.getTimeZoneOffset(Utility.TimeZoneId);
-
+            Utility.sdf.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
             // start gps thread
             objGps.startUsingGPS(getApplicationContext());
 

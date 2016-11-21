@@ -44,8 +44,9 @@ public class CarrierInfoDB {
                 Utility.MACAddress = cursor.getString(7);
                 Utility.PlateNo = cursor.getString(8);
                 Utility.TimeZoneId = cursor.getString(9);
+                Utility.TimeZoneOffset = ZoneList.getOffset(Utility.TimeZoneId);
                 Utility.TimeZoneOffsetUTC = ZoneList.getTimeZoneOffset(Utility.TimeZoneId);
-
+                Utility.sdf.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
             }
 
         } catch (Exception e) {
@@ -148,7 +149,9 @@ public class CarrierInfoDB {
                     Utility.VIN = bean.getVIN();
                     Utility.MACAddress = bean.getMACAddress();
                     Utility.TimeZoneId = bean.getTimeZoneId();
+                    Utility.TimeZoneOffset = ZoneList.getOffset(Utility.TimeZoneId);
                     Utility.TimeZoneOffsetUTC = ZoneList.getTimeZoneOffset(Utility.TimeZoneId);
+                    Utility.sdf.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
                 }
             }
         } catch (Exception e) {
