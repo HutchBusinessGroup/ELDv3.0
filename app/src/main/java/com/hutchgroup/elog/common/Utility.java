@@ -568,15 +568,15 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     }
 
     public static Date dateOnlyGet(String date) {
-        return parse(date,"yyyy-MM-dd");
+        return parse(date, "yyyy-MM-dd");
     }
 
     public static String dateOnlyStringGet(String date) {
-        return format(date,"yyyy-MM-dd");
+        return format(date, "yyyy-MM-dd");
     }
 
     public static String parseDate(String date) {
-        return format(date,"yyyy-MM-dd");
+        return format(date, "yyyy-MM-dd");
     }
 
     public static String timeOnlyGet(String date) {
@@ -613,11 +613,11 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     }
 
     public static String ConverDateFormat(Date date) {
-        return format(date,"MMM dd,yyyy hh:mm a");
+        return format(date, "MMM dd,yyyy hh:mm a");
     }
 
     public static String ConverDateFormat(String date) {
-        return format(date,"MMM dd,yyyy hh:mm a");
+        return format(date, "MMM dd,yyyy hh:mm a");
     }
 
     public static String getTimeFromMinute(int totalMinutes) {
@@ -796,28 +796,14 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     }
 
     public static String GetStringDate(Date date) {
-
-        SimpleDateFormat format = new SimpleDateFormat("MMM dd,yyyy");
-        try {
-            return format.format(date);
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-        return date.toString();
+        return format(date, "MMM dd,yyyy");
     }
 
     // Created By: Deepak Sharma
     // Created Date: 12 September 2016
     // Purpose: convert to specified date format
     public static String convertDate(Date date, String f) {
-        try {
-
-            SimpleDateFormat format = new SimpleDateFormat(f);
-            return format.format(date);
-        } catch (Exception e) {
-
-        }
-        return date.toString();
+        return format(date, f);
     }
 
 
@@ -825,24 +811,12 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     // Created Date: 12 September 2016
     // Purpose: convert to specified date format
     public static String convertDate(String date, String f) {
-        try {
-            Date cDate = sdf.parse(date);
-            SimpleDateFormat format = new SimpleDateFormat(f);
-            return format.format(cDate);
-        } catch (Exception e) {
-
-        }
-        return date.toString();
+        return format(date, f);
     }
 
     public static String GetString(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            return format.format(date);
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-        return date.toString();
+
+        return format(date, "yyyy-MM-dd");
     }
 
     public static float gigabytesAvailable(File f) {
