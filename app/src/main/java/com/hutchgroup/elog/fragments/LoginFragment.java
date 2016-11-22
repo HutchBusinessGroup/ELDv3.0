@@ -257,7 +257,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             if (InspectorModeFg) {
                 btnBack.setVisibility(View.GONE);
             } else {
-                if (firstLogin) {
+                if (firstLogin && !ConstantFlag.Flag_Development) {
                     startBTBThread();
                 }
             }
