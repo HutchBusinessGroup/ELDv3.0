@@ -1,23 +1,11 @@
 [
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\menu\\send_option.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\menu\\send_option.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\menu\\gps_menu.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\menu\\gps_menu.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\menu\\send_option.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\menu\\send_option.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\menu\\gps_menu.xml",
@@ -28,15 +16,7 @@
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\menu\\main.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\menu\\drawer.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\menu\\drawer.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\menu\\drawer.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\menu\\drawer.xml"
     }
 ]

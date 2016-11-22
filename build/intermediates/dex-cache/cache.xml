@@ -115,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="c0f870ddcf2bda5b60b9c8c629253ef725c8101f">
+        sha1="12685dfafa3620a91aecd1b073275a61f88af7a4">
         <dex dex="D:\Projects\Android\ELDv3.0\ELDv3.0\app\build\intermediates\pre-dexed\debug\instant-run_801cb46be91c8d3dc658e6142058334a261af3c5.jar" />
     </item>
     <item
@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.1"
-        sha1="887f4c436d6e140df274ec5d77163f01f628a85b">
+        sha1="ac98000c012f5ee1438d18b02dc330e9025722dd">
         <dex dex="D:\Projects\Android\ELDv3.0\ELDv3.0\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_abc26670af6c97ee04b46bdc94a2920fc6b5712e.jar" />
     </item>
 

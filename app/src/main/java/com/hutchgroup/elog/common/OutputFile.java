@@ -26,7 +26,7 @@ public class OutputFile {
     // Purpose: get header for output file
     public static String getHeader(String fileComment) {
         //get current date time with Date()
-        Date currentDT = new Date();
+        Date currentDT =Utility.newDate();
         String currentDate = dateFormat.format(currentDT);
         String currentTime = timeFormat.format(currentDT);
         UserBean user1 = Utility.user1;

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-xhdpi-v4\\event_item.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-xhdpi\\event_item.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-xhdpi-v4\\event_item.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-xhdpi\\event_item.xml"
     }

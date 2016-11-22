@@ -156,7 +156,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
     private void updateTitle() {
         try {
             String title = getContext().getResources().getString(R.string.title_daily_log);
-            title += " - " + Utility.convertDate(new Date(), CustomDateFormat.d10);
+            title += " - " + Utility.convertDate(Utility.newDate(), CustomDateFormat.d10);
             mListener.setTitle(title);
         } catch (Exception exe) {
         }
@@ -167,10 +167,10 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
         @Override
         public void run() {
             try {
-                Date now = Utility.dateOnlyGet(new Date());
+                Date now = Utility.dateOnlyGet(Utility.newDate());
                 if (!now.equals(currentDate)) {
                     updateTitle();
-                    currentDate = Utility.dateOnlyGet(new Date());
+                    currentDate = Utility.dateOnlyGet(Utility.newDate());
                     // create daily log record for the current date
                     dailyLogId = DailyLogDB.DailyLogCreate(Utility.onScreenUserId, Utility.ShippingNumber, Utility.TrailerNumber, "");
                     mListener.resetFlag();
@@ -238,7 +238,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
         View view = inflater.inflate(R.layout.fragment_elog, container, false);
 
         try {
-            currentDate = Utility.dateOnlyGet(new Date());
+            currentDate = Utility.dateOnlyGet(Utility.newDate());
             DailyLogBean dailyLog = DailyLogDB.getDailyLogInfo(Utility.onScreenUserId, Utility.getCurrentDate());
             dailyLogId = dailyLog.get_id();
             certifyFg = dailyLog.getCertifyFG();
@@ -849,7 +849,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 }
             });
 
-            currentDate = Utility.dateOnlyGet(new Date());
+            currentDate = Utility.dateOnlyGet(Utility.newDate());
 
         } catch (Exception e) {
             LogFile.write(ELogFragment.class.getName() + "::initializeControls Error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
@@ -960,7 +960,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
     }
 
     private void drawViolationArea() {
-        HourOfService.ViolationCalculation(new Date(), Utility.onScreenUserId);
+        HourOfService.ViolationCalculation(Utility.newDate(), Utility.onScreenUserId);
         ArrayList<ViolationBean> vList = HourOfService.violations;
         int startMinutes = 0;
         Date endTime = null, startTime = null;
@@ -972,10 +972,10 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 continue;
             }
             endTime = Utility.addMinutes(startTime, vList.get(i).getTotalMinutes());
-            if (Utility._appSetting.getGraphLine() == 1 && endTime.after(new Date())) {
-                if (startTime.after(new Date()))
+            if (Utility._appSetting.getGraphLine() == 1 && endTime.after(Utility.newDate())) {
+                if (startTime.after(Utility.newDate()))
                     break;
-                endTime = new Date();
+                endTime = Utility.newDate();
             }
 
             int endMinutes = (int) (endTime.getTime() - currentDate.getTime()) / (1000 * 60);
@@ -1005,7 +1005,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
 
                 // graph line upto current time
                 if (Utility._appSetting.getGraphLine() == 1 && i == dutyStatus.size() - 1) {
-                    endTime = new Date();
+                    endTime = Utility.newDate();
                 }
 
                 RuleBean rule = eventRuleGet(startTime, ruleList);
@@ -1225,7 +1225,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
 
     private void InvokeRule() {
         try {
-            HourOfService.InvokeRule(new Date(), Utility.onScreenUserId);
+            HourOfService.InvokeRule(Utility.newDate(), Utility.onScreenUserId);
             //AutoHoursCalculate();
         } catch (Exception exe) {
             //Utility.printError(exe.getMessage());
@@ -1258,9 +1258,9 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             for (DutyStatusBean bean : dutyStatus) {
                 if (Utility._appSetting.getGraphLine() == 1) {
                     Date endTime = Utility.sdf.parse(bean.getEndTime());
-                    if (endTime.after(new Date())) {
+                    if (endTime.after(Utility.newDate())) {
                         Date startTime = Utility.sdf.parse(bean.getStartTime());
-                        int totalHours = (int) Math.round(((new Date()).getTime() - startTime.getTime()) / (1000 * 60.0));
+                        int totalHours = (int) Math.round(((Utility.newDate()).getTime() - startTime.getTime()) / (1000 * 60.0));
                         bean.setTotalMinutes(totalHours);
                     }
                 }
@@ -1301,9 +1301,9 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
     private List<EventBean> AddViolationToEvents(List<EventBean> eventList) {
         if (Utility._appSetting.getShowViolation() == 0)
             return eventList;
-        HourOfService.ViolationCalculation(new Date(), Utility.onScreenUserId);
+        HourOfService.ViolationCalculation(Utility.newDate(), Utility.onScreenUserId);
         ArrayList<ViolationBean> vList = HourOfService.violations;
-        Date currTime = new Date();
+        Date currTime = Utility.newDate();
         for (int i = 0; i < vList.size(); i++) {
 
             Date startTime = vList.get(i).getStartTime();
@@ -1405,7 +1405,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 if (ViolationDT == null) {
                     return;
                 }
-                int hourLeft = (int) (ViolationDT.getTime() - (new Date()).getTime()) / (1000 * 60);
+                int hourLeft = (int) (ViolationDT.getTime() - (Utility.newDate()).getTime()) / (1000 * 60);
                 if (hourLeft < 0) {
                     hourLeft = 0;
                 }
@@ -1449,7 +1449,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                     AutoViolationCalculate();
                     return;
                 }
-                int hourLeft = (int) (ViolationDT.getTime() - (new Date()).getTime()) / (1000 * 60);
+                int hourLeft = (int) (ViolationDT.getTime() - (Utility.newDate()).getTime()) / (1000 * 60);
                 if (hourLeft < 0) {
                     hourLeft = 0;
                 }
@@ -1478,8 +1478,6 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
 
             } else {
                 GPSData.NoHOSViolationFgFg = 1;
-                // String dutyStatus = currentStatus == 1 ? "Off Duty" : (currentStatus == 2 ? "Sleeper" : "On Duty");
-                //int hourLeft = (int) ((new Date()).getTime() - statusDT.getTime()) / (1000 * 60);
                 tvViolation.setText("N/A");
                 tvViolationDate.setText("");
                 tvRemaingTime.setText("N/A");
@@ -1606,7 +1604,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
 
                 Utility.dutyStatusList = HourOfServiceDB.DutyStatusGet15Days(currentDate, Utility.onScreenUserId + "", false);
                 dailyLogId = DailyLogDB.getDailyLog(Utility.onScreenUserId, Utility.getCurrentDate());
-                currentDate = Utility.dateOnlyGet(new Date());
+                currentDate = Utility.dateOnlyGet(Utility.newDate());
                 if (Utility.dutyStatusList.size() > 0) {
                     currentStatus = Utility.dutyStatusList.get(0).getStatus();
                     statusDT = Utility.sdf.parse(Utility.dutyStatusList.get(0).getStartTime());
@@ -1751,7 +1749,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             }
 
             statusStartOdometerReading = Double.valueOf(CanMessages.OdometerReading).intValue();
-            statusDT = new Date();
+            statusDT = Utility.newDate();
             Utility.dutyStatusList = HourOfServiceDB.DutyStatusGet15Days(currentDate, Utility.onScreenUserId + "", false);
 
             butDutyStatus.setText(getResources().getStringArray(R.array.duty_status)[currentStatus - 1]);

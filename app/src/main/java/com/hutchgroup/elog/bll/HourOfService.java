@@ -45,7 +45,7 @@ public class HourOfService {
             DutyStatusBean lastDutyStatus = listDutyStatus.get(0);
             int status = lastDutyStatus.getStatus();
 
-            if (1 == 2 && status != 2 && Utility.dateOnlyGet(logDate).equals(Utility.dateOnlyGet((new Date()))) && !deferedFg) {
+            if (1 == 2 && status != 2 && Utility.dateOnlyGet(logDate).equals(Utility.dateOnlyGet((Utility.newDate()))) && !deferedFg) {
                 if (listDutyStatus.size() > 1 && listDutyStatus.get(1).getStatus() == 2) {
                     final AlertDialog ad = new AlertDialog.Builder(Utility.context)
                             .create();
@@ -95,8 +95,8 @@ public class HourOfService {
             }
             ElogActivity.resetDT = status == 2 ? Utility.addMinutes(Utility.sdf.parse(lastDutyStatus.getStartTime()), ElogActivity.activeCycle == 2 ? 72 : 36) : null;
             if (status == 3) {
-                String date = Utility.sdf.format(new Date());
-                String dateOnly = Utility.sdf.format(Utility.dateOnlyGet(new Date()));
+                String date = Utility.sdf.format(Utility.newDate());
+                String dateOnly = Utility.sdf.format(Utility.dateOnlyGet(Utility.newDate()));
                 violations = new ArrayList<>();
                 if (ELogFragment.currentRule == 3) {
 
@@ -129,7 +129,7 @@ public class HourOfService {
                     ELogFragment.ViolationTitle = vBean.getTitle();
                     ELogFragment.ViolationExplanation = vBean.getExplanation();
                     if (mListener != null) {
-                        mListener.onUpdateViolation(vBean.getStartTime().before(new Date()));
+                        mListener.onUpdateViolation(vBean.getStartTime().before(Utility.newDate()));
                     }
 
                 } else {
@@ -353,7 +353,7 @@ public class HourOfService {
                 Date startTime = Utility.sdf.parse(item.getStartTime());
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
                 Date endTime = Utility.sdf.parse(item.getEndTime());
-                // endTime = endTime.after(new Date()) ? new Date() : endTime;
+                // endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
 
                 int totalMinutes = item.getTotalMinutes();//(int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
                 int status = item.getStatus();
@@ -902,7 +902,7 @@ public class HourOfService {
                 Date statusStartTime = startDate.before(currentDate) ? currentDate : startDate;
                 statusStartTime = Utility.addSeconds(statusStartTime, -statusStartTime.getSeconds());
 
-                Date statusEndTime = endDate.after(nextDay.after(new Date()) ? new Date() : nextDay) ? (nextDay.after(new Date()) ? new Date() : nextDay) : endDate;
+                Date statusEndTime = endDate.after(nextDay.after(Utility.newDate()) ? Utility.newDate() : nextDay) ? (nextDay.after(Utility.newDate()) ? Utility.newDate() : nextDay) : endDate;
                 statusEndTime = Utility.addSeconds(statusEndTime, -statusEndTime.getSeconds());
 
                 int statusMinutes = (int) ((statusEndTime.getTime() - statusStartTime.getTime())
@@ -996,7 +996,7 @@ public class HourOfService {
 
 
                 Date statusStartTime = startDate.before(currentDate) ? currentDate : startDate;
-                Date statusEndTime = endDate.after(nextDay.after(new Date()) ? new Date() : nextDay) ? (nextDay.after(new Date()) ? new Date() : nextDay) : endDate;
+                Date statusEndTime = endDate.after(nextDay.after(Utility.newDate()) ? Utility.newDate() : nextDay) ? (nextDay.after(Utility.newDate()) ? Utility.newDate() : nextDay) : endDate;
                 int statusMinutes = (int) ((statusEndTime.getTime() - statusStartTime.getTime())
                         / (1000 * 60));
                 if (item.getStatus() == 3) {
@@ -1046,7 +1046,7 @@ public class HourOfService {
                 DutyStatusBean item = data.get(i);
                 Date startTime = Utility.sdf.parse(item.getStartTime());
                 Date endTime = Utility.sdf.parse(item.getEndTime());
-                endTime = endTime.after(new Date()) ? new Date() : endTime;
+                endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 int totalMinutes = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
 
                 if (item.getStatus() <= 4) {
@@ -1080,7 +1080,7 @@ public class HourOfService {
                     Date startTime = Utility.sdf.parse(driving.getStartTime());
                     startTime = startTime.before(Utility.dateOnlyGet(date)) ? Utility.dateOnlyGet(date) : startTime;
                     Date endTime = Utility.sdf.parse(driving.getEndTime());
-                    endTime = endTime.after(new Date()) ? new Date() : endTime;
+                    endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                     int totalTime = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
                     ViolationAdd("29A Cycle 1 to 2 wo 36hrs off-duty", startTime, totalTime, true, "Must take minimum 36 consecutive hours off-duty to switch to cycle 2 from cycle 1.", "Canadian law requires a minimum of 36 consecutive hours off-duty or sleeper-berth or any combination of off-duty and sleeper before switching to cycle 2 from cycle 1.");
                 }
@@ -1089,7 +1089,7 @@ public class HourOfService {
                     Date startTime = Utility.sdf.parse(driving.getStartTime());
                     startTime = startTime.before(Utility.dateOnlyGet(date)) ? Utility.dateOnlyGet(date) : startTime;
                     Date endTime = Utility.sdf.parse(driving.getEndTime());
-                    endTime = endTime.after(new Date()) ? new Date() : endTime;
+                    endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                     int totalTime = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
                     ViolationAdd("29B Cycle 2 to 1 wo 72hrs off-duty", startTime, totalTime, true, "Must take minimum 72 consecutive hours off-duty to switch from cycle 2 to cycle 1.", "Canadian law requires you to take a minimum of 72 consecutive hours off-duty or sleeper-berth or any combination of off-duty and sleeper before switching from cycle 2 to cycle 1.");
                 }
@@ -1377,7 +1377,7 @@ public class HourOfService {
                 statusStartTime = Utility.addSeconds(statusStartTime, -statusStartTime.getSeconds());
 
                 Date statusEndTime = Utility.sdf.parse(item.getEndTime());
-                statusEndTime = statusEndTime.after(nextDay.after(new Date()) ? new Date() : nextDay) ? (nextDay.after(new Date()) ? new Date() : nextDay) : statusEndTime;
+                statusEndTime = statusEndTime.after(nextDay.after(Utility.newDate()) ? Utility.newDate() : nextDay) ? (nextDay.after(Utility.newDate()) ? Utility.newDate() : nextDay) : statusEndTime;
 
                 statusEndTime = Utility.addSeconds(statusEndTime, -statusEndTime.getSeconds());
                 int totalMinutes = (int) (statusEndTime.getTime() - statusStartTime.getTime()) / (1000 * 60);
@@ -1609,7 +1609,7 @@ public class HourOfService {
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
                 Date endTime = Utility.sdf.parse(item.getEndTime());
-                endTime = endTime.after(new Date()) ? new Date() : endTime;
+                endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
                 int totalTime = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
@@ -1672,7 +1672,7 @@ public class HourOfService {
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
                 Date endTime = Utility.sdf.parse(item.getEndTime());
-                endTime = endTime.after(new Date()) ? new Date() : endTime;
+                endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
                 int totalMinutes = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
@@ -1754,7 +1754,7 @@ public class HourOfService {
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
                 Date endTime = Utility.sdf.parse(item.getEndTime());
-                endTime = endTime.after(new Date()) ? new Date() : endTime;
+                endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
                 int totalMinutes = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
@@ -1992,7 +1992,7 @@ public class HourOfService {
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
                 Date endTime = Utility.sdf.parse(item.getEndTime());
-                endTime = endTime.after(new Date()) ? new Date() : endTime;
+                endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
                 int totalMinutes = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);

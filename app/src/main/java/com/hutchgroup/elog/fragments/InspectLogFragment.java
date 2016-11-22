@@ -56,7 +56,7 @@ public class InspectLogFragment extends Fragment {
         if (Utility.InspectorModeFg && currentRule > 2) {
             totalPage = 8;
         }
-        startDate = Utility.dateOnlyGet(new Date());
+        startDate = Utility.dateOnlyGet(Utility.newDate());
         startDate = Utility.addDays(startDate, -(totalPage - 1));
 
         pager = (ViewPager) view.findViewById(R.id.pager);

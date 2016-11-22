@@ -496,7 +496,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
             // we'll have to fetch setting on each time switching user as driver and codriver may have different settings
             getSettings(driverId);
-            HourOfService.InvokeRule(new Date(), Utility.onScreenUserId);
+            HourOfService.InvokeRule(Utility.newDate(), Utility.onScreenUserId);
             try {
 
 
@@ -561,7 +561,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                 }
 
                 try {
-                    HourOfService.InvokeRule(new Date(), Utility.onScreenUserId);
+                    HourOfService.InvokeRule(Utility.newDate(), Utility.onScreenUserId);
                     SharedPreferences sp = getActivity().getSharedPreferences("HutchGroup", getActivity().MODE_PRIVATE);
                     int shippingDriverId = sp.getInt("driverid", -1);
                     if (shippingDriverId == Utility.user1.getAccountId() || shippingDriverId == Utility.user2.getAccountId()) {

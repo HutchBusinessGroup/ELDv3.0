@@ -1,13 +1,5 @@
 [
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\freeze_layout.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\freeze_layout.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fab_layout.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fab_layout.xml"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\freeze_layout.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\freeze_layout.xml"
     },
@@ -16,8 +8,8 @@
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fragment_daily_log_dashboard__bk.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fragment_daily_log_dashboard.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fragment_daily_log_dashboard.xml"
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\activity_new_inspection.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\activity_new_inspection.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\elog_scrollview_portrait.xml",
@@ -28,8 +20,12 @@
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\activity_duty_status_change.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fragment_detail_portrait.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fragment_detail_portrait.xml"
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fragment_driver_profile.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fragment_driver_profile.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\activity_defect_selection.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\activity_defect_selection.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fragment_daily_log_dashboard.xml",
@@ -40,12 +36,8 @@
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\diagnostic_item.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\nav_header_drawer.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\nav_header_drawer.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fragment_daily_log_dashboard__bk.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fragment_daily_log_dashboard__bk.xml"
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fragment_detail_portrait.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fragment_detail_portrait.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\nav_header_drawer.xml",
@@ -54,50 +46,6 @@
     {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\uncertified_row_layout.xml",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\uncertified_row_layout.xml"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\activity_new_inspection.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\activity_new_inspection.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fragment_driver_profile.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fragment_driver_profile.xml"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fragment_driver_profile.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fragment_driver_profile.xml"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\activity_defect_selection.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\activity_defect_selection.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\uncertified_row_layout.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\uncertified_row_layout.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\diagnostic_item.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\diagnostic_item.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\activity_new_inspection.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\activity_new_inspection.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\activity_defect_selection.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\activity_defect_selection.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\activity_duty_status_change.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\activity_duty_status_change.xml"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\elog_scrollview_portrait.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\elog_scrollview_portrait.xml"
-    },
-    {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fragment_detail_portrait.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout-sw370dp\\fragment_detail_portrait.xml"
     },
     {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw370dp-v13\\fab_layout.xml",

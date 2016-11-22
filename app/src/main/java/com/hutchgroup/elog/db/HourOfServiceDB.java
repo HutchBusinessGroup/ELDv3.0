@@ -36,13 +36,7 @@ public class HourOfServiceDB {
             logDate = Utility.dateOnlyGet(logDate);
             Date startDate = Utility.addDays(logDate, -15);
             Date endDate = Utility.addDays(logDate, 2);
-           /* if (Utility._appSetting.getGraphLine()==1)
-            {
-                if (endDate.after(new Date()))
-                {
-                    endDate=new Date();
-                }
-            }*/
+
             if (cdFg) {
                 startDate = Utility.dateOnlyGet(logDate);
                 endDate = Utility.addSeconds(Utility.addDays(startDate, 1), -1);
@@ -324,7 +318,7 @@ public class HourOfServiceDB {
                         startTime.before(date) && list.get(i).getStatus() >= 3) {
 
                     startTime = startTime.before(startDate) ? startDate : startTime;
-                    endTime = endTime.after(new Date()) ? new Date() : endTime;
+                    endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                     int totalMinute = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
                     onDutyMinute += totalMinute;
                 }

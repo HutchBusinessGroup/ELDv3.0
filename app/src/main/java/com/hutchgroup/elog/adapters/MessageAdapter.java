@@ -61,7 +61,7 @@ public class MessageAdapter extends ArrayAdapter<MessageBean> {
 
         if (messageDate.equals(Utility.getCurrentDate())) {
             viewHolder.tvDate.setText("Today");
-        } else if (messageDate.equals(Utility.sdf.format(Utility.addDays(new Date(), -1))))
+        } else if (messageDate.equals(Utility.sdf.format(Utility.addDays(Utility.newDate(), -1))))
             viewHolder.tvDate.setText("Yesterday");
         else {
             viewHolder.tvDate.setText(messageDate);

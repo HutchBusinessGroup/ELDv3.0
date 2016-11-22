@@ -45,7 +45,7 @@ public class ViolationFragment extends Fragment {
 
     private void ViolationBind() {
         selectedItemIndex = -1;
-        HourOfService.ViolationCalculation(new Date(), driverId);
+        HourOfService.ViolationCalculation(Utility.newDate(), driverId);
         //tempViolation();
         violationList = HourOfService.violations;
 

@@ -2134,7 +2134,7 @@ public class MainActivity extends ELogMainActivity
         previousScreen = currentScreen;
         currentScreen = DailyLog_Screen;
         title = getApplicationContext().getResources().getString(R.string.title_daily_log);
-        title += " - " + Utility.convertDate(new Date(), CustomDateFormat.d10);
+        title += " - " + Utility.convertDate(Utility.newDate(), CustomDateFormat.d10);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(title);
     }
@@ -2683,7 +2683,7 @@ public class MainActivity extends ELogMainActivity
                 }
 
                 if (tvDrivingRemainingFreeze != null && activeCurrentDutyStatus == 3 && ViolationDT != null) {
-                    int secondsLeft = (int) (ViolationDT.getTime() - (new Date()).getTime()) / 1000;
+                    int secondsLeft = (int) (ViolationDT.getTime() - (Utility.newDate()).getTime()) / 1000;
                     if (secondsLeft < 0) {
                         secondsLeft = 0;
                     }
@@ -4454,7 +4454,7 @@ public class MainActivity extends ELogMainActivity
 
                     } else {
                         try {
-                            HourOfService.InvokeRule(new Date(), Utility.activeUserId);
+                            HourOfService.InvokeRule(Utility.newDate(), Utility.activeUserId);
                         } catch (Exception exe) {
                         }
                     }

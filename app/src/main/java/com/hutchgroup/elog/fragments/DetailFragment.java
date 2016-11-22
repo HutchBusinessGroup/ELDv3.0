@@ -118,10 +118,10 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
             int day = c.get(Calendar.DAY_OF_MONTH);
             DatePickerDialog dilog = new DatePickerDialog(getActivity(), this, year, month, day);
             DatePicker picker = dilog.getDatePicker();
-            c.setTime(new Date());
+            c.setTime(Utility.newDate());
             c.add(Calendar.DATE, 1);
             picker.setMaxDate(c.getTime().getTime());
-            c.setTime(Utility.dateOnlyGet(new Date()));
+            c.setTime(Utility.dateOnlyGet(Utility.newDate()));
             c.add(Calendar.DATE, -14);
             picker.setMinDate(c.getTime().getTime());
             return dilog;
@@ -379,7 +379,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
         try {
             // currentDate, Utility.dutyStatusList was null so intializing
             if (currentDate == null) {
-                currentDate = Utility.dateOnlyGet(new Date());
+                currentDate = Utility.dateOnlyGet(Utility.newDate());
             }
             selectedDate = currentDate;
 
@@ -824,7 +824,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
             return eventList;
         HourOfService.ViolationCalculation(selectedDate, driverId);
         ArrayList<ViolationBean> vList = HourOfService.violations;
-        Date currTime = new Date();
+        Date currTime = Utility.newDate();
         for (int i = 0; i < vList.size(); i++) {
 
             Date startTime = vList.get(i).getStartTime();
@@ -856,7 +856,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
 
     private void InvokeRule() {
         try {
-            HourOfService.InvokeRule(new Date(), driverId);
+            HourOfService.InvokeRule(Utility.newDate(), driverId);
             //AutoHoursCalculate();
         } catch (Exception exe) {
             //Utility.printError(exe.getMessage());
@@ -886,7 +886,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
     }
 
     private void drawViolationArea() {
-        HourOfService.ViolationCalculation(new Date(), driverId);
+        HourOfService.ViolationCalculation(Utility.newDate(), driverId);
         ArrayList<ViolationBean> vList = HourOfService.violations;
         int startMinutes = 0;
         Date endTime = null, startTime = null;
@@ -898,10 +898,10 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
                 continue;
             }
             endTime = Utility.addMinutes(startTime, vList.get(i).getTotalMinutes());
-            if (Utility._appSetting.getGraphLine() == 1 && endTime.after(new Date())) {
-                if (startTime.after(new Date()))
+            if (Utility._appSetting.getGraphLine() == 1 && endTime.after(Utility.newDate())) {
+                if (startTime.after(Utility.newDate()))
                     break;
-                endTime = new Date();
+                endTime = Utility.newDate();
             }
 
             int endMinutes = (int) (endTime.getTime() - selectedDate.getTime()) / (1000 * 60);
@@ -961,7 +961,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
                 Date startTime = Utility.sdf.parse(item.getStartTime()), endTime = Utility.sdf.parse(item.getEndTime());
                 // graph line upto current time
                 if (Utility._appSetting.getGraphLine() == 1 && i == dutyStatus.size() - 1) {
-                    endTime = new Date();
+                    endTime = Utility.newDate();
                 }
 
                 RuleBean rule = eventRuleGet(startTime, ruleList);
@@ -1150,9 +1150,9 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
                         }
                     }
 
-                    if (endTime.after(new Date())) {
+                    if (endTime.after(Utility.newDate())) {
 
-                        int totalHours = (int) Math.round(((new Date()).getTime() - startTime.getTime()) / (1000 * 60.0));
+                        int totalHours = (int) Math.round(((Utility.newDate()).getTime() - startTime.getTime()) / (1000 * 60.0));
                         bean.setTotalMinutes(totalHours);
                     }
                 }

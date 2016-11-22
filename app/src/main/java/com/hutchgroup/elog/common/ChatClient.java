@@ -38,7 +38,7 @@ public class ChatClient {
     private static Thread chatThread = null, hbTread;
     public static PrintWriter out = null;
     public static BufferedReader in = null;
-    private static Date lastHeartBeatTime = new Date();
+    private static Date lastHeartBeatTime = Utility.newDate();
 
 
     // Created By: Deepak Sharma
@@ -64,7 +64,7 @@ public class ChatClient {
                 try {
                     connecting = true;
                     socket = new Socket(HOST, PORT_NUMBER);
-                    lastHeartBeatTime = new Date();
+                    lastHeartBeatTime =Utility.newDate();
                     //  socket.setKeepAlive(true);
                     //socket.setSoTimeout(0);
                     out = new PrintWriter(socket.getOutputStream());
@@ -131,7 +131,7 @@ public class ChatClient {
                         connecting = true;
 
                         if (Utility.user1.getAccountId() > 0) {
-                            long differ = (new Date().getTime() - lastHeartBeatTime.getTime()) / 1000;
+                            long differ = (Utility.newDate().getTime() - lastHeartBeatTime.getTime()) / 1000;
                             if (out == null || out.checkError() || differ > 10) {
                                 if (icListner != null) {
                                     icListner.onServerStatusChanged(false);
@@ -260,7 +260,7 @@ public class ChatClient {
 
         try {
             if (message.equals("HB")) {
-                lastHeartBeatTime = new Date();
+                lastHeartBeatTime = Utility.newDate();
                 System.out.println("HeartBeat: " + lastHeartBeatTime);
                 return;
             }
@@ -270,7 +270,7 @@ public class ChatClient {
             // Looper.prepare();
             System.out.println("RecievedMessage:" + message);
           /*  if (message.equals("HB")) {
-                lastHeartBeatTime = new Date();
+                lastHeartBeatTime = Utility.newDate();
                 System.out.println("HeartBeat: " + lastHeartBeatTime);
                 return;
             }*/
@@ -344,7 +344,7 @@ public class ChatClient {
                     mListener.onMessageUpdated(bean, OFFLINE2);
                 }
             } else if (bean.getFlag().equals("HB")) {
-                lastHeartBeatTime = new Date();
+                lastHeartBeatTime =Utility.newDate();
                 System.out.println("HeartBeat: " + lastHeartBeatTime);
             }
             //Looper.loop();

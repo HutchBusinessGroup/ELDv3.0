@@ -151,7 +151,7 @@ public class LogFile {
     }
 
     public static String getCurrentDateTime() {
-        Date d = new Date();
+        Date d = Utility.newDate();
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss",
                 Locale.CANADA);
         return sdf.format(d);

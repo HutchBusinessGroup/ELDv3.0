@@ -90,7 +90,7 @@ public class Mail extends javax.mail.Authenticator {
             msg.setRecipients(MimeMessage.RecipientType.TO, addressTo);
 
             msg.setSubject(subject);
-            msg.setSentDate(new Date());
+            msg.setSentDate(Utility.newDate());
 
             // setup message body
             BodyPart messageBodyPart = new MimeBodyPart();

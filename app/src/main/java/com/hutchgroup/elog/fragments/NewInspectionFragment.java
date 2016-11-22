@@ -269,7 +269,7 @@ public class NewInspectionFragment extends Fragment implements View.OnClickListe
             currentDatetime = Utility.getCurrentDateTime();
 
 
-            String currentDate = Utility.convertDate(new Date(), format);
+            String currentDate = Utility.convertDate(Utility.newDate(), format);
             tvDateTime.setText(currentDate);
             latitude = Utility.currentLocation.getLatitude();
             longitude = Utility.currentLocation.getLongitude();

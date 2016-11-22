@@ -81,7 +81,7 @@ public class DailyLogDB {
         ArrayList<RuleBean> ruleList = new ArrayList<>();
 
         try {
-            String nextDay = Utility.sdf.format(Utility.addDays(new Date(), 1));
+            String nextDay = Utility.sdf.format(Utility.addDays(Utility.newDate(), 1));
             Date selectedDate = Utility.sdf.parse(date);
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getReadableDatabase();
@@ -166,7 +166,7 @@ public class DailyLogDB {
             updateRuleEndTime(driverId, ruleStartTime);
             ContentValues values = new ContentValues();
 
-            ruleEndTime = Utility.sdf.format(Utility.dateOnlyGet(Utility.addDays(new Date(), 1)));
+            ruleEndTime = Utility.sdf.format(Utility.dateOnlyGet(Utility.addDays(Utility.newDate(), 1)));
             logId = DailyLogCreate(driverId, "", "", "");
             values.put("DailyLogId", logId);
             values.put("RuleId", ruleId);

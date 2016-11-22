@@ -274,6 +274,12 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         return sdf.format(d);
     }
 
+    public static Date newDate() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
+        return calendar.getTime();
+    }
+
     static Date parse(String dateTime) {
         try {
             return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(dateTime);
@@ -989,5 +995,6 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         }
         return result;
     }
+
 
 }
