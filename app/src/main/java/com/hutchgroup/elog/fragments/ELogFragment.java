@@ -65,6 +65,7 @@ import com.hutchgroup.elog.tasks.SyncData;
 
 import android.support.v7.app.ActionBar;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -73,7 +74,7 @@ import java.util.List;
 public class ELogFragment extends Fragment implements View.OnClickListener, RuleChangeDialog.RuleChangeDialogInterface,
         DutyStatusChangeDialog.DutyStatusChangeDialogInterface, InputInformationDialog.InputInformationDialogInterface {
     String TAG = ELogFragment.class.getName();
-
+    static String fullFormat = "yyyy-MM-dd HH:mm:ss";
     public String title = "Daily Log";
 
     private OnFragmentInteractionListener mListener;
@@ -877,7 +878,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                     mListener.setDutyStatus(currentStatus);
                     Log.d(TAG, "initialize currentStatus=" + currentStatus);
                     butDutyStatus.setText(getResources().getStringArray(R.array.duty_status)[currentStatus - 1]);
-                    statusDT = Utility.sdf.parse(Utility.dutyStatusList.get(0).getStartTime());
+                    statusDT = Utility.parse(Utility.dutyStatusList.get(0).getStartTime());
                     String startTime = Utility.timeOnlyGet(Utility.dutyStatusList.get(0).getStartTime());
                     //tvStartTime.setText("from: " + startTime);
                 } catch (Exception exe) {
@@ -992,7 +993,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             if (Utility._appSetting.getViolationOnGrid() == 1)
                 drawViolationArea();
 
-            String logDT = Utility.sdf.format(logDate);
+            String logDT = Utility.format(logDate, fullFormat);
             ArrayList<RuleBean> ruleList = DailyLogDB.getRuleByDate(logDT, Utility.onScreenUserId, dailyLogId);
             Collections.sort(ruleList, RuleBean.dateDesc);
             int ruleId = 1, startMinutes, endMinutes = 0;
@@ -1001,7 +1002,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 DutyStatusBean item = dutyStatus.get(i);
                 int status = item.getStatus();
                 int personalUseFg = item.getPersonalUse();
-                Date startTime = Utility.sdf.parse(item.getStartTime()), endTime = Utility.sdf.parse(item.getEndTime());
+                Date startTime = Utility.parse(item.getStartTime()), endTime = Utility.parse(item.getEndTime());
 
                 // graph line upto current time
                 if (Utility._appSetting.getGraphLine() == 1 && i == dutyStatus.size() - 1) {
@@ -1053,9 +1054,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                     ruleId = ruleList.get(0).getRuleId();
 
                 }
-                // Date endTime = Utility.sdf.parse( Utility.getCurrentDateTime());
-                //Date endTime = Utility.addSeconds(Utility.addDays(logDate, 1), -1);
-                endMinutes = 1439;// (int) (endTime.getTime() - logDate.getTime()) / (1000 * 60);
+                endMinutes = 1439;
                 drawLine(getX(0), getY(1), getX(endMinutes), getY(1), ruleId, 0);
             }
 
@@ -1257,9 +1256,9 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             int offDuty = 0, sleeper = 0, driving = 0, onDuty = 0;
             for (DutyStatusBean bean : dutyStatus) {
                 if (Utility._appSetting.getGraphLine() == 1) {
-                    Date endTime = Utility.sdf.parse(bean.getEndTime());
+                    Date endTime = Utility.parse(bean.getEndTime());
                     if (endTime.after(Utility.newDate())) {
-                        Date startTime = Utility.sdf.parse(bean.getStartTime());
+                        Date startTime = Utility.parse(bean.getStartTime());
                         int totalHours = (int) Math.round(((Utility.newDate()).getTime() - startTime.getTime()) / (1000 * 60.0));
                         bean.setTotalMinutes(totalHours);
                     }
@@ -1320,7 +1319,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
 */
             EventBean event = new EventBean();
             event.setEventType(-1); //-1 for violation
-            event.setEventDateTime(Utility.sdf.format(startTime));
+            event.setEventDateTime(Utility.format(startTime, fullFormat));
             event.setViolation(vList.get(i).getRule());
             event.setViolationTitle(vList.get(i).getTitle());
             event.setViolationExplanation(vList.get(i).getExplanation());
@@ -1370,8 +1369,8 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             Date nextDay = Utility.addDays(date, 1);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endDate = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endDate = Utility.parse(list.get(i).getEndTime());
                 //Log.d(TAG, "Duty Status= " + list.get(i).getStatus() + " - Start Time=" + list.get(i).getStartTime() + " / End Time=" + list.get(i).getEndTime());
                 int status = list.get(i).getStatus();
                 int personalUseFg = list.get(i).getPersonalUse();
@@ -1381,8 +1380,8 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                     int totalMinutes = (int) Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 60.0));
 
                     DutyStatusBean bean = new DutyStatusBean();
-                    bean.setStartTime(Utility.sdf.format(startDate));
-                    bean.setEndTime(Utility.sdf.format(endDate));
+                    bean.setStartTime(Utility.format(startDate, fullFormat));
+                    bean.setEndTime(Utility.format(endDate, fullFormat));
                     bean.setStatus(status);
                     bean.setTotalMinutes(totalMinutes);
                     bean.setPersonalUse(personalUseFg);
@@ -1607,7 +1606,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 currentDate = Utility.dateOnlyGet(Utility.newDate());
                 if (Utility.dutyStatusList.size() > 0) {
                     currentStatus = Utility.dutyStatusList.get(0).getStatus();
-                    statusDT = Utility.sdf.parse(Utility.dutyStatusList.get(0).getStartTime());
+                    statusDT = Utility.parse(Utility.dutyStatusList.get(0).getStartTime());
 
                     if (currentStatus == 1 && Utility.statusFlag == 1) {
                         if (Utility.dutyStatusList.get(0).getPersonalUse() == 1) {

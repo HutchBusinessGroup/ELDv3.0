@@ -197,7 +197,7 @@ public class OutputFile {
                 String eventRecordOrigin = cursor.getString(cursor.getColumnIndex("EventRecordOrigin"));
                 String eventType = cursor.getString(cursor.getColumnIndex("EventType"));
                 String eventCode = cursor.getString(cursor.getColumnIndex("EventCode"));
-                Date eventDateTime = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
+                Date eventDateTime = Utility.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
                 String eventDate = dateFormat.format(eventDateTime);
                 String eventTime = timeFormat.format(eventDateTime);
                 String accumulatedVehicleMiles = cursor.getString(cursor.getColumnIndex("AccumulatedVehicleMiles"));
@@ -259,7 +259,7 @@ public class OutputFile {
                 sb.append(userName).append(",");
                 sb.append(annotation).append(",");
 
-                Date eventDateTime = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
+                Date eventDateTime = Utility.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
                 String eventDate = dateFormat.format(eventDateTime);
                 String eventTime = timeFormat.format(eventDateTime);
                 sb.append(eventDate).append(",");
@@ -286,7 +286,7 @@ public class OutputFile {
                 sb.append(eventSequenceId).append(",");
                 sb.append(eventCode).append(",");
                 int vehicleId = cursor.getInt(cursor.getColumnIndex("VehicleId"));
-                Date eventDateTime = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
+                Date eventDateTime = Utility.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
                 String eventDate = dateFormat.format(eventDateTime);
                 String eventTime = timeFormat.format(eventDateTime);
                 String logDate = dateFormat.format(new SimpleDateFormat("yyyy-MM-dd").parse(cursor.getString(cursor.getColumnIndex("LogDate"))));
@@ -322,7 +322,7 @@ public class OutputFile {
 
                 int vehicleId = cursor.getInt(cursor.getColumnIndex("VehicleId"));
 
-                Date eventDateTime = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
+                Date eventDateTime = Utility.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
                 String eventDate = dateFormat.format(eventDateTime);
                 String eventTime = timeFormat.format(eventDateTime);
                 String odometerReading = Double.valueOf(cursor.getString(cursor.getColumnIndex("OdometerReading"))).intValue() + "";
@@ -359,7 +359,7 @@ public class OutputFile {
                 sb.append(eventCode).append(",");
                 sb.append(username).append(",");
 
-                Date eventDateTime = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
+                Date eventDateTime = Utility.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
                 String eventDate = dateFormat.format(eventDateTime);
                 String eventTime = timeFormat.format(eventDateTime);
                 String odometerReading = Double.valueOf(cursor.getString(cursor.getColumnIndex("OdometerReading"))).intValue() + "";
@@ -398,7 +398,7 @@ public class OutputFile {
                 sb.append(eventSequenceId).append(",");
                 sb.append(eventCode).append(",");
 
-                Date eventDateTime = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
+                Date eventDateTime = Utility.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
                 String eventDate = dateFormat.format(eventDateTime);
                 String eventTime = timeFormat.format(eventDateTime);
 
@@ -441,7 +441,7 @@ public class OutputFile {
                 String eventRecordOrigin = cursor.getString(cursor.getColumnIndex("EventRecordOrigin"));
                 String eventType = cursor.getString(cursor.getColumnIndex("EventType"));
                 String eventCode = cursor.getString(cursor.getColumnIndex("EventCode"));
-                Date eventDateTime = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
+                Date eventDateTime = Utility.parse(cursor.getString(cursor.getColumnIndex("EventDateTime")));
                 String eventDate = dateFormat.format(eventDateTime);
                 String eventTime = timeFormat.format(eventDateTime);
                 String accumulatedVehicleMiles = cursor.getString(cursor.getColumnIndex("AccumulatedVehicleMiles"));

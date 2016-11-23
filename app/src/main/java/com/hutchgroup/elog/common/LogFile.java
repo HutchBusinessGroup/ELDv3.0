@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 public class LogFile {
     final static String TAG = LogFile.class.getName();
@@ -154,6 +155,7 @@ public class LogFile {
         Date d = Utility.newDate();
         SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss",
                 Locale.CANADA);
+        sdf.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
         return sdf.format(d);
     }
 
@@ -165,7 +167,7 @@ public class LogFile {
                 logName = LOG_ERROR_NAME;
                 break;
             case CANBUS_LOG:
-                logName = LOG_CANBUS_NAME +"-"+ Utility.getCurrentDate() + "-" + Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+                logName = LOG_CANBUS_NAME + "-" + Utility.getCurrentDate() + "-" + Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
                 break;
             case NOLOGIN_LOG:
                 logName = LOG_NOLOGIN_NAME;

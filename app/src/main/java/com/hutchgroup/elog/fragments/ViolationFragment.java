@@ -56,12 +56,12 @@ public class ViolationFragment extends Fragment {
 /*
     private void tempViolation() {
         try {
-            HourOfService.ViolationAdd("12(A)", Utility.sdf.parse("2016-01-11 09:20:00"), 180, true);
-            HourOfService.ViolationAdd("13(B)", Utility.sdf.parse("2016-01-12 13:37:00"), 30, true);
-            HourOfService.ViolationAdd("14(C)", Utility.sdf.parse("2016-01-12 18:43:00"), 75, true);
-            HourOfService.ViolationAdd("16(A)", Utility.sdf.parse("2016-01-15 23:01:00"), 69, true);
-            HourOfService.ViolationAdd("26(B)", Utility.sdf.parse("2016-01-19 07:29:00"), 256, true);
-            HourOfService.ViolationAdd("25(A)", Utility.sdf.parse("2016-01-21 05:15:00"), 300, true);
+            HourOfService.ViolationAdd("12(A)", Utility.parse("2016-01-11 09:20:00"), 180, true);
+            HourOfService.ViolationAdd("13(B)", Utility.parse("2016-01-12 13:37:00"), 30, true);
+            HourOfService.ViolationAdd("14(C)", Utility.parse("2016-01-12 18:43:00"), 75, true);
+            HourOfService.ViolationAdd("16(A)", Utility.parse("2016-01-15 23:01:00"), 69, true);
+            HourOfService.ViolationAdd("26(B)", Utility.parse("2016-01-19 07:29:00"), 256, true);
+            HourOfService.ViolationAdd("25(A)", Utility.parse("2016-01-21 05:15:00"), 300, true);
         } catch (Exception exe) {
         }
     }*/

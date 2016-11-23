@@ -283,7 +283,7 @@ public class UserListFragment extends Fragment implements ChatClient.ChatMessage
             }
             if (messageDate.equals(Utility.getCurrentDate())) {
                 viewHolder.tvMessageTime.setText(messageTime);
-            } else if (messageDate.equals(Utility.sdf.format(Utility.addDays(Utility.newDate(), -1))))
+            } else if (messageDate.equals(Utility.sdf.format(Utility.addDays(new Date(), -1))))
                 viewHolder.tvMessageTime.setText("Yesterday");
             else {
                 viewHolder.tvMessageTime.setText(messageDate);

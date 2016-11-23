@@ -63,7 +63,7 @@ import java.util.List;
 
 public class DetailFragment extends Fragment implements View.OnClickListener, InputInformationDialog.InputInformationDialogInterface, InputTruckIDDialog.InputTruckIDDialogInterface {
     String TAG = DetailFragment.class.getName();
-
+    static String fullFormat = "yyyy-MM-dd HH:mm:ss";
     int driverId = 1;
     TextView tvRecordDate, tvUSDot, tvDriverLicense, tvDriverLicenseState, tvTimeZoneText, tvDriverName;
     TextView tvCoDriverName, tvELDManufacturer, tvDataDiagnostic, tvCarrier, tvDriverID, tvCoDriverID, tvUnidentifiedDriverRecords;
@@ -791,7 +791,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
             if (Utility.dutyStatusList.size() > 0) {
                 try {
                     currentStatus = Utility.dutyStatusList.get(0).getStatus();
-                    statusDT = Utility.sdf.parse(Utility.dutyStatusList.get(0).getStartTime());
+                    statusDT = Utility.parse(Utility.dutyStatusList.get(0).getStartTime());
                 } catch (Exception exe) {
                 }
             } else {
@@ -840,7 +840,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
 
             EventBean event = new EventBean();
             event.setEventType(-1); //-1 for violation
-            event.setEventDateTime(Utility.sdf.format(startTime));
+            event.setEventDateTime(Utility.format(startTime, fullFormat));
             event.setViolation(vList.get(i).getRule());
 
             event.setViolationTitle(vList.get(i).getTitle());
@@ -950,7 +950,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
             if (Utility._appSetting.getViolationOnGrid() == 1)
                 drawViolationArea();
 
-            String logDT = Utility.sdf.format(logDate);
+            String logDT = Utility.format(logDate, fullFormat);
             ArrayList<RuleBean> ruleList = DailyLogDB.getRuleByDate(logDT, driverId, dailyLogId);
             Collections.sort(ruleList, RuleBean.dateDesc);
             int ruleId = 1, startMinutes, endMinutes = 0;
@@ -958,7 +958,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
             for (int i = 0; i < dutyStatus.size(); i++) {
                 DutyStatusBean item = dutyStatus.get(i);
                 int status = item.getStatus();
-                Date startTime = Utility.sdf.parse(item.getStartTime()), endTime = Utility.sdf.parse(item.getEndTime());
+                Date startTime = Utility.parse(item.getStartTime()), endTime = Utility.parse(item.getEndTime());
                 // graph line upto current time
                 if (Utility._appSetting.getGraphLine() == 1 && i == dutyStatus.size() - 1) {
                     endTime = Utility.newDate();
@@ -1004,10 +1004,6 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
                 }
                 if (i < dutyStatus.size() - 1) {
                     item = dutyStatus.get(i + 1);
-                    // startTime = Utility.sdf.parse(item.getStartTime());
-                    //startMinutes = (int) (startTime.getTime() - logDate.getTime()) / (1000 * 60);
-                    // status = item.getStatus();
-                    //Log.d(TAG, i + " - status=" + status + "/next status=" + item.getStatus());
                     Log.d(TAG, i + "," + status + " X=" + getX(endMinutes) + " - Y1=" + getY(status) + "/Y2=" + getY(item.getStatus()));
                     drawLine(getX(endMinutes), getY(status), getX(endMinutes), getY(item.getStatus()), ruleId);
                 }
@@ -1018,9 +1014,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
                     ruleId = ruleList.get(0).getRuleId();
 
                 }
-                // Date endTime = Utility.sdf.parse( Utility.getCurrentDateTime());
-                //Date endTime = Utility.addSeconds(Utility.addDays(logDate, 1), -1);
-                endMinutes = 1439;// (int) (endTime.getTime() - logDate.getTime()) / (1000 * 60);
+                endMinutes = 1439;
                 drawLine(getX(0), getY(1), getX(endMinutes), getY(1), ruleId);
             }
 
@@ -1138,8 +1132,8 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
             boolean firstStatus = true;
             for (DutyStatusBean bean : dutyStatus) {
                 if (Utility._appSetting.getGraphLine() == 1) {
-                    Date startTime = Utility.sdf.parse(bean.getStartTime());
-                    Date endTime = Utility.sdf.parse(bean.getEndTime());
+                    Date startTime = Utility.parse(bean.getStartTime());
+                    Date endTime = Utility.parse(bean.getEndTime());
                     if (firstStatus) {
                         firstStatus = false;
                         if (startTime.after(currentDate)) {
@@ -1191,8 +1185,8 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
             Date nextDay = Utility.addDays(date, 1);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endDate = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endDate = Utility.parse(list.get(i).getEndTime());
                 //Log.d(TAG, "Duty Status= " + list.get(i).getStatus() + " - Start Time=" + list.get(i).getStartTime() + " / End Time=" + list.get(i).getEndTime());
                 int status = list.get(i).getStatus();
                 int personalUseFg = list.get(i).getPersonalUse();
@@ -1202,8 +1196,8 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
                     int totalMinutes = (int) Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 60.0));
 
                     DutyStatusBean bean = new DutyStatusBean();
-                    bean.setStartTime(Utility.sdf.format(startDate));
-                    bean.setEndTime(Utility.sdf.format(endDate));
+                    bean.setStartTime(Utility.format(startDate, fullFormat));
+                    bean.setEndTime(Utility.format(endDate, fullFormat));
                     bean.setStatus(status);
                     bean.setTotalMinutes(totalMinutes);
                     bean.setPersonalUse(personalUseFg);

@@ -79,12 +79,12 @@ public class UnidentifiedAdapter extends ArrayAdapter<EventBean> {
         viewHolder.tvOdometerReading.setText("Vehicle Miles: " + bean.getOdometerReading());
         viewHolder.tvLocationDescription.setText(bean.getLocationDescription());
         try {
-            viewHolder.tvDate.setText(new SimpleDateFormat("MMM dd,yyyy").format(Utility.sdf.parse(bean.getEventDateTime())));
+            viewHolder.tvDate.setText(new SimpleDateFormat("MMM dd,yyyy").format(Utility.parse(bean.getEventDateTime())));
             String format = "hh:mm a"; //12hr
             if (Utility._appSetting.getTimeFormat() == AppSettings.AppTimeFormat.HR24.ordinal()) {
                 format = "HH:mm";
             }
-            viewHolder.tvTime.setText(new SimpleDateFormat(format).format(Utility.sdf.parse(bean.getEventDateTime())));
+            viewHolder.tvTime.setText(new SimpleDateFormat(format).format(Utility.parse(bean.getEventDateTime())));
         }
         catch (Exception exe)
         {

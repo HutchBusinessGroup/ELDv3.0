@@ -23,6 +23,7 @@ import java.util.Date;
  */
 public class HourOfService {
     public static IViolation mListener;
+    static String fullFormat = "yyyy-MM-dd HH:mm:ss";
     public static ArrayList<ViolationBean> violations = new ArrayList<>();
     public static ArrayList<DutyStatusBean> listDutyStatus = new ArrayList<>();
     static ArrayList<DutyStatusBean> listCoDriverDutyStatus = new ArrayList<>();
@@ -61,7 +62,7 @@ public class HourOfService {
                                 public void onClick(DialogInterface dialog, int which) {
                                     if (listDutyStatus.get(1).getTotalMinutes() >= 2 * 60 && listDutyStatus.get(1).getTotalMinutes() <= 8 * 60) {
                                         try {
-                                            ExcludeSleeperStartTime = Utility.sdf.parse(listDutyStatus.get(1).getStartTime());
+                                            ExcludeSleeperStartTime = Utility.parse(listDutyStatus.get(1).getStartTime());
                                         } catch (Exception exe) {
 
                                         }
@@ -93,10 +94,10 @@ public class HourOfService {
                 MainActivity.currentDutyStatus = 5;
 
             }
-            ElogActivity.resetDT = status == 2 ? Utility.addMinutes(Utility.sdf.parse(lastDutyStatus.getStartTime()), ElogActivity.activeCycle == 2 ? 72 : 36) : null;
+            ElogActivity.resetDT = status == 2 ? Utility.addMinutes(Utility.parse(lastDutyStatus.getStartTime()), ElogActivity.activeCycle == 2 ? 72 : 36) : null;
             if (status == 3) {
-                String date = Utility.sdf.format(Utility.newDate());
-                String dateOnly = Utility.sdf.format(Utility.dateOnlyGet(Utility.newDate()));
+                String date = Utility.getCurrentDateTime();
+                String dateOnly = Utility.format(Utility.newDateOnly(), fullFormat);
                 violations = new ArrayList<>();
                 if (ELogFragment.currentRule == 3) {
 
@@ -156,8 +157,8 @@ public class HourOfService {
             DutyStatusBean lastDutyStatus = listDutyStatus.get(0);
             int status = lastDutyStatus.getStatus();
 
-            String date = Utility.sdf.format(logDate);
-            String dateOnly = Utility.sdf.format(Utility.dateOnlyGet(logDate));
+            String date = Utility.format(logDate, fullFormat);
+            String dateOnly = Utility.format(Utility.dateOnlyGet(logDate), fullFormat);
             violations = new ArrayList<>();
 
 
@@ -205,17 +206,17 @@ public class HourOfService {
 
     public static ArrayList<ViolationBean> Violation12(String date) {
         try {
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
             Date nextDay = Utility.addDays(currentDate, 1);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusDrivingGet(currentDate, listDutyStatus);
             int drivingMinutes = 0;
             int onDutyMinutes = 0;
 
             for (DutyStatusBean dutyStatus : data) {
-                Date startDate = Utility.sdf.parse(dutyStatus.getStartTime());
+                Date startDate = Utility.parse(dutyStatus.getStartTime());
                 startDate = Utility.addSeconds(startDate, -startDate.getSeconds());
 
-                Date endDate = Utility.sdf.parse(dutyStatus.getEndTime());
+                Date endDate = Utility.parse(dutyStatus.getEndTime());
                 endDate = Utility.addSeconds(endDate, -endDate.getSeconds());
 
                 Date statusStartTime = startDate.before(currentDate) ? currentDate : startDate;
@@ -260,7 +261,7 @@ public class HourOfService {
         int elapsedHours = 0;
         boolean teamFg = false;
         try {
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
             Date nextDay = Utility.addDays(currentDate, 1);
 
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet(currentDate, listDutyStatus);
@@ -270,14 +271,14 @@ public class HourOfService {
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
                 int status = item.getStatus();
-                Date statusStartDate = Utility.sdf.parse(item.getStartTime());
+                Date statusStartDate = Utility.parse(item.getStartTime());
                 statusStartDate = Utility.addSeconds(statusStartDate, -statusStartDate.getSeconds());
 
-                Date endDate = Utility.sdf.parse(item.getEndTime());
+                Date endDate = Utility.parse(item.getEndTime());
                 endDate = Utility.addSeconds(endDate, -endDate.getSeconds());
 
                 if (statusStartDate.before(currentDate) && status <= 2) {
-                    Date prevDate = (i == 0 ? statusStartDate : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                    Date prevDate = (i == 0 ? statusStartDate : Utility.parse(data.get(i - 1).getStartTime()));
                     prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                     if (i > 0 && item.getEndTime().equals(prevDate)) {
@@ -303,7 +304,7 @@ public class HourOfService {
                         }
                         DutyStatusBean coDriverCurrentStatus = null;
                         for (int j = 0; j < listCoDriverDutyStatus.size(); j++) {
-                            if (Utility.sdf.parse(listCoDriverDutyStatus.get(j).getStartTime()).before(statusStartDate)) {
+                            if (Utility.parse(listCoDriverDutyStatus.get(j).getStartTime()).before(statusStartDate)) {
                                 coDriverCurrentStatus = listCoDriverDutyStatus.get(j);
                                 break;
                             }
@@ -326,7 +327,7 @@ public class HourOfService {
             if (!setStartDate) {
                 data = new ArrayList<>();
                 for (int j = 0; j < listDutyStatus.size(); j++) {
-                    Date startTime = Utility.sdf.parse(listDutyStatus.get(j).getStartTime());
+                    Date startTime = Utility.parse(listDutyStatus.get(j).getStartTime());
                     startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
                     if (startTime.before(nextDay)) {
                         data.add(listDutyStatus.get(j));
@@ -335,7 +336,7 @@ public class HourOfService {
             } else {
                 data = new ArrayList<>();
                 for (int j = 0; j < listDutyStatus.size(); j++) {
-                    Date startTime = Utility.sdf.parse(listDutyStatus.get(j).getStartTime());
+                    Date startTime = Utility.parse(listDutyStatus.get(j).getStartTime());
                     startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
                     if (startTime.after(startDate) || startTime.equals(startDate)) {
                         data.add(listDutyStatus.get(j));
@@ -350,18 +351,18 @@ public class HourOfService {
 
             for (int j = 0; j < data.size(); j++) {
                 DutyStatusBean item = data.get(j);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
+                Date startTime = Utility.parse(item.getStartTime());
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 // endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
 
                 int totalMinutes = item.getTotalMinutes();//(int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
                 int status = item.getStatus();
 
-                if (Utility.dateOnlyGet(Utility.sdf.format(startTime)).after(Utility.dateOnlyGet(Utility.sdf.format(currentDate)))) {
+                if (Utility.dateOnlyGet(Utility.format(startTime, fullFormat)).after(Utility.dateOnlyGet(Utility.format(currentDate, fullFormat)))) {
                     break;
                 }
-                Date prevDate = j == 0 ? startTime : Utility.sdf.parse(data.get(j - 1).getEndTime());
+                Date prevDate = j == 0 ? startTime : Utility.parse(data.get(j - 1).getEndTime());
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                 // consective 8 hours rest logic (sleeper/ offduty)
@@ -385,7 +386,7 @@ public class HourOfService {
 
                 if (s2Split != null && s2Split == startTime && !deferedFg) {
                     for (int k = 0; k < data.size(); k++) {
-                        if (Utility.sdf.parse(data.get(k).getStartTime()).after(s1Split) && Utility.sdf.parse(data.get(k).getStartTime()).before(s2Split)) {
+                        if (Utility.parse(data.get(k).getStartTime()).after(s1Split) && Utility.parse(data.get(k).getStartTime()).before(s2Split)) {
 
 
                             if (data.get(k).getStatus() >= 3) {
@@ -412,7 +413,7 @@ public class HourOfService {
                     sleeperMinutes = totalMinutes;
                     ArrayList<DutyStatusBean> s2List = new ArrayList<>();
                     for (int k = 0; k < data.size(); k++) {
-                        if (Utility.sdf.parse(data.get(k).getStartTime()).after(startTime) && ((status == 1 && totalMinutes > 8 * 60) || status == 2)) {
+                        if (Utility.parse(data.get(k).getStartTime()).after(startTime) && ((status == 1 && totalMinutes > 8 * 60) || status == 2)) {
                             s2List.add(data.get(k));
                         }
                     }
@@ -427,7 +428,7 @@ public class HourOfService {
                         DutyStatusBean codriverBeforess2 = null;
                         Collections.sort(listCoDriverDutyStatus, DutyStatusBean.dateDesc);
                         for (int l = 0; l < listCoDriverDutyStatus.size(); l++) {
-                            if (Utility.sdf.parse(listCoDriverDutyStatus.get(l).getStartTime()).before(Utility.sdf.parse(s2List.get(k).getEndTime()))) {
+                            if (Utility.parse(listCoDriverDutyStatus.get(l).getStartTime()).before(Utility.parse(s2List.get(k).getEndTime()))) {
                                 codriverBeforess2 = listCoDriverDutyStatus.get(l);
                                 break;
                             }
@@ -438,9 +439,9 @@ public class HourOfService {
                             if (sleeperMinutes >= 4 * 60 && s2List.get(k).getTotalMinutes() >= 4 * 60) {
                                 if ((sleeperMinutes + s2List.get(k).getTotalMinutes()) == 8 * 60) {
                                     s1Split = startTime;
-                                    s2Split = Utility.sdf.parse(s2List.get(k).getStartTime());
+                                    s2Split = Utility.parse(s2List.get(k).getStartTime());
                                     for (int l = 0; l < data.size(); l++) {
-                                        if (Utility.sdf.parse(data.get(l).getStartTime()).after(startTime) && Utility.sdf.parse(data.get(l).getStartTime()).before(s2Split) && data.get(l).getStatus() == 2
+                                        if (Utility.parse(data.get(l).getStartTime()).after(startTime) && Utility.parse(data.get(l).getStartTime()).before(s2Split) && data.get(l).getStatus() == 2
                                                 && data.get(l).getTotalMinutes() >= 8 * 60 - s2List.get(k).getTotalMinutes() && data.get(l).getTotalMinutes() >= 4 * 60) {
                                             s2List.set(k, data.get(l));
                                             break;
@@ -461,10 +462,10 @@ public class HourOfService {
                             if (sleeperMinutes >= 2 * 60) {
                                 if ((sleeperMinutes + s2List.get(k).getTotalMinutes()) >= 10 * 60) {
                                     s1Split = startTime;
-                                    s2Split = Utility.sdf.parse(s2List.get(k).getStartTime());
+                                    s2Split = Utility.parse(s2List.get(k).getStartTime());
 
                                     for (int l = 0; l < data.size(); l++) {
-                                        if (Utility.sdf.parse(data.get(l).getStartTime()).after(startTime) && Utility.sdf.parse(data.get(l).getStartTime()).before(s2Split) && data.get(l).getStatus() == 2
+                                        if (Utility.parse(data.get(l).getStartTime()).after(startTime) && Utility.parse(data.get(l).getStartTime()).before(s2Split) && data.get(l).getStatus() == 2
                                                 && data.get(l).getTotalMinutes() >= 10 * 60 - s2List.get(k).getTotalMinutes() && data.get(l).getTotalMinutes() >= 2 * 60) {
                                             s2List.set(k, data.get(l));
                                             break;
@@ -492,7 +493,7 @@ public class HourOfService {
                         if (vStart.before(startTime)) {
                             vStart = startTime;
                         }
-                        int duration = (int) (Utility.sdf.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
+                        int duration = (int) (Utility.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
                         ViolationAdd("13A", vStart, duration, true, "Must not drive beyond 13 hours without taking 8 consecutive hours off-duty", "Canadian law permits you to only drive 13 hours after taking 8 consecutive hours off-duty or sleeper-berth or any combination of off-duty and/or sleeper-berth. You are required to take another 8 consecutive hours off before driving is permitted.");
                         drivingMinutes = -1;
                     } else if (drivingMinutes == -1) {
@@ -504,7 +505,7 @@ public class HourOfService {
                         if (vStart.before(startTime)) {
                             vStart = startTime;
                         }
-                        int duration = (int) (Utility.sdf.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
+                        int duration = (int) (Utility.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
                         ViolationAdd("13B", vStart, duration, true, "Must not drive after 14 hours of on-duty time unless 8 consecutive hours of off-duty time is taken.", "Canadian law permits you to only be on-duty for 14 hours after taking 8 consecutive hours off-duty or sleeper-berth or any combination of off-duty and/or sleeper-berth. You will be required to take another 8 consecutive hours off before driving is permitted.");
                         onDutyMinutes = -1;
                     } else if (onDutyMinutes == -1) {
@@ -517,7 +518,7 @@ public class HourOfService {
                             vStart = startTime;
                         }
 
-                        int duration = (int) (Utility.sdf.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
+                        int duration = (int) (Utility.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
                         ViolationAdd("13C", vStart, duration, true, "Must not drive beyond 16 hours of elapsed time after last 8 consecutive hours off-duty", "Canadian law permits you to only have 16 hours of elapsed time after taking 8 consecutive hours off-duty or sleeper-berth or any combination of off-duty and/or sleeper-berth. You are required to take another 8 consecutive hours off before driving is permitted. Drivers normally refer to this as their work-shift.");
                         elapsedHours = -1;
                     } else if (elapsedHours == -1) {
@@ -533,13 +534,13 @@ public class HourOfService {
 
     public static ArrayList<ViolationBean> Violation14(String date) {
         try {
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusGet(currentDate, listDutyStatus); // get duty status logic
 
             if (data.size() == 0) {
                 return violations;
             }
-            Date firstStart = Utility.sdf.parse(data.get(0).getStartTime());
+            Date firstStart = Utility.parse(data.get(0).getStartTime());
             if (firstStart.equals(Utility.addMinutes(currentDate, 30)) || firstStart.after(Utility.addMinutes(currentDate, 30))) {
                 int firstMinutes = (int) (firstStart.getTime() - currentDate.getTime()) / (60 * 1000);
                 //(int status, Date startTime, Date endTime, int totalMinutes, int personalUseFg)
@@ -555,8 +556,8 @@ public class HourOfService {
             Date nextDay = Utility.addDays(currentDate, 1);
 
             for (DutyStatusBean item : data) {
-                Date startDate = Utility.sdf.parse(item.getStartTime());
-                Date endDate = Utility.sdf.parse(item.getEndTime());
+                Date startDate = Utility.parse(item.getStartTime());
+                Date endDate = Utility.parse(item.getEndTime());
 
                 Date statusStartTime = startDate.before(currentDate) ? currentDate : startDate;
                 statusStartTime = Utility.addSeconds(statusStartTime, -statusStartTime.getSeconds());
@@ -568,7 +569,7 @@ public class HourOfService {
                         / (1000 * 60));
                 if (item.getStatus() <= 2) {
 
-                    Date prevDate = (i == 0 ? startDate : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                    Date prevDate = (i == 0 ? startDate : Utility.parse(data.get(i - 1).getStartTime()));
                     prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                     if (i > 0 && statusStartTime.equals(prevDate)
@@ -581,8 +582,8 @@ public class HourOfService {
                     if ((statusStartTime.after(currentDate) || statusStartTime.equals(currentDate))
                             && (statusEndTime.before(nextDay) || statusEndTime.equals(nextDay)) && statusMinutes >= 30) {
                         DutyStatusBean offDuty = new DutyStatusBean();
-                        offDuty.setStartTime(Utility.sdf.format(statusStartTime));
-                        offDuty.setEndTime(Utility.sdf.format(statusEndTime));
+                        offDuty.setStartTime(Utility.format(statusStartTime, fullFormat));
+                        offDuty.setEndTime(Utility.format(statusEndTime, fullFormat));
                         offDuty.setTotalMinutes(statusMinutes);
                         offDutyStatusInDay.add(offDuty);
                         offdutyMinutes += statusMinutes;
@@ -600,10 +601,10 @@ public class HourOfService {
                 i++;
             }
 
-            if (data.size() == 1 && data.get(0).getStatus() <= 2 && Utility.sdf.parse(data.get(0).getEndTime()).getSeconds() == 59) {
+            if (data.size() == 1 && data.get(0).getStatus() <= 2 && Utility.parse(data.get(0).getEndTime()).getSeconds() == 59) {
                 DutyStatusBean offDuty = new DutyStatusBean();
                 offDuty.setStartTime(data.get(0).getStartTime());
-                offDuty.setEndTime(Utility.sdf.format(nextDay));
+                offDuty.setEndTime(Utility.format(nextDay, fullFormat));
                 offDuty.setTotalMinutes(24 * 60);
                 offDutyStatusInDay.add(offDuty);
                 minutesExcluding8Hours = 2 * 60;
@@ -615,7 +616,7 @@ public class HourOfService {
                 offdutyMinutes = 0;
                 for (DutyStatusBean item : offDutyStatusInDay) {
                     offdutyMinutes += item.getTotalMinutes();
-                    int iEndMinute = (int) (nextDay.getTime() - Utility.sdf.parse(item.getEndTime()).getTime()) / (1000 * 60);
+                    int iEndMinute = (int) (nextDay.getTime() - Utility.parse(item.getEndTime()).getTime()) / (1000 * 60);
                     if (offdutyMinutes + iEndMinute < 10 * 60) {
                         vStartDate = currentDate.equals(Utility.dateOnlyGet(item.getEndTime())) ? currentDate : Utility.addMinutes(vStartDate, -(item.getTotalMinutes() + iEndMinute));
                         break;
@@ -639,15 +640,15 @@ public class HourOfService {
 
     public static ArrayList<ViolationBean> Violation16(String date) {
         try {
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
             Date nextDay = Utility.addDays(currentDate, 1);
             Date nextTwoDay = Utility.addDays(currentDate, 2);
             int drivingMinutes = 0, onDutyMinutes = 0, offDutyMinutes = 0;
             ArrayList<DutyStatusBean> day1Status = new ArrayList<>();
             ArrayList<DutyStatusBean> day2Status = new ArrayList<>();
             for (DutyStatusBean item : listDutyStatus) {
-                Date startTime = Utility.sdf.parse(item.getStartTime());
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date startTime = Utility.parse(item.getStartTime());
+                Date endTime = Utility.parse(item.getEndTime());
 
                 startTime = startTime.before(currentDate) ? currentDate : startTime;
                 endTime = endTime.after(nextDay) ? nextDay : endTime;
@@ -655,8 +656,8 @@ public class HourOfService {
 
                 if ((startTime.after(deferedDate) || startTime.equals(deferedDate)) && startTime.before(nextDay)) {
                     DutyStatusBean bean = new DutyStatusBean();
-                    bean.setStartTime(Utility.sdf.format(startTime));
-                    bean.setEndTime(Utility.sdf.format(endTime));
+                    bean.setStartTime(Utility.format(startTime, fullFormat));
+                    bean.setEndTime(Utility.format(endTime, fullFormat));
                     bean.setTotalMinutes(totalMinutes);
                     bean.setStatusFg(item.isStatusFg());
                     day1Status.add(item);
@@ -670,8 +671,8 @@ public class HourOfService {
                     totalMinutes = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
 
                     DutyStatusBean bean = new DutyStatusBean();
-                    bean.setStartTime(Utility.sdf.format(startTime));
-                    bean.setEndTime(Utility.sdf.format(endTime));
+                    bean.setStartTime(Utility.format(startTime, fullFormat));
+                    bean.setEndTime(Utility.format(endTime, fullFormat));
                     bean.setTotalMinutes(totalMinutes);
                     bean.setStatusFg(item.isStatusFg());
                     day2Status.add(item);
@@ -704,9 +705,9 @@ public class HourOfService {
 
             int restMinutes = 0;
             for (int i = 0; i < day1OffDuty.size(); i++) {
-                Date startTime = Utility.sdf.parse(day1OffDuty.get(i).getStartTime());
+                Date startTime = Utility.parse(day1OffDuty.get(i).getStartTime());
 
-                if (i > 0 && startTime.equals(Utility.sdf.parse(day1OffDuty.get(i - 1).getEndTime()))) {
+                if (i > 0 && startTime.equals(Utility.parse(day1OffDuty.get(i - 1).getEndTime()))) {
                     restMinutes += day1OffDuty.get(i - 1).getTotalMinutes();
                 } else {
                     restMinutes = day1OffDuty.get(i).getTotalMinutes();
@@ -717,8 +718,8 @@ public class HourOfService {
                 for (DutyStatusBean item : day1Status) {
                     if (item.getStatus() == 3) {
                         if ((drivingMinutes + item.getTotalMinutes()) > 15 * 60) {
-                            Date vStart = Utility.addMinutes(Utility.sdf.parse(item.getStartTime()), (15 * 60 - drivingMinutes));
-                            int duration = (int) (Utility.sdf.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
+                            Date vStart = Utility.addMinutes(Utility.parse(item.getStartTime()), (15 * 60 - drivingMinutes));
+                            int duration = (int) (Utility.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
                             ViolationAdd("16A", vStart, duration, true, "", "");
 
                         } else
@@ -738,7 +739,7 @@ public class HourOfService {
                 }
                 restMinutes = 0;
                 for (int i = 0; i < day2OffDuty.size(); i++) {
-                    if (i > 0 && Utility.sdf.parse(day2OffDuty.get(i - 1).getEndTime()).equals(Utility.sdf.parse(day2OffDuty.get(i).getStartTime()))) {
+                    if (i > 0 && Utility.parse(day2OffDuty.get(i - 1).getEndTime()).equals(Utility.parse(day2OffDuty.get(i).getStartTime()))) {
                         restMinutes += day2OffDuty.get(i - 1).getTotalMinutes();
                     } else
                         restMinutes = day2OffDuty.get(i).getTotalMinutes();
@@ -754,21 +755,21 @@ public class HourOfService {
                     if (item.getStatus() <= 4) {
                         if (item.getStatus() == 3) {
                             if (onDutyMinutes + item.getTotalMinutes() > 28 * 60) {
-                                Date vStart = Utility.addMinutes(Utility.sdf.parse(item.getStartTime()), (28 * 60 - drivingMinutes));
-                                int duration = (int) (Utility.sdf.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
+                                Date vStart = Utility.addMinutes(Utility.parse(item.getStartTime()), (28 * 60 - drivingMinutes));
+                                int duration = (int) (Utility.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
                                 ViolationAdd("16 (28Hrs Onduty)", vStart, duration, true, "", "");
                                 onDutyMinutes = -1;
                             } else if (onDutyMinutes == -1) {
-                                ViolationAdd("16 (28Hrs Onduty)", Utility.sdf.parse(item.getStartTime()), item.getTotalMinutes(), true, "", "");
+                                ViolationAdd("16 (28Hrs Onduty)", Utility.parse(item.getStartTime()), item.getTotalMinutes(), true, "", "");
                             }
 
                             if (drivingMinutes + item.getTotalMinutes() > 26 * 60) {
-                                Date vStart = Utility.addMinutes(Utility.sdf.parse(item.getStartTime()), (26 * 60 - drivingMinutes));
-                                int duration = (int) (Utility.sdf.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
+                                Date vStart = Utility.addMinutes(Utility.parse(item.getStartTime()), (26 * 60 - drivingMinutes));
+                                int duration = (int) (Utility.parse(item.getEndTime()).getTime() - vStart.getTime()) / (1000 * 60);
                                 ViolationAdd("16D", vStart, duration, true, "Must not exceed 26 hours of drive time in 2 days.", "Canadian law permits you to only have 26 hours of drive time in 2 days if you are deferring off-duty time. This is your Day 1 and Day 2 total.");
                                 drivingMinutes = -1;
                             } else if (drivingMinutes == -1) {
-                                ViolationAdd("16D", Utility.sdf.parse(item.getStartTime()), item.getTotalMinutes(), true, "Must not exceed 26 hours of drive time in 2 days.", "Canadian law permits you to only have 26 hours of drive time in 2 days if you are deferring off-duty time. This is your Day 1 and Day 2 total.");
+                                ViolationAdd("16D", Utility.parse(item.getStartTime()), item.getTotalMinutes(), true, "Must not exceed 26 hours of drive time in 2 days.", "Canadian law permits you to only have 26 hours of drive time in 2 days if you are deferring off-duty time. This is your Day 1 and Day 2 total.");
 
                             } else
                                 drivingMinutes += item.getTotalMinutes();
@@ -794,7 +795,7 @@ public class HourOfService {
 
     public static ArrayList<ViolationBean> Violation25(String date) {
         try {
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet25(currentDate, listDutyStatus); // get duty status logic
 
             int restMinutes = 0;
@@ -802,10 +803,10 @@ public class HourOfService {
 
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date endDate = Utility.sdf.parse(item.getEndTime());
+                Date endDate = Utility.parse(item.getEndTime());
                 endDate = Utility.addSeconds(endDate, -endDate.getSeconds());
 
-                Date prevDate = (i == 0 ? endDate : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? endDate : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                 if (i > 0 && endDate.equals(prevDate)) {
@@ -820,11 +821,11 @@ public class HourOfService {
 
             ArrayList<DutyStatusBean> drivingData = HourOfServiceDB.DutyStatusDrivingGet25(currentDate, listDutyStatus); // get duty status logic driving records of the day
             if (restMinutes >= 24 * 60) {
-                Date startDate = Utility.addDays(Utility.addMinutes(Utility.sdf.parse(data.get(i).getStartTime()), restMinutes), 14);
+                Date startDate = Utility.addDays(Utility.addMinutes(Utility.parse(data.get(i).getStartTime()), restMinutes), 14);
 
                 for (DutyStatusBean item : drivingData) {
-                    Date statusStartDate = Utility.sdf.parse(item.getStartTime());
-                    Date statusEndDate = Utility.sdf.parse(item.getEndTime());
+                    Date statusStartDate = Utility.parse(item.getStartTime());
+                    Date statusEndDate = Utility.parse(item.getEndTime());
                     if (statusStartDate.after(startDate) || statusStartDate.equals(startDate)) {
                         ViolationAdd("25", statusStartDate, item.getTotalMinutes(), true, "Must not drive unless 24 consecutive off-duty hours are taken in the preceding 14 days.", "Canadian law requires a minimum 24 consecutive off-duty hours or sleeper-berth hours or any combination of off-duty and sleeper-berth to be taken every 14 days. Your 24 hours can be part of cycle reset if you wish.");
                     } else if (statusStartDate.before(startDate) && statusEndDate.after(startDate)) {
@@ -834,10 +835,10 @@ public class HourOfService {
                     }
                 }
             } else {
-                Date startDate = data.size() > 0 ? Utility.addDays(Utility.sdf.parse(data.get(i - 1).getStartTime()), 14) : Utility.addDays(currentDate, 14);
+                Date startDate = data.size() > 0 ? Utility.addDays(Utility.parse(data.get(i - 1).getStartTime()), 14) : Utility.addDays(currentDate, 14);
                 if (startDate.equals(currentDate) || startDate.before(currentDate)) {
                     for (DutyStatusBean item : drivingData) {
-                        Date statusStartDate = Utility.sdf.parse(item.getStartTime());
+                        Date statusStartDate = Utility.parse(item.getStartTime());
                         if (item.getStatus() == 3) {
                             ViolationAdd("25", statusStartDate, item.getTotalMinutes(), true, "Must not drive unless 24 consecutive off-duty hours are taken in the preceding 14 days.", "Canadian law requires a minimum 24 consecutive off-duty hours or sleeper-berth hours or any combination of off-duty and sleeper-berth to be taken every 14 days. Your 24 hours can be part of cycle reset if you wish.");
                         }
@@ -856,7 +857,7 @@ public class HourOfService {
 
         try {
 
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
             Date nextDay = Utility.addDays(currentDate, 1);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet26(currentDate, listDutyStatus); // get duty status logic
             int restMinutes = 0;
@@ -864,10 +865,10 @@ public class HourOfService {
 
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date endDate = Utility.sdf.parse(item.getEndTime());
+                Date endDate = Utility.parse(item.getEndTime());
                 endDate = Utility.addSeconds(endDate, -endDate.getSeconds());
 
-                Date prevDate = (i == 0 ? endDate : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? endDate : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
                 if (i > 0 && endDate.equals(prevDate)) {
                     restMinutes += item.getTotalMinutes();
@@ -882,7 +883,7 @@ public class HourOfService {
 
             int onDutyMinutes = 0;
             if (restMinutes >= 36 * 60) {
-                Date startDate = Utility.addMinutes(Utility.sdf.parse(data.get(i).getStartTime()), restMinutes);
+                Date startDate = Utility.addMinutes(Utility.parse(data.get(i).getStartTime()), restMinutes);
                 onDutyMinutes = HourOfServiceDB.DutyStatusOnDutyMinuteGet26(startDate, currentDate, listDutyStatus);
                 // calculate sum of the onduty status minutes
             } else {
@@ -895,8 +896,8 @@ public class HourOfService {
             data = HourOfServiceDB.DutyStatusDrivingOnDutyGet26(currentDate, listDutyStatus);
 
             for (DutyStatusBean item : data) {
-                Date startDate = Utility.sdf.parse(item.getStartTime());
-                Date endDate = Utility.sdf.parse(item.getEndTime());
+                Date startDate = Utility.parse(item.getStartTime());
+                Date endDate = Utility.parse(item.getEndTime());
 
 
                 Date statusStartTime = startDate.before(currentDate) ? currentDate : startDate;
@@ -934,18 +935,18 @@ public class HourOfService {
         int i = 0;
         try {
 
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
             Date nextDay = Utility.addDays(currentDate, 1);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet26(currentDate, listDutyStatus); // get duty status logic
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startDate = Utility.sdf.parse(item.getStartTime());
+                Date startDate = Utility.parse(item.getStartTime());
                 startDate = Utility.addSeconds(startDate, -startDate.getSeconds());
 
-                Date endDate = Utility.sdf.parse(item.getEndTime());
+                Date endDate = Utility.parse(item.getEndTime());
                 endDate = Utility.addSeconds(endDate, -endDate.getSeconds());
 
-                Date prevDate = (i == 0 ? startDate : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? startDate : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
                 if (i > 0 && endDate.equals(prevDate)) {
                     restMinutes += item.getTotalMinutes();
@@ -968,7 +969,7 @@ public class HourOfService {
             int onDutyMinutesB = 0;
 
             if (restMinutes >= 72 * 60) {
-                Date startDate = Utility.addMinutes(Utility.sdf.parse(data.get(i).getStartTime()), restMinutes);
+                Date startDate = Utility.addMinutes(Utility.parse(data.get(i).getStartTime()), restMinutes);
                 // calculate sum of the onduty status minutes onDutyMinutesA
                 onDutyMinutesA = HourOfServiceDB.DutyStatusOnDutyMinuteGet26(startDate, currentDate, listDutyStatus);
             } else {
@@ -991,8 +992,8 @@ public class HourOfService {
 
 
             for (DutyStatusBean item : data) {
-                Date startDate = Utility.sdf.parse(item.getStartTime());
-                Date endDate = Utility.sdf.parse(item.getEndTime());
+                Date startDate = Utility.parse(item.getStartTime());
+                Date endDate = Utility.parse(item.getEndTime());
 
 
                 Date statusStartTime = startDate.before(currentDate) ? currentDate : startDate;
@@ -1031,11 +1032,11 @@ public class HourOfService {
 
     public static ArrayList<ViolationBean> Violation29(String date, int prevCycle) {
         try {
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
 
             ArrayList<DutyStatusBean> data = new ArrayList<>();
             for (DutyStatusBean item : listDutyStatus) {
-                Date startTime = Utility.sdf.parse(item.getStartTime());
+                Date startTime = Utility.parse(item.getStartTime());
                 if (startTime.before(currentDate)) {
                     data.add(item);
                 }
@@ -1044,8 +1045,8 @@ public class HourOfService {
             int restMinutes = 0;
             for (int i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date startTime = Utility.parse(item.getStartTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 int totalMinutes = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
 
@@ -1077,18 +1078,18 @@ public class HourOfService {
 
             if (prevCycle == 1 && restMinutes < 36 * 60) {
                 if (driving != null) {
-                    Date startTime = Utility.sdf.parse(driving.getStartTime());
+                    Date startTime = Utility.parse(driving.getStartTime());
                     startTime = startTime.before(Utility.dateOnlyGet(date)) ? Utility.dateOnlyGet(date) : startTime;
-                    Date endTime = Utility.sdf.parse(driving.getEndTime());
+                    Date endTime = Utility.parse(driving.getEndTime());
                     endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                     int totalTime = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
                     ViolationAdd("29A Cycle 1 to 2 wo 36hrs off-duty", startTime, totalTime, true, "Must take minimum 36 consecutive hours off-duty to switch to cycle 2 from cycle 1.", "Canadian law requires a minimum of 36 consecutive hours off-duty or sleeper-berth or any combination of off-duty and sleeper before switching to cycle 2 from cycle 1.");
                 }
             } else if (prevCycle == 2 && restMinutes < 72 * 60) {
                 if (driving != null) {
-                    Date startTime = Utility.sdf.parse(driving.getStartTime());
+                    Date startTime = Utility.parse(driving.getStartTime());
                     startTime = startTime.before(Utility.dateOnlyGet(date)) ? Utility.dateOnlyGet(date) : startTime;
-                    Date endTime = Utility.sdf.parse(driving.getEndTime());
+                    Date endTime = Utility.parse(driving.getEndTime());
                     endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                     int totalTime = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
                     ViolationAdd("29B Cycle 2 to 1 wo 72hrs off-duty", startTime, totalTime, true, "Must take minimum 72 consecutive hours off-duty to switch from cycle 2 to cycle 1.", "Canadian law requires you to take a minimum of 72 consecutive hours off-duty or sleeper-berth or any combination of off-duty and sleeper before switching from cycle 2 to cycle 1.");
@@ -1116,7 +1117,7 @@ public class HourOfService {
 
         try {
 
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
             Date nextDay = Utility.addDays(currentDate, 1);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet(currentDate, listDutyStatus);
             int i = 0;
@@ -1124,13 +1125,13 @@ public class HourOfService {
             boolean setStartDate = false;
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date statusStartDate = Utility.sdf.parse(item.getStartTime());
+                Date statusStartDate = Utility.parse(item.getStartTime());
                 statusStartDate = Utility.addSeconds(statusStartDate, -statusStartDate.getSeconds());
 
-                Date endDate = Utility.sdf.parse(item.getEndTime());
+                Date endDate = Utility.parse(item.getEndTime());
                 endDate = Utility.addSeconds(endDate, -endDate.getSeconds());
 
-                Date prevDate = (i == 0 ? statusStartDate : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? statusStartDate : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                 if (i > 0 && endDate.equals(prevDate)) {
@@ -1166,7 +1167,7 @@ public class HourOfService {
             if (!setStartDate) {
                 data = new ArrayList<>();
                 for (int j = 0; j < listDutyStatus.size(); j++) {
-                    Date startTime = Utility.sdf.parse(listDutyStatus.get(j).getStartTime());
+                    Date startTime = Utility.parse(listDutyStatus.get(j).getStartTime());
                     startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
                     if (startTime.before(nextDay)) {
                         data.add(listDutyStatus.get(j));
@@ -1175,7 +1176,7 @@ public class HourOfService {
             } else {
                 data = new ArrayList<>();
                 for (int j = 0; j < listDutyStatus.size(); j++) {
-                    Date startTime = Utility.sdf.parse(listDutyStatus.get(j).getStartTime());
+                    Date startTime = Utility.parse(listDutyStatus.get(j).getStartTime());
                     startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
                     if (startTime.after(startDate) || startTime.equals(startDate)) {
                         data.add(listDutyStatus.get(j));
@@ -1190,18 +1191,18 @@ public class HourOfService {
             Collections.sort(data, DutyStatusBean.dateAsc);
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
+                Date startTime = Utility.parse(item.getStartTime());
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 int status = item.getStatus();
                 int totalMinutes = item.getTotalMinutes();
 
-                if (Utility.dateOnlyGet(startTime).after(Utility.dateOnlyGet(Utility.sdf.format(currentDate)))) {
+                if (Utility.dateOnlyGet(startTime).after(Utility.dateOnlyGet(Utility.format(currentDate, fullFormat)))) {
                     break;
                 }
 
                 // consective 8 hours rest logic (sleeper/ offduty)
-                if (i > 0 && startTime.equals(Utility.sdf.parse(data.get(i - 1).getEndTime()))
+                if (i > 0 && startTime.equals(Utility.parse(data.get(i - 1).getEndTime()))
                         && status <= 2 && data.get(i - 1).getStatus() <= 2) {
                     restMinutes += totalMinutes;
                 } else if (status <= 2)
@@ -1223,10 +1224,10 @@ public class HourOfService {
 
                 if (s2Split != null && s2Split == startTime) {
                     for (int k = 0; k < data.size(); k++) {
-                        if (Utility.sdf.parse(data.get(k).getStartTime()).after(s1Split) && (Utility.sdf.parse(data.get(k).getStartTime()).before(s2Split)
-                                || Utility.sdf.parse(data.get(k).getStartTime()).equals(s2Split))) {
+                        if (Utility.parse(data.get(k).getStartTime()).after(s1Split) && (Utility.parse(data.get(k).getStartTime()).before(s2Split)
+                                || Utility.parse(data.get(k).getStartTime()).equals(s2Split))) {
 
-                            if (data.get(k).getStatus() == 3 && Utility.sdf.parse(data.get(k).getStartTime()).before(s2Split)) {
+                            if (data.get(k).getStatus() == 3 && Utility.parse(data.get(k).getStartTime()).before(s2Split)) {
                                 drivingMinutes += data.get(k).getTotalMinutes();
                             }
                             elapsedMinutes += data.get(k).getTotalMinutes();
@@ -1250,7 +1251,7 @@ public class HourOfService {
 
                         ArrayList<DutyStatusBean> s2List = new ArrayList<>();
                         for (int k = 0; k < data.size(); k++) {
-                            if (Utility.sdf.parse(data.get(k).getStartTime()).after(startTime) && (status <= 2)) {
+                            if (Utility.parse(data.get(k).getStartTime()).after(startTime) && (status <= 2)) {
                                 s2List.add(data.get(k));
                             }
                         }
@@ -1259,7 +1260,7 @@ public class HourOfService {
                         int s2Minutes = 0;
                         for (int k = 0; k < s2List.size(); k++) {
                             // consective 10 hours rest logic (sleeper/offduty)
-                            if (k > 0 && Utility.sdf.parse(s2List.get(k).getStartTime()).equals(Utility.sdf.parse(s2List.get(k - 1).getEndTime()))) {
+                            if (k > 0 && Utility.parse(s2List.get(k).getStartTime()).equals(Utility.parse(s2List.get(k - 1).getEndTime()))) {
                                 s2Minutes += s2List.get(k).getTotalMinutes();
                             } else
                                 s2Minutes = s2List.get(k).getTotalMinutes();
@@ -1268,7 +1269,7 @@ public class HourOfService {
                                 if (sleeperMinutes >= 8 * 60 && s2Minutes >= 2 * 60) {
                                     elapsedMinutes -= sleeperMinutes;
                                 }
-                                s2Split = Utility.sdf.parse(s2List.get(k).getStartTime());
+                                s2Split = Utility.parse(s2List.get(k).getStartTime());
                                 break;
                             }
                         }
@@ -1331,18 +1332,18 @@ public class HourOfService {
 
     public static ArrayList<ViolationBean> Violation395_3B(String date) {
         try {
-            Date currentDate = Utility.sdf.parse(date);
+            Date currentDate = Utility.parse(date);
             Date nextDay = Utility.addDays(currentDate, 1);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet395_B(currentDate, listDutyStatus);
             int restMinutes = 0;
             int i = 0;
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date startTime = Utility.parse(item.getStartTime());
+                Date endTime = Utility.parse(item.getEndTime());
 
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
-                Date prevDate = (i == 0 ? startTime : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? startTime : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                 if (i > 0 && endTime.equals(prevDate)) {
@@ -1358,7 +1359,7 @@ public class HourOfService {
 
             int onDutyMinutes = 0;
             if (restMinutes >= 34 * 60) {
-                Date startDate = Utility.addMinutes(Utility.sdf.parse(data.get(i).getStartTime()), restMinutes);
+                Date startDate = Utility.addMinutes(Utility.parse(data.get(i).getStartTime()), restMinutes);
                 // calculate sum of the onduty status minutes onDutyMinutes
                 onDutyMinutes = HourOfServiceDB.DutyStatusOnDutyMinuteGet26(startDate, currentDate, listDutyStatus);
             } else {
@@ -1371,12 +1372,12 @@ public class HourOfService {
             data = HourOfServiceDB.DutyStatusDrivingGet(currentDate, listDutyStatus); // get duty status logic
 
             for (DutyStatusBean item : data) {
-                Date statusStartTime = Utility.sdf.parse(item.getStartTime());
+                Date statusStartTime = Utility.parse(item.getStartTime());
                 statusStartTime = statusStartTime.before(currentDate) ? currentDate : statusStartTime;
 
                 statusStartTime = Utility.addSeconds(statusStartTime, -statusStartTime.getSeconds());
 
-                Date statusEndTime = Utility.sdf.parse(item.getEndTime());
+                Date statusEndTime = Utility.parse(item.getEndTime());
                 statusEndTime = statusEndTime.after(nextDay.after(Utility.newDate()) ? Utility.newDate() : nextDay) ? (nextDay.after(Utility.newDate()) ? Utility.newDate() : nextDay) : statusEndTime;
 
                 statusEndTime = Utility.addSeconds(statusEndTime, -statusEndTime.getSeconds());
@@ -1402,22 +1403,22 @@ public class HourOfService {
 
     public static ArrayList<ViolationBean> TeamOffDutyUSA(String logDate) {
         try {
-            Date currentDate = Utility.sdf.parse(logDate);
+            Date currentDate = Utility.parse(logDate);
             Date nextDay = Utility.addDays(currentDate, 1);
             ArrayList<DutyStatusBean> coDriverDutyStatus = HourOfServiceDB.DutyStatusGet15Days(currentDate, coDriverIds, true);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusGet(currentDate, coDriverDutyStatus, 3);
 
             for (int i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date statusStartTime = Utility.sdf.parse(item.getStartTime());
+                Date statusStartTime = Utility.parse(item.getStartTime());
                 statusStartTime = statusStartTime.before(currentDate) ? currentDate : statusStartTime;
-                Date statusEndTime = Utility.sdf.parse(item.getEndTime());
+                Date statusEndTime = Utility.parse(item.getEndTime());
                 statusEndTime = statusEndTime.after(nextDay) ? nextDay : statusEndTime;
                 int totalMinutes = (int) (statusEndTime.getTime() - statusStartTime.getTime()) / (1000 * 60);
                 ArrayList<DutyStatusBean> coDriverDutyStatusList = new ArrayList<>();
                 for (int j = 0; j < coDriverDutyStatus.size(); j++) {
-                    Date startTime = Utility.sdf.parse(coDriverDutyStatus.get(i).getStartTime());
-                    Date endTime = Utility.sdf.parse(coDriverDutyStatus.get(i).getEndTime());
+                    Date startTime = Utility.parse(coDriverDutyStatus.get(i).getStartTime());
+                    Date endTime = Utility.parse(coDriverDutyStatus.get(i).getEndTime());
 
                     if ((((startTime.before(statusStartTime) || startTime.equals(statusStartTime)) && (endTime.after(statusStartTime) || endTime.equals(statusStartTime)))
                             || ((startTime.before(statusEndTime) || startTime.equals(statusEndTime)) && (endTime.after(statusEndTime) || endTime.equals(statusEndTime)))
@@ -1429,11 +1430,11 @@ public class HourOfService {
                 }
 
                 for (DutyStatusBean cdOffDuty : coDriverDutyStatusList) {
-                    Date offDutyStart = Utility.sdf.parse(cdOffDuty.getStartTime());
-                    Date offDutyEnd = Utility.sdf.parse(cdOffDuty.getEndTime());
+                    Date offDutyStart = Utility.parse(cdOffDuty.getStartTime());
+                    Date offDutyEnd = Utility.parse(cdOffDuty.getEndTime());
                     DutyStatusBean sleeperBefore = null, sleeperAfter = null, offDutyCheck = null;
                     for (DutyStatusBean bean : coDriverDutyStatus) {
-                        Date endTime = Utility.sdf.parse(bean.getEndTime());
+                        Date endTime = Utility.parse(bean.getEndTime());
                         if (endTime.equals(offDutyStart) && bean.getStatus() == 2 && bean.getTotalMinutes() >= 8 * 60) {
                             sleeperBefore = bean;
                             break;
@@ -1442,7 +1443,7 @@ public class HourOfService {
                     }
 
                     for (DutyStatusBean bean : coDriverDutyStatus) {
-                        Date startTime = Utility.sdf.parse(bean.getStartTime());
+                        Date startTime = Utility.parse(bean.getStartTime());
                         if (startTime.equals(offDutyEnd) && bean.getStatus() == 2 && bean.getTotalMinutes() >= 8 * 60) {
                             sleeperAfter = bean;
                             break;
@@ -1452,8 +1453,8 @@ public class HourOfService {
 
                     if (sleeperBefore != null) {
                         for (DutyStatusBean bean : coDriverDutyStatus) {
-                            Date endTime = Utility.sdf.parse(bean.getEndTime());
-                            if (endTime.equals(Utility.sdf.parse(sleeperBefore.getStartTime())) && bean.getStatus() == 1) {
+                            Date endTime = Utility.parse(bean.getEndTime());
+                            if (endTime.equals(Utility.parse(sleeperBefore.getStartTime())) && bean.getStatus() == 1) {
                                 offDutyCheck = bean;
                                 break;
                             }
@@ -1461,11 +1462,11 @@ public class HourOfService {
                         }
                         if (offDutyCheck != null) {
                             if (offDutyCheck.getTotalMinutes() < 2 * 60) {
-                                offDutyStart = Utility.addMinutes(Utility.sdf.parse(cdOffDuty.getStartTime()), (2 * 60 - offDutyCheck.getTotalMinutes()));
+                                offDutyStart = Utility.addMinutes(Utility.parse(cdOffDuty.getStartTime()), (2 * 60 - offDutyCheck.getTotalMinutes()));
                             }
                         } else {
                             if (cdOffDuty.getTotalMinutes() > 2 * 60) {
-                                offDutyStart = Utility.addMinutes(Utility.sdf.parse(cdOffDuty.getStartTime()), 2 * 60);
+                                offDutyStart = Utility.addMinutes(Utility.parse(cdOffDuty.getStartTime()), 2 * 60);
                             } else
                                 continue;
                         }
@@ -1473,7 +1474,7 @@ public class HourOfService {
 
                     if (sleeperAfter != null) {
                         if (cdOffDuty.getTotalMinutes() > 2 * 60) {
-                            offDutyEnd = Utility.addMinutes(Utility.sdf.parse(cdOffDuty.getEndTime()), 2 * 60);
+                            offDutyEnd = Utility.addMinutes(Utility.parse(cdOffDuty.getEndTime()), 2 * 60);
                         } else
                             continue;
                     }
@@ -1485,7 +1486,7 @@ public class HourOfService {
                     DutyStatusBean cdLastStatus = null;
 
                     for (DutyStatusBean bean : coDriverDutyStatus) {
-                        Date startTime = Utility.sdf.parse(bean.getStartTime());
+                        Date startTime = Utility.parse(bean.getStartTime());
                         if (startTime.before(nextDay) && (statusStartTime.after(offDutyStart) || statusStartTime.equals(offDutyStart)) && startTime.before(offDutyEnd)) {
                             cdStatus.add(bean);
                         }
@@ -1494,7 +1495,7 @@ public class HourOfService {
                     Collections.sort(cdStatus, DutyStatusBean.dateAsc);
 
                     for (DutyStatusBean bean : coDriverDutyStatus) {
-                        Date startTime = Utility.sdf.parse(bean.getStartTime());
+                        Date startTime = Utility.parse(bean.getStartTime());
                         if (startTime.before(offDutyStart)) {
                             cdLastStatus = bean;
                             break;
@@ -1508,7 +1509,7 @@ public class HourOfService {
 
                     }
                     for (int k = 0; k < cdStatus.size(); k++) {
-                        Date startTime = Utility.sdf.parse(cdStatus.get(k).getStartTime());
+                        Date startTime = Utility.parse(cdStatus.get(k).getStartTime());
                         if (cdStatus.get(k).isStatusFg()) {
                             statusStartTime = statusStartTime.before(startTime) ? startTime : statusStartTime;
                             if (k + 1 < cdStatus.size()) {
@@ -1532,22 +1533,22 @@ public class HourOfService {
     public static int CanadaHours70(String logDate) {
         int onDutyMinutes = 0;
         try {
-            Date currentDate = Utility.sdf.parse(logDate);
+            Date currentDate = Utility.parse(logDate);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet26(currentDate, listDutyStatus);
             int restMinutes = 0;
             int i = 0;
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
+                Date startTime = Utility.parse(item.getStartTime());
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 endTime = endTime.after(currentDate) ? currentDate : endTime;
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
                 int totalMinutes = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
 
-                Date prevDate = (i == 0 ? startTime : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? startTime : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                 if (i > 0 && endTime.equals(prevDate)) {
@@ -1560,7 +1561,7 @@ public class HourOfService {
             }
 
             if (restMinutes >= 36 * 60) {
-                Date startDate = Utility.addMinutes(Utility.sdf.parse(data.get(i).getStartTime()), restMinutes);
+                Date startDate = Utility.addMinutes(Utility.parse(data.get(i).getStartTime()), restMinutes);
                 // calculate sum of the onduty status minutes
                 onDutyMinutes = HourOfServiceDB.DutyStatusOnDutyMinuteGet26(startDate, currentDate, listDutyStatus);
 
@@ -1584,13 +1585,13 @@ public class HourOfService {
         int onDutyMinutes = 0;
         ArrayList<DutyStatusBean> data = new ArrayList<DutyStatusBean>();
         try {
-            Date currentDate = Utility.sdf.parse(logDate);
+            Date currentDate = Utility.parse(logDate);
             Date endDate = Utility.addDays(currentDate, -13);
             Date nextDay = Utility.addDays(currentDate, 1);
 
             for (int i = 0; i < listDutyStatus.size(); i++) {
-                Date startDate = Utility.sdf.parse(listDutyStatus.get(i).getStartTime());
-                Date endTime = Utility.sdf.parse(listDutyStatus.get(i).getEndTime());
+                Date startDate = Utility.parse(listDutyStatus.get(i).getStartTime());
+                Date endTime = Utility.parse(listDutyStatus.get(i).getEndTime());
 
                 if ((startDate.before(nextDay) && endTime.before(nextDay) && startDate.after(endDate) && listDutyStatus.get(i).getStatus() <= 2)) {
                     data.add(listDutyStatus.get(i));
@@ -1605,16 +1606,16 @@ public class HourOfService {
             int i = 0, restMinutes = 0;
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
+                Date startTime = Utility.parse(item.getStartTime());
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
                 int totalTime = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
 
-                Date prevDate = (i == 0 ? startTime : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? startTime : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                 if (i > 0 && endTime.equals(prevDate)) {
@@ -1628,7 +1629,7 @@ public class HourOfService {
             }
 
             if (restMinutes >= 72 * 60) {
-                Date startDate = Utility.addMinutes(Utility.sdf.parse(data.get(i).getStartTime()), restMinutes);
+                Date startDate = Utility.addMinutes(Utility.parse(data.get(i).getStartTime()), restMinutes);
                 // calculate sum of the onduty status minutes
                 onDutyMinutes = HourOfServiceDB.DutyStatusOnDutyMinuteGet26(startDate, currentDate, listDutyStatus);
 
@@ -1658,7 +1659,7 @@ public class HourOfService {
         int elapsedHours = 0;
         ViolationBean bean = new ViolationBean();
         try {
-            Date currentDate = Utility.sdf.parse(logDate);
+            Date currentDate = Utility.parse(logDate);
             Date nextDay = Utility.addDays(currentDate, 1);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet(currentDate, listDutyStatus);
             int i = 0;
@@ -1668,16 +1669,16 @@ public class HourOfService {
 
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
+                Date startTime = Utility.parse(item.getStartTime());
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
                 int totalMinutes = (int) (endTime.getTime() - startTime.getTime()) / (1000 * 60);
 
-                Date prevDate = (i == 0 ? startTime : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? startTime : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                 if (i > 0 && endTime.equals(prevDate)) {
@@ -1702,7 +1703,7 @@ public class HourOfService {
 
                     DutyStatusBean coDriverCurrentStatus = null;
                     for (int j = 0; j < listCoDriverDutyStatus.size(); j++) {
-                        if (Utility.sdf.parse(listCoDriverDutyStatus.get(j).getStartTime()).before(startTime)) {
+                        if (Utility.parse(listCoDriverDutyStatus.get(j).getStartTime()).before(startTime)) {
                             coDriverCurrentStatus = listCoDriverDutyStatus.get(j);
                             break;
                         }
@@ -1722,7 +1723,7 @@ public class HourOfService {
             if (!setStartDate) {
                 data = new ArrayList<>();
                 for (int j = 0; j < listDutyStatus.size(); j++) {
-                    Date startTime = Utility.sdf.parse(listDutyStatus.get(j).getStartTime());
+                    Date startTime = Utility.parse(listDutyStatus.get(j).getStartTime());
                     startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
                     if (startTime.before(nextDay)) {
@@ -1732,7 +1733,7 @@ public class HourOfService {
             } else {
                 data = new ArrayList<>();
                 for (int j = 0; j < listDutyStatus.size(); j++) {
-                    Date startTime = Utility.sdf.parse(listDutyStatus.get(j).getStartTime());
+                    Date startTime = Utility.parse(listDutyStatus.get(j).getStartTime());
                     startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
                     if (startTime.after(startDate) || startTime.equals(startDate)) {
@@ -1750,10 +1751,10 @@ public class HourOfService {
 
             for (int j = 0; j < data.size(); j++) {
                 DutyStatusBean item = data.get(j);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
+                Date startTime = Utility.parse(item.getStartTime());
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
@@ -1763,7 +1764,7 @@ public class HourOfService {
                     break;
                 }
 
-                Date prevDate = j == 0 ? endTime : Utility.sdf.parse(data.get(j - 1).getEndTime());
+                Date prevDate = j == 0 ? endTime : Utility.parse(data.get(j - 1).getEndTime());
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
                 // consective 8 hours rest logic (sleeper/ offduty)
                 if (j > 0 && startTime.equals(prevDate)
@@ -1786,7 +1787,7 @@ public class HourOfService {
 
                 if (s2Split != null && s2Split == startTime && !deferedFg) {
                     for (int k = 0; k < data.size(); k++) {
-                        if (Utility.sdf.parse(data.get(k).getStartTime()).after(s1Split) && Utility.sdf.parse(data.get(k).getStartTime()).before(s2Split)) {
+                        if (Utility.parse(data.get(k).getStartTime()).after(s1Split) && Utility.parse(data.get(k).getStartTime()).before(s2Split)) {
 
 
                             if (data.get(k).getStatus() >= 3) {
@@ -1813,7 +1814,7 @@ public class HourOfService {
                     sleeperMinutes = totalMinutes;
                     ArrayList<DutyStatusBean> s2List = new ArrayList<>();
                     for (int k = 0; k < data.size(); k++) {
-                        if (Utility.sdf.parse(data.get(k).getStartTime()).after(startTime) && ((status == 1 && totalMinutes > 8 * 60) || status == 2)) {
+                        if (Utility.parse(data.get(k).getStartTime()).after(startTime) && ((status == 1 && totalMinutes > 8 * 60) || status == 2)) {
                             s2List.add(data.get(k));
                         }
                     }
@@ -1828,7 +1829,7 @@ public class HourOfService {
                         DutyStatusBean codriverBeforess2 = null;
                         Collections.sort(listCoDriverDutyStatus, DutyStatusBean.dateDesc);
                         for (int l = 0; l < listCoDriverDutyStatus.size(); l++) {
-                            if (Utility.sdf.parse(listCoDriverDutyStatus.get(l).getStartTime()).before(Utility.sdf.parse(s2List.get(k).getEndTime()))) {
+                            if (Utility.parse(listCoDriverDutyStatus.get(l).getStartTime()).before(Utility.parse(s2List.get(k).getEndTime()))) {
                                 codriverBeforess2 = listCoDriverDutyStatus.get(l);
                                 break;
                             }
@@ -1839,9 +1840,9 @@ public class HourOfService {
                             if (sleeperMinutes >= 4 * 60 && s2List.get(k).getTotalMinutes() >= 4 * 60) {
                                 if ((sleeperMinutes + s2List.get(k).getTotalMinutes()) == 8 * 60) {
                                     s1Split = startTime;
-                                    s2Split = Utility.sdf.parse(s2List.get(k).getStartTime());
+                                    s2Split = Utility.parse(s2List.get(k).getStartTime());
                                     for (int l = 0; l < data.size(); l++) {
-                                        if (Utility.sdf.parse(data.get(l).getStartTime()).after(startTime) && Utility.sdf.parse(data.get(l).getStartTime()).before(s2Split) && data.get(l).getStatus() == 2
+                                        if (Utility.parse(data.get(l).getStartTime()).after(startTime) && Utility.parse(data.get(l).getStartTime()).before(s2Split) && data.get(l).getStatus() == 2
                                                 && data.get(l).getTotalMinutes() >= 8 * 60 - s2List.get(k).getTotalMinutes() && data.get(l).getTotalMinutes() >= 4 * 60) {
                                             s2List.set(k, data.get(l));
                                             break;
@@ -1862,10 +1863,10 @@ public class HourOfService {
                             if (sleeperMinutes >= 2 * 60) {
                                 if ((sleeperMinutes + s2List.get(k).getTotalMinutes()) >= 10 * 60) {
                                     s1Split = startTime;
-                                    s2Split = Utility.sdf.parse(s2List.get(k).getStartTime());
+                                    s2Split = Utility.parse(s2List.get(k).getStartTime());
 
                                     for (int l = 0; l < data.size(); l++) {
-                                        if (Utility.sdf.parse(data.get(l).getStartTime()).after(startTime) && Utility.sdf.parse(data.get(l).getStartTime()).before(s2Split) && data.get(l).getStatus() == 2
+                                        if (Utility.parse(data.get(l).getStartTime()).after(startTime) && Utility.parse(data.get(l).getStartTime()).before(s2Split) && data.get(l).getStatus() == 2
                                                 && data.get(l).getTotalMinutes() >= 10 * 60 - s2List.get(k).getTotalMinutes() && data.get(l).getTotalMinutes() >= 2 * 60) {
                                             s2List.set(k, data.get(l));
                                             break;
@@ -1915,7 +1916,7 @@ public class HourOfService {
 
         ViolationBean bean = new ViolationBean();
         try {
-            Date currentDate = Utility.sdf.parse(logDate);
+            Date currentDate = Utility.parse(logDate);
             Date nextDay = Utility.addDays(currentDate, 1);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet(currentDate, listDutyStatus);
             int i = 0;
@@ -1923,11 +1924,11 @@ public class HourOfService {
             boolean setStartDate = false;
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date startTime = Utility.parse(item.getStartTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
-                Date prevDate = (i == 0 ? startTime : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? startTime : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
                 if (i > 0 && endTime.equals(prevDate)) {
                     restMinutes += item.getTotalMinutes();
@@ -1962,7 +1963,7 @@ public class HourOfService {
             if (!setStartDate) {
                 data = new ArrayList<>();
                 for (int j = 0; j < listDutyStatus.size(); j++) {
-                    Date startTime = Utility.sdf.parse(listDutyStatus.get(j).getStartTime());
+                    Date startTime = Utility.parse(listDutyStatus.get(j).getStartTime());
                     startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
                     if (startTime.before(nextDay)) {
                         data.add(listDutyStatus.get(j));
@@ -1971,7 +1972,7 @@ public class HourOfService {
             } else {
                 data = new ArrayList<>();
                 for (int j = 0; j < listDutyStatus.size(); j++) {
-                    Date startTime = Utility.sdf.parse(listDutyStatus.get(j).getStartTime());
+                    Date startTime = Utility.parse(listDutyStatus.get(j).getStartTime());
 
                     startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
                     if (startTime.after(startDate) || startTime.equals(startDate)) {
@@ -1988,10 +1989,10 @@ public class HourOfService {
 
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
+                Date startTime = Utility.parse(item.getStartTime());
                 startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 endTime = endTime.after(Utility.newDate()) ? Utility.newDate() : endTime;
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
@@ -2003,7 +2004,7 @@ public class HourOfService {
                     break;
                 }
 
-                Date prevDate = i == 0 ? startTime : Utility.sdf.parse(data.get(i - 1).getEndTime());
+                Date prevDate = i == 0 ? startTime : Utility.parse(data.get(i - 1).getEndTime());
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                 // consective 8 hours rest logic (sleeper/ offduty)
@@ -2029,10 +2030,10 @@ public class HourOfService {
 
                 if (s2Split != null && s2Split == startTime) {
                     for (int k = 0; k < data.size(); k++) {
-                        if (Utility.sdf.parse(data.get(k).getStartTime()).after(s1Split) && (Utility.sdf.parse(data.get(k).getStartTime()).before(s2Split)
-                                || Utility.sdf.parse(data.get(k).getStartTime()).equals(s2Split))) {
+                        if (Utility.parse(data.get(k).getStartTime()).after(s1Split) && (Utility.parse(data.get(k).getStartTime()).before(s2Split)
+                                || Utility.parse(data.get(k).getStartTime()).equals(s2Split))) {
 
-                            if (data.get(k).getStatus() == 3 && Utility.sdf.parse(data.get(k).getStartTime()).before(s2Split)) {
+                            if (data.get(k).getStatus() == 3 && Utility.parse(data.get(k).getStartTime()).before(s2Split)) {
                                 drivingMinutes += data.get(k).getTotalMinutes();
                             }
                             elapsedMinutes += data.get(k).getTotalMinutes();
@@ -2056,7 +2057,7 @@ public class HourOfService {
 
                         ArrayList<DutyStatusBean> s2List = new ArrayList<>();
                         for (int k = 0; k < data.size(); k++) {
-                            if (Utility.sdf.parse(data.get(k).getStartTime()).after(startTime) && (status <= 2)) {
+                            if (Utility.parse(data.get(k).getStartTime()).after(startTime) && (status <= 2)) {
                                 s2List.add(data.get(k));
                             }
                         }
@@ -2065,10 +2066,10 @@ public class HourOfService {
                         int s2Minutes = 0;
                         for (int k = 0; k < s2List.size(); k++) {
 
-                            startTime = Utility.sdf.parse(s2List.get(k).getStartTime());
+                            startTime = Utility.parse(s2List.get(k).getStartTime());
                             startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
-                            prevDate = (k == 0 ? startTime : Utility.sdf.parse(s2List.get(k - 1).getEndTime()));
+                            prevDate = (k == 0 ? startTime : Utility.parse(s2List.get(k - 1).getEndTime()));
                             prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
                             // consective 10 hours rest logic (sleeper/offduty)
                             if (k > 0 && startTime.equals(prevDate)) {
@@ -2080,7 +2081,7 @@ public class HourOfService {
                                 if (sleeperMinutes >= 8 * 60 && s2Minutes >= 2 * 60) {
                                     elapsedMinutes -= sleeperMinutes;
                                 }
-                                s2Split = Utility.sdf.parse(s2List.get(k).getStartTime());
+                                s2Split = Utility.parse(s2List.get(k).getStartTime());
                                 break;
                             }
                         }
@@ -2107,17 +2108,17 @@ public class HourOfService {
     public static int US70HoursGet(String logDate) {
         int onDutyMinutes = 0;
         try {
-            Date currentDate = Utility.sdf.parse(logDate);
+            Date currentDate = Utility.parse(logDate);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet395_B(currentDate, listDutyStatus);
             int restMinutes = 0;
             int i = 0;
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date startTime = Utility.parse(item.getStartTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
-                Date prevDate = (i == 0 ? startTime : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? startTime : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
 
                 if (i > 0 && endTime.equals(prevDate)) {
@@ -2132,7 +2133,7 @@ public class HourOfService {
             }
 
             if (restMinutes >= 34 * 60) {
-                Date startDate = Utility.addMinutes(Utility.sdf.parse(data.get(i).getStartTime()), restMinutes);
+                Date startDate = Utility.addMinutes(Utility.parse(data.get(i).getStartTime()), restMinutes);
                 startDate = Utility.addSeconds(startDate, -startDate.getSeconds());
                 // calculate sum of the onduty status minutes onDutyMinutes
                 onDutyMinutes = HourOfServiceDB.DutyStatusOnDutyMinuteGet26(startDate, currentDate, listDutyStatus);
@@ -2154,17 +2155,17 @@ public class HourOfService {
     public static int US60HoursGet(String logDate) {
         int onDutyMinutes = 0;
         try {
-            Date currentDate = Utility.sdf.parse(logDate);
+            Date currentDate = Utility.parse(logDate);
             ArrayList<DutyStatusBean> data = HourOfServiceDB.DutyStatusOffDutyGet395_B(currentDate, listDutyStatus);
             int restMinutes = 0;
             int i = 0;
             for (i = 0; i < data.size(); i++) {
                 DutyStatusBean item = data.get(i);
-                Date startTime = Utility.sdf.parse(item.getStartTime());
-                Date endTime = Utility.sdf.parse(item.getEndTime());
+                Date startTime = Utility.parse(item.getStartTime());
+                Date endTime = Utility.parse(item.getEndTime());
                 endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
 
-                Date prevDate = (i == 0 ? startTime : Utility.sdf.parse(data.get(i - 1).getStartTime()));
+                Date prevDate = (i == 0 ? startTime : Utility.parse(data.get(i - 1).getStartTime()));
                 prevDate = Utility.addSeconds(prevDate, -prevDate.getSeconds());
                 if (i > 0 && endTime.equals(prevDate)) {
                     restMinutes += item.getTotalMinutes();
@@ -2178,7 +2179,7 @@ public class HourOfService {
             }
 
             if (restMinutes >= 34 * 60) {
-                Date startDate = Utility.addMinutes(Utility.sdf.parse(data.get(i).getStartTime()), restMinutes);
+                Date startDate = Utility.addMinutes(Utility.parse(data.get(i).getStartTime()), restMinutes);
                 // calculate sum of the onduty status minutes onDutyMinutes
                 onDutyMinutes = HourOfServiceDB.DutyStatusOnDutyMinuteGet26(startDate, currentDate, listDutyStatus);
             } else {

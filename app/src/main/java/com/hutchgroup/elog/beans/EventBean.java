@@ -391,8 +391,8 @@ public class EventBean implements Serializable {
             int date2 = 0;
             try {
 
-                date1 = (int) (Utility.sdf.parse(s1.getEventDateTime()).getTime() / (1000));
-                date2 = (int) (Utility.sdf.parse(s2.getEventDateTime()).getTime() / (1000));
+                date1 = (int) (Utility.parse(s1.getEventDateTime()).getTime() / (1000));
+                date2 = (int) (Utility.parse(s2.getEventDateTime()).getTime() / (1000));
 
             } catch (Exception exe) {
             }

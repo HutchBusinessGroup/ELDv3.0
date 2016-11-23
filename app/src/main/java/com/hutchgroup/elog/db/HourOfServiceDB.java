@@ -8,6 +8,7 @@ import com.hutchgroup.elog.beans.DutyStatusBean;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.Utility;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -17,11 +18,13 @@ import java.util.Date;
  */
 public class HourOfServiceDB {
 
+    static String fullFormat = "yyyy-MM-dd HH:mm:ss";
+
     public static DutyStatusBean DutyStatusObjectGet(int status, Date startTime, Date endTime, int totalMinutes, int personalUseFg) {
         DutyStatusBean bean = new DutyStatusBean();
         bean.setStatus(status);
-        bean.setStartTime(Utility.sdf.format(startTime));
-        bean.setEndTime(Utility.sdf.format(endTime));
+        bean.setStartTime(Utility.format(startTime, fullFormat));
+        bean.setEndTime(Utility.format(endTime, fullFormat));
         bean.setTotalMinutes(totalMinutes);
         bean.setPersonalUse(personalUseFg);
         return bean;
@@ -43,8 +46,8 @@ public class HourOfServiceDB {
             }
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getWritableDatabase();
-            String start = Utility.sdf.format(startDate);
-            String end = Utility.sdf.format(endDate);
+            String start = Utility.format(startDate, fullFormat);
+            String end = Utility.format(endDate, fullFormat);
 
             String sql = "select *,1 as recordType from(select EventDateTime dutyStatusTime ,case when EventType=3 and EventCode=2 then 4 else EventCode end dutyStatus," +
                     "case when EventType=3 and EventCode!=0 then 1 else 0 end personalUseFg from " + MySQLiteOpenHelper.TABLE_DAILYLOG_EVENT +
@@ -60,9 +63,9 @@ public class HourOfServiceDB {
 
             if (cursor.moveToNext()) {
                 int firstRecord = cursor.getInt(cursor.getColumnIndex("recordType"));
-                Date startTime = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("dutyStatusTime")));
+                Date startTime = Utility.parse(cursor.getString(cursor.getColumnIndex("dutyStatusTime")));
                 // remove seconds
-               // startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
+                // startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
                 int personalUseFg = cursor.getInt(cursor.getColumnIndex("personalUseFg"));
 
                 if (firstRecord > 1) {
@@ -76,15 +79,15 @@ public class HourOfServiceDB {
                 int i = 0;
                 while (cursor.moveToNext()) {
 
-                    Date endTime = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("dutyStatusTime")));
+                    Date endTime = Utility.parse(cursor.getString(cursor.getColumnIndex("dutyStatusTime")));
                     // remove seconds
-                   // endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
-                    bean.setEndTime(Utility.sdf.format(endTime));
+                    // endTime = Utility.addSeconds(endTime, -endTime.getSeconds());
+                    bean.setEndTime(Utility.format(endTime, fullFormat));
 
                     if (bean.getStatus() != cursor.getInt(cursor.getColumnIndex("dutyStatus"))) {
-                        startTime=Utility.sdf.parse(bean.getStartTime());
+                        startTime = Utility.parse(bean.getStartTime());
                         // remove seconds
-                       // startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
+                        // startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
 
                         int totalMinute = (int) Math.round((endTime.getTime() - startTime.getTime()) / (1000 * 60.0));
                         bean.setTotalMinutes(totalMinute);
@@ -95,11 +98,11 @@ public class HourOfServiceDB {
                     }
                 }
 
-                startTime=Utility.sdf.parse(bean.getStartTime());
+                startTime = Utility.parse(bean.getStartTime());
                 // remove seconds
-              //  startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
+                //  startTime = Utility.addSeconds(startTime, -startTime.getSeconds());
                 int totalMinute = (int) Math.round((endDate.getTime() - startTime.getTime()) / (1000 * 60.0));
-                bean.setEndTime(Utility.sdf.format(endDate));
+                bean.setEndTime(Utility.format(endDate, fullFormat));
                 bean.setTotalMinutes(totalMinute);
                 list.add(bean);
             }
@@ -128,8 +131,8 @@ public class HourOfServiceDB {
             Date nextDay = Utility.addDays(date, 1);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endDate = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endDate = Utility.parse(list.get(i).getEndTime());
 
                 startDate = startDate.before(date) ? date : startDate;
                 endDate = endDate.after(nextDay) ? nextDay : endDate;
@@ -155,12 +158,12 @@ public class HourOfServiceDB {
             Date nextDay = Utility.dateOnlyGet(Utility.addDays(Utility.dateOnlyGet(date), 1));
             Date currentDate = Utility.dateOnlyGet(date);
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endDate = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endDate = Utility.parse(list.get(i).getEndTime());
 
                 startDate = startDate.before(currentDate) ? currentDate : startDate;
                 endDate = endDate.after(nextDay) ? nextDay : endDate;
-                if ( list.get(i).getStatus() <= 2 && startDate.before(date)) {
+                if (list.get(i).getStatus() <= 2 && startDate.before(date)) {
                     data.add(list.get(i));
                 }
 
@@ -178,15 +181,15 @@ public class HourOfServiceDB {
     }
 
     public static ArrayList<DutyStatusBean> DutyStatusGet(Date date, ArrayList<DutyStatusBean> list) {
-        date = Utility.dateOnlyGet(Utility.sdf.format(date));
+        date = Utility.dateOnlyGet(Utility.format(date, fullFormat));
         ArrayList<DutyStatusBean> data = new ArrayList<>();
 
         try {
             Date nextDay = Utility.addDays(date, 1);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endDate = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endDate = Utility.parse(list.get(i).getEndTime());
 
                 startDate = startDate.before(date) ? date : startDate;
                 endDate = endDate.after(nextDay) ? nextDay : endDate;
@@ -202,15 +205,15 @@ public class HourOfServiceDB {
     }
 
     public static ArrayList<DutyStatusBean> DutyStatusGet(Date date, ArrayList<DutyStatusBean> list, int status) {
-        date = Utility.dateOnlyGet(Utility.sdf.format(date));
+        date = Utility.dateOnlyGet(Utility.format(date, fullFormat));
         ArrayList<DutyStatusBean> data = new ArrayList<DutyStatusBean>();
 
         try {
             Date nextDay = Utility.addDays(date, 1);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endDate = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endDate = Utility.parse(list.get(i).getEndTime());
 
                 startDate = startDate.before(date) ? date : startDate;
                 endDate = endDate.after(nextDay) ? nextDay : endDate;
@@ -226,15 +229,15 @@ public class HourOfServiceDB {
     }
 
     public static ArrayList<DutyStatusBean> DutyStatusOffDutyGet25(Date date, ArrayList<DutyStatusBean> list) {
-        date = Utility.dateOnlyGet(Utility.sdf.format(date));
+        date = Utility.dateOnlyGet(Utility.format(date, fullFormat));
         ArrayList<DutyStatusBean> data = new ArrayList<DutyStatusBean>();
 
         try {
             Date endDate = Utility.addDays(date, -14);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endTime = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endTime = Utility.parse(list.get(i).getEndTime());
 
                 startDate = startDate.before(date) ? date : startDate;
                 endTime = endTime.after(endDate) ? endDate : endTime;
@@ -252,15 +255,15 @@ public class HourOfServiceDB {
     }
 
     public static ArrayList<DutyStatusBean> DutyStatusDrivingGet25(Date date, ArrayList<DutyStatusBean> list) {
-        date = Utility.dateOnlyGet(Utility.sdf.format(date));
+        date = Utility.dateOnlyGet(Utility.format(date, fullFormat));
         ArrayList<DutyStatusBean> data = new ArrayList<DutyStatusBean>();
 
         try {
             Date nextDay = Utility.addDays(date, 1);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endTime = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endTime = Utility.parse(list.get(i).getEndTime());
 
                 startDate = startDate.before(date) ? date : startDate;
                 endTime = endTime.after(nextDay) ? nextDay : endTime;
@@ -277,7 +280,7 @@ public class HourOfServiceDB {
     }
 
     public static ArrayList<DutyStatusBean> DutyStatusOffDutyGet26(Date date, ArrayList<DutyStatusBean> list) {
-        date = Utility.dateOnlyGet(Utility.sdf.format(date));
+        date = Utility.dateOnlyGet(Utility.format(date, fullFormat));
         ArrayList<DutyStatusBean> data = new ArrayList<DutyStatusBean>();
 
         try {
@@ -285,8 +288,8 @@ public class HourOfServiceDB {
             Date nextDay = Utility.addDays(date, 1);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endTime = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endTime = Utility.parse(list.get(i).getEndTime());
 
                 if ((startDate.before(nextDay) && endTime.before(nextDay) && startDate.after(endDate) && list.get(i).getStatus() <= 2)) {
                     data.add(list.get(i));
@@ -311,8 +314,8 @@ public class HourOfServiceDB {
         try {
 
             for (int i = 0; i < list.size(); i++) {
-                Date startTime = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endTime = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startTime = Utility.parse(list.get(i).getStartTime());
+                Date endTime = Utility.parse(list.get(i).getEndTime());
 
                 if ((startTime.after(startDate) || startTime.equals(startDate) || endTime.after(startDate)) &&
                         startTime.before(date) && list.get(i).getStatus() >= 3) {
@@ -332,15 +335,15 @@ public class HourOfServiceDB {
     }
 
     public static ArrayList<DutyStatusBean> DutyStatusDrivingOnDutyGet26(Date date, ArrayList<DutyStatusBean> list) {
-        date = Utility.dateOnlyGet(Utility.sdf.format(date));
+        date = Utility.dateOnlyGet(Utility.format(date, fullFormat));
         ArrayList<DutyStatusBean> data = new ArrayList<DutyStatusBean>();
 
         try {
             Date nextDay = Utility.addDays(date, 1);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endTime = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endTime = Utility.parse(list.get(i).getEndTime());
 
                 startDate = startDate.before(date) ? date : startDate;
                 endTime = endTime.after(nextDay) ? nextDay : endTime;
@@ -357,7 +360,7 @@ public class HourOfServiceDB {
     }
 
     public static ArrayList<DutyStatusBean> DutyStatusOffDutyGet395_B(Date date, ArrayList<DutyStatusBean> list) {
-        date = Utility.dateOnlyGet(Utility.sdf.format(date));
+        date = Utility.dateOnlyGet(Utility.format(date, fullFormat));
         ArrayList<DutyStatusBean> data = new ArrayList<DutyStatusBean>();
 
         try {
@@ -365,8 +368,8 @@ public class HourOfServiceDB {
             Date nextDay = Utility.addDays(date, 1);
 
             for (int i = 0; i < list.size(); i++) {
-                Date startDate = Utility.sdf.parse(list.get(i).getStartTime());
-                Date endTime = Utility.sdf.parse(list.get(i).getEndTime());
+                Date startDate = Utility.parse(list.get(i).getStartTime());
+                Date endTime = Utility.parse(list.get(i).getEndTime());
 
                 if ((startDate.before(nextDay) && endTime.before(nextDay) && startDate.after(endDate) && list.get(i).getStatus() <= 2)) {
                     data.add(list.get(i));

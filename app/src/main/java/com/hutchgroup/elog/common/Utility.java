@@ -274,13 +274,19 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         return sdf.format(d);
     }
 
+
     public static Date newDate() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
-        return calendar.getTime();
+        Date date = parse(Utility.getCurrentDateTime());
+        return date;
     }
 
-    static Date parse(String dateTime) {
+
+    public static Date newDateOnly() {
+        Date date = parse(Utility.getCurrentDateTime(), "yyyy-MM-dd");
+        return date;
+    }
+
+    public static Date parse(String dateTime) {
         try {
             return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(dateTime);
         } catch (ParseException pe) {
@@ -300,7 +306,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         return sdf.format(date);
     }
 
-    static String format(Date date, String format) {
+    public static String format(Date date, String format) {
         SimpleDateFormat dateFormat = new SimpleDateFormat(format);
         return dateFormat.format(date);
     }
@@ -320,6 +326,8 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     }
 
     public static String getTimeHHMM(String dateTime) {
+        if (dateTime == null || dateTime.isEmpty())
+            return "";
         return format(dateTime, "hh:mm a");
     }
 
@@ -387,7 +395,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static String getDateTimeForServer(String date) {
         String str = "";
         try {
-            Date d = parse(date);
+            Date d = sdf.parse(date);
 
             int offset = Utility.TimeZoneOffset;
 
@@ -403,11 +411,12 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
 
     public static String getDateForServer(String date) {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd");
         String str = "";
         try {
 
-            Date d = parse(date);
+            sdfDate.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
+            Date d = sdfDate.parse(date);
             int offset = Utility.TimeZoneOffset;
 
             String gmtTZ = String.format("%s%02d%02d", offset < 0 ? "-" : "+",
@@ -462,6 +471,8 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
 
 
     public static String getDate(String dateTime) {
+        if (dateTime == null || dateTime.isEmpty())
+            return "";
         return format(dateTime, "yyyy-MM-dd");
     }
 

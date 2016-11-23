@@ -267,8 +267,8 @@ public class UserBean {
             int date2 = 0;
             try {
 
-                date1 = (int) (Utility.sdf.parse(s1.getMessageDateTime() == null ? "1970-01-01 00:00:00" : s1.getMessageDateTime()).getTime() / 1000);
-                date2 = (int) (Utility.sdf.parse(s2.getMessageDateTime() == null ? "1970-01-01 00:00:00" : s2.getMessageDateTime()).getTime() / 1000);
+                date1 = (int) (Utility.parse(s1.getMessageDateTime() == null ? "1970-01-01 00:00:00" : s1.getMessageDateTime()).getTime() / 1000);
+                date2 = (int) (Utility.parse(s2.getMessageDateTime() == null ? "1970-01-01 00:00:00" : s2.getMessageDateTime()).getTime() / 1000);
 
             } catch (Exception exe) {
             }

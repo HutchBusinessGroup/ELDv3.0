@@ -81,8 +81,8 @@ public class DailyLogDB {
         ArrayList<RuleBean> ruleList = new ArrayList<>();
 
         try {
-            String nextDay = Utility.sdf.format(Utility.addDays(Utility.newDate(), 1));
-            Date selectedDate = Utility.sdf.parse(date);
+            String nextDay = Utility.sdf.format(Utility.addDays(new Date(), 1));
+            Date selectedDate = Utility.parse(date);
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getReadableDatabase();
             String sql = "select * from  (select RuleId,RuleStartTime,RuelEndTime  from " + MySQLiteOpenHelper.TABLE_DAILYLOG_RULE + " r join " + MySQLiteOpenHelper.TABLE_DAILYLOG + " d on" +
@@ -92,14 +92,14 @@ public class DailyLogDB {
             while (cursor.moveToNext()) {
                 RuleBean obj = new RuleBean();
                 obj.setRuleId(cursor.getInt(cursor.getColumnIndex("RuleId")));
-                Date ruleDate = Utility.sdf.parse(cursor.getString(cursor.getColumnIndex("RuleStartTime")));
+                Date ruleDate = Utility.parse(cursor.getString(cursor.getColumnIndex("RuleStartTime")));
                 if (ruleDate.before(selectedDate)) {
                     ruleDate = selectedDate;
                 }
 
                 String endDate = cursor.getString(cursor.getColumnIndex("RuelEndTime"));
                 endDate = endDate == null ? nextDay : endDate;
-                Date ruleEndDate = Utility.sdf.parse(endDate);
+                Date ruleEndDate = Utility.parse(endDate);
                 obj.setRuleStartTime(ruleDate);
                 obj.setRuleEndTime(ruleEndDate);
                 ruleList.add(obj);
@@ -166,12 +166,10 @@ public class DailyLogDB {
             updateRuleEndTime(driverId, ruleStartTime);
             ContentValues values = new ContentValues();
 
-            ruleEndTime = Utility.sdf.format(Utility.dateOnlyGet(Utility.addDays(Utility.newDate(), 1)));
             logId = DailyLogCreate(driverId, "", "", "");
             values.put("DailyLogId", logId);
             values.put("RuleId", ruleId);
             values.put("RuleStartTime", ruleStartTime);
-            //  values.put("RuelEndTime", ruleEndTime);
             values.put("SyncFg", 0);
             database.insertOrThrow(MySQLiteOpenHelper.TABLE_DAILYLOG_RULE,
                     "RuleId", values);
@@ -400,8 +398,8 @@ public class DailyLogDB {
         Date toDate = Utility.dateOnlyGet(logDate);
         Date fromDate = Utility.addDays(toDate, -15);
 
-        String start = Utility.sdf.format(fromDate);
-        String end = Utility.sdf.format(toDate);
+        String start = Utility.format(fromDate, "yyyy-MM-dd HH:mm:ss");
+        String end = Utility.format(toDate, "yyyy-MM-dd HH:mm:ss");
         try {
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getReadableDatabase();

@@ -393,8 +393,8 @@ public class NewEventFragment extends Fragment implements View.OnClickListener, 
                     }
 
                     if (isEditEvent) {
-                        Date currentSelectedTime = Utility.sdf.parse(Utility.getDate(selectedEventDateTime) + " " + tvEventTime.getText());
-                        Date previousTime = Utility.sdf.parse(selectedEventDateTime);
+                        Date currentSelectedTime = Utility.parse(Utility.getDate(selectedEventDateTime) + " " + tvEventTime.getText());
+                        Date previousTime = Utility.parse(selectedEventDateTime);
                         if (eventData.getEventRecordOrigin() != 4) {
                             EventBean previousEvent = EventDB.previousDutyStatusGet(driverId, selectedEventDateTime);
                             if (previousEvent.getEventCode() == 3 && currentSelectedTime.before(previousTime)) {

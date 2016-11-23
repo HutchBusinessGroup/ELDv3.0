@@ -164,8 +164,8 @@ public class DutyStatusBean {
             int date2 = 0;
             try {
 
-                date1 = (int) (Utility.sdf.parse(s1.getStartTime()).getTime() / (1000));
-                date2 = (int) (Utility.sdf.parse(s2.getStartTime()).getTime() / (1000));
+                date1 = (int) (Utility.parse(s1.getStartTime()).getTime() / (1000));
+                date2 = (int) (Utility.parse(s2.getStartTime()).getTime() / (1000));
 
             } catch (Exception exe) {
             }
@@ -181,8 +181,8 @@ public class DutyStatusBean {
             int date2 = 0;
             try {
 
-                date1 = (int) (Utility.sdf.parse(s1.getStartTime()).getTime() / (1000));
-                date2 = (int) (Utility.sdf.parse(s2.getStartTime()).getTime() / (1000));
+                date1 = (int) (Utility.parse(s1.getStartTime()).getTime() / (1000));
+                date2 = (int) (Utility.parse(s2.getStartTime()).getTime() / (1000));
 
             } catch (Exception exe) {
             }
