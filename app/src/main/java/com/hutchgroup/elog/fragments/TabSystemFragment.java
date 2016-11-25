@@ -52,6 +52,7 @@ public class TabSystemFragment extends Fragment implements View.OnClickListener,
     TextView tvSystemInformation;
     TextView tvLegal;
     TextView tvSyncTime;
+    TextView tvTimeZone;
     Switch switchCopyTrailer;
     Switch switchAutomaticRuleChange;
 
@@ -115,6 +116,8 @@ public class TabSystemFragment extends Fragment implements View.OnClickListener,
             tvLegal.setOnClickListener(this);
             tvSyncTime = (TextView) view.findViewById(R.id.tvSyncTime);
             spinSyncTime = (Spinner) view.findViewById(R.id.spinnerSyncTime);
+            tvTimeZone = (TextView) view.findViewById(R.id.tvTimeZone);
+            tvTimeZone.setText(Utility.TimeZoneOffsetUTC);
             spinnerTimeZone = (Spinner) view.findViewById(R.id.spinnerTimeZone);
 
             spinnerTimeZone.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -138,7 +141,7 @@ public class TabSystemFragment extends Fragment implements View.OnClickListener,
 
                 }
             });
-            populateTimeZone();
+            //  populateTimeZone();
 
             if (Utility._appSetting.getSyncTime() == AppSettings.SYNC5) {
                 spinSyncTime.setSelection(0);

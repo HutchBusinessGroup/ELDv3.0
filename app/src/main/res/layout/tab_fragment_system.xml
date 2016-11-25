@@ -42,7 +42,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" android:visibility="gone">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -52,10 +52,16 @@
                     android:layout_marginStart="@dimen/width_8"
                     android:src="@drawable/ic_time" />
 
+                <TextView
+                    android:id="@+id/tvTimeZone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <Spinner
                     android:id="@+id/spinnerTimeZone"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"   />
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -461,9 +467,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="@string/settings_legal"
                 android:paddingBottom="24dp"
-                android:paddingTop="16dp" />
+                android:paddingTop="16dp"
+                android:text="@string/settings_legal" />
 
         </LinearLayout>
         <!--End of Systems Tab-->
