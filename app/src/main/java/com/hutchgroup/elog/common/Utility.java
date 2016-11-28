@@ -392,6 +392,25 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         return str;
     }
 
+    public static String getAppCurrentDateTime() {
+        String DateTime = "";
+        try {
+            String format = CustomDateFormat.d6;
+            if (Utility._appSetting.getTimeFormat() == AppSettings.AppTimeFormat.HR24.ordinal()) {
+                format += " HH:mm:ss";
+            } else {
+                format += " hh:mm:ss a"; //12hr
+            }
+
+            SimpleDateFormat sf = new SimpleDateFormat(format);
+            sf.setTimeZone(TimeZone.getTimeZone(Utility.TimeZoneId));
+            DateTime = sf.format(new Date());
+        } catch (Exception exe) {
+
+        }
+        return DateTime;
+    }
+
     public static String getDateTimeForServer(String date) {
         String str = "";
         try {

@@ -271,7 +271,7 @@ public class InputFragment extends Fragment implements View.OnClickListener {
         e.putString("shipping_number", edShippingNumber.getText().toString());
         //e.putString("commodity", edCommodity.getText().toString());
         e.putString("trailer_number", edTrailerNumber.getText().toString());
-        e.putInt("driverid", Utility.onScreenUserId);
+        //e.putInt("driverid", Utility.onScreenUserId);
         e.commit();
 
         Utility.ShippingNumber = edShippingNumber.getText().toString();

@@ -524,7 +524,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
                             .edit();
                     e.putString("shipping_number", edShippingID.getText().toString());
                     e.putString("trailer_number", edTrailerID.getText().toString());
-                    e.putInt("driverid", Utility.onScreenUserId);
+                    //e.putInt("driverid", Utility.onScreenUserId);
                     e.commit();
                     DailyLogDB.DailyLogCreate(driverId, edShippingID.getText().toString(), edTrailerID.getText().toString(), "");
                     mListener.onDetailSaved();

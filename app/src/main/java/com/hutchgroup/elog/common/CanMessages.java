@@ -642,7 +642,7 @@ public class CanMessages {
                     Log.i(TAG, "MPG = " + out);
                     break;
 
-                //case 65248:
+                // case 65248:
                 case 65217:
                     i = (((packet[13] & 0xFF) << 24) | ((packet[12] & 0xFF) << 16)
                             | ((packet[11] & 0xFF) << 8) | ((packet[10] & 0xFF)));
@@ -765,7 +765,7 @@ public class CanMessages {
                             if (0 < spn && spn < 7576) {
                                 spnDescription = SPNMap.map[spn];
                             } else
-                                spnDescription =  "Contact manufacture";
+                                spnDescription = "Contact manufacture";
 
                             if (0 < fmi && fmi < 32) {
                                 fmiDescription = SPNMap.fmi[fmi];
@@ -1425,7 +1425,7 @@ public class CanMessages {
 
     private void request1939() {
         // long[] initPGN_TxFilter = {65253, 65260};
-        long[] initPGN_TxFilter = {65266, 65257, 65209, 65244, 65253, 65260,65227};
+        long[] initPGN_TxFilter = {65266, 65257, 65209, 65244, 65253, 65260, 65227};
         ConnectedThread r;
         synchronized (this) {
             r = mConnectedThread;

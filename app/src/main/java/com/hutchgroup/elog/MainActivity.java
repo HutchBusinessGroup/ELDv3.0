@@ -660,7 +660,7 @@ public class MainActivity extends ELogMainActivity
     ImageView icFreezeTPMS;
     ImageView icFreezeActiveUser;
 
-    TextView tvLoginName, tvFreezeLoginName;
+    TextView tvLoginName, tvFreezeLoginName, tvCurrentTime;
 
     int canbusState;
     Bitmap batteryBmp;
@@ -1216,6 +1216,9 @@ public class MainActivity extends ELogMainActivity
             tvLoginName.setText(driverName);
             tvFreezeLoginName = (TextView) findViewById(R.id.tvFreezeLoginName);
             tvFreezeLoginName.setText(driverName);
+            tvCurrentTime = (TextView) findViewById(R.id.tvCurrentTime);
+            String currentTime = Utility.getAppCurrentDateTime();
+            tvCurrentTime.setText(currentTime);
             bEditEvent = false;
             bWebEvent = false;
 
@@ -1388,6 +1391,9 @@ public class MainActivity extends ELogMainActivity
 
     @Override
     public void onBackPressed() {
+        if (Utility.InspectorModeFg) {
+            return;
+        }
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -1461,6 +1467,7 @@ public class MainActivity extends ELogMainActivity
         MenuItem malfunctionItem = menu.findItem(R.id.action_malfunction);
         MenuItem diagnosticItem = menu.findItem(R.id.action_diagnostic);
         MenuItem inspectorModeItem = menu.findItem(R.id.action_inspector_mode);
+        MenuItem sendItem = menu.findItem(R.id.action_send);
         inspectorModeItem.setCheckable(false);
         inspectorModeItem.setVisible(Utility.InspectorModeFg);
 
@@ -1491,6 +1498,9 @@ public class MainActivity extends ELogMainActivity
         if (Utility.InspectorModeFg) {
             malfunctionItem.setVisible(false);
             diagnosticItem.setVisible(false);
+            sendItem.setVisible(false);
+        } else {
+            sendItem.setVisible(true);
         }
 
         if (bEditEvent) {
@@ -2310,6 +2320,7 @@ public class MainActivity extends ELogMainActivity
                         tvFreeze.setBackgroundResource(R.drawable.login_freeze);
 
 
+                        flagBar.setVisibility(View.VISIBLE);
                         setDrawerState(false);
                     } else if (Utility.user1.isOnScreenFg() && Utility.user1.isActive()) {
                         // freeze activity
@@ -2354,6 +2365,8 @@ public class MainActivity extends ELogMainActivity
 
                 if (currentScreen != Login_Screen) {
                     toolbar.setVisibility(View.VISIBLE);
+                    flagBar.setVisibility(View.VISIBLE);
+                } else {
                     flagBar.setVisibility(View.VISIBLE);
                 }
                 setDrawerState(true);
@@ -2586,6 +2599,7 @@ public class MainActivity extends ELogMainActivity
             while (true) {
                 try {
                     Thread.sleep(1000);
+                    UpdateTime();
                     if (Utility.motionFg) {
                         updateCanInformation();
                     }
@@ -2597,6 +2611,18 @@ public class MainActivity extends ELogMainActivity
             }
         }
     };
+
+    private void UpdateTime() {
+        if (tvCurrentTime != null) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    String currentTime = Utility.getAppCurrentDateTime();
+                    tvCurrentTime.setText(currentTime);
+                }
+            });
+        }
+    }
 
     private void updateCanInformation() {
         runOnUiThread(new Runnable() {
@@ -3738,7 +3764,7 @@ public class MainActivity extends ELogMainActivity
         }
 
         //Log.d(TAG, "loginSuccessfully");
-        this.firstLogin = true;
+        this.firstLogin = false;
         setDrawerState(true);
         //already login
         setDriverName();
@@ -4531,7 +4557,8 @@ public class MainActivity extends ELogMainActivity
             Process proc = Runtime.getRuntime().exec(new String[]{"su", "-c", "reboot -p"});
             proc.waitFor();
         } catch (Exception exe) {
-            Utility.showAlertMsg(exe.getMessage());
+            // System.exit(0);
+            //Utility.showAlertMsg(exe.getMessage());
         }
     }
 
@@ -4550,6 +4577,7 @@ public class MainActivity extends ELogMainActivity
                     icCertifyLog.setVisibility(View.VISIBLE);
                 } else {
                     tvLoginName.setText("");
+                    tvFreezeLoginName.setText("");
                     ivActiveUser.setVisibility(View.GONE);
                     icCertifyLog.setVisibility(View.GONE);
                     icViolation.setVisibility(View.GONE);

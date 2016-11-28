@@ -180,8 +180,8 @@ public class SplashActivity extends Activity implements Runnable {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-
-                    Utility.showAlertMsg(exe.getMessage(), SplashActivity.this);
+                    System.exit(0);
+                    // Utility.showAlertMsg(exe.getMessage(), SplashActivity.this);
                 }
             });
         }

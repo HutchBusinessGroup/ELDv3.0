@@ -117,7 +117,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     }
 
                     if (CanMessages.mState == CanMessages.STATE_CONNECTED) {
-                        if (Float.valueOf(CanMessages.RPM) > 0f) {
+                        if (Float.valueOf(CanMessages.RPM) == 0f) {
                             if (!vehicleStarted) {
                                 vehicleStarted = true;
                                 vehicleStopped = false;
