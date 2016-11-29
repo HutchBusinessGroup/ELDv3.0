@@ -219,7 +219,7 @@ public class MainActivity extends ELogMainActivity
     AlertDialog successDialog;
 
     ELogFragment elogFragment;
-    DetailFragment inspectFragment;
+    /* DetailFragment inspectFragment;*/
     LoginFragment loginFragment;
 
     boolean specialCategoryChanged = false;
@@ -660,7 +660,7 @@ public class MainActivity extends ELogMainActivity
     ImageView icFreezeTPMS;
     ImageView icFreezeActiveUser;
 
-    TextView tvLoginName, tvFreezeLoginName, tvCurrentTime;
+    TextView tvLoginName, tvFreezeLoginName;
 
     int canbusState;
     Bitmap batteryBmp;
@@ -739,7 +739,7 @@ public class MainActivity extends ELogMainActivity
     public boolean onNavigationItemSelected(int id) {
 
         elogFragment = null;
-        inspectFragment = null;
+        //inspectFragment = null;
         loginFragment = null;
         // Handle navigation view item clicks here.
         if (id == R.id.daily_log) {
@@ -1017,13 +1017,14 @@ public class MainActivity extends ELogMainActivity
                                 }
                             }
                         }
-                        if (hit) {
+
+                      /*  if (hit) {
                             //Hit action
                             if (bInspectDailylog) {
                                 if (inspectFragment != null)
                                     inspectFragment.ChooseDate();
                             }
-                        }
+                        }*/
                     }
                     return false;
                 }
@@ -1216,9 +1217,6 @@ public class MainActivity extends ELogMainActivity
             tvLoginName.setText(driverName);
             tvFreezeLoginName = (TextView) findViewById(R.id.tvFreezeLoginName);
             tvFreezeLoginName.setText(driverName);
-            tvCurrentTime = (TextView) findViewById(R.id.tvCurrentTime);
-            String currentTime = Utility.getAppCurrentDateTime();
-            tvCurrentTime.setText(currentTime);
             bEditEvent = false;
             bWebEvent = false;
 
@@ -1558,14 +1556,14 @@ public class MainActivity extends ELogMainActivity
             if (undockingMode) {
                 return super.onOptionsItemSelected(item);
             }
-            if (inspectFragment != null)
-                inspectFragment.BackOneDay();
+          /*  if (inspectFragment != null)
+                inspectFragment.BackOneDay();*/
         } else if (id == R.id.action_forward_one_day) {
             if (undockingMode) {
                 return super.onOptionsItemSelected(item);
             }
-            if (inspectFragment != null)
-                inspectFragment.ForwardOneDay();
+           /* if (inspectFragment != null)
+                inspectFragment.ForwardOneDay();*/
         } else if (id == R.id.action_diagnostic) {
             final Dialog dlg = new Dialog(MainActivity.this);
             LayoutInflater li = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -1774,10 +1772,11 @@ public class MainActivity extends ELogMainActivity
             bInspectDailylog = true;
             bEditEvent = false;
             isOnDailyLog = false;
-            if (inspectFragment == null) {
+           /* if (inspectFragment == null) {
                 inspectFragment = new DetailFragment();
-            }
-            replaceFragment(inspectFragment);
+            }*/
+
+            replaceFragment(InspectLogFragment.newInstance());
             previousScreen = currentScreen;
             currentScreen = Inspect_DailyLog_Screen;
             title = getApplicationContext().getResources().getString(R.string.title_inspect_elog);
@@ -2153,14 +2152,15 @@ public class MainActivity extends ELogMainActivity
         bInspectDailylog = true;
         bEditEvent = false;
         isOnDailyLog = false;
-        if (inspectFragment == null) {
+        /*if (inspectFragment == null) {
             inspectFragment = new DetailFragment();
-        }
-
+        }*/
+        InspectLogFragment inspectFragment = InspectLogFragment.newInstance();
         // set date if previous date event edited from inspect dailylog
         if (selectedEvent != null) {
             invalidateOptionsMenu();
-            inspectFragment.currentDate = Utility.dateOnlyGet(selectedEvent.getEventDateTime());
+            int position = Utility.getDiffDay(selectedEvent.getEventDateTime(), Utility.getCurrentDateTime()); //Utility.dateOnlyGet(selectedEvent.getEventDateTime());
+            inspectFragment = InspectLogFragment.newInstance(position);
         }
         replaceFragment(inspectFragment);
         previousScreen = currentScreen;
@@ -2599,7 +2599,6 @@ public class MainActivity extends ELogMainActivity
             while (true) {
                 try {
                     Thread.sleep(1000);
-                    UpdateTime();
                     if (Utility.motionFg) {
                         updateCanInformation();
                     }
@@ -2611,18 +2610,6 @@ public class MainActivity extends ELogMainActivity
             }
         }
     };
-
-    private void UpdateTime() {
-        if (tvCurrentTime != null) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    String currentTime = Utility.getAppCurrentDateTime();
-                    tvCurrentTime.setText(currentTime);
-                }
-            });
-        }
-    }
 
     private void updateCanInformation() {
         runOnUiThread(new Runnable() {
@@ -3461,10 +3448,10 @@ public class MainActivity extends ELogMainActivity
         bEditEvent = false;
         isOnDailyLog = false;
 
-        if (inspectFragment == null) {
+       /* if (inspectFragment == null) {
             inspectFragment = new DetailFragment();
-        }
-        replaceFragment(inspectFragment);
+        }*/
+        replaceFragment(InspectLogFragment.newInstance());
 
         getSupportActionBar().setTitle(getApplicationContext().getResources().getString(R.string.title_inspect_elog));
         previousScreen = currentScreen;
