@@ -642,8 +642,34 @@ public class CanMessages {
                     Log.i(TAG, "MPG = " + out);
                     break;
 
-                //case 65248:
+                case 65248:
+                    if (Utility.pgn65217Fg)
+                        break;
+
+                    i = (((packet[13] & 0xFF) << 24) | ((packet[12] & 0xFF) << 16)
+                            | ((packet[11] & 0xFF) << 8) | ((packet[10] & 0xFF)));
+                    if (i.equals(MAX_32))
+                        break;
+                    d = i * 0.005;// * KM_TO_MI;
+                    out = String.format("%.2f mi", d);
+                    if (d > Double.parseDouble(CanMessages.OdometerReading))
+                        OdometerReading = String.format("%.2f", d);
+                    //notify to update layout
+                    //odometerChanged();
+                    // LogFile.write(CanMessages.class.getName() + "::read Odometer from J1939: " + OdometerReading, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
+                    // newData.put("Odo", out); /* SPN 917 */
+                    Log.i(TAG, "Odo = " + out);
+                    i = (((packet[17] & 0xFF) << 24) | ((packet[16] & 0xFF) << 16)
+                            | ((packet[15] & 0xFF) << 8) | ((packet[14] & 0xFF)));
+                    if (i.equals(MAX_32))
+                        break;
+                    d = i * 0.005 * KM_TO_MI;
+                    out = String.format("%.2f mi", d);
+                    //newData.put("TripOdo", out); /* SPN 918 */
+                    Log.i(TAG, "Trip Odo = " + out);
+                    break;
                 case 65217:
+                    Utility.pgn65217Fg = true;
                     i = (((packet[13] & 0xFF) << 24) | ((packet[12] & 0xFF) << 16)
                             | ((packet[11] & 0xFF) << 8) | ((packet[10] & 0xFF)));
                     if (i.equals(MAX_32))
@@ -765,7 +791,7 @@ public class CanMessages {
                             if (0 < spn && spn < 7576) {
                                 spnDescription = SPNMap.map[spn];
                             } else
-                                spnDescription =  "Contact manufacture";
+                                spnDescription = "Contact manufacture";
 
                             if (0 < fmi && fmi < 32) {
                                 fmiDescription = SPNMap.fmi[fmi];
@@ -1425,7 +1451,7 @@ public class CanMessages {
 
     private void request1939() {
         // long[] initPGN_TxFilter = {65253, 65260};
-        long[] initPGN_TxFilter = {65266, 65257, 65209, 65244, 65253, 65260,65227};
+        long[] initPGN_TxFilter = {65266, 65257, 65209, 65244, 65253, 65260, 65227};
         ConnectedThread r;
         synchronized (this) {
             r = mConnectedThread;

@@ -232,24 +232,4 @@
         layout="@layout/alertbtb"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <LinearLayout
-        android:id="@+id/notificationbar"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_gravity="bottom"
-        android:background="@drawable/flag_bar_img"
-        android:gravity="right"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp">
-
-        <TextView
-            android:id="@+id/tvCurrentTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gary"
-            android:textColor="@color/green2"
-            android:textStyle="bold" />
-
-    </LinearLayout>
 </FrameLayout>

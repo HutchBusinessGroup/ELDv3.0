@@ -103,6 +103,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static boolean InspectorModeFg = false;
     public static int LogId = 0;
     public static ArrayList<DTCBean> dtcList = new ArrayList<>();
+    public static boolean pgn65217Fg = false;
 
     public static boolean hasPermissions(String... permissions) {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {

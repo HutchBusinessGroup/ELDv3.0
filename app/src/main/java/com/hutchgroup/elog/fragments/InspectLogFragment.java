@@ -25,6 +25,9 @@ public class InspectLogFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private int totalPage = 15;
     private Date startDate;
+    private int position = -1;
+
+    public static final String ARG_Position = "position";
 
     public InspectLogFragment() {
         // Required empty public constructor
@@ -36,22 +39,39 @@ public class InspectLogFragment extends Fragment {
 
     }
 
+    public static InspectLogFragment newInstance(int position) {
+        InspectLogFragment fragment = new InspectLogFragment();
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_Position, position);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            position = getArguments().getInt(ARG_Position);
+        }
     }
+
+    View view = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_inspect_log, container, false);
-        initialize(view);
+        if (view == null) {
+            // Inflate the layout for this fragment
+            view = inflater.inflate(R.layout.fragment_inspect_log, container, false);
+            initialize(view);
+        }
         return view;
     }
 
     private void initialize(View view) {
-
+        pager = (ViewPager) view.findViewById(R.id.pager);
+        adapter = new SlideAdapter(getFragmentManager());
+        pager.setAdapter(adapter);
         int currentRule = DailyLogDB.getCurrentRule(Utility.onScreenUserId);
         if (Utility.InspectorModeFg && currentRule > 2) {
             totalPage = 8;
@@ -59,10 +79,13 @@ public class InspectLogFragment extends Fragment {
         startDate = Utility.dateOnlyGet(Utility.newDate());
         startDate = Utility.addDays(startDate, -(totalPage - 1));
 
-        pager = (ViewPager) view.findViewById(R.id.pager);
-        adapter = new SlideAdapter(getFragmentManager());
-        pager.setAdapter(adapter);
-        pager.setCurrentItem(totalPage - 1);
+
+        if (position == -1) {
+            position = totalPage - 1;
+        } else {
+            position = totalPage - position - 1;
+        }
+        pager.setCurrentItem(position);
 
     }
 

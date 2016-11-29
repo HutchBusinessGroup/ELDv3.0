@@ -357,16 +357,16 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
 
     public static DetailFragment newInstance(Date date) {
         DetailFragment fragment = new DetailFragment();
-      /*  Bundle args = new Bundle();
+        Bundle args = new Bundle();
         args.putSerializable(ARG_Date, date);
-        fragment.setArguments(args);*/
+        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //currentDate = (Date) getArguments().getSerializable(ARG_Date);
+        currentDate = (Date) getArguments().getSerializable(ARG_Date);
 
     }
 
