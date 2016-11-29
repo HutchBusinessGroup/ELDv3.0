@@ -87,7 +87,6 @@ public class InspectLogFragment extends Fragment {
         }
         pager.setCurrentItem(position);
 
-
     }
 
     @Override
