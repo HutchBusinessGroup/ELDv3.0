@@ -85,6 +85,7 @@ public class CanMessages {
     private static int supportedProtocol;
 
     public static long diagnosticEngineSynchronizationTime = System.currentTimeMillis();
+    public static long CanDataTime = System.currentTimeMillis();
 
     public CanMessages() {
         mAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -523,6 +524,7 @@ public class CanMessages {
     private void processPacket(byte[] packet) {
         int msgID = packet[2];
         if (msgID == RX_J1939) {
+            CanDataTime=System.currentTimeMillis();
             if (supportedProtocol == -1) {
                 supportedProtocol = RX_J1939;
             } else {
@@ -984,6 +986,7 @@ public class CanMessages {
                     break;
             }
         } else if (msgID == RX_J1708) {
+            CanDataTime=System.currentTimeMillis();
             if (supportedProtocol == -1) {
                 supportedProtocol = RX_J1708;
             } else {
@@ -996,6 +999,7 @@ public class CanMessages {
             Integer i;
             StringBuilder sb;
             switch (pid) {
+
                 case 84:
                     d = (packet[6] & 0xFF) * 0.805;
                     Speed = d + "";
