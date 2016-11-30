@@ -1460,8 +1460,8 @@ public class MainActivity extends ELogMainActivity
         //MenuItem backItem = menu.findItem(R.id.action_back_edit_event);
         MenuItem confirmItem = menu.findItem(R.id.action_confirm_web_event);
         MenuItem rejectItem = menu.findItem(R.id.action_reject_web_event);
-        MenuItem backOneDayItem = menu.findItem(R.id.action_back_one_day);
-        MenuItem forwardOneDayItem = menu.findItem(R.id.action_forward_one_day);
+      /*  MenuItem backOneDayItem = menu.findItem(R.id.action_back_one_day);
+        MenuItem forwardOneDayItem = menu.findItem(R.id.action_forward_one_day);*/
         MenuItem malfunctionItem = menu.findItem(R.id.action_malfunction);
         MenuItem diagnosticItem = menu.findItem(R.id.action_diagnostic);
         MenuItem inspectorModeItem = menu.findItem(R.id.action_inspector_mode);
@@ -1507,8 +1507,8 @@ public class MainActivity extends ELogMainActivity
             //editItem.setEnabled(true);
             //backItem.setIcon(R.drawable.edit_button);
             //backItem.setVisible(true);
-            backOneDayItem.setVisible(false);
-            forwardOneDayItem.setVisible(false);
+        /*    backOneDayItem.setVisible(false);
+            forwardOneDayItem.setVisible(false);*/
 
             if (bWebEvent) {
                 confirmItem.setVisible(true);
@@ -1526,7 +1526,7 @@ public class MainActivity extends ELogMainActivity
             //editItem.setVisible(false);
             //backItem.setVisible(false);
 
-            if (bInspectDailylog) {
+           /* if (bInspectDailylog) {
                 backOneDayItem.setVisible(true);
                 forwardOneDayItem.setVisible(true);
                 //item.setVisible(false);
@@ -1534,7 +1534,7 @@ public class MainActivity extends ELogMainActivity
                 backOneDayItem.setVisible(false);
                 forwardOneDayItem.setVisible(false);
                 //item.setVisible(true);
-            }
+            }*/
 
         }
 
