@@ -5219,8 +5219,9 @@ containing a value of this type.
         public static final int username_xhdpi=0x7f0a01ef;
     }
     public static final class xml {
-        public static final int preferences=0x7f060000;
-        public static final int timezones=0x7f060001;
+        public static final int alert=0x7f060000;
+        public static final int preferences=0x7f060001;
+        public static final int timezones=0x7f060002;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

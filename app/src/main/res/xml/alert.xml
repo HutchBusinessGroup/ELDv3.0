@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <alerts>
     <alert id="SpeedVL">Speed Violation</alert>
-    <timezone id="HardBreakingVL">Hard Breaking Violation</timezone>
-    <timezone id="HardAccelerationVL">Pacific Time</timezone>
-    <timezone id="America/Denver">Mountain Time</timezone>
-    <timezone id="America/Chicago">Central Time</timezone>
-    <timezone id="America/New_York">Eastern Time</timezone>
-    <timezone id="America/Halifax">Atlantic Time (Canada)</timezone>
-    <timezone id="America/St_Johns">Newfoundland</timezone>
-    <timezone id="America/Godthab">Greenland</timezone>
+    <alert id="HardBreakingVL">Hard Breaking</alert>
+    <alert id="HardAccelerationVL">Hard Acceleration</alert>
+    <alert id="SharpCornerVL">Sharp Corner</alert>
+    <alert id="HOSVL">Hours Of Service</alert>
+    <alert id="NoTripInspectionVL">Failure to conduct Trip Inspection</alert>
+    <alert id="NoCheckBreakVL">Failure to Check Break at designated spots</alert>
+    <alert id="SpeedingDowngradVL">Speeding downgrade</alert>
+    <alert id="TPMSWarningVL">TPMS Warning</alert>
+    <alert id="TrailerBrakesVL">Only Using Trailer Brakes</alert>
+    <alert id="LowAirPressureVL">Driving with low air pressure in braking system</alert>
+    <alert id="AirSuspensionVL">Driving with deinflated air suspension</alert>
+    <alert id="CriticalWarningVL">Driving with critical warning alerts</alert>
+    <alert id="HighGearDowngradeVL">High gear downgrade</alert>
+    <alert id="LowEngineOilVL">Low Engine Oil</alert>
+    <alert id="LowCoolantLevelVL">Low coolant Level</alert>
+    <alert id="LowWasherFluid">Low Washer Fluid</alert>
+    <alert id="HighRPMVL">High RPM</alert>
+    <alert id="CheckEngineVL">Driving with Check Engine Light On</alert>
+    <alert id="CruiseControlVL">Failure to use cruise control </alert>
+    <alert id="TopGearVL">Failure to use Top Gear</alert>
+    <alert id="FuelEconomyVL">Fuel Economy</alert>
+
 </alerts>

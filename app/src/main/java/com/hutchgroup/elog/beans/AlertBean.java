@@ -5,7 +5,7 @@ package com.hutchgroup.elog.beans;
  */
 
 public class AlertBean {
-    int _id, SyncFg;
+    int _id, SyncFg, Duration, Scores;
     String AlertName, AlertDateTime, AlertCode;
 
     public int get_id() {

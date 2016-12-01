@@ -3942,5 +3942,6 @@ int[] styleable ViewStubCompat { 0x010100d0, 0x010100f2, 0x010100f3 }
 int styleable ViewStubCompat_android_id 0
 int styleable ViewStubCompat_android_inflatedId 2
 int styleable ViewStubCompat_android_layout 1
-int xml preferences 0x7f060000
-int xml timezones 0x7f060001
+int xml alert 0x7f060000
+int xml preferences 0x7f060001
+int xml timezones 0x7f060002

@@ -121,7 +121,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "_id INTEGER PRIMARY KEY AUTOINCREMENT,DateTime text,spn INTEGER, Protocol text, spnDescription text, fmi INTEGER, fmiDescription text,Occurrence INTEGER, SyncFg INTEGER, status INTEGER)";
     private static final String TABLE_CREATE_ALERT = "create table "
             + TABLE_ALERT
-            + "(_id INTEGER PRIMARY KEY AUTOINCREMENT,AlertCode text,AlertName text,AlertDateTime text,SyncFg INTEGER)";
+            + "(_id INTEGER PRIMARY KEY AUTOINCREMENT,AlertCode text,AlertName text,AlertDateTime text,Duration INTEGER,Scores INTEGER,SyncFg INTEGER)";
 
     private static final String DATABASE_ALTER_DAILYLOG_DRIVINGTIMEREMAINING = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN DrivingTimeRemaining INTEGER";
     private static final String DATABASE_ALTER_DAILYLOG_WORKSHIFTTIMEREMAINING = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN WorkShiftTimeRemaining INTEGER";
