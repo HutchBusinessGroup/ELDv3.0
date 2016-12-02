@@ -47,4 +47,20 @@ public class AlertBean {
     public void setAlertCode(String alertCode) {
         AlertCode = alertCode;
     }
+
+    public int getDuration() {
+        return Duration;
+    }
+
+    public void setDuration(int duration) {
+        Duration = duration;
+    }
+
+    public int getScores() {
+        return Scores;
+    }
+
+    public void setScores(int scores) {
+        Scores = scores;
+    }
 }
