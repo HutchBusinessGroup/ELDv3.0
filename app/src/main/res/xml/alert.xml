@@ -6,6 +6,7 @@
     <alert id="SharpCornerVL">Sharp Corner</alert>
     <alert id="HOSVL">Hours Of Service</alert>
     <alert id="NoTripInspectionVL">Failure to conduct Trip Inspection</alert>
+    <alert id="IdlingVL">Idling</alert>
     <alert id="NoCheckBreakVL">Failure to Check Break at designated spots</alert>
     <alert id="SpeedingDowngradVL">Speeding downgrade</alert>
     <alert id="TPMSWarningVL">TPMS Warning</alert>

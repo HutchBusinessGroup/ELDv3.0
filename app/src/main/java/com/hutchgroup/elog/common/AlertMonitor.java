@@ -15,7 +15,7 @@ import java.util.Date;
 public class AlertMonitor {
     public static boolean SpeedVLFg;
     public static long SpeedVLDate;
-    public static double MaxSpeed = 0;
+    public static double MaxSpeed = 0d;
     public static double PostedSpeed = 60d;
     public static double PostedSpeedThreshold = 10d;
 
@@ -25,16 +25,77 @@ public class AlertMonitor {
     public static boolean NoTripInspectionVL;
 
     Thread thAlertMonitor = null;
+    public static boolean HighRPMVL;
+    public static long HighRPMVLDate;
+    public static double MaxRPM = 0;
+
+    public static boolean IdlingVLFg;
+    public static long IdlingVLDate;
+
+    private void IdlingVLViolationGet() {
+        if (!IdlingVLFg) {
+            if (GPSData.CurrentStatus == 2) {
+                IdlingVLFg = true;
+                IdlingVLDate = System.currentTimeMillis();
+                AlertDB.Save("IdlingVL", "Idling", Utility.getCurrentDateTime(), 0, 0);
+            }
+        } else {
+            if (GPSData.CurrentStatus != 2) {
+                IdlingVLFg = false;
+                int duration = (int) ((System.currentTimeMillis() - IdlingVLDate) / (1000 * 60)) + 10;
+                int score = 5;
+                AlertDB.Update("IdlingVL", duration, score);
+            }
+        }
+    }
 
     private void NoTripInspectionGet() {
         if (!NoTripInspectionVL) {
             if (GPSData.TripInspectionCompletedFg == 0) {
-                if (Utility.motionFg)
-                {
-
+                if (Utility.motionFg) {
+                    NoTripInspectionVL = true;
+                    AlertDB.Save("HOSVL", "Hours Of Service", Utility.getCurrentDateTime(), 50, 0);
                 }
             }
 
+        }
+    }
+
+    private void HighRPMGet() {
+        double RPM = Double.parseDouble(CanMessages.RPM);
+        if (!HighRPMVL) {
+            if (RPM > 1600d) {
+                HighRPMVL = true;
+                HighRPMVLDate = System.currentTimeMillis();
+                AlertDB.Save("HighRPMVL", "High RPM", Utility.getCurrentDateTime(), 0, 0);
+            }
+        } else {
+            if (RPM < 1600d) {
+                HighRPMVL = false;
+                int duration = (int) ((System.currentTimeMillis() - HighRPMVLDate) / (1000 * 60));
+                int score = 0;
+                if (duration > 60) {
+                    score += Math.ceil((duration - 60) / 60) * 6 + 8;
+                } else if (duration >= 20 && duration <= 60) {
+                    score += 8;
+                } else if (duration > 5 && duration < 20) {
+                    score += 2;
+                }
+
+                if (MaxRPM > 2000) {
+                    score += 20;
+                } else if (MaxRPM >= 1800 && MaxRPM <= 2000) {
+                    score += 8;
+                } else {
+                    score += 2;
+                }
+                AlertDB.Update("HighRPMVL", duration, score);
+
+            } else {
+                if (RPM > MaxRPM) {
+                    MaxRPM = RPM;
+                }
+            }
         }
     }
 
@@ -65,8 +126,8 @@ public class AlertMonitor {
     }
 
     private void SpeedViolationGet() {
+        double speed = Double.parseDouble(CanMessages.Speed);
         if (!SpeedVLFg) {
-            double speed = Double.parseDouble(CanMessages.Speed);
             if (speed > (PostedSpeed + PostedSpeedThreshold)) {
                 SpeedVLFg = true;
                 SpeedVLDate = System.currentTimeMillis();
@@ -74,8 +135,6 @@ public class AlertMonitor {
 
             }
         } else {
-
-            double speed = Double.parseDouble(CanMessages.Speed);
             if (speed <= (PostedSpeed + PostedSpeedThreshold)) {
                 SpeedVLFg = false;
                 int duration = (int) ((System.currentTimeMillis() - SpeedVLDate) / (1000 * 60));
