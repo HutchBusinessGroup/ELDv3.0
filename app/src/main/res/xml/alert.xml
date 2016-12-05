@@ -16,12 +16,13 @@
     <alert id="CriticalWarningVL">Driving with critical warning alerts</alert>
     <alert id="HighGearDowngradeVL">High gear downgrade</alert>
     <alert id="LowEngineOilVL">Low Engine Oil</alert>
-    <alert id="LowCoolantLevelVL">Low coolant Level</alert>
-    <alert id="LowWasherFluid">Low Washer Fluid</alert>
+    <alert id="LowCoolantLevelVL">Low Coolant Level</alert>
+    <alert id="LowCoolantTemperatureVL">Failure to warm up the engine</alert>
+    <alert id="LowWasherFluidVL">Low Washer Fluid</alert>
     <alert id="HighRPMVL">High RPM</alert>
     <alert id="CheckEngineVL">Driving with Check Engine Light On</alert>
     <alert id="CruiseControlVL">Failure to use cruise control </alert>
     <alert id="TopGearVL">Failure to use Top Gear</alert>
-    <alert id="FuelEconomyVL">Fuel Economy</alert>
+    <alert id="FuelEconomyVL">Low Fuel Economy</alert>
 
 </alerts>

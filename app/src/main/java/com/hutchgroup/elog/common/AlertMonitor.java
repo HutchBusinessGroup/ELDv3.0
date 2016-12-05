@@ -32,6 +32,78 @@ public class AlertMonitor {
     public static boolean IdlingVLFg;
     public static long IdlingVLDate;
 
+    public static boolean CriticalWarningVLFg;
+    public static long CriticalWarningVLDate;
+
+    public static void EngineStartAlerts() {
+        LowWasherFluidViolationGet();
+        LowCoolantTemperatureViolationGet();
+        LowEngineOilViolationGet();
+        LowCoolantLevelViolationGet();
+    }
+
+    public static void FuelEconomyViolationGet() {
+        double distanceTravelled = Double.parseDouble(CanMessages.OdometerReading) - Double.parseDouble(Utility.OdometerReadingSincePowerOn);
+        double fuelUsed = Double.parseDouble(CanMessages.TotalFuelConsumed) - Double.parseDouble(Utility.FuelUsedSincePowerOn);
+        if (fuelUsed > 0) {
+            double average = distanceTravelled / fuelUsed;
+            if (average < 2.25) {
+                AlertDB.Save("FuelEconomyVL", "Low Fuel Economy", Utility.getCurrentDateTime(), 15, 0, Utility.activeUserId);
+            }
+        }
+    }
+
+    private static void LowWasherFluidViolationGet() {
+        double WasherFluidLevel = Double.parseDouble(CanMessages.WasherFluidLevel);
+        if (WasherFluidLevel > 80d) {
+            AlertDB.Save("LowWasherFluidVL", "Low Washer Fluid", Utility.getCurrentDateTime(), 5, 0, Utility.activeUserId);
+        }
+
+    }
+
+    private static void LowCoolantTemperatureViolationGet() {
+        double CoolantTemperature = Double.parseDouble(CanMessages.CoolantTemperature);
+        if (CoolantTemperature > 80d) { // to be changed after asking gary sir
+            AlertDB.Save("LowCoolantTemperatureVL", "Failure to warm up the engine", Utility.getCurrentDateTime(), 20, 0, Utility.activeUserId);
+        }
+
+    }
+
+    private static void LowEngineOilViolationGet() {
+        double EngineOilLevel = Double.parseDouble(CanMessages.EngineOilLevel);
+        if (EngineOilLevel > 80d) {
+            AlertDB.Save("LowEngineOilVL", "Low Engine Oil", Utility.getCurrentDateTime(), 5, 0, Utility.activeUserId);
+        }
+
+    }
+
+    private static void LowCoolantLevelViolationGet() {
+        double EngineCoolantLevel = Double.parseDouble(CanMessages.EngineCoolantLevel);
+        if (EngineCoolantLevel > 80d) {
+            AlertDB.Save("LowCoolantLevelVL", "Low Coolant Level", Utility.getCurrentDateTime(), 5, 0, Utility.activeUserId);
+        }
+
+    }
+
+    private void CriticalWarningViolationGet() {
+        if (!CriticalWarningVLFg) {
+            if (CanMessages.CriticalWarningFg) {
+                if (Utility.motionFg) {
+                    CriticalWarningVLFg = true;
+                    CriticalWarningVLDate = System.currentTimeMillis();
+                    AlertDB.Save("CriticalWarningVL", "Driving with critical warning alerts", Utility.getCurrentDateTime(), 50, 0, Utility.activeUserId);
+                }
+            }
+        } else {
+            if (!CanMessages.CriticalWarningFg) {
+                CriticalWarningVLFg = false;
+                int duration = (int) ((System.currentTimeMillis() - CriticalWarningVLDate) / (1000 * 60));
+                int score = 5;
+                AlertDB.Update("CriticalWarningVL", duration, score);
+            }
+        }
+    }
+
     private void IdlingViolationGet() {
         if (!IdlingVLFg) {
             if (GPSData.CurrentStatus == 2) {

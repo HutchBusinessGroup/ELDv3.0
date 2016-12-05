@@ -16,6 +16,7 @@ import com.hutchgroup.elog.beans.DiagnosticIndicatorBean;
 import com.hutchgroup.elog.beans.GPSData;
 import com.hutchgroup.elog.beans.SettingsBean;
 import com.hutchgroup.elog.common.AlarmSetter;
+import com.hutchgroup.elog.common.AlertMonitor;
 import com.hutchgroup.elog.common.CanMessages;
 import com.hutchgroup.elog.common.ChatClient;
 import com.hutchgroup.elog.common.ConstantFlag;
@@ -224,6 +225,8 @@ public class ELogApplication extends Application {
     private synchronized void updateWhenMachineOn() {
         try {
             if (!bEventPowerOn) {
+                // alerts when engine starts
+                AlertMonitor.EngineStartAlerts();
                 Log.i("Application", "Power On");
                 bEventPowerOn = true;
                 bEventPowerOff = false;
@@ -231,6 +234,7 @@ public class ELogApplication extends Application {
                 GPSData.LastStatusTime = System.currentTimeMillis();
                 Utility.OdometerReadingSincePowerOn = CanMessages.OdometerReading;
                 Utility.EngineHourSincePowerOn = CanMessages.EngineHours;
+                Utility.FuelUsedSincePowerOn = CanMessages.TotalFuelConsumed;
                 if (activity != null) {
                     if (Utility.onScreenUserId == 0) {
                         int logId = DailyLogDB.DailyLogCreate(Utility.unIdentifiedDriverId, "", "", "");
@@ -252,7 +256,7 @@ public class ELogApplication extends Application {
                 Log.i("Application", "Power Off");
                 bEventPowerOff = true;
                 bEventPowerOn = false;
-
+                AlertMonitor.FuelEconomyViolationGet();
                 GPSData.LastStatusTime = System.currentTimeMillis();
                 if (activity != null) {
                     if (Utility.onScreenUserId == 0) {
