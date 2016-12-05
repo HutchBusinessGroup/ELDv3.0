@@ -5,7 +5,7 @@ package com.hutchgroup.elog.beans;
  */
 
 public class AlertBean {
-    int _id, SyncFg, Duration, Scores;
+    int _id, SyncFg, Duration, Scores, DriverId;
     String AlertName, AlertDateTime, AlertCode;
 
     public int get_id() {
@@ -62,5 +62,13 @@ public class AlertBean {
 
     public void setScores(int scores) {
         Scores = scores;
+    }
+
+    public int getDriverId() {
+        return DriverId;
+    }
+
+    public void setDriverId(int driverId) {
+        DriverId = driverId;
     }
 }

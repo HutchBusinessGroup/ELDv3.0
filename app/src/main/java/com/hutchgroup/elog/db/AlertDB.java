@@ -13,13 +13,14 @@ import com.hutchgroup.elog.common.Utility;
  */
 
 public class AlertDB {
-    public static boolean Save(String code, String name, String date, int score, int duration) {
+    public static boolean Save(String code, String name, String date, int score, int duration, int driverId) {
         AlertBean bean = new AlertBean();
         bean.setAlertCode("SpeedVL");
         bean.setAlertName("Speed Violation");
         bean.setAlertDateTime(Utility.getCurrentDateTime());
         bean.setScores(score);
         bean.setDuration(duration);
+        bean.setDriverId(driverId);
         return AlertDB.Save(bean);
     }
 
@@ -37,6 +38,8 @@ public class AlertDB {
             values.put("AlertDateTime", bean.getAlertDateTime());
             values.put("Duration", bean.getDuration());
             values.put("Scores", bean.getScores());
+            values.put("DriverId", bean.getDriverId());
+            values.put("VehicleId", Utility.vehicleId);
             values.put("SyncFg", 0);
             database.insert(MySQLiteOpenHelper.TABLE_ALERT,
                     "_id", values);

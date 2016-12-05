@@ -32,12 +32,18 @@ public class AlertMonitor {
     public static boolean IdlingVLFg;
     public static long IdlingVLDate;
 
-    private void IdlingVLViolationGet() {
+    private void IdlingViolationGet() {
         if (!IdlingVLFg) {
             if (GPSData.CurrentStatus == 2) {
                 IdlingVLFg = true;
                 IdlingVLDate = System.currentTimeMillis();
-                AlertDB.Save("IdlingVL", "Idling", Utility.getCurrentDateTime(), 0, 0);
+                int driverId = Utility.activeUserId;
+
+                if (driverId == 0) {
+                    driverId = Utility.unIdentifiedDriverId;
+                }
+
+                AlertDB.Save("IdlingVL", "Idling", Utility.getCurrentDateTime(), 0, 0, driverId);
             }
         } else {
             if (GPSData.CurrentStatus != 2) {
@@ -54,7 +60,7 @@ public class AlertMonitor {
             if (GPSData.TripInspectionCompletedFg == 0) {
                 if (Utility.motionFg) {
                     NoTripInspectionVL = true;
-                    AlertDB.Save("HOSVL", "Hours Of Service", Utility.getCurrentDateTime(), 50, 0);
+                    AlertDB.Save("HOSVL", "Hours Of Service", Utility.getCurrentDateTime(), 50, 0, Utility.onScreenUserId);
                 }
             }
 
@@ -67,7 +73,13 @@ public class AlertMonitor {
             if (RPM > 1600d) {
                 HighRPMVL = true;
                 HighRPMVLDate = System.currentTimeMillis();
-                AlertDB.Save("HighRPMVL", "High RPM", Utility.getCurrentDateTime(), 0, 0);
+
+                int driverId = Utility.activeUserId;
+                if (driverId == 0) {
+                    driverId = Utility.unIdentifiedDriverId;
+                }
+
+                AlertDB.Save("HighRPMVL", "High RPM", Utility.getCurrentDateTime(), 0, 0, driverId);
             }
         } else {
             if (RPM < 1600d) {
@@ -104,7 +116,13 @@ public class AlertMonitor {
             if (GPSData.NoHOSViolationFgFg == 0) {
                 HOSVLFg = true;
                 HOSVLDate = System.currentTimeMillis();
-                AlertDB.Save("HOSVL", "Hours Of Service", Utility.getCurrentDateTime(), 0, 0);
+
+                int driverId = Utility.activeUserId;
+                if (driverId == 0) {
+                    driverId = Utility.unIdentifiedDriverId;
+                }
+
+                AlertDB.Save("HOSVL", "Hours Of Service", Utility.getCurrentDateTime(), 0, 0, driverId);
             }
         } else {
             if (GPSData.NoHOSViolationFgFg == 1) {
@@ -131,7 +149,14 @@ public class AlertMonitor {
             if (speed > (PostedSpeed + PostedSpeedThreshold)) {
                 SpeedVLFg = true;
                 SpeedVLDate = System.currentTimeMillis();
-                AlertDB.Save("SpeedVL", "Speed Violation", Utility.getCurrentDateTime(), 0, 0);
+
+                int driverId = Utility.activeUserId;
+                if (driverId == 0) {
+                    driverId = Utility.unIdentifiedDriverId;
+                }
+
+
+                AlertDB.Save("SpeedVL", "Speed Violation", Utility.getCurrentDateTime(), 0, 0, driverId);
 
             }
         } else {
