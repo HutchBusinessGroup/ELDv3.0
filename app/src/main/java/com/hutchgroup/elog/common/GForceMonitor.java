@@ -81,6 +81,8 @@ public class GForceMonitor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent se) {
+        if (se.sensor.getType() != Sensor.TYPE_ACCELEROMETER)
+            return;
         // get sensor data
         float x = se.values[0];
         float y = se.values[1];
@@ -91,7 +93,7 @@ public class GForceMonitor implements SensorEventListener {
         mAccelLast = mAccelCurrent;
         mAccelCurrent = (float) Math.sqrt((double) (x * x + y * y + z * z));
         float delta = mAccelCurrent - mAccelLast;
-        mAccel = mAccel * 0.9f + delta; // perform low-cut filter
+        mAccel = mAccel * 0.8f + delta; // perform low-cut filter
         Log.i("GForce", "x: " + x + ", y: " + y + ", z: " + z + ", total: " + totalMovement + ", Acc: " + mAccel);
         if (totalMovement > MIN_FORCE) {
 
