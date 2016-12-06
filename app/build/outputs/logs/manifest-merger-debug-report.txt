@@ -91,6 +91,12 @@ uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
 ADDED from D:\Projects\Android\ELDv3.0\ELDv3.0\app\src\main\AndroidManifest.xml:27:5-89
 	android:name
 		ADDED from D:\Projects\Android\ELDv3.0\ELDv3.0\app\src\main\AndroidManifest.xml:27:22-86
+uses-feature#android.hardware.sensor.accelerometer
+ADDED from D:\Projects\Android\ELDv3.0\ELDv3.0\app\src\main\AndroidManifest.xml:28:5-98
+	android:required
+		ADDED from D:\Projects\Android\ELDv3.0\ELDv3.0\app\src\main\AndroidManifest.xml:28:72-95
+	android:name
+		ADDED from D:\Projects\Android\ELDv3.0\ELDv3.0\app\src\main\AndroidManifest.xml:28:19-71
 permission#com.hutchgroup.elog.permission.MAPS_RECEIVE
 ADDED from D:\Projects\Android\ELDv3.0\ELDv3.0\app\src\main\AndroidManifest.xml:30:5-32:47
 	android:protectionLevel

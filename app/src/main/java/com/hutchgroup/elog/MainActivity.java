@@ -25,6 +25,8 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -85,6 +87,7 @@ import com.hutchgroup.elog.common.ChatClient;
 import com.hutchgroup.elog.common.ConstantFlag;
 import com.hutchgroup.elog.common.CustomDateFormat;
 import com.hutchgroup.elog.common.DiagnosticMalfunction;
+import com.hutchgroup.elog.common.GForceMonitor;
 import com.hutchgroup.elog.common.GetCall;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.SPNMap;
@@ -145,7 +148,7 @@ public class MainActivity extends ELogMainActivity
         NewEventFragment.OnFragmentInteractionListener, DetailFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener,
         UserListFragment.OnFragmentInteractionListener, BluetoothConnectivityFragment.OnFragmentInteractionListener, OutputFileSendDialog.OutputFileDialogInterface,
         DvirFragment.OnFragmentInteractionListener, DailyLogDashboardFragment.OnFragmentInteractionListener, TpmsFragment.OnFragmentInteractionListener, TabSystemFragment.OnFragmentInteractionListener,
-        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener {
+        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener, GForceMonitor.IGForceMonitor {
 
     private PopupDialog ponDutyChangeDialog;
     private boolean onDutyChangeDialogResponse, autoDismissOnDutyChangeDialog, isDialogShown;
@@ -1276,6 +1279,7 @@ public class MainActivity extends ELogMainActivity
             onDutyChangeBuilder.setMessage("Do you wish to continue driving? Otherwise please change status").setPositiveButton("OK", onDutyChangeDialogClickListener);
 
             initializeBTBAlertDialog();
+            initializeGforce();
         } catch (Exception e) {
             LogFile.write(MainActivity.class.getName() + "::onCreate error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
         }
@@ -1376,6 +1380,8 @@ public class MainActivity extends ELogMainActivity
     public void onResume() {
         super.onResume();
         isAppActive = true;
+        resumeGforce();
+
     }
 
     static boolean isAppActive = false;
@@ -1383,8 +1389,9 @@ public class MainActivity extends ELogMainActivity
     @Override
     public void onPause() {
 
-        super.onPause();
+        pauseGforce();
         isAppActive = false;
+        super.onPause();
     }
 
     @Override
@@ -4625,4 +4632,27 @@ public class MainActivity extends ELogMainActivity
         actionBar.setTitle(title);
     }
 
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer;
+    private GForceMonitor gForceMonitor;
+
+    private void initializeGforce() {
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        gForceMonitor = new GForceMonitor();
+        gForceMonitor.setOnShakeListener(this);
+    }
+
+    private void resumeGforce() {
+        mSensorManager.registerListener(gForceMonitor, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    private void pauseGforce() {
+        mSensorManager.unregisterListener(gForceMonitor, mAccelerometer);
+    }
+
+    @Override
+    public void OnGforceChange(int count) {
+
+    }
 }
