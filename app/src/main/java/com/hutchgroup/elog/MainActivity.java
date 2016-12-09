@@ -93,6 +93,7 @@ import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.SPNMap;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.common.ZoneList;
+import com.hutchgroup.elog.db.AlertDB;
 import com.hutchgroup.elog.db.CarrierInfoDB;
 import com.hutchgroup.elog.db.DailyLogDB;
 import com.hutchgroup.elog.db.EventDB;
@@ -4633,26 +4634,75 @@ public class MainActivity extends ELogMainActivity
     }
 
     private SensorManager mSensorManager;
-    private Sensor mAccelerometer;
+    private Sensor mAccelerometer, mMagneticField;
     private GForceMonitor gForceMonitor;
 
     private void initializeGforce() {
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mMagneticField = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         gForceMonitor = new GForceMonitor();
-        gForceMonitor.setOnShakeListener(this);
+        gForceMonitor.setGForceChangeListener(this);
     }
 
     private void resumeGforce() {
         mSensorManager.registerListener(gForceMonitor, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
+        mSensorManager.registerListener(gForceMonitor, mMagneticField, SensorManager.SENSOR_DELAY_UI);
     }
 
     private void pauseGforce() {
         mSensorManager.unregisterListener(gForceMonitor, mAccelerometer);
+        mSensorManager.unregisterListener(gForceMonitor, mMagneticField);
     }
 
     @Override
-    public void OnGforceChange(int count) {
+    public void onLeftSharpTurn(float force) {
+
+        int driverId = Utility.activeUserId;
+
+        if (driverId == 0) {
+            driverId = Utility.unIdentifiedDriverId;
+        }
+
+        AlertDB.Save("SharpTurnLeftVL", "Sharp Turn Left", Utility.getCurrentDateTime(), 5, 0, driverId);
+    }
+
+    @Override
+    public void onRightSharpTurn(float force) {
+
+
+        int driverId = Utility.activeUserId;
+
+        if (driverId == 0) {
+            driverId = Utility.unIdentifiedDriverId;
+        }
+
+        AlertDB.Save("SharpTurnRightVL", "Sharp Turn Right", Utility.getCurrentDateTime(), 5, 0, driverId);
+    }
+
+    @Override
+    public void onHardAcceleration(float force) {
+
+        int driverId = Utility.activeUserId;
+
+        if (driverId == 0) {
+            driverId = Utility.unIdentifiedDriverId;
+        }
+
+        AlertDB.Save("HardAccelerationVL", "Hard Acceleration", Utility.getCurrentDateTime(), 5, 0, driverId);
+    }
+
+    @Override
+    public void onHardBrake(float force) {
+
+        int driverId = Utility.activeUserId;
+
+        if (driverId == 0) {
+            driverId = Utility.unIdentifiedDriverId;
+        }
+
+
+        AlertDB.Save("HardBreakingVL", "Hard Breaking", Utility.getCurrentDateTime(), 5, 0, driverId);
 
     }
 }

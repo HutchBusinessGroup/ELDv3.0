@@ -3,7 +3,8 @@
     <alert id="SpeedVL">Speed Violation</alert>
     <alert id="HardBreakingVL">Hard Breaking</alert>
     <alert id="HardAccelerationVL">Hard Acceleration</alert>
-    <alert id="SharpCornerVL">Sharp Corner</alert>
+    <alert id="SharpTurnLeftVL">Sharp Turn Left</alert>
+    <alert id="SharpTurnRightVL">Sharp Turn Right</alert>
     <alert id="HOSVL">Hours Of Service</alert>
     <alert id="NoTripInspectionVL">Failure to conduct Trip Inspection</alert>
     <alert id="IdlingVL">Idling</alert>
@@ -24,5 +25,4 @@
     <alert id="CruiseControlVL">Failure to use cruise control </alert>
     <alert id="TopGearVL">Failure to use Top Gear</alert>
     <alert id="FuelEconomyVL">Low Fuel Economy</alert>
-
 </alerts>

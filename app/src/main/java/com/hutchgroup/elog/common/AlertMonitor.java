@@ -48,7 +48,13 @@ public class AlertMonitor {
         if (fuelUsed > 0) {
             double average = distanceTravelled / fuelUsed;
             if (average < 2.25) {
-                AlertDB.Save("FuelEconomyVL", "Low Fuel Economy", Utility.getCurrentDateTime(), 15, 0, Utility.activeUserId);
+
+                int driverId = Utility.activeUserId;
+
+                if (driverId == 0) {
+                    driverId = Utility.unIdentifiedDriverId;
+                }
+                AlertDB.Save("FuelEconomyVL", "Low Fuel Economy", Utility.getCurrentDateTime(), 15, 0,driverId);
             }
         }
     }
@@ -56,15 +62,27 @@ public class AlertMonitor {
     private static void LowWasherFluidViolationGet() {
         double WasherFluidLevel = Double.parseDouble(CanMessages.WasherFluidLevel);
         if (WasherFluidLevel > 80d) {
-            AlertDB.Save("LowWasherFluidVL", "Low Washer Fluid", Utility.getCurrentDateTime(), 5, 0, Utility.activeUserId);
+
+            int driverId = Utility.activeUserId;
+
+            if (driverId == 0) {
+                driverId = Utility.unIdentifiedDriverId;
+            }
+            AlertDB.Save("LowWasherFluidVL", "Low Washer Fluid", Utility.getCurrentDateTime(), 5, 0, driverId);
         }
 
     }
 
     private static void LowCoolantTemperatureViolationGet() {
         double CoolantTemperature = Double.parseDouble(CanMessages.CoolantTemperature);
-        if (CoolantTemperature > 80d) { // to be changed after asking gary sir
-            AlertDB.Save("LowCoolantTemperatureVL", "Failure to warm up the engine", Utility.getCurrentDateTime(), 20, 0, Utility.activeUserId);
+        if (CoolantTemperature > 80d) {
+
+            int driverId = Utility.activeUserId;
+
+            if (driverId == 0) {
+                driverId = Utility.unIdentifiedDriverId;
+            }
+            AlertDB.Save("LowCoolantTemperatureVL", "Failure to warm up the engine", Utility.getCurrentDateTime(), 20, 0, driverId);
         }
 
     }
@@ -72,7 +90,13 @@ public class AlertMonitor {
     private static void LowEngineOilViolationGet() {
         double EngineOilLevel = Double.parseDouble(CanMessages.EngineOilLevel);
         if (EngineOilLevel > 80d) {
-            AlertDB.Save("LowEngineOilVL", "Low Engine Oil", Utility.getCurrentDateTime(), 5, 0, Utility.activeUserId);
+
+            int driverId = Utility.activeUserId;
+
+            if (driverId == 0) {
+                driverId = Utility.unIdentifiedDriverId;
+            }
+            AlertDB.Save("LowEngineOilVL", "Low Engine Oil", Utility.getCurrentDateTime(), 5, 0, driverId);
         }
 
     }
@@ -80,7 +104,13 @@ public class AlertMonitor {
     private static void LowCoolantLevelViolationGet() {
         double EngineCoolantLevel = Double.parseDouble(CanMessages.EngineCoolantLevel);
         if (EngineCoolantLevel > 80d) {
-            AlertDB.Save("LowCoolantLevelVL", "Low Coolant Level", Utility.getCurrentDateTime(), 5, 0, Utility.activeUserId);
+
+            int driverId = Utility.activeUserId;
+
+            if (driverId == 0) {
+                driverId = Utility.unIdentifiedDriverId;
+            }
+            AlertDB.Save("LowCoolantLevelVL", "Low Coolant Level", Utility.getCurrentDateTime(), 5, 0, driverId);
         }
 
     }

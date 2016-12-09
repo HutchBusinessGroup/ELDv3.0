@@ -11,141 +11,97 @@ import android.util.Log;
  */
 
 public class GForceMonitor implements SensorEventListener {
-    /**
-     * Minimum movement force to consider.
-     */
-    private static final int MIN_FORCE = 10;
 
-    /**
-     * Minimum times in a shake gesture that the direction of movement needs to
-     * change.
-     */
-    private static final int MIN_DIRECTION_CHANGE = 3;
-
-    /**
-     * Maximum pause between movements.
-     */
-    private static final int MAX_PAUSE_BETHWEEN_DIRECTION_CHANGE = 200;
-
-    /**
-     * Maximum allowed time for shake gesture.
-     */
-    private static final int MAX_TOTAL_DURATION_OF_SHAKE = 400;
-
-    /**
-     * Time when the gesture started.
-     */
-    private long mFirstDirectionChangeTime = 0;
-
-    /**
-     * Time when the last movement started.
-     */
-    private long mLastDirectionChangeTime;
-
-    /**
-     * How many movements are considered so far.
-     */
-    private int mDirectionChangeCount = 0;
-
-    /**
-     * The last x position.
-     */
-    private float lastX = 0;
-
-    /**
-     * The last y position.
-     */
-    private float lastY = 0;
-
-    /**
-     * The last z position.
-     */
-    private float lastZ = 0;
 
     public GForceMonitor() {
-        mAccel = 0.00f;
-        mAccelCurrent = SensorManager.GRAVITY_EARTH;
-        mAccelLast = SensorManager.GRAVITY_EARTH;
     }
 
 
     private IGForceMonitor mListener;
 
-    public void setOnShakeListener(IGForceMonitor listener) {
+    public void setGForceChangeListener(IGForceMonitor listener) {
         this.mListener = listener;
     }
 
-    private float mAccel; // acceleration apart from gravity
-    private float mAccelCurrent; // current acceleration including gravity
-    private float mAccelLast; // last acceleration including gravity
+    float[] f49I;
+    private float calX;
+    private float calY;
+    private float calZ;
+    float[] geomag;
+    float[] gravity;
+    float[] inR;
+    private float mLowPassX;
+    private float mLowPassY;
+    private float mLowPassZ;
+    float[] orientVals;
+    double pitch;
+    boolean highPassFilter = true;
+    double lrForce = 0f;
+
 
     @Override
     public void onSensorChanged(SensorEvent se) {
+        switch (se.sensor.getType()) {
+            case Sensor.TYPE_ACCELEROMETER /*1*/:
+                this.gravity = se.values.clone();
+                break;
+            case Sensor.TYPE_MAGNETIC_FIELD /*2*/:
+                this.geomag = se.values.clone();
+                break;
+        }
+
         if (se.sensor.getType() != Sensor.TYPE_ACCELEROMETER)
             return;
-        // get sensor data
-        float x = se.values[0];
-        float y = se.values[1];
-        float z = se.values[2];
 
-        // calculate movement
-        float totalMovement = Math.abs(x + y + z - lastX - lastY - lastZ);
-        mAccelLast = mAccelCurrent;
-        mAccelCurrent = (float) Math.sqrt((double) (x * x + y * y + z * z));
-        float delta = mAccelCurrent - mAccelLast;
-        mAccel = mAccel * 0.8f + delta; // perform low-cut filter
-        Log.i("GForce", "x: " + x + ", y: " + y + ", z: " + z + ", total: " + totalMovement + ", Acc: " + mAccel);
-        if (totalMovement > MIN_FORCE) {
-
-            // get time
-            long now = System.currentTimeMillis();
-
-            // store first movement time
-            if (mFirstDirectionChangeTime == 0) {
-                mFirstDirectionChangeTime = now;
-                mLastDirectionChangeTime = now;
-            }
-
-            // check if the last movement was not long ago
-            long lastChangeWasAgo = now - mLastDirectionChangeTime;
-            if (lastChangeWasAgo < MAX_PAUSE_BETHWEEN_DIRECTION_CHANGE) {
-
-                // store movement data
-                mLastDirectionChangeTime = now;
-                mDirectionChangeCount++;
-
-                // store last sensor data
-                lastX = x;
-                lastY = y;
-                lastZ = z;
-
-                // check how many movements are so far
-                if (mDirectionChangeCount >= MIN_DIRECTION_CHANGE) {
-
-                    // check total duration
-                    long totalDuration = now - mFirstDirectionChangeTime;
-                    if (totalDuration < MAX_TOTAL_DURATION_OF_SHAKE) {
-                        // mShakeListener.onShake();
-                        resetShakeParameters();
-                    }
-                }
-
-            } else {
-                resetShakeParameters();
+        if (!(this.gravity == null || this.geomag == null)) {
+            if (SensorManager.getRotationMatrix(this.inR, this.f49I, this.gravity, this.geomag)) {
+                SensorManager.getOrientation(this.inR, this.orientVals);
+                this.pitch = Math.toDegrees((double) this.orientVals[1]);
             }
         }
-    }
 
-    /**
-     * Resets the shake parameters to their default values.
-     */
-    private void resetShakeParameters() {
-        mFirstDirectionChangeTime = 0;
-        mDirectionChangeCount = 0;
-        mLastDirectionChangeTime = 0;
-        lastX = 0;
-        lastY = 0;
-        lastZ = 0;
+        this.mLowPassX = se.values[0];
+        this.mLowPassY = se.values[1];
+        this.mLowPassZ = se.values[2];
+
+        if (highPassFilter) {
+            this.calX = this.mLowPassX;
+            this.calY = this.mLowPassY;
+            this.calZ = this.mLowPassZ;
+            highPassFilter = false;
+        }
+
+        lrForce = ((double) ((int) (((this.mLowPassX - this.calX) / 9.80665f) * 1000.0f))) / 1000.0d;
+        float lrForcePrint = ((float) ((int) (Math.abs(lrForce) * 100.0d))) / 100.0f;
+        boolean isLeftTurn = (lrForce > 0.0d);
+
+        SharpTurnMonitor(lrForcePrint, isLeftTurn);
+
+        if (this.pitch < -45.0d || this.pitch > 45.0d) {
+            double adForceZ = ((double) ((int) (((this.mLowPassZ - this.calZ) / 9.80665f) * 1000.0f))) / 1000.0d;
+            double tempPitch = Math.abs(this.pitch);
+            double adForce = 0.0d;
+            if (tempPitch > 45.0d && tempPitch <= 90.0d) {
+                tempPitch -= 45.0d;
+                adForce = (1.0d / Math.cos(0.017453292519943295d * tempPitch)) * adForceZ;
+
+            } else if (tempPitch > 90.0d && tempPitch <= 135.0d) {
+                tempPitch -= 90.0d;
+                adForce = (1.0d / Math.cos(0.017453292519943295d * tempPitch)) * adForceZ;
+            }
+            float adForceZABS = ((float) ((int) (Math.abs(adForce) * 100.0d))) / 100.0f;
+            boolean isAcc = adForce < 0.0d; // check if accelerating or brake
+
+            abForceMonitor(adForceZABS, isAcc);
+
+        } else {
+            double adForceY = ((double) ((int) (((this.mLowPassY - this.calY) / 9.80665f) * 1000.0f))) / 1000.0d;
+
+            double adForce = (1.0d / Math.cos(this.pitch * 0.017453292519943295d)) * adForceY;
+            float adForceYABS = ((float) ((int) (Math.abs(adForce) * 100.0d))) / 100.0f;
+            boolean isAcc = adForce > 0.0d;
+            abForceMonitor(adForceYABS, isAcc);
+        }
     }
 
     @Override
@@ -153,8 +109,91 @@ public class GForceMonitor implements SensorEventListener {
 
     }
 
-    public interface IGForceMonitor {
-        public void OnGforceChange(int count);
+
+    private int lrDirectionChangeCount = 0;
+    private long lrFirstDirectionChangeTime = 0;
+    float SHARP_TURN_THRESHOLD = .25f;
+    float SHARP_TURN_MAX_DURATION_THRESHOLD = 200f;
+    private static final int SHARP_TURN_MIN_DIRECTION_CHANGE = 2;
+
+    private void SharpTurnMonitor(float left_right_Force, boolean isLeft) {
+        if (left_right_Force > SHARP_TURN_THRESHOLD) {
+            // get time
+            long now = System.currentTimeMillis();
+            // store first movement time
+            if (lrFirstDirectionChangeTime == 0) {
+                lrFirstDirectionChangeTime = now;
+            }
+
+            // check total duration
+            long totalDuration = now - lrFirstDirectionChangeTime;
+            if (totalDuration > SHARP_TURN_MAX_DURATION_THRESHOLD) {
+                lrDirectionChangeCount++;
+                if (lrDirectionChangeCount == SHARP_TURN_MIN_DIRECTION_CHANGE) {
+                    if (isLeft) {
+                        mListener.onLeftSharpTurn(left_right_Force);
+                    } else {
+                        mListener.onRightSharpTurn(left_right_Force);
+                    }
+                }
+            }
+
+        } else {
+
+            lrFirstDirectionChangeTime = 0;
+            lrDirectionChangeCount = 0;
+        }
     }
 
+    private int abDirectionChangeCount = 0;
+    private long abFirstDirectionChangeTime = 0;
+
+    float HARD_ACCLERATION_THRESHOLD = .25f;
+    float HARD_BREAK_THRESHOLD = .40f;
+
+    private static final int MAX_TOTAL_DURATION_OF_EVENT = 200;
+
+    private static final int MIN_DIRECTION_CHANGE = 3;
+
+
+    private void abForceMonitor(float abForce, boolean isAcc) {
+        float threshold = isAcc ? HARD_ACCLERATION_THRESHOLD : HARD_BREAK_THRESHOLD;
+        if (abForce > threshold) {
+            // get time
+            long now = System.currentTimeMillis();
+            // store first movement time
+            if (abFirstDirectionChangeTime == 0) {
+                abFirstDirectionChangeTime = now;
+            }
+
+            // check total duration
+            long totalDuration = now - abFirstDirectionChangeTime;
+            if (totalDuration > MAX_TOTAL_DURATION_OF_EVENT) {
+                abDirectionChangeCount++;
+                if (abDirectionChangeCount == MIN_DIRECTION_CHANGE) {
+
+                    if (isAcc) {
+                        mListener.onHardAcceleration(abForce);
+                    } else {
+                        mListener.onHardBrake(abForce);
+                    }
+                }
+            }
+        } else {
+            abFirstDirectionChangeTime = 0;
+            abDirectionChangeCount = 0;
+        }
+    }
+
+
+    public interface IGForceMonitor {
+
+        void onLeftSharpTurn(float force);
+
+        void onRightSharpTurn(float force);
+
+        void onHardAcceleration(float force);
+
+        void onHardBrake(float force);
+    }
 }
