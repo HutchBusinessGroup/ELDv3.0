@@ -54,7 +54,7 @@ public class AlertMonitor {
                 if (driverId == 0) {
                     driverId = Utility.unIdentifiedDriverId;
                 }
-                AlertDB.Save("FuelEconomyVL", "Low Fuel Economy", Utility.getCurrentDateTime(), 15, 0,driverId);
+                AlertDB.Save("FuelEconomyVL", "Low Fuel Economy", Utility.getCurrentDateTime(), 15, 0, driverId);
             }
         }
     }
@@ -307,7 +307,11 @@ public class AlertMonitor {
                         Thread.sleep(1000);
                     } catch (InterruptedException exe) {
                     }
-
+                    CriticalWarningViolationGet();
+                    IdlingViolationGet();
+                    NoTripInspectionGet();
+                    HighRPMGet();
+                    HOSViolationGet();
                     // monitor speed violation
                     SpeedViolationGet();
                 }

@@ -82,6 +82,7 @@ import com.hutchgroup.elog.beans.UserBean;
 import com.hutchgroup.elog.beans.VersionInformationBean;
 import com.hutchgroup.elog.bll.HourOfService;
 import com.hutchgroup.elog.common.AlarmSetter;
+import com.hutchgroup.elog.common.AlertMonitor;
 import com.hutchgroup.elog.common.CanMessages;
 import com.hutchgroup.elog.common.ChatClient;
 import com.hutchgroup.elog.common.ConstantFlag;
@@ -1281,11 +1282,14 @@ public class MainActivity extends ELogMainActivity
 
             initializeBTBAlertDialog();
             initializeGforce();
+            alertMonitor=new AlertMonitor();
+            alertMonitor.startAlertMonitor();
         } catch (Exception e) {
             LogFile.write(MainActivity.class.getName() + "::onCreate error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
         }
     }
 
+    AlertMonitor alertMonitor;
     LinearLayout layoutAlertBTB;
     TextView tvAlertHeader, tvAlertMessage;
     View vAlertBorder;
