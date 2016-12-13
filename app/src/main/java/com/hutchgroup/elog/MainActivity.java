@@ -2714,9 +2714,9 @@ public class MainActivity extends ELogMainActivity
                     }
 
                     if (secondsLeft == 0) {
-                        if (GPSData.NoHOSViolationFgFg == 0) {
+                        if (GPSData.NoHOSViolationFgFg == 1) {
                             onUpdateViolation(true);
-                            GPSData.NoHOSViolationFgFg = 1;
+                            GPSData.NoHOSViolationFgFg = 0;
                         }
                         tvDrivingRemainingFreeze.setBackgroundResource(R.drawable.remaining_driving_hours_bg_red);
                     } else if (secondsLeft <= 3600) {
@@ -2727,17 +2727,15 @@ public class MainActivity extends ELogMainActivity
                     String timeRemaining = Utility.getTimeFromSeconds(secondsLeft);
                     tvDrivingRemainingFreeze.setText(timeRemaining);
                     if (secondsLeft > 0) {
-                        if (GPSData.NoHOSViolationFgFg == 1) {
+                        if (GPSData.NoHOSViolationFgFg == 0) {
                             onUpdateViolation(false);
-                            GPSData.NoHOSViolationFgFg = 0;
+                            GPSData.NoHOSViolationFgFg = 1;
                         }
                     }
                 }
-
             }
         });
     }
-
 
     //imgreezeSpeed,imgFreezeRPM,imgFreezeVoltage,imgFreezeCoolantTemp,imgFreezeThrPos;
     private void setSpeedRoatation() {

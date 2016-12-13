@@ -14,6 +14,12 @@ public class GForceMonitor implements SensorEventListener {
 
 
     public GForceMonitor() {
+        this.inR = new float[16];
+        this.f49I = new float[16];
+        this.gravity = new float[3];
+        this.geomag = new float[3];
+        this.orientVals = new float[3];
+        this.pitch = 0.0d;
     }
 
 

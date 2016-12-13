@@ -162,7 +162,7 @@ public class AlertMonitor {
             if (GPSData.TripInspectionCompletedFg == 0) {
                 if (Utility.motionFg) {
                     NoTripInspectionVL = true;
-                    AlertDB.Save("HOSVL", "Hours Of Service", Utility.getCurrentDateTime(), 50, 0, Utility.onScreenUserId);
+                    AlertDB.Save("NoTripInspectionVL", "Failure to conduct Trip Inspection", Utility.getCurrentDateTime(), 50, 0, Utility.onScreenUserId);
                 }
             }
 

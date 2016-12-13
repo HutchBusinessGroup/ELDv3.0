@@ -96,9 +96,9 @@ public class AlertDB {
 
     public static boolean Save(String code, String name, String date, int score, int duration, int driverId) {
         AlertBean bean = new AlertBean();
-        bean.setAlertCode("SpeedVL");
-        bean.setAlertName("Speed Violation");
-        bean.setAlertDateTime(Utility.getCurrentDateTime());
+        bean.setAlertCode(code);
+        bean.setAlertName(name);
+        bean.setAlertDateTime(date);
         bean.setScores(score);
         bean.setDuration(duration);
         bean.setDriverId(driverId);
