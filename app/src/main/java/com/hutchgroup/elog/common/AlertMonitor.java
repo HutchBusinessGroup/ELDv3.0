@@ -61,7 +61,7 @@ public class AlertMonitor {
 
     private static void LowWasherFluidViolationGet() {
         double WasherFluidLevel = Double.parseDouble(CanMessages.WasherFluidLevel);
-        if (WasherFluidLevel > 80d) {
+        if (WasherFluidLevel < 80d) {
 
             int driverId = Utility.activeUserId;
 
@@ -75,7 +75,7 @@ public class AlertMonitor {
 
     private static void LowCoolantTemperatureViolationGet() {
         double CoolantTemperature = Double.parseDouble(CanMessages.CoolantTemperature);
-        if (CoolantTemperature > 80d) {
+        if (CoolantTemperature < 80d) {
 
             int driverId = Utility.activeUserId;
 
@@ -89,7 +89,7 @@ public class AlertMonitor {
 
     private static void LowEngineOilViolationGet() {
         double EngineOilLevel = Double.parseDouble(CanMessages.EngineOilLevel);
-        if (EngineOilLevel > 80d) {
+        if (EngineOilLevel < 80d) {
 
             int driverId = Utility.activeUserId;
 
@@ -103,7 +103,7 @@ public class AlertMonitor {
 
     private static void LowCoolantLevelViolationGet() {
         double EngineCoolantLevel = Double.parseDouble(CanMessages.EngineCoolantLevel);
-        if (EngineCoolantLevel > 80d) {
+        if (EngineCoolantLevel < 80d) {
 
             int driverId = Utility.activeUserId;
 
@@ -145,11 +145,12 @@ public class AlertMonitor {
                     driverId = Utility.unIdentifiedDriverId;
                 }
 
-                AlertDB.Save("IdlingVL", "Idling", Utility.getCurrentDateTime(), 0, 0, driverId);
+                AlertDB.Save("IdlingVL", "Idling", Utility.getCurrentDateTime(), 5, 0, driverId);
             }
         } else {
             if (GPSData.CurrentStatus != 2) {
                 IdlingVLFg = false;
+
                 int duration = (int) ((System.currentTimeMillis() - IdlingVLDate) / (1000 * 60)) + 10;
                 int score = 5;
                 AlertDB.Update("IdlingVL", duration, score);
