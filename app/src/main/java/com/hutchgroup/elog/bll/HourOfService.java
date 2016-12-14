@@ -288,7 +288,7 @@ public class HourOfService {
 
                     if (restMinutes >= 8 * 60) {
                         setStartDate = true;
-                        startDate = Utility.addMinutes(statusStartDate, restMinutes);
+                        startDate = endDate;// Utility.addMinutes(statusStartDate, restMinutes);
                         i++;
                         break;
                     }
