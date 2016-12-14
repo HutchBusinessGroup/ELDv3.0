@@ -1417,7 +1417,7 @@ public class MainActivity extends ELogMainActivity
         super.onResume();
         isAppActive = true;
 
-      //  resumeGforce();
+        //resumeGforce();
 
     }
 
@@ -1426,7 +1426,7 @@ public class MainActivity extends ELogMainActivity
     @Override
     public void onPause() {
 
-       // pauseGforce();
+        // pauseGforce();
         isAppActive = false;
         super.onPause();
     }

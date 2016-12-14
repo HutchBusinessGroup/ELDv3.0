@@ -12,5 +12,5 @@ public class ConstantFlag {
     public static boolean Flag_Log_AutoSyncTask = false;
     public static boolean Flag_Log_TCPClient = false;
     public static boolean Flag_Log_GPS = false;
-    public static boolean Flag_Development = true;
+    public static boolean Flag_Development = false;
 }
