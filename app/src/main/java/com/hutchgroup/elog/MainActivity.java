@@ -428,6 +428,29 @@ public class MainActivity extends ELogMainActivity
         }
     };
 
+    private void onAcPower() {
+        Utility.showMsg("On AC Power");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(3000);
+                    if (gForceMonitor != null) {
+                        gForceMonitor.highPassFilter = true;
+                        resumeGforce();
+                    }
+                } catch (Exception exe) {
+                }
+            }
+        }).start();
+    }
+
+    private void onBatterPower() {
+
+        pauseGforce();
+        Utility.showMsg("On Batter Power");
+    }
+
     Thread thBatteryMonitor;
     private final static int levelThreshold = 60;
     private final static int shutDownThreshold = 30;
@@ -440,7 +463,15 @@ public class MainActivity extends ELogMainActivity
             //Intent intent = registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
             int plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
             boolean isPlugged = (plugged == BatteryManager.BATTERY_PLUGGED_AC || plugged == BatteryManager.BATTERY_PLUGGED_USB);
-
+            if (GPSData.ACPowerFg == 0) {
+                if (isPlugged) {
+                    onAcPower();
+                }
+            } else {
+                if (!isPlugged) {
+                    onBatterPower();
+                }
+            }
             GPSData.ACPowerFg = (isPlugged ? 1 : 0);
             onUpdateBatteryIcon(level, isPlugged);
             if (level <= levelThreshold && !isPlugged) {
@@ -1282,7 +1313,7 @@ public class MainActivity extends ELogMainActivity
 
             initializeBTBAlertDialog();
             initializeGforce();
-            alertMonitor=new AlertMonitor();
+            alertMonitor = new AlertMonitor();
             alertMonitor.startAlertMonitor();
         } catch (Exception e) {
             LogFile.write(MainActivity.class.getName() + "::onCreate error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
@@ -1385,7 +1416,8 @@ public class MainActivity extends ELogMainActivity
     public void onResume() {
         super.onResume();
         isAppActive = true;
-        resumeGforce();
+
+      //  resumeGforce();
 
     }
 
@@ -1394,7 +1426,7 @@ public class MainActivity extends ELogMainActivity
     @Override
     public void onPause() {
 
-        pauseGforce();
+       // pauseGforce();
         isAppActive = false;
         super.onPause();
     }
@@ -4648,6 +4680,8 @@ public class MainActivity extends ELogMainActivity
     }
 
     private void resumeGforce() {
+        if (GPSData.ACPowerFg == 0)
+            return;
         mSensorManager.registerListener(gForceMonitor, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
         mSensorManager.registerListener(gForceMonitor, mMagneticField, SensorManager.SENSOR_DELAY_UI);
     }

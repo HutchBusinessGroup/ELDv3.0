@@ -6,6 +6,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
 
+import com.hutchgroup.elog.beans.GPSData;
+
 /**
  * Created by Deepak on 12/6/2016.
  */
@@ -41,7 +43,7 @@ public class GForceMonitor implements SensorEventListener {
     private float mLowPassZ;
     float[] orientVals;
     double pitch;
-    boolean highPassFilter = true;
+    public boolean highPassFilter = true;
     double lrForce = 0f;
 
 
@@ -54,6 +56,11 @@ public class GForceMonitor implements SensorEventListener {
             case Sensor.TYPE_MAGNETIC_FIELD /*2*/:
                 this.geomag = se.values.clone();
                 break;
+        }
+
+        // if on battery power no sensor
+        if (GPSData.ACPowerFg == 0) {
+            return;
         }
 
         if (se.sensor.getType() != Sensor.TYPE_ACCELEROMETER)
