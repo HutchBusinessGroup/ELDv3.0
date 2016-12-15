@@ -6,9 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ListView;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import com.hutchgroup.elog.R;
@@ -22,9 +22,9 @@ import java.util.ArrayList;
 
 public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
 
-    Switch swMonthly;
+    CheckBox swMonthly;
     ListView lvScoreCard;
-    boolean isMonthly = false;
+    boolean isCurrentDate = true;
 
     TextView tvDriving, tvDeduction, tvTotalScores;
 
@@ -42,6 +42,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_score_card, container, false);
+        AlertDB.mListener = this;
         initialize(view);
         return view;
     }
@@ -50,7 +51,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
     public void onResume() {
         super.onResume();
 
-        ScoreCardGet(isMonthly);
+        ScoreCardGet(isCurrentDate);
     }
 
     private void ScoreCardGet(boolean isCurrentDate) {
@@ -68,25 +69,25 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
         ScoreCardAdapter adapter = new ScoreCardAdapter(R.layout.fragment_score_card, list);
         lvScoreCard.setAdapter(adapter);
         int totalScores = drivingScore - deductedScore;
-        tvDriving.setText(drivingScore + "");
-        tvDeduction.setText(deductedScore + "");
-        tvTotalScores.setText(totalScores + "");
+        tvDriving.setText("Driving: " + drivingScore);
+        tvDeduction.setText("Deduction: " + deductedScore);
+        tvTotalScores.setText("Net Scores: " + totalScores);
     }
 
     private void initialize(View view) {
-        swMonthly = (Switch) view.findViewById(R.id.swMonthly);
+        swMonthly = (CheckBox) view.findViewById(R.id.swMonthly);
         swMonthly.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                isMonthly = b;
-                ScoreCardGet(isMonthly);
+                isCurrentDate = !b;
+                ScoreCardGet(isCurrentDate);
             }
         });
         lvScoreCard = (ListView) view.findViewById(R.id.lvScoreCard);
         tvDriving = (TextView) view.findViewById(R.id.tvDriving);
         tvDeduction = (TextView) view.findViewById(R.id.tvDeduction);
         tvTotalScores = (TextView) view.findViewById(R.id.tvTotalScores);
-        ScoreCardGet(isMonthly);
+        ScoreCardGet(isCurrentDate);
     }
 
     @Override
@@ -94,7 +95,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                ScoreCardGet(isMonthly);
+                ScoreCardGet(isCurrentDate);
             }
         });
     }

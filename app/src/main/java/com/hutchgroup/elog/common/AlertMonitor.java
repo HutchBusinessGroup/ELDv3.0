@@ -158,16 +158,19 @@ public class AlertMonitor {
         }
     }
 
-    private void NoTripInspectionGet() {
-        if (!NoTripInspectionVL) {
-            if (GPSData.TripInspectionCompletedFg == 0) {
-                if (Utility.motionFg) {
-                    NoTripInspectionVL = true;
-                    AlertDB.Save("NoTripInspectionVL", "Failure to conduct Trip Inspection", Utility.getCurrentDateTime(), 50, 0, Utility.onScreenUserId);
-                }
-            }
-
+    public static void NoTripInspectionGet() {
+      /*  if (!NoTripInspectionVL) {*/
+        if (GPSData.TripInspectionCompletedFg == 0) {
+                /*if (Utility.motionFg) {*/
+            NoTripInspectionVL = true;
+            String currentDate = Utility.getCurrentDate();
+            boolean isDuplicate = AlertDB.getDuplicate(Utility.onScreenUserId, "NoTripInspectionVL", currentDate);
+            if (!isDuplicate)
+                AlertDB.Save("NoTripInspectionVL", "Failure to conduct Trip Inspection", Utility.getCurrentDateTime(), 50, 0, Utility.onScreenUserId);
+              /*  }*/
         }
+
+       /* }*/
     }
 
     private void HighRPMGet() {
@@ -225,7 +228,7 @@ public class AlertMonitor {
                     driverId = Utility.unIdentifiedDriverId;
                 }
 
-                AlertDB.Save("HOSVL", "Hours Of Service", Utility.getCurrentDateTime(), 0, 0, driverId);
+                AlertDB.Save("HOSVL", "Hours Of Service", Utility.getCurrentDateTime(), 5, 0, driverId);
             }
         } else {
             if (GPSData.NoHOSViolationFgFg == 1) {
@@ -310,7 +313,6 @@ public class AlertMonitor {
                     }
                     CriticalWarningViolationGet();
                     IdlingViolationGet();
-                    NoTripInspectionGet();
                     HighRPMGet();
                     HOSViolationGet();
                     // monitor speed violation

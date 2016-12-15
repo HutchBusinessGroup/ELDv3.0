@@ -24,6 +24,40 @@ public class AlertDB {
         void onUpdate();
     }
 
+    public static boolean getDuplicate(int driverId, String code, String date) {
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+
+        boolean status = false;
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+
+            cursor = database.rawQuery("select AlertDateTime from "
+                            + MySQLiteOpenHelper.TABLE_ALERT + " Where AlertCode=? and DriverId=? and AlertDateTime>=? order by 1 desc Limit 1 "
+                    , new String[]{code, driverId + "", date});
+
+            if (cursor.moveToNext()) {
+                status = true;
+            }
+
+        } catch (Exception e) {
+            Utility.printError(e.getMessage());
+            LogFile.write(AlertDB.class.getName() + "::getAlertSync Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                cursor.close();
+                database.close();
+                helper.close();
+
+            } catch (Exception e2) {
+                // TODO: handle exception
+            }
+        }
+        return status;
+    }
+
     // Created By: Deepak Sharma
     // Created Date: 12 December 2016
     // Purpose: update Alert for web sync
@@ -203,7 +237,7 @@ public class AlertDB {
             database = helper.getWritableDatabase();
 
             cursor = database.rawQuery("select AlertCode,AlertName,max(AlertDateTime) LastOccurrenceDate,sum(Duration) as Duration,sum(Scores) as Score from "
-                            + MySQLiteOpenHelper.TABLE_ALERT + " Where DriverId=? and AlertDateTime>=? group by AlertCode,AlertName "
+                            + MySQLiteOpenHelper.TABLE_ALERT + " Where DriverId=? and AlertDateTime>=? group by AlertCode,AlertName order by max(AlertDateTime) desc "
                     , new String[]{driverId + "", date});
 
             while (cursor.moveToNext()) {
@@ -212,7 +246,7 @@ public class AlertDB {
                 obj.setAlertName(cursor.getString(cursor.getColumnIndex("AlertName")));
                 obj.setAlertDateTime(cursor.getString(cursor.getColumnIndex("LastOccurrenceDate")));
                 obj.setDuration(cursor.getInt(cursor.getColumnIndex("Duration")));
-                obj.setScores(cursor.getInt(cursor.getColumnIndex("Scores")));
+                obj.setScores(cursor.getInt(cursor.getColumnIndex("Score")));
                 alertList.add(obj);
             }
 

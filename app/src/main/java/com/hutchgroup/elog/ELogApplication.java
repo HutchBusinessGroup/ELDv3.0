@@ -26,6 +26,7 @@ import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.UserPreferences;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.common.ZoneList;
+import com.hutchgroup.elog.db.AlertDB;
 import com.hutchgroup.elog.db.DailyLogDB;
 import com.hutchgroup.elog.db.EventDB;
 import com.hutchgroup.elog.db.SettingsDB;
@@ -351,6 +352,7 @@ public class ELogApplication extends Application {
 
                         if (!Utility.motionFg) {
                             GPSData.LastStatusTime = System.currentTimeMillis();
+                            AlertMonitor.NoTripInspectionGet();
                         }
                         //Log.i(TAG, "Speed over 5");
                         if (Utility.user1.getAccountId() == 0 && Utility.user2.getAccountId() == 0) {

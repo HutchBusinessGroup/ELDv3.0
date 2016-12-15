@@ -58,6 +58,9 @@ public class ScoreCardAdapter extends ArrayAdapter<AlertBean> {
         if (bean.getDuration() > 0) {
             String duration = Utility.getTimeFromMinute(bean.getDuration());
             viewHolder.tvDuration.setText("Duration: " + duration);
+            viewHolder.tvDuration.setVisibility(View.VISIBLE);
+        } else {
+            viewHolder.tvDuration.setVisibility(View.GONE);
         }
 
         try {
@@ -67,9 +70,7 @@ public class ScoreCardAdapter extends ArrayAdapter<AlertBean> {
                 format = "HH:mm";
             }
             viewHolder.tvTime.setText(new SimpleDateFormat(format).format(Utility.parse(bean.getAlertDateTime())));
-        }
-        catch (Exception exe)
-        {
+        } catch (Exception exe) {
 
         }
         return convertView;
