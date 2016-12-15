@@ -121,6 +121,7 @@ import com.hutchgroup.elog.fragments.NewEventFragment;
 import com.hutchgroup.elog.fragments.NewInspectionFragment;
 import com.hutchgroup.elog.fragments.OutputFileSendDialog;
 import com.hutchgroup.elog.fragments.PopupDialog;
+import com.hutchgroup.elog.fragments.ScoreCardFragment;
 import com.hutchgroup.elog.fragments.SettingsFragment;
 import com.hutchgroup.elog.fragments.ShutDownDeviceDialog;
 import com.hutchgroup.elog.fragments.TabSystemFragment;
@@ -177,6 +178,7 @@ public class MainActivity extends ELogMainActivity
     public final int Driver_Profile_Screen = 13;
     private final int Extra = 14;
     private final int DTC = 15;
+    private final int ScoreCard = 16;
     public static Date ViolationDT;
 
     BluetoothAdapter adapter = null;
@@ -4663,6 +4665,19 @@ public class MainActivity extends ELogMainActivity
         previousScreen = currentScreen;
         currentScreen = DTC;
         title = getApplicationContext().getResources().getString(R.string.title_dtc);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(title);
+    }
+
+    @Override
+    public void onLoadScoreCard() {
+        isOnDailyLog = false;
+        bInspectDailylog = false;
+
+        replaceFragment(ScoreCardFragment.newInstance());
+        previousScreen = currentScreen;
+        currentScreen = ScoreCard;
+        title = getApplicationContext().getResources().getString(R.string.title_score_card);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(title);
     }

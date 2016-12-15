@@ -387,4 +387,59 @@ public class HourOfServiceDB {
         }
         return data;
     }
+
+    public static int DrivingTimeGet(String date, int driverId) {
+        int drivingTime = 0;
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getReadableDatabase();
+
+            String sql = "select *,1 as recordType from(select EventDateTime dutyStatusTime ,case when EventType=3 and EventCode=2 then 4 else EventCode end dutyStatus," +
+                    "case when EventType=3 and EventCode!=0 then 1 else 0 end personalUseFg from " + MySQLiteOpenHelper.TABLE_DAILYLOG_EVENT +
+                    " where EventRecordStatus=1 and EventType in (1,3) and EventCode>0 and  DriverId=" + driverId + " and EventDateTime < '" + date + "' order by EventDateTime desc LIMIT 1)a union ";
+            sql += "select EventDateTime dutyStatusTime, case when EventType=3 and EventCode=2 then 4 else EventCode end dutyStatus,case when EventType=3 and EventCode!=0 then 1 else 0 end personalUseFg" +
+                    ",2 recordType from " + MySQLiteOpenHelper.TABLE_DAILYLOG_EVENT + " where EventRecordStatus=1 and EventType in (1,3) and EventCode>0  and EventDateTime >= '" + date +
+                    "' and DriverId in (" + driverId + ")  order by EventDateTime ";
+            cursor = database.rawQuery(sql, null);
+
+            Date drivingDate = null;
+            int status = 1;
+            while (cursor.moveToNext()) {
+                Date eventTime = Utility.parse(cursor.getString(cursor.getColumnIndex("dutyStatusTime")));
+                status = cursor.getInt(cursor.getColumnIndex("dutyStatus"));
+                if (status == 3) {
+                    drivingDate = eventTime;
+                } else {
+                    if (drivingDate != null) {
+
+                        int totalMinute = (int) Math.round((eventTime.getTime() - drivingDate.getTime()) / (1000 * 60.0));
+                        drivingDate = null;
+                        drivingTime += totalMinute;
+                    }
+                }
+            }
+
+            if (status == 3) {
+
+                int totalMinute = (int) Math.round((new Date().getTime() - drivingDate.getTime()) / (1000 * 60.0));
+                drivingTime += totalMinute;
+            }
+
+        } catch (Exception exe) {
+            LogFile.write(HourOfServiceDB.class.getName() + "::DrivingTimeGet Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                cursor.close();
+                database.close();
+                helper.close();
+            } catch (Exception e) {
+                Utility.printError(e.getMessage());
+            }
+        }
+        return drivingTime;
+    }
+
 }

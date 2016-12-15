@@ -37,6 +37,39 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:id="@+id/tvDriving"
+            style="@style/TextValStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Driving: 200" />
+
+        <TextView
+            android:id="@+id/tvDeduction"
+            style="@style/TextValStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Deduction: 100" />
+
+        <TextView
+            android:id="@+id/tvTotalScores"
+            style="@style/TextValStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total : 100" />
+    </LinearLayout>
+
+
     <ListView
         android:id="@+id/lvScoreCard"
         android:layout_width="match_parent"
