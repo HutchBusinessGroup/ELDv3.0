@@ -295,4 +295,5 @@
     <dimen name="width_2dp">3dp</dimen>
 
     <dimen name="drawer_width">148dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

@@ -11,11 +11,18 @@ import com.hutchgroup.elog.common.Utility;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 /**
  * Created by Deepak on 11/30/2016.
  */
 
 public class AlertDB {
+    public static IScoreCard mListener;
+
+    public interface IScoreCard {
+        void onUpdate();
+    }
 
     // Created By: Deepak Sharma
     // Created Date: 12 December 2016
@@ -124,6 +131,9 @@ public class AlertDB {
             values.put("SyncFg", 0);
             database.insert(MySQLiteOpenHelper.TABLE_ALERT,
                     "_id", values);
+            if (mListener != null) {
+                mListener.onUpdate();
+            }
         } catch (Exception e) {
             status = false;
             Utility.printError(e.getMessage());
@@ -161,6 +171,9 @@ public class AlertDB {
                 database.update(MySQLiteOpenHelper.TABLE_ALERT, values,
                         " _id= ?",
                         new String[]{id + ""});
+                if (mListener != null) {
+                    mListener.onUpdate();
+                }
             }
         } catch (Exception e) {
             status = false;
@@ -173,5 +186,49 @@ public class AlertDB {
         }
         return status;
 
+    }
+
+
+    // Created By: Deepak Sharma
+    // Created Date: 12 December 2016
+    // Purpose: get driver Score card
+    public static ArrayList<AlertBean> getScoreCard(int driverId, String date) {
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+
+        ArrayList<AlertBean> alertList = new ArrayList<>();
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+
+            cursor = database.rawQuery("select AlertCode,AlertName,max(AlertDateTime) LastOccurrenceDate,sum(Duration) as Duration,sum(Scores) as Score from "
+                            + MySQLiteOpenHelper.TABLE_ALERT + " Where DriverId=? and AlertDateTime>=? group by AlertCode,AlertName "
+                    , new String[]{driverId + "", date});
+
+            while (cursor.moveToNext()) {
+                AlertBean obj = new AlertBean();
+                obj.setAlertCode(cursor.getString(cursor.getColumnIndex("AlertCode")));
+                obj.setAlertName(cursor.getString(cursor.getColumnIndex("AlertName")));
+                obj.setAlertDateTime(cursor.getString(cursor.getColumnIndex("LastOccurrenceDate")));
+                obj.setDuration(cursor.getInt(cursor.getColumnIndex("Duration")));
+                obj.setScores(cursor.getInt(cursor.getColumnIndex("Scores")));
+                alertList.add(obj);
+            }
+
+        } catch (Exception e) {
+            Utility.printError(e.getMessage());
+            LogFile.write(AlertDB.class.getName() + "::getAlertSync Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                cursor.close();
+                database.close();
+                helper.close();
+
+            } catch (Exception e2) {
+                // TODO: handle exception
+            }
+        }
+        return alertList;
     }
 }
