@@ -468,7 +468,7 @@ public final class R {
 		public static final int notification_template_icon_bg = 0x7f0201ea;
 	}
 	public static final class id {
-		public static final int action0 = 0x7f0e02b9;
+		public static final int action0 = 0x7f0e02bf;
 		public static final int action_bar = 0x7f0e005a;
 		public static final int action_bar_activity_content = 0x7f0e0000;
 		public static final int action_bar_container = 0x7f0e0059;
@@ -477,7 +477,7 @@ public final class R {
 		public static final int action_bar_subtitle = 0x7f0e003b;
 		public static final int action_bar_title = 0x7f0e003a;
 		public static final int action_context_bar = 0x7f0e005b;
-		public static final int action_divider = 0x7f0e02bd;
+		public static final int action_divider = 0x7f0e02c3;
 		public static final int action_menu_divider = 0x7f0e0002;
 		public static final int action_menu_presenter = 0x7f0e0003;
 		public static final int action_mode_bar = 0x7f0e0057;
@@ -488,9 +488,9 @@ public final class R {
 		public static final int always = 0x7f0e0033;
 		public static final int beginning = 0x7f0e0031;
 		public static final int buttonPanel = 0x7f0e0044;
-		public static final int cancel_action = 0x7f0e02ba;
+		public static final int cancel_action = 0x7f0e02c0;
 		public static final int checkbox = 0x7f0e0052;
-		public static final int chronometer = 0x7f0e02c0;
+		public static final int chronometer = 0x7f0e02c6;
 		public static final int collapseActionView = 0x7f0e0034;
 		public static final int contentPanel = 0x7f0e004a;
 		public static final int custom = 0x7f0e0050;
@@ -500,7 +500,7 @@ public final class R {
 		public static final int disableHome = 0x7f0e000e;
 		public static final int edit_query = 0x7f0e005c;
 		public static final int end = 0x7f0e0021;
-		public static final int end_padder = 0x7f0e02c5;
+		public static final int end_padder = 0x7f0e02cb;
 		public static final int expand_activities_button = 0x7f0e003e;
 		public static final int expanded_menu = 0x7f0e0051;
 		public static final int home = 0x7f0e0004;
@@ -508,12 +508,12 @@ public final class R {
 		public static final int icon = 0x7f0e0042;
 		public static final int ifRoom = 0x7f0e0035;
 		public static final int image = 0x7f0e003f;
-		public static final int info = 0x7f0e02c4;
-		public static final int line1 = 0x7f0e02be;
-		public static final int line3 = 0x7f0e02c2;
+		public static final int info = 0x7f0e02ca;
+		public static final int line1 = 0x7f0e02c4;
+		public static final int line3 = 0x7f0e02c8;
 		public static final int listMode = 0x7f0e000b;
 		public static final int list_item = 0x7f0e0041;
-		public static final int media_actions = 0x7f0e02bc;
+		public static final int media_actions = 0x7f0e02c2;
 		public static final int middle = 0x7f0e0032;
 		public static final int multiply = 0x7f0e0027;
 		public static final int never = 0x7f0e0036;
@@ -547,13 +547,13 @@ public final class R {
 		public static final int src_atop = 0x7f0e0029;
 		public static final int src_in = 0x7f0e002a;
 		public static final int src_over = 0x7f0e002b;
-		public static final int status_bar_latest_event_content = 0x7f0e02bb;
+		public static final int status_bar_latest_event_content = 0x7f0e02c1;
 		public static final int submit_area = 0x7f0e0065;
 		public static final int tabMode = 0x7f0e000d;
-		public static final int text = 0x7f0e02c3;
-		public static final int text2 = 0x7f0e02c1;
+		public static final int text = 0x7f0e02c9;
+		public static final int text2 = 0x7f0e02c7;
 		public static final int textSpacerNoButtons = 0x7f0e004d;
-		public static final int time = 0x7f0e02bf;
+		public static final int time = 0x7f0e02c5;
 		public static final int title = 0x7f0e0043;
 		public static final int title_template = 0x7f0e0048;
 		public static final int topPanel = 0x7f0e0047;
@@ -595,18 +595,18 @@ public final class R {
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f040016;
 		public static final int abc_search_view = 0x7f040017;
 		public static final int abc_select_dialog_material = 0x7f040018;
-		public static final int notification_media_action = 0x7f04007b;
-		public static final int notification_media_cancel_action = 0x7f04007c;
-		public static final int notification_template_big_media = 0x7f04007d;
-		public static final int notification_template_big_media_narrow = 0x7f04007e;
-		public static final int notification_template_lines = 0x7f04007f;
-		public static final int notification_template_media = 0x7f040080;
-		public static final int notification_template_part_chronometer = 0x7f040081;
-		public static final int notification_template_part_time = 0x7f040082;
-		public static final int select_dialog_item_material = 0x7f040083;
-		public static final int select_dialog_multichoice_material = 0x7f040084;
-		public static final int select_dialog_singlechoice_material = 0x7f040085;
-		public static final int support_simple_spinner_dropdown_item = 0x7f04008b;
+		public static final int notification_media_action = 0x7f04007c;
+		public static final int notification_media_cancel_action = 0x7f04007d;
+		public static final int notification_template_big_media = 0x7f04007e;
+		public static final int notification_template_big_media_narrow = 0x7f04007f;
+		public static final int notification_template_lines = 0x7f040080;
+		public static final int notification_template_media = 0x7f040081;
+		public static final int notification_template_part_chronometer = 0x7f040082;
+		public static final int notification_template_part_time = 0x7f040083;
+		public static final int select_dialog_item_material = 0x7f040086;
+		public static final int select_dialog_multichoice_material = 0x7f040087;
+		public static final int select_dialog_singlechoice_material = 0x7f040088;
+		public static final int support_simple_spinner_dropdown_item = 0x7f04008e;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f070000;

@@ -200,25 +200,12 @@ public class CarrierInfoDB {
 
     }
 
-    public static void UpdateTimeZone() {
-        MySQLiteOpenHelper helper = null;
-        SQLiteDatabase database = null;
-        try {
-            helper = new MySQLiteOpenHelper(Utility.context);
-            database = helper.getWritableDatabase();
-
-            ContentValues values = new ContentValues();
-            values.put("TimeZoneId", TimeZone.getDefault().getID());
-            database.update(MySQLiteOpenHelper.TABLE_CARRIER, values,
-                    " VehicleId > 0",
-                    null);
-        } catch (Exception e) {
-            Utility.printError(e.getMessage());
-            LogFile.write(CarrierInfoDB.class.getName() + "::UpdateTimeZone Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
-        } finally {
-            database.close();
-            helper.close();
-        }
+    public static void UpdateTimeZone(SQLiteDatabase database) {
+        ContentValues values = new ContentValues();
+        values.put("TimeZoneId", TimeZone.getDefault().getID());
+        database.update(MySQLiteOpenHelper.TABLE_CARRIER, values,
+                " VehicleId > 0",
+                null);
     }
 
 

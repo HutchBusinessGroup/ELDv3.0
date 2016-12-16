@@ -6,6 +6,7 @@ import com.hutchgroup.elog.beans.AlertBean;
 import com.hutchgroup.elog.beans.GPSData;
 import com.hutchgroup.elog.db.AlertDB;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -176,7 +177,7 @@ public class AlertMonitor {
     private void HighRPMGet() {
         double RPM = Double.parseDouble(CanMessages.RPM);
         if (!HighRPMVL) {
-            if (RPM > 1600d) {
+            if (RPM > 2000d) {
                 HighRPMVL = true;
                 HighRPMVLDate = System.currentTimeMillis();
 
@@ -188,7 +189,7 @@ public class AlertMonitor {
                 AlertDB.Save("HighRPMVL", "High RPM", Utility.getCurrentDateTime(), 0, 0, driverId);
             }
         } else {
-            if (RPM < 1600d) {
+            if (RPM < 2000d) {
                 HighRPMVL = false;
                 int duration = (int) ((System.currentTimeMillis() - HighRPMVLDate) / (1000 * 60));
                 int score = 0;
