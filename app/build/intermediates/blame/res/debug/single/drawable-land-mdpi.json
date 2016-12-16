@@ -1,34 +1,34 @@
 [
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tyre_jointer.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tyre_jointer.png"
+        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\warning_tire.png",
+        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\warning_tire.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_truck_trailer.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_truck_trailer.png"
+        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tyre_super_single.png",
+        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tyre_super_single.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\flagbar_freeze_bg_night.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\flagbar_freeze_bg_night.png"
+        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\flagbar_freeze_bg.png",
+        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\flagbar_freeze_bg.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\flagbar_freeze_bg.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\flagbar_freeze_bg.png"
+        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\gray_tire.png",
+        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\gray_tire.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tyre_super_single.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tyre_super_single.png"
+        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tyre_jointer.png",
+        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tyre_jointer.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\warning_tire.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\warning_tire.png"
+        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\flagbar_freeze_bg_night.png",
+        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\flagbar_freeze_bg_night.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\error_tire.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\error_tire.png"
+        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_truck_trailer.png",
+        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_truck_trailer.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\gray_tire.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\gray_tire.png"
+        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\error_tire.png",
+        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\error_tire.png"
     }
 ]
