@@ -44,6 +44,8 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
         }
     }
 
+    int i = 0;
+
     private void StartThread() {
         if (thScores != null) {
             thScores.interrupt();
@@ -84,10 +86,15 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
         arrayList.add(AddAlert("Sharp Turn Right", ".25", GForceMonitor._right + ""));
 
         final ScoreCardThresholdAdapter adapter = new ScoreCardThresholdAdapter(R.layout.fragment_score_card, arrayList);
+
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-
+                if (i == 300 && Utility.motionFg) {
+                    ScoreCardGet(isCurrentDate);
+                    i = 0;
+                }
+                i++;
                 lvValues.setAdapter(adapter);
             }
         });
