@@ -177,19 +177,12 @@ public class AlertMonitor {
     private void HighRPMGet() {
         double RPM = Double.parseDouble(CanMessages.RPM);
         if (!HighRPMVL) {
-            if (RPM > 2000d) {
+            if (RPM > 1600d) {
                 HighRPMVL = true;
                 HighRPMVLDate = System.currentTimeMillis();
-
-                int driverId = Utility.activeUserId;
-                if (driverId == 0) {
-                    driverId = Utility.unIdentifiedDriverId;
-                }
-
-                AlertDB.Save("HighRPMVL", "High RPM", Utility.getCurrentDateTime(), 0, 0, driverId);
             }
         } else {
-            if (RPM < 2000d) {
+            if (RPM < 1600d) {
                 HighRPMVL = false;
                 int duration = (int) ((System.currentTimeMillis() - HighRPMVLDate) / (1000 * 60));
                 int score = 0;
@@ -200,15 +193,23 @@ public class AlertMonitor {
                 } else if (duration > 5 && duration < 20) {
                     score += 2;
                 }
+                if (duration >= 5) {
+                    if (MaxRPM > 2000) {
+                        score += 20;
+                    } else if (MaxRPM >= 1800 && MaxRPM <= 2000) {
+                        score += 8;
+                    } else {
+                        score += 2;
+                    }
 
-                if (MaxRPM > 2000) {
-                    score += 20;
-                } else if (MaxRPM >= 1800 && MaxRPM <= 2000) {
-                    score += 8;
-                } else {
-                    score += 2;
+                    int driverId = Utility.activeUserId;
+                    if (driverId == 0) {
+                        driverId = Utility.unIdentifiedDriverId;
+                    }
+                    AlertDB.Save("HighRPMVL", "High RPM", Utility.getCurrentDateTime(), score, duration, driverId);
                 }
-                AlertDB.Update("HighRPMVL", duration, score);
+                // high raving 2000-2200,2200-2400 and >2400
+              //  AlertDB.Update("HighRPMVL", duration, score);
 
             } else {
                 if (RPM > MaxRPM) {
