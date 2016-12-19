@@ -194,9 +194,9 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         if (oldVersion < 7) {
             db.execSQL(DATABASE_ALTER_CARRIER_TIMEZONEID);
-            CarrierInfoDB.UpdateTimeZone();
-        }
 
+            CarrierInfoDB.UpdateTimeZone(db);
+        }
 
         if (oldVersion < 8) {
             db.execSQL(TABLE_CREATE_ALERT);

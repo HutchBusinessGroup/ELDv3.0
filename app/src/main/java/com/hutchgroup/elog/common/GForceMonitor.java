@@ -45,7 +45,7 @@ public class GForceMonitor implements SensorEventListener {
     double pitch;
     public boolean highPassFilter = true;
     double lrForce = 0f;
-
+    public static float _acc, _break, _left, _right;
 
     @Override
     public void onSensorChanged(SensorEvent se) {
@@ -130,6 +130,12 @@ public class GForceMonitor implements SensorEventListener {
     private static final int SHARP_TURN_MIN_DIRECTION_CHANGE = 2;
 
     private void SharpTurnMonitor(float left_right_Force, boolean isLeft) {
+        if (isLeft) {
+            _left = left_right_Force;
+        } else {
+            _right = left_right_Force;
+        }
+
         if (left_right_Force > SHARP_TURN_THRESHOLD) {
             // get time
             long now = System.currentTimeMillis();
@@ -164,12 +170,19 @@ public class GForceMonitor implements SensorEventListener {
     float HARD_ACCLERATION_THRESHOLD = .25f;
     float HARD_BREAK_THRESHOLD = .40f;
 
+    private static final int MAX_TOTAL_ACC_DURATION_OF_EVENT = 1000;
     private static final int MAX_TOTAL_DURATION_OF_EVENT = 200;
 
     private static final int MIN_DIRECTION_CHANGE = 3;
 
 
     private void abForceMonitor(float abForce, boolean isAcc) {
+        if (isAcc) {
+            _acc = abForce;
+        } else {
+            _break = abForce;
+        }
+
         float threshold = isAcc ? HARD_ACCLERATION_THRESHOLD : HARD_BREAK_THRESHOLD;
         if (abForce > threshold) {
             // get time
@@ -181,7 +194,8 @@ public class GForceMonitor implements SensorEventListener {
 
             // check total duration
             long totalDuration = now - abFirstDirectionChangeTime;
-            if (totalDuration > MAX_TOTAL_DURATION_OF_EVENT) {
+            long durationThreshold = isAcc ? MAX_TOTAL_ACC_DURATION_OF_EVENT : MAX_TOTAL_DURATION_OF_EVENT;
+            if (totalDuration > durationThreshold) {
                 abDirectionChangeCount++;
                 if (abDirectionChangeCount == MIN_DIRECTION_CHANGE) {
 
@@ -198,6 +212,9 @@ public class GForceMonitor implements SensorEventListener {
         }
     }
 
+    public static void resetValues() {
+        _acc = _break = _left = _right = 0f;
+    }
 
     public interface IGForceMonitor {
 

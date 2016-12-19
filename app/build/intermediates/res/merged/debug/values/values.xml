@@ -568,6 +568,7 @@
     <dimen name="remaining_time_height_xhdpi">@dimen/width_percent_1</dimen>
     <dimen name="switch_driver_button_size">@dimen/width_percent_6</dimen>
     <dimen name="text_lab_size">14sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
     <dimen name="text_size_1">10sp</dimen>
     <dimen name="text_size_12">14sp</dimen>
     <dimen name="text_size_13">15sp</dimen>
@@ -1130,6 +1131,7 @@
     <string name="title_inspect_elog">Inspect eLog</string>
     <string name="title_inspection">View Inspection</string>
     <string name="title_new_inspection">New Inspection</string>
+    <string name="title_score_card">Driver Score Card</string>
     <string name="title_shipping_trailers">Shipping &amp; Trailers</string>
     <string name="title_tpms">TPMS</string>
     <string name="title_unidentified_event">Unidentified Event</string>

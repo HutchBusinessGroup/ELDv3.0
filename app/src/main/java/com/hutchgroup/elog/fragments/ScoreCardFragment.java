@@ -1,6 +1,7 @@
 package com.hutchgroup.elog.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,24 +10,104 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.adapters.ScoreCardAdapter;
+import com.hutchgroup.elog.adapters.ScoreCardThresholdAdapter;
 import com.hutchgroup.elog.beans.AlertBean;
+import com.hutchgroup.elog.common.CanMessages;
+import com.hutchgroup.elog.common.GForceMonitor;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.db.AlertDB;
 import com.hutchgroup.elog.db.HourOfServiceDB;
 
 import java.util.ArrayList;
 
+import static com.hutchgroup.elog.common.AlertMonitor.PostedSpeed;
+import static com.hutchgroup.elog.common.AlertMonitor.PostedSpeedThreshold;
+
 public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
 
     CheckBox swMonthly;
-    ListView lvScoreCard;
+    ListView lvScoreCard, lvValues;
     boolean isCurrentDate = true;
+    public static boolean IsTesting = true;
+
+    Thread thScores;
+
+    private void StopThread() {
+        if (thScores != null) {
+            thScores.interrupt();
+            thScores = null;
+        }
+    }
+
+    int i = 0;
+
+    private void StartThread() {
+        if (thScores != null) {
+            thScores.interrupt();
+            thScores = null;
+        }
+        thScores = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    if (Thread.interrupted())
+                        break;
+                    try {
+                        Thread.sleep(1000);
+                        setAlert();
+                    } catch (Exception exe) {
+                        break;
+                    }
+                }
+            }
+        });
+        thScores.setName("ScoresThread");
+        thScores.start();
+    }
 
     TextView tvDriving, tvDeduction, tvTotalScores;
+
+    private void setAlert() {
+        ArrayList<AlertBean> arrayList = new ArrayList<>();
+        arrayList.add(AddAlert("Low Washer Fluid", "80", CanMessages.WasherFluidLevel));
+        arrayList.add(AddAlert("Failure to warm up the engine", "80", CanMessages.CoolantTemperature));
+        arrayList.add(AddAlert("Low Engine Oil", "80", CanMessages.EngineOilLevel));
+        arrayList.add(AddAlert("Low Coolant Level", "80", CanMessages.EngineCoolantLevel));
+        arrayList.add(AddAlert("High RPM", "2000", CanMessages.RPM));
+        arrayList.add(AddAlert("Speed Violation", (PostedSpeed + PostedSpeedThreshold) + "", CanMessages.Speed));
+        arrayList.add(AddAlert("Hard Acceleration", ".25", GForceMonitor._acc + ""));
+        arrayList.add(AddAlert("Hard Breaking", ".40", GForceMonitor._break + ""));
+        arrayList.add(AddAlert("Sharp Turn Left", ".25", GForceMonitor._left + ""));
+        arrayList.add(AddAlert("Sharp Turn Right", ".25", GForceMonitor._right + ""));
+
+        final ScoreCardThresholdAdapter adapter = new ScoreCardThresholdAdapter(R.layout.fragment_score_card, arrayList);
+
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (i == 300 && Utility.motionFg) {
+                    ScoreCardGet(isCurrentDate);
+                    i = 0;
+                }
+                i++;
+                lvValues.setAdapter(adapter);
+            }
+        });
+    }
+
+
+    private AlertBean AddAlert(String Name, String threshold, String currentValue) {
+        AlertBean bean = new AlertBean();
+        bean.setAlertName(Name);
+        bean.setThreshold(threshold);
+        bean.setCurrentValue(currentValue);
+        return bean;
+    }
 
     public ScoreCardFragment() {
         // Required empty public constructor
@@ -44,6 +125,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
         View view = inflater.inflate(R.layout.fragment_score_card, container, false);
         AlertDB.mListener = this;
         initialize(view);
+        initializeTab(view);
         return view;
     }
 
@@ -84,10 +166,45 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
             }
         });
         lvScoreCard = (ListView) view.findViewById(R.id.lvScoreCard);
+        lvValues = (ListView) view.findViewById(R.id.lvValues);
         tvDriving = (TextView) view.findViewById(R.id.tvDriving);
         tvDeduction = (TextView) view.findViewById(R.id.tvDeduction);
         tvTotalScores = (TextView) view.findViewById(R.id.tvTotalScores);
         ScoreCardGet(isCurrentDate);
+    }
+
+    private void initializeTab(View view) {
+        TabHost host = (TabHost) view.findViewById(R.id.tabHost);
+        host.setup();
+        host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId) {
+                if (tabId == "Current") {
+                    StartThread();
+                } else {
+                }
+            }
+        });
+        //Tab 1
+        View tabview = createTabView(host.getContext(), "Current");
+        TabHost.TabSpec spec = host.newTabSpec("Current").setIndicator(tabview);
+        spec.setContent(R.id.tabActive);
+        host.addTab(spec);
+
+        //Tab 2
+        tabview = createTabView(host.getContext(), "Alerts");
+        spec = host.newTabSpec("Alerts").setIndicator(tabview);
+        spec.setContent(R.id.tabInActive);
+        host.addTab(spec);
+
+    }
+
+
+    private static View createTabView(final Context context, final String text) {
+        View view = LayoutInflater.from(context).inflate(R.layout.tabdesign, null);
+        TextView tv = (TextView) view.findViewById(R.id.tabsText);
+        tv.setText(text);
+        return view;
     }
 
     @Override

@@ -80,8 +80,8 @@ public class CanMessages {
 
     public static String Speed = "-1";
 
-    public static String OdometerReading = "0", EngineHours = "0", RPM = "-1", VIN = "", CoolantTemperature = "0", Voltage = "0", Boost = "0", TotalFuelConsumed = "0",
-            TotalIdleFuelConsumed = "0", TotalIdleHours = "0", TotalAverage = "0", WasherFluidLevel = "0", FuelLevel1 = "0", EngineCoolantLevel = "0", EngineOilLevel = "0", BrakeApplicationPressure = "0",
+    public static String OdometerReading = "0", EngineHours = "0", RPM = "-1", VIN = "", CoolantTemperature = "-99", Voltage = "0", Boost = "0", TotalFuelConsumed = "0",
+            TotalIdleFuelConsumed = "0", TotalIdleHours = "0", TotalAverage = "0", WasherFluidLevel = "-99", FuelLevel1 = "0", EngineCoolantLevel = "-99", EngineOilLevel = "-99", BrakeApplicationPressure = "0",
             BrakePrimaryPressure = "0", BrakeSecondaryPressure = "0";
     public static boolean CriticalWarningFg;
 
@@ -1490,7 +1490,7 @@ public class CanMessages {
         m_buffer = new byte[4096];
         m_count = 0;
 
-        long[] initPGN_AddFilter = {65265, 65217, 65262, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244, 65226, 65227};
+        long[] initPGN_AddFilter = {65265, 65217, 65262, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244, 65226, 65227, 65263, 65276};
 
         long[] initPGN_TxFilter = {65253, 65260, 65257, 65266, 65209, 65244, 65227};
 
@@ -1504,7 +1504,7 @@ public class CanMessages {
             sendCommand(message, outputStream);
         }
 
-        int[] initPID_AddFilter = {84, 102, 110, 168, 185, 190, 235, 236, 237, 245, 247, 250};
+        int[] initPID_AddFilter = {80, 84, 96, 98, 102, 110, 111, 168, 185, 190, 235, 236, 237, 245, 247, 250};
         int[] initPID_TxFilter = {235, 236, 237, 247, 250};
 
         for (int pid : initPID_AddFilter) {

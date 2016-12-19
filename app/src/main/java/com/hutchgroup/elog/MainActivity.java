@@ -2349,6 +2349,8 @@ public class MainActivity extends ELogMainActivity
     //Implement method of ELogMainActivity
     @Override
     public void freezeLayout() {
+        if (ScoreCardFragment.IsTesting)
+            return;
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -4702,6 +4704,7 @@ public class MainActivity extends ELogMainActivity
     }
 
     private void pauseGforce() {
+        GForceMonitor.resetValues();
         mSensorManager.unregisterListener(gForceMonitor, mAccelerometer);
         mSensorManager.unregisterListener(gForceMonitor, mMagneticField);
     }

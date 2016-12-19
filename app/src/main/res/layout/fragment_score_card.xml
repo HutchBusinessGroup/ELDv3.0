@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <CheckBox
             android:id="@+id/swMonthly"
@@ -60,13 +59,67 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-
-    <ListView
-        android:id="@+id/lvScoreCard"
+    <TabHost
+        android:id="@+id/tabHost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@color/eee"
-        android:dividerHeight="1dp"
-        android:listSelector="@android:color/transparent"></ListView>
+        android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tabActive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="24dp"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:paddingTop="14dp">
+
+                    <ListView
+                        android:id="@+id/lvValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@color/eee"
+                        android:dividerHeight="1dp"
+                        android:listSelector="@android:color/transparent"></ListView>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/tabInActive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="24dp"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:paddingTop="14dp">
+
+                    <ListView
+                        android:id="@+id/lvScoreCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@color/eee"
+                        android:dividerHeight="1dp"
+                        android:listSelector="@android:color/transparent"></ListView>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </TabHost>
 </LinearLayout>

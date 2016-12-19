@@ -6,6 +6,7 @@ import com.hutchgroup.elog.beans.AlertBean;
 import com.hutchgroup.elog.beans.GPSData;
 import com.hutchgroup.elog.db.AlertDB;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -61,7 +62,7 @@ public class AlertMonitor {
 
     private static void LowWasherFluidViolationGet() {
         double WasherFluidLevel = Double.parseDouble(CanMessages.WasherFluidLevel);
-        if (WasherFluidLevel < 80d) {
+        if (WasherFluidLevel != -99 && WasherFluidLevel < 80d) {
 
             int driverId = Utility.activeUserId;
 
@@ -75,7 +76,7 @@ public class AlertMonitor {
 
     private static void LowCoolantTemperatureViolationGet() {
         double CoolantTemperature = Double.parseDouble(CanMessages.CoolantTemperature);
-        if (CoolantTemperature < 80d) {
+        if (CoolantTemperature != -99 && CoolantTemperature < 80d) {
 
             int driverId = Utility.activeUserId;
 
@@ -89,7 +90,7 @@ public class AlertMonitor {
 
     private static void LowEngineOilViolationGet() {
         double EngineOilLevel = Double.parseDouble(CanMessages.EngineOilLevel);
-        if (EngineOilLevel < 80d) {
+        if (EngineOilLevel != -99 && EngineOilLevel < 80d) {
 
             int driverId = Utility.activeUserId;
 
@@ -103,7 +104,7 @@ public class AlertMonitor {
 
     private static void LowCoolantLevelViolationGet() {
         double EngineCoolantLevel = Double.parseDouble(CanMessages.EngineCoolantLevel);
-        if (EngineCoolantLevel < 80d) {
+        if (EngineCoolantLevel != -99 && EngineCoolantLevel < 80d) {
 
             int driverId = Utility.activeUserId;
 
@@ -180,12 +181,7 @@ public class AlertMonitor {
                 HighRPMVL = true;
                 HighRPMVLDate = System.currentTimeMillis();
 
-                int driverId = Utility.activeUserId;
-                if (driverId == 0) {
-                    driverId = Utility.unIdentifiedDriverId;
-                }
-
-                AlertDB.Save("HighRPMVL", "High RPM", Utility.getCurrentDateTime(), 0, 0, driverId);
+                Utility.saveAlerts("HighRPMVL", HighRPMVL, "HighRPMVLDate", HighRPMVLDate);
             }
         } else {
             if (RPM < 1600d) {
@@ -199,15 +195,25 @@ public class AlertMonitor {
                 } else if (duration > 5 && duration < 20) {
                     score += 2;
                 }
+                if (duration >= 5) {
+                    if (MaxRPM > 2000) {
+                        score += 20;
+                    } else if (MaxRPM >= 1800 && MaxRPM <= 2000) {
+                        score += 8;
+                    } else {
+                        score += 2;
+                    }
 
-                if (MaxRPM > 2000) {
-                    score += 20;
-                } else if (MaxRPM >= 1800 && MaxRPM <= 2000) {
-                    score += 8;
-                } else {
-                    score += 2;
+                    int driverId = Utility.activeUserId;
+                    if (driverId == 0) {
+                        driverId = Utility.unIdentifiedDriverId;
+                    }
+                    AlertDB.Save("HighRPMVL", "High RPM", Utility.getCurrentDateTime(), score, duration, driverId);
                 }
-                AlertDB.Update("HighRPMVL", duration, score);
+                HighRPMVLDate = 0;
+                Utility.saveAlerts("HighRPMVL", HighRPMVL, "HighRPMVLDate", HighRPMVLDate);
+                // high raving 2000-2200,2200-2400 and >2400
+                //  AlertDB.Update("HighRPMVL", duration, score);
 
             } else {
                 if (RPM > MaxRPM) {
@@ -227,7 +233,7 @@ public class AlertMonitor {
                 if (driverId == 0) {
                     driverId = Utility.unIdentifiedDriverId;
                 }
-
+                Utility.saveAlerts("HOSVLFg", HOSVLFg, "HOSVLDate", HOSVLDate);
                 AlertDB.Save("HOSVL", "Hours Of Service", Utility.getCurrentDateTime(), 5, 0, driverId);
             }
         } else {
@@ -245,6 +251,8 @@ public class AlertMonitor {
                     score += 5;
                 }
                 AlertDB.Update("HOSVL", duration, score);
+                HOSVLDate = 0;
+                Utility.saveAlerts("HOSVLFg", HOSVLFg, "HOSVLDate", HOSVLDate);
             }
         }
     }
@@ -261,7 +269,7 @@ public class AlertMonitor {
                     driverId = Utility.unIdentifiedDriverId;
                 }
 
-
+                Utility.saveAlerts("SpeedVLFg", SpeedVLFg, "SpeedVLDate", SpeedVLDate);
                 AlertDB.Save("SpeedVL", "Speed Violation", Utility.getCurrentDateTime(), 0, 0, driverId);
 
             }
@@ -285,6 +293,9 @@ public class AlertMonitor {
                     score += 1;
                 }
                 AlertDB.Update("SpeedVL", duration, score);
+
+                SpeedVLDate = 0;
+                Utility.saveAlerts("SpeedVLFg", SpeedVLFg, "SpeedVLDate", SpeedVLDate);
             } else {
                 if (speed > MaxSpeed) {
                     MaxSpeed = speed;
@@ -297,6 +308,19 @@ public class AlertMonitor {
     // 3 Aug 2016
     // send request to bluetooth device every 5 seconds
     public void startAlertMonitor() {
+        SpeedVLFg = Utility.getvAlert("SpeedVLFg");
+        if (SpeedVLFg) {
+            SpeedVLDate = Utility.gettAlert("SpeedVLDate");
+        }
+        HighRPMVL = Utility.getvAlert("HighRPMVL");
+        if (HighRPMVL) {
+            HighRPMVLDate = Utility.gettAlert("HighRPMVLDate");
+        }
+
+        HOSVLFg = Utility.getvAlert("HOSVLFg");
+        if (HOSVLFg) {
+            HOSVLDate = Utility.gettAlert("HOSVLDate");
+        }
 
         if (thAlertMonitor != null) {
             thAlertMonitor.interrupt();
@@ -311,12 +335,14 @@ public class AlertMonitor {
                         Thread.sleep(1000);
                     } catch (InterruptedException exe) {
                     }
-                    CriticalWarningViolationGet();
-                    IdlingViolationGet();
-                    HighRPMGet();
-                    HOSViolationGet();
-                    // monitor speed violation
-                    SpeedViolationGet();
+                    if (CanMessages.mState == CanMessages.STATE_CONNECTED) {
+                        CriticalWarningViolationGet();
+                        IdlingViolationGet();
+                        HighRPMGet();
+                        HOSViolationGet();
+                        // monitor speed violation
+                        SpeedViolationGet();
+                    }
                 }
             }
         });
