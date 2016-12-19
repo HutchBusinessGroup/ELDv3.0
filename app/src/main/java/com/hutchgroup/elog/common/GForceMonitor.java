@@ -170,6 +170,7 @@ public class GForceMonitor implements SensorEventListener {
     float HARD_ACCLERATION_THRESHOLD = .25f;
     float HARD_BREAK_THRESHOLD = .40f;
 
+    private static final int MAX_TOTAL_ACC_DURATION_OF_EVENT = 1000;
     private static final int MAX_TOTAL_DURATION_OF_EVENT = 200;
 
     private static final int MIN_DIRECTION_CHANGE = 3;
@@ -193,7 +194,8 @@ public class GForceMonitor implements SensorEventListener {
 
             // check total duration
             long totalDuration = now - abFirstDirectionChangeTime;
-            if (totalDuration > MAX_TOTAL_DURATION_OF_EVENT) {
+            long durationThreshold = isAcc ? MAX_TOTAL_ACC_DURATION_OF_EVENT : MAX_TOTAL_DURATION_OF_EVENT;
+            if (totalDuration > durationThreshold) {
                 abDirectionChangeCount++;
                 if (abDirectionChangeCount == MIN_DIRECTION_CHANGE) {
 
