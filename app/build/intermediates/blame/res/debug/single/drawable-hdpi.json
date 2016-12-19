@@ -48,12 +48,12 @@
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_account_box_black_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_fab_uncertified_red.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_fab_uncertified_red.png"
-    },
-    {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_event_location_24.png",
         "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_event_location_24.png"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_fab_uncertified_red.png",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_fab_uncertified_red.png"
     },
     {
         "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_verified_user_black_36dp.png",

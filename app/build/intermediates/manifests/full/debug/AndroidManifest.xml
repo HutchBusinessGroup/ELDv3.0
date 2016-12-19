@@ -33,6 +33,9 @@
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.magnetic_field"
+        android:required="true" />
     <!-- Android Maps API V2 -->
     <permission
         android:name="com.hutchgroup.elog.permission.MAPS_RECEIVE"
