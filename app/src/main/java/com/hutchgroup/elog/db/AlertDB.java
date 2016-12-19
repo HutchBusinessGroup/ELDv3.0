@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.beans.AlertBean;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.Utility;
@@ -265,4 +266,6 @@ public class AlertDB {
         }
         return alertList;
     }
+
+
 }
