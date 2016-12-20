@@ -283,6 +283,7 @@ public class AlertMonitor {
                 } else if (duration > 2) {
                     score += 2;
                 }
+
                 if (MaxSpeed > PostedSpeed + 40) {
                     score += 32;
                 } else if (MaxSpeed > PostedSpeed + 30 && MaxSpeed <= PostedSpeed + 40) {
