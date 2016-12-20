@@ -5,6 +5,8 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.util.Log;
 
+import com.hutchgroup.elog.MainActivity;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -16,6 +18,8 @@ import java.util.UUID;
  */
 
 public class Tpms {
+
+    public static final String TPMS_NAME = "TPMS";
     String TAG = "Tpms";
     // Member fields
     private final BluetoothAdapter mAdapter;
@@ -416,4 +420,69 @@ public class Tpms {
     public static void setnewreceived() {
         newreceived = true;
     }
+
+    Thread thCanHB = null;
+
+    public void StartTpmsHB() {
+        if (thCanHB != null) {
+            thCanHB.interrupt();
+            thCanHB = null;
+        }
+
+        thCanHB = new Thread(runnableHB);
+        thCanHB.setName("TpmsHB");
+        thCanHB.start();
+    }
+
+    public void StopTpmsHB() {
+        if (thCanHB != null) {
+            thCanHB.interrupt();
+            thCanHB = null;
+        }
+    }
+
+
+    public static String deviceAddress;
+    int connectRequest = 1; // connect to bluetooth if disconnected
+    private Runnable runnableHB = new Runnable() {
+        @Override
+        public void run() {
+            try {
+                while (mState != STATE_CONNECTED && connectRequest < 60) {
+                    Thread.sleep(1000);
+                    connectRequest++;
+                }
+                connectRequest = 1;
+            } catch (InterruptedException e) {
+
+            }
+
+            while (true) {
+                try {
+                    Thread.sleep(1000);
+                    if (MainActivity.undockingMode) {
+                        continue;
+                    }
+                    // reconnect logic
+                    else if (mState == STATE_LISTEN) {
+                        if (connectRequest == 60) {
+                            connectRequest = 1;
+                            // Get the BluetoothDevice object
+                            BluetoothDevice device = mAdapter.getRemoteDevice(deviceAddress);
+                            Log.i("TPMS", "Connect...");
+                            // Attempt to connect to the device
+                            Tpms.this.connect(device, true);
+                        } else {
+                            connectRequest++;
+                        }
+                    }
+
+                } catch (InterruptedException e) {
+                    break;
+                }
+
+            }
+        }
+    };
+
 }

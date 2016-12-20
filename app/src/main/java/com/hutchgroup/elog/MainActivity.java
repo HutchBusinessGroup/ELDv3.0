@@ -92,6 +92,7 @@ import com.hutchgroup.elog.common.GForceMonitor;
 import com.hutchgroup.elog.common.GetCall;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.SPNMap;
+import com.hutchgroup.elog.common.Tpms;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.common.ZoneList;
 import com.hutchgroup.elog.db.AlertDB;
@@ -2998,7 +2999,7 @@ public class MainActivity extends ELogMainActivity
                     public void run() {
                         // start can heart beat
                         objCan.StartCanHB();
-
+                        objTpms.StartTpmsHB();
                         loadDailyLog();
                         if (ConstantFlag.AUTOSTART_MODE) {
                             startService(new Intent(MainActivity.this, AutoStartService.class));
@@ -3740,6 +3741,7 @@ public class MainActivity extends ELogMainActivity
         objCan.stop();
         // stop can heart beat
         objCan.StopCanHB();
+        objTpms.StopTpmsHB();
         //disable all
         bEditEvent = false;
         bEditEvent = false;
@@ -4036,7 +4038,55 @@ public class MainActivity extends ELogMainActivity
 
     }
 
+    // Created By: Deepak Sharma
+    // Created Date: 26 June 2016
+    // Purpose: initialize bluetooth tpms
+    private void initializeTpms() {
+        Thread thread = new Thread(new Runnable() {
+            public void run() {
+                try {
+                    if (!adapter.isEnabled()) {
+                        Thread.sleep(60000);
+                        initializeTpms();
+                        return;
+                    }
+                    String deviceAddress = "";
+                    adapter = BluetoothAdapter.getDefaultAdapter();
+                    Set<BluetoothDevice> devices = adapter.getBondedDevices();
+                    for (BluetoothDevice device : devices) {
+
+                        if (device.getName().startsWith(Tpms.TPMS_NAME)) {
+                            deviceAddress = device.getAddress();
+                            break;
+                        }
+                    }
+
+                    Log.d(TAG, "address=" + deviceAddress);
+                    if (deviceAddress == null) {
+
+                        Thread.sleep(60000);
+                        initializeTpms();
+
+                    } else {
+                        BluetoothDevice device = adapter.getRemoteDevice(deviceAddress);
+                        Tpms.deviceAddress = deviceAddress;
+                        objTpms.connect(device, true);
+                        objTpms.StartTpmsHB();
+                    }
+
+                } catch (Exception e) {
+
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.setName("Thread-TPMSInitialize");
+        thread.start();
+
+    }
+
     CanMessages objCan = new CanMessages();
+    Tpms objTpms = new Tpms();
 
     private void connectDevice(boolean secure) {
         // Get the device MAC address

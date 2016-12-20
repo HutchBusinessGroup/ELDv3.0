@@ -52,7 +52,7 @@ public class ScoreCardThresholdAdapter extends ArrayAdapter<AlertBean> {
 
         AlertBean bean = data.get(position);
         String currentValue = "N/A";
-        if (bean.getCurrentValue() != "-99" || bean.getCurrentValue() != "-1") {
+        if (bean.getCurrentValue() != "-99" && bean.getCurrentValue() != "-1") {
             currentValue = bean.getCurrentValue();
         }
         viewHolder.tvAlertName.setText(bean.getAlertName());
