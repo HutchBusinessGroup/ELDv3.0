@@ -28,6 +28,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String TABLE_DIAGNOSTIC_INDICATOR = "DiagnosticIndicator";
     public static final String TABLE_DTC = "DTCCODE";
     public static final String TABLE_ALERT = "Alert";
+    public static final String TABLE_TPMS = "Tpms";
 
     public static final String COLUMN_ID = "_id";
     private static final String DATABASE_NAME = "EDL.db";
@@ -122,6 +123,10 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String TABLE_CREATE_ALERT = "create table "
             + TABLE_ALERT
             + "(_id INTEGER PRIMARY KEY AUTOINCREMENT,AlertCode text,AlertName text,AlertDateTime text,Duration INTEGER,Scores INTEGER,DriverId INTEGER,VehicleId INTEGER,SyncFg INTEGER)";
+
+    private static final String TABLE_CREATE_TPMS = "create table "
+            + TABLE_TPMS
+            + "(_id INTEGER PRIMARY KEY AUTOINCREMENT,SensorId text,Temperature Integer,Pressure Integer,Voltage text,CreatedDate text,ModifiedDate text,DriverId INTEGER,VehicleId INTEGER,SyncFg INTEGER)";
 
     private static final String DATABASE_ALTER_DAILYLOG_DRIVINGTIMEREMAINING = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN DrivingTimeRemaining INTEGER";
     private static final String DATABASE_ALTER_DAILYLOG_WORKSHIFTTIMEREMAINING = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN WorkShiftTimeRemaining INTEGER";

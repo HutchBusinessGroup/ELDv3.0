@@ -7,10 +7,14 @@ import android.nfc.Tag;
 import android.util.Log;
 
 import com.hutchgroup.elog.MainActivity;
+import com.hutchgroup.elog.beans.TPMSBean;
+import com.hutchgroup.elog.db.TpmsDB;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.UUID;
 
 
@@ -33,9 +37,6 @@ public class Tpms {
     public static final int STATE_CONNECTING = 2; // now initiating an outgoing connection
     public static final int STATE_CONNECTED = 3;  // now connected to a remote device
 
-
-    private static int[] TpmsData = new int[4];
-    private static boolean newreceived;
     private static ConnectThread mConnectThread;
     private static ConnectedThread mConnectedThread;
 
@@ -323,7 +324,7 @@ public class Tpms {
                         mmInStream.close();
                         break;
                     }
-                    parse(buffer);
+                    parse(buffer, buf_len);
 
                 } catch (IOException e) {
                     errorMessage = "Tpms: IOException: " + e.getMessage();
@@ -381,21 +382,16 @@ public class Tpms {
         Log.i(TAG, data);
     }
 
-    void parse(byte[] readBuf) {
+    private static ArrayList<TPMSBean> tmpsData = new ArrayList<>();
+
+    void parse(byte[] readBuf, int length) {
         // only taken first sentence to parse data
-        if (readBuf[0] == 84 && readBuf[1] == 80 && readBuf[2] == 86  && readBuf.length >= 12) {//&& readBuf[3] == 44
+        if (readBuf[0] == 84 && readBuf[1] == 80 && readBuf[2] == 86 && length >= 12) {//&& readBuf[3] == 44
             int ibuf = 0;
             for (int ii = 4; ii < 11; ii++) {
                 ibuf += Tpms.this.B2I(readBuf[ii]);
             }
             if (ibuf % 256 == Tpms.this.B2I(readBuf[11]) % 256) {
-                /*int si;
-                long li = ((((0 | ((long) (readBuf[4] < 0 ? readBuf[4] + 256 : readBuf[4]))) << 8) | ((long) (readBuf[5] < 0 ? readBuf[5] + 256 : readBuf[5]))) << 8) | ((long) (readBuf[6] < 0 ? readBuf[6] + 256 : readBuf[6]));
-                if (readBuf[7] < 0) {
-                    si = readBuf[7] + 256;
-                } else {
-                    si = readBuf[7];
-                }*/
 
                 StringBuilder sb = new StringBuilder();
                 for (int i = 3; i <= 7; i++) {
@@ -406,17 +402,53 @@ public class Tpms {
                     sb.append(" ");
 
                 }
-                String id = sb.toString();
+                String sensorId = sb.toString();
                 int temperature = Tpms.this.B2I(readBuf[8]) - 50;
                 int pressure = Tpms.this.B2I(readBuf[9]);
-                int voltage = Tpms.this.B2I(readBuf[10]);
-                // putTpmsData(0, id);
-                putTpmsData(1, temperature);
-                putTpmsData(2, pressure);
-                putTpmsData(3, voltage);
-                setnewreceived();
-                Log.i(TAG, "SensorId: " + id + ", Temperature: " + temperature + ", pressure: " + pressure + ", voltage: " + (voltage * 1.0f / 50.0f));
+                float voltage = Tpms.this.B2I(readBuf[10]) / 50.0f;
+                SaveTpmsData(sensorId, temperature, pressure, voltage + "");
+                //  Log.i(TAG, "SensorId: " + sensorId + ", Temperature: " + temperature + ", pressure: " + pressure + ", voltage: " + (voltage * 1.0f / 50.0f));
             }
+        }
+    }
+
+    private static void SaveTpmsData(String sensorId, int temperature, int pressure, String voltage) {
+        String currentDate = Utility.getCurrentDateTime();
+        boolean newSensorId = true;
+        for (TPMSBean bean : tmpsData) {
+            if (sensorId.equals(bean.getSensorId())) {
+                newSensorId = false;
+                float timestamp = Utility.getDiffMins(bean.getCreatedDate(), currentDate);
+                if (timestamp < 300)
+                    return;
+                int prevTemp = bean.getTemperature();
+                int prevPressure = bean.getPressure();
+                String prevVoltage = bean.getVoltage();
+                if (!(temperature == prevTemp && pressure == prevPressure && voltage.equals(prevVoltage))) {
+                    bean.setNew(true);
+                    bean.setTemperature(temperature);
+                    bean.setPressure(pressure);
+                    bean.setVoltage(voltage);
+                    bean.setCreatedDate(currentDate);
+                    bean.setModifiedDate(currentDate);
+                    bean.setDriverId(Utility.activeUserId);
+                    TpmsDB.Save(bean);
+                }
+                break;
+            }
+        }
+
+        if (newSensorId) {
+            TPMSBean bean = new TPMSBean();
+            bean.setNew(true);
+            bean.setTemperature(temperature);
+            bean.setPressure(pressure);
+            bean.setVoltage(voltage);
+            bean.setCreatedDate(currentDate);
+            bean.setModifiedDate(currentDate);
+            bean.setDriverId(Utility.activeUserId);
+            tmpsData.add(bean);
+            TpmsDB.Save(bean);
         }
     }
 
@@ -426,30 +458,6 @@ public class Tpms {
         return (Bd & 128) == 0 ? ii : ii + 256;
     }
 
-    public static void putTpmsData(int index, int data) {
-        if (index < 4 && index >= 0) {
-            TpmsData[index] = data;
-        }
-    }
-
-    public static int getTpmsData(int index) {
-        if (index >= 4 || index < 0) {
-            return 0;
-        }
-        return TpmsData[index];
-    }
-
-    public static boolean isnewreceived() {
-        return newreceived;
-    }
-
-    public static void clearnewreceived() {
-        newreceived = false;
-    }
-
-    public static void setnewreceived() {
-        newreceived = true;
-    }
 
     Thread thCanHB = null;
 
