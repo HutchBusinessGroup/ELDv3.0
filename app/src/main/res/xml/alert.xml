@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alerts>
+    <alert id="SpeedVL">Speed Violation</alert>
+    <alert id="HardBreakingVL">Hard Breaking</alert>
+    <alert id="HardAccelerationVL">Hard Acceleration</alert>
+    <alert id="SharpTurnLeftVL">Sharp Turn Left</alert>
+    <alert id="SharpTurnRightVL">Sharp Turn Right</alert>
+    <alert id="HOSVL">Hours Of Service</alert>
+    <alert id="NoTripInspectionVL">Failure to conduct Trip Inspection</alert>
+    <alert id="IdlingVL">Idling</alert>
+    <alert id="NoCheckBreakVL">Failure to Check Break at designated spots</alert>
+    <alert id="SpeedingDowngradVL">Speeding downgrade</alert>
+    <alert id="TPMSWarningVL">TPMS Warning</alert>
+    <alert id="TrailerBrakesVL">Only Using Trailer Brakes</alert>
+    <alert id="LowAirPressureVL">Driving with low air pressure in braking system</alert>
+    <alert id="AirSuspensionVL">Driving with deinflated air suspension</alert>
+    <alert id="CriticalWarningVL">Driving with critical warning alerts</alert>
+    <alert id="HighGearDowngradeVL">High gear downgrade</alert>
+    <alert id="LowEngineOilVL">Low Engine Oil</alert>
+    <alert id="LowCoolantLevelVL">Low Coolant Level</alert>
+    <alert id="LowCoolantTemperatureVL">Failure to warm up the engine</alert>
+    <alert id="LowWasherFluidVL">Low Washer Fluid</alert>
+    <alert id="HighRPMVL">High RPM</alert>
+    <alert id="CheckEngineVL">Driving with Check Engine Light On</alert>
+    <alert id="CruiseControlVL">Failure to use cruise control </alert>
+    <alert id="TopGearVL">Failure to use Top Gear</alert>
+    <alert id="FuelEconomyVL">Low Fuel Economy</alert>
+</alerts>

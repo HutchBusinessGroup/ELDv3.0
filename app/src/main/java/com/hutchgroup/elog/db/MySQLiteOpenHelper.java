@@ -27,10 +27,11 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String TABLE_SETTINGS = "Settings";
     public static final String TABLE_DIAGNOSTIC_INDICATOR = "DiagnosticIndicator";
     public static final String TABLE_DTC = "DTCCODE";
+    public static final String TABLE_ALERT = "Alert";
 
     public static final String COLUMN_ID = "_id";
     private static final String DATABASE_NAME = "EDL.db";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
 
     private static final String TABLE_CREATE_CARRIER = "create table "
             + TABLE_CARRIER
@@ -118,12 +119,15 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + TABLE_DTC
             + "("
             + "_id INTEGER PRIMARY KEY AUTOINCREMENT,DateTime text,spn INTEGER, Protocol text, spnDescription text, fmi INTEGER, fmiDescription text,Occurrence INTEGER, SyncFg INTEGER, status INTEGER)";
+    private static final String TABLE_CREATE_ALERT = "create table "
+            + TABLE_ALERT
+            + "(_id INTEGER PRIMARY KEY AUTOINCREMENT,AlertCode text,AlertName text,AlertDateTime text,Duration INTEGER,Scores INTEGER,DriverId INTEGER,VehicleId INTEGER,SyncFg INTEGER)";
 
     private static final String DATABASE_ALTER_DAILYLOG_DRIVINGTIMEREMAINING = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN DrivingTimeRemaining INTEGER";
     private static final String DATABASE_ALTER_DAILYLOG_WORKSHIFTTIMEREMAINING = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN WorkShiftTimeRemaining INTEGER";
     private static final String DATABASE_ALTER_DAILYLOG_TIMEREMAINING70 = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN TimeRemaining70 INTEGER";
     private static final String DATABASE_ALTER_DAILYLOG_TIMEREMAINING120 = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN TimeRemaining120 INTEGER";
-    private static final String DATABASE_ALTER_DAILYLOG_TIMEREMAININGUS70= "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN TimeRemainingUS70 INTEGER";
+    private static final String DATABASE_ALTER_DAILYLOG_TIMEREMAININGUS70 = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN TimeRemainingUS70 INTEGER";
     private static final String DATABASE_ALTER_DAILYLOG_TIMEREMAININGRESET = "ALTER TABLE " + TABLE_DAILYLOG + " ADD COLUMN TimeRemainingReset INTEGER";
     private static final String DATABASE_ALTER_CARRIER_PLATENO = "ALTER TABLE " + TABLE_CARRIER + " ADD COLUMN PlateNo text";
     private static final String DATABASE_ALTER_TABLE_ACCOUNT = "ALTER TABLE " + TABLE_ACCOUNT + " ADD COLUMN DotPassword text";
@@ -155,6 +159,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(TABLE_CREATE_SETTINGS);
         db.execSQL(TABLE_CREATE_DIAGNOSTIC_INDICATOR);
         db.execSQL(TABLE_CREATE_DTC);
+        db.execSQL(TABLE_CREATE_ALERT);
     }
 
     @Override
@@ -169,32 +174,33 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             db.execSQL(DATABASE_ALTER_DAILYLOG_TIMEREMAININGRESET);
         }
 
-        if (oldVersion<3)
-        {
+        if (oldVersion < 3) {
             db.execSQL(DATABASE_ALTER_CARRIER_PLATENO);
         }
 
-        if (oldVersion<4)
-        {
+        if (oldVersion < 4) {
             db.execSQL(DATABASE_ALTER_TABLE_ACCOUNT);
         }
 
 
-        if (oldVersion<5)
-        {
+        if (oldVersion < 5) {
             db.execSQL(DATABASE_DELETE_EVENTS_DIAGNOSTIC);
         }
 
-        if (oldVersion<6)
-        {
+        if (oldVersion < 6) {
             db.execSQL(TABLE_CREATE_DTC);
         }
 
 
-        if (oldVersion<7)
-        {
+        if (oldVersion < 7) {
             db.execSQL(DATABASE_ALTER_CARRIER_TIMEZONEID);
-            CarrierInfoDB.UpdateTimeZone();
+
+            CarrierInfoDB.UpdateTimeZone(db);
         }
+
+        if (oldVersion < 8) {
+            db.execSQL(TABLE_CREATE_ALERT);
+        }
+
     }
 }

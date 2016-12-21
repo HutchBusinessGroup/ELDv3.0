@@ -1,10 +1,14 @@
 [
     {
-        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\xml\\preferences.xml"
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\xml\\preferences.xml"
     },
     {
-        "merged": "C:\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\timezones.xml",
-        "source": "C:\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\xml\\timezones.xml"
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\alert.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\xml\\alert.xml"
+    },
+    {
+        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\xml\\timezones.xml",
+        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\xml\\timezones.xml"
     }
 ]

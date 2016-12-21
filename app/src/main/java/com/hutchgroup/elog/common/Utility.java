@@ -76,7 +76,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static String CarrierName = "", ELDManufacturer = "", USDOT = "", UnitNo = "", VIN = "", TimeZoneOffsetUTC = "08", ShippingNumber = "", TrailerNumber = "", MACAddress = "", PlateNo = "", TimeZoneId;
     public static int TimeZoneOffset = 0;
 
-    public static String OdometerReadingSincePowerOn = "0", EngineHourSincePowerOn = "0", DiagnosticCode = "";
+    public static String OdometerReadingSincePowerOn = "0", EngineHourSincePowerOn = "0", DiagnosticCode = "", FuelUsedSincePowerOn = "0";
 
     public static int UnidentifiedDrivingTime = 0;
     public static int DrivingTime = 0;
@@ -879,6 +879,13 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         e.commit();
     }
 
+    public static void saveAlerts(String vName, boolean vValue, String vTimeName, long vTimeValue) {
+        SharedPreferences.Editor e = (context.getSharedPreferences("HutchGroup", context.MODE_PRIVATE)).edit();
+        e.putBoolean(vName, vValue);
+        e.putLong(vTimeName, vTimeValue);
+        e.commit();
+    }
+
 
     // save odometer reading and engine hours
     public static void saveLoginInfo(int driverId, int coDriverId, int activeUserId, int onScreenUserId) {
@@ -890,6 +897,15 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         e.commit();
     }
 
+    public static boolean getvAlert(String name) {
+        SharedPreferences sp = (context.getSharedPreferences("HutchGroup", context.MODE_PRIVATE));
+        return sp.getBoolean(name, false);
+    }
+
+    public static long gettAlert(String name) {
+        SharedPreferences sp = (context.getSharedPreferences("HutchGroup", context.MODE_PRIVATE));
+        return sp.getLong(name, 0);
+    }
 
     public static void hideKeyboard(Activity activity, View view) {
         InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);

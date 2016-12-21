@@ -1,5 +1,6 @@
 package com.hutchgroup.elog.common;
 
+import com.hutchgroup.elog.db.AlertDB;
 import com.hutchgroup.elog.db.DTCDB;
 import com.hutchgroup.elog.db.DailyLogDB;
 import com.hutchgroup.elog.db.TripInspectionDB;
@@ -145,7 +146,6 @@ public class PostCall {
         return status;
     }
 
-
     // Created By: Deepak Sharma
     // Created Date: 29 January 2016
     // Purpose: POST DTC SYNC
@@ -172,4 +172,33 @@ public class PostCall {
         }
         return status;
     }
+
+
+    // Created By: Deepak Sharma
+    // Created Date: 29 January 2016
+    // Purpose: POST DTC SYNC
+    public static boolean PostAlert() {
+        boolean status = true;
+        WebService ws = new WebService();
+
+        try {
+            String data = AlertDB.getAlertSync().toString();
+            if (data.equals("[]")) {
+                return status;
+            }
+
+            String result = ws.doPost(
+                    WebUrl.POST_ALERT,
+                    data);
+            if (result != null) {
+                AlertDB.AlertSyncUpdate();
+            }
+
+        } catch (Exception e) {
+            status = false;
+            Utility.printError(e.getMessage());
+        }
+        return status;
+    }
+
 }

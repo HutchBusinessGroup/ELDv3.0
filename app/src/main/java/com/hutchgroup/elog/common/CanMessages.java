@@ -80,11 +80,15 @@ public class CanMessages {
 
     public static String Speed = "-1";
 
-    public static String OdometerReading = "0", EngineHours = "0", RPM = "-1", VIN = "", CoolantTemperature = "0", Voltage = "0", Boost = "0", TotalFuelConsumed = "0",
-            TotalIdleFuelConsumed = "0", TotalIdleHours = "0", TotalAverage = "0";
+    public static String OdometerReading = "0", EngineHours = "0", RPM = "-1", VIN = "", CoolantTemperature = "-99", Voltage = "0", Boost = "0", TotalFuelConsumed = "0",
+            TotalIdleFuelConsumed = "0", TotalIdleHours = "0", TotalAverage = "0", WasherFluidLevel = "-99", FuelLevel1 = "0", EngineCoolantLevel = "-99", EngineOilLevel = "-99", BrakeApplicationPressure = "0",
+            BrakePrimaryPressure = "0", BrakeSecondaryPressure = "0";
+    public static boolean CriticalWarningFg;
+
     private static int supportedProtocol;
 
     public static long diagnosticEngineSynchronizationTime = System.currentTimeMillis();
+    public static long CanDataTime = System.currentTimeMillis();
 
     public CanMessages() {
         mAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -523,6 +527,7 @@ public class CanMessages {
     private void processPacket(byte[] packet) {
         int msgID = packet[2];
         if (msgID == RX_J1939) {
+            CanDataTime = System.currentTimeMillis();
             if (supportedProtocol == -1) {
                 supportedProtocol = RX_J1939;
             } else {
@@ -540,6 +545,15 @@ public class CanMessages {
             String[] fields;
             String out;
             switch (pgn) {
+                case 61441:
+                    i = (packet[15] & 0xFF);
+                    if (i.equals(MAX_16))
+                        break;
+                    String data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    data = data.substring(2, 3);
+                    CriticalWarningFg = (data == "01");
+                    // EBS Red Warning Signla
+                    break;
                 case 61444:
                     i = ((packet[14] & 0xFF) << 8) | (packet[13] & 0xFF);
                     if (i.equals(MAX_16))
@@ -901,8 +915,7 @@ public class CanMessages {
                     d = (i - 40) * 9 / 5.0 + 32;
                     out = String.format("%.1f%s", d, DEGREE);
                     CoolantTemperature = String.format("%.2f", d);
-                    // newData.put("Coolant", out); /* SPN 110 */
-                    //Log.i(TAG, "Coolant = " + out);
+
                     i = (packet[11] & 0xFF);
                     if (i.equals(MAX_8))
                         break;
@@ -914,14 +927,19 @@ public class CanMessages {
                     break;
 
                 case 65263:
-                    i = (packet[13] & 0xFF);
+                    i = (packet[12] & 0xFF); //engine oil level
                     if (i.equals(MAX_8))
                         break;
-                    d = i * 4 * KPA_TO_PSI;
-                    out = String.format("%.2f psi", d);
-                    // newData.put("Oil Pressure", out); /* SPN 100 */
-                    // Log.i(TAG, "Oil Pressure = " + out);
+                    d = i * .4;
+                    out = String.format("%.2f", d);
+                    EngineOilLevel = out;
 
+                    i = (packet[17] & 0xFF); //engine coolant level
+                    if (i.equals(MAX_8))
+                        break;
+                    d = i * .4;
+                    out = String.format("%.2f", d);
+                    EngineCoolantLevel = out;
                     break;
 
                 case 65265:
@@ -980,10 +998,48 @@ public class CanMessages {
                     Integer number = ((packet[15] & 0xFF) << 8) | (packet[14] & 0xFF);
                     float vol = number * 0.05f;
                     Voltage = String.format("%.2f", vol);
-                    ;
+                    break;
+                case 65274:
+                    i = (packet[10] & 0xFF); // brake application pressure
+                    if (i.equals(MAX_8))
+                        break;
+                    d = i * 4 * KPA_TO_PSI;
+                    out = String.format("%.2f", d);
+                    BrakeApplicationPressure = out;
+
+                    i = (packet[11] & 0xFF); // brake primary pressure
+                    if (i.equals(MAX_8))
+                        break;
+                    d = i * 4 * KPA_TO_PSI;
+                    out = String.format("%.2f", d);
+                    BrakePrimaryPressure = out;
+
+                    i = (packet[12] & 0xFF); // brake secondary pressure
+                    if (i.equals(MAX_8))
+                        break;
+                    d = i * 4 * KPA_TO_PSI;
+                    out = String.format("%.2f", d);
+
+                    BrakeSecondaryPressure = out;
+                    break;
+                case 65276:
+                    i = (packet[10] & 0xFF);
+                    if (i.equals(MAX_16))
+                        break;
+                    d = i * 0.4;
+                    out = String.format("%.0f ", d);
+                    WasherFluidLevel = out;
+
+                    i = (packet[11] & 0xFF);
+                    if (i.equals(MAX_16))
+                        break;
+                    d = i * 0.4;
+                    out = String.format("%.0f ", d);
+                    FuelLevel1 = out;
                     break;
             }
         } else if (msgID == RX_J1708) {
+            CanDataTime = System.currentTimeMillis();
             if (supportedProtocol == -1) {
                 supportedProtocol = RX_J1708;
             } else {
@@ -996,11 +1052,23 @@ public class CanMessages {
             Integer i;
             StringBuilder sb;
             switch (pid) {
+                case 80:
+                    d = (packet[6] & 0xFF) * 0.5;
+                    WasherFluidLevel = String.format("%.2f", d);
+                    break;
                 case 84:
                     d = (packet[6] & 0xFF) * 0.805;
                     Speed = d + "";
+                    break;
+                case 96:
+                    d = (packet[6] & 0xFF) * 0.5;
+                    FuelLevel1 = String.format("%.2f", d);
 //                    newData.put("Cruise", d + " mi");
                     Log.i(TAG, "Speed = " + d + " mi");
+                    break;
+                case 98:
+                    d = (packet[6] & 0xFF) * 0.5;
+                    EngineOilLevel = String.format("%.2f", d);
                     break;
                 case 100:
                     d = (packet[6] & 0xFF) * 0.5;
@@ -1023,6 +1091,23 @@ public class CanMessages {
                     CoolantTemperature = String.format("%.2f", d);
                     //  newData.put("Coolant", i + DEGREE);
                     Log.i(TAG, "Coolant = " + d + DEGREE);
+                    break;
+                case 111:
+                    d = (packet[6] & 0xFF) * 0.5;
+                    EngineCoolantLevel = String.format("%.2f", d);
+                    break;
+                case 116:
+                    d = (packet[6] & 0xFF) * 4.14 * KPA_TO_PSI;
+                    BrakeApplicationPressure = String.format("%.2f", d);
+
+                    break;
+                case 117:
+                    d = (packet[6] & 0xFF) * 4.14 * KPA_TO_PSI;
+                    BrakePrimaryPressure = String.format("%.2f", d);
+                    break;
+                case 118:
+                    d = (packet[6] & 0xFF) * 4.14 * KPA_TO_PSI;
+                    BrakeSecondaryPressure = String.format("%.2f", d);
                     break;
                 case 174:
                     d = ((packet[6] & 0xFF) | ((packet[7] & 0xFF) << 8)) * 0.25;
@@ -1405,7 +1490,7 @@ public class CanMessages {
         m_buffer = new byte[4096];
         m_count = 0;
 
-        long[] initPGN_AddFilter = {65265, 65217, 65262, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244, 65226, 65227};
+        long[] initPGN_AddFilter = {65265, 65217, 65262, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244, 65226, 65227, 65263, 65276};
 
         long[] initPGN_TxFilter = {65253, 65260, 65257, 65266, 65209, 65244, 65227};
 
@@ -1419,7 +1504,7 @@ public class CanMessages {
             sendCommand(message, outputStream);
         }
 
-        int[] initPID_AddFilter = {84, 102, 110, 168, 185, 190, 235, 236, 237, 245, 247, 250};
+        int[] initPID_AddFilter = {80, 84, 96, 98, 102, 110, 111, 168, 185, 190, 235, 236, 237, 245, 247, 250};
         int[] initPID_TxFilter = {235, 236, 237, 247, 250};
 
         for (int pid : initPID_AddFilter) {

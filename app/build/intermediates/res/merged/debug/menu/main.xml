@@ -38,13 +38,13 @@
         android:icon="@drawable/ic_back"
         android:orderInCategory="105"
         android:title="@string/action_back_one_day"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_forward_one_day"
         android:icon="@drawable/ic_forward"
         android:orderInCategory="106"
         android:title="@string/action_forward_one_day"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_send"

@@ -25,6 +25,8 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -80,16 +82,20 @@ import com.hutchgroup.elog.beans.UserBean;
 import com.hutchgroup.elog.beans.VersionInformationBean;
 import com.hutchgroup.elog.bll.HourOfService;
 import com.hutchgroup.elog.common.AlarmSetter;
+import com.hutchgroup.elog.common.AlertMonitor;
 import com.hutchgroup.elog.common.CanMessages;
 import com.hutchgroup.elog.common.ChatClient;
 import com.hutchgroup.elog.common.ConstantFlag;
 import com.hutchgroup.elog.common.CustomDateFormat;
 import com.hutchgroup.elog.common.DiagnosticMalfunction;
+import com.hutchgroup.elog.common.GForceMonitor;
 import com.hutchgroup.elog.common.GetCall;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.SPNMap;
+import com.hutchgroup.elog.common.Tpms;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.common.ZoneList;
+import com.hutchgroup.elog.db.AlertDB;
 import com.hutchgroup.elog.db.CarrierInfoDB;
 import com.hutchgroup.elog.db.DailyLogDB;
 import com.hutchgroup.elog.db.EventDB;
@@ -116,6 +122,7 @@ import com.hutchgroup.elog.fragments.NewEventFragment;
 import com.hutchgroup.elog.fragments.NewInspectionFragment;
 import com.hutchgroup.elog.fragments.OutputFileSendDialog;
 import com.hutchgroup.elog.fragments.PopupDialog;
+import com.hutchgroup.elog.fragments.ScoreCardFragment;
 import com.hutchgroup.elog.fragments.SettingsFragment;
 import com.hutchgroup.elog.fragments.ShutDownDeviceDialog;
 import com.hutchgroup.elog.fragments.TabSystemFragment;
@@ -145,7 +152,7 @@ public class MainActivity extends ELogMainActivity
         NewEventFragment.OnFragmentInteractionListener, DetailFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener,
         UserListFragment.OnFragmentInteractionListener, BluetoothConnectivityFragment.OnFragmentInteractionListener, OutputFileSendDialog.OutputFileDialogInterface,
         DvirFragment.OnFragmentInteractionListener, DailyLogDashboardFragment.OnFragmentInteractionListener, TpmsFragment.OnFragmentInteractionListener, TabSystemFragment.OnFragmentInteractionListener,
-        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener {
+        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener, GForceMonitor.IGForceMonitor {
 
     private PopupDialog ponDutyChangeDialog;
     private boolean onDutyChangeDialogResponse, autoDismissOnDutyChangeDialog, isDialogShown;
@@ -172,6 +179,7 @@ public class MainActivity extends ELogMainActivity
     public final int Driver_Profile_Screen = 13;
     private final int Extra = 14;
     private final int DTC = 15;
+    private final int ScoreCard = 16;
     public static Date ViolationDT;
 
     BluetoothAdapter adapter = null;
@@ -423,6 +431,29 @@ public class MainActivity extends ELogMainActivity
         }
     };
 
+    private void onAcPower() {
+        Utility.showMsg("On AC Power");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(3000);
+                    if (gForceMonitor != null) {
+                        gForceMonitor.highPassFilter = true;
+                        resumeGforce();
+                    }
+                } catch (Exception exe) {
+                }
+            }
+        }).start();
+    }
+
+    private void onBatterPower() {
+
+        pauseGforce();
+        Utility.showMsg("On Batter Power");
+    }
+
     Thread thBatteryMonitor;
     private final static int levelThreshold = 60;
     private final static int shutDownThreshold = 30;
@@ -435,7 +466,15 @@ public class MainActivity extends ELogMainActivity
             //Intent intent = registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
             int plugged = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
             boolean isPlugged = (plugged == BatteryManager.BATTERY_PLUGGED_AC || plugged == BatteryManager.BATTERY_PLUGGED_USB);
-
+            if (GPSData.ACPowerFg == 0) {
+                if (isPlugged) {
+                    onAcPower();
+                }
+            } else {
+                if (!isPlugged) {
+                    onBatterPower();
+                }
+            }
             GPSData.ACPowerFg = (isPlugged ? 1 : 0);
             onUpdateBatteryIcon(level, isPlugged);
             if (level <= levelThreshold && !isPlugged) {
@@ -1276,11 +1315,15 @@ public class MainActivity extends ELogMainActivity
             onDutyChangeBuilder.setMessage("Do you wish to continue driving? Otherwise please change status").setPositiveButton("OK", onDutyChangeDialogClickListener);
 
             initializeBTBAlertDialog();
+            initializeGforce();
+            alertMonitor = new AlertMonitor();
+            alertMonitor.startAlertMonitor();
         } catch (Exception e) {
             LogFile.write(MainActivity.class.getName() + "::onCreate error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
         }
     }
 
+    AlertMonitor alertMonitor;
     LinearLayout layoutAlertBTB;
     TextView tvAlertHeader, tvAlertMessage;
     View vAlertBorder;
@@ -1376,6 +1419,9 @@ public class MainActivity extends ELogMainActivity
     public void onResume() {
         super.onResume();
         isAppActive = true;
+
+        //resumeGforce();
+
     }
 
     static boolean isAppActive = false;
@@ -1383,8 +1429,9 @@ public class MainActivity extends ELogMainActivity
     @Override
     public void onPause() {
 
-        super.onPause();
+        // pauseGforce();
         isAppActive = false;
+        super.onPause();
     }
 
     @Override
@@ -1460,8 +1507,8 @@ public class MainActivity extends ELogMainActivity
         //MenuItem backItem = menu.findItem(R.id.action_back_edit_event);
         MenuItem confirmItem = menu.findItem(R.id.action_confirm_web_event);
         MenuItem rejectItem = menu.findItem(R.id.action_reject_web_event);
-        MenuItem backOneDayItem = menu.findItem(R.id.action_back_one_day);
-        MenuItem forwardOneDayItem = menu.findItem(R.id.action_forward_one_day);
+      /*  MenuItem backOneDayItem = menu.findItem(R.id.action_back_one_day);
+        MenuItem forwardOneDayItem = menu.findItem(R.id.action_forward_one_day);*/
         MenuItem malfunctionItem = menu.findItem(R.id.action_malfunction);
         MenuItem diagnosticItem = menu.findItem(R.id.action_diagnostic);
         MenuItem inspectorModeItem = menu.findItem(R.id.action_inspector_mode);
@@ -1507,8 +1554,8 @@ public class MainActivity extends ELogMainActivity
             //editItem.setEnabled(true);
             //backItem.setIcon(R.drawable.edit_button);
             //backItem.setVisible(true);
-            backOneDayItem.setVisible(false);
-            forwardOneDayItem.setVisible(false);
+        /*    backOneDayItem.setVisible(false);
+            forwardOneDayItem.setVisible(false);*/
 
             if (bWebEvent) {
                 confirmItem.setVisible(true);
@@ -1526,7 +1573,7 @@ public class MainActivity extends ELogMainActivity
             //editItem.setVisible(false);
             //backItem.setVisible(false);
 
-            if (bInspectDailylog) {
+           /* if (bInspectDailylog) {
                 backOneDayItem.setVisible(true);
                 forwardOneDayItem.setVisible(true);
                 //item.setVisible(false);
@@ -1534,7 +1581,7 @@ public class MainActivity extends ELogMainActivity
                 backOneDayItem.setVisible(false);
                 forwardOneDayItem.setVisible(false);
                 //item.setVisible(true);
-            }
+            }*/
 
         }
 
@@ -2303,6 +2350,8 @@ public class MainActivity extends ELogMainActivity
     //Implement method of ELogMainActivity
     @Override
     public void freezeLayout() {
+        if (ScoreCardFragment.IsTesting)
+            return;
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -2702,9 +2751,9 @@ public class MainActivity extends ELogMainActivity
                     }
 
                     if (secondsLeft == 0) {
-                        if (GPSData.NoHOSViolationFgFg == 0) {
+                        if (GPSData.NoHOSViolationFgFg == 1) {
                             onUpdateViolation(true);
-                            GPSData.NoHOSViolationFgFg = 1;
+                            GPSData.NoHOSViolationFgFg = 0;
                         }
                         tvDrivingRemainingFreeze.setBackgroundResource(R.drawable.remaining_driving_hours_bg_red);
                     } else if (secondsLeft <= 3600) {
@@ -2715,17 +2764,15 @@ public class MainActivity extends ELogMainActivity
                     String timeRemaining = Utility.getTimeFromSeconds(secondsLeft);
                     tvDrivingRemainingFreeze.setText(timeRemaining);
                     if (secondsLeft > 0) {
-                        if (GPSData.NoHOSViolationFgFg == 1) {
+                        if (GPSData.NoHOSViolationFgFg == 0) {
                             onUpdateViolation(false);
-                            GPSData.NoHOSViolationFgFg = 0;
+                            GPSData.NoHOSViolationFgFg = 1;
                         }
                     }
                 }
-
             }
         });
     }
-
 
     //imgreezeSpeed,imgFreezeRPM,imgFreezeVoltage,imgFreezeCoolantTemp,imgFreezeThrPos;
     private void setSpeedRoatation() {
@@ -2952,7 +2999,7 @@ public class MainActivity extends ELogMainActivity
                     public void run() {
                         // start can heart beat
                         objCan.StartCanHB();
-
+                        objTpms.StartTpmsHB();
                         loadDailyLog();
                         if (ConstantFlag.AUTOSTART_MODE) {
                             startService(new Intent(MainActivity.this, AutoStartService.class));
@@ -3694,6 +3741,7 @@ public class MainActivity extends ELogMainActivity
         objCan.stop();
         // stop can heart beat
         objCan.StopCanHB();
+        objTpms.StopTpmsHB();
         //disable all
         bEditEvent = false;
         bEditEvent = false;
@@ -3990,7 +4038,55 @@ public class MainActivity extends ELogMainActivity
 
     }
 
+    // Created By: Deepak Sharma
+    // Created Date: 26 June 2016
+    // Purpose: initialize bluetooth tpms
+    private void initializeTpms() {
+        Thread thread = new Thread(new Runnable() {
+            public void run() {
+                try {
+                    if (!adapter.isEnabled()) {
+                        Thread.sleep(60000);
+                        initializeTpms();
+                        return;
+                    }
+                    String deviceAddress = "";
+                    adapter = BluetoothAdapter.getDefaultAdapter();
+                    Set<BluetoothDevice> devices = adapter.getBondedDevices();
+                    for (BluetoothDevice device : devices) {
+
+                        if (device.getName().startsWith(Tpms.TPMS_NAME)) {
+                            deviceAddress = device.getAddress();
+                            break;
+                        }
+                    }
+
+                    Log.d(TAG, "address=" + deviceAddress);
+                    if (deviceAddress == null) {
+
+                        Thread.sleep(60000);
+                        initializeTpms();
+
+                    } else {
+                        BluetoothDevice device = adapter.getRemoteDevice(deviceAddress);
+                        Tpms.deviceAddress = deviceAddress;
+                        objTpms.connect(device, true);
+                        objTpms.StartTpmsHB();
+                    }
+
+                } catch (Exception e) {
+
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.setName("Thread-TPMSInitialize");
+        thread.start();
+
+    }
+
     CanMessages objCan = new CanMessages();
+    Tpms objTpms = new Tpms();
 
     private void connectDevice(boolean secure) {
         // Get the device MAC address
@@ -4625,4 +4721,92 @@ public class MainActivity extends ELogMainActivity
         actionBar.setTitle(title);
     }
 
+    @Override
+    public void onLoadScoreCard() {
+        isOnDailyLog = false;
+        bInspectDailylog = false;
+
+        replaceFragment(ScoreCardFragment.newInstance());
+        previousScreen = currentScreen;
+        currentScreen = ScoreCard;
+        title = getApplicationContext().getResources().getString(R.string.title_score_card);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(title);
+    }
+
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer, mMagneticField;
+    private GForceMonitor gForceMonitor;
+
+    private void initializeGforce() {
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mMagneticField = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        gForceMonitor = new GForceMonitor();
+        gForceMonitor.setGForceChangeListener(this);
+    }
+
+    private void resumeGforce() {
+        if (GPSData.ACPowerFg == 0)
+            return;
+        mSensorManager.registerListener(gForceMonitor, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
+        mSensorManager.registerListener(gForceMonitor, mMagneticField, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    private void pauseGforce() {
+        GForceMonitor.resetValues();
+        mSensorManager.unregisterListener(gForceMonitor, mAccelerometer);
+        mSensorManager.unregisterListener(gForceMonitor, mMagneticField);
+    }
+
+    @Override
+    public void onLeftSharpTurn(float force) {
+
+        int driverId = Utility.activeUserId;
+
+        if (driverId == 0) {
+            driverId = Utility.unIdentifiedDriverId;
+        }
+
+        AlertDB.Save("SharpTurnLeftVL", "Sharp Turn Left", Utility.getCurrentDateTime(), 5, 0, driverId);
+    }
+
+    @Override
+    public void onRightSharpTurn(float force) {
+
+
+        int driverId = Utility.activeUserId;
+
+        if (driverId == 0) {
+            driverId = Utility.unIdentifiedDriverId;
+        }
+
+        AlertDB.Save("SharpTurnRightVL", "Sharp Turn Right", Utility.getCurrentDateTime(), 5, 0, driverId);
+    }
+
+    @Override
+    public void onHardAcceleration(float force) {
+
+        int driverId = Utility.activeUserId;
+
+        if (driverId == 0) {
+            driverId = Utility.unIdentifiedDriverId;
+        }
+
+        AlertDB.Save("HardAccelerationVL", "Hard Acceleration", Utility.getCurrentDateTime(), 5, 0, driverId);
+    }
+
+    @Override
+    public void onHardBrake(float force) {
+
+        int driverId = Utility.activeUserId;
+
+        if (driverId == 0) {
+            driverId = Utility.unIdentifiedDriverId;
+        }
+
+
+        AlertDB.Save("HardBreakingVL", "Hard Breaking", Utility.getCurrentDateTime(), 5, 0, driverId);
+
+    }
 }

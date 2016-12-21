@@ -117,7 +117,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     }
 
                     if (CanMessages.mState == CanMessages.STATE_CONNECTED) {
-                        if (Float.valueOf(CanMessages.RPM) == 0f) {
+                        int timeDifference = (int) ((System.currentTimeMillis() - CanMessages.CanDataTime) / 1000);
+                        if (timeDifference < 3) {
                             if (!vehicleStarted) {
                                 vehicleStarted = true;
                                 vehicleStopped = false;
@@ -288,8 +289,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         coDriver = getArguments().getBoolean("CoDriverFg");
         InspectorModeFg = getArguments().getBoolean("InspectorModeFg");
         if (Utility.user1.getAccountId() == 0) {
-            if (autoLogin())
-            {
+            if (autoLogin()) {
                 return mainView;
             }
         }
@@ -657,7 +657,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     public interface OnFragmentInteractionListener {
         void loginSuccessfully(boolean firstLogin);
+
         void autologinSuccessfully();
+
         void backFromLogin();
 
         void updateFlagbar(boolean status);
