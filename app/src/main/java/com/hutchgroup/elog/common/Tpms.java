@@ -3,6 +3,7 @@ package com.hutchgroup.elog.common;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.nfc.Tag;
 import android.util.Log;
 
 import com.hutchgroup.elog.MainActivity;
@@ -367,25 +368,49 @@ public class Tpms {
         }
     }
 
+    public void parseMessage(byte[] buf, int len) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < len; i++) {
+            int v = buf[i] & 0xFF;
+            String hex = Integer.toString(v, 16);
+            sb.append(hex);
+            sb.append(" ");
+
+        }
+        String data = sb.toString();
+        Log.i(TAG, data);
+    }
+
     void parse(byte[] readBuf) {
-        if (readBuf[0] == 84 && readBuf[1] == 80 && readBuf[2] == 86 && readBuf[3] == 44 && readBuf.length >= 12) {
+        // only taken first sentence to parse data
+        if (readBuf[0] == 84 && readBuf[1] == 80 && readBuf[2] == 86  && readBuf.length >= 12) {//&& readBuf[3] == 44
             int ibuf = 0;
             for (int ii = 4; ii < 11; ii++) {
                 ibuf += Tpms.this.B2I(readBuf[ii]);
             }
             if (ibuf % 256 == Tpms.this.B2I(readBuf[11]) % 256) {
-                int si;
+                /*int si;
                 long li = ((((0 | ((long) (readBuf[4] < 0 ? readBuf[4] + 256 : readBuf[4]))) << 8) | ((long) (readBuf[5] < 0 ? readBuf[5] + 256 : readBuf[5]))) << 8) | ((long) (readBuf[6] < 0 ? readBuf[6] + 256 : readBuf[6]));
                 if (readBuf[7] < 0) {
                     si = readBuf[7] + 256;
                 } else {
                     si = readBuf[7];
+                }*/
+
+                StringBuilder sb = new StringBuilder();
+                for (int i = 3; i <= 7; i++) {
+                    int v = readBuf[i] & 0xFF;
+                    String hex = Integer.toString(v, 16);
+                    if (hex.length() == 1) hex = "0" + hex;
+                    sb.append(hex);
+                    sb.append(" ");
+
                 }
-                int id = (int) (((li << 8) | ((long) si)) & -1);
+                String id = sb.toString();
                 int temperature = Tpms.this.B2I(readBuf[8]) - 50;
                 int pressure = Tpms.this.B2I(readBuf[9]);
                 int voltage = Tpms.this.B2I(readBuf[10]);
-                putTpmsData(0, id);
+                // putTpmsData(0, id);
                 putTpmsData(1, temperature);
                 putTpmsData(2, pressure);
                 putTpmsData(3, voltage);
