@@ -368,7 +368,7 @@ public class Tpms {
     }
 
     void parse(byte[] readBuf) {
-        if (readBuf[0] == 84 && readBuf[1] == 80 && readBuf[2] == 86 && readBuf[3] == 44) {
+        if (readBuf[0] == 84 && readBuf[1] == 80 && readBuf[2] == 86 && readBuf[3] == 44 && readBuf.length >= 12) {
             int ibuf = 0;
             for (int ii = 4; ii < 11; ii++) {
                 ibuf += Tpms.this.B2I(readBuf[ii]);
