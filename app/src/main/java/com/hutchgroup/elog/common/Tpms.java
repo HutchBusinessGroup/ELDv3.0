@@ -19,7 +19,7 @@ import java.util.UUID;
 
 public class Tpms {
 
-    public static final String TPMS_NAME = "TPMS";
+    public static final String TPMS_NAME = "iTPMS";
     String TAG = "Tpms";
     // Member fields
     private final BluetoothAdapter mAdapter;
@@ -381,11 +381,16 @@ public class Tpms {
                 } else {
                     si = readBuf[7];
                 }
-                putTpmsData(0, (int) (((li << 8) | ((long) si)) & -1));
-                putTpmsData(1, Tpms.this.B2I(readBuf[8]) - 50);
-                putTpmsData(2, Tpms.this.B2I(readBuf[9]));
-                putTpmsData(3, Tpms.this.B2I(readBuf[10]));
+                int id = (int) (((li << 8) | ((long) si)) & -1);
+                int temperature = Tpms.this.B2I(readBuf[8]) - 50;
+                int pressure = Tpms.this.B2I(readBuf[9]);
+                int voltage = Tpms.this.B2I(readBuf[10]);
+                putTpmsData(0, id);
+                putTpmsData(1, temperature);
+                putTpmsData(2, pressure);
+                putTpmsData(3, voltage);
                 setnewreceived();
+                Log.i(TAG, "SensorId: " + id + ", Temperature: " + temperature + ", pressure: " + pressure + ", voltage: " + (voltage * 1.0f / 50.0f));
             }
         }
     }
