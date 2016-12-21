@@ -1286,6 +1286,8 @@ public class MainActivity extends ELogMainActivity
                         adapter = BluetoothAdapter.getDefaultAdapter();
                         initializeBluetooth();
                     }
+
+                    initializeTpms();
                /*     else {
                         boolean firstRun;
                         if (getIntent() != null && getIntent().getExtras() != null) {
