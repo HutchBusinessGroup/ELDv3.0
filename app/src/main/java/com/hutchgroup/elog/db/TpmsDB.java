@@ -8,6 +8,9 @@ import com.hutchgroup.elog.beans.TPMSBean;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.Utility;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
@@ -16,7 +19,54 @@ import java.util.ArrayList;
 
 public class TpmsDB {
 
-    private static boolean Save(ArrayList<TPMSBean> list) {
+
+    // Created By: Deepak Sharma
+    // Created Date: 12 December 2016
+    // Purpose: get Alert for web sync
+    public static JSONArray getTPMSDataSync() {
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+
+        JSONArray array = new JSONArray();
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+
+            cursor = database.rawQuery("select _id,SensorId,Temperature,Pressure,Voltage,CreatedDate,ModifiedDate ,DriverId ,VehicleId ,SyncFg from "
+                            + MySQLiteOpenHelper.TABLE_TPMS + " Where SyncFg=0"
+                    , null);
+
+            while (cursor.moveToNext()) {
+                JSONObject obj = new JSONObject();
+                obj.put("SensorId", cursor.getString(cursor.getColumnIndex("AlertDateTime")));
+                obj.put("Temperature", cursor.getInt(cursor.getColumnIndex("AlertCode")));
+                obj.put("Pressure", cursor.getInt(cursor.getColumnIndex("AlertName")));
+                obj.put("Voltage", cursor.getString(cursor.getColumnIndex("Duration")));
+                obj.put("CreatedDate", cursor.getString(cursor.getColumnIndex("Scores")));
+                obj.put("ModifiedDate", cursor.getString(cursor.getColumnIndex("Scores")));
+                obj.put("VehicleId", cursor.getInt(cursor.getColumnIndex("VehicleId")));
+                obj.put("DriverId", cursor.getInt(cursor.getColumnIndex("DriverId")));
+                array.put(obj);
+            }
+
+        } catch (Exception e) {
+            Utility.printError(e.getMessage());
+            LogFile.write(TpmsDB.class.getName() + "::getTpmsDataSync Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                cursor.close();
+                database.close();
+                helper.close();
+
+            } catch (Exception e2) {
+                // TODO: handle exception
+            }
+        }
+        return array;
+    }
+
+    public static boolean Save(ArrayList<TPMSBean> list) {
 
         boolean status = true;
         MySQLiteOpenHelper helper = null;
