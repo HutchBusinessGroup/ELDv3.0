@@ -391,6 +391,7 @@ public class Tpms {
             for (int ii = 4; ii < 11; ii++) {
                 ibuf += Tpms.this.B2I(readBuf[ii]);
             }
+            String tire = "";
             if (ibuf % 256 == Tpms.this.B2I(readBuf[11]) % 256) {
 
                 StringBuilder sb = new StringBuilder();
@@ -398,8 +399,10 @@ public class Tpms {
                     int v = readBuf[i] & 0xFF;
                     String hex = Integer.toString(v, 16);
                     if (hex.length() == 1) hex = "0" + hex;
-                    sb.append(hex);
-                    sb.append(" ");
+                    if (i == 3)
+                        tire = hex;
+                    else
+                        sb.append(hex);
 
                 }
                 String sensorId = sb.toString();
