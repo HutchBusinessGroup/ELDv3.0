@@ -126,7 +126,7 @@ public class GForceMonitor implements SensorEventListener {
     private int lrDirectionChangeCount = 0;
     private long lrFirstDirectionChangeTime = 0;
     float SHARP_TURN_THRESHOLD = .25f;
-    float SHARP_TURN_MAX_DURATION_THRESHOLD = 200f;
+    float SHARP_TURN_MAX_DURATION_THRESHOLD = 1000f;
     private static final int SHARP_TURN_MIN_DIRECTION_CHANGE = 2;
 
     private void SharpTurnMonitor(float left_right_Force, boolean isLeft) {
@@ -158,7 +158,6 @@ public class GForceMonitor implements SensorEventListener {
             }
 
         } else {
-
             lrFirstDirectionChangeTime = 0;
             lrDirectionChangeCount = 0;
         }

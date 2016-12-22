@@ -165,9 +165,9 @@ public class AlertMonitor {
                 /*if (Utility.motionFg) {*/
             NoTripInspectionVL = true;
             String currentDate = Utility.getCurrentDate();
-            boolean isDuplicate = AlertDB.getDuplicate(Utility.onScreenUserId, "NoTripInspectionVL", currentDate);
+            boolean isDuplicate = AlertDB.getDuplicate(Utility.activeUserId, "NoTripInspectionVL", currentDate);
             if (!isDuplicate)
-                AlertDB.Save("NoTripInspectionVL", "Failure to conduct Trip Inspection", Utility.getCurrentDateTime(), 50, 0, Utility.onScreenUserId);
+                AlertDB.Save("NoTripInspectionVL", "Failure to conduct Trip Inspection", Utility.getCurrentDateTime(), 50, 0, Utility.activeUserId);
               /*  }*/
         }
 
