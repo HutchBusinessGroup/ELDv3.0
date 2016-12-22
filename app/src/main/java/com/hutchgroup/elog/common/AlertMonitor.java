@@ -44,8 +44,8 @@ public class AlertMonitor {
     }
 
     public static void FuelEconomyViolationGet() {
-        double distanceTravelled = Double.parseDouble(CanMessages.OdometerReading) - Double.parseDouble(Utility.OdometerReadingSincePowerOn);
-        double fuelUsed = Double.parseDouble(CanMessages.TotalFuelConsumed) - Double.parseDouble(Utility.FuelUsedSincePowerOn);
+        double distanceTravelled = Double.parseDouble(CanMessages.OdometerReading) - Double.parseDouble(Utility.OdometerReadingStart);
+        double fuelUsed = Double.parseDouble(CanMessages.TotalFuelConsumed) - Double.parseDouble(Utility.FuelUsedStart);
         if (fuelUsed > 0) {
             double average = distanceTravelled / fuelUsed;
             if (average < 2.25) {
@@ -322,6 +322,9 @@ public class AlertMonitor {
         if (HOSVLFg) {
             HOSVLDate = Utility.gettAlert("HOSVLDate");
         }
+
+        Utility.OdometerReadingStart = Utility.getPreferences("OdometerReadingStart", CanMessages.OdometerReading);
+        Utility.FuelUsedStart = Utility.getPreferences("FuelUsedStart", CanMessages.TotalFuelConsumed);
 
         if (thAlertMonitor != null) {
             thAlertMonitor.interrupt();

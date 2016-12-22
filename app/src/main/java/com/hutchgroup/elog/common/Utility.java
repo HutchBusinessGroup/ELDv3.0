@@ -77,6 +77,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static int TimeZoneOffset = 0;
 
     public static String OdometerReadingSincePowerOn = "0", EngineHourSincePowerOn = "0", DiagnosticCode = "", FuelUsedSincePowerOn = "0";
+    public static String OdometerReadingStart = "0", FuelUsedStart = "0";
 
     public static int UnidentifiedDrivingTime = 0;
     public static int DrivingTime = 0;
@@ -886,6 +887,16 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         e.commit();
     }
 
+    public static void savePreferences(String parm, String value) {
+        SharedPreferences.Editor e = (context.getSharedPreferences("HutchGroup", context.MODE_PRIVATE)).edit();
+        e.putString(parm, value);
+        e.commit();
+    }
+
+    public static String getPreferences(String parm,String defaultValue) {
+        SharedPreferences sp = (context.getSharedPreferences("HutchGroup", context.MODE_PRIVATE));
+        return sp.getString(parm, defaultValue);
+    }
 
     // save odometer reading and engine hours
     public static void saveLoginInfo(int driverId, int coDriverId, int activeUserId, int onScreenUserId) {

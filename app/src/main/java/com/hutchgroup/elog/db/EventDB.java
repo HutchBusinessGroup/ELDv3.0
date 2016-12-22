@@ -186,6 +186,7 @@ public class EventDB {
             } else {
                 Utility.OdometerReadingSincePowerOn = CanMessages.OdometerReading;
                 Utility.EngineHourSincePowerOn = CanMessages.EngineHours;
+
             }
         } catch (Exception exe) {
             Utility.printError(exe.getMessage());

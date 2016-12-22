@@ -4,6 +4,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.renderscript.Double2;
 import android.util.Log;
 
 import com.hutchgroup.elog.beans.GPSData;
@@ -188,6 +189,9 @@ public class GForceMonitor implements SensorEventListener {
             long now = System.currentTimeMillis();
             // store first movement time
             if (abFirstDirectionChangeTime == 0) {
+                double speed = Double.valueOf(CanMessages.Speed);
+                if (speed < 30)
+                    return;
                 abFirstDirectionChangeTime = now;
             }
 

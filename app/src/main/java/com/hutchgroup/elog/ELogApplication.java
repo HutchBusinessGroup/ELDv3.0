@@ -234,8 +234,18 @@ public class ELogApplication extends Application {
 
                 GPSData.LastStatusTime = System.currentTimeMillis();
                 Utility.OdometerReadingSincePowerOn = CanMessages.OdometerReading;
+
+                // switch driver case to get fuel economy per driver
+                Utility.OdometerReadingStart = CanMessages.OdometerReading;
+                Utility.savePreferences("OdometerReadingStart", Utility.OdometerReadingStart);
+
                 Utility.EngineHourSincePowerOn = CanMessages.EngineHours;
                 Utility.FuelUsedSincePowerOn = CanMessages.TotalFuelConsumed;
+
+                // switch driver case to get fuel economy per driver
+                Utility.FuelUsedStart = CanMessages.TotalFuelConsumed;
+                Utility.savePreferences("FuelUsedStart", Utility.FuelUsedStart);
+
                 if (activity != null) {
                     if (Utility.onScreenUserId == 0) {
                         int logId = DailyLogDB.DailyLogCreate(Utility.unIdentifiedDriverId, "", "", "");

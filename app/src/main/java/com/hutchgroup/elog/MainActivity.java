@@ -1788,6 +1788,20 @@ public class MainActivity extends ELogMainActivity
             Utility.activeUserId = Utility.user1.isActive() ? Utility.user1.getAccountId() : Utility.user2.getAccountId();
             getSharedPreferences("HutchGroup", MODE_PRIVATE).edit().putInt("activeuserid", Utility.activeUserId).commit();
             updateActiveIcon();
+
+            // if matchine is on check fuel economy
+            if (Float.valueOf(CanMessages.RPM) > 0f) {
+                AlertMonitor.FuelEconomyViolationGet();
+
+                // switch driver case to get fuel economy per driver
+                Utility.OdometerReadingStart = CanMessages.OdometerReading;
+                Utility.savePreferences("OdometerReadingStart", Utility.OdometerReadingStart);
+
+
+                // switch driver case to get fuel economy per driver
+                Utility.FuelUsedStart = CanMessages.TotalFuelConsumed;
+                Utility.savePreferences("FuelUsedStart", Utility.FuelUsedStart);
+            }
         }
     }
 
