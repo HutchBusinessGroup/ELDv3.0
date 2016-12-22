@@ -25,4 +25,7 @@ public class WebUrl {
     public final static String POST_DVIR= BASE_URL+ "DVIR/Post";
     public final static String POST_DTC= BASE_URL+ "DTC/Post";
     public final static String POST_ALERT= BASE_URL+ "Alert/Post";
+
+    public final static String POST_TPMS= BASE_URL+ "TPMS/Post";
+
 }
