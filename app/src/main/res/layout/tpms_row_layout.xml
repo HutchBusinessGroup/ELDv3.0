@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/laoutSingleAxle"
+        android:id="@+id/layoutSingleAxle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -112,11 +112,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/laoutDoubleAxle"
+        android:id="@+id/layoutDoubleAxle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp" android:visibility="gone">
 
         <LinearLayout
             android:layout_width="wrap_content"
