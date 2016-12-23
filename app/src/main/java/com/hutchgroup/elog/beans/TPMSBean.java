@@ -6,7 +6,7 @@ package com.hutchgroup.elog.beans;
 
 public class TPMSBean {
     //"(_id ,SensorId,Temperature Integer,Pressure Integer,Voltage text,CreatedDate text,ModifiedDate text,DriverId INTEGER,VehicleId INTEGER,SyncFg INTEGER)";
-    int _id, temperature, pressure, driverId;
+    int _id, temperature, pressure, driverId, tireNo;
     String SensorId, Voltage, CreatedDate, ModifiedDate;
     boolean isNew;
 
@@ -80,5 +80,13 @@ public class TPMSBean {
 
     public void setNew(boolean aNew) {
         isNew = aNew;
+    }
+
+    public int getTireNo() {
+        return tireNo;
+    }
+
+    public void setTireNo(int tireNo) {
+        this.tireNo = tireNo;
     }
 }

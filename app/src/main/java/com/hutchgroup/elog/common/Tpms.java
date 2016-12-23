@@ -391,31 +391,33 @@ public class Tpms {
             for (int ii = 4; ii < 11; ii++) {
                 ibuf += Tpms.this.B2I(readBuf[ii]);
             }
-            String tire = "";
+            int tireNo = readBuf[3] & 0xFF;
             if (ibuf % 256 == Tpms.this.B2I(readBuf[11]) % 256) {
 
                 StringBuilder sb = new StringBuilder();
-                for (int i = 3; i <= 7; i++) {
+                for (int i = 4; i <= 7; i++) {
                     int v = readBuf[i] & 0xFF;
                     String hex = Integer.toString(v, 16);
                     if (hex.length() == 1) hex = "0" + hex;
-                    if (i == 3)
-                        tire = hex;
-                    else
-                        sb.append(hex);
+                    sb.append(hex);
 
+                }
+                if (tireNo == 44) {
+                    tireNo = 0;
+                } else {
+                    tireNo = tireNo - 4;
                 }
                 String sensorId = sb.toString();
                 int temperature = Tpms.this.B2I(readBuf[8]) - 50;
                 int pressure = Tpms.this.B2I(readBuf[9]);
                 float voltage = Tpms.this.B2I(readBuf[10]) / 50.0f;
-                SaveTpmsData(sensorId, temperature, pressure, voltage + "");
+                SaveTpmsData(sensorId, temperature, pressure, voltage + "", tireNo);
                 //  Log.i(TAG, "SensorId: " + sensorId + ", Temperature: " + temperature + ", pressure: " + pressure + ", voltage: " + (voltage * 1.0f / 50.0f));
             }
         }
     }
 
-    private static void SaveTpmsData(String sensorId, int temperature, int pressure, String voltage) {
+    private static void SaveTpmsData(String sensorId, int temperature, int pressure, String voltage, int tireNo) {
         String currentDate = Utility.getCurrentDateTime();
         boolean newSensorId = true;
         for (TPMSBean bean : tmpsData) {
@@ -435,6 +437,7 @@ public class Tpms {
                     bean.setCreatedDate(currentDate);
                     bean.setModifiedDate(currentDate);
                     bean.setDriverId(Utility.activeUserId);
+                    bean.setTireNo(tireNo);
                     TpmsDB.Save(bean);
                 }
                 break;
@@ -450,6 +453,7 @@ public class Tpms {
             bean.setCreatedDate(currentDate);
             bean.setModifiedDate(currentDate);
             bean.setDriverId(Utility.activeUserId);
+            bean.setTireNo(tireNo);
             tmpsData.add(bean);
             TpmsDB.Save(bean);
         }
