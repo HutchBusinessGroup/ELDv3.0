@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tpms_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/laoutSingleAxle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <LinearLayout
+            android:layout_width="@dimen/tpms_value_box_width"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSinglePressure1"
+                style="@style/TPMSValue"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tpms_value_height"
+                android:background="@drawable/tpms_value_bg_white"
+                android:gravity="center"
+                android:text="32" />
+
+            <TextView
+                android:id="@+id/tvSingleTemperature1"
+                style="@style/TPMSTemp.Green"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/tpms_temp_height"
+                android:background="@drawable/tpms_temp_bg_white"
+                android:gravity="center"
+                android:text="75° F" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/tpms_value_box_width"
+            android:layout_height="0dp"
+            android:orientation="vertical"></View>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgSingleTire1"
+                android:layout_width="@dimen/tpms_tyre_width"
+                android:layout_height="@dimen/tpms_tyre_height"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+
+            <ImageView
+                android:id="@+id/imgSingleTire2"
+                android:layout_width="@dimen/tpms_tyre_width"
+                android:layout_height="@dimen/tpms_tyre_height"
+                android:background="@android:color/transparent"
+                android:src="@drawable/error_tire" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/tpms_value_box_width"
+            android:layout_height="0dp"></View>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/tpms_value_box_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvSinglePressure2"
+                    style="@style/TPMSValue.White"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_red"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    android:id="@+id/tvSingleTemperature2"
+                    style="@style/TPMSTemp.Green"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/laoutDoubleAxle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/tpms_value_box_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPressure1"
+                    style="@style/TPMSValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    android:id="@+id/tvTemperature1"
+                    style="@style/TPMSTemp.Green"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/tpms_value_box_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPressure2"
+                    style="@style/TPMSValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    android:id="@+id/tvTemperature2"
+                    style="@style/TPMSTemp.Green"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgTire1"
+                android:layout_width="@dimen/tpms_tyre_width"
+                android:layout_height="@dimen/tpms_tyre_height"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:layout_width="2dp"
+                android:layout_height="@dimen/tpms_tyre_jointer_height"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:id="@+id/imgTire2"
+                android:layout_width="@dimen/tpms_tyre_width"
+                android:layout_height="@dimen/tpms_tyre_height"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+            <ImageView
+                android:id="@+id/imgTire3"
+                android:layout_width="@dimen/tpms_tyre_width"
+                android:layout_height="@dimen/tpms_tyre_height"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
+
+            <ImageView
+                android:id="@+id/imgTire4"
+                android:layout_width="2dp"
+                android:layout_height="@dimen/tpms_tyre_jointer_height"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/tpms_tyre_width"
+                android:layout_height="@dimen/tpms_tyre_height"
+                android:background="@android:color/transparent"
+                android:src="@drawable/error_tire" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/tpms_value_box_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPressure3"
+                    style="@style/TPMSValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_white"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    android:id="@+id/tvTemperature3"
+                    style="@style/TPMSTemp.Green"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="@dimen/tpms_value_box_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPressure4"
+                    style="@style/TPMSValue.White"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_value_height"
+                    android:background="@drawable/tpms_value_bg_red"
+                    android:gravity="center"
+                    android:text="32" />
+
+                <TextView
+                    android:id="@+id/tvTemperature4"
+                    style="@style/TPMSTemp.Green"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tpms_temp_height"
+                    android:background="@drawable/tpms_temp_bg_white"
+                    android:gravity="center"
+                    android:text="75° F" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
