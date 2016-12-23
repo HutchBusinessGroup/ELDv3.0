@@ -19,6 +19,37 @@ import java.util.ArrayList;
 
 public class TpmsDB {
 
+    // Created By: Deepak Sharma
+    // Created Date: 22 December 2016
+    // Purpose: update TPMS for web sync
+    public static JSONArray TpmsSyncUpdate() {
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+        JSONArray array = new JSONArray();
+
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put("SyncFg", 1);
+            database.update(MySQLiteOpenHelper.TABLE_TPMS, values,
+                    " SyncFg=?", new String[]{"0"});
+
+        } catch (Exception exe) {
+            Utility.printError(exe.getMessage());
+            LogFile.write(AlertDB.class.getName() + "::TpmsSyncUpdate Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                cursor.close();
+                database.close();
+                helper.close();
+            } catch (Exception e) {
+                Utility.printError(e.getMessage());
+            }
+        }
+        return array;
+    }
 
     // Created By: Deepak Sharma
     // Created Date: 12 December 2016
@@ -36,7 +67,6 @@ public class TpmsDB {
             cursor = database.rawQuery("select _id,SensorId,Temperature,Pressure,Voltage,CreatedDate,ModifiedDate ,DriverId ,VehicleId ,SyncFg from "
                             + MySQLiteOpenHelper.TABLE_TPMS + " Where SyncFg=0"
                     , null);
-
             while (cursor.moveToNext()) {
                 JSONObject obj = new JSONObject();
                 obj.put("SensorId", cursor.getString(cursor.getColumnIndex("AlertDateTime")));
