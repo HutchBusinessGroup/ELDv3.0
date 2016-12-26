@@ -102,6 +102,7 @@ public class AxleAdapter extends ArrayAdapter<AxleBean> {
             setTemperatureWarnings(viewHolder.tvTemperature4, bean.getTemperature4(), bean.getHighTemperature(), bean.getLowTemperature());
 
         } else {
+
             viewHolder.layoutSingleAxle.setVisibility(View.VISIBLE);
             viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
 
