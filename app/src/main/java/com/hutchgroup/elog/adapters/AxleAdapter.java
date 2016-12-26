@@ -24,6 +24,7 @@ public class AxleAdapter extends ArrayAdapter<AxleBean> {
 
     public AxleAdapter(int resource, ArrayList<AxleBean> data) {
         super(Utility.context, resource, data);
+        this.data = data;
     }
 
     @Override
@@ -35,9 +36,12 @@ public class AxleAdapter extends ArrayAdapter<AxleBean> {
             LayoutInflater inflater = (LayoutInflater) Utility.context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(
-                    R.layout.score_card_row_layout, parent,
+                    R.layout.tpms_row_layout, parent,
                     false);
             viewHolder = new ViewHolderItem();
+
+            viewHolder.tvBackTire = (TextView) convertView.findViewById(R.id.tvBackTire);
+
             viewHolder.tvPressure1 = (TextView) convertView.findViewById(R.id.tvPressure1);
             viewHolder.tvPressure2 = (TextView) convertView.findViewById(R.id.tvPressure2);
             viewHolder.tvPressure3 = (TextView) convertView.findViewById(R.id.tvPressure3);
@@ -77,24 +81,20 @@ public class AxleAdapter extends ArrayAdapter<AxleBean> {
         }
 
         AxleBean bean = data.get(position);
+        if (bean.getAxlePosition() == 1) {
+            viewHolder.tvBackTire.setVisibility(View.VISIBLE);
+        } else {
+            viewHolder.tvBackTire.setVisibility(View.GONE);
+        }
+
         if (bean.isDoubleTireFg()) {
             viewHolder.layoutSingleAxle.setVisibility(View.GONE);
             viewHolder.layoutDoubleAxle.setVisibility(View.VISIBLE);
 
-            viewHolder.tvPressure1.setText(bean.getPressure1() + "");
-            viewHolder.tvPressure2.setText(bean.getPressure2() + "");
-            viewHolder.tvPressure3.setText(bean.getPressure3() + "");
-            viewHolder.tvPressure4.setText(bean.getPressure4() + "");
-
-            setPressureWarning(viewHolder.tvPressure1, bean.getPressure1(), bean.getHighPressure(), bean.getLowPressure());
-            setPressureWarning(viewHolder.tvPressure2, bean.getPressure2(), bean.getHighPressure(), bean.getLowPressure());
-            setPressureWarning(viewHolder.tvPressure3, bean.getPressure3(), bean.getHighPressure(), bean.getLowPressure());
-            setPressureWarning(viewHolder.tvPressure4, bean.getPressure4(), bean.getHighPressure(), bean.getLowPressure());
-
-            viewHolder.tvTemperature1.setText(bean.getTemperature1() + "");
-            viewHolder.tvTemperature2.setText(bean.getTemperature2() + "");
-            viewHolder.tvTemperature3.setText(bean.getTemperature3() + "");
-            viewHolder.tvTemperature4.setText(bean.getTemperature4() + "");
+            setPressureWarning(viewHolder.tvPressure1, viewHolder.imgTire1, bean.getPressure1(), bean.getHighPressure(), bean.getLowPressure());
+            setPressureWarning(viewHolder.tvPressure2, viewHolder.imgTire2, bean.getPressure2(), bean.getHighPressure(), bean.getLowPressure());
+            setPressureWarning(viewHolder.tvPressure3, viewHolder.imgTire3, bean.getPressure3(), bean.getHighPressure(), bean.getLowPressure());
+            setPressureWarning(viewHolder.tvPressure4, viewHolder.imgTire4, bean.getPressure4(), bean.getHighPressure(), bean.getLowPressure());
 
             setTemperatureWarnings(viewHolder.tvTemperature1, bean.getTemperature1(), bean.getHighTemperature(), bean.getLowTemperature());
             setTemperatureWarnings(viewHolder.tvTemperature2, bean.getTemperature2(), bean.getHighTemperature(), bean.getLowTemperature());
@@ -106,14 +106,8 @@ public class AxleAdapter extends ArrayAdapter<AxleBean> {
             viewHolder.layoutSingleAxle.setVisibility(View.VISIBLE);
             viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
 
-
-            viewHolder.tvSinglePressure1.setText(bean.getPressure1() + "");
-            viewHolder.tvSinglePressure2.setText(bean.getPressure2() + "");
-            setPressureWarning(viewHolder.tvSinglePressure1, bean.getPressure1(), bean.getHighPressure(), bean.getLowPressure());
-            setPressureWarning(viewHolder.tvSinglePressure2, bean.getPressure2(), bean.getHighPressure(), bean.getLowPressure());
-
-            viewHolder.tvSingleTemperature1.setText(bean.getTemperature1() + "");
-            viewHolder.tvSingleTemperature2.setText(bean.getTemperature2() + "");
+            setPressureWarning(viewHolder.tvSinglePressure1, viewHolder.imgSingleTire1, bean.getPressure1(), bean.getHighPressure(), bean.getLowPressure());
+            setPressureWarning(viewHolder.tvSinglePressure2, viewHolder.imgSingleTire2, bean.getPressure2(), bean.getHighPressure(), bean.getLowPressure());
 
             setTemperatureWarnings(viewHolder.tvSingleTemperature1, bean.getTemperature1(), bean.getHighTemperature(), bean.getLowTemperature());
             setTemperatureWarnings(viewHolder.tvSingleTemperature2, bean.getTemperature2(), bean.getHighTemperature(), bean.getLowTemperature());
@@ -126,7 +120,7 @@ public class AxleAdapter extends ArrayAdapter<AxleBean> {
 
     private void setTemperatureWarnings(TextView tvTemp, double temp, double highTemp, double lowTemp) {
         tvTemp.setText(temp + "° F");
-        if (temp > highTemp && temp < lowTemp) {
+        if (temp > highTemp || temp < lowTemp) {
             tvTemp.setTextAppearance(Utility.context, R.style.TPMSTemp_Red);
         } else {
             tvTemp.setTextAppearance(Utility.context, R.style.TPMSTemp_Green);
@@ -134,12 +128,16 @@ public class AxleAdapter extends ArrayAdapter<AxleBean> {
 
     }
 
-    private void setPressureWarning(TextView tvPressure, double pressure, double highPressure, double lowPressure) {
-        tvPressure.setText(pressure + " psi");
-        if (pressure > highPressure && pressure < lowPressure) {
+    private void setPressureWarning(TextView tvPressure, ImageView imgTire, double pressure, double highPressure, double lowPressure) {
+        tvPressure.setText(Math.round(pressure) + "");
+        if (pressure > highPressure || pressure < lowPressure) {
             tvPressure.setBackgroundResource(R.drawable.tpms_value_bg_red);
+            tvPressure.setTextAppearance(Utility.context, R.style.TPMSValue_White);
+            imgTire.setImageResource(R.drawable.error_tire);
         } else {
             tvPressure.setBackgroundResource(R.drawable.tpms_temp_bg_white);
+            tvPressure.setTextAppearance(Utility.context, R.style.TPMSValue);
+            imgTire.setImageResource(R.drawable.gray_tire);
         }
     }
 
@@ -152,5 +150,6 @@ public class AxleAdapter extends ArrayAdapter<AxleBean> {
         ImageView imgSingleTire1, imgSingleTire2;
 
         LinearLayout layoutSingleAxle, layoutDoubleAxle;
+        TextView tvBackTire;
     }
 }

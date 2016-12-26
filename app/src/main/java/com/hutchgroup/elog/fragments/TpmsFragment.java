@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 public class TpmsFragment extends Fragment implements View.OnClickListener {
     String TAG = TpmsFragment.class.getName();
     ListView lvTPMS;
+    RecyclerView rvTPMS;
     AxleAdapter adapter;
     ArrayList<AxleBean> list;
     private OnFragmentInteractionListener mListener;
@@ -60,6 +62,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
 
     private void initialize(View view) {
         lvTPMS = (ListView) view.findViewById(R.id.lvTPMS);
+        rvTPMS = (RecyclerView) view.findViewById(R.id.rvTPMS);
         TPMSDataGet();
     }
 
@@ -79,6 +82,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
 
         list.add(createItem(1, 1, true, true, new double[]{95, 95, 95, 95}, new double[]{46, 46, 46, 46}, new double[]{80, 120}, new double[]{40, 60}));
         list.add(createItem(2, 2, true, true, new double[]{100, 100, 100, 100}, new double[]{47, 47, 47, 47}, new double[]{80, 120}, new double[]{40, 60}));
+        list.add(createItem(3, 3, true, true, new double[]{100, 70, 100, 100}, new double[]{47, 47, 47, 30}, new double[]{80, 120}, new double[]{40, 60}));
 
     }
 
@@ -133,14 +137,14 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
-        try {
+      /*  try {
             LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             ViewGroup viewGroup = (ViewGroup) getView();
             View view = inflater.inflate(R.layout.fragment_tpms, viewGroup, false);
             viewGroup.removeAllViews();
             viewGroup.addView(view);
         } catch (Exception exe) {
-        }
+        }*/
 
     }
 

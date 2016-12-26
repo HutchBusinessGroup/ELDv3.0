@@ -5,6 +5,11 @@
     android:background="@drawable/tpms_bg"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/tvBackTire"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:visibility="gone" />
     <LinearLayout
         android:id="@+id/layoutSingleAxle"
         android:layout_width="wrap_content"
@@ -116,7 +121,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp" android:visibility="gone">
+        android:padding="10dp"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -215,14 +221,13 @@
                 android:src="@drawable/gray_tire" />
 
             <ImageView
-                android:id="@+id/imgTire4"
                 android:layout_width="2dp"
                 android:layout_height="@dimen/tpms_tyre_jointer_height"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/tyre_jointer"></ImageView>
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imgTire4"
                 android:layout_width="@dimen/tpms_tyre_width"
                 android:layout_height="@dimen/tpms_tyre_height"
                 android:background="@android:color/transparent"
