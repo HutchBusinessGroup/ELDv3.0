@@ -29,14 +29,25 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String TABLE_DTC = "DTCCODE";
     public static final String TABLE_ALERT = "Alert";
     public static final String TABLE_TPMS = "Tpms";
+    public static final String TABLE_TRAILER = "Trailer";
+
+    public static final String TABLE_AXLE_INFO = "AxleInfo";
 
     public static final String COLUMN_ID = "_id";
     private static final String DATABASE_NAME = "EDL.db";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 9;
 
     private static final String TABLE_CREATE_CARRIER = "create table "
             + TABLE_CARRIER
-            + "(CompanyId INTEGER,CarrierName text,ELDManufacturer text,USDOT text,VehicleId INTEGER,UnitNo text,PlateNo text,VIN text,StatusId INTEGER,SerialNo text,MACAddress text,TimeZoneId text)";
+            + "(CompanyId INTEGER,CarrierName text,ELDManufacturer text,USDOT text,VehicleId INTEGER,UnitNo text,PlateNo text,VIN text,StatusId INTEGER,SerialNo text,MACAddress text,TimeZoneId text,TotalAxle INTEGER)";
+
+    private static final String TABLE_CREATE_TRAILER = "create table "
+            + TABLE_TRAILER
+            + "(VehicleId INTEGER,UnitNo text,PlateNo text,TotalAxle INTEGER)";
+
+    private static final String TABLE_CREATE_AXLE_INFO = "create table "
+            + TABLE_AXLE_INFO
+            + "(VehicleId INTEGER,axleNo,tireNo,axlePosition,doubleTireFg INTEGER,frontTireFg INTEGER,sensorIds text,pressures text,temperatures text,PowerUnitFg INTEGER)";
 
     private static final String TABLE_CREATE_ACCOUNT = "create table "
             + TABLE_ACCOUNT
@@ -138,6 +149,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String DATABASE_ALTER_TABLE_ACCOUNT = "ALTER TABLE " + TABLE_ACCOUNT + " ADD COLUMN DotPassword text";
     private static final String DATABASE_DELETE_EVENTS_DIAGNOSTIC = "DELETE FROM " + TABLE_DAILYLOG_EVENT + " WHERE EventType=7";
     private static final String DATABASE_ALTER_CARRIER_TIMEZONEID = "ALTER TABLE " + TABLE_CARRIER + " ADD COLUMN TimeZoneId text";
+    private static final String DATABASE_ALTER_CARRIER_TOTALAXLE = "ALTER TABLE " + TABLE_CARRIER + " ADD COLUMN TotalAxle INTEGER";
 
 
     public MySQLiteOpenHelper(Context context) {
@@ -165,6 +177,8 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(TABLE_CREATE_DIAGNOSTIC_INDICATOR);
         db.execSQL(TABLE_CREATE_DTC);
         db.execSQL(TABLE_CREATE_ALERT);
+        db.execSQL(TABLE_CREATE_TRAILER);
+        db.execSQL(TABLE_CREATE_AXLE_INFO);
     }
 
     @Override
@@ -205,6 +219,12 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
         if (oldVersion < 8) {
             db.execSQL(TABLE_CREATE_ALERT);
+        }
+
+        if (oldVersion < 9) {
+            db.execSQL(DATABASE_ALTER_CARRIER_TOTALAXLE);
+            db.execSQL(TABLE_CREATE_TRAILER);
+            db.execSQL(TABLE_CREATE_AXLE_INFO);
         }
 
     }
