@@ -9,6 +9,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,6 +21,7 @@ import android.widget.ListView;
 
 import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.adapters.AxleAdapter;
+import com.hutchgroup.elog.adapters.AxleRecycleAdapter;
 import com.hutchgroup.elog.beans.AxleBean;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.Utility;
@@ -32,6 +35,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
     ListView lvTPMS;
     RecyclerView rvTPMS;
     AxleAdapter adapter;
+    AxleRecycleAdapter rAdapter;
     ArrayList<AxleBean> list;
     private OnFragmentInteractionListener mListener;
 
@@ -63,13 +67,25 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
     private void initialize(View view) {
         lvTPMS = (ListView) view.findViewById(R.id.lvTPMS);
         rvTPMS = (RecyclerView) view.findViewById(R.id.rvTPMS);
+        Configuration config = getResources().getConfiguration();
+        RecyclerView.LayoutManager mLayoutManager;
+        if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        } else {
+            mLayoutManager = new LinearLayoutManager(getContext());
+        }
+
+        rvTPMS.setLayoutManager(mLayoutManager);
+        rvTPMS.setItemAnimator(new DefaultItemAnimator());
         TPMSDataGet();
     }
 
     private void TPMSDataGet() {
         testData();
         adapter = new AxleAdapter(R.layout.fragment_tpms_test, list);
+        rAdapter = new AxleRecycleAdapter(list);
         lvTPMS.setAdapter(adapter);
+        rvTPMS.setAdapter(rAdapter);
     }
 
     private void testData() {
@@ -137,14 +153,16 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
 
-      /*  try {
+        try {
             LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             ViewGroup viewGroup = (ViewGroup) getView();
-            View view = inflater.inflate(R.layout.fragment_tpms, viewGroup, false);
+            View view = inflater.inflate(R.layout.fragment_tpms_test, viewGroup, false);
             viewGroup.removeAllViews();
             viewGroup.addView(view);
+            initialize(view);
+
         } catch (Exception exe) {
-        }*/
+        }
 
     }
 
