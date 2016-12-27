@@ -32,9 +32,7 @@ import java.util.ArrayList;
 
 public class TpmsFragment extends Fragment implements View.OnClickListener {
     String TAG = TpmsFragment.class.getName();
-    ListView lvTPMS;
     RecyclerView rvTPMS;
-    AxleAdapter adapter;
     AxleRecycleAdapter rAdapter;
     ArrayList<AxleBean> list;
     private OnFragmentInteractionListener mListener;
@@ -65,7 +63,6 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initialize(View view) {
-        lvTPMS = (ListView) view.findViewById(R.id.lvTPMS);
         rvTPMS = (RecyclerView) view.findViewById(R.id.rvTPMS);
         Configuration config = getResources().getConfiguration();
         RecyclerView.LayoutManager mLayoutManager;
@@ -82,9 +79,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
 
     private void TPMSDataGet() {
         testData();
-        adapter = new AxleAdapter(R.layout.fragment_tpms_test, list);
         rAdapter = new AxleRecycleAdapter(list);
-        lvTPMS.setAdapter(adapter);
         rvTPMS.setAdapter(rAdapter);
     }
 

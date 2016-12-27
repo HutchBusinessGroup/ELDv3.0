@@ -8,15 +8,5 @@
         android:id="@+id/rvTPMS"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
     </android.support.v7.widget.RecyclerView>
-
-    <ListView
-        android:id="@+id/lvTPMS"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@color/eee"
-        android:dividerHeight="1dp"
-        android:listSelector="@android:color/transparent"
-        android:visibility="gone"></ListView>
 </LinearLayout>
