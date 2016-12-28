@@ -423,6 +423,7 @@ public class Tpms {
     // Purpose: assign tmps data to axle data for tpms fragment
     public static void getTpmsData(String[] sensorIds, AxleBean data) {
 
+
         for (TPMSBean bean : tmpsData) {
             for (int i = 0; i < sensorIds.length; i++) {
                 String sensorId = sensorIds[i];
