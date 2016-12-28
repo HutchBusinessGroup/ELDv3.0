@@ -1,198 +1,198 @@
 [
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\send_message_bg.9.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\send_message_bg.9.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_msg_delivered.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_msg_delivered.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_add_a_photo_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_add_a_photo_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\av_pause.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\av_pause.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_add_white_36dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_add_white_36dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_camera_alt_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_camera_alt_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_flag_china.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_flag_china.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_stay_current_portrait_black_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_stay_current_portrait_black_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_search_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_search_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_more_vert_white_48dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_more_vert_white_48dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_mode_edit_white_18dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_mode_edit_white_18dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_credit_card_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_credit_card_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_account_circle_white_48dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_account_circle_white_48dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_border_color_black_18dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_border_color_black_18dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_warning_36dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_warning_36dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_border_color_white_18dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_border_color_white_18dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_error_outline_black_36dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_error_outline_black_36dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\av_play.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\av_play.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_flag_japan.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_flag_japan.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_done_all_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_done_all_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_flag_russia.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_flag_russia.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_add_white_36dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_add_white_36dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_account_box_black_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_account_box_black_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_fab_uncertified.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_fab_uncertified.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_event_location_24.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_event_location_24.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_account_circle_green_48dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_account_circle_green_48dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_fab_uncertified_red.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_fab_uncertified_red.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_msg_read.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_msg_read.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_verified_user_black_36dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_verified_user_black_36dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_arrow_back_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow_back_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_error_outline_red_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_error_outline_red_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_add_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_add_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_report_problem_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_report_problem_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_radio_button_unchecked_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_radio_button_unchecked_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_stay_current_portrait_black_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_stay_current_portrait_black_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_flag_china.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_flag_china.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\social_share.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\social_share.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_completed_failed.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_completed_failed.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_search_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_search_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_msg_read.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_msg_read.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_report_problem_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_report_problem_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\freeze_screen_1.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\freeze_screen_1.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_event_location_24.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_event_location_24.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_done_all_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_done_all_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_send_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_send_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_check_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_check_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_flag_russia.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_flag_russia.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_border_color_white_18dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_border_color_white_18dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\receive_message_bg.9.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\receive_message_bg.9.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_flag_usa.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_flag_usa.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_error_outline_red_36dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_error_outline_red_36dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_visibility_black_18dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_visibility_black_18dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_arrow_forward_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow_forward_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_account_circle_green_48dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_account_circle_green_48dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_account_box_black_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_account_box_black_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_error_outline_red_36dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_error_outline_red_36dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_warning_36dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_warning_36dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_arrow_back_black_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow_back_black_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_account_circle_white_48dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_account_circle_white_48dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_certify.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_certify.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_check_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_check_white_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\av_play.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\av_play.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_flag_japan.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_flag_japan.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\social_share.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\social_share.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\freeze_screen_1.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\freeze_screen_1.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_camera_alt_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_camera_alt_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_error_outline_black_36dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_error_outline_black_36dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_radio_button_unchecked_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_radio_button_unchecked_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_add_white_48dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_add_white_48dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_fab_uncertified.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_fab_uncertified.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_mode_edit_white_18dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_mode_edit_white_18dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\av_pause.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\av_pause.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_verified_user_black_36dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_verified_user_black_36dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_msg_delivered.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_msg_delivered.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_flag_usa.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_flag_usa.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\receive_message_bg.9.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\receive_message_bg.9.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_certify.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_certify.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_settings.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_settings.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_event_shipment_24.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_event_shipment_24.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_more_vert_white_48dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_more_vert_white_48dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_completed_failed.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_completed_failed.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_send_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_send_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_visibility_black_18dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_visibility_black_18dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_arrow_back_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow_back_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_error_outline_red_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_error_outline_red_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_event_shipment_24.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_event_shipment_24.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_border_color_black_18dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_border_color_black_18dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_fab_uncertified_red.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_fab_uncertified_red.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_credit_card_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_credit_card_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_settings.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_settings.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_add_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_add_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\send_message_bg.9.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\send_message_bg.9.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_arrow_forward_white_24dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow_forward_white_24dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_arrow_back_black_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_arrow_back_black_24dp.png"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_add_white_48dp.png",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_add_white_48dp.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_add_a_photo_white_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-hdpi\\ic_add_a_photo_white_24dp.png"
     }
 ]

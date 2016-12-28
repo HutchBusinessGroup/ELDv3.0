@@ -1,582 +1,594 @@
 [
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_dvir.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_dvir.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bluetooth_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\bluetooth_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_switch.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_switch.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_first_time_user.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_first_time_user.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\diagnostic_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\diagnostic_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gauge_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\gauge_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_drawer.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\content_drawer.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bluetooth_paired_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\bluetooth_paired_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_select_country.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_select_country.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_bottom_sheet_dialog.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_popup_dialog.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_popup_dialog.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_elog.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_elog.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_daily_log_dashboard.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_daily_log_dashboard.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message_row_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\message_row_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_separator.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_new_event.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_new_event.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_big_media_narrow.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_unidentify.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_unidentify.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_defect_selection.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_defect_selection.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\score_card_row_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\score_card_row_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_score_card.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_score_card.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setup_complete.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_setup_complete.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_output_file_send.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_output_file_send.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tabdesign.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\tabdesign.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\legal_dialog.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\legal_dialog.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_daily_log_dashboard.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_daily_log_dashboard.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bluetooth_connectivity_check.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_bluetooth_connectivity_check.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bluetooth_connectivity_check.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_bluetooth_connectivity_check.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_new_inspection.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_new_inspection.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_summary.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_summary.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\alertbtb.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\alertbtb.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_extra.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_extra.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dtc_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\dtc_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\undocking_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\undocking_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_can_data.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_can_data.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\event_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\event_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_dvir.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_dvir.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\user_row_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\user_row_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_login.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_login.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_settings.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_fragment_display.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\tab_fragment_display.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_detail_portrait.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_detail_portrait.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\diagnostic_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\diagnostic_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_media_cancel_action.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\inspection_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\inspection_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\message_row_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\message_row_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_switch.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_switch.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dtc_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\dtc_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\alertlayout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\alertlayout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\select_dialog_item_material.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_un_certified.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_un_certified.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_modified.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_modified.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_color_picker.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\dialog_color_picker.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tpms.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_tpms.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\showcase_view_template.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\showcase_view_template.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tpms_test.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_tpms_test.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_new_event.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_new_event.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_settings.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_input_truckid.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_input_truckid.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\drawer_row_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\drawer_row_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_inspect_log.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_inspect_log.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_user_list.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_user_list.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_input_infos.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_input_infos.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_big_media.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\settings_activity.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\settings_activity.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_radio.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_elog.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_elog.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\spinner_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\spinner_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_modified.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_modified.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_drawer.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\content_drawer.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_inspect_log.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_inspect_log.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\settings_activity.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\settings_activity.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gauge_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\gauge_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_layout_snackbar_include.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_defect_selection.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_defect_selection.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\select_dialog_singlechoice_material.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_daily_log_dashboard_portrait.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_daily_log_dashboard_portrait.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_menu_item_action_area.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_lines.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\alertbtb.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\alertbtb.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\event_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\event_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_up_container.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_fragment_sound.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\tab_fragment_sound.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\drawer_row_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\drawer_row_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_shut_down_device_dialog.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_shut_down_device_dialog.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\select_dialog_multichoice_material.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\defect_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\defect_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tabdesign.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\tabdesign.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_output_file_send.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_output_file_send.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_menu.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_terms_and_condition.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_terms_and_condition.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_select_country.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_select_country.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_fragment_system.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\tab_fragment_system.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_part_time.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\setup_activity.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\setup_activity.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_inspectdailylog.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_inspectdailylog.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\unidentified_row_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\unidentified_row_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_daily_log_dashboard.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_daily_log_dashboard.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_driver_profile.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_driver_profile.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_input.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_input.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_elog.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_elog.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\undocking_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\undocking_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_layout_tab_text.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_splash.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_layout_snackbar.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bluetooth_connectivity_check2.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_bluetooth_connectivity_check2.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_dtc.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_dtc.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_unidentify.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_unidentify.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_inspectdailylog.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_inspectdailylog.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_extra.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_extra.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\alertlayout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\alertlayout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\uncertified_row_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\uncertified_row_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_daily_log_dashboard_portrait.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_daily_log_dashboard_portrait.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_color_picker.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\dialog_color_picker.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_icon.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fab_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fab_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_btb_connection.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_btb_connection.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_media_action.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\inspection_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\inspection_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_gps_check.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_gps_check.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\simple_list_item_group.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\simple_list_item_group.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_menu_item_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_shut_down_device_dialog.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_shut_down_device_dialog.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tpms_row_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\tpms_row_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_user_preferences.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_user_preferences.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_first_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_first_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\spinner_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\spinner_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_detail_portrait.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_detail_portrait.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_big_media.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_message.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_message.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setup_complete.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_setup_complete.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_start_ignition.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_start_ignition.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_gps_main.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_gps_main.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_bluetooth_connectivity.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_bluetooth_connectivity.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_gps_signal.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_gps_signal.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_bluetooth_connectivity.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_bluetooth_connectivity.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings_tabs.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_settings_tabs.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_fragment_system.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\tab_fragment_system.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\score_card_threshold_row_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\score_card_threshold_row_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_menu_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_docking.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_docking.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\simple_list_item_group.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\simple_list_item_group.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_un_certified.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_un_certified.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\user_row_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\user_row_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nav_header_drawer.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\nav_header_drawer.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\uncertified_row_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\uncertified_row_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_bluetooth_connectivity_check2.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_bluetooth_connectivity_check2.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_dtc.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_dtc.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bluetooth_paired_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\bluetooth_paired_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_can_data.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_can_data.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_user_list.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_user_list.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_media.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_first_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_first_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_violation.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_violation.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_gps_main.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_gps_main.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_screen_content_include.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_image.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_view_image.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_fragment_sound.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\tab_fragment_sound.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setup_welcome_screen.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_setup_welcome_screen.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_status.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_status.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_input.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_input.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\violation_row_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\violation_row_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_select_dialog_material.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\legal_dialog.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\legal_dialog.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_violation.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_violation.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_search_view.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setup_welcome_screen.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_setup_welcome_screen.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_gps_list.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_gps_list.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_score_card.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_score_card.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_lines.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_elog.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_elog.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_layout_tab_icon.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_gps_list.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_gps_list.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_part_chronometer.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\nav_header_drawer.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\nav_header_drawer.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_driver_profile.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_driver_profile.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_first_time_user.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_first_time_user.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_screen_content_include.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\setup_activity.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\setup_activity.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\score_card_row_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\score_card_row_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_input_infos.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_input_infos.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_new_inspection.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_new_inspection.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_title_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_btb_connection.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_btb_connection.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_rule_change.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_rule_change.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_map.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_map.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_wireless_connectivity.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_wireless_connectivity.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_dialog_title_material.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bluetooth_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\bluetooth_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_input_truckid.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_input_truckid.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\violation_row_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\violation_row_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_expanded_menu_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\select_dialog_item_material.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_material.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_menu.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_layout_tab_text.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_subheader.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_daily_log_dashboard.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_daily_log_dashboard.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_view_image.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_view_image.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_web_service_connectivity.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_web_service_connectivity.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\showcase_view_template.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\showcase_view_template.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_tpms.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_tpms.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fab_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fab_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\unidentified_row_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\unidentified_row_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_certify_log.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_certify_log.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_screen_simple.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_message.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_message.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_header.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_dialog.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\listview_dialog.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_user_preferences.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_user_preferences.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_layout_snackbar.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_popup_menu_item_layout.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_popup_dialog.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_popup_dialog.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_terms_and_condition.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_terms_and_condition.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_summary.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_summary.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_settings_tabs.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_settings_tabs.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_wireless_connectivity_check.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_wireless_connectivity_check.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_wireless_connectivity.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_wireless_connectivity.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_gps_check.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_gps_check.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_docking.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_docking.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_header.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_fragment_display.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\tab_fragment_display.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_status.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_status.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\listview_dialog.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\listview_dialog.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_start_ignition.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_start_ignition.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_certify_log.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_certify_log.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_rule_change.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_rule_change.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_wireless_connectivity_check.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\activity_wireless_connectivity_check.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_search_view.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_login.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_login.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_web_service_connectivity.xml",
-        "source": "D:\\Projects\\Android\\ELDv3.0\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_web_service_connectivity.xml"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\defect_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\defect_item.xml"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\gps_map.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\gps_map.xml"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_setup_gps_signal.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout\\fragment_setup_gps_signal.xml"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item.xml"
     }
 ]
