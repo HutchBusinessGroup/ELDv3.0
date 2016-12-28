@@ -10,7 +10,7 @@ public class SyncData extends AsyncTask<String, Void, Boolean> {
 
     private PostTaskListener<Boolean> postTaskListener;
 
-    public SyncData(PostTaskListener<Boolean> postTaskListener){
+    public SyncData(PostTaskListener<Boolean> postTaskListener) {
         this.postTaskListener = postTaskListener;
     }
 
@@ -20,6 +20,13 @@ public class SyncData extends AsyncTask<String, Void, Boolean> {
         boolean status = GetCall.CarrierInfoSync();
         if (status) {
             status = GetCall.AccountSync(0);
+            if (status) {
+                status = GetCall.TrailerInfoGetSync();
+                if (status) {
+                    status = GetCall.AxleInfoGetSync();
+
+                }
+            }
         }
 
         return status;

@@ -16,6 +16,9 @@ public class WebUrl {
 
     public final static String GET_ASSIGNED_EVENT= BASE_URL+ "AssignedEventGet/Get/?driverId=";
     public final static String GET_MESSAGE= BASE_URL+ "Message/Get/?driverId=";
+    public final static String GET_TRAILER_INFO= BASE_URL+ "TrailerInfo/Get/?companyId=";
+    public final static String GET_AXLE_INFO= BASE_URL+ "AxleInfo/Get/?companyId=";
+
     public final static String POST_ALL= BASE_URL+ "Post/All";
 
     public final static String GET_UPDATE = BASE_URL+ "Version/Get/?version=";

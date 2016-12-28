@@ -2,18 +2,21 @@ package com.hutchgroup.elog.common;
 
 import android.util.Log;
 
+import com.hutchgroup.elog.beans.AxleBean;
 import com.hutchgroup.elog.beans.CarrierInfoBean;
 import com.hutchgroup.elog.beans.DailyLogBean;
 import com.hutchgroup.elog.beans.EventBean;
 import com.hutchgroup.elog.beans.MessageBean;
 import com.hutchgroup.elog.beans.PlaceBean;
 import com.hutchgroup.elog.beans.UserBean;
+import com.hutchgroup.elog.beans.VehicleBean;
 import com.hutchgroup.elog.beans.VersionInformationBean;
 import com.hutchgroup.elog.db.CarrierInfoDB;
 import com.hutchgroup.elog.db.DailyLogDB;
 import com.hutchgroup.elog.db.MessageDB;
 import com.hutchgroup.elog.db.PlaceInfoDB;
 import com.hutchgroup.elog.db.UserDB;
+import com.hutchgroup.elog.db.VehicleDB;
 import com.hutchgroup.elog.db.VersionInformationDB;
 
 import org.json.JSONArray;
@@ -123,6 +126,86 @@ public class GetCall {
             status = false;
             Utility.printError(e.getMessage());
           //  LogFile.write(GetCall.class.getName() + "::CarrierInfoSync Error:" + e.getMessage(), LogFile.WEB_SERVICE, LogFile.ERROR_LOG);
+        }
+        return status;
+    }
+
+    // Created By: Deepak Sharma
+    // Created Date: 14 January 2016
+    // Purpose: sync trailer info with web
+    public static boolean TrailerInfoGetSync() {
+        boolean status = true;
+        WebService ws = new WebService();
+        try {
+            String result = ws
+                    .doGet(WebUrl.GET_TRAILER_INFO
+                            + Utility.companyId);
+            if (result == null || result.isEmpty())
+                return status;
+
+            JSONArray obja = new JSONArray(result);
+            ArrayList<VehicleBean> al = new ArrayList<>();
+            for (int i = 0; i < obja.length(); i++) {
+                JSONObject json = obja.getJSONObject(i);
+                VehicleBean bean = new VehicleBean();
+                bean.setVehicleId(json.getInt("VehicleId"));
+                bean.setUnitNo(json.getString("UnitNo"));
+                bean.setPlateNo(json.getString("PlateNo"));
+                bean.setTotalAxle(json.getInt("Axle"));
+                al.add(bean);
+            }
+
+            if (al.size() > 0) {
+                VehicleDB.Save(al);
+            }
+
+        } catch (Exception e) {
+            status = false;
+            Utility.printError(e.getMessage());
+            //  LogFile.write(GetCall.class.getName() + "::CarrierInfoSync Error:" + e.getMessage(), LogFile.WEB_SERVICE, LogFile.ERROR_LOG);
+        }
+        return status;
+    }
+
+    // Created By: Deepak Sharma
+    // Created Date: 14 January 2016
+    // Purpose: sync trailer info with web
+    public static boolean AxleInfoGetSync() {
+        boolean status = true;
+        WebService ws = new WebService();
+        try {
+            String result = ws
+                    .doGet(WebUrl.GET_AXLE_INFO
+                            + Utility.companyId);
+            if (result == null || result.isEmpty())
+                return status;
+
+            JSONArray obja = new JSONArray(result);
+            ArrayList<AxleBean> al = new ArrayList<>();
+            for (int i = 0; i < obja.length(); i++) {
+                JSONObject json = obja.getJSONObject(i);
+                AxleBean bean = new AxleBean();
+                bean.setAxleId(json.getInt("AxleId"));
+                bean.setVehicleId(json.getInt("VehicleId"));
+                bean.setAxleNo(json.getInt("AxleNo"));
+                bean.setAxlePosition(json.getInt("AxlePosition"));
+                bean.setDoubleTireFg(json.getBoolean("DoubleTireFg"));
+                bean.setFrontTireFg(json.getBoolean("FrontTireFg"));
+                bean.setPowerUnitFg(json.getBoolean("PowerUnitFg"));
+                bean.setSensorIds(json.getString("SensorIds"));
+                bean.setTemperatures(json.getString("Temperatures"));
+                bean.setPressures(json.getString("Pressures"));
+                al.add(bean);
+            }
+
+            if (al.size() > 0) {
+                VehicleDB.SaveAxleInfo(al);
+            }
+
+        } catch (Exception e) {
+            status = false;
+            Utility.printError(e.getMessage());
+            //  LogFile.write(GetCall.class.getName() + "::CarrierInfoSync Error:" + e.getMessage(), LogFile.WEB_SERVICE, LogFile.ERROR_LOG);
         }
         return status;
     }

@@ -19,14 +19,14 @@ public class CarrierInfoDB {
 
     // Created By: Deepak Sharma
     // Created Date: 14 January 2016
-    // Purpose: check duplicate account
+    // Purpose: get company info
     public static void getCompanyInfo() {
         MySQLiteOpenHelper helper = null;
         SQLiteDatabase database = null;
         Cursor cursor = null;
         try {
             helper = new MySQLiteOpenHelper(Utility.context);
-            database = helper.getWritableDatabase();
+            database = helper.getReadableDatabase();
 
             cursor = database.rawQuery("select VehicleId,CompanyId,CarrierName,ELDManufacturer,USDOT,UnitNo,VIN, MACAddress,PlateNo,TimeZoneId from "
                             + MySQLiteOpenHelper.TABLE_CARRIER + " Where SerialNo=? LIMIT 1"
@@ -66,7 +66,7 @@ public class CarrierInfoDB {
 
     // Created By: Deepak Sharma
     // Created Date: 14 January 2016
-    // Purpose: check duplicate account
+    // Purpose: check duplicate trailer
     private static int checkDuplicate(int vehicleId) {
         int recordId = 0;
         MySQLiteOpenHelper helper = null;
@@ -74,7 +74,7 @@ public class CarrierInfoDB {
         Cursor cursor = null;
         try {
             helper = new MySQLiteOpenHelper(Utility.context);
-            database = helper.getWritableDatabase();
+            database = helper.getReadableDatabase();
 
             cursor = database.rawQuery("select VehicleId from "
                     + MySQLiteOpenHelper.TABLE_CARRIER
@@ -157,7 +157,7 @@ public class CarrierInfoDB {
         } catch (Exception e) {
             status = false;
             Utility.printError(e.getMessage());
-            LogFile.write(CarrierInfoDB.class.getName() + "::checkDuplicate Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+            LogFile.write(CarrierInfoDB.class.getName() + "::save Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             database.close();
             helper.close();

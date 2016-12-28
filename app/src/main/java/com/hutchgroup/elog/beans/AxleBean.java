@@ -5,12 +5,12 @@ package com.hutchgroup.elog.beans;
  */
 
 public class AxleBean {
-    int axleNo, vehicleId, tireNo, axlePosition;
-    boolean doubleTireFg, frontTireFg;
+    int axleId, axleNo, vehicleId, tireNo, axlePosition;
+    boolean doubleTireFg, frontTireFg,PowerUnitFg;
     double lowPressure, highPressure, pressure, lowTemperature, highTemperature, temperature;
     double pressure1, pressure2, pressure3, pressure4;
     double temperature1, temperature2, temperature3, temperature4;
-    String[] sensorIds;
+    String sensorIds,Pressures,Temperatures;
 
     public int getVehicleId() {
         return vehicleId;
@@ -164,11 +164,11 @@ public class AxleBean {
         this.temperature4 = temperature4;
     }
 
-    public String[] getSensorIds() {
+    public String getSensorIds() {
         return sensorIds;
     }
 
-    public void setSensorIds(String[] sensorIds) {
+    public void setSensorIds(String sensorIds) {
         this.sensorIds = sensorIds;
     }
 
@@ -178,5 +178,37 @@ public class AxleBean {
 
     public void setAxleNo(int axleNo) {
         this.axleNo = axleNo;
+    }
+
+    public boolean isPowerUnitFg() {
+        return PowerUnitFg;
+    }
+
+    public void setPowerUnitFg(boolean powerUnitFg) {
+        PowerUnitFg = powerUnitFg;
+    }
+
+    public String getPressures() {
+        return Pressures;
+    }
+
+    public void setPressures(String pressures) {
+        Pressures = pressures;
+    }
+
+    public String getTemperatures() {
+        return Temperatures;
+    }
+
+    public void setTemperatures(String temperatures) {
+        Temperatures = temperatures;
+    }
+
+    public int getAxleId() {
+        return axleId;
+    }
+
+    public void setAxleId(int axleId) {
+        this.axleId = axleId;
     }
 }

@@ -47,7 +47,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_CREATE_AXLE_INFO = "create table "
             + TABLE_AXLE_INFO
-            + "(VehicleId INTEGER,axleNo,tireNo,axlePosition,doubleTireFg INTEGER,frontTireFg INTEGER,sensorIds text,pressures text,temperatures text,PowerUnitFg INTEGER)";
+            + "(axleId INTEGER,VehicleId INTEGER,axleNo INTEGER,axlePosition INTEGER,doubleTireFg INTEGER,frontTireFg INTEGER,sensorIds text,pressures text,temperatures text,PowerUnitFg INTEGER)";
 
     private static final String TABLE_CREATE_ACCOUNT = "create table "
             + TABLE_ACCOUNT

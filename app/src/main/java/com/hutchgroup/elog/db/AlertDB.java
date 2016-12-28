@@ -33,7 +33,7 @@ public class AlertDB {
         boolean status = false;
         try {
             helper = new MySQLiteOpenHelper(Utility.context);
-            database = helper.getWritableDatabase();
+            database = helper.getReadableDatabase();
 
             cursor = database.rawQuery("select AlertDateTime from "
                             + MySQLiteOpenHelper.TABLE_ALERT + " Where AlertCode=? and DriverId=? and AlertDateTime>=? order by 1 desc Limit 1 "
