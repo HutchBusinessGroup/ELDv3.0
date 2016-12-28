@@ -23,14 +23,17 @@ import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.adapters.AxleAdapter;
 import com.hutchgroup.elog.adapters.AxleRecycleAdapter;
 import com.hutchgroup.elog.beans.AxleBean;
+import com.hutchgroup.elog.beans.TPMSBean;
 import com.hutchgroup.elog.common.LogFile;
+import com.hutchgroup.elog.common.Tpms;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.db.DailyLogDB;
+import com.hutchgroup.elog.db.VehicleDB;
 
 import java.util.ArrayList;
 
 
-public class TpmsFragment extends Fragment implements View.OnClickListener {
+public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms.ITPMS {
     String TAG = TpmsFragment.class.getName();
     RecyclerView rvTPMS;
     AxleRecycleAdapter rAdapter;
@@ -79,6 +82,8 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
 
     private void TPMSDataGet() {
         testData();
+        String vehicleIds = Utility.vehicleId + "";
+        list = VehicleDB.AxleInfoGet(vehicleIds);
         rAdapter = new AxleRecycleAdapter(list);
         rvTPMS.setAdapter(rAdapter);
     }
@@ -164,6 +169,40 @@ public class TpmsFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
+    }
+
+    @Override
+    public void update(TPMSBean data) {
+        for (int j = 0; j < list.size(); j++) {
+            AxleBean bean = list.get(j);
+            String[] sensorIds = bean.getSensorIdsAll();
+            for (int i = 0; i < sensorIds.length; i++) {
+                String sensorId = sensorIds[i];
+                if (sensorId.equals(data.getSensorId())) {
+                    switch (i) {
+                        case 0:
+                            bean.setPressure1(data.getPressure());
+                            bean.setTemperature1(data.getTemperature());
+                            break;
+                        case 1:
+                            bean.setPressure2(data.getPressure());
+                            bean.setTemperature2(data.getTemperature());
+                            break;
+                        case 2:
+                            bean.setPressure3(data.getPressure());
+                            bean.setTemperature3(data.getTemperature());
+                            break;
+                        case 3:
+                            bean.setPressure4(data.getPressure());
+                            bean.setTemperature4(data.getTemperature());
+                            break;
+                    }
+                    rAdapter.notifyItemChanged(j);
+                    return;
+                }
+            }
+
+        }
     }
 
     public interface OnFragmentInteractionListener {

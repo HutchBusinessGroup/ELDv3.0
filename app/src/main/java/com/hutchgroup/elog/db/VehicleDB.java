@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.hutchgroup.elog.beans.AxleBean;
 import com.hutchgroup.elog.beans.VehicleBean;
 import com.hutchgroup.elog.common.LogFile;
+import com.hutchgroup.elog.common.Tpms;
 import com.hutchgroup.elog.common.Utility;
 
 import java.util.ArrayList;
@@ -16,43 +17,6 @@ import java.util.ArrayList;
  */
 
 public class VehicleDB {
-
-    // Created By: Deepak Sharma
-    // Created Date: 28 December 2016
-    // Purpose: check duplicate vehicle
-    private static int checkDuplicate(int vehicleId) {
-        int recordId = 0;
-        MySQLiteOpenHelper helper = null;
-        SQLiteDatabase database = null;
-        Cursor cursor = null;
-        try {
-            helper = new MySQLiteOpenHelper(Utility.context);
-            database = helper.getReadableDatabase();
-
-            cursor = database.rawQuery("select VehicleId from "
-                    + MySQLiteOpenHelper.TABLE_TRAILER
-                    + " where VehicleId=?", new String[]{vehicleId + ""});
-            if (cursor.moveToFirst()) {
-                recordId = cursor.getInt(0);
-
-            }
-
-        } catch (Exception e) {
-            Utility.printError(e.getMessage());
-            LogFile.write(CarrierInfoDB.class.getName() + "::checkDuplicate Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
-        } finally {
-            try {
-                cursor.close();
-                database.close();
-                helper.close();
-
-            } catch (Exception e2) {
-                // TODO: handle exception
-            }
-        }
-
-        return recordId;
-    }
 
     // Created By: Deepak Sharma
     // Created Date: 28 December 2016
@@ -154,5 +118,65 @@ public class VehicleDB {
             helper.close();
         }
         return status;
+    }
+
+    public static ArrayList<AxleBean> AxleInfoGet(String vehicleIds) {
+        ArrayList<AxleBean> list = new ArrayList<>();
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+            cursor = database.rawQuery("select VehicleId ,axleNo ,axlePosition ,doubleTireFg ,frontTireFg ,PowerUnitFg ,sensorIds ,pressures ,temperatures from "
+                            + MySQLiteOpenHelper.TABLE_AXLE_INFO + " Where VehicleId in(?) order by PowerUnitFg desc,VehicleId,frontTireFg,axlePosition"
+                    , new String[]{vehicleIds});
+            while (cursor.moveToNext()) {
+                AxleBean bean = new AxleBean();
+                bean.setVehicleId(cursor.getInt(cursor.getColumnIndex("VehicleId")));
+                bean.setAxleNo(cursor.getInt(cursor.getColumnIndex("axleNo")));
+                bean.setAxlePosition(cursor.getInt(cursor.getColumnIndex("axlePosition")));
+                bean.setDoubleTireFg(cursor.getInt(cursor.getColumnIndex("doubleTireFg")) == 1);
+                bean.setFrontTireFg(cursor.getInt(cursor.getColumnIndex("frontTireFg")) == 1);
+                bean.setPowerUnitFg(cursor.getInt(cursor.getColumnIndex("PowerUnitFg")) == 1);
+                bean.setSensorIds(cursor.getString(cursor.getColumnIndex("sensorIds")));
+                bean.setTemperatures(cursor.getString(cursor.getColumnIndex("pressures")));
+                bean.setPressures(cursor.getString(cursor.getColumnIndex("temperatures")));
+
+                String[] pressures = bean.getPressures().split(",");
+                if (pressures.length == 3) {
+                    bean.setPressure(Double.parseDouble(pressures[0]));
+                    bean.setLowPressure(Double.parseDouble(pressures[1]));
+                    bean.setHighPressure(Double.parseDouble(pressures[2]));
+                }
+
+                String[] temperatures = bean.getTemperatures().split(",");
+                if (pressures.length == 3) {
+                    bean.setTemperature(Double.parseDouble(temperatures[0]));
+                    bean.setLowTemperature(Double.parseDouble(temperatures[1]));
+                    bean.setHighTemperature(Double.parseDouble(temperatures[2]));
+                }
+
+                String[] sensorIds = bean.getSensorIds().split(",");
+                bean.setSensorIdsAll(sensorIds);
+                Tpms.getTpmsData(sensorIds, bean);
+                list.add(bean);
+            }
+
+        } catch (Exception e) {
+            Utility.printError(e.getMessage());
+            LogFile.write(DTCDB.class.getName() + "::AxleInfoGet Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                cursor.close();
+                database.close();
+                helper.close();
+
+            } catch (Exception e2) {
+                // TODO: handle exception
+            }
+        }
+        return list;
     }
 }

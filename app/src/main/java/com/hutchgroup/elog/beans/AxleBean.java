@@ -6,11 +6,12 @@ package com.hutchgroup.elog.beans;
 
 public class AxleBean {
     int axleId, axleNo, vehicleId, tireNo, axlePosition;
-    boolean doubleTireFg, frontTireFg,PowerUnitFg;
+    boolean doubleTireFg, frontTireFg, PowerUnitFg;
     double lowPressure, highPressure, pressure, lowTemperature, highTemperature, temperature;
     double pressure1, pressure2, pressure3, pressure4;
     double temperature1, temperature2, temperature3, temperature4;
-    String sensorIds,Pressures,Temperatures;
+    String sensorIds, Pressures, Temperatures;
+    String[] sensorIdsAll;
 
     public int getVehicleId() {
         return vehicleId;
@@ -210,5 +211,13 @@ public class AxleBean {
 
     public void setAxleId(int axleId) {
         this.axleId = axleId;
+    }
+
+    public String[] getSensorIdsAll() {
+        return sensorIdsAll;
+    }
+
+    public void setSensorIdsAll(String[] sensorIdsAll) {
+        this.sensorIdsAll = sensorIdsAll;
     }
 }

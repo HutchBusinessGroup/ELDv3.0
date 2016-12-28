@@ -7,6 +7,7 @@ import android.nfc.Tag;
 import android.util.Log;
 
 import com.hutchgroup.elog.MainActivity;
+import com.hutchgroup.elog.beans.AxleBean;
 import com.hutchgroup.elog.beans.TPMSBean;
 import com.hutchgroup.elog.db.TpmsDB;
 
@@ -417,6 +418,38 @@ public class Tpms {
         }
     }
 
+    // Created By: Deepak Sharma
+    // Created Date: 28 December 2016
+    // Purpose: assign tmps data to axle data for tpms fragment
+    public static void getTpmsData(String[] sensorIds, AxleBean data) {
+
+        for (TPMSBean bean : tmpsData) {
+            for (int i = 0; i < sensorIds.length; i++) {
+                String sensorId = sensorIds[i];
+                if (sensorId.equals(bean.getSensorId())) {
+                    switch (i) {
+                        case 0:
+                            data.setPressure1(bean.getPressure());
+                            data.setTemperature1(bean.getTemperature());
+                            break;
+                        case 1:
+                            data.setPressure2(bean.getPressure());
+                            data.setTemperature2(bean.getTemperature());
+                            break;
+                        case 2:
+                            data.setPressure3(bean.getPressure());
+                            data.setTemperature3(bean.getTemperature());
+                            break;
+                        case 3:
+                            data.setPressure4(bean.getPressure());
+                            data.setTemperature4(bean.getTemperature());
+                            break;
+                    }
+                }
+            }
+        }
+    }
+
     private static void SaveTpmsData(String sensorId, int temperature, int pressure, String voltage, int tireNo) {
         String currentDate = Utility.getCurrentDateTime();
         boolean newSensorId = true;
@@ -529,5 +562,9 @@ public class Tpms {
             }
         }
     };
+    public static ITPMS mListner;
 
+    public interface ITPMS {
+        void update(TPMSBean data);
+    }
 }
