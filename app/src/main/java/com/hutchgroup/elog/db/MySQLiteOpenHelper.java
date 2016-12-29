@@ -30,6 +30,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String TABLE_ALERT = "Alert";
     public static final String TABLE_TPMS = "Tpms";
     public static final String TABLE_TRAILER = "Trailer";
+    public static final String TABLE_TRAILER_STATUS = "TrailerStatus";
 
     public static final String TABLE_AXLE_INFO = "AxleInfo";
 
@@ -44,6 +45,10 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String TABLE_CREATE_TRAILER = "create table "
             + TABLE_TRAILER
             + "(VehicleId INTEGER,UnitNo text,PlateNo text,TotalAxle INTEGER)";
+
+    private static final String TABLE_CREATE_TRAILER_STATUS = "create table "
+            + TABLE_TRAILER_STATUS
+            + "(VehicleId INTEGER,hookDate text,UnHookDate text,hookedFg INTEGER,SyncFg INTEGER)";
 
     private static final String TABLE_CREATE_AXLE_INFO = "create table "
             + TABLE_AXLE_INFO
@@ -225,6 +230,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             db.execSQL(DATABASE_ALTER_CARRIER_TOTALAXLE);
             db.execSQL(TABLE_CREATE_TRAILER);
             db.execSQL(TABLE_CREATE_AXLE_INFO);
+            db.execSQL(TABLE_CREATE_TRAILER_STATUS);
         }
 
     }

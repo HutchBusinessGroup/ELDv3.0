@@ -204,4 +204,60 @@ public class VehicleDB {
         }
         return list;
     }
+
+    // Created By: Deepak Sharma
+    // Created Date: 28 December 2016
+    // Purpose: add or update Axle info in database
+    public static boolean SaveAxleInfo(VehicleBean bean) {
+        boolean status = true;
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+
+           /* values.put("axleId", bean.getAxleId());
+            values.put("VehicleId", bean.getVehicleId());
+            values.put("axleNo", bean.getAxleNo());
+            values.put("axlePosition", bean.getAxlePosition());
+            values.put("doubleTireFg", (bean.isDoubleTireFg() ? 1 : 0));
+            values.put("frontTireFg", (bean.isFrontTireFg() ? 1 : 0));
+            values.put("PowerUnitFg", (bean.isPowerUnitFg() ? 1 : 0));
+            values.put("sensorIds", bean.getSensorIds());
+            values.put("pressures", bean.getPressures());
+            values.put("temperatures", bean.getTemperatures());
+
+            Cursor cursor = database.rawQuery("select axleId from "
+                    + MySQLiteOpenHelper.TABLE_AXLE_INFO
+                    + " where axleId=?", new String[]{bean.getAxleId() + ""});*/
+           /* int axleId = 0;
+            if (cursor.moveToNext()) {
+                axleId = cursor.getInt(0);
+            }
+
+            cursor.close();*/
+
+           /* if (axleId == 0) {
+                database.insert(MySQLiteOpenHelper.TABLE_AXLE_INFO,
+                        null, values);
+
+            } else {
+                database.update(MySQLiteOpenHelper.TABLE_AXLE_INFO, values,
+                        " axleId= ?",
+                        new String[]{bean.getAxleId() + ""});
+            }*/
+
+        } catch (Exception e) {
+            status = false;
+            Utility.printError(e.getMessage());
+            LogFile.write(VehicleDB.class.getName() + "::Save Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            database.close();
+            helper.close();
+        }
+        return status;
+    }
+
+
 }
