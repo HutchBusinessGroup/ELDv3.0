@@ -179,4 +179,29 @@ public class VehicleDB {
         }
         return list;
     }
+
+    public static ArrayList<VehicleBean> TrailerGet(String search, String except) {
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+        ArrayList<VehicleBean> list = new ArrayList<>();
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getReadableDatabase();
+
+            cursor = database.rawQuery(" select VehicleId, UnitNo, PlateNo from "
+                    + MySQLiteOpenHelper.TABLE_TRAILER
+                    + " where UnitNo like ? and not in (?) ", new String[]{search + "%", except});
+
+            while (cursor.moveToNext()) {
+                VehicleBean bean = new VehicleBean();
+                bean.setVehicleId(cursor.getInt(cursor.getColumnIndex("VehicleId")));
+                bean.setUnitNo(cursor.getString(cursor.getColumnIndex("UnitNo")));
+                bean.setPlateNo(cursor.getString(cursor.getColumnIndex("PlateNo")));
+                list.add(bean);
+            }
+        } catch (Exception exe) {
+        }
+        return list;
+    }
 }
