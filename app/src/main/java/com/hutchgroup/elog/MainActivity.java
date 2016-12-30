@@ -127,6 +127,7 @@ import com.hutchgroup.elog.fragments.SettingsFragment;
 import com.hutchgroup.elog.fragments.ShutDownDeviceDialog;
 import com.hutchgroup.elog.fragments.TabSystemFragment;
 import com.hutchgroup.elog.fragments.TpmsFragment;
+import com.hutchgroup.elog.fragments.TrailerDialogFragment;
 import com.hutchgroup.elog.fragments.UnCertifiedFragment;
 import com.hutchgroup.elog.fragments.UnidentifyFragment;
 import com.hutchgroup.elog.fragments.UserListFragment;
@@ -152,7 +153,8 @@ public class MainActivity extends ELogMainActivity
         NewEventFragment.OnFragmentInteractionListener, DetailFragment.OnFragmentInteractionListener, SettingsFragment.OnFragmentInteractionListener,
         UserListFragment.OnFragmentInteractionListener, BluetoothConnectivityFragment.OnFragmentInteractionListener, OutputFileSendDialog.OutputFileDialogInterface,
         DvirFragment.OnFragmentInteractionListener, DailyLogDashboardFragment.OnFragmentInteractionListener, TpmsFragment.OnFragmentInteractionListener, TabSystemFragment.OnFragmentInteractionListener,
-        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener, GForceMonitor.IGForceMonitor {
+        LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener
+        , GForceMonitor.IGForceMonitor, TrailerDialogFragment.OnFragmentInteractionListener {
 
     private PopupDialog ponDutyChangeDialog;
     private boolean onDutyChangeDialogResponse, autoDismissOnDutyChangeDialog, isDialogShown;
@@ -4823,6 +4825,11 @@ public class MainActivity extends ELogMainActivity
 
 
         AlertDB.Save("HardBreakingVL", "Hard Breaking", Utility.getCurrentDateTime(), 5, 0, driverId);
+
+    }
+
+    @Override
+    public void hooked(int trailerId) {
 
     }
 }

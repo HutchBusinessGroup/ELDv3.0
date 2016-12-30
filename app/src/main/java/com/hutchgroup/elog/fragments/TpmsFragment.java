@@ -71,6 +71,13 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
     private void initialize(View view) {
         AxleRecycleAdapter.mListner = this;
         rvTPMS = (RecyclerView) view.findViewById(R.id.rvTPMS);
+        /*rvTPMS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = rvTPMS.getChildAdapterPosition(v);
+                int pl = rvTPMS.getChildLayoutPosition(v);
+            }
+        });*/
         Configuration config = getResources().getConfiguration();
         RecyclerView.LayoutManager mLayoutManager;
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
