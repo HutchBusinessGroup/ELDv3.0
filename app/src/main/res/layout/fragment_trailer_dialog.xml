@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hutchgroup.elog.fragments.TrailerDialogFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/f5f5f5"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/DialogIconStyle"
+            android:layout_width="@dimen/dialog_icon_size"
+            android:layout_height="@dimen/dialog_icon_size" />
+
+        <TextView
+            style="@style/DialogTitleStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="Hook Trailer" />
+
+        <ImageButton
+            android:id="@+id/imgCancel"
+            style="@style/DialogCloseStyle"
+            android:layout_width="@dimen/dialog_close_icon_size"
+            android:layout_height="@dimen/dialog_close_icon_size" />
+    </LinearLayout>
+
+    <View
+        style="@style/DialogTitleSeprator"
+        android:layout_width="match_parent"
+        android:layout_height="2dp">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:hint="Type Unit no. here..."
+            android:paddingRight="24dp"
+            android:textSize="@dimen/text_size_14" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvTrailer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+</LinearLayout>

@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -36,38 +37,56 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         AxleBean bean = data.get(position);
-        if (bean.getAxlePosition() == 1) {
-            viewHolder.tvBackTire.setVisibility(View.VISIBLE);
-        } else {
-            viewHolder.tvBackTire.setVisibility(View.GONE);
-        }
 
-        if (bean.isDoubleTireFg()) {
+
+        if (bean.isEmptyFg()) {
+            viewHolder.layoutEmpty.setVisibility(View.VISIBLE);
             viewHolder.layoutSingleAxle.setVisibility(View.GONE);
-            viewHolder.layoutDoubleAxle.setVisibility(View.VISIBLE);
-
-            setPressureWarning(viewHolder.tvPressure1, viewHolder.imgTire1, bean.getPressure1(), bean.getHighPressure(), bean.getLowPressure());
-            setPressureWarning(viewHolder.tvPressure2, viewHolder.imgTire2, bean.getPressure2(), bean.getHighPressure(), bean.getLowPressure());
-            setPressureWarning(viewHolder.tvPressure3, viewHolder.imgTire3, bean.getPressure3(), bean.getHighPressure(), bean.getLowPressure());
-            setPressureWarning(viewHolder.tvPressure4, viewHolder.imgTire4, bean.getPressure4(), bean.getHighPressure(), bean.getLowPressure());
-
-            setTemperatureWarnings(viewHolder.tvTemperature1, bean.getTemperature1(), bean.getHighTemperature(), bean.getLowTemperature());
-            setTemperatureWarnings(viewHolder.tvTemperature2, bean.getTemperature2(), bean.getHighTemperature(), bean.getLowTemperature());
-            setTemperatureWarnings(viewHolder.tvTemperature3, bean.getTemperature3(), bean.getHighTemperature(), bean.getLowTemperature());
-            setTemperatureWarnings(viewHolder.tvTemperature4, bean.getTemperature4(), bean.getHighTemperature(), bean.getLowTemperature());
+            viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
+            viewHolder.tvBackTire.setVisibility(View.GONE);
+            viewHolder.btnHook.setEnabled(bean.getAxlePosition() == 1);
+            viewHolder.btnHook.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListner != null) {
+                        mListner.hook();
+                    }
+                }
+            });
 
         } else {
+            if (bean.getAxlePosition() == 1) {
+                viewHolder.tvBackTire.setVisibility(View.VISIBLE);
+            } else {
+                viewHolder.tvBackTire.setVisibility(View.GONE);
+            }
+            viewHolder.layoutEmpty.setVisibility(View.GONE);
 
-            viewHolder.layoutSingleAxle.setVisibility(View.VISIBLE);
-            viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
+            if (bean.isDoubleTireFg()) {
+                viewHolder.layoutSingleAxle.setVisibility(View.GONE);
+                viewHolder.layoutDoubleAxle.setVisibility(View.VISIBLE);
 
-            setPressureWarning(viewHolder.tvSinglePressure1, viewHolder.imgSingleTire1, bean.getPressure1(), bean.getHighPressure(), bean.getLowPressure());
-            setPressureWarning(viewHolder.tvSinglePressure2, viewHolder.imgSingleTire2, bean.getPressure2(), bean.getHighPressure(), bean.getLowPressure());
+                setPressureWarning(viewHolder.tvPressure1, viewHolder.imgTire1, bean.getPressure1(), bean.getHighPressure(), bean.getLowPressure());
+                setPressureWarning(viewHolder.tvPressure2, viewHolder.imgTire2, bean.getPressure2(), bean.getHighPressure(), bean.getLowPressure());
+                setPressureWarning(viewHolder.tvPressure3, viewHolder.imgTire3, bean.getPressure3(), bean.getHighPressure(), bean.getLowPressure());
+                setPressureWarning(viewHolder.tvPressure4, viewHolder.imgTire4, bean.getPressure4(), bean.getHighPressure(), bean.getLowPressure());
 
-            setTemperatureWarnings(viewHolder.tvSingleTemperature1, bean.getTemperature1(), bean.getHighTemperature(), bean.getLowTemperature());
-            setTemperatureWarnings(viewHolder.tvSingleTemperature2, bean.getTemperature2(), bean.getHighTemperature(), bean.getLowTemperature());
+                setTemperatureWarnings(viewHolder.tvTemperature1, bean.getTemperature1(), bean.getHighTemperature(), bean.getLowTemperature());
+                setTemperatureWarnings(viewHolder.tvTemperature2, bean.getTemperature2(), bean.getHighTemperature(), bean.getLowTemperature());
+                setTemperatureWarnings(viewHolder.tvTemperature3, bean.getTemperature3(), bean.getHighTemperature(), bean.getLowTemperature());
+                setTemperatureWarnings(viewHolder.tvTemperature4, bean.getTemperature4(), bean.getHighTemperature(), bean.getLowTemperature());
+
+            } else {
+                viewHolder.layoutSingleAxle.setVisibility(View.VISIBLE);
+                viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
+
+                setPressureWarning(viewHolder.tvSinglePressure1, viewHolder.imgSingleTire1, bean.getPressure1(), bean.getHighPressure(), bean.getLowPressure());
+                setPressureWarning(viewHolder.tvSinglePressure2, viewHolder.imgSingleTire2, bean.getPressure2(), bean.getHighPressure(), bean.getLowPressure());
+
+                setTemperatureWarnings(viewHolder.tvSingleTemperature1, bean.getTemperature1(), bean.getHighTemperature(), bean.getLowTemperature());
+                setTemperatureWarnings(viewHolder.tvSingleTemperature2, bean.getTemperature2(), bean.getHighTemperature(), bean.getLowTemperature());
+            }
         }
-
     }
 
 
@@ -110,12 +129,14 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
         TextView tvSinglePressure1, tvSinglePressure2, tvSingleTemperature1, tvSingleTemperature2;
         ImageView imgSingleTire1, imgSingleTire2;
 
-        LinearLayout layoutSingleAxle, layoutDoubleAxle;
+        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty;
         TextView tvBackTire;
+        Button btnHook;
 
         public ViewHolder(View convertView) {
             super(convertView);
             tvBackTire = (TextView) convertView.findViewById(R.id.tvBackTire);
+            btnHook = (Button) convertView.findViewById(R.id.btnHook);
 
             tvPressure1 = (TextView) convertView.findViewById(R.id.tvPressure1);
             tvPressure2 = (TextView) convertView.findViewById(R.id.tvPressure2);
@@ -149,6 +170,13 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
 
             layoutSingleAxle = (LinearLayout) convertView.findViewById(R.id.layoutSingleAxle);
             layoutDoubleAxle = (LinearLayout) convertView.findViewById(R.id.layoutDoubleAxle);
+            layoutEmpty = (LinearLayout) convertView.findViewById(R.id.layoutEmpty);
         }
+    }
+
+    public static IHookTrailer mListner;
+
+    public interface IHookTrailer {
+        public void hook();
     }
 }

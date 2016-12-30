@@ -48,7 +48,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_CREATE_TRAILER_STATUS = "create table "
             + TABLE_TRAILER_STATUS
-            + "(VehicleId INTEGER,hookDate text,UnHookDate text,hookedFg INTEGER,SyncFg INTEGER)";
+            + "(_id INTEGER PRIMARY KEY AUTOINCREMENT,startOdometer text,distanceTravelled text,TrailerId INTEGER,driverId INTEGER,hookDate text,unhookDate text,hookedFg INTEGER,modifiedBy INTEGER,latitude1 text,longitude1 text,latitude2 text, longitude2 text,SyncFg INTEGER)";
 
     private static final String TABLE_CREATE_AXLE_INFO = "create table "
             + TABLE_AXLE_INFO

@@ -24,16 +24,19 @@ import com.hutchgroup.elog.adapters.AxleAdapter;
 import com.hutchgroup.elog.adapters.AxleRecycleAdapter;
 import com.hutchgroup.elog.beans.AxleBean;
 import com.hutchgroup.elog.beans.TPMSBean;
+import com.hutchgroup.elog.beans.TrailerBean;
+import com.hutchgroup.elog.common.CanMessages;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.Tpms;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.db.DailyLogDB;
+import com.hutchgroup.elog.db.TrailerDB;
 import com.hutchgroup.elog.db.VehicleDB;
 
 import java.util.ArrayList;
 
 
-public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms.ITPMS {
+public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms.ITPMS, AxleRecycleAdapter.IHookTrailer, TrailerDialogFragment.OnFragmentInteractionListener {
     String TAG = TpmsFragment.class.getName();
     RecyclerView rvTPMS;
     AxleRecycleAdapter rAdapter;
@@ -66,6 +69,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
     }
 
     private void initialize(View view) {
+        AxleRecycleAdapter.mListner = this;
         rvTPMS = (RecyclerView) view.findViewById(R.id.rvTPMS);
         Configuration config = getResources().getConfiguration();
         RecyclerView.LayoutManager mLayoutManager;
@@ -81,9 +85,21 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
     }
 
     private void TPMSDataGet() {
+
+        ArrayList<String> trailerList = TrailerDB.getHookedTrailer(); // including power unit
+
+        list = VehicleDB.AxleInfoGet(trailerList);
         testData();
-        String vehicleIds = Utility.vehicleId + "";
-        list = VehicleDB.AxleInfoGet(vehicleIds);
+        int hooked = trailerList.size() - 1;
+        int position = 1;
+        for (int i = hooked; i < 3; i++) {
+            AxleBean bean = new AxleBean();
+            bean.setEmptyFg(true);
+            bean.setAxlePosition(position);
+            position++;
+            list.add(bean);
+        }
+
         rAdapter = new AxleRecycleAdapter(list);
         rvTPMS.setAdapter(rAdapter);
     }
@@ -95,10 +111,10 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         list.add(createItem(2, 1, true, true, new double[]{90, 90, 90, 90}, new double[]{50, 50, 50, 50}, new double[]{80, 120}, new double[]{40, 60}));
         list.add(createItem(3, 2, true, true, new double[]{90, 90, 90, 90}, new double[]{55, 55, 55, 55}, new double[]{80, 120}, new double[]{40, 60}));
 
-
+/*
         list.add(createItem(1, 1, true, true, new double[]{95, 95, 95, 95}, new double[]{46, 46, 46, 46}, new double[]{80, 120}, new double[]{40, 60}));
         list.add(createItem(2, 2, true, true, new double[]{100, 100, 100, 100}, new double[]{47, 47, 47, 47}, new double[]{80, 120}, new double[]{40, 60}));
-        list.add(createItem(3, 3, true, true, new double[]{100, 70, 100, 100}, new double[]{47, 47, 47, 30}, new double[]{80, 120}, new double[]{40, 60}));
+        list.add(createItem(3, 3, true, true, new double[]{100, 70, 100, 100}, new double[]{47, 47, 47, 30}, new double[]{80, 120}, new double[]{40, 60}));*/
 
     }
 
@@ -203,6 +219,30 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
             }
 
         }
+    }
+
+    TrailerDialogFragment dialog;
+
+    @Override
+    public void hook() {
+        if (dialog == null) {
+            dialog = new TrailerDialogFragment();
+        }
+        dialog.show(getFragmentManager(), "trailer_dialog");
+    }
+
+    @Override
+    public void hooked(int trailerId) {
+        TrailerBean bean = new TrailerBean();
+        bean.setTrailerId(trailerId);
+        bean.setHookDate(Utility.getCurrentDateTime());
+        bean.setDriverId(Utility.activeUserId);
+        bean.setHookedFg(1);
+        bean.setLatitude1(Utility.currentLocation.getLatitude() + "");
+        bean.setLongitude2(Utility.currentLocation.getLongitude() + "");
+        bean.setStartOdometer(CanMessages.OdometerReading);
+        TrailerDB.hook(bean);
+        TPMSDataGet();
     }
 
     public interface OnFragmentInteractionListener {

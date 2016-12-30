@@ -5,13 +5,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.EditText;
 
 import com.hutchgroup.elog.R;
@@ -20,9 +20,12 @@ import com.hutchgroup.elog.beans.VehicleBean;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.db.VehicleDB;
 
+import android.support.v4.app.DialogFragment;
+import android.widget.ImageButton;
+
 import java.util.ArrayList;
 
-public class TrailerFragment extends Fragment implements TrailerRecycleAdapter.IViewHolder {
+public class TrailerDialogFragment extends DialogFragment implements TrailerRecycleAdapter.IViewHolder {
 
     private OnFragmentInteractionListener mListener;
     TrailerRecycleAdapter rAdapter;
@@ -30,13 +33,14 @@ public class TrailerFragment extends Fragment implements TrailerRecycleAdapter.I
     RecyclerView rvTrailer;
     EditText etSearch;
     String hooked = "";
+    ImageButton imgCancel;
 
-    public TrailerFragment() {
+    public TrailerDialogFragment() {
         // Required empty public constructor
     }
 
-    public static TrailerFragment newInstance() {
-        TrailerFragment fragment = new TrailerFragment();
+    public static TrailerDialogFragment newInstance() {
+        TrailerDialogFragment fragment = new TrailerDialogFragment();
         return fragment;
     }
 
@@ -49,14 +53,24 @@ public class TrailerFragment extends Fragment implements TrailerRecycleAdapter.I
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_trailer, container, false);
+        View view = inflater.inflate(R.layout.fragment_trailer_dialog, container, false);
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        this.setCancelable(false);
         initialize(view);
         return view;
     }
 
     private void initialize(View view) {
+        TrailerRecycleAdapter.mListner = this;
         rvTrailer = (RecyclerView) view.findViewById(R.id.rvTrailer);
-
+        imgCancel = (ImageButton) view.findViewById(R.id.imgCancel);
+        imgCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Utility.hideKeyboard(getActivity(), v);
+                dismiss();
+            }
+        });
         etSearch = (EditText) view.findViewById(R.id.etSearch);
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -97,6 +111,8 @@ public class TrailerFragment extends Fragment implements TrailerRecycleAdapter.I
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        TrailerRecycleAdapter.mListner = null;
+
     }
 
     @Override
@@ -118,6 +134,9 @@ public class TrailerFragment extends Fragment implements TrailerRecycleAdapter.I
 
                         int position = rvTrailer.getChildLayoutPosition(view);
                         VehicleBean bean = list.get(position);
+                        int trailerId = bean.getVehicleId();
+                        if (mListener != null)
+                            mListener.hooked(trailerId);
                     }
                 });
         ad.setButton(DialogInterface.BUTTON_NEGATIVE, "No",
@@ -134,7 +153,7 @@ public class TrailerFragment extends Fragment implements TrailerRecycleAdapter.I
     }
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+
+        void hooked(int trailerId);
     }
 }

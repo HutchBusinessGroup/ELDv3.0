@@ -60,7 +60,7 @@ public class TrailerRecycleAdapter extends RecyclerView.Adapter<TrailerRecycleAd
         }
     }
 
-    IViewHolder mListner;
+    public static IViewHolder mListner;
 
     public static interface IViewHolder {
         public void onItemClick(View view);

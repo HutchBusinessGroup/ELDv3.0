@@ -6,7 +6,7 @@ package com.hutchgroup.elog.beans;
 
 public class AxleBean {
     int axleId, axleNo, vehicleId, tireNo, axlePosition;
-    boolean doubleTireFg, frontTireFg, PowerUnitFg;
+    boolean doubleTireFg, frontTireFg, PowerUnitFg, emptyFg;
     double lowPressure, highPressure, pressure, lowTemperature, highTemperature, temperature;
     double pressure1, pressure2, pressure3, pressure4;
     double temperature1, temperature2, temperature3, temperature4;
@@ -219,5 +219,13 @@ public class AxleBean {
 
     public void setSensorIdsAll(String[] sensorIdsAll) {
         this.sensorIdsAll = sensorIdsAll;
+    }
+
+    public boolean isEmptyFg() {
+        return emptyFg;
+    }
+
+    public void setEmptyFg(boolean emptyFg) {
+        this.emptyFg = emptyFg;
     }
 }
