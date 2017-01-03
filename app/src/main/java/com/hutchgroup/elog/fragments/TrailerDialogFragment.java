@@ -61,6 +61,13 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
     }
 
     private void initialize(View view) {
+        for (String id : Utility.hookedTrailers) {
+            hooked += "'" + id + "', ";
+        }
+
+        if (!hooked.isEmpty()) {
+            hooked = hooked.replaceAll(", $", "");
+        }
         TrailerRecycleAdapter.mListner = this;
         rvTrailer = (RecyclerView) view.findViewById(R.id.rvTrailer);
         imgCancel = (ImageButton) view.findViewById(R.id.imgCancel);
@@ -88,6 +95,7 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
                 BindTrailers(s.toString(), hooked);
             }
         });
+        BindTrailers("", hooked);
     }
 
     private void BindTrailers(String search, String except) {

@@ -105,6 +105,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
     public static int LogId = 0;
     public static ArrayList<DTCBean> dtcList = new ArrayList<>();
     public static boolean pgn65217Fg = false;
+    public static ArrayList<String> hookedTrailers = new ArrayList<>();
 
     public static boolean hasPermissions(String... permissions) {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
@@ -893,7 +894,7 @@ public class Utility implements ActivityCompat.OnRequestPermissionsResultCallbac
         e.commit();
     }
 
-    public static String getPreferences(String parm,String defaultValue) {
+    public static String getPreferences(String parm, String defaultValue) {
         SharedPreferences sp = (context.getSharedPreferences("HutchGroup", context.MODE_PRIVATE));
         return sp.getString(parm, defaultValue);
     }

@@ -115,6 +115,7 @@ public class GetCall {
                 bean.setSerailNo(json.getString("SerialNo"));
                 bean.setMACAddress(json.getString("MACAddress"));
                 bean.setTimeZoneId(json.getString("TimeZoneId"));
+                bean.setTotalAxle(json.getInt("Axle"));
                 al.add(bean);
             }
 

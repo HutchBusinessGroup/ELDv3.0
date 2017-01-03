@@ -1,76 +1,65 @@
 package com.hutchgroup.elog.fragments;
 
-
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ListView;
 
 import com.hutchgroup.elog.R;
-import com.hutchgroup.elog.adapters.AxleAdapter;
-import com.hutchgroup.elog.adapters.AxleRecycleAdapter;
+import com.hutchgroup.elog.adapters.TrailerManageRecycleAdapter;
 import com.hutchgroup.elog.beans.AxleBean;
 import com.hutchgroup.elog.beans.TPMSBean;
 import com.hutchgroup.elog.beans.TrailerBean;
 import com.hutchgroup.elog.common.CanMessages;
-import com.hutchgroup.elog.common.LogFile;
-import com.hutchgroup.elog.common.Tpms;
 import com.hutchgroup.elog.common.Utility;
-import com.hutchgroup.elog.db.DailyLogDB;
 import com.hutchgroup.elog.db.TrailerDB;
 import com.hutchgroup.elog.db.VehicleDB;
 
 import java.util.ArrayList;
 
-
-public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms.ITPMS, AxleRecycleAdapter.IHookTrailer, TrailerDialogFragment.OnFragmentInteractionListener {
+public class TrailerManagementFragment extends Fragment implements TrailerManageRecycleAdapter.IHookTrailer, TrailerDialogFragment.OnFragmentInteractionListener {
     String TAG = TpmsFragment.class.getName();
-    RecyclerView rvTPMS;
-    AxleRecycleAdapter rAdapter;
+    RecyclerView rvTrailer;
+    TrailerManageRecycleAdapter rAdapter;
     ArrayList<AxleBean> list;
     private OnFragmentInteractionListener mListener;
 
-    public TpmsFragment() {
+    public TrailerManagementFragment() {
         // Required empty public constructor
     }
 
+    public static TrailerManagementFragment newInstance() {
+        TrailerManagementFragment fragment = new TrailerManagementFragment();
 
-    // TODO: Rename and change types and number of parameters
-    public static TpmsFragment newInstance() {
-        TpmsFragment fragment = new TpmsFragment();
         return fragment;
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_tpms_test, container, false);
+        View view = inflater.inflate(R.layout.fragment_trailer_management, container, false);
         initialize(view);
         return view;
     }
 
     private void initialize(View view) {
-        AxleRecycleAdapter.mListner = this;
-        rvTPMS = (RecyclerView) view.findViewById(R.id.rvTPMS);
+        TrailerManageRecycleAdapter.mListner = this;
+        rvTrailer = (RecyclerView) view.findViewById(R.id.rvTrailer);
         Configuration config = getResources().getConfiguration();
         RecyclerView.LayoutManager mLayoutManager;
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -79,17 +68,16 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
             mLayoutManager = new LinearLayoutManager(getContext());
         }
 
-        rvTPMS.setLayoutManager(mLayoutManager);
-        rvTPMS.setItemAnimator(new DefaultItemAnimator());
-        TPMSDataGet();
+        rvTrailer.setLayoutManager(mLayoutManager);
+        rvTrailer.setItemAnimator(new DefaultItemAnimator());
+        TrailerDataGet();
     }
-
-    private void TPMSDataGet() {
+    private void TrailerDataGet() {
 
         ArrayList<String> trailerList = TrailerDB.getHookedTrailer(); // including power unit
-        Utility.hookedTrailers = trailerList;
+
         list = VehicleDB.AxleInfoGet(trailerList);
-        //testData();
+        testData();
         int hooked = trailerList.size() - 1;
         int position = 1;
         for (int i = hooked; i < 3; i++) {
@@ -100,8 +88,8 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
             list.add(bean);
         }
 
-        rAdapter = new AxleRecycleAdapter(list);
-        rvTPMS.setAdapter(rAdapter);
+        rAdapter = new TrailerManageRecycleAdapter(list);
+        rvTrailer.setAdapter(rAdapter);
     }
 
     private void testData() {
@@ -110,14 +98,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
 
         list.add(createItem(2, 1, true, true, new double[]{90, 90, 90, 90}, new double[]{50, 50, 50, 50}, new double[]{80, 120}, new double[]{40, 60}));
         list.add(createItem(3, 2, true, true, new double[]{90, 90, 90, 90}, new double[]{55, 55, 55, 55}, new double[]{80, 120}, new double[]{40, 60}));
-
-/*
-        list.add(createItem(1, 1, true, true, new double[]{95, 95, 95, 95}, new double[]{46, 46, 46, 46}, new double[]{80, 120}, new double[]{40, 60}));
-        list.add(createItem(2, 2, true, true, new double[]{100, 100, 100, 100}, new double[]{47, 47, 47, 47}, new double[]{80, 120}, new double[]{40, 60}));
-        list.add(createItem(3, 3, true, true, new double[]{100, 70, 100, 100}, new double[]{47, 47, 47, 30}, new double[]{80, 120}, new double[]{40, 60}));*/
-
     }
-
     private AxleBean createItem(int axleNo, int axlePosition, boolean doubleTire, boolean frontFg, double[] temp, double[] pressure, double[] tempRange, double[] pressRange) {
         AxleBean bean = new AxleBean();
         bean.setAxleNo(axleNo);
@@ -148,6 +129,14 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         return bean;
     }
 
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
+        }
+    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -165,6 +154,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         mListener = null;
     }
 
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -181,46 +171,6 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         }
 
     }
-
-    @Override
-    public void onClick(View view) {
-
-    }
-
-    @Override
-    public void update(TPMSBean data) {
-        for (int j = 0; j < list.size(); j++) {
-            AxleBean bean = list.get(j);
-            String[] sensorIds = bean.getSensorIdsAll();
-            for (int i = 0; i < sensorIds.length; i++) {
-                String sensorId = sensorIds[i];
-                if (sensorId.equals(data.getSensorId())) {
-                    switch (i) {
-                        case 0:
-                            bean.setPressure1(data.getPressure());
-                            bean.setTemperature1(data.getTemperature());
-                            break;
-                        case 1:
-                            bean.setPressure2(data.getPressure());
-                            bean.setTemperature2(data.getTemperature());
-                            break;
-                        case 2:
-                            bean.setPressure3(data.getPressure());
-                            bean.setTemperature3(data.getTemperature());
-                            break;
-                        case 3:
-                            bean.setPressure4(data.getPressure());
-                            bean.setTemperature4(data.getTemperature());
-                            break;
-                    }
-                    rAdapter.notifyItemChanged(j);
-                    return;
-                }
-            }
-
-        }
-    }
-
     TrailerDialogFragment dialog;
 
     @Override
@@ -242,13 +192,11 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         bean.setLongitude2(Utility.currentLocation.getLongitude() + "");
         bean.setStartOdometer(CanMessages.OdometerReading);
         TrailerDB.hook(bean);
-        TPMSDataGet();
+        TrailerDataGet();
     }
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-
+        void onFragmentInteraction(Uri uri);
     }
-
-
 }

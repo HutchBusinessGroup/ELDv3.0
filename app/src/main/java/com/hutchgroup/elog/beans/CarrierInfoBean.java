@@ -4,7 +4,7 @@ package com.hutchgroup.elog.beans;
  * Created by Deepak.Sharma on 1/14/2016.
  */
 public class CarrierInfoBean {
-    int companyId, statusId, vehicleId;
+    int companyId, statusId, vehicleId, totalAxle;
     String CarrierName;
     String ELDManufacturer;
     String USDOT;
@@ -110,5 +110,13 @@ public class CarrierInfoBean {
 
     public void setTimeZoneId(String timeZoneId) {
         TimeZoneId = timeZoneId;
+    }
+
+    public int getTotalAxle() {
+        return totalAxle;
+    }
+
+    public void setTotalAxle(int totalAxle) {
+        this.totalAxle = totalAxle;
     }
 }

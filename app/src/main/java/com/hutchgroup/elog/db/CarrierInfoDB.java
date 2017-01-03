@@ -126,6 +126,7 @@ public class CarrierInfoDB {
                 values.put("SerialNo", bean.getSerailNo());
                 values.put("MACAddress", bean.getMACAddress());
                 values.put("TimeZoneId", bean.getTimeZoneId());
+                values.put("TotalAxle", bean.getTotalAxle());
                 int vehicleId = checkDuplicate(bean.getVehicleId());
                 if (vehicleId == 0) {
                     database.insert(MySQLiteOpenHelper.TABLE_CARRIER,

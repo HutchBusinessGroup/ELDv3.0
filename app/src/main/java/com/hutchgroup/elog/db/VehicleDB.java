@@ -131,7 +131,7 @@ public class VehicleDB {
             database = helper.getWritableDatabase();
             for (String id : vehicleIds) {
                 cursor = database.rawQuery("select VehicleId ,axleNo ,axlePosition ,doubleTireFg ,frontTireFg ,PowerUnitFg ,sensorIds ,pressures ,temperatures from "
-                                + MySQLiteOpenHelper.TABLE_AXLE_INFO + " Where VehicleId =? order by frontTireFg,axlePosition"
+                                + MySQLiteOpenHelper.TABLE_AXLE_INFO + " Where VehicleId =? order by frontTireFg desc,axlePosition"
                         , new String[]{id});
                 while (cursor.moveToNext()) {
                     AxleBean bean = new AxleBean();
@@ -168,7 +168,7 @@ public class VehicleDB {
 
         } catch (Exception e) {
             Utility.printError(e.getMessage());
-            LogFile.write(DTCDB.class.getName() + "::AxleInfoGet Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+            LogFile.write(VehicleDB.class.getName() + "::AxleInfoGet Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
                 cursor.close();
@@ -191,9 +191,9 @@ public class VehicleDB {
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getReadableDatabase();
 
-            cursor = database.rawQuery(" select VehicleId, UnitNo, PlateNo from "
+            cursor = database.rawQuery("select VehicleId, UnitNo, PlateNo from "
                     + MySQLiteOpenHelper.TABLE_TRAILER
-                    + " where UnitNo like ? and not in (?) ", new String[]{search + "%", except});
+                    + " where UnitNo like ? " + " and VehicleId not in (" + except + ") order by UnitNo", new String[]{search + "%"});
 
             while (cursor.moveToNext()) {
                 VehicleBean bean = new VehicleBean();
@@ -202,7 +202,19 @@ public class VehicleDB {
                 bean.setPlateNo(cursor.getString(cursor.getColumnIndex("PlateNo")));
                 list.add(bean);
             }
-        } catch (Exception exe) {
+        } catch (Exception e) {
+
+            Utility.printError(e.getMessage());
+            LogFile.write(VehicleDB.class.getName() + "::TrailerGet Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                cursor.close();
+                database.close();
+                helper.close();
+
+            } catch (Exception e2) {
+                // TODO: handle exception
+            }
         }
         return list;
     }
