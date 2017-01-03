@@ -55,10 +55,27 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
             });
 
         } else {
-            if (bean.getAxlePosition() == 1) {
-                viewHolder.tvBackTire.setVisibility(View.VISIBLE);
-            } else {
-                viewHolder.tvBackTire.setVisibility(View.GONE);
+            int axlePosition = bean.getAxlePosition();
+
+
+            if (bean.isPowerUnitFg()) {
+                if (bean.getAxleNo() == 1) {
+
+                    viewHolder.layoutDoubleAxle.setBackgroundResource(R.drawable.tpms_power_unit);
+                    viewHolder.layoutSingleAxle.setBackgroundResource(R.drawable.tpms_power_unit);
+                } else {
+
+                    viewHolder.layoutDoubleAxle.setBackgroundResource(R.drawable.tpms_power_unit_axle);
+                    viewHolder.layoutSingleAxle.setBackgroundResource(R.drawable.tpms_power_unit_axle);
+                }
+            }
+            else
+            {
+                if (bean.getAxlePosition() == 1 && !bean.isFrontTireFg()) {
+                    viewHolder.tvBackTire.setVisibility(View.VISIBLE);
+                } else {
+                    viewHolder.tvBackTire.setVisibility(View.GONE);
+                }
             }
             viewHolder.layoutEmpty.setVisibility(View.GONE);
 
