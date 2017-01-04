@@ -61,16 +61,21 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
             if (bean.isPowerUnitFg()) {
                 if (bean.getAxleNo() == 1) {
 
-                    viewHolder.layoutDoubleAxle.setBackgroundResource(R.drawable.tpms_power_unit);
-                    viewHolder.layoutSingleAxle.setBackgroundResource(R.drawable.tpms_power_unit);
+                    viewHolder.layoutSingleRepeat.setLayoutParams(new LinearLayout.LayoutParams(256, 232));
+                    viewHolder.layoutDoubleRepeat.setLayoutParams(new LinearLayout.LayoutParams(256, 232));
+                    int background = Utility.hookedTrailers.size() > 1 ? R.drawable.tpms_power_unit_with_trailer : R.drawable.tpms_power_unit;
+                    /*viewHolder.layoutDoubleAxle.setBackgroundResource(background);
+                    viewHolder.layoutSingleAxle.setBackgroundResource(background);*/
+                    viewHolder.layoutSingleRepeat.setBackgroundResource(background);
+                    viewHolder.layoutDoubleRepeat.setBackgroundResource(background);
                 } else {
-
-                    viewHolder.layoutDoubleAxle.setBackgroundResource(R.drawable.tpms_power_unit_axle);
-                    viewHolder.layoutSingleAxle.setBackgroundResource(R.drawable.tpms_power_unit_axle);
+                    int background = Utility.hookedTrailers.size() > 1 ? R.drawable.tpms_trailer_axle : R.drawable.tpms_power_unit_axle;
+                    viewHolder.layoutSingleRepeat.setBackgroundResource(background);
+                    viewHolder.layoutDoubleRepeat.setBackgroundResource(background);
+                   /* viewHolder.layoutDoubleAxle.setBackgroundResource(R.drawable.tpms_power_unit_axle);
+                    viewHolder.layoutSingleAxle.setBackgroundResource(R.drawable.tpms_power_unit_axle);*/
                 }
-            }
-            else
-            {
+            } else {
                 if (bean.getAxlePosition() == 1 && !bean.isFrontTireFg()) {
                     viewHolder.tvBackTire.setVisibility(View.VISIBLE);
                 } else {
@@ -124,7 +129,7 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
             tvPressure.setTextAppearance(Utility.context, R.style.TPMSValue_White);
             imgTire.setImageResource(R.drawable.error_tire);
         } else {
-            tvPressure.setBackgroundResource(R.drawable.tpms_temp_bg_white);
+            tvPressure.setBackgroundResource(R.drawable.tpms_value_bg_white);
             tvPressure.setTextAppearance(Utility.context, R.style.TPMSValue);
             imgTire.setImageResource(R.drawable.gray_tire);
         }
@@ -146,7 +151,7 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
         TextView tvSinglePressure1, tvSinglePressure2, tvSingleTemperature1, tvSingleTemperature2;
         ImageView imgSingleTire1, imgSingleTire2;
 
-        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty;
+        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty,layoutSingleRepeat,layoutDoubleRepeat;
         TextView tvBackTire;
         Button btnHook;
 
@@ -188,6 +193,9 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
             layoutSingleAxle = (LinearLayout) convertView.findViewById(R.id.layoutSingleAxle);
             layoutDoubleAxle = (LinearLayout) convertView.findViewById(R.id.layoutDoubleAxle);
             layoutEmpty = (LinearLayout) convertView.findViewById(R.id.layoutEmpty);
+
+            layoutSingleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutSingleRepeat);
+            layoutDoubleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutDoubleRepeat);
         }
     }
 

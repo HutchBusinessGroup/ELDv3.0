@@ -157,7 +157,7 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         try {
             LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             ViewGroup viewGroup = (ViewGroup) getView();
-            View view = inflater.inflate(R.layout.fragment_tpms_test, viewGroup, false);
+            View view = inflater.inflate(R.layout.fragment_trailer_management, viewGroup, false);
             viewGroup.removeAllViews();
             viewGroup.addView(view);
             initialize(view);
@@ -173,6 +173,7 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
     public void hook() {
         if (dialog == null) {
             dialog = new TrailerDialogFragment();
+            dialog.mListener=this;
         }
         dialog.show(getFragmentManager(), "trailer_dialog");
     }

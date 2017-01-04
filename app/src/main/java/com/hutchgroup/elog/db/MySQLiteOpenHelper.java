@@ -185,6 +185,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(TABLE_CREATE_TPMS);
         db.execSQL(TABLE_CREATE_TRAILER);
         db.execSQL(TABLE_CREATE_AXLE_INFO);
+        db.execSQL(TABLE_CREATE_TRAILER_STATUS);
     }
 
     @Override

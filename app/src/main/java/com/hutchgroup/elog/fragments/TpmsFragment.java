@@ -75,6 +75,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         RecyclerView.LayoutManager mLayoutManager;
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+
         } else {
             mLayoutManager = new LinearLayoutManager(getContext());
         }
