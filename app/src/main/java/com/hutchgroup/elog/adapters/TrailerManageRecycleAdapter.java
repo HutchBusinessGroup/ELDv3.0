@@ -30,7 +30,7 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.tpms_row_layout, parent, false);
+                .inflate(R.layout.trailer_manage_row_layout, parent, false);
 
         return new ViewHolder(itemView);
     }

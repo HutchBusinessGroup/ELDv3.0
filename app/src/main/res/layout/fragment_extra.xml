@@ -39,7 +39,7 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/btnMaintainence"
+            android:id="@+id/btnTrailerManagement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -53,7 +53,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="12dp"
             android:layout_marginTop="12dp"
-            android:text="Maintenance" />
+            android:text="Trailer Management" />
     </LinearLayout>
 
     <LinearLayout

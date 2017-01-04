@@ -239,9 +239,33 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         bean.setDriverId(Utility.activeUserId);
         bean.setHookedFg(1);
         bean.setLatitude1(Utility.currentLocation.getLatitude() + "");
-        bean.setLongitude2(Utility.currentLocation.getLongitude() + "");
+        bean.setLongitude1(Utility.currentLocation.getLongitude() + "");
         bean.setStartOdometer(CanMessages.OdometerReading);
         TrailerDB.hook(bean);
+        TPMSDataGet();
+        for (AxleBean obj : list) {
+            if (obj.getVehicleId() == trailerId) {
+                Tpms.addSensorId(obj.getSensorIdsAll());
+            }
+        }
+    }
+
+    private void unhook(int trailerId) {
+        for (AxleBean bean : list) {
+            if (bean.getVehicleId() == trailerId) {
+                Tpms.removeSensorId(bean.getSensorIdsAll());
+            }
+        }
+
+        TrailerBean bean = new TrailerBean();
+        bean.setTrailerId(trailerId);
+        bean.setUnhookDate(Utility.getCurrentDateTime());
+        bean.setDriverId(Utility.activeUserId);
+        bean.setHookedFg(0);
+        bean.setLatitude2(Utility.currentLocation.getLatitude() + "");
+        bean.setLongitude2(Utility.currentLocation.getLongitude() + "");
+        bean.setEndOdometer(CanMessages.OdometerReading);
+        TrailerDB.unhook(bean);
         TPMSDataGet();
     }
 

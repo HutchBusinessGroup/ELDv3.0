@@ -37,7 +37,7 @@ public class TrailerDB {
             values.put("longitude1", bean.getLongitude1());
             values.put("SyncFg", 0);
             database.insert(MySQLiteOpenHelper.TABLE_TRAILER_STATUS,
-                    "_id,unhookDate,distanceTravelled,latitude2,longitude2,modifiedBy", values);
+                    "_id,unhookDate,endOdometer,latitude2,longitude2,modifiedBy", values);
 
         } catch (Exception e) {
             status = false;
@@ -61,9 +61,9 @@ public class TrailerDB {
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put("hookedFg", 1);
+            values.put("hookedFg", 0);
             values.put("unhookDate", bean.getUnhookDate());
-            values.put("distanceTravelled", bean.getDistanceTravelled());
+            values.put("endOdometer", bean.getEndOdometer());
             values.put("modifiedBy", bean.getDriverId());
             values.put("latitude2", bean.getLatitude2());
             values.put("longitude2", bean.getLongitude2());

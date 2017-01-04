@@ -6,7 +6,7 @@ package com.hutchgroup.elog.beans;
 
 public class TrailerBean {
 
-    String startOdometer, distanceTravelled, hookDate, unhookDate, latitude1, latitude2, longitude1, longitude2;
+    String startOdometer, endOdometer, hookDate, unhookDate, latitude1, latitude2, longitude1, longitude2;
     int trailerId, driverId, syncFg,hookedFg;
 
     public String getStartOdometer() {
@@ -17,13 +17,6 @@ public class TrailerBean {
         this.startOdometer = startOdometer;
     }
 
-    public String getDistanceTravelled() {
-        return distanceTravelled;
-    }
-
-    public void setDistanceTravelled(String distanceTravelled) {
-        this.distanceTravelled = distanceTravelled;
-    }
 
     public String getHookDate() {
         return hookDate;
@@ -103,5 +96,13 @@ public class TrailerBean {
 
     public void setHookedFg(int hookedFg) {
         this.hookedFg = hookedFg;
+    }
+
+    public String getEndOdometer() {
+        return endOdometer;
+    }
+
+    public void setEndOdometer(String endOdometer) {
+        this.endOdometer = endOdometer;
     }
 }

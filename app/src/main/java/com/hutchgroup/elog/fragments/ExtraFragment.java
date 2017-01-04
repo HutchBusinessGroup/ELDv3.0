@@ -15,7 +15,7 @@ import com.hutchgroup.elog.R;
 public class ExtraFragment extends Fragment implements View.OnClickListener {
 
     private OnFragmentInteractionListener mListener;
-    ImageButton btnDTC,btnIncident;
+    ImageButton btnDTC, btnIncident, btnTrailerManagement;
 
     public ExtraFragment() {
         // Required empty public constructor
@@ -41,6 +41,10 @@ public class ExtraFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initialize(View view) {
+
+        btnTrailerManagement = (ImageButton) view.findViewById(R.id.btnTrailerManagement);
+        btnTrailerManagement.setOnClickListener(this);
+
         btnDTC = (ImageButton) view.findViewById(R.id.btnDTC);
         btnDTC.setOnClickListener(this);
 
@@ -74,6 +78,9 @@ public class ExtraFragment extends Fragment implements View.OnClickListener {
             case R.id.btnIncident:
                 mListener.onLoadScoreCard();
                 break;
+            case R.id.btnTrailerManagement:
+                mListener.onLoadTrailerManagement();
+                break;
         }
     }
 
@@ -82,6 +89,9 @@ public class ExtraFragment extends Fragment implements View.OnClickListener {
         void onFragmentInteraction(Uri uri);
 
         void onLoadDTC();
+
         void onLoadScoreCard();
+
+        void onLoadTrailerManagement();
     }
 }

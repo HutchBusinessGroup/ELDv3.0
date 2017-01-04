@@ -104,6 +104,7 @@ import com.hutchgroup.elog.db.MessageDB;
 import com.hutchgroup.elog.db.SettingsDB;
 import com.hutchgroup.elog.db.TripInspectionDB;
 import com.hutchgroup.elog.db.UserDB;
+import com.hutchgroup.elog.db.VehicleDB;
 import com.hutchgroup.elog.db.VersionInformationDB;
 import com.hutchgroup.elog.fragments.BluetoothConnectivityFragment;
 import com.hutchgroup.elog.fragments.DTCFragment;
@@ -128,6 +129,7 @@ import com.hutchgroup.elog.fragments.ShutDownDeviceDialog;
 import com.hutchgroup.elog.fragments.TabSystemFragment;
 import com.hutchgroup.elog.fragments.TpmsFragment;
 import com.hutchgroup.elog.fragments.TrailerDialogFragment;
+import com.hutchgroup.elog.fragments.TrailerManagementFragment;
 import com.hutchgroup.elog.fragments.UnCertifiedFragment;
 import com.hutchgroup.elog.fragments.UnidentifyFragment;
 import com.hutchgroup.elog.fragments.UserListFragment;
@@ -182,6 +184,7 @@ public class MainActivity extends ELogMainActivity
     private final int Extra = 14;
     private final int DTC = 15;
     private final int ScoreCard = 16;
+    private final int TrailerManagement = 17;
     public static Date ViolationDT;
 
     BluetoothAdapter adapter = null;
@@ -1034,7 +1037,6 @@ public class MainActivity extends ELogMainActivity
             this.registerReceiver(gpsChangeReceiver, new IntentFilter(LocationManager.PROVIDERS_CHANGED_ACTION));
             this.registerReceiver(dateChangedReceiver, new IntentFilter("MID_NIGHT"));
 
-
             toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
             toolbar.findViewById(R.id.title);
@@ -1322,6 +1324,9 @@ public class MainActivity extends ELogMainActivity
             initializeGforce();
             alertMonitor = new AlertMonitor();
             alertMonitor.startAlertMonitor();
+
+            // add sensorids to tpmsdata static variable int Tpms.java class. we only get data from sensorids of hooked trailer plus power unit
+            VehicleDB.SensorInfoGet();
         } catch (Exception e) {
             LogFile.write(MainActivity.class.getName() + "::onCreate error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
         }
@@ -4748,6 +4753,19 @@ public class MainActivity extends ELogMainActivity
         previousScreen = currentScreen;
         currentScreen = ScoreCard;
         title = getApplicationContext().getResources().getString(R.string.title_score_card);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(title);
+    }
+
+    @Override
+    public void onLoadTrailerManagement() {
+        isOnDailyLog = false;
+        bInspectDailylog = false;
+
+        replaceFragment(TrailerManagementFragment.newInstance());
+        previousScreen = currentScreen;
+        currentScreen = TrailerManagement;
+        title = getApplicationContext().getResources().getString(R.string.title_trailer_management);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(title);
     }

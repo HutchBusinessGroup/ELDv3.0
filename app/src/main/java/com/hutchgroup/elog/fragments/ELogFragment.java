@@ -1496,7 +1496,6 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
         AutoViolationCalculate();
     }
 
-
     private void AutoViolationCalculate() {
         try {
             HourOfService.listDutyStatus = Utility.dutyStatusList;
@@ -1560,7 +1559,6 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
         }
     }
 
-
     public void updateOdometer() {
         try {
             if (tvVehicleMiles != null && tvCurrentTrip != null) {
@@ -1584,7 +1582,6 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             LogFile.write(ELogFragment.class.getName() + "::updateOdometer Error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
         }
     }
-
 
     private void saveDutyStatusFlag() {
         try {
@@ -1691,7 +1688,6 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
         Log.d(TAG, "unselectEvent");
         eventAdapter.unselectEvent();
     }
-
 
     @Override
     public void onSavedRule(int rule) {

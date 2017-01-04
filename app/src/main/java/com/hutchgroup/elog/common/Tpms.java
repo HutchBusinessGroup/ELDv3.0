@@ -491,7 +491,7 @@ public class Tpms {
         }
     }
 
-    public static void removeSensorId(ArrayList<String> sensorIds) {
+    public static void removeSensorId(String[] sensorIds) {
         for (String sensorId : sensorIds) {
             for (TPMSBean bean : tpmsData) {
                 if (sensorId.equals(bean.getSensorId())) {

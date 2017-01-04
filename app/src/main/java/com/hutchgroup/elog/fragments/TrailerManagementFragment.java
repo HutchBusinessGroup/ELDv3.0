@@ -15,9 +15,9 @@ import android.view.ViewGroup;
 import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.adapters.TrailerManageRecycleAdapter;
 import com.hutchgroup.elog.beans.AxleBean;
-import com.hutchgroup.elog.beans.TPMSBean;
 import com.hutchgroup.elog.beans.TrailerBean;
 import com.hutchgroup.elog.common.CanMessages;
+import com.hutchgroup.elog.common.Tpms;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.db.TrailerDB;
 import com.hutchgroup.elog.db.VehicleDB;
@@ -72,12 +72,14 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         rvTrailer.setItemAnimator(new DefaultItemAnimator());
         TrailerDataGet();
     }
+
     private void TrailerDataGet() {
 
-        ArrayList<String> trailerList = TrailerDB.getHookedTrailer(); // including power unit
-
+        ArrayList<String> trailerList = TrailerDB.getHookedTrailer();
+        Utility.hookedTrailers = trailerList;
+        // including power unit
         list = VehicleDB.AxleInfoGet(trailerList);
-        testData();
+        // testData();
         int hooked = trailerList.size() - 1;
         int position = 1;
         for (int i = hooked; i < 3; i++) {
@@ -99,6 +101,7 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         list.add(createItem(2, 1, true, true, new double[]{90, 90, 90, 90}, new double[]{50, 50, 50, 50}, new double[]{80, 120}, new double[]{40, 60}));
         list.add(createItem(3, 2, true, true, new double[]{90, 90, 90, 90}, new double[]{55, 55, 55, 55}, new double[]{80, 120}, new double[]{40, 60}));
     }
+
     private AxleBean createItem(int axleNo, int axlePosition, boolean doubleTire, boolean frontFg, double[] temp, double[] pressure, double[] tempRange, double[] pressRange) {
         AxleBean bean = new AxleBean();
         bean.setAxleNo(axleNo);
@@ -129,7 +132,6 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         return bean;
     }
 
-
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -140,12 +142,6 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
     @Override
@@ -153,7 +149,6 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         super.onDetach();
         mListener = null;
     }
-
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -171,6 +166,7 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         }
 
     }
+
     TrailerDialogFragment dialog;
 
     @Override
@@ -189,9 +185,28 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         bean.setDriverId(Utility.activeUserId);
         bean.setHookedFg(1);
         bean.setLatitude1(Utility.currentLocation.getLatitude() + "");
-        bean.setLongitude2(Utility.currentLocation.getLongitude() + "");
+        bean.setLongitude1(Utility.currentLocation.getLongitude() + "");
         bean.setStartOdometer(CanMessages.OdometerReading);
         TrailerDB.hook(bean);
+        TrailerDataGet();
+    }
+
+    private void unhook(int trailerId) {
+        for (AxleBean bean : list) {
+            if (bean.getVehicleId() == trailerId) {
+                Tpms.removeSensorId(bean.getSensorIdsAll());
+            }
+        }
+
+        TrailerBean bean = new TrailerBean();
+        bean.setTrailerId(trailerId);
+        bean.setUnhookDate(Utility.getCurrentDateTime());
+        bean.setDriverId(Utility.activeUserId);
+        bean.setHookedFg(0);
+        bean.setLatitude2(Utility.currentLocation.getLatitude() + "");
+        bean.setLongitude2(Utility.currentLocation.getLongitude() + "");
+        bean.setEndOdometer(CanMessages.OdometerReading);
+        TrailerDB.unhook(bean);
         TrailerDataGet();
     }
 
