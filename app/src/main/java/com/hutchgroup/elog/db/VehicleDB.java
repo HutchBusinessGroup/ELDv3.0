@@ -128,7 +128,7 @@ public class VehicleDB {
 
         try {
             helper = new MySQLiteOpenHelper(Utility.context);
-            database = helper.getWritableDatabase();
+            database = helper.getReadableDatabase();
             for (String id : vehicleIds) {
                 cursor = database.rawQuery("select VehicleId ,axleNo ,axlePosition ,doubleTireFg ,frontTireFg ,PowerUnitFg ,sensorIds ,pressures ,temperatures from "
                                 + MySQLiteOpenHelper.TABLE_AXLE_INFO + " Where VehicleId =? order by frontTireFg desc,axlePosition"
@@ -164,6 +164,7 @@ public class VehicleDB {
                     Tpms.getTpmsData(sensorIds, bean);
                     list.add(bean);
                 }
+                cursor.close();
             }
 
         } catch (Exception e) {
@@ -171,7 +172,6 @@ public class VehicleDB {
             LogFile.write(VehicleDB.class.getName() + "::AxleInfoGet Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
-                cursor.close();
                 database.close();
                 helper.close();
 
@@ -209,6 +209,43 @@ public class VehicleDB {
         } finally {
             try {
                 cursor.close();
+                database.close();
+                helper.close();
+
+            } catch (Exception e2) {
+                // TODO: handle exception
+            }
+        }
+        return list;
+    }
+
+    public static ArrayList<AxleBean> SensorInfoGet(ArrayList<String> vehicleIds) {
+        ArrayList<AxleBean> list = new ArrayList<>();
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getReadableDatabase();
+            for (String id : vehicleIds) {
+                cursor = database.rawQuery("select sensorIds from "
+                                + MySQLiteOpenHelper.TABLE_AXLE_INFO + " Where VehicleId =? order by frontTireFg desc,axlePosition"
+                        , new String[]{id});
+                while (cursor.moveToNext()) {
+
+                    String Ids = cursor.getString(cursor.getColumnIndex("sensorIds"));
+                    String[] sensorIds = Ids.split(",");
+                    Tpms.addSensorId(sensorIds);
+                }
+                cursor.close();
+            }
+
+        } catch (Exception e) {
+            Utility.printError(e.getMessage());
+            LogFile.write(VehicleDB.class.getName() + "::AxleInfoGet Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
                 database.close();
                 helper.close();
 

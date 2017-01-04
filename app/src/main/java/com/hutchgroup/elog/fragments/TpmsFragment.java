@@ -89,7 +89,6 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         ArrayList<String> trailerList = TrailerDB.getHookedTrailer(); // including power unit
         Utility.hookedTrailers = trailerList;
         list = VehicleDB.AxleInfoGet(trailerList);
-        //testData();
         int hooked = trailerList.size() - 1;
         int position = 1;
         for (int i = hooked; i < 3; i++) {
@@ -227,6 +226,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
     public void hook() {
         if (dialog == null) {
             dialog = new TrailerDialogFragment();
+            dialog.mListener = this;
         }
         dialog.show(getFragmentManager(), "trailer_dialog");
     }
@@ -249,6 +249,4 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         // TODO: Update argument type and name
 
     }
-
-
 }

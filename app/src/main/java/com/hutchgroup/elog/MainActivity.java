@@ -154,7 +154,7 @@ public class MainActivity extends ELogMainActivity
         UserListFragment.OnFragmentInteractionListener, BluetoothConnectivityFragment.OnFragmentInteractionListener, OutputFileSendDialog.OutputFileDialogInterface,
         DvirFragment.OnFragmentInteractionListener, DailyLogDashboardFragment.OnFragmentInteractionListener, TpmsFragment.OnFragmentInteractionListener, TabSystemFragment.OnFragmentInteractionListener,
         LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener
-        , GForceMonitor.IGForceMonitor, TrailerDialogFragment.OnFragmentInteractionListener {
+        , GForceMonitor.IGForceMonitor {
 
     private PopupDialog ponDutyChangeDialog;
     private boolean onDutyChangeDialogResponse, autoDismissOnDutyChangeDialog, isDialogShown;
@@ -4825,11 +4825,6 @@ public class MainActivity extends ELogMainActivity
 
 
         AlertDB.Save("HardBreakingVL", "Hard Breaking", Utility.getCurrentDateTime(), 5, 0, driverId);
-
-    }
-
-    @Override
-    public void hooked(int trailerId) {
 
     }
 }

@@ -3,7 +3,6 @@ package com.hutchgroup.elog.common;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
-import android.nfc.Tag;
 import android.util.Log;
 
 import com.hutchgroup.elog.MainActivity;
@@ -15,7 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.UUID;
 
 
@@ -383,7 +381,7 @@ public class Tpms {
         Log.i(TAG, data);
     }
 
-    private static ArrayList<TPMSBean> tmpsData = new ArrayList<>();
+    private static ArrayList<TPMSBean> tpmsData = new ArrayList<>();
 
     void parse(byte[] readBuf, int length) {
         // only taken first sentence to parse data
@@ -423,7 +421,7 @@ public class Tpms {
     // Purpose: assign tmps data to axle data for tpms fragment
     public static void getTpmsData(String[] sensorIds, AxleBean data) {
 
-        for (TPMSBean bean : tmpsData) {
+        for (TPMSBean bean : tpmsData) {
             for (int i = 0; i < sensorIds.length; i++) {
                 String sensorId = sensorIds[i];
                 if (sensorId.equals(bean.getSensorId())) {
@@ -452,10 +450,8 @@ public class Tpms {
 
     private static void SaveTpmsData(String sensorId, int temperature, int pressure, String voltage, int tireNo) {
         String currentDate = Utility.getCurrentDateTime();
-        boolean newSensorId = true;
-        for (TPMSBean bean : tmpsData) {
+        for (TPMSBean bean : tpmsData) {
             if (sensorId.equals(bean.getSensorId())) {
-                newSensorId = false;
                 float timestamp = Utility.getDiffMins(bean.getCreatedDate(), currentDate);
                 if (timestamp < 300)
                     return;
@@ -476,19 +472,32 @@ public class Tpms {
                 break;
             }
         }
+    }
 
-        if (newSensorId) {
+    public static void addSensorId(String[] sensorIds) {
+        String currentDate = Utility.getCurrentDateTime();
+        for (String sensorId : sensorIds) {
             TPMSBean bean = new TPMSBean();
-            bean.setNew(true);
-            bean.setTemperature(temperature);
-            bean.setPressure(pressure);
-            bean.setVoltage(voltage);
+            bean.setNew(false);
+            bean.setSensorId(sensorId);
+            bean.setTemperature(0);
+            bean.setPressure(0);
+            bean.setVoltage("0");
             bean.setCreatedDate(currentDate);
             bean.setModifiedDate(currentDate);
             bean.setDriverId(Utility.activeUserId);
-            bean.setTireNo(tireNo);
-            tmpsData.add(bean);
-            TpmsDB.Save(bean);
+            bean.setTireNo(0);
+            tpmsData.add(bean);
+        }
+    }
+
+    public static void removeSensorId(ArrayList<String> sensorIds) {
+        for (String sensorId : sensorIds) {
+            for (TPMSBean bean : tpmsData) {
+                if (sensorId.equals(bean.getSensorId())) {
+                    tpmsData.remove(bean);
+                }
+            }
         }
     }
 

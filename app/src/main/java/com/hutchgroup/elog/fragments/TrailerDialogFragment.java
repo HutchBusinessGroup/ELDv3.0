@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.hutchgroup.elog.R;
@@ -27,7 +30,7 @@ import java.util.ArrayList;
 
 public class TrailerDialogFragment extends DialogFragment implements TrailerRecycleAdapter.IViewHolder {
 
-    private OnFragmentInteractionListener mListener;
+    public OnFragmentInteractionListener mListener;
     TrailerRecycleAdapter rAdapter;
     ArrayList<VehicleBean> list;
     RecyclerView rvTrailer;
@@ -54,6 +57,7 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_trailer_dialog, container, false);
+        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         this.setCancelable(false);
         initialize(view);
@@ -70,6 +74,9 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
         }
         TrailerRecycleAdapter.mListner = this;
         rvTrailer = (RecyclerView) view.findViewById(R.id.rvTrailer);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
+        rvTrailer.setLayoutManager(mLayoutManager);
+        rvTrailer.setItemAnimator(new DefaultItemAnimator());
         imgCancel = (ImageButton) view.findViewById(R.id.imgCancel);
         imgCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,12 +114,6 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
     @Override
@@ -145,6 +146,7 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
                         int trailerId = bean.getVehicleId();
                         if (mListener != null)
                             mListener.hooked(trailerId);
+                        dismiss();
                     }
                 });
         ad.setButton(DialogInterface.BUTTON_NEGATIVE, "No",
@@ -163,5 +165,16 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
     public interface OnFragmentInteractionListener {
 
         void hooked(int trailerId);
+    }
+
+
+    @Override
+    public void onResume() {
+        ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
+        params.width =WindowManager.LayoutParams.MATCH_PARENT;
+        params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
+
+        super.onResume();
     }
 }
