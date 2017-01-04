@@ -36,12 +36,16 @@
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\drawer_logo.png"
     },
     {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_event_shipment_24.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_event_shipment_24.png"
+    },
+    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_settings.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_settings.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_event_shipment_24.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_event_shipment_24.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\back_icon.png",
@@ -52,12 +56,12 @@
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flag_russia.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_stay_current_portrait_black_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_stay_current_portrait_black_24dp.png"
-    },
-    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_bluetooth.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_bluetooth.png"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_stay_current_portrait_black_24dp.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_stay_current_portrait_black_24dp.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_search_white_24dp.png",
@@ -68,12 +72,12 @@
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_gps_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_p_total.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_p_total.png"
-    },
-    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\checkbox.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\checkbox.png"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_p_total.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_p_total.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_change_horiz.png",
@@ -84,12 +88,12 @@
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\list_checkbox_unchecked.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_driving_hours_bg_red.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_driving_hours_bg_red.png"
-    },
-    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_timeline.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_timeline.png"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_driving_hours_bg_red.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_driving_hours_bg_red.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\rpm_needle.png",
@@ -180,12 +184,12 @@
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_driver_active.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_eld.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_eld.png"
-    },
-    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\home_duty_status.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\home_duty_status.png"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_eld.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_eld.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_unchecked.png",
@@ -212,12 +216,12 @@
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_sync.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_web_service_on.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_web_service_on.png"
-    },
-    {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_messages.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_messages.png"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_web_service_on.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_web_service_on.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_android_ver.png",
@@ -256,24 +260,24 @@
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_l_grid.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_land.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_land.png"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_password_visibility.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_password_visibility.png"
-    },
-    {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_system_clock.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_system_clock.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_track_checked.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_track_checked.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_report_problem_white_24dp.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_report_problem_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_track_checked.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_track_checked.png"
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_system_clock.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_system_clock.png"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_password_visibility.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_password_visibility.png"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_land.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_land.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_back_relogin.png",
@@ -298,6 +302,10 @@
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_change_rule.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_change_rule.png"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit_axle.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit_axle.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_skip.png",
@@ -634,6 +642,10 @@
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_confirm.png",
         "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_confirm.png"
+    },
+    {
+        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit_axle_last.png",
+        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit_axle_last.png"
     },
     {
         "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_l_status.png",

@@ -29,6 +29,7 @@ public class PostData extends AsyncTask<String, Void, Boolean> {
                 PostCall.PostDTC();
                 PostCall.PostAlert();
                 PostCall.PostTPMS();
+                PostCall.PostTrailerStatus();
             }
         }
         return status;

@@ -31,6 +31,7 @@ public class AutoSyncData extends AsyncTask<String, Void, Boolean> {
                     PostCall.PostDTC();
                     PostCall.PostAlert();
                     PostCall.PostTPMS();
+                    PostCall.PostTrailerStatus();
                 }
 
             }

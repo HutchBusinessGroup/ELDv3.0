@@ -38,7 +38,7 @@ public class TpmsDB {
 
         } catch (Exception exe) {
             Utility.printError(exe.getMessage());
-            LogFile.write(AlertDB.class.getName() + "::TpmsSyncUpdate Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+            LogFile.write(TpmsDB.class.getName() + "::TpmsSyncUpdate Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
                 cursor.close();
@@ -103,7 +103,7 @@ public class TpmsDB {
         SQLiteDatabase database = null;
         try {
             helper = new MySQLiteOpenHelper(Utility.context);
-            database = helper.getWritableDatabase();
+            database = helper.getReadableDatabase();
             for (TPMSBean bean : list) {
 
                 ContentValues values = new ContentValues();

@@ -4,6 +4,7 @@ import com.hutchgroup.elog.db.AlertDB;
 import com.hutchgroup.elog.db.DTCDB;
 import com.hutchgroup.elog.db.DailyLogDB;
 import com.hutchgroup.elog.db.TpmsDB;
+import com.hutchgroup.elog.db.TrailerDB;
 import com.hutchgroup.elog.db.TripInspectionDB;
 import com.hutchgroup.elog.db.UserDB;
 
@@ -174,10 +175,9 @@ public class PostCall {
         return status;
     }
 
-
     // Created By: Deepak Sharma
     // Created Date: 29 January 2016
-    // Purpose: POST DTC SYNC
+    // Purpose: POST Alerts SYNC
     public static boolean PostAlert() {
         boolean status = true;
         WebService ws = new WebService();
@@ -202,10 +202,9 @@ public class PostCall {
         return status;
     }
 
-
     // Created By: Deepak Sharma
     // Created Date: 29 January 2016
-    // Purpose: POST DTC SYNC
+    // Purpose: POST TPMS SYNC
     public static boolean PostTPMS() {
         boolean status = true;
         WebService ws = new WebService();
@@ -229,4 +228,32 @@ public class PostCall {
         }
         return status;
     }
+
+    // Created By: Deepak Sharma
+    // Created Date: 29 January 2016
+    // Purpose: POST DTC SYNC
+    public static boolean PostTrailerStatus() {
+        boolean status = true;
+        WebService ws = new WebService();
+
+        try {
+            String data = TrailerDB.getTrailerStatusDataSync().toString();
+            if (data.equals("[]")) {
+                return status;
+            }
+
+            String result = ws.doPost(
+                    WebUrl.POST_TRAILER_STATUS,
+                    data);
+            if (result != null) {
+                TrailerDB.TrailerStatusSyncUpdate();
+            }
+
+        } catch (Exception e) {
+            status = false;
+            Utility.printError(e.getMessage());
+        }
+        return status;
+    }
+
 }
