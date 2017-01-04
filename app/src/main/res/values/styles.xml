@@ -729,11 +729,12 @@
     </style>
 
     <style name="TPMSValue">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/tpms_value_text_size</item>
         <item name="android:textColor">#181f26</item>
-        <item name="android:layout_marginLeft">3dp</item>
-        <item name="android:layout_marginRight">3dp</item>
     </style>
 
     <style name="TPMSValue.Margin0">
@@ -747,9 +748,10 @@
     <style name="TPMSTemp">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/tpms_temp_text_size</item>
-        <item name="android:layout_marginLeft">3dp</item>
-        <item name="android:layout_marginRight">3dp</item>
         <item name="android:textColor">@color/green2</item>
+        <item name="android:layout_marginBottom">2dp</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:layout_marginRight">4dp</item>
     </style>
     <style name="TPMSTemp.Red">
         <item name="android:textColor">@color/red1</item>
