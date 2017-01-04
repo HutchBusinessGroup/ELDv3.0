@@ -461,9 +461,10 @@
     <dimen name="tyre_margin_bottom_3">164dp</dimen>
     <dimen name="tyre_margin_bottom_4">228dp</dimen>
     <dimen name="tpms_tyre_jointer_height">28dp</dimen>
-    <dimen name="tpms_value_height">32dp</dimen>
-    <dimen name="tpms_temp_height">22dp</dimen>
+    <dimen name="tpms_value_height">30dp</dimen>
+    <dimen name="tpms_temp_height">20dp</dimen>
     <dimen name="tpms_value_box_width">76dp</dimen>
+    <dimen name="tpms_value_box_width_half">38dp</dimen>
     <dimen name="tpms_value_box_width_land">76dp</dimen>
     <dimen name="tpms_value_text_size">18sp</dimen>
     <dimen name="tpms_temp_text_size">12sp</dimen>
