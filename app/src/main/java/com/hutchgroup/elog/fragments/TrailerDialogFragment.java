@@ -56,11 +56,11 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_trailer_dialog, container, false);
-        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        this.setCancelable(false);
+        View view = inflater.inflate(R.layout.fragment_trailer_dialog, container);
         initialize(view);
+        getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        this.setCancelable(false);
         return view;
     }
 

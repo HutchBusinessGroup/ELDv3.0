@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
@@ -65,6 +66,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tpms_test, container, false);
         initialize(view);
+        //getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         return view;
     }
 
@@ -228,6 +230,11 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         if (dialog == null) {
             dialog = new TrailerDialogFragment();
         }
+
+        if (dialog.isAdded()) {
+            dialog.dismiss();
+        }
+
         dialog.mListener = this;
         dialog.show(getFragmentManager(), "trailer_dialog");
     }

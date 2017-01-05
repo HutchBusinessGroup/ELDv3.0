@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@drawable/tpms_bg"
     tools:context="com.hutchgroup.elog.fragments.TrailerManagementFragment">
 
     <android.support.v7.widget.RecyclerView

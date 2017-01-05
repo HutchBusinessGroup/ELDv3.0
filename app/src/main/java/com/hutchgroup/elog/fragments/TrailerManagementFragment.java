@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.adapters.TrailerManageRecycleAdapter;
@@ -54,6 +55,7 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_trailer_management, container, false);
         initialize(view);
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         return view;
     }
 
@@ -132,13 +134,6 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         return bean;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -173,6 +168,10 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
     public void hook() {
         if (dialog == null) {
             dialog = new TrailerDialogFragment();
+        }
+
+        if (dialog.isAdded()) {
+            dialog.dismiss();
         }
         dialog.mListener=this;
         dialog.show(getFragmentManager(), "trailer_dialog");
