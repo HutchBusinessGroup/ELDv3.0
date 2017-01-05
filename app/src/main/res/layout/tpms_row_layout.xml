@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/tpms_bg"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <LinearLayout
@@ -30,7 +30,7 @@
     <TextView
         android:id="@+id/tvBackTire"
         android:layout_width="232dp"
-        android:layout_height="64dp"
+        android:layout_height="180dp"
         android:layout_gravity="center"
         android:background="@drawable/tpms_trailer_axle"
         android:visibility="gone" />
@@ -46,14 +46,16 @@
 
         <LinearLayout
             android:layout_width="@dimen/tpms_value_box_width"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/tpms_tyre_height"
+            android:layout_marginLeft="@dimen/tpms_value_box_width"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvSinglePressure1"
                 style="@style/TPMSValue"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/tpms_value_height"
+                android:layout_height="0dp"
+                android:layout_weight="3"
                 android:background="@drawable/tpms_value_bg_white"
                 android:gravity="center"
                 android:text="32" />
@@ -62,19 +64,11 @@
                 android:id="@+id/tvSingleTemperature1"
                 style="@style/TPMSTemp.Green"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/tpms_temp_height"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:background="@drawable/tpms_temp_bg_white"
                 android:gravity="center"
                 android:text="75° F" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="@dimen/tpms_value_box_width"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" android:visibility="invisible">
-
-
 
         </LinearLayout>
 
@@ -84,7 +78,9 @@
             android:layout_height="wrap_content"
             android:background="@drawable/tpms_trailer_axle"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
 
             <ImageView
                 android:id="@+id/imgSingleTire1"
@@ -114,18 +110,16 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="@dimen/tpms_value_box_width"
-            android:layout_height="0dp"></View>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/tpms_value_box_width"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="@dimen/tpms_value_box_width"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/tpms_tyre_height"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -133,7 +127,8 @@
                     android:id="@+id/tvSinglePressure2"
                     style="@style/TPMSValue.White"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_value_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:background="@drawable/tpms_value_bg_red"
                     android:gravity="center"
                     android:text="32" />
@@ -142,7 +137,8 @@
                     android:id="@+id/tvSingleTemperature2"
                     style="@style/TPMSTemp.Green"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_temp_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
                     android:background="@drawable/tpms_temp_bg_white"
                     android:gravity="center"
                     android:text="75° F" />
@@ -166,7 +162,7 @@
 
             <LinearLayout
                 android:layout_width="@dimen/tpms_value_box_width"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/tpms_tyre_height"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -174,7 +170,8 @@
                     android:id="@+id/tvPressure1"
                     style="@style/TPMSValue"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_value_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:background="@drawable/tpms_value_bg_white"
                     android:gravity="center"
                     android:text="32" />
@@ -183,7 +180,8 @@
                     android:id="@+id/tvTemperature1"
                     style="@style/TPMSTemp.Green"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_temp_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
                     android:background="@drawable/tpms_temp_bg_white"
                     android:gravity="center"
                     android:text="75° F" />
@@ -192,7 +190,7 @@
 
             <LinearLayout
                 android:layout_width="@dimen/tpms_value_box_width"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/tpms_tyre_height"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -200,7 +198,8 @@
                     android:id="@+id/tvPressure2"
                     style="@style/TPMSValue"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_value_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:background="@drawable/tpms_value_bg_white"
                     android:gravity="center"
                     android:text="32" />
@@ -209,7 +208,8 @@
                     android:id="@+id/tvTemperature2"
                     style="@style/TPMSTemp.Green"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_temp_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
                     android:background="@drawable/tpms_temp_bg_white"
                     android:gravity="center"
                     android:text="75° F" />
@@ -222,7 +222,9 @@
             android:layout_width="232dp"
             android:layout_height="wrap_content"
             android:background="@drawable/tpms_trailer_axle"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
 
             <ImageView
                 android:id="@+id/imgTire1"
@@ -284,7 +286,7 @@
 
             <LinearLayout
                 android:layout_width="@dimen/tpms_value_box_width"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/tpms_tyre_height"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -292,7 +294,8 @@
                     android:id="@+id/tvPressure3"
                     style="@style/TPMSValue"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_value_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:background="@drawable/tpms_value_bg_white"
                     android:gravity="center"
                     android:text="32" />
@@ -301,7 +304,8 @@
                     android:id="@+id/tvTemperature3"
                     style="@style/TPMSTemp.Green"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_temp_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
                     android:background="@drawable/tpms_temp_bg_white"
                     android:gravity="center"
                     android:text="75° F" />
@@ -310,7 +314,7 @@
 
             <LinearLayout
                 android:layout_width="@dimen/tpms_value_box_width"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/tpms_tyre_height"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -318,7 +322,8 @@
                     android:id="@+id/tvPressure4"
                     style="@style/TPMSValue.White"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_value_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     android:background="@drawable/tpms_value_bg_red"
                     android:gravity="center"
                     android:text="32" />
@@ -327,7 +332,8 @@
                     android:id="@+id/tvTemperature4"
                     style="@style/TPMSTemp.Green"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/tpms_temp_height"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
                     android:background="@drawable/tpms_temp_bg_white"
                     android:gravity="center"
                     android:text="75° F" />
@@ -348,16 +354,23 @@
     <LinearLayout
         android:id="@+id/layoutEmpty"
         android:layout_width="232dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/layout_bg_round_nine"
+        android:background="@drawable/hook_container_bg"
         android:gravity="center"
-        android:visibility="gone">
+        android:orientation="vertical"
+        android:visibility="visible">
 
         <Button
             android:id="@+id/btnHook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:layout_width="124dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="64dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/button_bg"
             android:text="Hook" />
+
     </LinearLayout>
 </LinearLayout>
