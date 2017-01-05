@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true" android:drawable="@drawable/tpms_trailer_hook_thumb_pressed"></item>
+    <item android:state_checked="true" android:drawable="@drawable/tpms_trailer_hook_thumb"></item>
+    <item android:drawable="@drawable/tpms_trailer_hook_thumb"></item>
+
+</selector>
