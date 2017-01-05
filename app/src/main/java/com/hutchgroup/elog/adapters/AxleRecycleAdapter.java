@@ -69,6 +69,9 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
                     viewHolder.layoutSingleRepeat.setBackgroundResource(background);
                     viewHolder.layoutDoubleRepeat.setBackgroundResource(background);
                 } else {
+                    if (!bean.isFrontTireFg() && bean.getAxlePosition() == 1) {
+                        viewHolder.layoutHook.setVisibility(View.VISIBLE);
+                    }
                     int background = Utility.hookedTrailers.size() > 1 ? R.drawable.tpms_trailer_axle : R.drawable.tpms_power_unit_axle;
                     viewHolder.layoutSingleRepeat.setBackgroundResource(background);
                     viewHolder.layoutDoubleRepeat.setBackgroundResource(background);
@@ -76,6 +79,21 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
                     viewHolder.layoutSingleAxle.setBackgroundResource(R.drawable.tpms_power_unit_axle);*/
                 }
             } else {
+                if (bean.getAxleNo() == 1) {
+                    if (data.size() > position - 1 && !data.get(position - 1).isPowerUnitFg())
+                        viewHolder.layoutHook.setVisibility(View.VISIBLE);
+                } else {
+                    viewHolder.layoutHook.setVisibility(View.GONE);
+                }
+                if (data.size() > position + 1) {
+                    if (bean.getVehicleId() != data.get(position + 1).getVehicleId()) {
+                        viewHolder.vLights.setVisibility(View.VISIBLE);
+                    } else {
+                        viewHolder.vLights.setVisibility(View.GONE);
+                    }
+                } else {
+                    viewHolder.vLights.setVisibility(View.VISIBLE);
+                }
                 if (bean.getAxlePosition() == 1 && !bean.isFrontTireFg()) {
                     viewHolder.tvBackTire.setVisibility(View.VISIBLE);
                 } else {
@@ -151,13 +169,15 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
         TextView tvSinglePressure1, tvSinglePressure2, tvSingleTemperature1, tvSingleTemperature2;
         ImageView imgSingleTire1, imgSingleTire2;
 
-        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty,layoutSingleRepeat,layoutDoubleRepeat;
+        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty, layoutSingleRepeat, layoutDoubleRepeat, layoutHook;
         TextView tvBackTire;
+        View vLights;
         Button btnHook;
 
         public ViewHolder(View convertView) {
             super(convertView);
             tvBackTire = (TextView) convertView.findViewById(R.id.tvBackTire);
+            vLights = convertView.findViewById(R.id.vLights);
             btnHook = (Button) convertView.findViewById(R.id.btnHook);
 
             tvPressure1 = (TextView) convertView.findViewById(R.id.tvPressure1);
@@ -196,6 +216,7 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
 
             layoutSingleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutSingleRepeat);
             layoutDoubleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutDoubleRepeat);
+            layoutHook = (LinearLayout) convertView.findViewById(R.id.layoutHook);
         }
     }
 
