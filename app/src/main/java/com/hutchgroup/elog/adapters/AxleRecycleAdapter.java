@@ -69,7 +69,7 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
                     viewHolder.layoutSingleRepeat.setBackgroundResource(background);
                     viewHolder.layoutDoubleRepeat.setBackgroundResource(background);
                 } else {
-                    if (!bean.isFrontTireFg() && bean.getAxlePosition() == 1) {
+                    if (!bean.isFrontTireFg() && bean.getAxlePosition() == 1 && Utility.hookedTrailers.size() > 1) {
                         viewHolder.layoutHook.setVisibility(View.VISIBLE);
                     }
                     int background = Utility.hookedTrailers.size() > 1 ? R.drawable.tpms_trailer_axle : R.drawable.tpms_power_unit_axle;
