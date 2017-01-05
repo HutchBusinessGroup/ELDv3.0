@@ -1,6 +1,8 @@
 
 package com.hutchgroup.elog.adapters;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,8 +39,7 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        AxleBean bean = data.get(position);
-
+       final AxleBean bean = data.get(position);
 
         if (bean.isEmptyFg()) {
             viewHolder.layoutEmpty.setVisibility(View.VISIBLE);
@@ -56,10 +57,76 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
             });
 
         } else {
-            if (bean.getAxlePosition() == 1) {
-                viewHolder.tvBackTire.setVisibility(View.VISIBLE);
+            viewHolder.swUnhook.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final AlertDialog alertDialog = new AlertDialog.Builder(Utility.context).create();
+                    alertDialog.setCancelable(true);
+                    alertDialog.setCanceledOnTouchOutside(false);
+                    alertDialog.setTitle("Unhook Confirmation");
+                    alertDialog.setIcon(Utility.DIALOGBOX_ICON);
+                    alertDialog.setMessage("Are you sure you want to unhook trailer?");
+                    alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Yes",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    int trailerId = bean.getVehicleId();
+                                    if (bean.isPowerUnitFg()) {
+                                        trailerId = Integer.parseInt(Utility.hookedTrailers.get(1));
+                                    }
+                                    mListner.unhook(trailerId);
+                                }
+                            });
+                    alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "No",
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    alertDialog.cancel();
+                                }
+                            });
+                    alertDialog.show();
+                }
+            });
+
+            if (bean.isPowerUnitFg()) {
+                if (bean.getAxleNo() == 1) {
+
+                    viewHolder.layoutSingleRepeat.setLayoutParams(new LinearLayout.LayoutParams(224, 232));
+                    viewHolder.layoutDoubleRepeat.setLayoutParams(new LinearLayout.LayoutParams(224, 232));
+
+                    viewHolder.layoutSingleRepeat.setBackgroundResource(R.drawable.tpms_power_unit);
+                    viewHolder.layoutDoubleRepeat.setBackgroundResource(R.drawable.tpms_power_unit);
+                } else {
+                    if (!bean.isFrontTireFg() && bean.getAxlePosition() == 1 && Utility.hookedTrailers.size() > 1) {
+                        viewHolder.layoutHook.setVisibility(View.VISIBLE);
+                    }
+                    int background = Utility.hookedTrailers.size() > 1 ? R.drawable.tpms_trailer_axle : R.drawable.tpms_power_unit_axle;
+                    viewHolder.layoutSingleRepeat.setBackgroundResource(background);
+                    viewHolder.layoutDoubleRepeat.setBackgroundResource(background);
+                }
             } else {
-                viewHolder.tvBackTire.setVisibility(View.GONE);
+                if (bean.getAxleNo() == 1) {
+                    if (data.size() > position - 1 && !data.get(position - 1).isPowerUnitFg())
+                        viewHolder.layoutHook.setVisibility(View.VISIBLE);
+                } else {
+                    viewHolder.layoutHook.setVisibility(View.GONE);
+                }
+                if (data.size() > position + 1) {
+                    if (bean.getVehicleId() != data.get(position + 1).getVehicleId()) {
+                        viewHolder.vLights.setVisibility(View.VISIBLE);
+                    } else {
+                        viewHolder.vLights.setVisibility(View.GONE);
+                    }
+                } else {
+                    viewHolder.vLights.setVisibility(View.VISIBLE);
+                }
+                if (bean.getAxlePosition() == 1 && !bean.isFrontTireFg()) {
+                    viewHolder.tvBackTire.setVisibility(View.VISIBLE);
+                } else {
+                    viewHolder.tvBackTire.setVisibility(View.GONE);
+                }
             }
             viewHolder.layoutEmpty.setVisibility(View.GONE);
 
@@ -102,14 +169,17 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
         ImageView imgTire1, imgTire2, imgTire3, imgTire4;
         ImageView imgSingleTire1, imgSingleTire2;
 
-        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty;
+        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty, layoutSingleRepeat, layoutDoubleRepeat, layoutHook;
         TextView tvBackTire;
+        View vLights, swUnhook;
         Button btnHook;
 
         public ViewHolder(View convertView) {
             super(convertView);
             tvBackTire = (TextView) convertView.findViewById(R.id.tvBackTire);
+            vLights = convertView.findViewById(R.id.vLights);
             btnHook = (Button) convertView.findViewById(R.id.btnHook);
+            swUnhook = convertView.findViewById(R.id.swUnhook);
             imgTire1 = (ImageView) convertView.findViewById(R.id.imgTire1);
             imgTire2 = (ImageView) convertView.findViewById(R.id.imgTire2);
             imgTire3 = (ImageView) convertView.findViewById(R.id.imgTire3);
@@ -123,12 +193,17 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
             layoutSingleAxle = (LinearLayout) convertView.findViewById(R.id.layoutSingleAxle);
             layoutDoubleAxle = (LinearLayout) convertView.findViewById(R.id.layoutDoubleAxle);
             layoutEmpty = (LinearLayout) convertView.findViewById(R.id.layoutEmpty);
+
+            layoutSingleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutSingleRepeat);
+            layoutDoubleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutDoubleRepeat);
+            layoutHook = (LinearLayout) convertView.findViewById(R.id.layoutHook);
         }
     }
 
     public static IHookTrailer mListner;
 
     public interface IHookTrailer {
-        public void hook();
+        void hook();
+        void unhook(int trailerId);
     }
 }

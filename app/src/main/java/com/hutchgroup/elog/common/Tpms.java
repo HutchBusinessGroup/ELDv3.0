@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.UUID;
 
 
@@ -493,9 +494,10 @@ public class Tpms {
 
     public static void removeSensorId(String[] sensorIds) {
         for (String sensorId : sensorIds) {
-            for (TPMSBean bean : tpmsData) {
+            for(Iterator<TPMSBean> it = tpmsData.iterator(); it.hasNext();) {
+                TPMSBean bean = it.next();
                 if (sensorId.equals(bean.getSensorId())) {
-                    tpmsData.remove(bean);
+                    it.remove();
                 }
             }
         }

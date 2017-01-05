@@ -2,105 +2,167 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@drawable/tpms_bg"
+    android:gravity="center"
     android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/layoutHook"
+        android:layout_width="48dp"
+        android:layout_height="232dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/swUnhook"
+            android:layout_width="24dp"
+            android:layout_height="96dp"
+            android:background="@drawable/tpms_trailer_hook"></View>
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="232dp"
+            android:background="@drawable/tpms_trailer_header"></View>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvBackTire"
-        android:layout_width="150dp"
-        android:layout_height="match_parent"
+        android:layout_width="180dp"
+        android:layout_height="232dp"
+        android:layout_gravity="center"
+        android:background="@drawable/tpms_trailer_axle"
         android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/layoutSingleAxle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
         android:visibility="visible">
 
+        <LinearLayout
+            android:id="@+id/layoutSingleRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="232dp"
+            android:background="@drawable/tpms_trailer_axle"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
 
-        <ImageView
-            android:id="@+id/imgSingleTire1"
-            android:layout_width="@dimen/tpms_tyre_height"
-            android:layout_height="@dimen/tpms_tyre_width"
-            android:layout_marginBottom="262dp"
-            android:layout_marginLeft="3dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/gray_tire" />
+            <ImageView
+                android:id="@+id/imgSingleTire1"
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
 
-        <ImageView
-            android:id="@+id/imgSingleTire2"
-            android:layout_width="@dimen/tpms_tyre_height"
-            android:layout_height="@dimen/tpms_tyre_width"
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
 
-            android:layout_marginBottom="62dp"
-            android:layout_marginLeft="3dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/error_tire" />
+            <ImageView
+                android:id="@+id/imgSingleTire2"
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/error_tire" />
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutDoubleAxle"
-        android:layout_width="wrap_content"
+        android:layout_width="64dp"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="10dp"
-        android:visibility="visible">
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:visibility="gone">
 
+        <LinearLayout
+            android:id="@+id/layoutDoubleRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="232dp"
+            android:background="@drawable/tpms_trailer_axle"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
 
-        <ImageView
-            android:id="@+id/imgTire1"
-            android:layout_width="@dimen/tpms_tyre_height"
-            android:layout_height="@dimen/tpms_tyre_width"
-            android:background="@android:color/transparent"
-            android:src="@drawable/gray_tire" />
+            <ImageView
+                android:id="@+id/imgTire1"
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
 
-        <ImageView
-            android:layout_width="@dimen/tpms_tyre_height"
-            android:layout_height="2dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/tyre_jointer"></ImageView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/tyre_jointer"></ImageView>
 
-        <ImageView
-            android:id="@+id/imgTire2"
-            android:layout_width="@dimen/tpms_tyre_height"
-            android:layout_height="@dimen/tpms_tyre_width"
-            android:layout_marginBottom="220dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/gray_tire" />
+            <ImageView
+                android:id="@+id/imgTire2"
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
 
-        <ImageView
-            android:id="@+id/imgTire3"
-            android:layout_width="@dimen/tpms_tyre_height"
-            android:layout_height="@dimen/tpms_tyre_width"
-            android:background="@android:color/transparent"
-            android:src="@drawable/gray_tire" />
+            <View
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
 
-        <ImageView
-            android:layout_width="@dimen/tpms_tyre_height"
-            android:layout_height="2dp"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/tyre_jointer"></ImageView>
+            <ImageView
+                android:id="@+id/imgTire3"
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/gray_tire" />
 
-        <ImageView
-            android:id="@+id/imgTire4"
-            android:layout_width="@dimen/tpms_tyre_height"
-            android:layout_height="@dimen/tpms_tyre_width"
-            android:layout_marginBottom="5dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/error_tire" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/tyre_jointer"></ImageView>
+
+            <ImageView
+                android:id="@+id/imgTire4"
+                android:layout_width="@dimen/tpms_tyre_height"
+                android:layout_height="@dimen/tpms_tyre_width"
+                android:background="@android:color/transparent"
+                android:src="@drawable/error_tire" />
+        </LinearLayout>
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/vLights"
+        android:layout_width="34dp"
+        android:layout_height="232dp"
+        android:layout_gravity="center"
+        android:background="@drawable/tpms_trailer_footer"
+        android:visibility="gone"></View>
 
     <LinearLayout
         android:id="@+id/layoutEmpty"
         android:layout_width="200dp"
-        android:layout_height="320dp"
+        android:layout_height="425dp"
         android:background="@drawable/layout_bg_round_nine"
         android:gravity="center"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <Button
             android:id="@+id/btnHook"

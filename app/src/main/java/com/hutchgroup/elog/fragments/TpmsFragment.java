@@ -227,8 +227,8 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
     public void hook() {
         if (dialog == null) {
             dialog = new TrailerDialogFragment();
-            dialog.mListener = this;
         }
+        dialog.mListener = this;
         dialog.show(getFragmentManager(), "trailer_dialog");
     }
 
@@ -251,7 +251,8 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         }
     }
 
-    private void unhook(int trailerId) {
+    @Override
+    public void unhook(int trailerId) {
         for (AxleBean bean : list) {
             if (bean.getVehicleId() == trailerId) {
                 Tpms.removeSensorId(bean.getSensorIdsAll());
