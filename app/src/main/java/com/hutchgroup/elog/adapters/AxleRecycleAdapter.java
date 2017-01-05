@@ -92,9 +92,10 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
 
             if (bean.isPowerUnitFg()) {
                 if (bean.getAxleNo() == 1) {
-
-                    viewHolder.layoutSingleRepeat.setLayoutParams(new LinearLayout.LayoutParams(224, 232));
-                    viewHolder.layoutDoubleRepeat.setLayoutParams(new LinearLayout.LayoutParams(224, 232));
+                    viewHolder.vSinglePowerUnit.setVisibility(View.VISIBLE);
+                    viewHolder.vDoublePowerUnit.setVisibility(View.VISIBLE);
+                  /*  viewHolder.layoutSingleRepeat.setLayoutParams(new LinearLayout.LayoutParams(224, 232));
+                    viewHolder.layoutDoubleRepeat.setLayoutParams(new LinearLayout.LayoutParams(224, 232));*/
 
                     viewHolder.layoutSingleRepeat.setBackgroundResource(R.drawable.tpms_power_unit);
                     viewHolder.layoutDoubleRepeat.setBackgroundResource(R.drawable.tpms_power_unit);
@@ -199,13 +200,15 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
 
         LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty, layoutSingleRepeat, layoutDoubleRepeat, layoutHook;
         TextView tvBackTire;
-        View vLights, swUnhook;
+        View vLights, swUnhook, vSinglePowerUnit, vDoublePowerUnit;
         Button btnHook;
 
         public ViewHolder(View convertView) {
             super(convertView);
             tvBackTire = (TextView) convertView.findViewById(R.id.tvBackTire);
             vLights = convertView.findViewById(R.id.vLights);
+            vSinglePowerUnit = convertView.findViewById(R.id.vSinglePowerUnit);
+            vDoublePowerUnit = convertView.findViewById(R.id.vDoublePowerUnit);
             btnHook = (Button) convertView.findViewById(R.id.btnHook);
             swUnhook = convertView.findViewById(R.id.swUnhook);
             tvPressure1 = (TextView) convertView.findViewById(R.id.tvPressure1);
@@ -251,8 +254,8 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
     public static IHookTrailer mListner;
 
     public interface IHookTrailer {
-        public void hook();
+        void hook();
 
-        public void unhook(int trailerId);
+        void unhook(int trailerId);
     }
 }

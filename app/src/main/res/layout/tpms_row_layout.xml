@@ -5,24 +5,48 @@
     android:background="@drawable/tpms_bg"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:id="@+id/layoutHook"
+        android:layout_width="232dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:id="@+id/swUnhook"
+            android:layout_width="96dp"
+            android:layout_height="24dp"
+            android:background="@drawable/tpms_trailer_hook"></View>
+
+        <View
+            android:layout_width="232dp"
+            android:layout_height="24dp"
+            android:background="@drawable/tpms_trailer_header"></View>
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/tvBackTire"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_width="232dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:background="@drawable/tpms_trailer_axle"
         android:visibility="gone" />
+
 
     <LinearLayout
         android:id="@+id/layoutSingleAxle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:padding="10dp">
-
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="@dimen/tpms_value_box_width"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
@@ -45,15 +69,21 @@
 
         </LinearLayout>
 
-        <View
+        <LinearLayout
             android:layout_width="@dimen/tpms_value_box_width"
-            android:layout_height="0dp"
-            android:orientation="vertical"></View>
+            android:layout_height="wrap_content"
+            android:orientation="vertical" android:visibility="invisible">
+
+
+
+        </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:id="@+id/layoutSingleRepeat"
+            android:layout_width="232dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:background="@drawable/tpms_trailer_axle"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageView
@@ -69,6 +99,11 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"></View>
 
+            <View
+                android:id="@+id/vSinglePowerUnit"
+                android:layout_width="0dp"
+                android:layout_height="224dp"
+                android:visibility="gone"></View>
 
             <ImageView
                 android:id="@+id/imgSingleTire2"
@@ -122,8 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -184,9 +218,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:id="@+id/layoutDoubleRepeat"
+            android:layout_width="232dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:background="@drawable/tpms_trailer_axle"
             android:orientation="horizontal">
 
             <ImageView
@@ -213,6 +248,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_weight="1"></View>
+
+            <View
+                android:id="@+id/vDoublePowerUnit"
+                android:layout_width="0dp"
+                android:layout_height="224dp"
+                android:visibility="gone"></View>
 
             <ImageView
                 android:id="@+id/imgTire3"
@@ -296,12 +337,21 @@
 
     </LinearLayout>
 
+    <View
+        android:id="@+id/vLights"
+        android:layout_width="232dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:background="@drawable/tpms_trailer_footer"
+        android:visibility="gone"></View>
+
     <LinearLayout
         android:id="@+id/layoutEmpty"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:gravity="center"
+        android:layout_width="232dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
         android:background="@drawable/layout_bg_round_nine"
+        android:gravity="center"
         android:visibility="gone">
 
         <Button
