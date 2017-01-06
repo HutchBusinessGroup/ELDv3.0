@@ -2,7 +2,7 @@
     <item>
         <shape>
             <solid android:color="#00000000"></solid>
-            <size android:width="24dp" android:height="94dp"></size>
+            <size android:height="62dp"></size>
         </shape>
     </item>
 </selector>

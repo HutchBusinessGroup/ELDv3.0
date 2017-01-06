@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.hutchgroup.elog.R;
@@ -40,12 +41,14 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         final AxleBean bean = data.get(position);
 
+        viewHolder.tvUnitNo.setText(bean.getUnitNo());
+        viewHolder.tvPlateNo.setText(bean.getPlateNo());
 
         if (bean.isEmptyFg()) {
             viewHolder.layoutEmpty.setVisibility(View.VISIBLE);
             viewHolder.layoutSingleAxle.setVisibility(View.GONE);
             viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
-            viewHolder.tvBackTire.setVisibility(View.GONE);
+            viewHolder.layoutBackTire.setVisibility(View.GONE);
             if (bean.getAxlePosition() == 0) {
                 viewHolder.btnHook.setText("UnHook");
                 viewHolder.btnHook.setEnabled(true);
@@ -161,9 +164,9 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
                     viewHolder.vLights.setVisibility(View.VISIBLE);
                 }
                 if (bean.getAxlePosition() == 1 && !bean.isFrontTireFg()) {
-                    viewHolder.tvBackTire.setVisibility(View.VISIBLE);
+                    viewHolder.layoutBackTire.setVisibility(View.VISIBLE);
                 } else {
-                    viewHolder.tvBackTire.setVisibility(View.GONE);
+                    viewHolder.layoutBackTire.setVisibility(View.GONE);
                 }
             }
             viewHolder.layoutEmpty.setVisibility(View.GONE);
@@ -236,18 +239,24 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
         ImageView imgSingleTire1, imgSingleTire2;
 
         LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty, layoutSingleRepeat, layoutDoubleRepeat, layoutHook;
-        TextView tvBackTire;
-        View vLights, swUnhook, vSinglePowerUnit, vDoublePowerUnit;
+        LinearLayout layoutBackTire;
+        View vLights, vSinglePowerUnit, vDoublePowerUnit;
+        Switch swUnhook;
         Button btnHook;
+        TextView tvUnitNo, tvPlateNo;
 
         public ViewHolder(View convertView) {
             super(convertView);
-            tvBackTire = (TextView) convertView.findViewById(R.id.tvBackTire);
+            layoutBackTire = (LinearLayout) convertView.findViewById(R.id.layoutBackTire);
             vLights = convertView.findViewById(R.id.vLights);
             vSinglePowerUnit = convertView.findViewById(R.id.vSinglePowerUnit);
             vDoublePowerUnit = convertView.findViewById(R.id.vDoublePowerUnit);
             btnHook = (Button) convertView.findViewById(R.id.btnHook);
-            swUnhook = convertView.findViewById(R.id.swUnhook);
+            swUnhook = (Switch) convertView.findViewById(R.id.swUnhook);
+
+            tvUnitNo = (TextView) convertView.findViewById(R.id.tvUnitNo);
+            tvPlateNo = (TextView) convertView.findViewById(R.id.tvPlateNo);
+
             tvPressure1 = (TextView) convertView.findViewById(R.id.tvPressure1);
             tvPressure2 = (TextView) convertView.findViewById(R.id.tvPressure2);
             tvPressure3 = (TextView) convertView.findViewById(R.id.tvPressure3);
