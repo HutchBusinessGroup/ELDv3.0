@@ -286,7 +286,7 @@
         android:background="@drawable/hook_container_bg"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <Button
             android:id="@+id/btnHook"

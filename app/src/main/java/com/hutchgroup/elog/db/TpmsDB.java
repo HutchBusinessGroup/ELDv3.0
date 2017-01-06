@@ -69,12 +69,17 @@ public class TpmsDB {
                     , null);
             while (cursor.moveToNext()) {
                 JSONObject obj = new JSONObject();
-                obj.put("SensorId", cursor.getString(cursor.getColumnIndex("AlertDateTime")));
-                obj.put("Temperature", cursor.getInt(cursor.getColumnIndex("AlertCode")));
-                obj.put("Pressure", cursor.getInt(cursor.getColumnIndex("AlertName")));
-                obj.put("Voltage", cursor.getString(cursor.getColumnIndex("Duration")));
-                obj.put("CreatedDate", cursor.getString(cursor.getColumnIndex("Scores")));
-                obj.put("ModifiedDate", cursor.getString(cursor.getColumnIndex("Scores")));
+                obj.put("SensorId", cursor.getString(cursor.getColumnIndex("SensorId")));
+                obj.put("Temperature", cursor.getInt(cursor.getColumnIndex("Temperature")));
+                obj.put("Pressure", cursor.getInt(cursor.getColumnIndex("Pressure")));
+                double voltage = 0d;
+                try {
+                    voltage = Double.parseDouble(cursor.getString(cursor.getColumnIndex("Voltage")));
+                } catch (Exception exe) {
+                }
+                obj.put("Voltage", voltage);
+                obj.put("CreatedDate", cursor.getString(cursor.getColumnIndex("CreatedDate")));
+                obj.put("ModifiedDate", cursor.getString(cursor.getColumnIndex("ModifiedDate")));
                 obj.put("VehicleId", cursor.getInt(cursor.getColumnIndex("VehicleId")));
                 obj.put("DriverId", cursor.getInt(cursor.getColumnIndex("DriverId")));
                 array.put(obj);

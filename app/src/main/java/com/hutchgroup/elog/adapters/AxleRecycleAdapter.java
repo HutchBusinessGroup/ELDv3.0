@@ -46,15 +46,52 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
             viewHolder.layoutSingleAxle.setVisibility(View.GONE);
             viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
             viewHolder.tvBackTire.setVisibility(View.GONE);
-            viewHolder.btnHook.setEnabled(bean.getAxlePosition() == 1);
-            viewHolder.btnHook.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (mListner != null) {
-                        mListner.hook();
+            if (bean.getAxlePosition() == 0) {
+                viewHolder.btnHook.setText("UnHook");
+                viewHolder.btnHook.setEnabled(true);
+                viewHolder.btnHook.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (mListner != null) {
+                            final AlertDialog alertDialog = new AlertDialog.Builder(Utility.context).create();
+                            alertDialog.setCancelable(true);
+                            alertDialog.setCanceledOnTouchOutside(false);
+                            alertDialog.setTitle("Unhook Confirmation");
+                            alertDialog.setIcon(Utility.DIALOGBOX_ICON);
+                            alertDialog.setMessage("Are you sure you want to unhook trailer?");
+                            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Yes",
+                                    new DialogInterface.OnClickListener() {
+
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            int trailerId = bean.getVehicleId();
+                                            mListner.unhook(trailerId);
+                                        }
+                                    });
+                            alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "No",
+                                    new DialogInterface.OnClickListener() {
+
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            alertDialog.cancel();
+                                        }
+                                    });
+                            alertDialog.show();
+                        }
                     }
-                }
-            });
+                });
+            } else {
+                viewHolder.btnHook.setText("Hook");
+                viewHolder.btnHook.setEnabled(bean.getAxlePosition() == 1);
+                viewHolder.btnHook.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (mListner != null) {
+                            mListner.hook();
+                        }
+                    }
+                });
+            }
 
         } else {
             viewHolder.swUnhook.setOnClickListener(new View.OnClickListener() {

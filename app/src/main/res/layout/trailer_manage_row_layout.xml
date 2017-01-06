@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/layoutSingleRepeat"
@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/layoutDoubleRepeat"
@@ -164,19 +164,27 @@
         android:background="@drawable/tpms_trailer_footer"
         android:visibility="gone"></View>
 
+
     <LinearLayout
         android:id="@+id/layoutEmpty"
         android:layout_width="232dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/layout_bg_round_nine"
+        android:background="@drawable/hook_container_bg"
         android:gravity="center"
+        android:orientation="vertical"
         android:visibility="gone">
 
         <Button
             android:id="@+id/btnHook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            android:layout_width="124dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="64dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/button_bg"
             android:text="Hook" />
+
     </LinearLayout>
 </LinearLayout>

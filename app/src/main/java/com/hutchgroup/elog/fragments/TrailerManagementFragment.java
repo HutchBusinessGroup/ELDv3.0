@@ -55,7 +55,6 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_trailer_management, container, false);
         initialize(view);
-        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         return view;
     }
 
@@ -173,7 +172,7 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         if (dialog.isAdded()) {
             dialog.dismiss();
         }
-        dialog.mListener=this;
+        dialog.mListener = this;
         dialog.show(getFragmentManager(), "trailer_dialog");
     }
 
@@ -189,12 +188,18 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         bean.setStartOdometer(CanMessages.OdometerReading);
         TrailerDB.hook(bean);
         TrailerDataGet();
+        for (AxleBean obj : list) {
+            if (obj.getVehicleId() == trailerId && obj.getSensorIdsAll() != null) {
+                Tpms.addSensorId(obj.getSensorIdsAll());
+            }
+        }
     }
 
     @Override
     public void unhook(int trailerId) {
         for (AxleBean bean : list) {
-            if (bean.getVehicleId() == trailerId) {
+            if (bean.getVehicleId() == trailerId && bean.getSensorIdsAll() != null) {
+
                 Tpms.removeSensorId(bean.getSensorIdsAll());
             }
         }

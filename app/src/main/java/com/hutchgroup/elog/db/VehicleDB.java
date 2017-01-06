@@ -130,11 +130,30 @@ public class VehicleDB {
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getReadableDatabase();
             for (String id : vehicleIds) {
+                boolean isEmpty = true;
+                String unitNo = "";
+                String plateNo = "";
+                if (id.equals(Utility.vehicleId)) {
+                    unitNo = Utility.UnitNo;
+                    plateNo = Utility.PlateNo;
+                } else {
+                    cursor = database.rawQuery("select UnitNo,PlateNo from "
+                            + MySQLiteOpenHelper.TABLE_TRAILER
+                            + " where VehicleId=?", new String[]{id});
+                    if (cursor.moveToNext()) {
+                        unitNo = cursor.getString(0);
+                        plateNo = cursor.getString(1);
+                    }
+                    cursor.close();
+                }
                 cursor = database.rawQuery("select VehicleId ,axleNo ,axlePosition ,doubleTireFg ,frontTireFg ,PowerUnitFg ,sensorIds ,pressures ,temperatures from "
                                 + MySQLiteOpenHelper.TABLE_AXLE_INFO + " Where VehicleId =? order by frontTireFg desc,axlePosition"
                         , new String[]{id});
                 while (cursor.moveToNext()) {
+                    isEmpty = false;
                     AxleBean bean = new AxleBean();
+                    bean.setUnitNo(unitNo);
+                    bean.setPlateNo(plateNo);
                     bean.setVehicleId(cursor.getInt(cursor.getColumnIndex("VehicleId")));
                     bean.setAxleNo(cursor.getInt(cursor.getColumnIndex("axleNo")));
                     bean.setAxlePosition(cursor.getInt(cursor.getColumnIndex("axlePosition")));
@@ -165,6 +184,16 @@ public class VehicleDB {
                     list.add(bean);
                 }
                 cursor.close();
+
+                if (isEmpty) {
+                    AxleBean bean = new AxleBean();
+                    bean.setEmptyFg(true);
+                    bean.setAxlePosition(0);
+                    bean.setUnitNo(unitNo);
+                    bean.setPlateNo(plateNo);
+                    bean.setVehicleId(Integer.parseInt(id));
+                    list.add(bean);
+                }
             }
 
         } catch (Exception e) {

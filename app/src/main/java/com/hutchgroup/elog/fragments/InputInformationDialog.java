@@ -90,31 +90,25 @@ public class InputInformationDialog extends DialogFragment implements View.OnCli
 
     private void initialize(View view) {
         try {
-
             imgCancel = (ImageButton) view.findViewById(R.id.imgCancel);
             imgCancel.setOnClickListener(this);
             butSave = (Button) view.findViewById(R.id.butSave);
             butSave.setOnClickListener(this);
-
-
             edShippingNumber = (EditText) view.findViewById(R.id.edShippingNumber);
             edTrailerNumber = (EditText) view.findViewById(R.id.edTrailerNumber);
             driverId = Utility.user1.isOnScreenFg() ? Utility.user1.getAccountId() : Utility.user2.getAccountId();
 
             if (Utility._appSetting.getCopyTrailer() == 1) {
-                SharedPreferences sp = getActivity().getSharedPreferences("HutchGroup", getActivity().getBaseContext().MODE_PRIVATE);
                 edShippingNumber.setText(Utility.ShippingNumber);
                 edTrailerNumber.setText(Utility.TrailerNumber);
             } else {
                 if (Utility.user1.getAccountId() > 0 && Utility.user2.getAccountId() > 0) {
                     //has two users
                     if (Utility.user1.isOnScreenFg() && Utility.user1.isActive()) {
-                        SharedPreferences sp = getActivity().getSharedPreferences("HutchGroup", getActivity().getBaseContext().MODE_PRIVATE);
                         edShippingNumber.setText(Utility.ShippingNumber);
                         edTrailerNumber.setText(Utility.TrailerNumber);
                     }
                     if (Utility.user2.isOnScreenFg() && Utility.user2.isActive()) {
-                        SharedPreferences sp = getActivity().getSharedPreferences("HutchGroup", getActivity().getBaseContext().MODE_PRIVATE);
                         edShippingNumber.setText(Utility.ShippingNumber);
                         edTrailerNumber.setText(Utility.TrailerNumber);
                     }

@@ -10,7 +10,7 @@ public class AxleBean {
     double lowPressure, highPressure, pressure, lowTemperature, highTemperature, temperature;
     double pressure1, pressure2, pressure3, pressure4;
     double temperature1, temperature2, temperature3, temperature4;
-    String sensorIds, Pressures, Temperatures;
+    String sensorIds, Pressures, Temperatures, unitNo, plateNo;
     String[] sensorIdsAll;
 
     public int getVehicleId() {
@@ -227,5 +227,21 @@ public class AxleBean {
 
     public void setEmptyFg(boolean emptyFg) {
         this.emptyFg = emptyFg;
+    }
+
+    public String getUnitNo() {
+        return unitNo;
+    }
+
+    public void setUnitNo(String unitNo) {
+        this.unitNo = unitNo;
+    }
+
+    public String getPlateNo() {
+        return plateNo;
+    }
+
+    public void setPlateNo(String plateNo) {
+        this.plateNo = plateNo;
     }
 }
