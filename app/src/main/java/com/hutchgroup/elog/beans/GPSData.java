@@ -26,6 +26,4 @@ public class GPSData {
     public static int DTCOnFg;
     public static int WifiOnFg;
     public static int TPMSWarningOnFg;
-
-
 }

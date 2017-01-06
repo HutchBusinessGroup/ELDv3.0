@@ -253,7 +253,6 @@ public class ELogApplication extends Application {
                     } else {
                         activity.machineOn();
                     }
-                    activity.shutDownThreadStop();
                 }
             }
         } catch (Exception e) {
@@ -276,7 +275,6 @@ public class ELogApplication extends Application {
                     } else {
                         activity.machineOff();
                     }
-                    activity.shutDownThreadStart();
                 }
             }
         } catch (Exception e) {

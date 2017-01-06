@@ -72,14 +72,14 @@ public class SplashActivity extends Activity implements Runnable {
 
         // will exit application when running first time user must start application mannualy after this exit
         if (firstRun) {
-            Utility.showAlertMsg("ELD Device will be restarted in 10 seconds.", SplashActivity.this);
+            Utility.showAlertMsg("ELD App will be shutdown in 3 seconds.", SplashActivity.this);
             //System.exit(0);
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        Thread.sleep(10000);
-                        rebootDevice();
+                        Thread.sleep(3000);
+                        exitApp();
                     } catch (InterruptedException exe) {
 
                     }
@@ -172,19 +172,8 @@ public class SplashActivity extends Activity implements Runnable {
         // overridePendingTransition(R.anim.right_in, R.anim.left_out);
     }
 
-    private void rebootDevice() {
-        try {
-            Process proc = Runtime.getRuntime().exec(new String[]{"su", "-c", "reboot"});
-            proc.waitFor();
-        } catch (final Exception exe) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    System.exit(0);
-                    // Utility.showAlertMsg(exe.getMessage(), SplashActivity.this);
-                }
-            });
-        }
+    private void exitApp() {
+        System.exit(0);
     }
 
 }

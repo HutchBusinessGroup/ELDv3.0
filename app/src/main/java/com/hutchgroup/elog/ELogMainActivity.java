@@ -7,10 +7,6 @@ import com.hutchgroup.elog.common.CanMessages;
 
 public abstract class ELogMainActivity extends AppCompatActivity {
 
-    public abstract void shutDownThreadStart();
-
-    public abstract void shutDownThreadStop();
-
     public abstract void machineOn();
 
     public abstract void machineOff();

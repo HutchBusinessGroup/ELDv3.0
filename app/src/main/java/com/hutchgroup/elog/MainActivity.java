@@ -496,12 +496,6 @@ public class MainActivity extends ELogMainActivity
                                         }
                                     });
 
-                                    if (level < shutDownThreshold) {
-                                        int status = EventDB.getCurrentDutyStatus(Utility.activeUserId);
-                                        if (status != 3) {
-                                            shutdownDevice();
-                                        }
-                                    }
                                     int waitTime = 5 * 60 * 1000; // 5 minutes wait time
                                     Thread.sleep(waitTime);
 
@@ -2546,50 +2540,6 @@ public class MainActivity extends ELogMainActivity
             }
         });
     }
-
-    @Override
-    public void shutDownThreadStart() {
-        if (thDeviceShutDown == null) {
-            thDeviceShutDown = new Thread(rDeviceShutdown);
-            thDeviceShutDown.setName("thDeviceShutDown");
-            thDeviceShutDown.start();
-        }
-    }
-
-    @Override
-    public void shutDownThreadStop() {
-        if (thDeviceShutDown != null) {
-            thDeviceShutDown.interrupt();
-            thDeviceShutDown = null;
-        }
-    }
-
-    Thread thDeviceShutDown = null;
-    Runnable rDeviceShutdown = new Runnable() {
-        @Override
-        public void run() {
-            try {
-                int sleeptime = 3 * 60 * 60 * 1000;
-                //sleeptime = 60000;
-                Thread.sleep(sleeptime);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        ShutDownDeviceDialog shutDownDeviceDialog = new ShutDownDeviceDialog();
-
-
-                        if (!shutDownDeviceDialog.isAdded()) {
-                            shutDownDeviceDialog.mListener = MainActivity.this;
-                            shutDownDeviceDialog.show(getSupportFragmentManager(), "popup_shutdowndialog");
-                        }
-
-
-                    }
-                });
-            } catch (InterruptedException exe) {
-            }
-        }
-    };
 
     @Override
     public void saveIntermediateLog() {
@@ -4647,25 +4597,6 @@ public class MainActivity extends ELogMainActivity
                 }
             }
         });
-    }
-
-    private void rebootDevice() {
-        try {
-            Process proc = Runtime.getRuntime().exec(new String[]{"su", "-c", "reboot"});
-            proc.waitFor();
-        } catch (Exception exe) {
-            Utility.showAlertMsg(exe.getMessage());
-        }
-    }
-
-    private void shutdownDevice() {
-        try {
-            Process proc = Runtime.getRuntime().exec(new String[]{"su", "-c", "reboot -p"});
-            proc.waitFor();
-        } catch (Exception exe) {
-            // System.exit(0);
-            //Utility.showAlertMsg(exe.getMessage());
-        }
     }
 
     public void updateFlagbar(final boolean status) {
