@@ -195,7 +195,7 @@ public class TrailerDB {
 
         } catch (Exception e) {
             Utility.printError(e.getMessage());
-            LogFile.write(DTCDB.class.getName() + "::AxleInfoGet Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+            LogFile.write(TrailerDB.class.getName() + "::getHookedTrailer Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
                 cursor.close();

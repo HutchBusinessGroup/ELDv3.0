@@ -7,25 +7,22 @@
 
     <LinearLayout
         android:id="@+id/layoutHook"
-        android:layout_width="84dp"
+        android:layout_width="47dp"
         android:layout_height="232dp"
         android:background="@drawable/tpms_trailer_hook_bg"
         android:gravity="center"
         android:orientation="horizontal"
         android:visibility="gone">
 
-        <Switch
+        <CheckBox
             android:id="@+id/swUnhook"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="62dp"
-            android:layout_marginRight="35dp"
+            android:background="@android:color/transparent"
+            android:button="@drawable/checkbox_hook_background"
             android:checked="true"
-            android:switchPadding="24dp"
             android:textOff=""
-            android:textOn=""
-            android:thumb="@drawable/trailer_hook_thumb"
-            android:thumbTextPadding="32dp"
-            android:track="@drawable/trailer_hook_track" />
+            android:textOn="" />
 
     </LinearLayout>
 
@@ -307,13 +304,37 @@
 
     </LinearLayout>
 
-    <View
-        android:id="@+id/vLights"
-        android:layout_width="34dp"
+    <LinearLayout
+        android:id="@+id/layoutLights"
+        android:layout_width="72dp"
         android:layout_height="232dp"
-        android:layout_gravity="center"
         android:background="@drawable/tpms_trailer_footer"
-        android:visibility="gone"></View>
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvPlateNoBack"
+            android:layout_width="48dp"
+            android:layout_height="84dp"
+            android:layout_marginBottom="60dp"
+            android:layout_marginLeft="-5dp"
+            android:gravity="bottom|center"
+            android:rotation="-90"
+            android:text="99999999"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvUnitNoNoBack"
+            android:layout_width="48dp"
+            android:layout_height="84dp"
+            android:layout_marginLeft="-5dp"
+            android:gravity="bottom|center"
+            android:rotation="-90"
+            android:text="999999"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutEmpty"

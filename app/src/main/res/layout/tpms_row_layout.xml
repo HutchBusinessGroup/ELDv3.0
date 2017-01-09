@@ -14,18 +14,15 @@
         android:orientation="horizontal"
         android:visibility="gone">
 
-        <Switch
+        <CheckBox
             android:id="@+id/swUnhook"
-            android:layout_width="62dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="-35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:background="@android:color/transparent"
+            android:button="@drawable/checkbox_hook_background"
             android:checked="true"
-            android:switchPadding="24dp"
             android:textOff=""
-            android:textOn=""
-            android:thumb="@drawable/trailer_hook_thumb"
-            android:thumbTextPadding="32dp"
-            android:track="@drawable/trailer_hook_track" />
+            android:textOn="" />
 
     </LinearLayout>
 
@@ -376,13 +373,36 @@
 
     </LinearLayout>
 
-    <View
-        android:id="@+id/vLights"
+
+    <LinearLayout
+        android:id="@+id/layoutLights"
         android:layout_width="232dp"
-        android:layout_height="34dp"
-        android:layout_gravity="center"
+        android:layout_height="72dp"
         android:background="@drawable/tpms_trailer_footer"
-        android:visibility="gone"></View>
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvUnitNoNoBack"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dp"
+            android:text="999999"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvPlateNoBack"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:text="99999999"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layoutEmpty"

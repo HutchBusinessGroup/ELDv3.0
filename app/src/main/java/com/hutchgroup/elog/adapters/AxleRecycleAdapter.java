@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
@@ -43,6 +45,9 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
 
         viewHolder.tvUnitNo.setText(bean.getUnitNo());
         viewHolder.tvPlateNo.setText(bean.getPlateNo());
+
+        viewHolder.tvUnitNoNoBack.setText(bean.getUnitNo());
+        viewHolder.tvPlateNoBack.setText(bean.getPlateNo());
 
         if (bean.isEmptyFg()) {
             viewHolder.layoutEmpty.setVisibility(View.VISIBLE);
@@ -97,9 +102,9 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
             }
 
         } else {
-            viewHolder.swUnhook.setOnClickListener(new View.OnClickListener() {
+            viewHolder.swUnhook.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
-                public void onClick(View v) {
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     final AlertDialog alertDialog = new AlertDialog.Builder(Utility.context).create();
                     alertDialog.setCancelable(true);
                     alertDialog.setCanceledOnTouchOutside(false);
@@ -156,12 +161,12 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
                 }
                 if (data.size() > position + 1) {
                     if (bean.getVehicleId() != data.get(position + 1).getVehicleId()) {
-                        viewHolder.vLights.setVisibility(View.VISIBLE);
+                        viewHolder.layoutLights.setVisibility(View.VISIBLE);
                     } else {
-                        viewHolder.vLights.setVisibility(View.GONE);
+                        viewHolder.layoutLights.setVisibility(View.GONE);
                     }
                 } else {
-                    viewHolder.vLights.setVisibility(View.VISIBLE);
+                    viewHolder.layoutLights.setVisibility(View.VISIBLE);
                 }
                 if (bean.getAxlePosition() == 1 && !bean.isFrontTireFg()) {
                     viewHolder.layoutBackTire.setVisibility(View.VISIBLE);
@@ -239,23 +244,26 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
         ImageView imgSingleTire1, imgSingleTire2;
 
         LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty, layoutSingleRepeat, layoutDoubleRepeat, layoutHook;
-        LinearLayout layoutBackTire;
-        View vLights, vSinglePowerUnit, vDoublePowerUnit;
-        Switch swUnhook;
+        LinearLayout layoutBackTire, layoutLights;
+        View vSinglePowerUnit, vDoublePowerUnit;
+        CheckBox swUnhook;
         Button btnHook;
-        TextView tvUnitNo, tvPlateNo;
+        TextView tvUnitNo, tvPlateNo, tvPlateNoBack, tvUnitNoNoBack;
 
         public ViewHolder(View convertView) {
             super(convertView);
             layoutBackTire = (LinearLayout) convertView.findViewById(R.id.layoutBackTire);
-            vLights = convertView.findViewById(R.id.vLights);
+            layoutLights = (LinearLayout) convertView.findViewById(R.id.layoutLights);
             vSinglePowerUnit = convertView.findViewById(R.id.vSinglePowerUnit);
             vDoublePowerUnit = convertView.findViewById(R.id.vDoublePowerUnit);
             btnHook = (Button) convertView.findViewById(R.id.btnHook);
-            swUnhook = (Switch) convertView.findViewById(R.id.swUnhook);
+            swUnhook = (CheckBox) convertView.findViewById(R.id.swUnhook);
 
             tvUnitNo = (TextView) convertView.findViewById(R.id.tvUnitNo);
             tvPlateNo = (TextView) convertView.findViewById(R.id.tvPlateNo);
+
+            tvUnitNoNoBack = (TextView) convertView.findViewById(R.id.tvUnitNoNoBack);
+            tvPlateNoBack = (TextView) convertView.findViewById(R.id.tvPlateNoBack);
 
             tvPressure1 = (TextView) convertView.findViewById(R.id.tvPressure1);
             tvPressure2 = (TextView) convertView.findViewById(R.id.tvPressure2);
