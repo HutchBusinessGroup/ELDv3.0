@@ -46,38 +46,31 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
         viewHolder.tvUnitNo.setText(bean.getUnitNo());
         viewHolder.tvPlateNo.setText(bean.getPlateNo());
 
-        viewHolder.tvUnitNoNoBack.setText(bean.getUnitNo());
-        viewHolder.tvPlateNoBack.setText(bean.getPlateNo());
-
         viewHolder.layoutHook.setVisibility(View.GONE);
 
         viewHolder.layoutSingleAxle.setVisibility(View.GONE);
         viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
 
-
         viewHolder.vSinglePowerUnit.setVisibility(View.GONE);
         viewHolder.vDoublePowerUnit.setVisibility(View.GONE);
-
 
         viewHolder.layoutSingleRepeat.setBackgroundResource(R.drawable.tpms_trailer_axle);
         viewHolder.layoutDoubleRepeat.setBackgroundResource(R.drawable.tpms_trailer_axle);
 
-
-        viewHolder.layoutLights.setVisibility(View.GONE);
-
         viewHolder.layoutBackTire.setVisibility(View.GONE);
 
-        viewHolder.layoutEmpty.setVisibility(View.GONE);
+        viewHolder.swHook.setVisibility(View.GONE);
 
         if (bean.isEmptyFg()) {
-            viewHolder.layoutEmpty.setVisibility(View.VISIBLE);
+
+            viewHolder.swHook.setVisibility(View.VISIBLE);
+
             if (bean.getAxlePosition() == 0) {
-                viewHolder.btnHook.setText("UnHook");
-                viewHolder.btnHook.setEnabled(true);
-                viewHolder.btnHook.setOnClickListener(new View.OnClickListener() {
+                viewHolder.swHook.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (mListner != null) {
+                            final boolean isChecked = viewHolder.swHook.isChecked();
                             final AlertDialog alertDialog = new AlertDialog.Builder(Utility.context).create();
                             alertDialog.setCancelable(true);
                             alertDialog.setCanceledOnTouchOutside(false);
@@ -98,6 +91,9 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
 
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
+                                            if (isChecked) {
+                                                viewHolder.swHook.setChecked(false);
+                                            }
                                             alertDialog.cancel();
                                         }
                                     });
@@ -106,9 +102,7 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
                     }
                 });
             } else {
-                viewHolder.btnHook.setText("Hook");
-                viewHolder.btnHook.setEnabled(bean.getAxlePosition() == 1);
-                viewHolder.btnHook.setOnClickListener(new View.OnClickListener() {
+                viewHolder.swHook.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (mListner != null) {
@@ -187,10 +181,10 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
 
                 if (data.size() > position + 1) {
                     if (bean.getVehicleId() != data.get(position + 1).getVehicleId()) {
-                        viewHolder.layoutLights.setVisibility(View.VISIBLE);
+                        viewHolder.vLights.setVisibility(View.VISIBLE);
                     }
                 } else {
-                    viewHolder.layoutLights.setVisibility(View.VISIBLE);
+                    viewHolder.vLights.setVisibility(View.VISIBLE);
                 }
 
                 if (bean.getAxlePosition() == 1 && !bean.isFrontTireFg()) {
@@ -263,27 +257,23 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
         TextView tvSinglePressure1, tvSinglePressure2, tvSingleTemperature1, tvSingleTemperature2;
         ImageView imgSingleTire1, imgSingleTire2;
 
-        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty, layoutSingleRepeat, layoutDoubleRepeat, layoutHook;
-        LinearLayout layoutBackTire, layoutLights;
-        View vSinglePowerUnit, vDoublePowerUnit;
-        CheckBox swUnhook;
-        Button btnHook;
-        TextView tvUnitNo, tvPlateNo, tvPlateNoBack, tvUnitNoNoBack;
+        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutSingleRepeat, layoutDoubleRepeat, layoutHook;
+        LinearLayout layoutBackTire;
+        View vSinglePowerUnit, vDoublePowerUnit, vLights;
+        CheckBox swUnhook, swHook;
+        TextView tvUnitNo, tvPlateNo;
 
         public ViewHolder(View convertView) {
             super(convertView);
             layoutBackTire = (LinearLayout) convertView.findViewById(R.id.layoutBackTire);
-            layoutLights = (LinearLayout) convertView.findViewById(R.id.layoutLights);
+            vLights = convertView.findViewById(R.id.vLights);
             vSinglePowerUnit = convertView.findViewById(R.id.vSinglePowerUnit);
             vDoublePowerUnit = convertView.findViewById(R.id.vDoublePowerUnit);
-            btnHook = (Button) convertView.findViewById(R.id.btnHook);
             swUnhook = (CheckBox) convertView.findViewById(R.id.swUnhook);
+            swHook = (CheckBox) convertView.findViewById(R.id.swHook);
 
             tvUnitNo = (TextView) convertView.findViewById(R.id.tvUnitNo);
             tvPlateNo = (TextView) convertView.findViewById(R.id.tvPlateNo);
-
-            tvUnitNoNoBack = (TextView) convertView.findViewById(R.id.tvUnitNoNoBack);
-            tvPlateNoBack = (TextView) convertView.findViewById(R.id.tvPlateNoBack);
 
             tvPressure1 = (TextView) convertView.findViewById(R.id.tvPressure1);
             tvPressure2 = (TextView) convertView.findViewById(R.id.tvPressure2);
@@ -317,7 +307,6 @@ public class AxleRecycleAdapter extends RecyclerView.Adapter<AxleRecycleAdapter.
 
             layoutSingleAxle = (LinearLayout) convertView.findViewById(R.id.layoutSingleAxle);
             layoutDoubleAxle = (LinearLayout) convertView.findViewById(R.id.layoutDoubleAxle);
-            layoutEmpty = (LinearLayout) convertView.findViewById(R.id.layoutEmpty);
 
             layoutSingleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutSingleRepeat);
             layoutDoubleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutDoubleRepeat);

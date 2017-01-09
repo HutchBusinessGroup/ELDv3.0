@@ -70,6 +70,12 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        rAdapter.notifyDataSetChanged();
+    }
+
     private void initialize(View view) {
         AxleRecycleAdapter.mListner = this;
         rvTPMS = (RecyclerView) view.findViewById(R.id.rvTPMS);
@@ -211,6 +217,11 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
                 Tpms.addSensorId(obj.getSensorIdsAll());
             }
         }
+    }
+
+    @Override
+    public void refresh() {
+        TPMSDataGet();
     }
 
     @Override

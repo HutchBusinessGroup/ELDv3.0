@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,22 +39,39 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
         return new ViewHolder(itemView);
     }
 
+
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int position) {
-       final AxleBean bean = data.get(position);
+    public void onBindViewHolder(final TrailerManageRecycleAdapter.ViewHolder viewHolder, int position) {
+        final AxleBean bean = data.get(position);
+
+        viewHolder.tvUnitNo.setText(bean.getUnitNo());
+        viewHolder.tvPlateNo.setText(bean.getPlateNo());
+
+        viewHolder.layoutHook.setVisibility(View.GONE);
+
+        viewHolder.layoutSingleAxle.setVisibility(View.GONE);
+        viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
+
+        viewHolder.vSinglePowerUnit.setVisibility(View.GONE);
+        viewHolder.vDoublePowerUnit.setVisibility(View.GONE);
+
+        viewHolder.layoutSingleRepeat.setBackgroundResource(R.drawable.tpms_trailer_axle);
+        viewHolder.layoutDoubleRepeat.setBackgroundResource(R.drawable.tpms_trailer_axle);
+
+        viewHolder.layoutBackTire.setVisibility(View.GONE);
+
+        viewHolder.swHook.setVisibility(View.GONE);
 
         if (bean.isEmptyFg()) {
-            viewHolder.layoutEmpty.setVisibility(View.VISIBLE);
-            viewHolder.layoutSingleAxle.setVisibility(View.GONE);
-            viewHolder.layoutDoubleAxle.setVisibility(View.GONE);
-            viewHolder.tvBackTire.setVisibility(View.GONE);
+
+            viewHolder.swHook.setVisibility(View.VISIBLE);
+
             if (bean.getAxlePosition() == 0) {
-                viewHolder.btnHook.setText("UnHook");
-                viewHolder.btnHook.setEnabled(true);
-                viewHolder.btnHook.setOnClickListener(new View.OnClickListener() {
+                viewHolder.swHook.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (mListner != null) {
+                            final boolean isChecked = viewHolder.swHook.isChecked();
                             final AlertDialog alertDialog = new AlertDialog.Builder(Utility.context).create();
                             alertDialog.setCancelable(true);
                             alertDialog.setCanceledOnTouchOutside(false);
@@ -73,6 +92,9 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
 
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
+                                            if (isChecked) {
+                                                viewHolder.swHook.setChecked(false);
+                                            }
                                             alertDialog.cancel();
                                         }
                                     });
@@ -81,9 +103,7 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
                     }
                 });
             } else {
-                viewHolder.btnHook.setText("Hook");
-                viewHolder.btnHook.setEnabled(bean.getAxlePosition() == 1);
-                viewHolder.btnHook.setOnClickListener(new View.OnClickListener() {
+                viewHolder.swHook.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (mListner != null) {
@@ -97,6 +117,7 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
             viewHolder.swUnhook.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    final boolean isChecked = viewHolder.swUnhook.isChecked();
                     final AlertDialog alertDialog = new AlertDialog.Builder(Utility.context).create();
                     alertDialog.setCancelable(true);
                     alertDialog.setCanceledOnTouchOutside(false);
@@ -108,11 +129,13 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
 
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    int trailerId = bean.getVehicleId();
-                                    if (bean.isPowerUnitFg()) {
-                                        trailerId = Integer.parseInt(Utility.hookedTrailers.get(1));
+                                    if (!isChecked) {
+                                        int trailerId = bean.getVehicleId();
+                                        if (bean.isPowerUnitFg()) {
+                                            trailerId = Integer.parseInt(Utility.hookedTrailers.get(1));
+                                        }
+                                        mListner.unhook(trailerId);
                                     }
-                                    mListner.unhook(trailerId);
                                 }
                             });
                     alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "No",
@@ -120,18 +143,26 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
 
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
+                                    if (!isChecked) {
+                                        viewHolder.swUnhook.setChecked(true);
+                                    }
                                     alertDialog.cancel();
                                 }
                             });
                     alertDialog.show();
                 }
             });
+            viewHolder.swUnhook.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, final boolean isChecked) {
+
+                }
+            });
 
             if (bean.isPowerUnitFg()) {
                 if (bean.getAxleNo() == 1) {
-
-                    viewHolder.layoutSingleRepeat.setLayoutParams(new LinearLayout.LayoutParams(224, 232));
-                    viewHolder.layoutDoubleRepeat.setLayoutParams(new LinearLayout.LayoutParams(224, 232));
+                    viewHolder.vSinglePowerUnit.setVisibility(View.VISIBLE);
+                    viewHolder.vDoublePowerUnit.setVisibility(View.VISIBLE);
 
                     viewHolder.layoutSingleRepeat.setBackgroundResource(R.drawable.tpms_power_unit);
                     viewHolder.layoutDoubleRepeat.setBackgroundResource(R.drawable.tpms_power_unit);
@@ -144,28 +175,23 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
                     viewHolder.layoutDoubleRepeat.setBackgroundResource(background);
                 }
             } else {
-                if (bean.getAxleNo() == 1) {
-                    if (data.size() > position - 1 && !data.get(position - 1).isPowerUnitFg())
-                        viewHolder.layoutHook.setVisibility(View.VISIBLE);
-                } else {
-                    viewHolder.layoutHook.setVisibility(View.GONE);
-                }
+
+                if (bean.getAxleNo() == 1 && data.size() > position - 1 && !data.get(position - 1).isPowerUnitFg())
+                    viewHolder.layoutHook.setVisibility(View.VISIBLE);
+
+
                 if (data.size() > position + 1) {
                     if (bean.getVehicleId() != data.get(position + 1).getVehicleId()) {
                         viewHolder.vLights.setVisibility(View.VISIBLE);
-                    } else {
-                        viewHolder.vLights.setVisibility(View.GONE);
                     }
                 } else {
                     viewHolder.vLights.setVisibility(View.VISIBLE);
                 }
+
                 if (bean.getAxlePosition() == 1 && !bean.isFrontTireFg()) {
-                    viewHolder.tvBackTire.setVisibility(View.VISIBLE);
-                } else {
-                    viewHolder.tvBackTire.setVisibility(View.GONE);
+                    viewHolder.layoutBackTire.setVisibility(View.VISIBLE);
                 }
             }
-            viewHolder.layoutEmpty.setVisibility(View.GONE);
 
             if (bean.isDoubleTireFg()) {
                 viewHolder.layoutSingleAxle.setVisibility(View.GONE);
@@ -186,6 +212,7 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
         }
     }
 
+
     private void setPressureWarning(ImageView imgTire, double pressure, double highPressure, double lowPressure) {
         if (pressure > highPressure || pressure < lowPressure) {
             imgTire.setImageResource(R.drawable.error_tire);
@@ -204,19 +231,29 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgTire1, imgTire2, imgTire3, imgTire4;
+
         ImageView imgSingleTire1, imgSingleTire2;
 
-        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutEmpty, layoutSingleRepeat, layoutDoubleRepeat, layoutHook;
-        TextView tvBackTire;
-        View vLights, swUnhook;
+        LinearLayout layoutSingleAxle, layoutDoubleAxle, layoutSingleRepeat, layoutDoubleRepeat, layoutHook;
+        LinearLayout layoutBackTire;
+        View vSinglePowerUnit, vDoublePowerUnit, vLights;
+        CheckBox swUnhook, swHook;
         Button btnHook;
+        TextView tvUnitNo, tvPlateNo;
 
         public ViewHolder(View convertView) {
             super(convertView);
-            tvBackTire = (TextView) convertView.findViewById(R.id.tvBackTire);
+            layoutBackTire = (LinearLayout) convertView.findViewById(R.id.layoutBackTire);
             vLights = convertView.findViewById(R.id.vLights);
-            btnHook = (Button) convertView.findViewById(R.id.btnHook);
-            swUnhook = convertView.findViewById(R.id.swUnhook);
+            vSinglePowerUnit = convertView.findViewById(R.id.vSinglePowerUnit);
+            vDoublePowerUnit = convertView.findViewById(R.id.vDoublePowerUnit);
+
+            swUnhook = (CheckBox) convertView.findViewById(R.id.swUnhook);
+            swHook = (CheckBox) convertView.findViewById(R.id.swHook);
+
+            tvUnitNo = (TextView) convertView.findViewById(R.id.tvUnitNo);
+            tvPlateNo = (TextView) convertView.findViewById(R.id.tvPlateNo);
+
             imgTire1 = (ImageView) convertView.findViewById(R.id.imgTire1);
             imgTire2 = (ImageView) convertView.findViewById(R.id.imgTire2);
             imgTire3 = (ImageView) convertView.findViewById(R.id.imgTire3);
@@ -229,7 +266,6 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
 
             layoutSingleAxle = (LinearLayout) convertView.findViewById(R.id.layoutSingleAxle);
             layoutDoubleAxle = (LinearLayout) convertView.findViewById(R.id.layoutDoubleAxle);
-            layoutEmpty = (LinearLayout) convertView.findViewById(R.id.layoutEmpty);
 
             layoutSingleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutSingleRepeat);
             layoutDoubleRepeat = (LinearLayout) convertView.findViewById(R.id.layoutDoubleRepeat);
@@ -237,10 +273,11 @@ public class TrailerManageRecycleAdapter extends RecyclerView.Adapter<TrailerMan
         }
     }
 
-    public static IHookTrailer mListner;
+    public static TrailerManageRecycleAdapter.IHookTrailer mListner;
 
     public interface IHookTrailer {
         void hook();
+
         void unhook(int trailerId);
     }
 }
