@@ -7,17 +7,16 @@
 
     <LinearLayout
         android:id="@+id/layoutHook"
-        android:layout_width="47dp"
+        android:layout_width="64dp"
         android:layout_height="232dp"
-        android:background="@drawable/tpms_trailer_hook_bg"
         android:gravity="center"
         android:orientation="horizontal"
         android:visibility="gone">
 
         <CheckBox
             android:id="@+id/swUnhook"
-            android:layout_width="wrap_content"
-            android:layout_height="62dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@android:color/transparent"
             android:button="@drawable/checkbox_hook_background"
             android:checked="true"

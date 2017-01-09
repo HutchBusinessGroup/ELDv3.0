@@ -92,13 +92,12 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
         ArrayList<String> trailerList = TrailerDB.getHookedTrailer(); // including power unit
         Utility.hookedTrailers = trailerList;
         list = VehicleDB.AxleInfoGet(trailerList);
+
         int hooked = trailerList.size() - 1;
-        int position = 1;
-        for (int i = hooked; i < 3; i++) {
+        if (hooked < 5) {
             AxleBean bean = new AxleBean();
             bean.setEmptyFg(true);
-            bean.setAxlePosition(position);
-            position++;
+            bean.setAxlePosition(1);
             list.add(bean);
         }
 

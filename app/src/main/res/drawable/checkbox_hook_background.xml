@@ -1,4 +1,4 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/hook" android:state_checked="false" />
-    <item android:drawable="@drawable/unhook" android:state_checked="true" />
+    <item android:drawable="@drawable/tpms_trailer_hook" android:state_checked="true" />
+    <item android:drawable="@drawable/tpms_trailer_unhook" android:state_checked="false" />
 </selector>
