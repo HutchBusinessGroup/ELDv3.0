@@ -140,7 +140,7 @@ public class UserListFragment extends Fragment implements ChatClient.ChatMessage
         });
 
         getUserList("");
-        mListener.onMessageRead();
+        //mListener.onMessageRead();
     }
 
     private void SetSearchOption(boolean flag) {

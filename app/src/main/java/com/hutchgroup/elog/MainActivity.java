@@ -3750,6 +3750,11 @@ public class MainActivity extends ELogMainActivity
 
         }
         updateFlagbar(true);
+        int unreadCount= MessageDB.getUnreadCount();
+        if (unreadCount>0)
+        {
+            onMessageReceived();
+        }
         setCertify(1);
 
 
@@ -3812,6 +3817,11 @@ public class MainActivity extends ELogMainActivity
 
         }
         updateFlagbar(true);
+        int unreadCount= MessageDB.getUnreadCount();
+        if (unreadCount>0)
+        {
+            onMessageReceived();
+        }
         setCertify(1);
 
 
@@ -4597,7 +4607,6 @@ public class MainActivity extends ELogMainActivity
                     ivActiveUser.setVisibility(View.VISIBLE);
                     icCertifyLog.setVisibility(View.VISIBLE);
                     //  icViolation.setVisibility(View.VISIBLE);
-                    icMessage.setVisibility(View.VISIBLE);
                     icInspection.setVisibility(View.VISIBLE);
                     icCertifyLog.setVisibility(View.VISIBLE);
                 } else {

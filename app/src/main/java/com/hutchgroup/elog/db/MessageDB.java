@@ -422,5 +422,38 @@ public class MessageDB {
         }
         return count;
     }
+    // Created By: Deepak Sharma
+    // Created Date: 8 Aug 2016
+    // Purpose: check if there any unread message
+    public static int getUnreadCount() {
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        Cursor cursor = null;
+        int count = 0;
+        try {
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getReadableDatabase();
 
+            cursor = database.rawQuery("select 1 from "
+                            + MySQLiteOpenHelper.TABLE_Message
+                            + " where MessageToId=? and ReadFg=0 "
+                    , new String[]{ Utility.onScreenUserId + ""});
+
+            count = cursor.getCount();
+
+        } catch (Exception e) {
+            Utility.printError(e.getMessage());
+            LogFile.write(MessageDB.class.getName() + "::getCurrentMessage Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                cursor.close();
+                database.close();
+                helper.close();
+
+            } catch (Exception e2) {
+                // TODO: handle exception
+            }
+        }
+        return count;
+    }
 }

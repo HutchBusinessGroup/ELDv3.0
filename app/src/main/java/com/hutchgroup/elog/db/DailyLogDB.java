@@ -1238,4 +1238,41 @@ public class DailyLogDB {
             LogFile.write(DailyLogDB.class.getName() + "::certifyLogBook Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         }
     }
+
+    // Created By: Deepak Sharma
+    // Created Date: 14 January 2015
+    // Purpose: add or update dailylog in database
+    public static Boolean TrailerUpdate(int driverId, String trailerNo) {
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        boolean status = false;
+        try {
+            String logDate = Utility.getCurrentDate();
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+
+            values.put("TrailerId", trailerNo);
+            values.put("SyncFg", 0);
+
+            database.update(MySQLiteOpenHelper.TABLE_DAILYLOG, values,
+                    " DriverId =? and LogDate=?", new String[]{driverId
+                            + "", logDate});
+            status = true;
+
+
+        } catch (Exception e) {
+            Utility.printError(e.getMessage());
+            LogFile.write(DailyLogDB.class.getName() + "::CertifyCountUpdate Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                database.close();
+                helper.close();
+            } catch (Exception e) {
+                Utility.printError(e.getMessage());
+                LogFile.write(DailyLogDB.class.getName() + "::CertifyCountUpdate close database Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+            }
+        }
+        return status;
+    }
 }
