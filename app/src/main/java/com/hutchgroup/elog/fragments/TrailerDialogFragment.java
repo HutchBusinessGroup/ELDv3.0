@@ -83,6 +83,8 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
             public void onClick(View v) {
                 Utility.hideKeyboard(getActivity(), v);
                 dismiss();
+                if (mListener != null)
+                    mListener.refresh();
             }
         });
         etSearch = (EditText) view.findViewById(R.id.etSearch);
@@ -163,15 +165,16 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
     }
 
     public interface OnFragmentInteractionListener {
-
         void hooked(int trailerId);
+
+        void refresh();
     }
 
 
     @Override
     public void onResume() {
         ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
-        params.width =WindowManager.LayoutParams.MATCH_PARENT;
+        params.width = WindowManager.LayoutParams.MATCH_PARENT;
         params.height = WindowManager.LayoutParams.WRAP_CONTENT;
         getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
 

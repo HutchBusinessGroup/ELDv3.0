@@ -40,8 +40,6 @@ public class AxleAdapter extends ArrayAdapter<AxleBean> {
                     false);
             viewHolder = new ViewHolderItem();
 
-            viewHolder.tvBackTire = (TextView) convertView.findViewById(R.id.tvBackTire);
-
             viewHolder.tvPressure1 = (TextView) convertView.findViewById(R.id.tvPressure1);
             viewHolder.tvPressure2 = (TextView) convertView.findViewById(R.id.tvPressure2);
             viewHolder.tvPressure3 = (TextView) convertView.findViewById(R.id.tvPressure3);

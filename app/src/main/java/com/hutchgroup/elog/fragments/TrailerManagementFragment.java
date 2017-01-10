@@ -82,12 +82,10 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
         list = VehicleDB.AxleInfoGet(trailerList);
         // testData();
         int hooked = trailerList.size() - 1;
-        int position = 1;
-        for (int i = hooked; i < 3; i++) {
+        if (hooked < 5) {
             AxleBean bean = new AxleBean();
             bean.setEmptyFg(true);
-            bean.setAxlePosition(position);
-            position++;
+            bean.setAxlePosition(1);
             list.add(bean);
         }
 
@@ -193,6 +191,11 @@ public class TrailerManagementFragment extends Fragment implements TrailerManage
                 Tpms.addSensorId(obj.getSensorIdsAll());
             }
         }
+    }
+
+    @Override
+    public void refresh() {
+        TrailerDataGet();
     }
 
     @Override

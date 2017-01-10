@@ -7,17 +7,16 @@
 
     <LinearLayout
         android:id="@+id/layoutHook"
-        android:layout_width="47dp"
+        android:layout_width="64dp"
         android:layout_height="232dp"
-        android:background="@drawable/tpms_trailer_hook_bg"
         android:gravity="center"
         android:orientation="horizontal"
         android:visibility="gone">
 
         <CheckBox
             android:id="@+id/swUnhook"
-            android:layout_width="wrap_content"
-            android:layout_height="62dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="@android:color/transparent"
             android:button="@drawable/checkbox_hook_background"
             android:checked="true"
@@ -104,6 +103,8 @@
             android:gravity="center"
             android:orientation="vertical"
             android:paddingBottom="8dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
             android:paddingTop="8dp">
 
             <ImageView
@@ -208,6 +209,8 @@
             android:gravity="center"
             android:orientation="vertical"
             android:paddingBottom="8dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
             android:paddingTop="8dp">
 
             <ImageView
@@ -304,59 +307,24 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/layoutLights"
-        android:layout_width="72dp"
-        android:layout_height="232dp"
-        android:background="@drawable/tpms_trailer_footer"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/tvPlateNoBack"
-            android:layout_width="48dp"
-            android:layout_height="84dp"
-            android:layout_marginBottom="60dp"
-            android:layout_marginLeft="-5dp"
-            android:gravity="bottom|center"
-            android:rotation="-90"
-            android:text="99999999"
-            android:textSize="11sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvUnitNoNoBack"
-            android:layout_width="48dp"
-            android:layout_height="84dp"
-            android:layout_marginLeft="-5dp"
-            android:gravity="bottom|center"
-            android:rotation="-90"
-            android:text="999999"
-            android:textSize="11sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutEmpty"
-        android:layout_width="320dp"
+    <View
+        android:id="@+id/vLights"
+        android:layout_width="38dp"
         android:layout_height="232dp"
         android:layout_gravity="center"
-        android:background="@drawable/hook_container_bg"
+        android:background="@drawable/tpms_trailer_footer"
+        android:visibility="gone"></View>
+
+    <CheckBox
+        android:id="@+id/swHook"
+        android:layout_width="320dp"
+        android:layout_height="232dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/checkbox_hook_empty_background"
+        android:checked="true"
         android:gravity="center"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <Button
-            android:id="@+id/btnHook"
-            style="@style/ButtonStyle"
-            android:layout_width="124dp"
-            android:layout_height="56dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="64dp"
-            android:layout_marginTop="64dp"
-            android:background="@drawable/button_bg"
-            android:text="Hook" />
-
-    </LinearLayout>
+        android:textOff=""
+        android:textOn=""
+        android:visibility="gone" />
 
 </LinearLayout>
