@@ -755,8 +755,8 @@ public class MainActivity extends ELogMainActivity
 
             bean = new DrawerItemBean();
             bean.setId(R.id.extra);
-            bean.setItem("Extra");
-            bean.setIcon(R.drawable.ic_drawer_eld);
+            bean.setItem("More");
+            bean.setIcon(R.drawable.ic_drawer_others);
             lstDrawerItems.add(bean);
         }
 
@@ -858,12 +858,12 @@ public class MainActivity extends ELogMainActivity
         super.onCreate(savedInstanceState);
 
         try {
-            if (!ConstantFlag.Flag_Development) {
+          /*  if (!ConstantFlag.Flag_Development) {
                 WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 
                 if (wifiManager.isWifiEnabled())
                     wifiManager.setWifiEnabled(false);
-            }
+            }*/
 
             // set alarm
             if (Utility.as == null) {
@@ -1602,18 +1602,6 @@ public class MainActivity extends ELogMainActivity
             //Log.d(TAG, "Works here 1!");
         } else if (id == R.id.homeAsUp) {
             //Log.d(TAG, "Works here 2!");
-        } else if (id == R.id.action_back_one_day) {
-            if (undockingMode) {
-                return super.onOptionsItemSelected(item);
-            }
-          /*  if (inspectFragment != null)
-                inspectFragment.BackOneDay();*/
-        } else if (id == R.id.action_forward_one_day) {
-            if (undockingMode) {
-                return super.onOptionsItemSelected(item);
-            }
-           /* if (inspectFragment != null)
-                inspectFragment.ForwardOneDay();*/
         } else if (id == R.id.action_diagnostic) {
             final Dialog dlg = new Dialog(MainActivity.this);
             LayoutInflater li = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);

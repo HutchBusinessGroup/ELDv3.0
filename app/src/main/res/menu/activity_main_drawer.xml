@@ -41,15 +41,16 @@
             android:id="@+id/tpms"
             android:icon="@drawable/ic_drawer_certified_logbook"
             android:title="@string/menu_tpms" />
+
+        <item
+            android:id="@+id/extra"
+            android:icon="@drawable/ic_drawer_others"
+            android:title="@string/menu_extra" />
+
         <item
             android:id="@+id/settings"
             android:icon="@drawable/ic_drawer_certified_logbook"
             android:title="@string/menu_settings" />
-
-        <item
-            android:id="@+id/extra"
-            android:icon="@drawable/ic_drawer_certified_logbook"
-            android:title="@string/menu_extra" />
 
         <item
             android:id="@+id/send_report"
