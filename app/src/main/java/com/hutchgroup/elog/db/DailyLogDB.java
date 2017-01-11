@@ -495,7 +495,7 @@ public class DailyLogDB {
             database = helper.getReadableDatabase();
 
             cursor = database.rawQuery("select _id ,LogDate,ShippingId,TrailerId,StartOdometerReading,EndOdometerReading from " + MySQLiteOpenHelper.TABLE_DAILYLOG +
-                            " where driverId=? and CertifyFG=0 and LogDate!=?"
+                            " where driverId=? and CertifyFG=0 and LogDate!=? order by LogDate"
                     , new String[]{driverId + "", Utility.getCurrentDate()});
             while (cursor.moveToNext()) {
                 DailyLogBean bean = new DailyLogBean();

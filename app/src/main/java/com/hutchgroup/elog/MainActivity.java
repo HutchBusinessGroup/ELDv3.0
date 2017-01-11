@@ -2311,6 +2311,12 @@ public class MainActivity extends ELogMainActivity
             RedirectToMain();
             Utility.saveLoginInfo(Utility.user1.getAccountId(), 0, Utility.activeUserId, Utility.onScreenUserId);
         }
+
+        if (Utility.isInternetOn()) {
+            showLoaderAnimation(true);
+            new AutoSyncData(autoSyncDataPostTaskListener).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        }
+
     }
 
     private void RedirectToMain() {
