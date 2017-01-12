@@ -33,7 +33,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
     CheckBox swMonthly;
     ListView lvScoreCard, lvValues;
     boolean isCurrentDate = true;
-    public static boolean IsTesting = true;
+    public static boolean IsTesting = false;
 
     Thread thScores;
 

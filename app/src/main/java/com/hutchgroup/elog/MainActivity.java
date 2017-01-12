@@ -4041,8 +4041,8 @@ public class MainActivity extends ELogMainActivity
                     Log.d(TAG, "address=" + deviceAddress);
                     if (deviceAddress == null) {
 
-                        Thread.sleep(60000);
-                        initializeTpms();
+                       /* Thread.sleep(60000);
+                        initializeTpms();*/
 
                     } else {
                         BluetoothDevice device = adapter.getRemoteDevice(deviceAddress);

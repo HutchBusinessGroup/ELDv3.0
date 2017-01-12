@@ -254,9 +254,11 @@ public class GPSTracker extends Service implements LocationListener {
         gpsTime = getUTCDateFromMilisecond(location.getTime());
         float difference = (location.getTime() - lastLocationTime) / 60000f;
         Utility.currentLocation.setValidLocationDate(gpsTime);
+        Utility.currentLocation.setLatitude(location.getLatitude());
+        Utility.currentLocation.setLongitude(location.getLongitude());
+        Utility.currentLocation.setAccuracy(location.getAccuracy());
+        Utility.currentLocation.setBearing(location.getBearing());
         if (difference >= 1) {
-            Utility.currentLocation.setLatitude(location.getLatitude());
-            Utility.currentLocation.setLongitude(location.getLongitude());
             boolean invalidFg = location.getAccuracy() > 500;// we assume invalid location if accuracy is more than 500 meters
 
             lastLocationTime = location.getTime();
@@ -379,7 +381,7 @@ public class GPSTracker extends Service implements LocationListener {
     // Deepak Sharma
     // 21 July 2016
     // set status code for gps data
-    private void setStatusCode() {
+    private static void setStatusCode() {
         String code1 = Utility.convertBinaryToHex((GPSData.ACPowerFg == 0 ? "1" : "0") + "" + GPSData.TripInspectionCompletedFg + "" + (GPSData.NoHOSViolationFgFg == 1 ? "0" : "1") + "" + GPSData.CellOnlineFg);
         String code2 = Utility.convertBinaryToHex(GPSData.RoamingFg + "" + GPSData.DTCOnFg + "" + GPSData.WifiOnFg + "" + GPSData.TPMSWarningOnFg);
         String code3 = Utility.convertBinaryToHex((Utility.dataDiagnosticIndicatorFg ? "1" : "0") + (Utility.malFunctionIndicatorFg ? "1" : "0") + (Float.valueOf(CanMessages.RPM) == 0f ? "0" : "1") + "0");
@@ -440,11 +442,19 @@ public class GPSTracker extends Service implements LocationListener {
         return utcTime;
     }
 
-    private String MilisecondsToDate(long ms) {
+    private static String MilisecondsToDate(long ms) {
 
         final SimpleDateFormat sdf = new SimpleDateFormat("yyMMddHHmmss");
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         final String utcTime = sdf.format(new Date(ms));
+        return utcTime;
+    }
+
+    private static String getUtcTime() {
+
+        final SimpleDateFormat sdf = new SimpleDateFormat("yyMMddHHmmss");
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        final String utcTime = sdf.format(new Date());
         return utcTime;
     }
 
@@ -517,7 +527,7 @@ public class GPSTracker extends Service implements LocationListener {
                     float odometer = Float.valueOf(CanMessages.OdometerReading);
                     float engineHours = Float.valueOf(CanMessages.EngineHours);
 
-                    if (odometer>0 && engineHours>0) {
+                    if (odometer > 0 && engineHours > 0) {
                         // save vehicle odometer reading and engine hours
                         Utility.saveVehicleCanInfo();
                     }
@@ -528,4 +538,49 @@ public class GPSTracker extends Service implements LocationListener {
             }
         }
     };
+
+    public static String getShutDownEvent() {
+        String signal = "";
+        try {
+            GPSData.CurrentStatus = 4;
+            GPSData.LastStatusTime = System.currentTimeMillis();
+            setStatusCode();
+            double latitude = (Utility.currentLocation.getLatitude() < 0 ? -Utility.currentLocation.getLatitude() : Utility.currentLocation.getLatitude());
+            double longitude = (Utility.currentLocation.getLongitude() < 0 ? -Utility.currentLocation.getLongitude() : Utility.currentLocation.getLongitude());
+
+            signal = Utility.IMEI + "," +// IMEI
+                    Utility._productCode + ":" + Utility.ApplicationVersion + "," + // Product Code
+                    "1G," + // Message Type
+                    getUtcTime() + "," +  // Signal Date
+                    "A," + // GPS Status
+                    latitude + "," +
+                    (Utility.currentLocation.getLatitude() > 0 ? "N" : "S") + "," +
+                    longitude + "," +
+                    (Utility.currentLocation.getLongitude() > 0 ? "E" : "W") + "," +
+                    CanMessages.Speed + "," + //can Speed
+                    Utility.currentLocation.getBearing() + "," + // Heading
+                    CanMessages.OdometerReading + "," + // Odometer Reading
+                    Utility.currentLocation.getAccuracy() + "," + //accuracy
+                    CanMessages.Speed + "," + // gps speed
+                    GPSData.PostRoadSpeed + "," + // Post Road speed
+                    CanMessages.EngineHours + "," +
+                    CanMessages.TotalFuelConsumed + "," +
+                    CanMessages.TotalIdleHours + "," +
+                    CanMessages.TotalIdleFuelConsumed + "," +
+                    CanMessages.TotalAverage + "," +
+                    MilisecondsToDate(GPSData.LastStatusTime) + "," +
+                    GPSData.ETATimeRemaining + "," +
+                    GPSData.CurrentStatus + "," +
+                    GPSData.CurrentStatusRemaining + "," +
+                    Utility.activeUserId + "," +
+                    Utility.vehicleId + "," +
+                    GPSData.StatusCode + ";"; // Status Code Its Static value
+
+
+        } catch (Exception exe) {
+
+        }
+        return signal;
+    }
+
 }

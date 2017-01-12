@@ -5,8 +5,25 @@ package com.hutchgroup.elog.beans;
  */
 public class LocationBean {
     double Latitude, Longitude;
-    String locationDescription="";
+    String locationDescription = "";
     String validLocationDate;
+    float bearing, accuracy;
+
+    public float getBearing() {
+        return bearing;
+    }
+
+    public void setBearing(float bearing) {
+        this.bearing = bearing;
+    }
+
+    public float getAccuracy() {
+        return accuracy;
+    }
+
+    public void setAccuracy(float accuracy) {
+        this.accuracy = accuracy;
+    }
 
     public String getValidLocationDate() {
         return validLocationDate;
