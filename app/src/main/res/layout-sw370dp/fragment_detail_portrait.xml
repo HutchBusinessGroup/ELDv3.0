@@ -83,6 +83,7 @@
                                             style="@style/InspectLogTextValStyle"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:text="N"
                                              />
 
 
@@ -100,6 +101,7 @@
                                             style="@style/InspectLogTextValStyle"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:text="A"
                                             />
 
                                     </LinearLayout>

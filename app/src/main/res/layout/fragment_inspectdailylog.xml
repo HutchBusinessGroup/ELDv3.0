@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="@drawable/inspect_elog_header"
+        android:elevation="2dp"
         android:orientation="vertical"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        android:elevation="2dp"
         android:paddingTop="10dp">
 
         <LinearLayout
@@ -34,8 +34,7 @@
                 style="@style/InspectLogPrimaryDetailStyle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="20-Nov-14" />
+                android:layout_weight="1" />
 
             <ImageView
                 android:layout_width="52dp"
@@ -51,7 +50,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="6mi. NE North Auburn, CA" />
+                android:text="N/A" />
 
         </LinearLayout>
 
@@ -73,8 +72,7 @@
                 style="@style/InspectLogPrimaryDetailStyle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="John Smith" />
+                android:layout_weight="1" android:text="N/A"/>
 
             <ImageView
                 android:layout_width="52dp"
@@ -90,51 +88,51 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tvDriverLicense"
-                style="@style/InspectLogPrimaryDetailStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="DL000368210361" />
+                <TextView
+                    android:id="@+id/tvDriverLicense"
+                    style="@style/InspectLogPrimaryDetailStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="N" />
 
-            <TextView
-                style="@style/InspectLogPrimaryDetailStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"
-                android:text="/" />
+                <TextView
+                    style="@style/InspectLogPrimaryDetailStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:text="/" />
 
-            <TextView
-                android:id="@+id/tvDriverLicenseState"
-                style="@style/InspectLogPrimaryDetailStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="IL" />
+                <TextView
+                    android:id="@+id/tvDriverLicenseState"
+                    style="@style/InspectLogPrimaryDetailStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="A" />
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
 
-        <ListView
-            android:id="@+id/lvEvent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="130dp"
-            android:choiceMode="singleChoice"
-            android:divider="@color/e5e5e5"
-            android:dividerHeight="1dp">
+    <ListView
+        android:id="@+id/lvEvent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="130dp"
+        android:choiceMode="singleChoice"
+        android:divider="@color/e5e5e5"
+        android:dividerHeight="1dp">
 
 
-        </ListView>
+    </ListView>
 
     <ImageButton
         android:id="@+id/fab_certify"
         android:layout_width="@dimen/fab_size"
         android:layout_height="@dimen/fab_size"
         android:layout_gravity="bottom|right"
-        android:layout_marginRight="@dimen/fab_margin_right"
         android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:layout_marginRight="@dimen/fab_margin_right"
         android:background="@drawable/custom_fab_button_bg"
-        android:src="@drawable/ic_verified_user_black_36dp"/>
+        android:src="@drawable/ic_verified_user_black_36dp" />
 </FrameLayout>

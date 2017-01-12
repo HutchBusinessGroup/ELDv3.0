@@ -116,7 +116,7 @@
                                             style="@style/InspectLogTextValStyle"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="" />
+                                            android:text="N" />
 
 
                                         <TextView
@@ -133,7 +133,7 @@
                                             style="@style/InspectLogTextValStyle"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="" />
+                                            android:text="A" />
 
                                     </LinearLayout>
 
@@ -325,8 +325,8 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:weightSum="3"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
 
                                     <TextView
                                         android:id="@+id/tvExemptDriverStatus"
@@ -358,8 +358,8 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:weightSum="3"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:weightSum="3">
 
                                     <TextView
                                         android:id="@+id/tvELDMalfunctionLabel"
@@ -736,9 +736,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:paddingBottom="10dp"
                 android:paddingLeft="9dp"
-                android:paddingRight="9dp"
-                android:paddingBottom="10dp">
+                android:paddingRight="9dp">
 
                 <ImageView
                     android:id="@+id/imgStatus"
@@ -750,9 +750,9 @@
                     android:id="@+id/imgDutyStatus"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitXY"
                     android:layout_weight="1"
-                    android:background="@drawable/elog_bg_l_grid"  />
+                    android:background="@drawable/elog_bg_l_grid"
+                    android:scaleType="fitXY" />
 
 
                 <LinearLayout

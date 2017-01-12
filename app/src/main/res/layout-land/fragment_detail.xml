@@ -81,7 +81,7 @@
                                             style="@style/InspectLogTextValStyle"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="" />
+                                            android:text="N" />
 
 
                                         <TextView
@@ -98,7 +98,7 @@
                                             style="@style/InspectLogTextValStyle"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="" />
+                                            android:text="A" />
 
                                     </LinearLayout>
 
