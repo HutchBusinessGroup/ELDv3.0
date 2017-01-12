@@ -22,6 +22,7 @@ import com.hutchgroup.elog.common.Utility;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 public class ViolationFragment extends Fragment {
@@ -45,10 +46,16 @@ public class ViolationFragment extends Fragment {
 
     private void ViolationBind() {
         selectedItemIndex = -1;
-        HourOfService.ViolationCalculation(Utility.newDate(), driverId);
+        violationList = new ArrayList<>();
+        Date currentDate = Utility.newDate();
+        for (int i = 0; i < 15; i++) {
+            Date date = Utility.addDays(currentDate, -i);
+            HourOfService.ViolationCalculation(date, driverId);
+            violationList.addAll(HourOfService.violations);
+        }
         //tempViolation();
-        violationList = HourOfService.violations;
 
+        Collections.sort(violationList, ViolationBean.dateDesc);
 
         adapter = new ViolationAdapter(R.layout.violation_row_layout, violationList);
         lvData.setAdapter(adapter);
