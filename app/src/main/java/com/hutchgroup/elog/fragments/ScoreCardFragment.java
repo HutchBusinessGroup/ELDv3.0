@@ -35,8 +35,8 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
     boolean isCurrentDate = true;
     public static boolean IsTesting = false;
 
-    TextView tvDrivingTime;
-
+    TextView tvDrivingTime, tvDrivingScore;
+    //Driving points gained through time:  648 Mins | Last Day Points 2450
     TextView tvLowWasherFluid, tvLowWasherFluidPer, tvLowWasherFluidCount;
     TextView tvWarmUpEngine, tvWarmUpEnginePer, tvWarmUpEngineCount;
     TextView tvLowEngineOil, tvLowEngineOilPer, tvLowEngineOilCount;
@@ -56,6 +56,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
 
     private void initialize(View view) {
         tvDrivingTime = (TextView) view.findViewById(R.id.tvDrivingTime);
+        tvDrivingScore = (TextView) view.findViewById(R.id.tvDrivingScore);
 
         tvLowWasherFluid = (TextView) view.findViewById(R.id.tvLowWasherFluid);
         tvLowWasherFluidPer = (TextView) view.findViewById(R.id.tvLowWasherFluidPer);
@@ -129,7 +130,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
                 ScoreCardGet();
             }
         });
-        ScoreCardGet();
+
     }
 
     private void UpdateScoreValue(String code, int score, int count) {
@@ -185,7 +186,9 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
             date = Utility.getPreviousDate(-30);
         }
         int drivingMinute = HourOfServiceDB.DrivingTimeGet(date, Utility.onScreenUserId);
+        tvDrivingTime.setText("Driving points gained through time: " + drivingMinute + " Mins");
         drivingScore = (drivingMinute / 10) * 5;
+        tvDrivingScore.setText(drivingScore+"");
         ArrayList<AlertBean> list = AlertDB.getScoreCard(Utility.onScreenUserId, date);
         for (AlertBean item : list) {
             int score = item.getScores();

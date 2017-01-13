@@ -40,14 +40,14 @@
                 android:src="@drawable/ic_scorecard_driving" />
 
             <TextView
-                android:id="@+id/tvDrivingTime"
+                android:id="@+id/tvDrivingScore"
                 style="@style/BlockValue.Main"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:text="2765" />
+                android:text="N/A" />
 
             <LinearLayout
                 style="@style/BlockCaption.Main"
@@ -59,10 +59,11 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tvDrivingTime"
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
-                    android:text="Driving points gained through time:  648 Mins | Last Day Points 2450" />
+                    android:text="N/A" />
             </LinearLayout>
 
         </RelativeLayout>
@@ -116,7 +117,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -129,7 +130,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -142,7 +143,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -179,7 +180,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -192,7 +193,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -205,7 +206,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -243,7 +244,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -256,7 +257,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -269,7 +270,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -306,7 +307,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -319,7 +320,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -332,7 +333,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -379,7 +380,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -392,7 +393,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -405,7 +406,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -442,7 +443,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -455,7 +456,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -468,7 +469,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -505,7 +506,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -518,7 +519,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -531,7 +532,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -568,7 +569,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -581,7 +582,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -594,7 +595,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -641,7 +642,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -654,7 +655,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -667,7 +668,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -704,7 +705,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -717,7 +718,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -730,7 +731,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -767,7 +768,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -780,7 +781,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -793,7 +794,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -830,7 +831,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -843,7 +844,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -856,7 +857,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -903,7 +904,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -916,7 +917,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -929,7 +930,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -966,7 +967,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -979,7 +980,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -992,7 +993,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -1029,7 +1030,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -1042,7 +1043,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -1055,7 +1056,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>
@@ -1092,7 +1093,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                         <LinearLayout
                             style="@style/BlockCaption"
@@ -1105,7 +1106,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="16.81%" />
+                                android:text="N/A" />
 
                             <TextView
                                 style="@style/BlockCaptionVal"
@@ -1118,7 +1119,7 @@
                                 style="@style/BlockCaptionVal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="18dp"
-                                android:text="Count - 46" />
+                                android:text="N/A" />
                         </LinearLayout>
 
                     </RelativeLayout>

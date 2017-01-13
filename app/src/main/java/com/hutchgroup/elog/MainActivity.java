@@ -2920,8 +2920,6 @@ public class MainActivity extends ELogMainActivity
     }
 
     String prevTitle = "";
-
-
     @Override
     public void onDetailClosed() {
         loadDailyLog();
@@ -3740,7 +3738,6 @@ public class MainActivity extends ELogMainActivity
             }
         });
     }
-
 
     @Override
     public void autologinSuccessfully() {
