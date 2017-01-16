@@ -25,7 +25,7 @@ public class SyncData extends AsyncTask<String, Void, Boolean> {
                 status = GetCall.TrailerInfoGetSync();
                 if (status) {
                     status = GetCall.AxleInfoGetSync();
-                    if (status) {
+                    if (status && Utility.onScreenUserId > 0) {
                         String date = Utility.getCurrentDate() + " 00:00:00";
                         GetCall.LogEventSync(date);
                     }

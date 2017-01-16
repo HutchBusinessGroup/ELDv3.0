@@ -13,7 +13,7 @@ public class PostData extends AsyncTask<String, Void, Boolean> {
 
     private PostTaskListener<Boolean> postTaskListener;
 
-    public PostData(PostTaskListener<Boolean> postTaskListener){
+    public PostData(PostTaskListener<Boolean> postTaskListener) {
         this.postTaskListener = postTaskListener;
     }
 
@@ -22,14 +22,14 @@ public class PostData extends AsyncTask<String, Void, Boolean> {
         //LogFile.write(TAG + "::PostData: called by user", LogFile.AUTOMATICALLY_TASK, LogFile.AUTOSYNC_LOG);
         boolean status = PostCall.PostAll();
         if (status) {
-            status= PostCall.PostAccount();
-            if (status)
-            {
+            status = PostCall.PostAccount();
+            if (status) {
                 PostCall.PostDVIR();
                 PostCall.PostDTC();
                 PostCall.PostAlert();
                 PostCall.PostTPMS();
                 PostCall.PostTrailerStatus();
+                PostCall.PostVehicleInfo();
             }
         }
         return status;

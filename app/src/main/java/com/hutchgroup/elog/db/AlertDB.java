@@ -223,7 +223,6 @@ public class AlertDB {
 
     }
 
-
     // Created By: Deepak Sharma
     // Created Date: 12 December 2016
     // Purpose: get driver Score card

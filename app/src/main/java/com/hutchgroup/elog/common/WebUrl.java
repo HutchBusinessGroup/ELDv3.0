@@ -31,5 +31,6 @@ public class WebUrl {
 
     public final static String POST_TPMS= BASE_URL+ "TPMS/Post";
     public final static String POST_TRAILER_STATUS= BASE_URL+ "TrailerStatus/Post";
+    public final static String POST_VEHICLE_INFO= BASE_URL+ "VehicleInfo/Post";
 
 }

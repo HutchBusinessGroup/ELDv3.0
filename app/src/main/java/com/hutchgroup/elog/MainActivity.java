@@ -105,6 +105,7 @@ import com.hutchgroup.elog.db.SettingsDB;
 import com.hutchgroup.elog.db.TripInspectionDB;
 import com.hutchgroup.elog.db.UserDB;
 import com.hutchgroup.elog.db.VehicleDB;
+import com.hutchgroup.elog.db.VehicleInfoDB;
 import com.hutchgroup.elog.db.VersionInformationDB;
 import com.hutchgroup.elog.fragments.BluetoothConnectivityFragment;
 import com.hutchgroup.elog.fragments.DTCFragment;
@@ -2462,6 +2463,9 @@ public class MainActivity extends ELogMainActivity
             EventDB.EventCreate(Utility.getCurrentDateTime(), 6, evenCode, description, 1, 1, logId, driverId, "");
             bEventPowerOn = true;
             bEventPowerOff = false;
+            //save vehicle Data
+            VehicleInfoDB.Save(CanMessages._vehicleInfo);
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -2505,6 +2509,10 @@ public class MainActivity extends ELogMainActivity
 
             //123 LogFile.write(MainActivity.class.getName() + "::machineOff: " + description + " of driverId:" + driverId, LogFile.USER_INTERACTION, LogFile.DRIVEREVENT_LOG);
             EventDB.EventCreate(Utility.getCurrentDateTime(), 6, evenCode, description, 1, 1, logId, driverId, "");
+
+            //save vehicle Data
+            VehicleInfoDB.Save(CanMessages._vehicleInfo);
+
             bEventPowerOff = true;
             bEventPowerOn = false;
             runOnUiThread(new Runnable() {
@@ -2920,6 +2928,7 @@ public class MainActivity extends ELogMainActivity
     }
 
     String prevTitle = "";
+
     @Override
     public void onDetailClosed() {
         loadDailyLog();
@@ -3753,9 +3762,8 @@ public class MainActivity extends ELogMainActivity
 
         }
         updateFlagbar(true);
-        int unreadCount= MessageDB.getUnreadCount();
-        if (unreadCount>0)
-        {
+        int unreadCount = MessageDB.getUnreadCount();
+        if (unreadCount > 0) {
             onMessageReceived();
         }
         setCertify(1);
@@ -3820,9 +3828,8 @@ public class MainActivity extends ELogMainActivity
 
         }
         updateFlagbar(true);
-        int unreadCount= MessageDB.getUnreadCount();
-        if (unreadCount>0)
-        {
+        int unreadCount = MessageDB.getUnreadCount();
+        if (unreadCount > 0) {
             onMessageReceived();
         }
         setCertify(1);

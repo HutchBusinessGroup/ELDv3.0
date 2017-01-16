@@ -17,11 +17,14 @@ import android.util.Log;
 import com.hutchgroup.elog.MainActivity;
 import com.hutchgroup.elog.beans.DTCBean;
 import com.hutchgroup.elog.beans.DiagnosticIndicatorBean;
+import com.hutchgroup.elog.beans.GPSData;
+import com.hutchgroup.elog.beans.VehicleInfoBean;
 import com.hutchgroup.elog.db.DTCDB;
+import com.hutchgroup.elog.db.VehicleInfoDB;
 
 public class CanMessages {
     String TAG = "CanMessages";
-
+    public static VehicleInfoBean _vehicleInfo = new VehicleInfoBean();
     public static long currentTime = System.currentTimeMillis();
     private static int DIAGNOSTIC_ENGINE_SYNCHRONIZTION = 3;
     private static int MALFUNCTION_ENGINE_SYNCHRONIZTION = 30 * 60;
@@ -552,7 +555,18 @@ public class CanMessages {
                     String data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
                     data = data.substring(2, 3);
                     CriticalWarningFg = (data == "01");
+
                     // EBS Red Warning Signla
+                    break;
+                case 61443:
+                    i = (packet[12] & 0xFF); // third byte of byte length equal to 1
+                    if (i.equals(MAX_16))
+                        break;
+                    String engineLoad = String.format("%.0f", (i * 1));
+                    _vehicleInfo.setEngineLoad(engineLoad);
+                    Log.i(TAG, "EngineLoad = " + engineLoad);
+                    //odometerChanged();
+                    //LogFile.write(CanMessages.class.getName() + "::read RPM from J1939: " + RPM, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     break;
                 case 61444:
                     i = ((packet[14] & 0xFF) << 8) | (packet[13] & 0xFF);
@@ -560,6 +574,7 @@ public class CanMessages {
                         break;
                     //  newData.put("RPM", (i * 0.125 + "")); /* SPN 190 */
                     CanMessages.RPM = String.format("%.0f", (i * 0.125));
+                    _vehicleInfo.setRPM(RPM);
                     Log.i(TAG, "RPM = " + CanMessages.RPM);
                     //odometerChanged();
                     //LogFile.write(CanMessages.class.getName() + "::read RPM from J1939: " + RPM, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
@@ -618,6 +633,7 @@ public class CanMessages {
                     d = i * 0.05;
                     if (d > 0)
                         TotalIdleHours = String.format("%.2f", d);
+                    _vehicleInfo.setIdleHours(TotalIdleHours);
                     //newData.put("IdleHours", d + " hrs"); /* SPN 235 */
                     Log.i(TAG, "Idle Hours = " + d);
                     i = (((packet[13] & 0xFF) << 24) | ((packet[12] & 0xFF) << 16)
@@ -627,6 +643,7 @@ public class CanMessages {
                     d = i * 0.5;
                     if (d > 0)
                         TotalIdleFuelConsumed = String.format("%.2f", d);
+                    _vehicleInfo.setIdleFuelUsed(TotalIdleFuelConsumed);
                     break;
 
                 case 65206:
@@ -670,6 +687,9 @@ public class CanMessages {
                     out = String.format("%.2f mi", d);
                     if (d > Double.parseDouble(CanMessages.OdometerReading))
                         OdometerReading = String.format("%.2f", d);
+
+                    _vehicleInfo.setOdometerReading(OdometerReading);
+
                     Log.i(TAG, "Odo = " + out);
                     i = (((packet[17] & 0xFF) << 24) | ((packet[16] & 0xFF) << 16)
                             | ((packet[15] & 0xFF) << 8) | ((packet[14] & 0xFF)));
@@ -690,6 +710,7 @@ public class CanMessages {
                     out = String.format("%.2f mi", d);
                     if (d > Double.parseDouble(CanMessages.OdometerReading))
                         OdometerReading = String.format("%.2f", d);
+                    _vehicleInfo.setOdometerReading(OdometerReading);
                     //notify to update layout
                     //odometerChanged();
                     // LogFile.write(CanMessages.class.getName() + "::read Odometer from J1939: " + OdometerReading, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
@@ -849,6 +870,7 @@ public class CanMessages {
                     //newData.put("Hours", out); /* SPN 247 */
                     if (d > Double.parseDouble(CanMessages.EngineHours))
                         CanMessages.EngineHours = out;
+                    _vehicleInfo.setEngineHour(EngineHours);
                     //LogFile.write(CanMessages.class.getName() + "::read EngineHours from J1939: " + EngineHours, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     Log.i(TAG, "Engine Hours = " + out);
                     break;
@@ -861,6 +883,7 @@ public class CanMessages {
                     d = i * 0.5;
                     if (d > 0)
                         TotalFuelConsumed = String.format("%.2f", d);
+                    _vehicleInfo.setFuelUsed(TotalFuelConsumed);
                     break;
 
                 case 65259:
@@ -914,7 +937,7 @@ public class CanMessages {
                     d = (i - 40) * 9 / 5.0 + 32;
                     out = String.format("%.1f%s", d, DEGREE);
                     CoolantTemperature = String.format("%.2f", d);
-
+                    _vehicleInfo.setCoolantTemperature(CoolantTemperature);
                     i = (packet[11] & 0xFF);
                     if (i.equals(MAX_8))
                         break;
@@ -933,6 +956,7 @@ public class CanMessages {
                     if (d > 0) {
                         out = String.format("%.2f", d);
                         EngineOilLevel = out;
+                        _vehicleInfo.setEngineOilLevel(EngineOilLevel);
                     }
                     i = (packet[17] & 0xFF); //engine coolant level
                     if (i.equals(MAX_8))
@@ -941,6 +965,7 @@ public class CanMessages {
                     if (d > 0) {
                         out = String.format("%.2f", d);
                         EngineCoolantLevel = out;
+                        _vehicleInfo.setCoolantLevel(EngineCoolantLevel);
                     }
                     break;
 
@@ -951,16 +976,25 @@ public class CanMessages {
                     int sp = num / 256;
                     if (sp != 255) {
                         Speed = String.format("%.0f", sp);
-
+                        _vehicleInfo.setSpeed(Speed);
                         Log.i(TAG, "speed = " + Speed);
                         //  LogFile.write(CanMessages.class.getName() + "::read Speed from J1939: " + Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
+                    }
+
+                    try {
+                        i = (packet[14] & 0xFF);
+                        data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                        data = data.substring(0, 1);
+                        _vehicleInfo.setCruiseSetFg(data == "01" ? 1 : 0);
+                    } catch (Exception e) {
                     }
 
                     i = (packet[15] & 0xFF);
                     if (i.equals(MAX_8))
                         break;
-                    d = i * KM_TO_MI;
-                    out = String.format("%.2f mph", d);
+
+                    String cruiseSpeed = String.format("%.0f", i);
+                    _vehicleInfo.setCruiseSpeed(cruiseSpeed);
                     break;
 
                 case 65266:
@@ -970,6 +1004,7 @@ public class CanMessages {
                     d = i / 512d;
                     if (d < 10 && d > 0)
                         TotalAverage = String.format("%.2f", d);
+                    _vehicleInfo.setAverage(TotalAverage);
                     //  newData.put("FuelRate", out); /* SPN 183 */
                     //  Log.i(TAG, "Fuel Rate = " + out);
                     break;
@@ -984,6 +1019,7 @@ public class CanMessages {
                     //  Log.i(TAG, "Boost = " + out);
                     if (d > 0)
                         Boost = d + "";
+                    _vehicleInfo.setBoost(Boost);
                     i = (packet[12] & 0xFF); /* SPN 102 */
                     if (i.equals(MAX_8))
                         break;
@@ -998,6 +1034,7 @@ public class CanMessages {
                     float vol = number * 0.05f;
                     if (vol > 0)
                         Voltage = String.format("%.1f", vol);
+                    _vehicleInfo.setBatteryVoltage(Voltage);
                     break;
                 case 65274:
                     i = (packet[10] & 0xFF); // brake application pressure
@@ -1032,6 +1069,7 @@ public class CanMessages {
                     out = String.format("%.0f ", d);
                     if (d > 0)
                         WasherFluidLevel = out;
+                    _vehicleInfo.setWasherFluidLevel(WasherFluidLevel);
 
                     i = (packet[11] & 0xFF);
                     if (i.equals(MAX_16))
@@ -1060,10 +1098,30 @@ public class CanMessages {
                     d = (packet[6] & 0xFF) * 0.5;
                     if (d > 0)
                         WasherFluidLevel = String.format("%.2f", d);
+                    _vehicleInfo.setWasherFluidLevel(WasherFluidLevel);
                     break;
                 case 84:
                     d = (packet[6] & 0xFF) * 0.805;
                     Speed = Math.round(d) + "";
+                    _vehicleInfo.setSpeed(Speed);
+                    break;
+                case 85:
+                    i = (packet[6] & 0xFF);
+
+                    String data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    data = data.substring(0, 0);
+                    _vehicleInfo.setCruiseSetFg(data == "1" ? 1 : 0);
+                    break;
+                case 86:
+                    d = (packet[6] & 0xFF) * 0.805;
+                    String cruiseSpeed = String.format("%.0f", d);
+                    _vehicleInfo.setCruiseSpeed(cruiseSpeed);
+                    break;
+                case 92:
+                    d = (packet[6] & 0xFF) * 0.5;
+
+                    String engineLoad = String.format("%.0f", (d * .5));
+                    _vehicleInfo.setEngineLoad(engineLoad);
                     break;
                 case 96:
                     d = (packet[6] & 0xFF) * 0.5;
@@ -1076,6 +1134,7 @@ public class CanMessages {
                     d = (packet[6] & 0xFF) * 0.5;
                     if (d > 0)
                         EngineOilLevel = String.format("%.2f", d);
+                    _vehicleInfo.setEngineOilLevel(EngineOilLevel);
                     break;
                 case 100:
                     d = (packet[6] & 0xFF) * 0.5;
@@ -1087,6 +1146,7 @@ public class CanMessages {
                     // newData.put("Boost", d + " psi");
                     if (d > 0)
                         Boost = Math.round(d) + "";
+                    _vehicleInfo.setBoost(Boost);
                     // Log.i(TAG, "Boost = " + d + " psi");
                     break;
                 case 105:
@@ -1097,6 +1157,7 @@ public class CanMessages {
                 case 110:
                     d = (packet[6] & 0xFF) * 1.0;
                     CoolantTemperature = String.format("%.2f", d);
+                    _vehicleInfo.setCoolantTemperature(CoolantTemperature);
                     //  newData.put("Coolant", i + DEGREE);
                     Log.i(TAG, "Coolant = " + d + DEGREE);
                     break;
@@ -1104,6 +1165,7 @@ public class CanMessages {
                     d = (packet[6] & 0xFF) * 0.5;
                     if (d > 0)
                         EngineCoolantLevel = String.format("%.2f", d);
+                    _vehicleInfo.setCoolantLevel(EngineCoolantLevel);
                     break;
                 case 116:
                     d = (packet[6] & 0xFF) * 4.14 * KPA_TO_PSI;
@@ -1140,17 +1202,20 @@ public class CanMessages {
                     d = ((packet[6] & 0xFF) | ((packet[7] & 0xFF) << 8)) * 1.66072 / 1000;
                     if (d > 0 && d < 10)
                         TotalAverage = String.format("%.2f", d);
+                    _vehicleInfo.setAverage(TotalAverage);
                     Log.i(TAG, "FuelRate = " + d + " gal");
                     break;
                 case 190:
                     d = ((packet[6] & 0xFF) | ((packet[7] & 0xFF) << 8)) * 0.25;
                     CanMessages.RPM = Math.round(d) + "";
+                    _vehicleInfo.setRPM(RPM);
                     break;
                 case 168:
                     d = ((packet[6] & 0xFF) | ((packet[7] & 0xFF) << 8)) * 0.05;
                     //newData.put("RPM", d + "");
                     if (d > 0)
                         Voltage = String.format("%.1f", d);
+                    _vehicleInfo.setBatteryVoltage(Voltage);
                     //  Log.i(TAG, "Voltage = " + d);
                     //  LogFile.write(CanMessages.class.getName() + "::read RPM from J1708: " + RPM, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     break;
@@ -1159,12 +1224,14 @@ public class CanMessages {
                             | (packet[8] & 0xFF) << 16 | (packet[9] & 0xFF) << 24) * .05;
                     if (d > 0)
                         TotalIdleHours = String.format("%.2f", d);
+                    _vehicleInfo.setIdleHours(TotalIdleHours);
                     break;
                 case 236:
                     d = ((packet[6] & 0xFF) | (packet[7] & 0xFF) << 8
                             | (packet[8] & 0xFF) << 16 | (packet[9] & 0xFF) << 24) * .473;
                     if (d > 0)
-                        TotalIdleHours = String.format("%.2f", d);
+                        TotalIdleFuelConsumed = String.format("%.2f", d);
+                    _vehicleInfo.setIdleFuelUsed(TotalIdleFuelConsumed);
                     break;
                 case 237:
                     i = packet[6] & 0xFF;
@@ -1205,6 +1272,8 @@ public class CanMessages {
                     if (d > Double.parseDouble(CanMessages.OdometerReading))
                         CanMessages.OdometerReading = String.format("%.2f", d);
 
+                    _vehicleInfo.setOdometerReading(OdometerReading);
+
                     //  LogFile.write(CanMessages.class.getName() + "::read Odometer from J1708: " + OdometerReading, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     //odometerChanged();
                     break;
@@ -1214,6 +1283,7 @@ public class CanMessages {
                     //  newData.put("Hours", d + " hrs");
                     if (d > Double.parseDouble(CanMessages.EngineHours))
                         CanMessages.EngineHours = String.format("%.2f", d);
+                    _vehicleInfo.setEngineHour(EngineHours);
                     // LogFile.write(CanMessages.class.getName() + "::read EngineHours from J1708: " + EngineHours, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     Log.i(TAG, "EngineHours = " + d + " hrs");
                     break;
@@ -1222,6 +1292,7 @@ public class CanMessages {
                             | (packet[8] & 0xFF) << 16 | (packet[9] & 0xFF) << 24) * .473;
                     if (d > 0)
                         TotalFuelConsumed = String.format("%.2f", d);
+                    _vehicleInfo.setFuelUsed(TotalFuelConsumed);
                     break;
 
             }
@@ -1507,7 +1578,7 @@ public class CanMessages {
         m_buffer = new byte[4096];
         m_count = 0;
 
-        long[] initPGN_AddFilter = {65265, 65217, 65262, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244, 65226, 65227, 65263, 65276};
+        long[] initPGN_AddFilter = {65265, 65217, 65262, 61443, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244, 65226, 65227, 65263, 65276};
 
         long[] initPGN_TxFilter = {65253, 65260, 65257, 65266, 65209, 65244, 65227};
 
@@ -1521,7 +1592,7 @@ public class CanMessages {
             sendCommand(message, outputStream);
         }
 
-        int[] initPID_AddFilter = {80, 84, 96, 98, 102, 110, 111, 168, 185, 190, 235, 236, 237, 245, 247, 250};
+        int[] initPID_AddFilter = {80, 84, 85, 86, 92, 96, 98, 102, 110, 111, 168, 185, 190, 235, 236, 237, 245, 247, 250};
         int[] initPID_TxFilter = {235, 236, 237, 247, 250};
 
         for (int pid : initPID_AddFilter) {
@@ -1748,8 +1819,9 @@ public class CanMessages {
         }
     };
 
-    int transmitRequest = 1; // request to can bus every 5 minutes
+    int transmitRequest = 1; // request to can bus every 5 second
     int connectRequest = 1; // connect to bluetooth if disconnected
+    int vehicleInfoRequest = 1;
     private Runnable runnableHB = new Runnable() {
         @Override
         public void run() {
@@ -1771,6 +1843,15 @@ public class CanMessages {
                     }
 
                     if (mState == CanMessages.STATE_CONNECTED) {
+                        if (GPSData.CurrentStatus < 3) { // if engine is on then record vehicle info
+                            if (vehicleInfoRequest >= 60 * 5) {
+                                vehicleInfoRequest = 1;
+                                _vehicleInfo.setCreatedDate(Utility.getCurrentDateTime());
+                                VehicleInfoDB.Save(_vehicleInfo);
+                            } else
+                                vehicleInfoRequest++;
+                        }
+
                         if (transmitRequest == 5) {
                             transmitRequest = 1;
                             Log.i("CanMessage", "BTB Request...");
