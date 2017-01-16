@@ -29,6 +29,7 @@ public class VehicleInfoBean {
     String DEFTankLevelLow;
     String EngineSerialNo;
     String EngineRatePower;
+    String PTOFuelUsed;
     String CreatedDate;
 
     int CruiseSetFg;
@@ -374,5 +375,13 @@ public class VehicleInfoBean {
 
     public void setSyncFg(int syncFg) {
         SyncFg = syncFg;
+    }
+
+    public String getPTOFuelUsed() {
+        return PTOFuelUsed;
+    }
+
+    public void setPTOFuelUsed(String PTOFuelUsed) {
+        this.PTOFuelUsed = PTOFuelUsed;
     }
 }

@@ -547,15 +547,101 @@ public class CanMessages {
             StringBuilder sb;
             String[] fields;
             String out;
+            String data;
             switch (pgn) {
+                case 65203:
+                    d = (((packet[13] & 0xFF) << 24) | ((packet[12] & 0xFF) << 16)
+                            | ((packet[11] & 0xFF) << 8) | ((packet[10] & 0xFF))) * .5;
+                    _vehicleInfo.setPTOFuelUsed(String.format("%.2f", d));
+                    break;
+                case 65255:
+                    i = (((packet[17] & 0xFF) << 24) | ((packet[16] & 0xFF) << 16)
+                            | ((packet[15] & 0xFF) << 8) | ((packet[14] & 0xFF))) * 5 / 100;
+                    _vehicleInfo.setPTOHours(i);
+                    break;
+                case 65110:
+                    d = (packet[10] & 0xFF) * .4;
+                    _vehicleInfo.setDEFTankLevel(String.format("%.0f", d));
+
+                    i = (packet[14] & 0xFF);
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    _vehicleInfo.setDEFTankLevelLow(data.substring(5, 7) == "001" ? "1" : "0");
+
+                    break;
+                case 61445:
+                    i = (packet[13] & 0xFF);
+                    _vehicleInfo.setTransmissionGear(i);
+                    break;
+                case 65272:
+                    d = (packet[11] & 0xFF) * .4;
+                    _vehicleInfo.setTransmissionOilLevel(String.format("%.0f", d));
+                    break;
+                case 65198:
+                    i = (packet[15] & 0xFF) * 10;
+                    if (i.equals(MAX_16))
+                        break;
+                    _vehicleInfo.setAirSuspension(i + "");
+                    break;
+                case 57344:
+                    i = (packet[13] & 0xFF);
+                    if (i.equals(MAX_16))
+                        break;
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    _vehicleInfo.setSeatBeltFg(data.substring(6, 7) == "01" ? 1 : 0);
+                    break;
+                case 65207:
+                    i = (((packet[19] & 0xFF) << 24) | ((packet[18] & 0xFF) << 16)
+                            | ((packet[17] & 0xFF) << 8) | ((packet[16] & 0xFF))) * 5 / 100;
+                    if (i.equals(MAX_16))
+                        break;
+                    _vehicleInfo.setCuriseTime(i);
+                    break;
+                case 65264:
+                    i = (packet[15] & 0xFF);
+                    if (i.equals(MAX_16))
+                        break;
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    _vehicleInfo.setPTOEngagementFg(data.substring(0, 1) == "01" ? 1 : 0);
+
+                    break;
+                case 65279:
+                    i = (packet[10] & 0xFF);
+                    if (i.equals(MAX_16))
+                        break;
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    _vehicleInfo.setWaterInFuelFg(data.substring(0, 1) == "01" ? 1 : 0);
+
+                    break;
+                case 64892:
+                    i = (packet[11] & 0xFF);
+                    if (i.equals(MAX_16))
+                        break;
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    data = data.substring(4, 6);
+                    _vehicleInfo.setRegenerationRequiredFg(data == "000" ? 0 : 1);
+                    break;
+                case 65212:
+                    i = (((packet[25] & 0xFF) << 24) | ((packet[24] & 0xFF) << 16)
+                            | ((packet[23] & 0xFF) << 8) | ((packet[22] & 0xFF)));
+                    if (i.equals(MAX_16))
+                        break;
+
+                    _vehicleInfo.setBrakeApplication(i);
+                    break;
+                case 64914:
+                    i = (packet[17] & 0xFF) * 4 / 10;
+                    if (i.equals(MAX_16))
+                        break;
+                    _vehicleInfo.setDerateFg(i);
+                    break;
                 case 61441:
                     i = (packet[15] & 0xFF);
                     if (i.equals(MAX_16))
                         break;
-                    String data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
-                    data = data.substring(2, 3);
-                    CriticalWarningFg = (data == "01");
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
 
+                    CriticalWarningFg = (data.substring(2, 3) == "01");
+                    _vehicleInfo.setPowerUnitABSFg(data.substring(0, 1) == "01" ? 1 : 0);
                     // EBS Red Warning Signla
                     break;
                 case 61443:
@@ -898,6 +984,8 @@ public class CanMessages {
                         }
                     }
                     fields = sb.toString().split("\\*");
+
+                    _vehicleInfo.setEngineSerialNo(fields[2]);
                    /* newData.put("Make", fields[0]); *//* SPN 586 *//*
                     newData.put("Model", fields[1]); *//* SPN 587 *//*
                     newData.put("Serial", fields[2]); *//* SPN 588 *//*
@@ -925,6 +1013,7 @@ public class CanMessages {
                     i = packet[10] & 0xff;
                     if (i.equals(MAX_8))
                         break;
+                    _vehicleInfo.setMaxRoadSpeed(i + "");
                     out = String.format("%d mph", i);
                     // newData.put("RoadSpeed", out);
                     Log.i(TAG, "Road Speed = " + out);
@@ -1093,7 +1182,20 @@ public class CanMessages {
             Double d;
             Integer i;
             StringBuilder sb;
+            String data;
             switch (pid) {
+                case 150:
+                    i = (packet[6] & 0xFF);
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    data = data.substring(1, 2);
+                    _vehicleInfo.setPTOEngagementFg(data == "01" ? 1 : 0);
+                    break;
+                case 49:
+                    i = (packet[6] & 0xFF);
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    data = data.substring(2, 3);
+                    _vehicleInfo.setPowerUnitABSFg(data == "01" ? 1 : 0);
+                    break;
                 case 80:
                     d = (packet[6] & 0xFF) * 0.5;
                     if (d > 0)
@@ -1108,7 +1210,7 @@ public class CanMessages {
                 case 85:
                     i = (packet[6] & 0xFF);
 
-                    String data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
                     data = data.substring(0, 0);
                     _vehicleInfo.setCruiseSetFg(data == "1" ? 1 : 0);
                     break;
@@ -1129,6 +1231,13 @@ public class CanMessages {
                         FuelLevel1 = String.format("%.2f", d);
 //                    newData.put("Cruise", d + " mi");
                     Log.i(TAG, "Speed = " + d + " mi");
+                    break;
+                case 97:
+                    i = (packet[6] & 0xFF);
+
+                    data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                    data = data.substring(7, 7); // 8th position 1 or 0 value
+                    _vehicleInfo.setWaterInFuelFg(data == "1" ? 1 : 0);
                     break;
                 case 98:
                     d = (packet[6] & 0xFF) * 0.5;
@@ -1250,12 +1359,10 @@ public class CanMessages {
                     }
                     String id = sb.toString();
                     String[] ids = id.split("\\*");
+                    _vehicleInfo.setEngineSerialNo(ids[2]);
 //                    newData.put("Make", ids[0]);
 //                    newData.put("Model", ids[1]);
 //                    newData.put("Serial", ids[2]);
-//                    Log.i(TAG, "Make = " + ids[0]);
-//                    Log.i(TAG, "Model = " + ids[1]);
-//                    Log.i(TAG, "Serial = " + ids[2]);
                     break;
                 case 244:
                     d = ((packet[7] & 0xFF) | (packet[8] & 0xFF) << 8
@@ -1331,7 +1438,7 @@ public class CanMessages {
     }
 
     private void use1708() {
-        int[] initPID_AddFilter = {84, 237, 245, 190, 247, 110, 102, 168};
+        int[] initPID_AddFilter = {84, 237, 243, 245, 190, 247, 110, 102, 168};
         int[] initPID_TxFilter = {237, 247};
         ConnectedThread r;
         synchronized (this) {
@@ -1578,9 +1685,10 @@ public class CanMessages {
         m_buffer = new byte[4096];
         m_count = 0;
 
-        long[] initPGN_AddFilter = {65265, 65217, 65262, 61443, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65244, 65226, 65227, 65263, 65276};
+        long[] initPGN_AddFilter = {65265, 65217, 65261, 65262, 61441, 61443, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65209, 65244, 65226, 65227, 65263, 65276, 64914, 65212,
+                64892, 65279, 65264, 65207, 57344, 65198, 65272, 61445, 65110, 65255, 65203};
 
-        long[] initPGN_TxFilter = {65253, 65260, 65257, 65266, 65209, 65244, 65227};
+        long[] initPGN_TxFilter = {65261, 65253, 65260, 65257, 65266, 65209, 65244, 65227};
 
         for (long pgn : initPGN_AddFilter) {
             byte[] message = filterAddDelJ1939((byte) 0, pgn, true);
@@ -1592,8 +1700,8 @@ public class CanMessages {
             sendCommand(message, outputStream);
         }
 
-        int[] initPID_AddFilter = {80, 84, 85, 86, 92, 96, 98, 102, 110, 111, 168, 185, 190, 235, 236, 237, 245, 247, 250};
-        int[] initPID_TxFilter = {235, 236, 237, 247, 250};
+        int[] initPID_AddFilter = {49, 80, 84, 85, 86, 92, 96, 97, 98, 102, 110, 111, 150, 168, 185, 190, 235, 236, 237, 245, 247, 250};
+        int[] initPID_TxFilter = {235, 236, 237, 247, 250, 150};
 
         for (int pid : initPID_AddFilter) {
             byte[] message = filterAddJ1708(pid);
@@ -1624,7 +1732,7 @@ public class CanMessages {
 
     private void request1939() {
         // long[] initPGN_TxFilter = {65253, 65260};
-        long[] initPGN_TxFilter = {65266, 65257, 65209, 65244, 65253, 65260, 65227};
+        long[] initPGN_TxFilter = {65261, 65266, 65257, 65209, 65244, 65253, 65260, 65227};
         ConnectedThread r;
         synchronized (this) {
             r = mConnectedThread;
