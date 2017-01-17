@@ -4,15 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="2dp">
-    <CheckBox
-        android:id="@+id/swMonthly"
-        style="@style/BigTextLabelStyle.Margin0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:button="@drawable/checkbox_background"
-        android:text="View Score Card of last 30 days"
-        android:textColor="@drawable/checkbox_text_color" />
+
     <LinearLayout
         style="@style/Block.Main"
         android:layout_width="wrap_content"
@@ -23,7 +15,7 @@
             style="@style/BlockTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Points Gained" />
+            android:text="Vehicle Info" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,17 +27,17 @@
                 android:layout_height="56dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
-                android:src="@drawable/ic_scorecard_driving" />
+                android:src="@drawable/ic_scorecard_vehicle_info" />
 
             <TextView
-                android:id="@+id/tvDrivingScore"
+                android:id="@+id/tvUnitNo"
                 style="@style/BlockValue.Main"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:text="N/A" />
+                android:text="Unit: 59684" />
 
             <LinearLayout
                 style="@style/BlockCaption.Main"
@@ -56,11 +48,74 @@
                 android:layout_below="@+id/textView"
                 android:orientation="horizontal">
 
-                <TextView android:id="@+id/tvDrivingTime"
+                <TextView
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
-                    android:text="N/A" />
+                    android:text="VIN: " />
+
+                <TextView
+                    android:id="@+id/tvVinNo"
+                    style="@style/BlockCaptionVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="4964654" />
+
+                <TextView
+                    style="@style/BlockCaptionVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text=" | " />
+
+                <TextView
+                    style="@style/BlockCaptionVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="Engine No.: " />
+
+                <TextView
+                    android:id="@+id/tvEngineNo"
+                    style="@style/BlockCaptionVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="4964654" />
+
+                <TextView
+                    style="@style/BlockCaptionVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text=" | " />
+
+                <TextView
+                    style="@style/BlockCaptionVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="Plate: " />
+
+                <TextView
+                    android:id="@+id/tvPlateNo"
+                    style="@style/BlockCaptionVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="BJ87964" />
+
+                <!--   <TextView
+                       style="@style/BlockCaptionVal"
+                       android:layout_width="wrap_content"
+                       android:layout_height="18dp"
+                       android:text=" | " />
+
+                   <TextView
+                       style="@style/BlockCaptionVal"
+                       android:layout_width="wrap_content"
+                       android:layout_height="18dp"
+                       android:text="CVIP Due: " />-->
+
+                <TextView
+                    style="@style/BlockCaptionVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="18 Jan, 2017" />
             </LinearLayout>
 
         </RelativeLayout>
@@ -95,7 +150,7 @@
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Low Washer Fluid" />
+                        android:text="Odometer Reading" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -107,41 +162,14 @@
                             android:layout_height="48dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_washer_level" />
+                            android:src="@drawable/ic_scorecard_odometer" />
 
                         <TextView
-                            android:id="@+id/tvLowWasherFluid"
+                            android:id="@+id/tvOdometerReading"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvLowWasherFluidPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvLowWasherFluidCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
+                            android:text="465" />
 
                     </RelativeLayout>
 
@@ -158,7 +186,7 @@
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Failure to Warm up Engine" />
+                        android:text="Engine Hours" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -170,41 +198,14 @@
                             android:layout_height="48dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_engine" />
+                            android:src="@drawable/ic_scorecard_engine_hours" />
 
                         <TextView
-                            android:id="@+id/tvWarmUpEngine"
+                            android:id="@+id/tvEngineHours"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvWarmUpEnginePer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvWarmUpEngineCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
+                            android:text="6456.5" />
 
                     </RelativeLayout>
 
@@ -229,7 +230,7 @@
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Low Engine Oil" />
+                        android:text="Fuel Consumed" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -241,41 +242,14 @@
                             android:layout_height="48dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_engine_oil" />
+                            android:src="@drawable/ic_scorecard_fuel_used" />
 
                         <TextView
-                            android:id="@+id/tvLowEngineOil"
+                            android:id="@+id/tvFuelUsed"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
                             android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvLowEngineOilPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvLowEngineOilCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
 
                     </RelativeLayout>
 
@@ -289,10 +263,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/textView2"
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Low Coolant Level" />
+                        android:text="Coolant Level" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -307,38 +282,11 @@
                             android:src="@drawable/ic_scorecard_coolant_level" />
 
                         <TextView
-                            android:id="@+id/tvLowCoolant"
+                            android:id="@+id/tvCoolantLevel"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
                             android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvLowCoolantPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvLowCoolantCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
 
                     </RelativeLayout>
 
@@ -353,7 +301,6 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-
                 <LinearLayout
                     style="@style/Block.Green"
                     android:layout_width="wrap_content"
@@ -365,7 +312,7 @@
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="High RPM" />
+                        android:text="RPM" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -380,38 +327,14 @@
                             android:src="@drawable/ic_scorecard_rpm" />
 
                         <TextView
-                            android:id="@+id/tvHighRPM"
+                            android:id="@+id/tvRPM"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
                             android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvHighRPMPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvHighRPMCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
 
                     </RelativeLayout>
 
@@ -428,57 +351,33 @@
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Speed Violation" />
+                        android:text="Boost Pressure" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="92dp"
                         android:padding="16dp">
 
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_speed_violation" />
-
                         <TextView
-                            android:id="@+id/tvSpeedViolation"
+                            android:id="@+id/tvBoost"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
                             android:text="N/A" />
 
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvSpeedViolationPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvSpeedViolationCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_scorecard_boost" />
 
                     </RelativeLayout>
 
                 </LinearLayout>
+
 
             </LinearLayout>
 
@@ -499,7 +398,367 @@
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Hard Acceleration" />
+                        android:text="Fuel Pressure" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_engine_oil_pressure" />
+
+                        <TextView
+                            android:id="@+id/tvFuelPressure"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fuel Level" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_fuel_level" />
+
+                        <TextView
+                            android:id="@+id/tvFuelLevel"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Engine Oil Level" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_engine_oil" />
+
+                        <TextView
+                            android:id="@+id/tvEngineOilLevel"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Engine Coolant Temperature" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_coolant_temp" />
+
+                        <TextView
+                            android:id="@+id/tvCoolantTemperature"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Air Inlet Temperature" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_air_inlet" />
+
+                        <TextView
+                            android:id="@+id/tvAirInletTemperature"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Barometric Pressure" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_barometeric" />
+
+                        <TextView
+                            android:id="@+id/tvBarometricPressure"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Engine Oil Pressure" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_engine_oil_pressure" />
+
+                        <TextView
+                            android:id="@+id/tvEngineOilPressure"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Engine Load" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_engine_load" />
+
+                        <TextView
+                            android:id="@+id/tvEngineLoad"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Washer Fluid Level" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_washer_level" />
+
+                        <TextView
+                            android:id="@+id/tvLowWasherFluidLevel"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Speed" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -514,101 +773,11 @@
                             android:src="@drawable/ic_scorecard_hard_acceleration" />
 
                         <TextView
-                            android:id="@+id/tvHardAcceleration"
+                            android:id="@+id/tvSpeed"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
                             android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvHardAccelerationPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvHardAccelerationCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/Block.Green"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/BlockTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Hard Braking" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="92dp"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_hard_braking" />
-
-                        <TextView
-                            android:id="@+id/tvHardBreaking"
-                            style="@style/BlockValue"
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvHardBreakingPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvHardBreakingCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
 
                     </RelativeLayout>
 
@@ -623,6 +792,41 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EPF Fluid Lvel" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_epf_fluid_level" />
+
+                        <TextView
+                            android:id="@+id/tvEPFFuelLevel"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
 
                 <LinearLayout
                     style="@style/Block.Green"
@@ -635,7 +839,52 @@
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Idling" />
+                        android:text="Idle Fuel Used" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_scorecard_idle_fuel_used" />
+
+                        <TextView
+                            android:id="@+id/tvIdleFuelUsed"
+                            style="@style/BlockValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="36dp"
+                            android:text="N/A" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    style="@style/Block.Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/BlockTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Engine Idle Hours" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -650,38 +899,11 @@
                             android:src="@drawable/ic_scorecard_idleing" />
 
                         <TextView
-                            android:id="@+id/tvIdling"
+                            android:id="@+id/tvEngineIdleHours"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
                             android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvIdlingPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvIdlingCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
 
                     </RelativeLayout>
 
@@ -698,7 +920,7 @@
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="TPMS" />
+                        android:text="PTO Hours" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -710,445 +932,14 @@
                             android:layout_height="48dp"
                             android:layout_alignParentLeft="true"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_tpms" />
+                            android:src="@drawable/ic_scorecard_speed_violation" />
 
                         <TextView
-                            android:id="@+id/tvTPMS"
+                            android:id="@+id/tvPTOHours"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
                             android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvTPMSPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvTPMSCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <LinearLayout
-                    style="@style/Block.Green"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/BlockTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Critical Warnings" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="92dp"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_warning_alerts" />
-
-                        <TextView
-                            android:id="@+id/tvCriticalWarning"
-                            style="@style/BlockValue"
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvCriticalWarningPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvCriticalWarningCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/Block.Green"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/BlockTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Driving with Engine Light On" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="92dp"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_engine" />
-
-                        <TextView
-                            android:id="@+id/tvChecnkEngineOn"
-                            style="@style/BlockValue"
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvChecnkEngineOnPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvChecnkEngineOnCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-
-                <LinearLayout
-                    style="@style/Block.Green"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/BlockTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Sharp Turn Left" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="92dp"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_sharp_turn_left" />
-
-                        <TextView
-                            android:id="@+id/tvSharpTurnLeft"
-                            style="@style/BlockValue"
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvSharpTurnLeftPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvSharpTurnLeftCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/Block.Green"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/BlockTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Sharp Turn Right" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="92dp"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_sharp_turn_right" />
-
-                        <TextView
-                            android:id="@+id/tvSharpTurnRight"
-                            style="@style/BlockValue"
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvSharpTurnRightPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvSharpTurnRightCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <LinearLayout
-                    style="@style/Block.Green"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/BlockTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Hours Of Service" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="92dp"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_hos_violation" />
-
-                        <TextView
-                            android:id="@+id/tvHOS"
-                            style="@style/BlockValue"
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvHOSPer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvHOSCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    style="@style/Block.Green"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/BlockTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Failure to conduct Trip Inspection" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="92dp"
-                        android:padding="16dp">
-
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/ic_scorecard_trip_inspection" />
-
-                        <TextView
-                            android:id="@+id/tvTripInspectionFailure"
-                            style="@style/BlockValue"
-                            android:layout_width="match_parent"
-                            android:layout_height="36dp"
-                            android:text="N/A" />
-
-                        <LinearLayout
-                            style="@style/BlockCaption"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/tvTripInspectionFailurePer"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-
-                            <TextView
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=" | " />
-
-                            <TextView
-                                android:id="@+id/tvTripInspectionFailureCount"
-                                style="@style/BlockCaptionVal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:text="N/A" />
-                        </LinearLayout>
 
                     </RelativeLayout>
 

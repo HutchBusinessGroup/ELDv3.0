@@ -549,6 +549,12 @@ public class CanMessages {
             String out;
             String data;
             switch (pgn) {
+                case 65214:
+                    i = ((packet[11] & 0xFF) << 8) | ((packet[10]) & 0xFF);
+                    if (i.equals(MAX_16)) break;
+                    d = i * 0.5;
+                    _vehicleInfo.setEngineRatePower(String.format("%.0f", d));
+                    break;
                 case 65203:
                     d = (((packet[13] & 0xFF) << 24) | ((packet[12] & 0xFF) << 16)
                             | ((packet[11] & 0xFF) << 8) | ((packet[10] & 0xFF))) * .5;
@@ -1292,6 +1298,11 @@ public class CanMessages {
                     if (d > 0)
                         BrakeSecondaryPressure = String.format("%.2f", d);
                     break;
+                case 166:
+                    i = ((packet[7] & 0xFF) << 8) | (packet[6] & 0xFF);
+                    d = i * 0.745;
+                    _vehicleInfo.setEngineRatePower(String.format("%.0f", d));
+                    break;
                 case 174:
                     d = ((packet[6] & 0xFF) | ((packet[7] & 0xFF) << 8)) * 0.25;
                     // newData.put("FuelTemp", d + DEGREE);
@@ -1685,7 +1696,7 @@ public class CanMessages {
         m_buffer = new byte[4096];
         m_count = 0;
 
-        long[] initPGN_AddFilter = {65265, 65217, 65261, 65262, 61441, 61443, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65209, 65244, 65226, 65227, 65263, 65276, 64914, 65212,
+        long[] initPGN_AddFilter = {65265, 65214, 65217, 65261, 65262, 61441, 61443, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65209, 65244, 65226, 65227, 65263, 65276, 64914, 65212,
                 64892, 65279, 65264, 65207, 57344, 65198, 65272, 61445, 65110, 65255, 65203};
 
         long[] initPGN_TxFilter = {65261, 65253, 65260, 65257, 65266, 65209, 65244, 65227};
@@ -1701,7 +1712,7 @@ public class CanMessages {
         }
 
         int[] initPID_AddFilter = {49, 80, 84, 85, 86, 92, 96, 97, 98, 102, 110, 111, 150, 168, 185, 190, 235, 236, 237, 245, 247, 250};
-        int[] initPID_TxFilter = {235, 236, 237, 247, 250, 150};
+        int[] initPID_TxFilter = {235, 236, 237, 247, 250, 150, 166};
 
         for (int pid : initPID_AddFilter) {
             byte[] message = filterAddJ1708(pid);
