@@ -774,7 +774,7 @@
                         style="@style/BlockTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="EPF Fluid Lvel" />
+                        android:text="DEF Fuel Level" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -789,7 +789,7 @@
                             android:src="@drawable/ic_scorecard_epf_fluid_level" />
 
                         <TextView
-                            android:id="@+id/tvEPFFuelLevel"
+                            android:id="@+id/tvDefFuelLevel"
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"

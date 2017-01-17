@@ -610,6 +610,12 @@ public class CanMessages {
                     _vehicleInfo.setPTOEngagementFg(data.substring(0, 1) == "01" ? 1 : 0);
 
                     break;
+                case 65269:
+                    d = (packet[10] & 0xFF) * .5;
+
+                    _vehicleInfo.setBarometricPressure(String.format("%.0f", d));
+
+                    break;
                 case 65279:
                     i = (packet[10] & 0xFF);
                     if (i.equals(MAX_16))
@@ -1044,6 +1050,9 @@ public class CanMessages {
                     break;
 
                 case 65263:
+                    i = (packet[10] & 0xFF) * 4; //Fuel Delivery Pressure
+                    _vehicleInfo.setFuelPressure(i + "");
+
                     i = (packet[12] & 0xFF); //engine oil level
                     if (i.equals(MAX_8))
                         break;
@@ -1053,6 +1062,12 @@ public class CanMessages {
                         EngineOilLevel = out;
                         _vehicleInfo.setEngineOilLevel(EngineOilLevel);
                     }
+
+                    i = (packet[13] & 0xFF) * 4;
+                    if (i.equals(MAX_8))
+                        break;
+
+                    _vehicleInfo.setEngineOilPressure(String.format("%.0f", i));
                     i = (packet[17] & 0xFF); //engine coolant level
                     if (i.equals(MAX_8))
                         break;
@@ -1118,8 +1133,9 @@ public class CanMessages {
                     i = (packet[12] & 0xFF); /* SPN 102 */
                     if (i.equals(MAX_8))
                         break;
-                    d = (i - 40) * 9 / 5.0 + 32;
-                    out = String.format("%.1f%s", d, DEGREE);
+                    _vehicleInfo.setAirInletTemperature(String.format("%.0f", (i - 40)));
+                   /* d = (i - 40) * 9 / 5.0 + 32;
+                    out = String.format("%.1f%s", d, DEGREE);*/
                     // newData.put("Intake", out); /* SPN 105 */
                     // Log.i(TAG, "Intake = " + out);
                     break;
@@ -1227,6 +1243,12 @@ public class CanMessages {
                     _vehicleInfo.setCruiseSpeed(cruiseSpeed);
                     break;
                 case 92:
+                    d = (packet[6] & 0xFF) * 3.45;
+
+                    String fuelPressure = String.format("%.0f", (d * .5));
+                    _vehicleInfo.setFuelPressure(fuelPressure);
+                    break;
+                case 94:
                     d = (packet[6] & 0xFF) * 0.5;
 
                     String engineLoad = String.format("%.0f", (d * .5));
@@ -1237,8 +1259,7 @@ public class CanMessages {
                     if (d > 0)
                         FuelLevel1 = String.format("%.0f", d);
                     _vehicleInfo.setFuelLevel(Integer.parseInt(FuelLevel1));
-//                    newData.put("Cruise", d + " mi");
-                    Log.i(TAG, "Speed = " + d + " mi");
+
                     break;
                 case 97:
                     i = (packet[6] & 0xFF);
@@ -1255,6 +1276,7 @@ public class CanMessages {
                     break;
                 case 100:
                     d = (packet[6] & 0xFF) * 0.5;
+                    _vehicleInfo.setEngineOilPressure(String.format("%.0f", d));
 //                    newData.put("Oil Pressure", d + " psi");
 //                    Log.i(TAG, "Oil Pressure = " + d + " psi");
                     break;
@@ -1268,9 +1290,16 @@ public class CanMessages {
                     break;
                 case 105:
                     i = (packet[6] & 0xFF);
+                    _vehicleInfo.setAirInletTemperature(i + "");
                     // newData.put("Intake", i + DEGREE);
                     // Log.i(TAG, "Intake = " + i + DEGREE);
                     break;
+
+                case 108:
+                    d = (packet[6] & 0xFF) * .431;
+                    _vehicleInfo.setBarometricPressure(String.format("%.0f", d));
+                    // newData.put("Intake", i + DEGREE);
+                    // Log.i(TAG, "Intake = " + i + DEGREE);
                 case 110:
                     d = (packet[6] & 0xFF) * 1.0;
                     CoolantTemperature = String.format("%.2f", d);
@@ -1699,7 +1728,7 @@ public class CanMessages {
         m_count = 0;
 
         long[] initPGN_AddFilter = {65265, 65214, 65217, 65261, 65262, 61441, 61443, 61444, 65248, 65253, 65260, 65270, 65271, 65257, 65266, 65209, 65209, 65244, 65226, 65227, 65263, 65276, 64914, 65212,
-                64892, 65279, 65264, 65207, 57344, 65198, 65272, 61445, 65110, 65255, 65203};
+                64892, 65279, 65264, 65269, 65207, 57344, 65198, 65272, 61445, 65110, 65255, 65203};
 
         long[] initPGN_TxFilter = {65261, 65253, 65260, 65257, 65266, 65209, 65244, 65227};
 
@@ -1713,7 +1742,7 @@ public class CanMessages {
             sendCommand(message, outputStream);
         }
 
-        int[] initPID_AddFilter = {49, 80, 84, 85, 86, 92, 96, 97, 98, 102, 110, 111, 150, 168, 185, 190, 235, 236, 237, 245, 247, 250};
+        int[] initPID_AddFilter = {49, 80, 84, 85, 86, 92, 94, 96, 97, 98, 100, 102, 105, 108, 110, 111, 150, 168, 185, 190, 235, 236, 237, 245, 247, 250};
         int[] initPID_TxFilter = {235, 236, 237, 247, 250, 150, 166};
 
         for (int pid : initPID_AddFilter) {

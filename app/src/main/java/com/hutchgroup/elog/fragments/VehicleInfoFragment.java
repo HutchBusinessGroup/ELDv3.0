@@ -17,7 +17,7 @@ import com.hutchgroup.elog.common.Utility;
 public class VehicleInfoFragment extends Fragment {
 
     TextView tvDate, tvUnitNo, tvVinNo, tvEngineNo, tvPlateNo, tvOdometerReading, tvEngineHours, tvFuelUsed, tvCoolantLevel, tvRPM, tvBoost, tvFuelPressure, tvFuelLevel, tvEngineOilLevel,
-            tvCoolantTemperature, tvAirInletTemperature, tvBarometricPressure, tvEngineOilPressure, tvEngineLoad, tvLowWasherFluidLevel, tvSpeed, tvEPFFuelLevel, tvIdleFuelUsed, tvEngineIdleHours, tvPTOHours;
+            tvCoolantTemperature, tvAirInletTemperature, tvBarometricPressure, tvEngineOilPressure, tvEngineLoad, tvLowWasherFluidLevel, tvSpeed, tvDefFuelLevel, tvIdleFuelUsed, tvEngineIdleHours, tvPTOHours;
     private OnFragmentInteractionListener mListener;
 
     private void initialize(View view) {
@@ -42,7 +42,7 @@ public class VehicleInfoFragment extends Fragment {
         tvEngineLoad = (TextView) view.findViewById(R.id.tvEngineLoad);
         tvLowWasherFluidLevel = (TextView) view.findViewById(R.id.tvLowWasherFluidLevel);
         tvSpeed = (TextView) view.findViewById(R.id.tvSpeed);
-        tvEPFFuelLevel = (TextView) view.findViewById(R.id.tvEPFFuelLevel);
+        tvDefFuelLevel = (TextView) view.findViewById(R.id.tvDefFuelLevel);
         tvIdleFuelUsed = (TextView) view.findViewById(R.id.tvIdleFuelUsed);
         tvEngineIdleHours = (TextView) view.findViewById(R.id.tvEngineIdleHours);
         tvPTOHours = (TextView) view.findViewById(R.id.tvPTOHours);
@@ -65,21 +65,24 @@ public class VehicleInfoFragment extends Fragment {
         tvCoolantLevel.setText(obj.getCoolantLevel() + " %");
         tvRPM.setText(obj.getRPM());
         tvBoost.setText(obj.getBoost() + " Psi");
-        tvFuelPressure.setText("N/A");
+
         tvFuelLevel.setText(obj.getFuelLevel() + " %");
         tvEngineOilLevel.setText(obj.getEngineOilLevel() + " %");
         tvCoolantTemperature.setText(obj.getCoolantTemperature() + DEGREE);
-        tvAirInletTemperature.setText("N/A");
-        tvBarometricPressure.setText("N/A");
-        tvEngineOilPressure.setText("N/A");
+
         tvEngineLoad.setText(obj.getEngineLoad());
         tvLowWasherFluidLevel.setText(obj.getWasherFluidLevel() + " %");
         tvSpeed.setText(obj.getSpeed() + " Km/h");
-        tvEPFFuelLevel.setText("N/A");
+        tvDefFuelLevel.setText(obj.getDEFTankLevel());
         tvIdleFuelUsed.setText(obj.getIdleFuelUsed() + " Litres");
         tvEngineIdleHours.setText(obj.getIdleHours() + " Hrs");
         tvPTOHours.setText(obj.getPTOHours() + " Hrs");
 
+        // below fields need to be added in the web and android database and web service need to be created
+        tvFuelPressure.setText(obj.getFuelPressure());
+        tvAirInletTemperature.setText(obj.getAirInletTemperature());
+        tvBarometricPressure.setText(obj.getBarometricPressure());
+        tvEngineOilPressure.setText(obj.getEngineOilPressure());
     }
 
     public VehicleInfoFragment() {

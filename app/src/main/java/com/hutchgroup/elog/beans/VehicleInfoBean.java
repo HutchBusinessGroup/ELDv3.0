@@ -32,6 +32,12 @@ public class VehicleInfoBean {
     String PTOFuelUsed = "0";
     String CreatedDate;
 
+    String FuelPressure = "0";
+    String AirInletTemperature = "0";
+    String BarometricPressure = "0";
+    String EngineOilPressure = "0";
+
+
     int CruiseSetFg;
     int PowerUnitABSFg;
     int TrailerABSFg;
@@ -392,5 +398,37 @@ public class VehicleInfoBean {
 
     public void setPTOFuelUsed(String PTOFuelUsed) {
         this.PTOFuelUsed = PTOFuelUsed;
+    }
+
+    public String getFuelPressure() {
+        return FuelPressure;
+    }
+
+    public void setFuelPressure(String fuelPressure) {
+        FuelPressure = fuelPressure;
+    }
+
+    public String getAirInletTemperature() {
+        return AirInletTemperature;
+    }
+
+    public void setAirInletTemperature(String airInletTemperature) {
+        AirInletTemperature = airInletTemperature;
+    }
+
+    public String getBarometricPressure() {
+        return BarometricPressure;
+    }
+
+    public void setBarometricPressure(String barometricPressure) {
+        BarometricPressure = barometricPressure;
+    }
+
+    public String getEngineOilPressure() {
+        return EngineOilPressure;
+    }
+
+    public void setEngineOilPressure(String engineOilPressure) {
+        EngineOilPressure = engineOilPressure;
     }
 }
