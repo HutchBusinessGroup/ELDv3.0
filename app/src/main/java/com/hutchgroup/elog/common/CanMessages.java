@@ -660,7 +660,7 @@ public class CanMessages {
                     i = (packet[12] & 0xFF); // third byte of byte length equal to 1
                     if (i.equals(MAX_16))
                         break;
-                    String engineLoad = String.format("%.0f", (i * 1));
+                    String engineLoad = i + "";
                     _vehicleInfo.setEngineLoad(engineLoad);
                     Log.i(TAG, "EngineLoad = " + engineLoad);
                     //odometerChanged();
@@ -1067,7 +1067,7 @@ public class CanMessages {
                     if (i.equals(MAX_8))
                         break;
 
-                    _vehicleInfo.setEngineOilPressure(String.format("%.0f", i));
+                    _vehicleInfo.setEngineOilPressure(i+"");
                     i = (packet[17] & 0xFF); //engine coolant level
                     if (i.equals(MAX_8))
                         break;
@@ -1103,7 +1103,7 @@ public class CanMessages {
                     if (i.equals(MAX_8))
                         break;
 
-                    String cruiseSpeed = String.format("%.0f", i);
+                    String cruiseSpeed = i+"";
                     _vehicleInfo.setCruiseSpeed(cruiseSpeed);
                     break;
 
@@ -1133,7 +1133,7 @@ public class CanMessages {
                     i = (packet[12] & 0xFF); /* SPN 102 */
                     if (i.equals(MAX_8))
                         break;
-                    _vehicleInfo.setAirInletTemperature(String.format("%.0f", (i - 40)));
+                    _vehicleInfo.setAirInletTemperature( (i - 40)+"");
                    /* d = (i - 40) * 9 / 5.0 + 32;
                     out = String.format("%.1f%s", d, DEGREE);*/
                     // newData.put("Intake", out); /* SPN 105 */

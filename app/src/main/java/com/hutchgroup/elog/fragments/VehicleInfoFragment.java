@@ -79,10 +79,10 @@ public class VehicleInfoFragment extends Fragment {
         tvPTOHours.setText(obj.getPTOHours() + " Hrs");
 
         // below fields need to be added in the web and android database and web service need to be created
-        tvFuelPressure.setText(obj.getFuelPressure());
-        tvAirInletTemperature.setText(obj.getAirInletTemperature());
-        tvBarometricPressure.setText(obj.getBarometricPressure());
-        tvEngineOilPressure.setText(obj.getEngineOilPressure());
+        tvFuelPressure.setText(obj.getFuelPressure() + " Kpa");
+        tvAirInletTemperature.setText(obj.getAirInletTemperature() + DEGREE);
+        tvBarometricPressure.setText(obj.getBarometricPressure() + " Kpa");
+        tvEngineOilPressure.setText(obj.getEngineOilPressure() + " Kpa");
     }
 
     public VehicleInfoFragment() {
