@@ -519,7 +519,7 @@ public class CanMessages {
                 }
             }
         } catch (Exception e) {
-            Log.i(TAG, "BTB: processCharFromBus error: " + e.getMessage());
+            Log.i(TAG, "BTB: processCharFromBus error: " + e.getMessage() + " pgn: " + _pgn);
             System.out.println(e.getStackTrace()[0]);
             LogFile.write(CanMessages.class.getName() + "::processCharFromBus error: " + e.getMessage() + " pgn: " + _pgn, LogFile.CAN_BUS_READ, LogFile.ERROR_LOG);
             //121 LogFile.write("Error when parsing char from bus: " + e.getMessage(), LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
@@ -1085,7 +1085,7 @@ public class CanMessages {
                         break;
                     int sp = num / 256;
                     if (sp != 255) {
-                        Speed = String.format("%.0f", sp);
+                        Speed =sp+""; //String.format("%.0f", sp);
                         _vehicleInfo.setSpeed(Speed);
                         Log.i(TAG, "speed = " + Speed);
                         //  LogFile.write(CanMessages.class.getName() + "::read Speed from J1939: " + Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
@@ -1177,7 +1177,7 @@ public class CanMessages {
                     if (i.equals(MAX_16))
                         break;
                     d = i * 0.4;
-                    out = String.format("%.0f ", d);
+                    out = String.format("%.0f", d);
                     if (d > 0)
                         WasherFluidLevel = out;
                     _vehicleInfo.setWasherFluidLevel(WasherFluidLevel);
@@ -1186,7 +1186,7 @@ public class CanMessages {
                     if (i.equals(MAX_16))
                         break;
                     d = i * 0.4;
-                    out = String.format("%.0f ", d);
+                    out = String.format("%.0f", d);
                     if (d > 0)
                         FuelLevel1 = out;
                     _vehicleInfo.setFuelLevel(Integer.parseInt(FuelLevel1));
