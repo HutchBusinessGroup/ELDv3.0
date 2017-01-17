@@ -69,6 +69,7 @@ public class VehicleInfoDB {
             values.put("InActiveDTCFg", bean.getInActiveDTCFg());
             values.put("PTOHours", bean.getPTOHours());
             values.put("TPMSWarningFg", bean.getTPMSWarningFg());
+            values.put("FuelLevel", bean.getFuelLevel());
             values.put("SyncFg", bean.getSyncFg());
 
             database.insert(MySQLiteOpenHelper.TABLE_VEHICLE_INFO,
@@ -98,7 +99,7 @@ public class VehicleInfoDB {
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getWritableDatabase();
 
-            cursor = database.rawQuery("select _Id , OdometerReading   ,Speed   ,RPM   ,Average   ,EngineHour   ,FuelUsed   ,IdleFuelUsed   ,IdleHours   ,Boost   ,CoolantTemperature   ,CoolantLevel   ,BatteryVoltage   ,WasherFluidLevel   ,EngineLoad   ,EngineOilLevel   ,CruiseSetFg  ,CruiseSpeed   ,PowerUnitABSFg  ,TrailerABSFg  ,DerateFg  ,BrakeApplication  ,RegenerationRequiredFg  ,WaterInFuelFg  ,MaxRoadSpeed   ,PTOEngagementFg  ,CuriseTime  ,SeatBeltFg  ,AirSuspension   ,TransmissionOilLevel   ,TransmissionGear  ,DEFTankLevel   ,DEFTankLevelLow  ,ActiveDTCFg ,InActiveDTCFg ,PTOHours ,TPMSWarningFg ,EngineSerialNo  ,EngineRatePower  ,CreatedDate from "
+            cursor = database.rawQuery("select _Id ,FuelLevel, OdometerReading   ,Speed   ,RPM   ,Average   ,EngineHour   ,FuelUsed   ,IdleFuelUsed   ,IdleHours   ,Boost   ,CoolantTemperature   ,CoolantLevel   ,BatteryVoltage   ,WasherFluidLevel   ,EngineLoad   ,EngineOilLevel   ,CruiseSetFg  ,CruiseSpeed   ,PowerUnitABSFg  ,TrailerABSFg  ,DerateFg  ,BrakeApplication  ,RegenerationRequiredFg  ,WaterInFuelFg  ,MaxRoadSpeed   ,PTOEngagementFg  ,CuriseTime  ,SeatBeltFg  ,AirSuspension   ,TransmissionOilLevel   ,TransmissionGear  ,DEFTankLevel   ,DEFTankLevelLow  ,ActiveDTCFg ,InActiveDTCFg ,PTOHours ,TPMSWarningFg ,EngineSerialNo  ,EngineRatePower  ,CreatedDate from "
                             + MySQLiteOpenHelper.TABLE_VEHICLE_INFO + " Where SyncFg=0"
                     , null);
 
@@ -145,6 +146,7 @@ public class VehicleInfoDB {
                 obj.put("InActiveDTCFg", cursor.getInt(cursor.getColumnIndex("InActiveDTCFg")));
                 obj.put("PTOHours", cursor.getInt(cursor.getColumnIndex("PTOHours")));
                 obj.put("TPMSWarningFg", cursor.getInt(cursor.getColumnIndex("TPMSWarningFg")));
+                obj.put("FuelLevel", cursor.getInt(cursor.getColumnIndex("FuelLevel")));
 
                 array.put(obj);
             }
@@ -177,7 +179,7 @@ public class VehicleInfoDB {
         try {
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getWritableDatabase();
-            database.delete(MySQLiteOpenHelper.TABLE_TRAILER_STATUS,
+            database.delete(MySQLiteOpenHelper.TABLE_VEHICLE_INFO,
                     " SyncFg=?", new String[]{"0"});
 
         } catch (Exception exe) {

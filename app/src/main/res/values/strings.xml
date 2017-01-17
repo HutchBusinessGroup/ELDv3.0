@@ -208,6 +208,7 @@
     <string name="title_dtc">DTC</string>
     <string name="title_score_card">Driver Score Card</string>
     <string name="title_trailer_management">Trailer Management </string>
+    <string name="title_vehicle_info">Vehicle Info </string>
 
     <string name="event_origin_automatically">Automatically</string>
     <string name="event_origin_edited">Edited</string>

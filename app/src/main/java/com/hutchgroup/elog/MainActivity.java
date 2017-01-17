@@ -134,6 +134,7 @@ import com.hutchgroup.elog.fragments.TrailerManagementFragment;
 import com.hutchgroup.elog.fragments.UnCertifiedFragment;
 import com.hutchgroup.elog.fragments.UnidentifyFragment;
 import com.hutchgroup.elog.fragments.UserListFragment;
+import com.hutchgroup.elog.fragments.VehicleInfoFragment;
 import com.hutchgroup.elog.fragments.ViolationFragment;
 import com.hutchgroup.elog.services.AutoStartService;
 import com.hutchgroup.elog.tasks.AppUpdateData;
@@ -157,7 +158,7 @@ public class MainActivity extends ELogMainActivity
         UserListFragment.OnFragmentInteractionListener, BluetoothConnectivityFragment.OnFragmentInteractionListener, OutputFileSendDialog.OutputFileDialogInterface,
         DvirFragment.OnFragmentInteractionListener, DailyLogDashboardFragment.OnFragmentInteractionListener, TpmsFragment.OnFragmentInteractionListener, TabSystemFragment.OnFragmentInteractionListener,
         LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener
-        , GForceMonitor.IGForceMonitor {
+        , GForceMonitor.IGForceMonitor, VehicleInfoFragment.OnFragmentInteractionListener {
 
     private PopupDialog ponDutyChangeDialog;
     private boolean onDutyChangeDialogResponse, autoDismissOnDutyChangeDialog, isDialogShown;
@@ -186,6 +187,7 @@ public class MainActivity extends ELogMainActivity
     private final int DTC = 15;
     private final int ScoreCard = 16;
     private final int TrailerManagement = 17;
+    private final int VehicleInfo = 18;
     public static Date ViolationDT;
 
     BluetoothAdapter adapter = null;
@@ -4704,6 +4706,19 @@ public class MainActivity extends ELogMainActivity
         previousScreen = currentScreen;
         currentScreen = TrailerManagement;
         title = getApplicationContext().getResources().getString(R.string.title_trailer_management);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(title);
+    }
+
+    @Override
+    public void onLoadVehicleInfo() {
+        isOnDailyLog = false;
+        bInspectDailylog = false;
+
+        replaceFragment(VehicleInfoFragment.newInstance());
+        previousScreen = currentScreen;
+        currentScreen = VehicleInfo;
+        title = getApplicationContext().getResources().getString(R.string.title_vehicle_info);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(title);
     }

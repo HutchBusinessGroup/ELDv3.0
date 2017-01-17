@@ -16,12 +16,12 @@ import com.hutchgroup.elog.common.Utility;
 
 public class VehicleInfoFragment extends Fragment {
 
-    TextView tvUnitNo, tvVinNo, tvEngineNo, tvPlateNo, tvOdometerReading, tvEngineHours, tvFuelUsed, tvCoolantLevel, tvRPM, tvBoost, tvFuelPressure, tvFuelLevel, tvEngineOilLevel,
+    TextView tvDate, tvUnitNo, tvVinNo, tvEngineNo, tvPlateNo, tvOdometerReading, tvEngineHours, tvFuelUsed, tvCoolantLevel, tvRPM, tvBoost, tvFuelPressure, tvFuelLevel, tvEngineOilLevel,
             tvCoolantTemperature, tvAirInletTemperature, tvBarometricPressure, tvEngineOilPressure, tvEngineLoad, tvLowWasherFluidLevel, tvSpeed, tvEPFFuelLevel, tvIdleFuelUsed, tvEngineIdleHours, tvPTOHours;
     private OnFragmentInteractionListener mListener;
 
     private void initialize(View view) {
-
+        tvDate = (TextView) view.findViewById(R.id.tvDate);
         tvUnitNo = (TextView) view.findViewById(R.id.tvUnitNo);
         tvVinNo = (TextView) view.findViewById(R.id.tvVinNo);
         tvEngineNo = (TextView) view.findViewById(R.id.tvEngineNo);
@@ -51,29 +51,34 @@ public class VehicleInfoFragment extends Fragment {
         tvPlateNo.setText(Utility.PlateNo);
         tvVinNo.setText(Utility.VIN);
         tvEngineNo.setText(CanMessages._vehicleInfo.getEngineSerialNo());
+        tvDate.setText(Utility.getStringCurrentDate());
     }
 
+    private static final String DEGREE = " \u00b0F";
+
     private void fillValue() {
+        tvDate.setText(Utility.getStringCurrentDate());
         VehicleInfoBean obj = CanMessages._vehicleInfo;
-        tvEngineHours.setText(obj.getEngineHour());
-        tvFuelUsed.setText(obj.getFuelUsed());
-        tvCoolantLevel.setText(obj.getCoolantLevel());
+        tvOdometerReading.setText(obj.getOdometerReading() + " Kms");
+        tvEngineHours.setText(obj.getEngineHour() + " Hrs");
+        tvFuelUsed.setText(obj.getFuelUsed() + " Ltrs.");
+        tvCoolantLevel.setText(obj.getCoolantLevel() + " %");
         tvRPM.setText(obj.getRPM());
-        tvBoost.setText(obj.getBoost());
+        tvBoost.setText(obj.getBoost() + " Psi");
         tvFuelPressure.setText("N/A");
-        tvFuelLevel.setText(obj.getDEFTankLevel());
+        tvFuelLevel.setText(obj.getFuelLevel() + " %");
         tvEngineOilLevel.setText(obj.getEngineOilLevel());
-        tvCoolantTemperature.setText(obj.getCoolantTemperature());
+        tvCoolantTemperature.setText(obj.getCoolantTemperature() + DEGREE);
         tvAirInletTemperature.setText("N/A");
         tvBarometricPressure.setText("N/A");
         tvEngineOilPressure.setText("N/A");
         tvEngineLoad.setText(obj.getEngineLoad());
-        tvLowWasherFluidLevel.setText(obj.getWasherFluidLevel());
-        tvSpeed.setText(obj.getSpeed());
+        tvLowWasherFluidLevel.setText(obj.getWasherFluidLevel() + " %");
+        tvSpeed.setText(obj.getSpeed() + "Km/h");
         tvEPFFuelLevel.setText("N/A");
-        tvIdleFuelUsed.setText(obj.getIdleFuelUsed());
-        tvEngineIdleHours.setText(obj.getIdleHours());
-        tvPTOHours.setText(obj.getPTOHours());
+        tvIdleFuelUsed.setText(obj.getIdleFuelUsed() + " Litres");
+        tvEngineIdleHours.setText(obj.getIdleHours() + " Hrs");
+        tvPTOHours.setText(obj.getPTOHours() + " Hrs");
 
     }
 
@@ -116,8 +121,13 @@ public class VehicleInfoFragment extends Fragment {
                     try {
                         if (Thread.interrupted())
                             break;
-                        Thread.sleep(1000);
-                        fillValue();
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                fillValue();
+                            }
+                        });
+                        Thread.sleep(5000);
                     } catch (Exception exe) {
                         break;
                     }

@@ -6,30 +6,30 @@ package com.hutchgroup.elog.beans;
 
 public class VehicleInfoBean {
     int _Id;
-    String OdometerReading;
-    String Speed;
-    String RPM;
-    String Average;
-    String EngineHour;
-    String FuelUsed;
-    String IdleFuelUsed;
-    String IdleHours;
-    String Boost;
-    String CoolantTemperature;
-    String CoolantLevel;
-    String BatteryVoltage;
-    String WasherFluidLevel;
-    String EngineLoad;
-    String EngineOilLevel;
-    String CruiseSpeed;
-    String MaxRoadSpeed;
-    String AirSuspension;
-    String TransmissionOilLevel;
-    String DEFTankLevel;
-    String DEFTankLevelLow;
-    String EngineSerialNo;
-    String EngineRatePower;
-    String PTOFuelUsed;
+    String OdometerReading = "0";
+    String Speed = "0";
+    String RPM = "0";
+    String Average = "0";
+    String EngineHour = "0";
+    String FuelUsed = "0";
+    String IdleFuelUsed = "0";
+    String IdleHours = "0";
+    String Boost = "0";
+    String CoolantTemperature = "0";
+    String CoolantLevel = "0";
+    String BatteryVoltage = "0";
+    String WasherFluidLevel = "0";
+    String EngineLoad = "0";
+    String EngineOilLevel = "0";
+    String CruiseSpeed = "0";
+    String MaxRoadSpeed = "0";
+    String AirSuspension = "0";
+    String TransmissionOilLevel = "0";
+    String DEFTankLevel = "0";
+    String DEFTankLevelLow = "0";
+    String EngineSerialNo = "0";
+    String EngineRatePower = "0";
+    String PTOFuelUsed = "0";
     String CreatedDate;
 
     int CruiseSetFg;
@@ -47,7 +47,16 @@ public class VehicleInfoBean {
     int InActiveDTCFg;
     int PTOHours;
     int TPMSWarningFg;
+    int FuelLevel;
     int SyncFg;
+
+    public int getFuelLevel() {
+        return FuelLevel;
+    }
+
+    public void setFuelLevel(int fuelLevel) {
+        FuelLevel = fuelLevel;
+    }
 
     public int get_Id() {
         return _Id;

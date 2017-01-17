@@ -110,12 +110,18 @@
                        android:layout_width="wrap_content"
                        android:layout_height="18dp"
                        android:text="CVIP Due: " />-->
-
                 <TextView
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
-                    android:text="18 Jan, 2017" />
+                    android:text=" | " />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    style="@style/BlockCaptionVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="18dp"
+                    android:text="N/A" />
             </LinearLayout>
 
         </RelativeLayout>
@@ -169,7 +175,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="465" />
+                            android:text="N/A" />
 
                     </RelativeLayout>
 
@@ -205,7 +211,7 @@
                             style="@style/BlockValue"
                             android:layout_width="match_parent"
                             android:layout_height="36dp"
-                            android:text="6456.5" />
+                            android:text="N/A" />
 
                     </RelativeLayout>
 

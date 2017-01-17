@@ -1173,6 +1173,7 @@ public class CanMessages {
                     out = String.format("%.0f ", d);
                     if (d > 0)
                         FuelLevel1 = out;
+                    _vehicleInfo.setFuelLevel(Integer.parseInt(FuelLevel1));
                     break;
             }
         } else if (msgID == RX_J1708) {
@@ -1234,7 +1235,8 @@ public class CanMessages {
                 case 96:
                     d = (packet[6] & 0xFF) * 0.5;
                     if (d > 0)
-                        FuelLevel1 = String.format("%.2f", d);
+                        FuelLevel1 = String.format("%.0f", d);
+                    _vehicleInfo.setFuelLevel(Integer.parseInt(FuelLevel1));
 //                    newData.put("Cruise", d + " mi");
                     Log.i(TAG, "Speed = " + d + " mi");
                     break;
