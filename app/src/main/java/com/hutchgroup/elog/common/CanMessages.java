@@ -1026,9 +1026,6 @@ public class CanMessages {
                     if (i.equals(MAX_8))
                         break;
                     _vehicleInfo.setMaxRoadSpeed(i + "");
-                    out = String.format("%d mph", i);
-                    // newData.put("RoadSpeed", out);
-                    Log.i(TAG, "Road Speed = " + out);
                     break;
 
                 case 65262:
@@ -1067,7 +1064,7 @@ public class CanMessages {
                     if (i.equals(MAX_8))
                         break;
 
-                    _vehicleInfo.setEngineOilPressure(i+"");
+                    _vehicleInfo.setEngineOilPressure(i + "");
                     i = (packet[17] & 0xFF); //engine coolant level
                     if (i.equals(MAX_8))
                         break;
@@ -1103,7 +1100,7 @@ public class CanMessages {
                     if (i.equals(MAX_8))
                         break;
 
-                    String cruiseSpeed = i+"";
+                    String cruiseSpeed = i + "";
                     _vehicleInfo.setCruiseSpeed(cruiseSpeed);
                     break;
 
@@ -1133,7 +1130,7 @@ public class CanMessages {
                     i = (packet[12] & 0xFF); /* SPN 102 */
                     if (i.equals(MAX_8))
                         break;
-                    _vehicleInfo.setAirInletTemperature( (i - 40)+"");
+                    _vehicleInfo.setAirInletTemperature((i - 40) + "");
                    /* d = (i - 40) * 9 / 5.0 + 32;
                     out = String.format("%.1f%s", d, DEGREE);*/
                     // newData.put("Intake", out); /* SPN 105 */
