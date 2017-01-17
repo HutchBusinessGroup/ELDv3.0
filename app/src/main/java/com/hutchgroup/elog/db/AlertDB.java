@@ -65,7 +65,6 @@ public class AlertDB {
     public static JSONArray AlertSyncUpdate() {
         MySQLiteOpenHelper helper = null;
         SQLiteDatabase database = null;
-        Cursor cursor = null;
         JSONArray array = new JSONArray();
 
         try {
@@ -81,7 +80,6 @@ public class AlertDB {
             LogFile.write(AlertDB.class.getName() + "::AlertSyncUpdate Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
-                cursor.close();
                 database.close();
                 helper.close();
             } catch (Exception e) {

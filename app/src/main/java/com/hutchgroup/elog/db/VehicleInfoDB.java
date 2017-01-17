@@ -70,7 +70,7 @@ public class VehicleInfoDB {
             values.put("PTOHours", bean.getPTOHours());
             values.put("TPMSWarningFg", bean.getTPMSWarningFg());
             values.put("FuelLevel", bean.getFuelLevel());
-            values.put("SyncFg", bean.getSyncFg());
+            values.put("SyncFg", 0);
 
             database.insert(MySQLiteOpenHelper.TABLE_VEHICLE_INFO,
                     "_id", values);
@@ -105,6 +105,7 @@ public class VehicleInfoDB {
 
             while (cursor.moveToNext()) {
                 JSONObject obj = new JSONObject();
+                obj.put("VehicleId", Utility.vehicleId);
                 obj.put("CreatedDate", cursor.getString(cursor.getColumnIndex("CreatedDate")));
                 obj.put("EngineSerialNo", cursor.getString(cursor.getColumnIndex("EngineSerialNo")));
 
@@ -173,7 +174,6 @@ public class VehicleInfoDB {
     public static JSONArray VehicleInfoSyncDelete() {
         MySQLiteOpenHelper helper = null;
         SQLiteDatabase database = null;
-        Cursor cursor = null;
         JSONArray array = new JSONArray();
 
         try {
@@ -186,7 +186,6 @@ public class VehicleInfoDB {
             LogFile.write(VehicleInfoDB.class.getName() + "::VehicleInfoSyncUpdate Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
-                cursor.close();
                 database.close();
                 helper.close();
             } catch (Exception e) {

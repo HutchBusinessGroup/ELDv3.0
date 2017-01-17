@@ -25,7 +25,6 @@ public class TpmsDB {
     public static JSONArray TpmsSyncUpdate() {
         MySQLiteOpenHelper helper = null;
         SQLiteDatabase database = null;
-        Cursor cursor = null;
         JSONArray array = new JSONArray();
 
         try {
@@ -41,7 +40,6 @@ public class TpmsDB {
             LogFile.write(TpmsDB.class.getName() + "::TpmsSyncUpdate Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
-                cursor.close();
                 database.close();
                 helper.close();
             } catch (Exception e) {

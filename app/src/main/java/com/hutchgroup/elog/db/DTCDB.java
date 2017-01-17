@@ -171,7 +171,6 @@ public class DTCDB {
     public static JSONArray DTCSyncUpdate() {
         MySQLiteOpenHelper helper = null;
         SQLiteDatabase database = null;
-        Cursor cursor = null;
         JSONArray array = new JSONArray();
 
         try {
@@ -187,7 +186,6 @@ public class DTCDB {
             LogFile.write(DTCDB.class.getName() + "::DVIRSyncUpdate Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
-                cursor.close();
                 database.close();
                 helper.close();
             } catch (Exception e) {

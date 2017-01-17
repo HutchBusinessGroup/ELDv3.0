@@ -67,14 +67,14 @@ public class VehicleInfoFragment extends Fragment {
         tvBoost.setText(obj.getBoost() + " Psi");
         tvFuelPressure.setText("N/A");
         tvFuelLevel.setText(obj.getFuelLevel() + " %");
-        tvEngineOilLevel.setText(obj.getEngineOilLevel());
+        tvEngineOilLevel.setText(obj.getEngineOilLevel() + " %");
         tvCoolantTemperature.setText(obj.getCoolantTemperature() + DEGREE);
         tvAirInletTemperature.setText("N/A");
         tvBarometricPressure.setText("N/A");
         tvEngineOilPressure.setText("N/A");
         tvEngineLoad.setText(obj.getEngineLoad());
         tvLowWasherFluidLevel.setText(obj.getWasherFluidLevel() + " %");
-        tvSpeed.setText(obj.getSpeed() + "Km/h");
+        tvSpeed.setText(obj.getSpeed() + " Km/h");
         tvEPFFuelLevel.setText("N/A");
         tvIdleFuelUsed.setText(obj.getIdleFuelUsed() + " Litres");
         tvEngineIdleHours.setText(obj.getIdleHours() + " Hrs");
@@ -127,7 +127,7 @@ public class VehicleInfoFragment extends Fragment {
                                 fillValue();
                             }
                         });
-                        Thread.sleep(5000);
+                        Thread.sleep(2000);
                     } catch (Exception exe) {
                         break;
                     }
