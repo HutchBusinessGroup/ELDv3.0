@@ -521,11 +521,13 @@ public class CanMessages {
         } catch (Exception e) {
             Log.i(TAG, "BTB: processCharFromBus error: " + e.getMessage());
             System.out.println(e.getStackTrace()[0]);
-            LogFile.write(CanMessages.class.getName() + "::processCharFromBus error: " + e.getMessage(), LogFile.CAN_BUS_READ, LogFile.ERROR_LOG);
+            LogFile.write(CanMessages.class.getName() + "::processCharFromBus error: " + e.getMessage() + " pgn: " + _pgn, LogFile.CAN_BUS_READ, LogFile.ERROR_LOG);
             //121 LogFile.write("Error when parsing char from bus: " + e.getMessage(), LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
             throw e;
         }
     }
+
+    public static int _pgn;
 
     private void processPacket(byte[] packet) {
         int msgID = packet[2];
@@ -548,6 +550,7 @@ public class CanMessages {
             String[] fields;
             String out;
             String data;
+            _pgn = pgn;
             switch (pgn) {
                 case 65214:
                     i = ((packet[11] & 0xFF) << 8) | ((packet[10]) & 0xFF);
