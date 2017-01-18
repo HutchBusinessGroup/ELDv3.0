@@ -7,6 +7,7 @@ import com.hutchgroup.elog.db.TpmsDB;
 import com.hutchgroup.elog.db.TrailerDB;
 import com.hutchgroup.elog.db.TripInspectionDB;
 import com.hutchgroup.elog.db.UserDB;
+import com.hutchgroup.elog.db.VehicleInfoDB;
 
 import org.json.JSONObject;
 
@@ -247,6 +248,33 @@ public class PostCall {
                     data);
             if (result != null) {
                 TrailerDB.TrailerStatusSyncUpdate();
+            }
+
+        } catch (Exception e) {
+            status = false;
+            Utility.printError(e.getMessage());
+        }
+        return status;
+    }
+
+    // Created By: Deepak Sharma
+    // Created Date: 16 January 2017
+    // Purpose: POST VEHICLE INFO SYNC
+    public static boolean PostVehicleInfo() {
+        boolean status = true;
+        WebService ws = new WebService();
+
+        try {
+            String data = VehicleInfoDB.getVehicleInfoSync().toString();
+            if (data.equals("[]")) {
+                return status;
+            }
+
+            String result = ws.doPost(
+                    WebUrl.POST_VEHICLE_INFO,
+                    data);
+            if (result != null) {
+                VehicleInfoDB.VehicleInfoSyncDelete();
             }
 
         } catch (Exception e) {

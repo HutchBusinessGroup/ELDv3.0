@@ -37,7 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.75"
-                android:text="20-Nov-14" />
+                />
 
             <ImageView
                 android:layout_width="42dp"
@@ -53,7 +53,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1.25"
-                android:text="6mi. NE North Auburn, CA" />
+                android:text="N/A" />
 
         </LinearLayout>
 
@@ -77,7 +77,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="John Smith" />
+                android:text="N/A"
+                 />
 
             <ImageView
                 android:layout_width="42dp"
@@ -98,7 +99,8 @@
                     style="@style/InspectLogPrimaryDetailStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="DL000368210361" />
+                    android:text="N"
+                     />
 
                 <TextView
                     style="@style/InspectLogPrimaryDetailStyle"
@@ -113,7 +115,8 @@
                     style="@style/InspectLogPrimaryDetailStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="IL" />
+                    android:text="A"
+                    />
             </LinearLayout>
         </LinearLayout>
 

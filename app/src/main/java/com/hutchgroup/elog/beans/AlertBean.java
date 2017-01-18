@@ -5,8 +5,8 @@ package com.hutchgroup.elog.beans;
  */
 
 public class AlertBean {
-    int _id, SyncFg, Duration, Scores, DriverId;
-    String AlertName, AlertDateTime, AlertCode, currentValue,Threshold;
+    int _id, SyncFg, Duration, Scores, DriverId, count;
+    String AlertName, AlertDateTime, AlertCode, currentValue, Threshold;
 
 
     public int get_id() {
@@ -87,5 +87,13 @@ public class AlertBean {
 
     public void setCurrentValue(String currentValue) {
         this.currentValue = currentValue;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

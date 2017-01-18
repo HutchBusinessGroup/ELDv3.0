@@ -495,7 +495,7 @@ public class DailyLogDB {
             database = helper.getReadableDatabase();
 
             cursor = database.rawQuery("select _id ,LogDate,ShippingId,TrailerId,StartOdometerReading,EndOdometerReading from " + MySQLiteOpenHelper.TABLE_DAILYLOG +
-                            " where driverId=? and CertifyFG=0 and LogDate!=?"
+                            " where driverId=? and CertifyFG=0 and LogDate!=? order by LogDate"
                     , new String[]{driverId + "", Utility.getCurrentDate()});
             while (cursor.moveToNext()) {
                 DailyLogBean bean = new DailyLogBean();
@@ -1237,5 +1237,42 @@ public class DailyLogDB {
         } catch (Exception e) {
             LogFile.write(DailyLogDB.class.getName() + "::certifyLogBook Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         }
+    }
+
+    // Created By: Deepak Sharma
+    // Created Date: 14 January 2015
+    // Purpose: add or update dailylog in database
+    public static Boolean TrailerUpdate(int driverId, String trailerNo) {
+        MySQLiteOpenHelper helper = null;
+        SQLiteDatabase database = null;
+        boolean status = false;
+        try {
+            String logDate = Utility.getCurrentDate();
+            helper = new MySQLiteOpenHelper(Utility.context);
+            database = helper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+
+            values.put("TrailerId", trailerNo);
+            values.put("SyncFg", 0);
+
+            database.update(MySQLiteOpenHelper.TABLE_DAILYLOG, values,
+                    " DriverId =? and LogDate=?", new String[]{driverId
+                            + "", logDate});
+            status = true;
+
+
+        } catch (Exception e) {
+            Utility.printError(e.getMessage());
+            LogFile.write(DailyLogDB.class.getName() + "::CertifyCountUpdate Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+        } finally {
+            try {
+                database.close();
+                helper.close();
+            } catch (Exception e) {
+                Utility.printError(e.getMessage());
+                LogFile.write(DailyLogDB.class.getName() + "::CertifyCountUpdate close database Error:" + e.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
+            }
+        }
+        return status;
     }
 }

@@ -14,9 +14,9 @@
         android:orientation="horizontal">
 
         <ImageView
+            style="@style/DialogIconStyle"
             android:layout_width="@dimen/dialog_icon_size"
-            android:layout_height="@dimen/dialog_icon_size"
-            style="@style/DialogIconStyle" />
+            android:layout_height="@dimen/dialog_icon_size" />
 
         <TextView
             style="@style/DialogTitleStyle"
@@ -28,9 +28,9 @@
 
         <ImageButton
             android:id="@+id/imgCancel"
+            style="@style/DialogCloseStyle"
             android:layout_width="@dimen/dialog_close_icon_size"
-            android:layout_height="@dimen/dialog_close_icon_size"
-            style="@style/DialogCloseStyle"/>
+            android:layout_height="@dimen/dialog_close_icon_size" />
     </LinearLayout>
 
     <View
@@ -48,13 +48,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="12dp"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:padding="12dp">
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1">
 
                 <EditText
                     android:id="@+id/edShippingNumber"
@@ -70,8 +72,9 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
                 <EditText
                     android:id="@+id/edTrailerNumber"
@@ -95,8 +98,8 @@
         style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/footer_button_height"
-        android:background="@drawable/button_bg"
         android:layout_margin="8dp"
+        android:background="@drawable/button_bg"
         android:text="@string/button_save"
         android:textSize="@dimen/text_size_14" />
 </LinearLayout>

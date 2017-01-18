@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.hutchgroup.elog.common.GetCall;
+import com.hutchgroup.elog.common.Utility;
 
 public class SyncData extends AsyncTask<String, Void, Boolean> {
     String TAG = SyncData.class.getName();
@@ -24,7 +25,10 @@ public class SyncData extends AsyncTask<String, Void, Boolean> {
                 status = GetCall.TrailerInfoGetSync();
                 if (status) {
                     status = GetCall.AxleInfoGetSync();
-
+                    if (status && Utility.onScreenUserId > 0) {
+                        String date = Utility.getCurrentDate() + " 00:00:00";
+                        GetCall.LogEventSync(date);
+                    }
                 }
             }
         }

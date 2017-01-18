@@ -105,6 +105,7 @@ import com.hutchgroup.elog.db.SettingsDB;
 import com.hutchgroup.elog.db.TripInspectionDB;
 import com.hutchgroup.elog.db.UserDB;
 import com.hutchgroup.elog.db.VehicleDB;
+import com.hutchgroup.elog.db.VehicleInfoDB;
 import com.hutchgroup.elog.db.VersionInformationDB;
 import com.hutchgroup.elog.fragments.BluetoothConnectivityFragment;
 import com.hutchgroup.elog.fragments.DTCFragment;
@@ -133,6 +134,7 @@ import com.hutchgroup.elog.fragments.TrailerManagementFragment;
 import com.hutchgroup.elog.fragments.UnCertifiedFragment;
 import com.hutchgroup.elog.fragments.UnidentifyFragment;
 import com.hutchgroup.elog.fragments.UserListFragment;
+import com.hutchgroup.elog.fragments.VehicleInfoFragment;
 import com.hutchgroup.elog.fragments.ViolationFragment;
 import com.hutchgroup.elog.services.AutoStartService;
 import com.hutchgroup.elog.tasks.AppUpdateData;
@@ -156,7 +158,7 @@ public class MainActivity extends ELogMainActivity
         UserListFragment.OnFragmentInteractionListener, BluetoothConnectivityFragment.OnFragmentInteractionListener, OutputFileSendDialog.OutputFileDialogInterface,
         DvirFragment.OnFragmentInteractionListener, DailyLogDashboardFragment.OnFragmentInteractionListener, TpmsFragment.OnFragmentInteractionListener, TabSystemFragment.OnFragmentInteractionListener,
         LoginFragment.OnFragmentInteractionListener, MessageFragment.OnFragmentInteractionListener, NewInspectionFragment.OnFragmentInteractionListener, InspectLogFragment.OnFragmentInteractionListener, ChatClient.ChatMessageReceiveIndication, PopupDialog.DialogActionInterface, HourOfService.IViolation, ShutDownDeviceDialog.OnFragmentInteractionListener, CanMessages.ICanMessage, ExtraFragment.OnFragmentInteractionListener, DTCFragment.OnFragmentInteractionListener
-        , GForceMonitor.IGForceMonitor {
+        , GForceMonitor.IGForceMonitor, VehicleInfoFragment.OnFragmentInteractionListener {
 
     private PopupDialog ponDutyChangeDialog;
     private boolean onDutyChangeDialogResponse, autoDismissOnDutyChangeDialog, isDialogShown;
@@ -185,6 +187,7 @@ public class MainActivity extends ELogMainActivity
     private final int DTC = 15;
     private final int ScoreCard = 16;
     private final int TrailerManagement = 17;
+    private final int VehicleInfo = 18;
     public static Date ViolationDT;
 
     BluetoothAdapter adapter = null;
@@ -755,8 +758,8 @@ public class MainActivity extends ELogMainActivity
 
             bean = new DrawerItemBean();
             bean.setId(R.id.extra);
-            bean.setItem("Extra");
-            bean.setIcon(R.drawable.ic_drawer_eld);
+            bean.setItem("More");
+            bean.setIcon(R.drawable.ic_drawer_others);
             lstDrawerItems.add(bean);
         }
 
@@ -858,12 +861,12 @@ public class MainActivity extends ELogMainActivity
         super.onCreate(savedInstanceState);
 
         try {
-            if (!ConstantFlag.Flag_Development) {
+          /*  if (!ConstantFlag.Flag_Development) {
                 WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 
                 if (wifiManager.isWifiEnabled())
                     wifiManager.setWifiEnabled(false);
-            }
+            }*/
 
             // set alarm
             if (Utility.as == null) {
@@ -1602,18 +1605,6 @@ public class MainActivity extends ELogMainActivity
             //Log.d(TAG, "Works here 1!");
         } else if (id == R.id.homeAsUp) {
             //Log.d(TAG, "Works here 2!");
-        } else if (id == R.id.action_back_one_day) {
-            if (undockingMode) {
-                return super.onOptionsItemSelected(item);
-            }
-          /*  if (inspectFragment != null)
-                inspectFragment.BackOneDay();*/
-        } else if (id == R.id.action_forward_one_day) {
-            if (undockingMode) {
-                return super.onOptionsItemSelected(item);
-            }
-           /* if (inspectFragment != null)
-                inspectFragment.ForwardOneDay();*/
         } else if (id == R.id.action_diagnostic) {
             final Dialog dlg = new Dialog(MainActivity.this);
             LayoutInflater li = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -2323,6 +2314,12 @@ public class MainActivity extends ELogMainActivity
             RedirectToMain();
             Utility.saveLoginInfo(Utility.user1.getAccountId(), 0, Utility.activeUserId, Utility.onScreenUserId);
         }
+
+        if (Utility.isInternetOn()) {
+            showLoaderAnimation(true);
+            new AutoSyncData(autoSyncDataPostTaskListener).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        }
+
     }
 
     private void RedirectToMain() {
@@ -2468,6 +2465,9 @@ public class MainActivity extends ELogMainActivity
             EventDB.EventCreate(Utility.getCurrentDateTime(), 6, evenCode, description, 1, 1, logId, driverId, "");
             bEventPowerOn = true;
             bEventPowerOff = false;
+            //save vehicle Data
+            VehicleInfoDB.Save(CanMessages._vehicleInfo);
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -2511,6 +2511,10 @@ public class MainActivity extends ELogMainActivity
 
             //123 LogFile.write(MainActivity.class.getName() + "::machineOff: " + description + " of driverId:" + driverId, LogFile.USER_INTERACTION, LogFile.DRIVEREVENT_LOG);
             EventDB.EventCreate(Utility.getCurrentDateTime(), 6, evenCode, description, 1, 1, logId, driverId, "");
+
+            //save vehicle Data
+            VehicleInfoDB.Save(CanMessages._vehicleInfo);
+
             bEventPowerOff = true;
             bEventPowerOn = false;
             runOnUiThread(new Runnable() {
@@ -2926,7 +2930,6 @@ public class MainActivity extends ELogMainActivity
     }
 
     String prevTitle = "";
-
 
     @Override
     public void onDetailClosed() {
@@ -3747,7 +3750,6 @@ public class MainActivity extends ELogMainActivity
         });
     }
 
-
     @Override
     public void autologinSuccessfully() {
 
@@ -3762,6 +3764,10 @@ public class MainActivity extends ELogMainActivity
 
         }
         updateFlagbar(true);
+        int unreadCount = MessageDB.getUnreadCount();
+        if (unreadCount > 0) {
+            onMessageReceived();
+        }
         setCertify(1);
 
 
@@ -3824,6 +3830,10 @@ public class MainActivity extends ELogMainActivity
 
         }
         updateFlagbar(true);
+        int unreadCount = MessageDB.getUnreadCount();
+        if (unreadCount > 0) {
+            onMessageReceived();
+        }
         setCertify(1);
 
 
@@ -4037,8 +4047,8 @@ public class MainActivity extends ELogMainActivity
                     Log.d(TAG, "address=" + deviceAddress);
                     if (deviceAddress == null) {
 
-                        Thread.sleep(60000);
-                        initializeTpms();
+                       /* Thread.sleep(60000);
+                        initializeTpms();*/
 
                     } else {
                         BluetoothDevice device = adapter.getRemoteDevice(deviceAddress);
@@ -4609,7 +4619,6 @@ public class MainActivity extends ELogMainActivity
                     ivActiveUser.setVisibility(View.VISIBLE);
                     icCertifyLog.setVisibility(View.VISIBLE);
                     //  icViolation.setVisibility(View.VISIBLE);
-                    icMessage.setVisibility(View.VISIBLE);
                     icInspection.setVisibility(View.VISIBLE);
                     icCertifyLog.setVisibility(View.VISIBLE);
                 } else {
@@ -4697,6 +4706,19 @@ public class MainActivity extends ELogMainActivity
         previousScreen = currentScreen;
         currentScreen = TrailerManagement;
         title = getApplicationContext().getResources().getString(R.string.title_trailer_management);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(title);
+    }
+
+    @Override
+    public void onLoadVehicleInfo() {
+        isOnDailyLog = false;
+        bInspectDailylog = false;
+
+        replaceFragment(VehicleInfoFragment.newInstance());
+        previousScreen = currentScreen;
+        currentScreen = VehicleInfo;
+        title = getApplicationContext().getResources().getString(R.string.title_vehicle_info);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(title);
     }

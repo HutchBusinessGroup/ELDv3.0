@@ -21,6 +21,7 @@ import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.adapters.TrailerRecycleAdapter;
 import com.hutchgroup.elog.beans.VehicleBean;
 import com.hutchgroup.elog.common.Utility;
+import com.hutchgroup.elog.db.DailyLogDB;
 import com.hutchgroup.elog.db.VehicleDB;
 
 import android.support.v4.app.DialogFragment;
@@ -65,6 +66,7 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
     }
 
     private void initialize(View view) {
+        hooked = "";
         for (String id : Utility.hookedTrailers) {
             hooked += "'" + id + "', ";
         }
@@ -148,6 +150,15 @@ public class TrailerDialogFragment extends DialogFragment implements TrailerRecy
                         int trailerId = bean.getVehicleId();
                         if (mListener != null)
                             mListener.hooked(trailerId);
+                        String trailerNo = Utility.getPreferences("trailer_number", "");
+                        if (trailerNo.isEmpty()) {
+                            trailerNo = bean.getUnitNo();
+                        } else {
+                            trailerNo += "," + bean.getUnitNo();
+                        }
+
+                        Utility.savePreferences("trailer_number", trailerNo);
+                        DailyLogDB.TrailerUpdate(Utility.activeUserId, trailerNo);
                         dismiss();
                     }
                 });

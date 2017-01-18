@@ -853,4 +853,69 @@
     <style name="DTC_list_val.red">
         <item name="android:textColor">#ed5564</item>
     </style>
+
+
+    <style name="Block">
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="Block.Main">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/blue1</item>
+    </style>
+
+    <style name="Block.Blue">
+        <item name="android:background">@color/blue1</item>
+    </style>
+
+    <style name="Block.Green">
+        <item name="android:background">#04c387</item>
+    </style>
+
+    <style name="Block.Yellow">
+        <item name="android:background">#f5d011</item>
+    </style>
+
+    <style name="Block.Red">
+        <item name="android:background">#ea3653</item>
+    </style>
+
+    <style name="BlockTitle">
+        <item name="android:background">@drawable/bg_scorecard_title</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="BlockValue.Main">
+        <item name="android:layout_marginLeft">72dp</item>
+    </style>
+
+    <style name="BlockValue">
+        <item name="android:textSize">32sp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginLeft">36dp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="BlockCaption.Main">
+        <item name="android:layout_marginLeft">72dp</item>
+    </style>
+
+    <style name="BlockCaption">
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_marginLeft">36dp</item>
+        <item name="android:layout_marginTop">38dp</item>
+    </style>
+
+    <style name="BlockCaptionVal">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
 </resources>

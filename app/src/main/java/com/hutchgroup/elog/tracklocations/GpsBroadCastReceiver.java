@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.hutchgroup.elog.FirstActivity;
 import com.hutchgroup.elog.common.CanMessages;
+import com.hutchgroup.elog.common.GPSTracker;
+import com.hutchgroup.elog.common.Utility;
 
 public class GpsBroadCastReceiver extends BroadcastReceiver {
 
@@ -36,6 +38,18 @@ public class GpsBroadCastReceiver extends BroadcastReceiver {
         } else if (Intent.ACTION_SCREEN_ON.equals(action)) {
             showMessage(context, "Screen On ");
 
+        } else if (Intent.ACTION_SHUTDOWN.equals(action)) {
+            showMessage(context, "Shutdown starts ");
+
+            try {
+                ClientSocket obj = new ClientSocket(
+                        Utility.ServerIp, Utility.Port, context);
+                String signal = GPSTracker.getShutDownEvent();
+                obj.execute(signal, "-1");
+                Thread.sleep(5000);
+            } catch (InterruptedException exe) {
+
+            }
         }
     }
 

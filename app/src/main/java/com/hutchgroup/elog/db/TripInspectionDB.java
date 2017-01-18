@@ -318,7 +318,6 @@ public class TripInspectionDB {
     public static JSONArray DVIRSyncUpdate() {
         MySQLiteOpenHelper helper = null;
         SQLiteDatabase database = null;
-        Cursor cursor = null;
         JSONArray array = new JSONArray();
         int inspectionId = 0;
         try {
@@ -343,7 +342,6 @@ public class TripInspectionDB {
             LogFile.write(TripInspectionDB.class.getName() + "::getDVIRSync Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
-                cursor.close();
                 database.close();
                 helper.close();
             } catch (Exception e) {

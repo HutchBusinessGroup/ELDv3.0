@@ -267,11 +267,11 @@ public class NewEventFragment extends Fragment implements View.OnClickListener, 
                     tvLocationLabel.setVisibility(View.GONE);
                 }
 
-                String annotation = "";
+                /*String annotation = "";
                 if (eventData.getAnnotation() != null) {
                     annotation = eventData.getAnnotation();
                 }
-                edComments.setText(annotation);
+                edComments.setText(annotation);*/
                 edLocationDescription.setText(eventData.getLocationDescription());
 
                 tvOdometer.setText(eventData.getOdometerReading());

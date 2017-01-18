@@ -1045,6 +1045,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
 
                     drawLine(getX(startMinutes), getY(status), getX(endMinutes), getY(status), ruleId, personalUseFg);
                 }
+
                 if (i < dutyStatus.size() - 1) {
                     item = dutyStatus.get(i + 1);
                     drawLine(getX(endMinutes), getY(status), getX(endMinutes), getY(item.getStatus()), ruleId, item.getPersonalUse());
@@ -1058,6 +1059,11 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 }
                 endMinutes = 1439;
                 drawLine(getX(0), getY(1), getX(endMinutes), getY(1), ruleId, 0);
+            } else {
+                int status = dutyStatus.get(dutyStatus.size() - 1).getStatus();
+                if (Utility._appSetting.getGraphLine() == 1) {
+                    drawLine(getX(endMinutes), getY(status), getX(1439), getY(status), ruleId, 0, true);
+                }
             }
 
             if (Configuration.ORIENTATION_LANDSCAPE == getResources().getConfiguration().orientation) {
@@ -1078,6 +1084,34 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
     }
 
     DashPathEffect effects = new DashPathEffect(new float[]{4, 2, 4, 2}, 0);
+
+    private void drawLine(float x, float y, float xend, float yend, int ruleId, int personalUseFg, boolean isDotted) {
+        try {
+            Paint p = new Paint();
+            int color;
+            if (ruleId <= 2) {
+                color = Utility._appSetting.getColorLineCanada();
+            } else {
+                color = Utility._appSetting.getColorLineUS();
+            }
+            color = color == 0 ? Color.BLUE : color;
+            p.setColor(color);
+            int width = 3;
+            if (!Utility.isLargeScreen(getContext().getApplicationContext())) {
+                width = 1;
+            }
+            p.setStrokeWidth(width);
+            if (isDotted) {
+                p.setPathEffect(effects);
+            }
+          /*  if (personalUseFg == 1) {
+                p.setPathEffect(effects);
+            }*/
+            canvas.drawLine(x, y, xend, yend, p);
+        } catch (Exception e) {
+            LogFile.write(ELogFragment.class.getName() + "::drawLine1 Error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
+        }
+    }
 
     private void drawLine(float x, float y, float xend, float yend, int ruleId, int personalUseFg) {
         try {
@@ -1103,7 +1137,6 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             LogFile.write(ELogFragment.class.getName() + "::drawLine1 Error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
         }
     }
-
 
     private void drawRect(float x, float y, float xend, float yend) {
         try {

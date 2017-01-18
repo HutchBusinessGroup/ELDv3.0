@@ -22,7 +22,7 @@ public class AlertDB {
     public static IScoreCard mListener;
 
     public interface IScoreCard {
-        void onUpdate();
+        void onUpdate(String code);
     }
 
     public static boolean getDuplicate(int driverId, String code, String date) {
@@ -65,7 +65,6 @@ public class AlertDB {
     public static JSONArray AlertSyncUpdate() {
         MySQLiteOpenHelper helper = null;
         SQLiteDatabase database = null;
-        Cursor cursor = null;
         JSONArray array = new JSONArray();
 
         try {
@@ -81,7 +80,6 @@ public class AlertDB {
             LogFile.write(AlertDB.class.getName() + "::AlertSyncUpdate Error:" + exe.getMessage(), LogFile.DATABASE, LogFile.ERROR_LOG);
         } finally {
             try {
-                cursor.close();
                 database.close();
                 helper.close();
             } catch (Exception e) {
@@ -167,7 +165,7 @@ public class AlertDB {
             database.insert(MySQLiteOpenHelper.TABLE_ALERT,
                     "_id", values);
             if (mListener != null) {
-                mListener.onUpdate();
+                mListener.onUpdate(bean.getAlertCode());
             }
         } catch (Exception e) {
             status = false;
@@ -207,7 +205,7 @@ public class AlertDB {
                         " _id= ?",
                         new String[]{id + ""});
                 if (mListener != null) {
-                    mListener.onUpdate();
+                    mListener.onUpdate(code);
                 }
             }
         } catch (Exception e) {
@@ -222,7 +220,6 @@ public class AlertDB {
         return status;
 
     }
-
 
     // Created By: Deepak Sharma
     // Created Date: 12 December 2016

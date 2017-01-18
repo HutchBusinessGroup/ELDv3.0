@@ -33,10 +33,15 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String TABLE_TRAILER_STATUS = "TrailerStatus";
 
     public static final String TABLE_AXLE_INFO = "AxleInfo";
+    public static final String TABLE_VEHICLE_INFO = "VehicleInfo";
 
     public static final String COLUMN_ID = "_id";
     private static final String DATABASE_NAME = "EDL.db";
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 11;
+
+    private static final String TABLE_CREATE_VEHICLE_INFO = "create table "
+            + TABLE_VEHICLE_INFO
+            + "(_Id INTEGER PRIMARY KEY AUTOINCREMENT, OdometerReading text ,Speed text ,RPM text ,Average text ,EngineHour text ,FuelUsed text ,IdleFuelUsed text ,IdleHours text ,Boost text ,CoolantTemperature text ,CoolantLevel text ,BatteryVoltage text ,WasherFluidLevel text ,EngineLoad text ,EngineOilLevel text ,CruiseSetFg INTEGER ,CruiseSpeed text ,PowerUnitABSFg INTEGER ,TrailerABSFg INTEGER ,DerateFg INTEGER ,BrakeApplication INTEGER ,RegenerationRequiredFg INTEGER ,WaterInFuelFg INTEGER ,MaxRoadSpeed text ,PTOEngagementFg INTEGER ,CuriseTime INTEGER ,SeatBeltFg INTEGER ,AirSuspension text ,TransmissionOilLevel text ,TransmissionGear INTEGER ,DEFTankLevel text ,DEFTankLevelLow text,ActiveDTCFg INTEGER,InActiveDTCFg INTEGER,PTOHours INTEGER,TPMSWarningFg INTEGER,FuelLevel INTEGER,EngineSerialNo text,EngineRatePower text,FuelPressure text,AirInletTemperature text,BarometricPressure text,EngineOilPressure text,CreatedDate text ,SyncFg INTEGER)";
 
     private static final String TABLE_CREATE_CARRIER = "create table "
             + TABLE_CARRIER
@@ -186,6 +191,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(TABLE_CREATE_TRAILER);
         db.execSQL(TABLE_CREATE_AXLE_INFO);
         db.execSQL(TABLE_CREATE_TRAILER_STATUS);
+        db.execSQL(TABLE_CREATE_VEHICLE_INFO);
     }
 
     @Override
@@ -234,10 +240,12 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             db.execSQL(TABLE_CREATE_AXLE_INFO);
             db.execSQL(TABLE_CREATE_TRAILER_STATUS);
         }
-        if (oldVersion<10)
-        {
-            db.execSQL(TABLE_CREATE_TPMS);
 
+        if (oldVersion < 10) {
+            db.execSQL(TABLE_CREATE_TPMS);
+        }
+        if (oldVersion < 11) {
+            db.execSQL(TABLE_CREATE_VEHICLE_INFO);
         }
     }
 }

@@ -359,7 +359,7 @@ public class ChatClient {
 
     private static void getNotification(MessageBean bean) {
         int activeUserId = Utility.user1.isOnScreenFg() ? Utility.user1.getAccountId() : Utility.user2.getAccountId();
-        if (activeUserId != bean.getMessageToId()) {
+        if (activeUserId != bean.getMessageToId() && !Utility.motionFg) {
             return;
         }
 

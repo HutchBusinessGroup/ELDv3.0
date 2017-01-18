@@ -66,7 +66,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:text="1234567" />
+                                        android:text="N/A" />
 
                                     <View
                                         android:layout_width="48dp"
@@ -83,7 +83,8 @@
                                             style="@style/InspectLogTextValStyle"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="798" />
+                                            android:text="N"
+                                             />
 
 
                                         <TextView
@@ -100,7 +101,8 @@
                                             style="@style/InspectLogTextValStyle"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Co Driver Name" />
+                                            android:text="A"
+                                            />
 
                                     </LinearLayout>
 
@@ -166,7 +168,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_column="1"
                                         android:layout_weight="1"
-                                        android:text="No" />
+                                        android:text="N/A" />
 
                                     <View
                                         android:layout_width="48dp"
@@ -180,7 +182,7 @@
                                         android:layout_column="0"
                                         android:layout_marginBottom="0dp"
                                         android:layout_weight="1"
-                                        android:text="No" />
+                                        android:text="N/A" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -243,7 +245,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_column="0"
                                         android:layout_weight="1"
-                                        android:text="No" />
+                                        android:text="N/A" />
 
                                     <View
                                         android:layout_width="48dp"
@@ -255,7 +257,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:text="No" />
+                                        android:text="N/A" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -321,7 +323,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:focusable="false"
-                                        android:text="UTC -2:50" />
+                                        android:text="N/A" />
 
                                 </LinearLayout>
 
@@ -377,7 +379,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="0dp"
                                         android:layout_weight="1"
-                                        android:text="1M2P267Y5A" />
+                                        android:text="N/A" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -440,7 +442,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:text="420" />
+                                        android:text="N/A" />
 
                                     <View
                                         android:layout_width="48dp"
@@ -517,7 +519,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:text="39564 - 39984" />
+                                        android:text="N/A" />
 
                                     <View
                                         android:layout_width="48dp"
@@ -529,7 +531,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:text="758.2 - 765.7" />
+                                        android:text="N/A" />
 
                                 </LinearLayout>
 
@@ -582,7 +584,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:text="123456789" />
+                                        android:text="N/A" />
 
                                     <View
                                         android:layout_width="48dp"
@@ -595,7 +597,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
                                         android:focusable="false"
-                                        android:text="BL1234567890" />
+                                        android:text="N/A" />
 
                                 </LinearLayout>
 
@@ -723,7 +725,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:gravity="center"
-                        android:text="12:22"
+                        android:text="N/A"
                         android:textColor="#262d33" />
 
 
@@ -732,7 +734,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:gravity="center"
-                        android:text="08:45"
+                        android:text="N/A"
                         android:textColor="#262d33" />
 
 
@@ -741,7 +743,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:gravity="center"
-                        android:text="05:37"
+                        android:text="N/A"
                         android:textColor="#262d33" />
 
 
@@ -750,7 +752,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:gravity="center"
-                        android:text="00:33"
+                        android:text="N/A"
                         android:textColor="#262d33" />
                 </LinearLayout>
 
