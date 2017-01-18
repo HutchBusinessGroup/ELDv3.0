@@ -11,11 +11,78 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            style="@style/BlockTitle"
+        <LinearLayout
+            style="@style/BlockTitleLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vehicle Info" />
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/BlockTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vehicle Info" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="2dp"
+                android:layout_gravity="right|center"
+                android:src="@drawable/ic_vehicleinfo_cruise_on"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="2dp"
+                android:layout_gravity="right|center"
+                android:src="@drawable/ic_vehicleinfo_abs_powerunit_off"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="2dp"
+                android:layout_gravity="right|center"
+                android:src="@drawable/ic_vehicleinfo_abs_trailer_on"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="2dp"
+                android:layout_gravity="right|center"
+                android:src="@drawable/ic_vehicleinfo_engine_rated_off"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="2dp"
+                android:layout_gravity="right|center"
+                android:src="@drawable/ic_vehicleinfo_seatbelt_on"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="2dp"
+                android:layout_gravity="right|center"
+                android:src="@drawable/ic_vehicleinfo_def_off"/>
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_margin="2dp"
+                android:layout_gravity="right|center"
+                android:src="@drawable/ic_vehicleinfo_water_in_fuel_off"/>
+
+
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="0dp"></View>
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -29,16 +96,43 @@
                 android:layout_centerInParent="true"
                 android:src="@drawable/ic_scorecard_vehicle_info" />
 
+
+            <LinearLayout
+                style="@style/BlockValue.Main"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/tvUnitNo"
-                style="@style/BlockValue.Main"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
+                style="@style/BlockMainTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:text="Unit: 59684" />
 
+
+
+                <TextView
+                    style="@style/BlockMainTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="  |  " />
+
+                <TextView
+                    style="@style/BlockMainTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="CVIP Due: " />
+
+                <TextView
+                    style="@style/BlockMainTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="18 Jan, 2017" />
+
+            </LinearLayout>
             <LinearLayout
                 style="@style/BlockCaption.Main"
                 android:layout_width="match_parent"

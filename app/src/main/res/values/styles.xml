@@ -869,7 +869,7 @@
     </style>
 
     <style name="Block.Green">
-        <item name="android:background">#04c387</item>
+        <item name="android:background">@color/green2</item>
     </style>
 
     <style name="Block.Yellow">
@@ -878,6 +878,17 @@
 
     <style name="Block.Red">
         <item name="android:background">#ea3653</item>
+    </style>
+
+
+    <style name="BlockTitleLayout">
+        <item name="android:background">@drawable/bg_scorecard_title</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="BlockTitleText">
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:textColor">#ffffff</item>
     </style>
 
     <style name="BlockTitle">
@@ -889,6 +900,11 @@
 
     <style name="BlockValue.Main">
         <item name="android:layout_marginLeft">72dp</item>
+    </style>
+
+    <style name="BlockMainTextStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#ffffff</item>
     </style>
 
     <style name="BlockValue">
