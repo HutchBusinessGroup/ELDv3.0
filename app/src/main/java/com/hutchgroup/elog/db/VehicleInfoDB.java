@@ -70,6 +70,12 @@ public class VehicleInfoDB {
             values.put("PTOHours", bean.getPTOHours());
             values.put("TPMSWarningFg", bean.getTPMSWarningFg());
             values.put("FuelLevel", bean.getFuelLevel());
+
+            values.put("FuelPressure", bean.getFuelLevel());
+            values.put("AirInletTemperature", bean.getFuelLevel());
+            values.put("BarometricPressure", bean.getFuelLevel());
+            values.put("EngineOilPressure", bean.getFuelLevel());
+
             values.put("SyncFg", 0);
 
             database.insert(MySQLiteOpenHelper.TABLE_VEHICLE_INFO,
@@ -99,7 +105,7 @@ public class VehicleInfoDB {
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getWritableDatabase();
 
-            cursor = database.rawQuery("select _Id ,FuelLevel, OdometerReading   ,Speed   ,RPM   ,Average   ,EngineHour   ,FuelUsed   ,IdleFuelUsed   ,IdleHours   ,Boost   ,CoolantTemperature   ,CoolantLevel   ,BatteryVoltage   ,WasherFluidLevel   ,EngineLoad   ,EngineOilLevel   ,CruiseSetFg  ,CruiseSpeed   ,PowerUnitABSFg  ,TrailerABSFg  ,DerateFg  ,BrakeApplication  ,RegenerationRequiredFg  ,WaterInFuelFg  ,MaxRoadSpeed   ,PTOEngagementFg  ,CuriseTime  ,SeatBeltFg  ,AirSuspension   ,TransmissionOilLevel   ,TransmissionGear  ,DEFTankLevel   ,DEFTankLevelLow  ,ActiveDTCFg ,InActiveDTCFg ,PTOHours ,TPMSWarningFg ,EngineSerialNo  ,EngineRatePower  ,CreatedDate from "
+            cursor = database.rawQuery("select _Id ,FuelLevel, OdometerReading   ,Speed   ,RPM   ,Average   ,EngineHour   ,FuelUsed   ,IdleFuelUsed   ,IdleHours   ,Boost   ,CoolantTemperature   ,CoolantLevel   ,BatteryVoltage   ,WasherFluidLevel   ,EngineLoad   ,EngineOilLevel   ,CruiseSetFg  ,CruiseSpeed   ,PowerUnitABSFg  ,TrailerABSFg  ,DerateFg  ,BrakeApplication  ,RegenerationRequiredFg  ,WaterInFuelFg  ,MaxRoadSpeed   ,PTOEngagementFg  ,CuriseTime  ,SeatBeltFg  ,AirSuspension   ,TransmissionOilLevel   ,TransmissionGear  ,DEFTankLevel   ,DEFTankLevelLow  ,ActiveDTCFg ,InActiveDTCFg ,PTOHours ,TPMSWarningFg ,EngineSerialNo  ,EngineRatePower,FuelPressure ,AirInletTemperature,BarometricPressure,EngineOilPressure  ,CreatedDate from "
                             + MySQLiteOpenHelper.TABLE_VEHICLE_INFO + " Where SyncFg=0"
                     , null);
 
@@ -140,15 +146,19 @@ public class VehicleInfoDB {
                 obj.put("RegenerationRequiredFg", cursor.getInt(cursor.getColumnIndex("RegenerationRequiredFg")));
                 obj.put("WaterInFuelFg", cursor.getInt(cursor.getColumnIndex("WaterInFuelFg")));
                 obj.put("PTOEngagementFg", cursor.getInt(cursor.getColumnIndex("PTOEngagementFg")));
-                obj.put("CuriseTime", cursor.getInt(cursor.getColumnIndex("CuriseTime")));
+                obj.put("CuriseTime", cursor.getString(cursor.getColumnIndex("CuriseTime")));
                 obj.put("SeatBeltFg", cursor.getInt(cursor.getColumnIndex("SeatBeltFg")));
                 obj.put("TransmissionGear", cursor.getInt(cursor.getColumnIndex("TransmissionGear")));
                 obj.put("ActiveDTCFg", cursor.getInt(cursor.getColumnIndex("ActiveDTCFg")));
                 obj.put("InActiveDTCFg", cursor.getInt(cursor.getColumnIndex("InActiveDTCFg")));
-                obj.put("PTOHours", cursor.getInt(cursor.getColumnIndex("PTOHours")));
+                obj.put("PTOHours", cursor.getString(cursor.getColumnIndex("PTOHours")));
                 obj.put("TPMSWarningFg", cursor.getInt(cursor.getColumnIndex("TPMSWarningFg")));
                 obj.put("FuelLevel", cursor.getInt(cursor.getColumnIndex("FuelLevel")));
 
+                obj.put("FuelPressure", cursor.getString(cursor.getColumnIndex("FuelPressure")));
+                obj.put("AirInletTemperature", cursor.getString(cursor.getColumnIndex("AirInletTemperature")));
+                obj.put("BarometricPressure", cursor.getString(cursor.getColumnIndex("BarometricPressure")));
+                obj.put("EngineOilPressure", cursor.getString(cursor.getColumnIndex("EngineOilPressure")));
                 array.put(obj);
             }
 

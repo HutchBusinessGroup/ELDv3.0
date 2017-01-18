@@ -37,6 +37,9 @@ public class VehicleInfoBean {
     String BarometricPressure = "0";
     String EngineOilPressure = "0";
 
+    String CuriseTime = "0";
+    String PTOHours = "0";
+
 
     int CruiseSetFg;
     int PowerUnitABSFg;
@@ -46,12 +49,10 @@ public class VehicleInfoBean {
     int RegenerationRequiredFg;
     int WaterInFuelFg;
     int PTOEngagementFg;
-    int CuriseTime;
     int SeatBeltFg;
     int TransmissionGear;
     int ActiveDTCFg;
     int InActiveDTCFg;
-    int PTOHours;
     int TPMSWarningFg;
     int FuelLevel;
     int SyncFg;
@@ -328,11 +329,11 @@ public class VehicleInfoBean {
         this.PTOEngagementFg = PTOEngagementFg;
     }
 
-    public int getCuriseTime() {
+    public String getCuriseTime() {
         return CuriseTime;
     }
 
-    public void setCuriseTime(int curiseTime) {
+    public void setCuriseTime(String curiseTime) {
         CuriseTime = curiseTime;
     }
 
@@ -368,11 +369,11 @@ public class VehicleInfoBean {
         InActiveDTCFg = inActiveDTCFg;
     }
 
-    public int getPTOHours() {
+    public String getPTOHours() {
         return PTOHours;
     }
 
-    public void setPTOHours(int PTOHours) {
+    public void setPTOHours(String PTOHours) {
         this.PTOHours = PTOHours;
     }
 

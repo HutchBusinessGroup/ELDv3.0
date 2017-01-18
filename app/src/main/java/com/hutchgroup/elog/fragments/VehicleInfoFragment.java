@@ -19,6 +19,12 @@ public class VehicleInfoFragment extends Fragment {
     TextView tvDate, tvUnitNo, tvVinNo, tvEngineNo, tvPlateNo, tvOdometerReading, tvEngineHours, tvFuelUsed, tvCoolantLevel, tvRPM, tvBoost, tvFuelPressure, tvFuelLevel, tvEngineOilLevel,
             tvCoolantTemperature, tvAirInletTemperature, tvBarometricPressure, tvEngineOilPressure, tvEngineLoad, tvLowWasherFluidLevel, tvSpeed, tvDefFuelLevel, tvIdleFuelUsed, tvEngineIdleHours, tvPTOHours;
     private OnFragmentInteractionListener mListener;
+    TextView tvEnginePower;
+    TextView tvFuelEconomy, tvBatteryVoltage;
+    TextView tvPTOFuelUsed, tvCruiseSetSpeed;
+    TextView tvBrakeApplicationCount, tvMaxRoadSpeed;
+    TextView tvCruiseTime, tvAirSuspensionLoad;
+    TextView tvTransmissionOilLevel, tvTransmissionGearNo;
 
     private void initialize(View view) {
         tvDate = (TextView) view.findViewById(R.id.tvDate);
@@ -47,42 +53,72 @@ public class VehicleInfoFragment extends Fragment {
         tvEngineIdleHours = (TextView) view.findViewById(R.id.tvEngineIdleHours);
         tvPTOHours = (TextView) view.findViewById(R.id.tvPTOHours);
 
+        tvEnginePower = (TextView) view.findViewById(R.id.tvEnginePower);
+        tvBrakeApplicationCount = (TextView) view.findViewById(R.id.tvBrakeApplicationCount);
+        tvMaxRoadSpeed = (TextView) view.findViewById(R.id.tvMaxRoadSpeed);
+        tvCruiseTime = (TextView) view.findViewById(R.id.tvCruiseTime);
+        tvAirSuspensionLoad = (TextView) view.findViewById(R.id.tvAirSuspensionLoad);
+        tvTransmissionOilLevel = (TextView) view.findViewById(R.id.tvTransmissionOilLevel);
+        tvTransmissionGearNo = (TextView) view.findViewById(R.id.tvTransmissionGearNo);
+        tvPTOFuelUsed = (TextView) view.findViewById(R.id.tvPTOFuelUsed);
+        tvCruiseSetSpeed = (TextView) view.findViewById(R.id.tvCruiseSetSpeed);
+        tvFuelEconomy = (TextView) view.findViewById(R.id.tvFuelEconomy);
+        tvBatteryVoltage = (TextView) view.findViewById(R.id.tvBatteryVoltage);
+
         tvUnitNo.setText(Utility.UnitNo);
         tvPlateNo.setText(Utility.PlateNo);
         tvVinNo.setText(Utility.VIN);
         tvEngineNo.setText(CanMessages._vehicleInfo.getEngineSerialNo());
         tvDate.setText(Utility.getStringCurrentDate());
+        tvEnginePower.setText(hasNull(CanMessages._vehicleInfo.getEngineRatePower(), ""));
     }
 
     private static final String DEGREE = " \u00b0F";
 
+    String hasNull(String value, String unit) {
+        return value.equals("0") ? "N/A" : (value + " " + unit);
+    }
+
     private void fillValue() {
         tvDate.setText(Utility.getStringCurrentDate());
         VehicleInfoBean obj = CanMessages._vehicleInfo;
-        tvOdometerReading.setText(obj.getOdometerReading() + " Kms");
-        tvEngineHours.setText(obj.getEngineHour() + " Hrs");
-        tvFuelUsed.setText(obj.getFuelUsed() + " Ltrs.");
-        tvCoolantLevel.setText(obj.getCoolantLevel() + " %");
-        tvRPM.setText(obj.getRPM());
-        tvBoost.setText(obj.getBoost() + " Psi");
 
-        tvFuelLevel.setText(obj.getFuelLevel() + " %");
-        tvEngineOilLevel.setText(obj.getEngineOilLevel() + " %");
-        tvCoolantTemperature.setText(obj.getCoolantTemperature() + DEGREE);
+        tvOdometerReading.setText(hasNull(obj.getOdometerReading(), " Kms"));
+        tvEngineHours.setText(hasNull(obj.getEngineHour(), " Hrs"));
+        tvFuelUsed.setText(hasNull(obj.getFuelUsed(), " Ltrs."));
+        tvCoolantLevel.setText(hasNull(obj.getCoolantLevel(), " %"));
+        tvRPM.setText(hasNull(obj.getRPM(), ""));
+        tvBoost.setText(hasNull(obj.getBoost(), " Psi"));
 
-        tvEngineLoad.setText(obj.getEngineLoad());
-        tvLowWasherFluidLevel.setText(obj.getWasherFluidLevel() + " %");
-        tvSpeed.setText(obj.getSpeed() + " Km/h");
-        tvDefFuelLevel.setText(obj.getDEFTankLevel());
-        tvIdleFuelUsed.setText(obj.getIdleFuelUsed() + " Litres");
-        tvEngineIdleHours.setText(obj.getIdleHours() + " Hrs");
-        tvPTOHours.setText(obj.getPTOHours() + " Hrs");
+        tvFuelLevel.setText(hasNull(obj.getFuelLevel() + "", " %"));
+        tvEngineOilLevel.setText(hasNull(obj.getEngineOilLevel(), " %"));
+        tvCoolantTemperature.setText(hasNull(obj.getCoolantTemperature(), DEGREE));
+
+        tvEngineLoad.setText(hasNull(obj.getEngineLoad(), ""));
+        tvLowWasherFluidLevel.setText(hasNull(obj.getWasherFluidLevel(), " %"));
+        tvSpeed.setText(hasNull(obj.getSpeed(), " Km/h"));
+        tvDefFuelLevel.setText(hasNull(obj.getDEFTankLevel(), ""));
+        tvIdleFuelUsed.setText(hasNull(obj.getIdleFuelUsed(), " Litres"));
+        tvEngineIdleHours.setText(hasNull(obj.getIdleHours(), " Hrs"));
+        tvPTOHours.setText(hasNull(obj.getPTOHours(), " Hrs"));
 
         // below fields need to be added in the web and android database and web service need to be created
-        tvFuelPressure.setText(obj.getFuelPressure() + " Kpa");
-        tvAirInletTemperature.setText(obj.getAirInletTemperature() + DEGREE);
-        tvBarometricPressure.setText(obj.getBarometricPressure() + " Kpa");
-        tvEngineOilPressure.setText(obj.getEngineOilPressure() + " Kpa");
+        tvFuelPressure.setText(hasNull(obj.getFuelPressure(), " Psi"));
+        tvAirInletTemperature.setText(hasNull(obj.getAirInletTemperature(), DEGREE));
+        tvBarometricPressure.setText(hasNull(obj.getBarometricPressure(), " Psi"));
+        tvEngineOilPressure.setText(hasNull(obj.getEngineOilPressure(), " Psi"));
+
+        tvFuelEconomy.setText(hasNull(obj.getAverage(), " KM/L"));
+        tvBatteryVoltage.setText(hasNull(obj.getBatteryVoltage(), " V"));
+        tvPTOFuelUsed.setText(hasNull(obj.getPTOFuelUsed(), " Ltrs."));
+        tvCruiseSetSpeed.setText(hasNull(obj.getCruiseSpeed(), " Km/h"));
+        tvBrakeApplicationCount.setText(hasNull(obj.getBrakeApplication() + "", ""));
+        tvMaxRoadSpeed.setText(hasNull(obj.getMaxRoadSpeed(), " Km/h"));
+        tvCruiseTime.setText(hasNull(obj.getCuriseTime(), " Hrs."));
+        tvAirSuspensionLoad.setText(hasNull(obj.getAirSuspension(), " Psi"));
+        tvTransmissionOilLevel.setText(hasNull(obj.getTransmissionOilLevel(), " %"));
+        tvTransmissionGearNo.setText(hasNull(obj.getTransmissionGear() + "", " "));
+
     }
 
     public VehicleInfoFragment() {
