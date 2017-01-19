@@ -129,13 +129,13 @@
                     style="@style/BlockMainTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="CVIP Due: " />
+                    android:text="CVIP Due: " android:visibility="gone" />
 
                 <TextView
                     style="@style/BlockMainTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="18 Jan, 2017" />
+                    android:text="18 Jan, 2017" android:visibility="gone"  />
 
             </LinearLayout>
 

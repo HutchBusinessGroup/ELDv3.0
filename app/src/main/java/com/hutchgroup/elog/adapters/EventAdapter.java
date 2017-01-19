@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.beans.AppSettings;
 import com.hutchgroup.elog.beans.EventBean;
+import com.hutchgroup.elog.common.CanMessages;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.fragments.ELogFragment;
@@ -208,7 +209,17 @@ public class EventAdapter extends ArrayAdapter<EventBean> {
             } else if (eventCode == 4) {
                 shipStatus = " arrived at ";
             }
-            String trip = eventItem.getOdometerReading() + " KMs in " + eventItem.getEngineHour() + " Hours";
+
+            double odometerReading = Double.valueOf(eventItem.getOdometerReading()); // odometer from can bus is in km
+
+            String unit = " Kms";
+            if (Utility._appSetting.getUnit() == 2) {
+                odometerReading = odometerReading * .62137d;
+                unit = " Miles";
+            }
+
+            String trip = String.format("%.0f", odometerReading) + unit + " in " + eventItem.getEngineHour() + " Hours";
+
             holder.tvTrip.setText(trip);
             String location = eventItem.getLocationDescription();
             if (location == null) {

@@ -279,11 +279,19 @@ public class UnCertifiedFragment extends Fragment {
             int startOdometer = bean.getStartOdometerReading().isEmpty() ? 0 : Double.valueOf(bean.getStartOdometerReading()).intValue();
             int endOdometer = bean.getEndOdometerReading().isEmpty() ? 0 : Double.valueOf(bean.getEndOdometerReading()).intValue();
             int distance = endOdometer - startOdometer;
+            String unit = "Kms";
+            if (Utility._appSetting.getUnit() == 2) {
+                startOdometer = Math.round(startOdometer * .62137f);
+                endOdometer = Math.round(endOdometer * .62137f);
+                distance = Math.round(distance * .62137f);
+                unit = "Miles";
+            }
+
             viewHolder.swSerial.setTextOff((position + 1) + "");
 
             viewHolder.swSerial.setChecked(bean.getCertifyFG() == 1);
             viewHolder.tvLogDate.setText(bean.getLogDate());
-            viewHolder.tvOdometerReading.setText("Odometer: " + bean.getStartOdometerReading() + " - " + bean.getEndOdometerReading());
+            viewHolder.tvOdometerReading.setText("Odometer: " + startOdometer + " - " + endOdometer);
             viewHolder.tvLogData.setText("Distance: " + distance + ", Trailer Id: " +
                     (bean.getTrailerId().isEmpty() ? "N/A" : bean.getTrailerId()) + ", Shipping Id: "
                     + (bean.getShippingId().isEmpty() ? "N/A" : bean.getShippingId()));

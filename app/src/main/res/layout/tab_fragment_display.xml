@@ -407,7 +407,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/layout_bg_round_nine"
             android:gravity="center_vertical"
@@ -478,6 +477,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/tvUnit"
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_unit_format" />
                 <RadioGroup
                     android:id="@+id/rgUnit"
                     android:layout_width="match_parent"

@@ -1038,6 +1038,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
     }
 
     DashPathEffect effects = new DashPathEffect(new float[]{4, 2, 4, 2}, 0);
+
     private void drawLine(float x, float y, float xend, float yend, int ruleId, int personalUseFg, boolean isDotted) {
         try {
             Paint p = new Paint();
@@ -1307,9 +1308,17 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
                 }
             }
 
-            tvStartEndOdometer.setText(startOR + " - " + endOR);
+            String unit = "Kms";
+            if (Utility._appSetting.getUnit() == 2) {
+                startOR = Math.round(startOR * .62137f);
+                endOR = Math.round(endOR * .62137f);
+                totalDistance = Math.round(totalDistance * .62137f);
+                unit = "Miles";
+            }
+
+            tvStartEndOdometer.setText(startOR + " - " + endOR + " " + unit);
             tvStartEndEngineHours.setText(startEngineHours + " - " + endEngineHours);
-            tvMilesToday.setText(totalDistance + "");
+            tvMilesToday.setText(totalDistance + " " + unit);
             Log.d(TAG, "totalDistance " + totalDistance);
             String CoDrivers = DailyLogDB.getCoDriver(driverId, date);
 

@@ -2642,11 +2642,26 @@ public class MainActivity extends ELogMainActivity
             @Override
             public void run() {
                 float voltage = Float.parseFloat(CanMessages.Voltage);
+                float speed = Float.parseFloat(CanMessages.Speed);
+                Double odometerReading = Double.parseDouble(CanMessages.OdometerReading);
+                float coolantTemp = Float.parseFloat(CanMessages.CoolantTemperature);
+                String speedUnit = " Kmph";
+                String distanceUnit = " Kms";
+                String tempUnit = " ° F";
+                if (Utility._appSetting.getUnit() == 2) {
+                    odometerReading = odometerReading * .62137d;
+                    speed = speed * .62137f;
+                    speedUnit = " Mph";
+                    distanceUnit = " Miles";
+                } else {
+                    coolantTemp = ((coolantTemp - 32) * 5) / 9;
+                    tempUnit = "° C";
+                }
                 // set rotations
-                setSpeedRoatation();
+                setSpeedRoatation(speed);
                 setRPMRoatation();
                 setThrottleRoatation(Float.parseFloat(CanMessages.Boost));
-                setCoolantRoatation(Float.parseFloat(CanMessages.CoolantTemperature));
+                setCoolantRoatation(coolantTemp);
                 if (voltage < 48f)
                     setVoltageRoatation(voltage);
 
@@ -2668,12 +2683,11 @@ public class MainActivity extends ELogMainActivity
 
                 // set label
                 if (tvSpeed != null)
-                    tvSpeed.setText(CanMessages.Speed + " kph");
+                    tvSpeed.setText(Math.round(speed) + speedUnit);
 
                 DecimalFormat df = new DecimalFormat("#######.#");
-                float odo = Float.parseFloat(CanMessages.OdometerReading);
                 //String odoText = df.format(odo);
-                String odoText = String.format("%.1f", odo);
+                String odoText = String.format("%.1f", odometerReading);
                 //Log.d(TAG, "odo=" + odoText);
                 odoText = odoText.replace(".", "");
 
@@ -2712,9 +2726,9 @@ public class MainActivity extends ELogMainActivity
                 if (tvPosition != null)
                     tvPosition.setText(boost + " psi");
 
-                int coolant = Math.round(Float.parseFloat(CanMessages.CoolantTemperature));
+                int coolant = Math.round(coolantTemp);
                 if (tvCoolant != null)
-                    tvCoolant.setText(coolant + "° F");
+                    tvCoolant.setText(coolant + tempUnit);
 
                 if (voltage < 48f) {
                     if (tvVoltage != null)
@@ -2752,9 +2766,7 @@ public class MainActivity extends ELogMainActivity
     }
 
     //imgreezeSpeed,imgFreezeRPM,imgFreezeVoltage,imgFreezeCoolantTemp,imgFreezeThrPos;
-    private void setSpeedRoatation() {
-
-        float speed = Float.parseFloat(CanMessages.Speed);
+    private void setSpeedRoatation(float speed) {
 
         //if speed is 10 then angle is 15
         float angle = 15 * speed / 10;

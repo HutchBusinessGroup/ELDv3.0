@@ -72,11 +72,19 @@ public class UnidentifiedAdapter extends ArrayAdapter<EventBean> {
         }
 
         EventBean bean = data.get(position);
+        double odometerReading = Double.valueOf(bean.getOdometerReading()); // odometer from can bus is in km
+
+        String unit = "Kms";
+        if (Utility._appSetting.getUnit() == 2) {
+            odometerReading = odometerReading * .62137d;
+            unit = "Miles";
+        }
+
         String eventDate=Utility.ConverDateFormat(bean.getEventDateTime());
         viewHolder.swEventCode.setTextOff((position + 1) + "");
         viewHolder.swEventCode.setChecked(bean.getChecked());
         viewHolder.tvEventDescription.setText(bean.getEventCodeDescription());
-        viewHolder.tvOdometerReading.setText("Vehicle Miles: " + bean.getOdometerReading());
+        viewHolder.tvOdometerReading.setText("Vehicle Miles: " + String.format("%.0f", odometerReading));
         viewHolder.tvLocationDescription.setText(bean.getLocationDescription());
         try {
             viewHolder.tvDate.setText(new SimpleDateFormat("MMM dd,yyyy").format(Utility.parse(bean.getEventDateTime())));
