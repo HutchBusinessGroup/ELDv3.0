@@ -45,7 +45,7 @@ public class SettingsDB {
         bean.setAutomaticRuleChange(Utility._appSetting.getAutomaticRuleChange());
         bean.setFontSize(Utility._appSetting.getFontSize());
         bean.setDutyStatusReading(Utility._appSetting.getDutyStatusReading());
-
+        bean.setUnit(Utility._appSetting.getUnit());
         Save(bean);
 
         return bean;
@@ -81,6 +81,7 @@ public class SettingsDB {
             values.put("FontSize", bean.getFontSize());
             values.put("DriverId", bean.getDriverId());
             values.put("DutyStatusReading", bean.getDutyStatusReading());
+            values.put("Unit", bean.getUnit());
 
             int driverId = bean.getDriverId();
             settingsId = getSettingsId(bean.getDriverId());
@@ -118,7 +119,7 @@ public class SettingsDB {
 
 
             cursor = database.rawQuery("select _id, TimeZone, DefaultRule, GraphLine, ColorLineUS, ColorLineCanada, TimeFormat, ViolationReading, ViolationOnGrid, MessageReading, " +
-                    "StartTime, Orientation, VisionMode, CopyTrailer, ShowViolation, SyncTime, AutomaticRuleChange, FontSize, DutyStatusReading from " + MySQLiteOpenHelper.TABLE_SETTINGS + " where DriverId=?", new String[]{Integer.toString(driverId)});
+                    "StartTime, Orientation, VisionMode, CopyTrailer, ShowViolation, SyncTime, AutomaticRuleChange, FontSize, DutyStatusReading,Unit from " + MySQLiteOpenHelper.TABLE_SETTINGS + " where DriverId=?", new String[]{Integer.toString(driverId)});
             if (cursor.getCount() == 0) {
                 Log.i("SettingsDB", "Get nothing from Settings table");
                 CreateSettings(); //save default bean
@@ -140,6 +141,7 @@ public class SettingsDB {
                 bean.setViolationOnGrid(AppSettings.getViolationOnGrid());
                 bean.setFontSize(AppSettings.getFontSize());
                 bean.setDutyStatusReading(AppSettings.getDutyStatusReading());
+                bean.setUnit(AppSettings.getUnit());
             } else {
                 if (cursor.moveToLast()) {
 
@@ -162,6 +164,7 @@ public class SettingsDB {
                     bean.setViolationOnGrid(cursor.getInt(cursor.getColumnIndex("ViolationOnGrid")));
                     bean.setFontSize(cursor.getInt(cursor.getColumnIndex("FontSize")));
                     bean.setDutyStatusReading(cursor.getInt(cursor.getColumnIndex("DutyStatusReading")));
+                    bean.setUnit(cursor.getInt(cursor.getColumnIndex("Unit")));
                 }
             }
         } catch (Exception e) {

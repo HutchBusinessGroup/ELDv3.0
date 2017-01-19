@@ -13,7 +13,8 @@
         android:background="@android:color/transparent"
         android:button="@drawable/checkbox_background"
         android:text="View Score Card of last 30 days"
-        android:textColor="@drawable/checkbox_text_color" />
+        android:textColor="@drawable/checkbox_text_color"
+        android:visibility="gone" />
 
     <LinearLayout
         style="@style/Block.Main"

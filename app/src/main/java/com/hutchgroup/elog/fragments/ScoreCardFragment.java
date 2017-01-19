@@ -2,6 +2,7 @@ package com.hutchgroup.elog.fragments;
 
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -226,6 +227,23 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
         AlertDB.mListener = this;
         initialize(view);
         return view;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        try {
+            LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            ViewGroup viewGroup = (ViewGroup) getView();
+            View view = inflater.inflate(R.layout.fragment_driver_score_card_layout, viewGroup, false);
+            viewGroup.removeAllViews();
+            viewGroup.addView(view);
+            initialize(view);
+
+        } catch (Exception exe) {
+        }
+
     }
 
     @Override

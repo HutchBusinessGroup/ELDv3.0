@@ -1,12 +1,14 @@
 package com.hutchgroup.elog.fragments;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hutchgroup.elog.R;
@@ -26,7 +28,17 @@ public class VehicleInfoFragment extends Fragment {
     TextView tvCruiseTime, tvAirSuspensionLoad;
     TextView tvTransmissionOilLevel, tvTransmissionGearNo;
 
+    ImageView imgCruise, imgabspowerunit, imgabstrailer, imgDeratedEngine, imgseatbelt, imgdef, imgwaterinfuel;
+
     private void initialize(View view) {
+        imgCruise = (ImageView) view.findViewById(R.id.imgCruise);
+        imgabspowerunit = (ImageView) view.findViewById(R.id.imgabspowerunit);
+        imgabstrailer = (ImageView) view.findViewById(R.id.imgabstrailer);
+        imgDeratedEngine = (ImageView) view.findViewById(R.id.imgDeratedEngine);
+        imgseatbelt = (ImageView) view.findViewById(R.id.imgseatbelt);
+        imgdef = (ImageView) view.findViewById(R.id.imgdef);
+        imgwaterinfuel = (ImageView) view.findViewById(R.id.imgwaterinfuel);
+
         tvDate = (TextView) view.findViewById(R.id.tvDate);
         tvUnitNo = (TextView) view.findViewById(R.id.tvUnitNo);
         tvVinNo = (TextView) view.findViewById(R.id.tvVinNo);
@@ -82,6 +94,14 @@ public class VehicleInfoFragment extends Fragment {
     private void fillValue() {
         tvDate.setText(Utility.getStringCurrentDate());
         VehicleInfoBean obj = CanMessages._vehicleInfo;
+        //imgCruise, imgabspowerunit, imgabstrailer, imgenginerated, imgseatbelt, imgdef, imgwaterinfuel;
+        imgCruise.setImageResource(obj.getCruiseSetFg() == 1 ? R.drawable.ic_vehicleinfo_cruise_on : R.drawable.ic_vehicleinfo_cruise_off);
+        imgabspowerunit.setImageResource(obj.getPowerUnitABSFg() == 1 ? R.drawable.ic_vehicleinfo_abs_powerunit_on : R.drawable.ic_vehicleinfo_abs_powerunit_off);
+        imgabstrailer.setImageResource(obj.getTrailerABSFg() == 1 ? R.drawable.ic_vehicleinfo_abs_trailer_on : R.drawable.ic_vehicleinfo_abs_trailer_off);
+        imgDeratedEngine.setImageResource(obj.getDerateFg() == 1 ? R.drawable.ic_vehicleinfo_engine_rated_on : R.drawable.ic_vehicleinfo_engine_rated_off);
+        imgseatbelt.setImageResource(obj.getSeatBeltFg() == 1 ? R.drawable.ic_vehicleinfo_seatbelt_on : R.drawable.ic_vehicleinfo_seatbelt_off);
+        imgdef.setImageResource(obj.getDEFTankLevelLow() == "1" ? R.drawable.ic_vehicleinfo_def_on : R.drawable.ic_vehicleinfo_def_off);
+        imgwaterinfuel.setImageResource(obj.getWaterInFuelFg() == 1 ? R.drawable.ic_vehicleinfo_water_in_fuel_on : R.drawable.ic_vehicleinfo_water_in_fuel_off);
 
         tvOdometerReading.setText(hasNull(obj.getOdometerReading(), " Kms"));
         tvEngineHours.setText(hasNull(obj.getEngineHour(), " Hrs"));
@@ -143,6 +163,22 @@ public class VehicleInfoFragment extends Fragment {
         initialize(view);
         startThread();
         return view;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        try {
+            LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            ViewGroup viewGroup = (ViewGroup) getView();
+            View view = inflater.inflate(R.layout.fragment_vehicle_info, viewGroup, false);
+            viewGroup.removeAllViews();
+            viewGroup.addView(view);
+            initialize(view);
+
+        } catch (Exception exe) {
+        }
     }
 
     private Thread thVehicleInfo;

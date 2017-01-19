@@ -70,6 +70,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class ELogFragment extends Fragment implements View.OnClickListener, RuleChangeDialog.RuleChangeDialogInterface,
         DutyStatusChangeDialog.DutyStatusChangeDialogInterface, InputInformationDialog.InputInformationDialogInterface {
@@ -1595,13 +1596,21 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
     public void updateOdometer() {
         try {
             if (tvVehicleMiles != null && tvCurrentTrip != null) {
+                double odometerReading = Double.valueOf(CanMessages.OdometerReading); // odometer from can bus is in km
+                double odometerReadingSincePowerOn = Double.valueOf(Utility.OdometerReadingSincePowerOn);
+                String unit = "Kms";
+                if (Utility._appSetting.getUnit() == 2) {
+                    odometerReading = odometerReading * .62137d;
+                    odometerReadingSincePowerOn = odometerReadingSincePowerOn * .62137d;
+                    unit = "Miles";
+                }
 
-                tvVehicleMiles.setText(Double.valueOf(CanMessages.OdometerReading).intValue() + "/" + String.format("%.1f", Double.valueOf(CanMessages.EngineHours)));
+                tvVehicleMiles.setText(String.format("%.0f", odometerReading) + "/" + String.format("%.1f", Double.valueOf(CanMessages.EngineHours)));
                 try {
                     if (!CanMessages.RPM.equals("0")) {
-                        String accumulatedVehicleMiles = (Double.valueOf(CanMessages.OdometerReading).intValue() - Double.valueOf(Utility.OdometerReadingSincePowerOn).intValue()) + "";
+                        String accumulatedVehicleMiles = String.format("%.0f", (odometerReading - odometerReadingSincePowerOn));
                         String elapsedEngineHours = String.format("%.1f", Double.valueOf(CanMessages.EngineHours) - Double.valueOf(Utility.EngineHourSincePowerOn));
-                        tvCurrentTrip.setText(accumulatedVehicleMiles + " Km in " + elapsedEngineHours + " Hrs");
+                        tvCurrentTrip.setText(accumulatedVehicleMiles + " " + unit + " in " + elapsedEngineHours + " Hrs");
                     } else {
                         tvCurrentTrip.setText("--");
 

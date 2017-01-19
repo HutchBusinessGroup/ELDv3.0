@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="2dp">
+
     <CheckBox
         android:id="@+id/swMonthly"
         style="@style/BigTextLabelStyle.Margin0"
@@ -12,7 +13,9 @@
         android:background="@android:color/transparent"
         android:button="@drawable/checkbox_background"
         android:text="View Score Card of last 30 days"
-        android:textColor="@drawable/checkbox_text_color" />
+        android:textColor="@drawable/checkbox_text_color"
+        android:visibility="gone" />
+
     <LinearLayout
         style="@style/Block.Main"
         android:layout_width="wrap_content"
@@ -56,7 +59,8 @@
                 android:layout_below="@+id/textView"
                 android:orientation="horizontal">
 
-                <TextView android:id="@+id/tvDrivingTime"
+                <TextView
+                    android:id="@+id/tvDrivingTime"
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"

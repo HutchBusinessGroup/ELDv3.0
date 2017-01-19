@@ -51,7 +51,7 @@ public class TabDisplayFragment extends Fragment implements View.OnClickListener
     final String TAG = TabDisplayFragment.class.getName();
 
     int driverId = 0;
-
+    RadioButton rbMetric, rbImperial;
     TextView tvGraphLine;
     LinearLayout layoutCanadaColor;
     LinearLayout layoutUsColor;
@@ -113,8 +113,16 @@ public class TabDisplayFragment extends Fragment implements View.OnClickListener
             rgSelectOrientation = (RadioGroup) view.findViewById(R.id.rgSelectOrientation);
             rbPortrait = (RadioButton) view.findViewById(R.id.rbPortrait);
             rbPortrait.setOnCheckedChangeListener(this);
+
             rbLandscape = (RadioButton) view.findViewById(R.id.rbLanscape);
             rbLandscape.setOnCheckedChangeListener(this);
+
+            rbImperial = (RadioButton) view.findViewById(R.id.rbImperial);
+            rbImperial.setOnCheckedChangeListener(this);
+
+            rbMetric = (RadioButton) view.findViewById(R.id.rbMetric);
+            rbMetric.setOnCheckedChangeListener(this);
+
             rbAuto = (RadioButton) view.findViewById(R.id.rbAuto);
             rbAuto.setOnCheckedChangeListener(this);
             if (Utility._appSetting.getOrientation() == AppSettings.AppOrientation.AUTO.ordinal()) {
@@ -263,7 +271,7 @@ public class TabDisplayFragment extends Fragment implements View.OnClickListener
                 case R.id.layoutCanadaColor:
                 case R.id.butCanadaColor:
                     if (colorPickerDialog == null) {
-                        colorPickerDialog =new ColorPickerDialog();
+                        colorPickerDialog = new ColorPickerDialog();
                         colorPickerDialog.mListener = this;
                     }
                     colorPickerDialog.setInitialColor(canadaColor);
@@ -290,6 +298,14 @@ public class TabDisplayFragment extends Fragment implements View.OnClickListener
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         try {
             switch (buttonView.getId()) {
+                case R.id.rbMetric:
+                    Utility._appSetting.setUnit(1);
+                    SettingsDB.CreateSettings();
+                    break;
+                case R.id.rbImperial:
+                    Utility._appSetting.setUnit(2);
+                    SettingsDB.CreateSettings();
+                    break;
                 case R.id.rbPortrait:
                     //not support to change orientation for phone
                     if (Utility.isLargeScreen(getContext())) {

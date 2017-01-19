@@ -130,7 +130,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "_id INTEGER PRIMARY KEY AUTOINCREMENT, TimeZone text, DefaultRule INTEGER, GraphLine INTEGER, ColorLineUS INTEGER, ColorLineCanada INTEGER,"
             + " TimeFormat INTEGER, ViolationReading INTEGER, MessageReading INTEGER, StartTime INTEGER,"
             + " Orientation INTEGER, VisionMode INTEGER, CopyTrailer INTEGER, ShowViolation INTEGER, SyncTime INTEGER, AutomaticRuleChange INTEGER,"
-            + " ViolationOnGrid INTEGER, FontSize INTEGER, DutyStatusReading INTEGER, DriverId INTEGER)";
+            + " ViolationOnGrid INTEGER, FontSize INTEGER, DutyStatusReading INTEGER, Unit INTEGER, DriverId INTEGER)";
 
     private static final String TABLE_CREATE_DIAGNOSTIC_INDICATOR = "create table "
             + TABLE_DIAGNOSTIC_INDICATOR
@@ -160,7 +160,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     private static final String DATABASE_DELETE_EVENTS_DIAGNOSTIC = "DELETE FROM " + TABLE_DAILYLOG_EVENT + " WHERE EventType=7";
     private static final String DATABASE_ALTER_CARRIER_TIMEZONEID = "ALTER TABLE " + TABLE_CARRIER + " ADD COLUMN TimeZoneId text";
     private static final String DATABASE_ALTER_CARRIER_TOTALAXLE = "ALTER TABLE " + TABLE_CARRIER + " ADD COLUMN TotalAxle INTEGER";
-
+    private static final String DATABASE_ALTER_SETTING_UNIT = "ALTER TABLE " + TABLE_SETTINGS + " ADD COLUMN Unit INTEGER";
 
     public MySQLiteOpenHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -246,6 +246,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         }
         if (oldVersion < 11) {
             db.execSQL(TABLE_CREATE_VEHICLE_INFO);
+            db.execSQL(DATABASE_ALTER_SETTING_UNIT);
         }
     }
 }

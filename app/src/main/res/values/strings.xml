@@ -376,6 +376,7 @@
     <string name="settings_canada_color">Canada</string>
     <string name="settings_violation_on_grid">Show violation on grid</string>
     <string name="settings_time_format">Time format</string>
+    <string name="settings_unit_format">Unit </string>
     <string name="settings_reading_violation">Read the violation</string>
     <string name="settings_automatic_change_rule">Automatic rule change</string>
     <string name="settings_reading_message">Reading message</string>
