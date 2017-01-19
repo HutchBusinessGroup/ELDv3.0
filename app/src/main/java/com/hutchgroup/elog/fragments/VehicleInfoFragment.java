@@ -112,7 +112,7 @@ public class VehicleInfoFragment extends Fragment {
             } else
                 value = value.equals("0") ? "N/A" : (value + " " + unit);
         }
-        return value.equals("0") ? "N/A" : (value + " " + unit);
+        return value;
     }
 
     private void fillValue() {

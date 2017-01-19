@@ -53,7 +53,7 @@ public class ELogApplication extends Application {
     boolean bPowerOnOff;
     int currentStatus;
 
-    boolean bFreezeLayoutShowing;
+    boolean bFreezeLayoutShowing, DriverEventFg;
 
     private static Application mApp;
 
@@ -83,7 +83,7 @@ public class ELogApplication extends Application {
             bPowerOnOff = false; //off
 
             bFreezeLayoutShowing = false;
-
+            DriverEventFg = false;
             SharedPreferences prefs = this.getSharedPreferences("HutchGroup", MODE_PRIVATE);
             CanMessages.OdometerReading = prefs.getString("odometer", "0");
             CanMessages.EngineHours = prefs.getString("engine_hours", "0");
@@ -185,9 +185,12 @@ public class ELogApplication extends Application {
                 }
             } else {
                 if (activity != null) {
-                    activity.autoChangeStatus();
-                    activity.resetFlag();
-                    currentStatus = ((MainActivity) activity).activeCurrentDutyStatus;
+                    if (!DriverEventFg) {
+                        activity.autoChangeStatus();
+                        activity.resetFlag();
+                        currentStatus = ((MainActivity) activity).activeCurrentDutyStatus;
+                        DriverEventFg = true;
+                    }
                 }
             }
 
@@ -403,6 +406,7 @@ public class ELogApplication extends Application {
                                     if (bFreezeLayoutShowing) {
                                         activity.hideFreezeLayout();
                                         bFreezeLayoutShowing = false;
+                                        DriverEventFg = false;
                                     }
                                 }
                                 if (Utility.user1.getAccountId() == 0 && Utility.user2.getAccountId() == 0) {

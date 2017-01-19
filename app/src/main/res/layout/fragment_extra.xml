@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_drawer_maintenance" />
+                android:src="@drawable/ic_drawer_ttms" />
 
             <TextView
                 style="@style/DrawerMenuLink"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_drawer_incident" />
+                android:src="@drawable/ic_drawer_scorecard" />
 
             <TextView
                 style="@style/DrawerMenuLink"
@@ -88,11 +88,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" android:layout_marginLeft="45dp">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <ImageButton
@@ -101,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
-                android:src="@drawable/ic_drawer_dtc" />
+                android:src="@drawable/ic_drawer_vehicleinfo" />
 
             <TextView
                 style="@style/DrawerMenuLink"

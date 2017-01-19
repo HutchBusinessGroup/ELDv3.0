@@ -118,18 +118,11 @@
                     android:layout_height="match_parent"
                     android:text="Unit: 59684" />
 
-
                 <TextView
                     style="@style/BlockMainTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="  |  " />
-
-                <TextView
-                    style="@style/BlockMainTextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="CVIP Due: " android:visibility="gone" />
+                    android:text=" | CVIP Due: " android:visibility="gone" />
 
                 <TextView
                     style="@style/BlockMainTextStyle"
@@ -204,7 +197,7 @@
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
                     android:layout_height="18dp"
-                    android:text="BJ87964" />
+                    android:text="N/A" />
 
                 <!--   <TextView
                        style="@style/BlockCaptionVal"
