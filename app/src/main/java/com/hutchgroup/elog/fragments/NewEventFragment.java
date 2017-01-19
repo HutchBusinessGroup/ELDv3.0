@@ -203,8 +203,15 @@ public class NewEventFragment extends Fragment implements View.OnClickListener, 
             fabSave = (ImageButton) view.findViewById(R.id.fabSave);
             fabSave.setOnClickListener(this);
 
+            double odometerReading = Double.valueOf(CanMessages.OdometerReading); // odometer from can bus is in km
+
+            String unit = "Kms";
+            if (Utility._appSetting.getUnit() == 2) {
+                odometerReading = odometerReading * .62137d;
+                unit = "Miles";
+            }
             tvEventTime.setText(Utility.getCurrentTime());
-            tvOdometer.setText(CanMessages.OdometerReading);
+            tvOdometer.setText(String.format("%.0f", odometerReading));
             tvEngineHours.setText(CanMessages.EngineHours);
 
             updateEventType();
@@ -274,7 +281,15 @@ public class NewEventFragment extends Fragment implements View.OnClickListener, 
                 edComments.setText(annotation);*/
                 edLocationDescription.setText(eventData.getLocationDescription());
 
-                tvOdometer.setText(eventData.getOdometerReading());
+                odometerReading = Double.valueOf(eventData.getOdometerReading()); // odometer from can bus is in km
+
+                unit = "Kms";
+                if (Utility._appSetting.getUnit() == 2) {
+                    odometerReading = odometerReading * .62137d;
+                    unit = "Miles";
+                }
+
+                tvOdometer.setText(String.format("%.0f", odometerReading));
                 tvEngineHours.setText(eventData.getEngineHour());
 
             } else {

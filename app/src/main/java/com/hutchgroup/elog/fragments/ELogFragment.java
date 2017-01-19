@@ -1606,6 +1606,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 }
 
                 tvVehicleMiles.setText(String.format("%.0f", odometerReading) + "/" + String.format("%.1f", Double.valueOf(CanMessages.EngineHours)));
+
                 try {
                     if (!CanMessages.RPM.equals("0")) {
                         String accumulatedVehicleMiles = String.format("%.0f", (odometerReading - odometerReadingSincePowerOn));

@@ -274,7 +274,14 @@ public class NewInspectionFragment extends Fragment implements View.OnClickListe
             latitude = Utility.currentLocation.getLatitude();
             longitude = Utility.currentLocation.getLongitude();
             //tvLocation.setText(Utility.currentLocation.getLocationDescription());
-            tvOdometer.setText(CanMessages.OdometerReading);
+            double odometerReading = Double.valueOf(CanMessages.OdometerReading);
+            String unit = "Kms";
+            if (Utility._appSetting.getUnit() == 2) {
+                odometerReading = odometerReading * .62137d;
+                unit = "Miles";
+            }
+
+            tvOdometer.setText(String.format("%.0f", odometerReading));
             String plateNo = Utility.PlateNo == null || Utility.PlateNo.isEmpty() ? "" : " (" + Utility.PlateNo + ")";
             edTruckNum.setText(Utility.UnitNo + plateNo);
             edTrailerNum.setText(Utility.TrailerNumber);
@@ -287,7 +294,15 @@ public class NewInspectionFragment extends Fragment implements View.OnClickListe
             String tripDate = Utility.convertDate(bean.getInspectionDateTime(), format);
             tvDateTime.setText(tripDate);
             tvLocation.setText(bean.getLocation());
-            tvOdometer.setText(bean.getOdometerReading());
+            double odometerReading = Double.valueOf(bean.getOdometerReading());
+            String unit = "Kms";
+            if (Utility._appSetting.getUnit() == 2) {
+                odometerReading = odometerReading * .62137d;
+                unit = "Miles";
+            }
+
+            tvOdometer.setText(String.format("%.0f", odometerReading));
+
             edTruckNum.setText(bean.getTruckNumber());
             edTrailerNum.setText(bean.getTrailerNumber());
             edComments.setText(bean.getComments());

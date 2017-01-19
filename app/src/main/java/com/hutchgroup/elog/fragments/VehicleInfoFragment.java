@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
+import android.renderscript.Double2;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,6 +89,29 @@ public class VehicleInfoFragment extends Fragment {
     private static final String DEGREE = " \u00b0F";
 
     String hasNull(String value, String unit) {
+
+        if (Utility._appSetting.getUnit() == 2) {
+            switch (unit) {
+                case " Kms":
+                    value = value.equals("0") ? "N/A" : (String.format("%.0f", Double.parseDouble(value) * .62137d) + " Miles");
+                    break;
+                case " Litres":
+                    value = value.equals("0") ? "N/A" : (String.format("%.0f", Double.parseDouble(value) * .2642d) + " Gallons");
+                    break;
+                case " Km/h":
+                    value = value.equals("0") ? "N/A" : (String.format("%.0f", Double.parseDouble(value) * .62137d) + " Miles/h");
+                    break;
+                default:
+                    value = value.equals("0") ? "N/A" : (value + " " + unit);
+                    break;
+            }
+        } else {
+            if (unit.equals(" ° F")) {
+                double temp = ((Double.parseDouble(value) - 32) * 5) / 9;
+                value = value.equals("0") ? "N/A" : (String.format("%.0f", temp) + " ° C");
+            } else
+                value = value.equals("0") ? "N/A" : (value + " " + unit);
+        }
         return value.equals("0") ? "N/A" : (value + " " + unit);
     }
 
@@ -105,14 +129,14 @@ public class VehicleInfoFragment extends Fragment {
 
         tvOdometerReading.setText(hasNull(obj.getOdometerReading(), " Kms"));
         tvEngineHours.setText(hasNull(obj.getEngineHour(), " Hrs"));
-        tvFuelUsed.setText(hasNull(obj.getFuelUsed(), " Ltrs."));
+        tvFuelUsed.setText(hasNull(obj.getFuelUsed(), " Litres"));
         tvCoolantLevel.setText(hasNull(obj.getCoolantLevel(), " %"));
         tvRPM.setText(hasNull(obj.getRPM(), ""));
         tvBoost.setText(hasNull(obj.getBoost(), " Psi"));
 
         tvFuelLevel.setText(hasNull(obj.getFuelLevel() + "", " %"));
         tvEngineOilLevel.setText(hasNull(obj.getEngineOilLevel(), " %"));
-        tvCoolantTemperature.setText(hasNull(obj.getCoolantTemperature(), DEGREE));
+        tvCoolantTemperature.setText(hasNull(obj.getCoolantTemperature(), " ° F"));
 
         tvEngineLoad.setText(hasNull(obj.getEngineLoad(), ""));
         tvLowWasherFluidLevel.setText(hasNull(obj.getWasherFluidLevel(), " %"));
@@ -124,13 +148,13 @@ public class VehicleInfoFragment extends Fragment {
 
         // below fields need to be added in the web and android database and web service need to be created
         tvFuelPressure.setText(hasNull(obj.getFuelPressure(), " Psi"));
-        tvAirInletTemperature.setText(hasNull(obj.getAirInletTemperature(), DEGREE));
+        tvAirInletTemperature.setText(hasNull(obj.getAirInletTemperature(), " ° F"));
         tvBarometricPressure.setText(hasNull(obj.getBarometricPressure(), " Psi"));
         tvEngineOilPressure.setText(hasNull(obj.getEngineOilPressure(), " Psi"));
 
         tvFuelEconomy.setText(hasNull(obj.getAverage(), " KM/L"));
         tvBatteryVoltage.setText(hasNull(obj.getBatteryVoltage(), " V"));
-        tvPTOFuelUsed.setText(hasNull(obj.getPTOFuelUsed(), " Ltrs."));
+        tvPTOFuelUsed.setText(hasNull(obj.getPTOFuelUsed(), " Litres"));
         tvCruiseSetSpeed.setText(hasNull(obj.getCruiseSpeed(), " Km/h"));
         tvBrakeApplicationCount.setText(hasNull(obj.getBrakeApplication() + "", ""));
         tvMaxRoadSpeed.setText(hasNull(obj.getMaxRoadSpeed(), " Km/h"));
