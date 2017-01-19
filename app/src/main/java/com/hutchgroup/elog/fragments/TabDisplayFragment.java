@@ -119,9 +119,11 @@ public class TabDisplayFragment extends Fragment implements View.OnClickListener
 
             rbImperial = (RadioButton) view.findViewById(R.id.rbImperial);
             rbImperial.setOnCheckedChangeListener(this);
+            rbImperial.setChecked(Utility._appSetting.getUnit() == 2);
 
             rbMetric = (RadioButton) view.findViewById(R.id.rbMetric);
             rbMetric.setOnCheckedChangeListener(this);
+            rbMetric.setChecked(Utility._appSetting.getUnit() == 1);
 
             rbAuto = (RadioButton) view.findViewById(R.id.rbAuto);
             rbAuto.setOnCheckedChangeListener(this);
@@ -299,12 +301,16 @@ public class TabDisplayFragment extends Fragment implements View.OnClickListener
         try {
             switch (buttonView.getId()) {
                 case R.id.rbMetric:
-                    Utility._appSetting.setUnit(1);
-                    SettingsDB.CreateSettings();
+                    if (isChecked) {
+                        Utility._appSetting.setUnit(1);
+                        SettingsDB.CreateSettings();
+                    }
                     break;
                 case R.id.rbImperial:
-                    Utility._appSetting.setUnit(2);
-                    SettingsDB.CreateSettings();
+                    if (isChecked) {
+                        Utility._appSetting.setUnit(2);
+                        SettingsDB.CreateSettings();
+                    }
                     break;
                 case R.id.rbPortrait:
                     //not support to change orientation for phone
