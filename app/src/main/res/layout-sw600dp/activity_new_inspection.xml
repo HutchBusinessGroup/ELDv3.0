@@ -1,0 +1,453 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/GreyLight"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:visibility="gone">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/fab_size">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_percent_48"
+                android:background="@color/light_blue"
+                android:gravity="center|bottom">
+
+                <ImageView
+                    android:layout_width="@dimen/height_percent_18"
+                    android:layout_height="@dimen/height_percent_18"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/height_percent_6"
+                    android:background="@drawable/circle_button_white"
+                    android:padding="@dimen/height_percent_3"
+                    android:src="@drawable/ic_drawer_dvir" />
+
+                <TextView
+                    android:id="@+id/tvDateTime"
+                    style="@style/DriverProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="34dp"
+                    android:layout_weight="1"
+                    android:text="03/08/2016" />
+
+                <TextView
+                    android:id="@+id/tvLocation"
+                    style="@style/DriverProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="58dp"
+                    android:layout_weight="1"
+                    android:text="123, Street Name, City, State" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-42dp"
+                android:background="@drawable/layout_bg_round_nine"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:id="@+id/tvDVIRTypeLabel"
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dvir_type" />
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    style="@style/BigTextLabelStyle"
+                    android:layout_height="44dp"
+                    android:orientation="horizontal" android:id="@+id/rbgType">
+
+                    <RadioButton android:id="@+id/rbPre"
+                        android:layout_width="92dp"
+                        android:layout_height="42dp"
+                        android:gravity="center"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/pre_radio_background"
+                        style="@style/BigTextLabelStyle.Margin0"
+                        android:textColor="@drawable/radio_text_color"
+                        android:text="Pre" />
+
+                    <RadioButton android:id="@+id/rbInter"
+                        android:layout_width="92dp"
+                        android:layout_height="42dp"
+                        android:gravity="center"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/inter_radio_background"
+                        style="@style/BigTextLabelStyle.Margin0"
+                        android:textColor="@drawable/radio_text_color"
+                        android:text="Inter" />
+
+                    <RadioButton android:id="@+id/rbPost"
+                        android:layout_width="92dp"
+                        android:layout_height="42dp"
+                        android:gravity="center"
+                        android:button="@android:color/transparent"
+                        android:background="@drawable/post_radio_background"
+                        style="@style/BigTextLabelStyle.Margin0"
+                        android:textColor="@drawable/radio_text_color"
+                        android:text="Post" />
+
+                </RadioGroup>
+
+
+                <View
+                    style="@style/SettingSeprator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginStart="0dp"></View>
+
+                <TextView
+                    android:id="@+id/tvOdometerLabel"
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/odometer" />
+
+
+                <TextView
+                    android:id="@+id/tvOdometer"
+                    style="@style/BigTextLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true"
+                    android:text="" />
+
+                <View
+                    style="@style/SettingSeprator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginStart="0dp"></View>
+
+                <TextView
+                    android:id="@+id/tvTruckNumberLabel"
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/truck_number" />
+
+                <EditText
+                    android:id="@+id/edTruckValue"
+                    style="@style/BigTextLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
+                    android:singleLine="true"
+                    android:text="" />
+
+                <View
+                    style="@style/SettingSeprator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginStart="0dp"></View>
+
+                <TextView
+                    android:id="@+id/tvTrailerLabel"
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trailer" />
+
+
+                <EditText
+                    android:id="@+id/edTrailerValue"
+                    style="@style/BigTextLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
+                    android:singleLine="true"
+                    android:text="" />
+
+                <View
+                    style="@style/SettingSeprator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginStart="0dp"></View>
+
+
+                <TextView
+                    android:id="@+id/tvCommentsLabel"
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comments" />
+
+                <EditText
+                    android:id="@+id/edComments"
+                    style="@style/BigTextLabelStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/instruction_text"
+                    android:singleLine="true"
+                    android:textColorHint="@color/ccc" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/layout_bg_round_nine"
+                android:orientation="vertical"
+                android:paddingBottom="24dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:paddingTop="8dp">
+
+
+                <CheckBox android:id="@+id/switchDefect"
+                    style="@style/BigTextLabelStyle.Margin0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:button="@drawable/checkbox_background"
+                    android:paddingLeft="6dp"
+                    android:text="@string/defect"
+                    android:textColor="@drawable/checkbox_text_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <CheckBox android:id="@+id/switchDefectRepaired"
+                        style="@style/BigTextLabelStyle.Margin0"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:button="@drawable/checkbox_background"
+                        android:paddingLeft="10dp"
+                        android:text="@string/defect_repaired"
+                        android:textColor="@drawable/checkbox_text_color" android:visibility="gone" />
+
+                    <CheckBox android:id="@+id/switchSafeToDrive"
+                        style="@style/BigTextLabelStyle.Margin0"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:button="@drawable/checkbox_background"
+                        android:paddingLeft="10dp"
+                        android:text="@string/safe_to_drive"
+                        android:textColor="@drawable/checkbox_text_color" android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp">
+
+                    <Button
+                        android:id="@+id/butAddDefect"
+                        style="@style/InspectionButtonTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/falt_buttons"
+                        android:drawableLeft="@drawable/ic_report_problem_white_24dp"
+                        android:text="Add Defects"
+                        android:visibility="gone"></Button>
+
+                    <Button
+                        android:id="@+id/butAddPicture"
+                        style="@style/InspectionButtonTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/falt_buttons"
+                        android:drawableLeft="@drawable/ic_camera_alt_white_24dp"
+                        android:text="Add Image"
+                        android:visibility="gone"></Button>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/tableDefects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:alignmentMode="alignBounds"
+                android:background="@drawable/layout_bg_round_nine"
+                android:clickable="true"
+                android:columnOrderPreserved="false"
+                android:focusableInTouchMode="true"
+                android:padding="24dp"
+                android:shrinkColumns="*"
+                android:stretchColumns="*"
+                android:stretchMode="columnWidth"
+                android:useDefaultMargins="true">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/tvDefectedItemsLabel"
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_span="2"
+                        android:text="@string/defect_item"
+                        android:visibility="gone" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvDefectedItems"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_span="2"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:text="@string/safe_to_drive"
+                        android:visibility="gone" />
+                </TableRow>
+
+            </TableLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/layout_bg_round_nine"
+                android:padding="24dp">
+
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"></LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/butBack"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="@string/button_back"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/butCertify"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:text="@string/button_certify" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/butClose"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_bg"
+            android:text="@string/button_close"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/fabInspectionCertify"
+        android:layout_width="@dimen/fab_size"
+        android:layout_height="@dimen/fab_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:layout_marginRight="@dimen/fab_margin_right"
+        android:background="@drawable/custom_fab_button_bg"
+        android:src="@drawable/ic_fab_certify" />
+</RelativeLayout>
+

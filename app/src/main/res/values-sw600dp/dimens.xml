@@ -421,7 +421,7 @@
     <dimen name="text_size_11">14sp</dimen>
     <dimen name="text_size_12">14sp</dimen>
     <dimen name="text_size_13">16sp</dimen>
-    <dimen name="text_size_14">18sp</dimen>
+    <dimen name="text_size_14">16sp</dimen>
     <dimen name="text_val_size">18sp</dimen>
     <dimen name="button_text_size">20sp</dimen>
     <dimen name="text_lab_size">14sp</dimen>
@@ -495,5 +495,14 @@
     <dimen name="tab_text_size">16sp</dimen>
     <dimen name="inspect_log_lab_size">13sp</dimen>
     <dimen name="inspect_log_seprator_margin">20dp</dimen>
+
+
+    <dimen name="red_clock_size">@dimen/width_percent_16</dimen>
+    <dimen name="blue_clock_size">@dimen/width_percent_13</dimen>
+    <dimen name="green_clock_size">@dimen/width_percent_9</dimen>
+    <dimen name="yellow_clock_size">@dimen/width_percent_5</dimen>
+
+    <dimen name="inside_clock_size">@dimen/width_percent_13</dimen>
+    <dimen name="remaining_time_height">@dimen/width_percent_4</dimen>
 
 </resources>
