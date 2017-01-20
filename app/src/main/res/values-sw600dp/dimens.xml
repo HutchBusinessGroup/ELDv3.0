@@ -417,7 +417,7 @@
     <dimen name="font_size_20">24sp</dimen>
     <dimen name="font_size_24">28sp</dimen>
 
-    <dimen name="text_size_1">20sp</dimen>
+    <dimen name="text_size_1">18sp</dimen>
     <dimen name="text_size_11">14sp</dimen>
     <dimen name="text_size_12">14sp</dimen>
     <dimen name="text_size_13">16sp</dimen>
@@ -472,7 +472,7 @@
     <dimen name="tpms_border_width">1dp</dimen>
     <dimen name="tpms_border_width_half">1dp</dimen>
     <dimen name="tpms_tyre_margin_left_right_1">20dp</dimen>
-    <dimen name="footer_button_height">72dp</dimen>
+    <dimen name="footer_button_height">64dp</dimen>
 
     <dimen name="login_button_height">64dp</dimen>
 
@@ -482,8 +482,8 @@
     <dimen name="width_48">72dp</dimen>
     <dimen name="text_size_15">18sp</dimen>
 
-    <dimen name="annotation_string_height">64dp</dimen>
-    <dimen name="annotation_textsize">20sp</dimen>
+    <dimen name="annotation_string_height">48dp</dimen>
+    <dimen name="annotation_textsize">18sp</dimen>
 
     <dimen name="layoutbg_padding_left">20dp</dimen>
     <dimen name="layoutbg_padding_top">12dp</dimen>

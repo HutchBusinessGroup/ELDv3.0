@@ -17,17 +17,18 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/height_percent_48"
+                android:layout_height="@dimen/height_percent_35"
                 android:background="@color/light_blue"
                 android:gravity="center|bottom">
 
                 <ImageView
-                    android:layout_width="@dimen/height_percent_18"
-                    android:layout_height="@dimen/height_percent_18"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/height_percent_6"
-                    android:padding="@dimen/height_percent_3"
+                    android:layout_width="@dimen/height_percent_16"
+                    android:layout_height="@dimen/height_percent_16"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/height_percent_4"
+                    android:layout_marginTop="-12dp"
                     android:background="@drawable/blue_circle_bg"
+                    android:padding="@dimen/height_percent_3"
                     android:src="@drawable/ic_drawer_driver_profile" />
 
                 <TextView
@@ -35,9 +36,9 @@
                     style="@style/DriverProfileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="34dp"
-                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/height_percent_24"
+                    android:layout_marginTop="@dimen/height_percent_10"
+                    android:textStyle="bold"
                     android:text="Deepak Sharma" />
 
                 <TextView
@@ -45,9 +46,10 @@
                     style="@style/DriverProfileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="58dp"
-                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/height_percent_24"
+                    android:layout_marginTop="@dimen/height_percent_14"
+                    android:paddingTop="4dp"
+                    android:textStyle="italic"
                     android:text="deepak.sharma@kmaxsystems.com" />
             </FrameLayout>
 
@@ -55,49 +57,54 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-24dp"
                 android:background="@drawable/layout_bg_round_nine"
                 android:orientation="vertical"
-                android:paddingBottom="32dp"
+                android:paddingBottom="24dp"
                 android:paddingEnd="24dp"
                 android:paddingStart="24dp"
-                android:layout_marginTop="-42dp"
-                android:paddingTop="24dp">
+                android:paddingTop="16dp">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                <TextView
-                    style="@style/SettingsLabelStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="User Name" /><TextView
-                    style="@style/SettingsLabelStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Mobile No" />
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="User Name" />
+
+                    <TextView
+                        style="@style/SettingsLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mobile No" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tvUserName"
-                    style="@style/BigTextLabelStyle"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="deepak" />
+
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        style="@style/BigTextLabelStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="deepak" />
 
                     <TextView
                         android:id="@+id/tvMobileNo"
                         style="@style/BigTextLabelStyle"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
 
 
                         android:text="9023875659" />
@@ -160,6 +167,7 @@
                     style="@style/SettingSeprator.MarginLeft0"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"></View>
+
                 <LinearLayout
                     android:id="@+id/tableRow5"
                     android:layout_width="match_parent"
@@ -210,17 +218,19 @@
 
 
             </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="@drawable/layout_bg_round_nine"
-                    android:orientation="vertical"
-                    android:paddingBottom="32dp"
-                    android:paddingEnd="24dp"
-                    android:paddingStart="24dp"
-                    android:paddingTop="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/layout_bg_round_nine"
+                android:orientation="vertical"
+                android:paddingBottom="24dp"
+                android:paddingEnd="24dp"
+                android:paddingStart="24dp"
+                android:paddingTop="16dp">
+
                 <TextView
                     style="@style/SettingsLabelStyle"
                     android:layout_width="match_parent"
@@ -241,6 +251,7 @@
                     style="@style/SettingSeprator.MarginLeft0"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"></View>
+
                 <TextView
                     style="@style/SettingsLabelStyle"
                     android:layout_width="match_parent"

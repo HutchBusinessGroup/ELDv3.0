@@ -34,17 +34,19 @@
             android:paddingBottom="@dimen/fab_size">
 
 
+
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/height_percent_48"
+                android:layout_height="@dimen/height_percent_35"
                 android:background="@color/light_blue"
                 android:gravity="center|bottom">
 
                 <ImageView
-                    android:layout_width="@dimen/height_percent_18"
-                    android:layout_height="@dimen/height_percent_18"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/height_percent_6"
+                    android:layout_width="@dimen/height_percent_16"
+                    android:layout_height="@dimen/height_percent_16"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/height_percent_4"
+                    android:layout_marginTop="-12dp"
                     android:background="@drawable/circle_button_white"
                     android:padding="@dimen/height_percent_3"
                     android:src="@drawable/ic_drawer_dvir" />
@@ -54,26 +56,28 @@
                     style="@style/DriverProfileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="34dp"
-                    android:layout_weight="1"
-                    android:text="03/08/2016" />
+                    android:layout_marginLeft="@dimen/height_percent_24"
+                    android:layout_marginTop="@dimen/height_percent_10"
+                    android:text="03/08/2016"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvLocation"
                     style="@style/DriverProfileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="58dp"
-                    android:layout_weight="1"
-                    android:text="123, Street Name, City, State" />
+                    android:layout_marginLeft="@dimen/height_percent_24"
+                    android:layout_marginTop="@dimen/height_percent_14"
+                    android:paddingTop="4dp"
+                    android:text="123, Street Name, City, State"
+                    android:textStyle="italic" />
+
             </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-42dp"
+                android:layout_marginTop="-24dp"
                 android:background="@drawable/layout_bg_round_nine"
                 android:orientation="vertical"
                 android:padding="24dp">

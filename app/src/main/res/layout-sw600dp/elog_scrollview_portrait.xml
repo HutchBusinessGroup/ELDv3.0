@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parentView"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ElogActivity">
 
@@ -56,9 +56,9 @@
                         android:id="@+id/tvRemaingTime"
                         style="@style/CircleTextStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/remaining_time_height"
+                        android:layout_height="28dp"
+                        android:textSize="20sp"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="N/A"
                         android:visibility="visible" />
@@ -68,7 +68,7 @@
                         style="@style/DutyTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/duty_status_height"
-                        android:background="@drawable/home_duty_status"
+                        android:background="@drawable/duty_status_button_bg"
                         android:gravity="top|center_horizontal"
                         android:paddingTop="6dp"
                         android:text="Off Duty">
@@ -176,7 +176,7 @@
                     android:textSize="16sp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvTotalDistance"
-                    android:text="Current Trip" />
+                    android:text="Trip" />
 
                 <TextView
                     android:id="@+id/tvCurrentTrip"
@@ -316,7 +316,7 @@
                     android:layout_below="@+id/tvWorkShift"
                     android:text="@string/canada_rule_2"
                     android:textSize="16sp"
-                    android:textColor="#d5e625" />
+                    android:textColor="#aff00f" />
 
                 <TextView
                     android:id="@+id/tvCanadaRuleValue"
@@ -329,7 +329,7 @@
                     android:gravity="right"
                     android:textSize="16sp"
                     android:text="88:88"
-                    android:textColor="#d5e625" />
+                    android:textColor="#aff00f" />
 
                 <TextView
                     android:id="@+id/tvUSRuleValue"
@@ -362,7 +362,7 @@
 
     <LinearLayout
             android:layout_width="584dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp"
             android:layout_height="wrap_content"
@@ -439,7 +439,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/layout_bg_round_nine"
             android:padding="12dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
             android:visibility="visible">
 
 

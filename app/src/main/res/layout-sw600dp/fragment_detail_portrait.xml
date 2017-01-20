@@ -20,10 +20,11 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/layout_bg_round_nine"
                 android:orientation="vertical"
+                android:layout_margin="1dp"
                 android:paddingBottom="6dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="2dp">
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="5dp">
 
                 <TabHost
                     android:id="@+id/tabHost"
@@ -690,40 +691,43 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="600dp"
+                android:layout_width="584dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp">
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/imgStatus"
-                    android:layout_width="50dp"
-                    android:layout_height="164dp"
+                    android:layout_width="40dp"
+                    android:layout_height="147dp"
                     android:background="@drawable/elog_bg_p_status" />
 
                 <ImageView
                     android:id="@+id/imgDutyStatus_portrait"
-                    android:layout_width="480dp"
-                    android:layout_height="164dp"
+                    android:layout_width="504dp"
+                    android:layout_weight="1"
+                    android:layout_height="147dp"
                     android:background="@drawable/elog_bg_p_grid"
                     android:scaleType="fitXY" />
 
 
                 <LinearLayout
-                    android:layout_width="50dp"
-                    android:layout_height="164dp"
+                    android:layout_width="41dp"
+                    android:layout_height="147dp"
                     android:background="@drawable/elog_bg_p_total"
                     android:gravity="center_horizontal"
                     android:orientation="vertical"
-                    android:paddingTop="44dp">
+                    android:paddingTop="32dp">
 
                     <TextView
                         android:id="@+id/tvOffDutyTime"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="28dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
                         android:gravity="center"
                         android:text="N/A"
                         android:textColor="#262d33" />
@@ -732,7 +736,9 @@
                     <TextView
                         android:id="@+id/tvSleeperTime"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="28dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
                         android:gravity="center"
                         android:text="N/A"
                         android:textColor="#262d33" />
@@ -741,7 +747,9 @@
                     <TextView
                         android:id="@+id/tvDrivingTime"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="28dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
                         android:gravity="center"
                         android:text="N/A"
                         android:textColor="#262d33" />
@@ -750,7 +758,9 @@
                     <TextView
                         android:id="@+id/tvOnDutyTime"
                         android:layout_width="wrap_content"
-                        android:layout_height="30dp"
+                        android:layout_height="28dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
                         android:gravity="center"
                         android:text="N/A"
                         android:textColor="#262d33" />
