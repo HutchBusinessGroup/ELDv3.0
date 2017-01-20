@@ -92,7 +92,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="92dp"
+            android:layout_height="112dp"
             android:padding="16dp">
 
             <ImageView
@@ -116,6 +116,7 @@
                     style="@style/BlockMainTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:gravity="bottom"
                     android:text="Unit: 59684" />
 
                 <TextView
@@ -135,7 +136,7 @@
             <LinearLayout
                 style="@style/BlockCaption.Main"
                 android:layout_width="match_parent"
-                android:layout_height="24dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/textView"
@@ -144,7 +145,7 @@
                 <TextView
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:text="VIN: " />
 
                 <TextView
@@ -157,71 +158,78 @@
                 <TextView
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:text=" | " />
 
                 <TextView
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:text="Engine No.: " />
 
                 <TextView
                     android:id="@+id/tvEngineNo"
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:text="N/A" />
 
                 <TextView
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:text=" | Engine Power: " />
 
                 <TextView
                     android:id="@+id/tvEnginePower"
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:text="N/A" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/BlockCaption.Main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
 
                 <TextView
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:text="Plate: " />
 
                 <TextView
                     android:id="@+id/tvPlateNo"
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:text="N/A" />
 
-                <!--   <TextView
+                <TextView
                        style="@style/BlockCaptionVal"
                        android:layout_width="wrap_content"
-                       android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                        android:text=" | " />
 
                    <TextView
                        style="@style/BlockCaptionVal"
                        android:layout_width="wrap_content"
-                       android:layout_height="18dp"
-                       android:text="CVIP Due: " />-->
-                <TextView
-                    style="@style/BlockCaptionVal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="18dp"
-                    android:text=" | " />
+                    android:layout_height="wrap_content"
+                       android:text="CVIP Due: " />
 
                 <TextView
                     android:id="@+id/tvDate"
                     style="@style/BlockCaptionVal"
                     android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_height="wrap_content"
                     android:text="N/A" />
+
             </LinearLayout>
 
         </RelativeLayout>
