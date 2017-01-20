@@ -1,1058 +1,1354 @@
 [
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_l_grid.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_l_grid.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_completed_failed.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_completed_failed.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\rpm_gauge.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\rpm_gauge.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\post_radio_btn.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\post_radio_btn.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_truck_trailer.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_truck_trailer.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_location_ballon_24.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_location_ballon_24.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_l_total.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_l_total.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_uncertified.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_uncertified.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_login_driver.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_login_driver.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_port.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_port.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_eld_ver.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_eld_ver.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_violation.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_violation.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_wifi_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_wifi_on.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_daliy_log_inspect.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_daliy_log_inspect.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_washer_level.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_washer_level.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\drawer_logo.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\drawer_logo.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\splash_screen_p.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\splash_screen_p.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_event_shipment_24.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_event_shipment_24.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_rpm.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_rpm.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_settings.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_settings.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_p_status.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_p_status.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_arrow_back_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_back_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\back_icon.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\back_icon.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_msg_read.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_msg_read.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flag_russia.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flag_russia.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_driver_24.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_driver_24.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_bluetooth.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_bluetooth.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_driver_active.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_driver_active.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_stay_current_portrait_black_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_stay_current_portrait_black_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_close_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_close_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_search_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_search_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\gauge_view.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\gauge_view.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_gps_off.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_gps_off.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_driver.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_driver.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\checkbox.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\checkbox.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_engine_oil.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_engine_oil.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_p_total.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_p_total.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_l_status.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_l_status.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_change_horiz.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_change_horiz.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_hard_braking.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_hard_braking.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\list_checkbox_unchecked.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\list_checkbox_unchecked.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_driving_hours_bg_red.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_driving_hours_bg_red.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_timeline.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_timeline.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\battery_voltage_gauge.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\battery_voltage_gauge.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_driving_hours_bg_red.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_driving_hours_bg_red.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_accounts_light.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_accounts_light.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\rpm_needle.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\rpm_needle.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_web_service_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_web_service_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\gauge_view.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\gauge_view.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_add_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_add_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_check_double_circle.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_check_double_circle.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_border_color_black_18dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_border_color_black_18dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_system.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_system.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_error_outline_red_36dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_error_outline_red_36dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_change.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_change.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_driver_switch.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_driver_switch.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_event_location_24.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_event_location_24.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_driver_active.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_driver_active.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\flag_bar_img_night.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\flag_bar_img_night.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\drawer_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\drawer_bg.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_login_user.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_login_user.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_undocking.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_undocking.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_battery_full.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_battery_full.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flag_japan.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flag_japan.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_add_white_36dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_add_white_36dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_driver_inactive.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_driver_inactive.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\flagbar_freeze_bg_night.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\flagbar_freeze_bg_night.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_diagnostic.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_diagnostic.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_orientation.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_orientation.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_tpsm.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_tpsm.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_action_driver_active.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_action_driver_active.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_line.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_line.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_assume.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_assume.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_logout.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_logout.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_message.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_message.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_canbus_connect.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_canbus_connect.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_certified.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_certified.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_certified.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_certified.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_font_size.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_font_size.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\throttle_gauge.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\throttle_gauge.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_error.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_error.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_uncertified_red.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_uncertified_red.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\layout_bg_nine.9.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\layout_bg_nine.9.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_track_normal.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_track_normal.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspector_flag_usa.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspector_flag_usa.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_android_ver.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_android_ver.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\orange_panel_bg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\orange_panel_bg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\flagbar_freeze_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\flagbar_freeze_bg.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_driver_active.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_driver_active.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_p_grid.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_p_grid.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\home_duty_status.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\home_duty_status.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_barometeric.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_barometeric.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_eld.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_eld.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_boost.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_boost.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_unchecked.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_unchecked.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_system_clock.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_system_clock.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\post_radio_btn.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\post_radio_btn.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_track_checked.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_track_checked.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_daliy_log.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_daliy_log.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_gps_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_gps_on.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_error_outline_red_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_error_outline_red_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_hos_violation.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_hos_violation.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\speed_guage.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\speed_guage.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_share_24.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_share_24.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_sync.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_sync.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_verified_user_black_36dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_verified_user_black_36dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_messages.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_messages.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_abs_powerunit_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_abs_powerunit_on.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_web_service_on.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_web_service_on.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_save.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_save.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_android_ver.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_android_ver.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\pre_radio_btn_slct.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\pre_radio_btn_slct.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_post.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_post.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_certify.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_certify.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_l_status.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_l_status.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\logo_white.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\logo_white.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_p_status.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_p_status.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_uncertify.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_uncertify.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_header_land.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_header_land.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit_axle_last.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit_axle_last.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\btn_dropdown_disabled.9.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\btn_dropdown_disabled.9.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_header_port.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_header_port.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_add_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_add_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\duty_status_land.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\duty_status_land.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_checked_hover.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_checked_hover.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\checkbox_check.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\checkbox_check.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_l_grid.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_l_grid.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\layout_bg_round_nine.9.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\layout_bg_round_nine.9.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_track_checked.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_track_checked.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_notification_error.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_notification_error.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_report_problem_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_report_problem_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_daliy_log_inspect_drawer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_daliy_log_inspect_drawer.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_system_clock.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_system_clock.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_time.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_time.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_password_visibility.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_password_visibility.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_logout.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_logout.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_land.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_land.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_check.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_check.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_back_relogin.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_back_relogin.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_check_double_circle.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_check_double_circle.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\odometer_bg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\odometer_bg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_network_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_network_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_log_action_bar_land.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_log_action_bar_land.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\hook_container.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\hook_container.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_done_all_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_done_all_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_location.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_location.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_freeze_diagnostic.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_freeze_diagnostic.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_bg_pattern.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_bg_pattern.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_change_rule.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_change_rule.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flag_russia.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flag_russia.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit_axle.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit_axle.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_send_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_send_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_skip.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_skip.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_stay_current_portrait_black_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_stay_current_portrait_black_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_mode_edit_white_18dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_mode_edit_white_18dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_assume.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_assume.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_system_update.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_system_update.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_switch_driver.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_switch_driver.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_diagnostic.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_diagnostic.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_back_relogin.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_back_relogin.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_header_port.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_header_port.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_remaining_time.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_remaining_time.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_track_normal.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_track_normal.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\coolant_gauge.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\coolant_gauge.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_account_box_black_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_account_box_black_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_checked.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_checked.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_time.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_time.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_timeline.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_timeline.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_location_ballon_24.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_location_ballon_24.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\splash_screen_l.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\splash_screen_l.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_msg_read.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_msg_read.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_gear_number.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_gear_number.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_back.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_back.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\login_back.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\login_back.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_system_tools.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_system_tools.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_front_plate.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_front_plate.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_malfunction.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_malfunction.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_l_status.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_l_status.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_p_grid.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_p_grid.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_list_trailer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_list_trailer.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\error_tire.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\error_tire.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\total_hours_land.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\total_hours_land.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_p_grid.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_p_grid.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\send_message_bg.9.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\send_message_bg.9.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\receive_message_bg.9.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\receive_message_bg.9.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\flagbar_freeze_bg_night.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\flagbar_freeze_bg_night.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_imei.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_imei.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_log_action_bar_land.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_log_action_bar_land.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\duty_status_port.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\duty_status_port.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_unchecked_hover.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_unchecked_hover.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\send_message_bg.9.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\send_message_bg.9.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_event_location_24.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_event_location_24.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_freeze_malfunction.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_freeze_malfunction.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_cruise_speed.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_cruise_speed.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\total_hours_port.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\total_hours_port.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_brake_count.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_brake_count.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_more_vert_white_48dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_more_vert_white_48dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\speedometer_needle_full.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\speedometer_needle_full.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flag_usa.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flag_usa.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_dvir_done.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_dvir_done.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\speedometer_gauge.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\speedometer_gauge.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_seatbelt_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_seatbelt_on.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\pre_radio_btn_slct.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\pre_radio_btn_slct.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_report_problem_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_report_problem_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_edit_request.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_edit_request.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_abs_trailer_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_abs_trailer_on.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_switch_driver_fab.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_switch_driver_fab.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_launcher.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\splash_screen_large.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\splash_screen_large.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_p_status.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_p_status.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_violation.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_violation.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_post.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_post.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_check.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_check.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_l_total.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_l_total.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_close_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_close_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_login_password.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_login_password.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_affects_battery.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_affects_battery.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_p_status.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_p_status.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_bluetooth.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_bluetooth.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_tpms.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_tpms.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_dvir_done.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_dvir_done.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_freeze_diagnostic.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_freeze_diagnostic.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_user.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_user.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_bluetooth.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_bluetooth.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_arrow_back_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_back_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\home_duty_status.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\home_duty_status.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_thumb_checked.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_thumb_checked.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_notification_gps.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_notification_gps.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_wifi_off.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_wifi_off.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_confirm.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_confirm.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\list_checkbox_checked.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\list_checkbox_checked.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flag_usa.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flag_usa.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_certified_logbook.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_certified_logbook.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_l_status.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_l_status.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_steering_wheel.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_steering_wheel.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inter_radio_btn.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inter_radio_btn.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inter_radio_btn.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inter_radio_btn.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_dvir_pending.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_dvir_pending.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\battery_voltage_gauge.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\battery_voltage_gauge.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_user.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_user.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\battery_volt_needle.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\battery_volt_needle.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_arrow_forward_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_forward_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_add_a_photo_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_add_a_photo_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\back_icon.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\back_icon.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_location.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_location.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_thumb_normal.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_thumb_normal.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_notification_error.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_notification_error.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_add_a_photo_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_add_a_photo_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_verified_user_black_36dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_verified_user_black_36dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspector_flag_usa.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspector_flag_usa.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_caption.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_caption.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_tpms.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_tpms.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_network_off.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_network_off.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_add_white_48dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_add_white_48dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_error_outline_black_36dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_error_outline_black_36dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\hook_container_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\hook_container_bg.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_accounts_light.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_accounts_light.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_trailer_header.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_trailer_header.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_camera_alt_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_camera_alt_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_daliy_log_inspect.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_daliy_log_inspect.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_non_authenticated_records.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_non_authenticated_records.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_visibility_black_18dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_visibility_black_18dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\blue_panel_bg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\blue_panel_bg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\speed_guage.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\speed_guage.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\login_logo.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\login_logo.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\social_share.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\social_share.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_dvir.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_dvir.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\rpm_gauge.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\rpm_gauge.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\drawer_bg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\drawer_bg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\needle.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\needle.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tyre_jointer.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tyre_jointer.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_p_total.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_p_total.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_canbus_connect.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_canbus_connect.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_message.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_message.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_driver_active.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_driver_active.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_shortrange_network.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_shortrange_network.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\splash_screen_p.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\splash_screen_p.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_p_total.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_p_total.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_undocking.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_undocking.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_imei.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_imei.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_actionbar_inspector.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_actionbar_inspector.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_checked_hover.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_checked_hover.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_uncertify.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_uncertify.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\unhook_container.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\unhook_container.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_notification_msg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_notification_msg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tyre_super_single.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tyre_super_single.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_warning_36dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_warning_36dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\warning_tire.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\warning_tire.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_uncertified.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_uncertified.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\av_pause.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\av_pause.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_logout.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_logout.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_orientation.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_orientation.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_l_grid.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_l_grid.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_search_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_search_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_thumb_normal.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_thumb_normal.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_back.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_back.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_check_double.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_check_double.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_done_all_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_done_all_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_bg_pattern.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_bg_pattern.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_speed_violation.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_speed_violation.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_uncertified_red.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_uncertified_red.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_event_shipment_24.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_event_shipment_24.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_logout.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_logout.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_air_suspension.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_air_suspension.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_visibility_black_18dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_visibility_black_18dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_odometer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_odometer.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_line.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_line.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_edit_request.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_edit_request.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_border_color_white_18dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_border_color_white_18dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_warning_36dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_warning_36dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_brightness.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_brightness.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_water_in_fuel_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_water_in_fuel_on.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_add_white_48dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_add_white_48dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_idle_fuel_used.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_idle_fuel_used.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_error_outline_red_36dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_error_outline_red_36dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_switch_driver_fab.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_switch_driver_fab.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_notification_gps.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_notification_gps.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_engine_rated_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_engine_rated_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_confirm.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_confirm.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_more.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_more.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit_axle_last.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit_axle_last.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_messages.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_messages.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_l_status.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_l_status.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_password_visibility.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_password_visibility.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\warning_tire.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\warning_tire.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_gps_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_gps_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\dark_panel_bg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\dark_panel_bg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_coolant_temp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_coolant_temp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_certify.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_certify.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_web_service_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_web_service_on.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\speedometer_needle_full.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\speedometer_needle_full.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_sharp_turn_right.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_sharp_turn_right.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_p_total.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_p_total.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_certify.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_certify.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_tpms.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_tpms.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\write_message_bg.9.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\write_message_bg.9.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_p_status.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_p_status.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_dvir.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_dvir.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_driver_switch.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_driver_switch.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_engine_load.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_engine_load.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\splash_screen_l.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\splash_screen_l.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_system_tools.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_system_tools.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_create_event.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_create_event.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_transmission_oil.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_transmission_oil.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_wifi_on.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_wifi_on.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_change_horiz.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_change_horiz.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_freeze_lights_off.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_freeze_lights_off.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_p_grid.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_p_grid.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_p_grid.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_p_grid.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_login_driver.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_login_driver.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_l_status.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_l_status.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flag_china.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flag_china.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\gray_tire.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\gray_tire.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_credit_card_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_credit_card_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\dark_panel_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\dark_panel_bg.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\social_share.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\social_share.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\hook.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\hook.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\layout_bg_round_nine.9.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\layout_bg_round_nine.9.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_camera_alt_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_camera_alt_white_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_network_on.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_network_on.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\splash_screen_large.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\splash_screen_large.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\duty_status_land.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\duty_status_land.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_pto_fuel_used.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_pto_fuel_used.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_p_status.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_p_status.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_epf_fluid_level.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_epf_fluid_level.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_visibility.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_visibility.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_battery_voltage.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_battery_voltage.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_volume.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_volume.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_more_vert_white_48dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_more_vert_white_48dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_port.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_port.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\checkbox.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\checkbox.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_certify.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_certify.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_change.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_change.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_messages.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_messages.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\btn_dropdown_disabled.9.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\btn_dropdown_disabled.9.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_driving_hours_bg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_driving_hours_bg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\blue_panel_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\blue_panel_bg.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_share_24.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_share_24.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_coolant_level.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_coolant_level.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_arrow_back_black_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_back_black_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_trailer_axle.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_trailer_axle.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_unchecked_hover.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_unchecked_hover.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_land.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_land.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\btn_dropdown_normal.9.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\btn_dropdown_normal.9.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_vehicleinfo.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_vehicleinfo.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_add.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_add.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_idleing.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_idleing.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_rule_book.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_rule_book.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_driving.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_driving.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_forward.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_forward.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_plate_center.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_plate_center.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\flagbar_freeze_bg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\flagbar_freeze_bg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_water_in_fuel_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_water_in_fuel_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_account_circle_green_48dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_account_circle_green_48dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\login_logo.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\login_logo.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tyre_super_single.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tyre_super_single.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_rule_book.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_rule_book.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_cal_white_24.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_cal_white_24.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_sharp_turn_left.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_sharp_turn_left.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_uncertify.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_uncertify.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_cruise_duration.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_cruise_duration.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_log_action_bar.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_log_action_bar.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_skip.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_skip.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_battery.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_battery.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\switch_thumb_checked.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\switch_thumb_checked.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_login_password.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_login_password.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_certified_logbook.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_certified_logbook.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_radio_button_unchecked_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_radio_button_unchecked_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_action_driver_active.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_action_driver_active.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\total_hours_land.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\total_hours_land.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_hard_acceleration.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_hard_acceleration.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_msg_delivered.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_msg_delivered.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_driving_hours_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_driving_hours_bg.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_unidentify.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_unidentify.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flag_china.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flag_china.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\login_back.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\login_back.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_sync.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_sync.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_calendar_24.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_calendar_24.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_account_box_black_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_account_box_black_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_driver_24.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_driver_24.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_eld_ver.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_eld_ver.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_shortrange_network.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_shortrange_network.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\engine_hours_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\engine_hours_bg.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_l_total.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_l_total.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_error_outline_red_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_error_outline_red_24dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_reject.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_reject.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\receive_message_bg.9.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\receive_message_bg.9.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_driver_profile.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_driver_profile.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_volume.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_volume.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\engine_hours_bg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\engine_hours_bg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_steering_wheel.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_steering_wheel.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_send_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_send_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_caption.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_caption.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspector_flag_canada.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspector_flag_canada.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_search.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_search.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_switch_driver.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_switch_driver.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\odometer_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\odometer_bg.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_violation_history.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_violation_history.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit_axle.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit_axle.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_close.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_close.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\post_radio_btn_slct.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\post_radio_btn_slct.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inter_radio_btn_slct.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inter_radio_btn_slct.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_seatbelt_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_seatbelt_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\gray_tire.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\gray_tire.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_certify.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_certify.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_tpsm.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_tpsm.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_settings.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_settings.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_daliy_log_inspect_drawer.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_daliy_log_inspect_drawer.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_cruise_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_cruise_on.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_inspector_mode.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_inspector_mode.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_trailer_unhook.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_trailer_unhook.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_certify.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_certify.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_power_unit_with_trailer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_power_unit_with_trailer.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_canbus_disconnect.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_canbus_disconnect.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_uncertify.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_uncertify.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\coolant_gauge.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\coolant_gauge.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_l_total.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_l_total.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_p_total.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_p_total.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_close.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_close.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\av_pause.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\av_pause.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_calendar_24.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_calendar_24.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_remaining_time.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_remaining_time.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\flag_bar_img_night.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\flag_bar_img_night.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\throttle_gauge.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\throttle_gauge.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_cal_white_24.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_cal_white_24.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\btn_dropdown_pressed.9.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\btn_dropdown_pressed.9.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_ttms.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_ttms.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\forward_icon.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\forward_icon.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\unhook.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\unhook.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\write_message_bg.9.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\write_message_bg.9.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\forward_icon.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\forward_icon.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_check_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_check_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_fuel_used.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_fuel_used.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_battery_empty.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_battery_empty.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\layout_bg_nine.9.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\layout_bg_nine.9.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_sync.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_sync.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_driving_hours_bg_yellow.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_driving_hours_bg_yellow.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\pre_radio_btn.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\pre_radio_btn.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_abs_powerunit_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_abs_powerunit_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\remaining_driving_hours_bg_yellow.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\remaining_driving_hours_bg_yellow.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\battery_volt_needle.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\battery_volt_needle.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_gps_on.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_gps_on.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_warning_alerts.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_warning_alerts.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_dvir_pending.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_dvir_pending.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_border_color_white_18dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_border_color_white_18dp.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_account_circle_white_48dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_account_circle_white_48dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_others.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_others.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_checked.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_checked.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_violation_history.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_violation_history.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\post_radio_btn_slct.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\post_radio_btn_slct.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\bg_scorecard_title.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\bg_scorecard_title.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\checkbox_check.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\checkbox_check.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_air_inlet.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_air_inlet.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_driver_inactive.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_driver_inactive.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_p_grid.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_p_grid.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_search.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_search.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\drawer_logo.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\drawer_logo.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_driver.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_driver.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_msg_delivered.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_msg_delivered.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\av_play.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\av_play.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_non_authenticated_records.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_non_authenticated_records.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_l_total.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_l_total.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_truck_trailer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_truck_trailer.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flag_japan.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flag_japan.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_trailer_footer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_trailer_footer.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_web_service_off.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_web_service_off.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\pre_radio_btn.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\pre_radio_btn.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_border_color_black_18dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_border_color_black_18dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_fuel_economy.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_fuel_economy.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_arrow_forward_white_24dp.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_forward_white_24dp.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_engine.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_engine.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_completed_failed.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_completed_failed.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_abs_trailer_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_abs_trailer_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\logo_white.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\logo_white.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\btn_dropdown_normal.9.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\btn_dropdown_normal.9.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\needle.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\needle.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_def_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_def_on.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_chat.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_chat.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_p_total.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_p_total.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_settings.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_settings.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspector_flag_canada.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspector_flag_canada.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\flag_bar_img.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\flag_bar_img.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_wifi_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_wifi_off.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_save.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_save.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_trip_inspection.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_trip_inspection.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_l_total.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_l_total.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_check_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_check_white_24dp.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_network_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_network_on.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_scorecard.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_scorecard.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\error_tire.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\error_tire.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\speedometer_gauge.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\speedometer_gauge.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_eld.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_eld.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_sync.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_sync.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_error.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_error.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_checkbox_unchecked.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_checkbox_unchecked.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_engine_rated_on.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_engine_rated_on.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_bg_l_grid.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_bg_l_grid.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_settings.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_settings.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_vehicle_info.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_vehicle_info.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_credit_card_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_credit_card_white_24dp.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_arrow_back_black_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_arrow_back_black_24dp.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\grid_header_land.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\grid_header_land.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_malfunction.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_malfunction.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_driver_profile.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_driver_profile.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_account_circle_green_48dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_account_circle_green_48dp.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\flag_bar_img.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\flag_bar_img.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_trailer_hook_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_trailer_hook_bg.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_bluetooth.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_bluetooth.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_battery_full.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_battery_full.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_freeze_lights_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_freeze_lights_off.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_freeze_malfunction.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_freeze_malfunction.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_check_double.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_check_double.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_system.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_system.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_create_event.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_create_event.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_setting_battery.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_setting_battery.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\list_checkbox_checked.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\list_checkbox_checked.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_account_circle_white_48dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_account_circle_white_48dp.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_engine_oil_pressure.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_engine_oil_pressure.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\btn_dropdown_pressed.9.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\btn_dropdown_pressed.9.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_forward.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_forward.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_cruise_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_cruise_off.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_fuel_level.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_fuel_level.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_mode_edit_white_18dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_mode_edit_white_18dp.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_visibility.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_visibility.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\list_checkbox_unchecked.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\list_checkbox_unchecked.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_chat.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_chat.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_daliy_log.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_daliy_log.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\rpm_needle.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\rpm_needle.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_reject.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_reject.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\total_hours_port.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\total_hours_port.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_notification_msg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_notification_msg.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\orange_panel_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\orange_panel_bg.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tpms_trailer_hook.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tpms_trailer_hook.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\av_play.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\av_play.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_error_outline_black_36dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_error_outline_black_36dp.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_inspector_mode.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_inspector_mode.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_brightness.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_brightness.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_road_speed_limit.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_road_speed_limit.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_login_user.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_login_user.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\duty_status_port.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\duty_status_port.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_scorecard_engine_hours.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_scorecard_engine_hours.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_affects_battery.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_affects_battery.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\elog_big_bg_l_grid.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\elog_big_bg_l_grid.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_battery_empty.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_battery_empty.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_flagbar_canbus_disconnect.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_flagbar_canbus_disconnect.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inter_radio_btn_slct.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inter_radio_btn_slct.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_elog_bg_l_grid.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_elog_bg_l_grid.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_font_size.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_font_size.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_change_rule.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_change_rule.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_actionbar_inspector.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_actionbar_inspector.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_system_update.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_system_update.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\inspect_log_action_bar.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\inspect_log_action_bar.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_radio_button_unchecked_white_24dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_radio_button_unchecked_white_24dp.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\perm_group_messages.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\perm_group_messages.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_add_white_36dp.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_add_white_36dp.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_drawer_unidentify.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_drawer_unidentify.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_fab_add.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_fab_add.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\tyre_jointer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\tyre_jointer.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\ic_vehicleinfo_def_off.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-mdpi\\ic_vehicleinfo_def_off.png"
     }
 ]

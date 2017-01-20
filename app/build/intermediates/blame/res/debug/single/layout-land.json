@@ -1,54 +1,66 @@
 [
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_daily_log_dashboard_portrait.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_daily_log_dashboard_portrait.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_duty_status_change.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\activity_duty_status_change.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\tpms_row_layout.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\tpms_row_layout.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\trailer_manage_row_layout.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\trailer_manage_row_layout.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\elog_scrollview.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\elog_scrollview.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_vehicle_info.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_vehicle_info.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_daily_log_dashboard.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_daily_log_dashboard.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\elog_scrollview.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\elog_scrollview.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_duty_status_change.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\activity_duty_status_change.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_daily_log_dashboard.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_daily_log_dashboard.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_driver_profile.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_driver_profile.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\diagnostic_item.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\diagnostic_item.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_inspectdailylog.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_inspectdailylog.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_detail.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_detail.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_new_event.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\activity_new_event.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\nav_header_drawer.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\nav_header_drawer.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_splash.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\activity_splash.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_driver_score_card_layout.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_driver_score_card_layout.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\diagnostic_item.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\diagnostic_item.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_daily_log_dashboard_portrait.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_daily_log_dashboard_portrait.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_detail.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_detail.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_splash.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\activity_splash.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\trailer_manage_row_layout.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\trailer_manage_row_layout.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_tpms_test.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_tpms_test.xml"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\nav_header_drawer.xml",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\layout-land\\nav_header_drawer.xml"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_driver_profile.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_driver_profile.xml"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_new_event.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\activity_new_event.xml"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\tpms_row_layout.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\tpms_row_layout.xml"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_inspectdailylog.xml",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\layout-land\\fragment_inspectdailylog.xml"
     }
 ]

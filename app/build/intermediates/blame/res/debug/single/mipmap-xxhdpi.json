@@ -1,10 +1,10 @@
 [
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_driver.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_driver.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_driver.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_driver.png"
     }
 ]

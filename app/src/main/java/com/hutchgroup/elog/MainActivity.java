@@ -759,7 +759,7 @@ public class MainActivity extends ELogMainActivity
             bean = new DrawerItemBean();
             bean.setId(R.id.extra);
             bean.setItem("More");
-            bean.setIcon(R.drawable.ic_drawer_others);
+            bean.setIcon(R.drawable.ic_drawer_more);
             lstDrawerItems.add(bean);
         }
 

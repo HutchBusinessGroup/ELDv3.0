@@ -1,34 +1,110 @@
 [
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\gray_tire.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\gray_tire.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_plate_center.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_plate_center.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\warning_tire.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\warning_tire.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_trailer_axle.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_trailer_axle.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\error_tire.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\error_tire.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\error_tire.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\error_tire.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\flagbar_freeze_bg_night.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\flagbar_freeze_bg_night.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_trailer_unhook.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_trailer_unhook.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tyre_super_single.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tyre_super_single.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\gray_tire.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\gray_tire.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tyre_jointer.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tyre_jointer.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\unhook.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\unhook.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_truck_trailer.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_truck_trailer.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\flagbar_freeze_bg_night.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\flagbar_freeze_bg_night.png"
     },
     {
-        "merged": "D:\\Android\\projects\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\flagbar_freeze_bg.png",
-        "source": "D:\\Android\\projects\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\flagbar_freeze_bg.png"
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_trailer_hook_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_trailer_hook_bg.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_power_unit.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_power_unit.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\unhook_container.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\unhook_container.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\warning_tire.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\warning_tire.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\hook_container.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\hook_container.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_trailer_hook_thumb_pressed.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_trailer_hook_thumb_pressed.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_trailer_header.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_trailer_header.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_trailer_footer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_trailer_footer.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_truck_trailer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_truck_trailer.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\trailer_plate_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\trailer_plate_bg.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\hook_container_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\hook_container_bg.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_power_unit_with_trailer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_power_unit_with_trailer.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_trailer_hook_thumb.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_trailer_hook_thumb.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tyre_super_single.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tyre_super_single.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\flagbar_freeze_bg.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\flagbar_freeze_bg.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_front_plate.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_front_plate.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tyre_jointer.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tyre_jointer.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_trailer_hook.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_trailer_hook.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\hook.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\hook.png"
+    },
+    {
+        "merged": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-mdpi\\tpms_power_unit_axle.png",
+        "source": "E:\\work\\mobile\\ELD Samsung\\3.0\\ELDv3.0\\app\\src\\main\\res\\drawable-land-mdpi\\tpms_power_unit_axle.png"
     }
 ]

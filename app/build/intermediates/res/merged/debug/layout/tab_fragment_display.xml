@@ -6,10 +6,10 @@
 
     <LinearLayout
         android:id="@+id/layoutDisplayTab"
-        android:orientation="vertical"
-        android:visibility="visible"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
         <!--Start of Display Tab-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -143,14 +143,14 @@
             <LinearLayout
                 style="@style/SettingSeprator"
                 android:layout_width="match_parent"
-                android:visibility="gone"
-                android:layout_height="1dp"></LinearLayout>
+                android:layout_height="1dp"
+                android:visibility="gone"></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -166,8 +166,8 @@
                     style="@style/SettingsLabelStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:text="@string/settings_font_size" />
 
                 <Spinner
@@ -227,8 +227,8 @@
                     style="@style/SettingsLabelStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:text="@string/settings_canada_color" />
 
                 <Button
@@ -263,8 +263,8 @@
                     style="@style/SettingsLabelStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:text="@string/settings_us_color" />
 
                 <Button
@@ -308,8 +308,8 @@
                     style="@style/SettingsLabelStyle"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:gravity="center_vertical"
                     android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:text="@string/settings_graph_line" />
 
                 <Spinner
@@ -327,8 +327,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/layout_bg_round_nine"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingBottom="24dp"
             android:paddingEnd="16dp"
             android:paddingStart="16dp"
@@ -342,7 +342,6 @@
                 android:layout_marginStart="@dimen/width_8"
                 android:gravity="center_vertical"
                 android:src="@drawable/ic_timeline" />
-
 
 
             <TextView
@@ -372,8 +371,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/layout_bg_round_nine"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingBottom="24dp"
             android:paddingEnd="16dp"
             android:paddingStart="16dp"
@@ -408,11 +407,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:layout_marginTop="4dp"
             android:background="@drawable/layout_bg_round_nine"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingBottom="24dp"
             android:paddingEnd="16dp"
             android:paddingStart="16dp"
@@ -426,7 +424,6 @@
                 android:layout_marginStart="@dimen/width_8"
                 android:gravity="center_vertical"
                 android:src="@drawable/ic_timeline" />
-
 
 
             <TextView
@@ -449,6 +446,65 @@
                 android:textOn=""
                 android:thumb="@drawable/switch_thumb"
                 android:track="@drawable/switch_track" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/layout_bg_round_nine"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="24dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/width_8"
+                android:layout_marginStart="@dimen/width_8"
+                android:gravity="center_vertical"
+                android:src="@drawable/ic_timeline" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvUnit"
+                    style="@style/SettingsLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_unit_format" />
+                <RadioGroup
+                    android:id="@+id/rgUnit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/width_percent_1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbMetric"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:text="Metric" />
+
+                    <RadioButton
+                        android:checked="true"
+                        android:id="@+id/rbImperial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Imperial" />
+                </RadioGroup>
+            </LinearLayout>
 
         </LinearLayout>
         <!--End of Display Tab-->
