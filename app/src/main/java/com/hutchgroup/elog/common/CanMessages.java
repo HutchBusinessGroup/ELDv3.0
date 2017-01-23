@@ -1087,13 +1087,6 @@ public class CanMessages {
                         //  LogFile.write(CanMessages.class.getName() + "::read Speed from J1939: " + Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     }
 
-                    try {
-                        i = (packet[14] & 0xFF);
-                        data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
-                        data = data.substring(0, 1);
-                        _vehicleInfo.setCruiseSetFg(data == "01" ? 1 : 0);
-                    } catch (Exception e) {
-                    }
 
                     i = (packet[15] & 0xFF);
                     if (i.equals(MAX_8))
@@ -1101,6 +1094,15 @@ public class CanMessages {
 
                     String cruiseSpeed = i + "";
                     _vehicleInfo.setCruiseSpeed(cruiseSpeed);
+
+                    try {
+                        i = (packet[16] & 0xFF);
+                        data = String.format("%8s", Integer.toBinaryString(i)).replace(' ', '0');
+                        data = data.substring(5, 7);
+                        _vehicleInfo.setCruiseSetFg(data == "001" ? 1 : 0);
+                    } catch (Exception e) {
+                    }
+
                     break;
 
                 case 65266:
