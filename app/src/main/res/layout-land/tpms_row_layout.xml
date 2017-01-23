@@ -73,8 +73,8 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingBottom="4dp"
-        android:paddingTop="4dp"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
         android:visibility="gone">
 
         <TextView
@@ -160,8 +160,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:paddingBottom="4dp"
-        android:paddingTop="4dp"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
         android:visibility="gone">
 
         <TextView

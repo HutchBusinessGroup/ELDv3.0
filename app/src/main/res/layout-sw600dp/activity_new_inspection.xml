@@ -237,10 +237,7 @@
                 android:layout_marginTop="6dp"
                 android:background="@drawable/layout_bg_round_nine"
                 android:orientation="vertical"
-                android:paddingBottom="24dp"
-                android:paddingEnd="12dp"
-                android:paddingStart="12dp"
-                android:paddingTop="8dp">
+                android:padding="24dp">
 
 
                 <CheckBox android:id="@+id/switchDefect"
