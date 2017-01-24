@@ -72,7 +72,9 @@ public class UnidentifiedAdapter extends ArrayAdapter<EventBean> {
         }
 
         EventBean bean = data.get(position);
-        double odometerReading = Double.valueOf(bean.getOdometerReading()); // odometer from can bus is in km
+        double odometerReading = 0d;
+        if (bean.getOdometerReading() != null)
+            odometerReading = Double.valueOf(bean.getOdometerReading()); // odometer from can bus is in km
 
         String unit = "Kms";
         if (Utility._appSetting.getUnit() == 2) {
@@ -80,7 +82,7 @@ public class UnidentifiedAdapter extends ArrayAdapter<EventBean> {
             unit = "Miles";
         }
 
-        String eventDate=Utility.ConverDateFormat(bean.getEventDateTime());
+        String eventDate = Utility.ConverDateFormat(bean.getEventDateTime());
         viewHolder.swEventCode.setTextOff((position + 1) + "");
         viewHolder.swEventCode.setChecked(bean.getChecked());
         viewHolder.tvEventDescription.setText(bean.getEventCodeDescription());
@@ -93,16 +95,14 @@ public class UnidentifiedAdapter extends ArrayAdapter<EventBean> {
                 format = "HH:mm";
             }
             viewHolder.tvTime.setText(new SimpleDateFormat(format).format(Utility.parse(bean.getEventDateTime())));
-        }
-        catch (Exception exe)
-        {
+        } catch (Exception exe) {
 
         }
         return convertView;
     }
 
     static class ViewHolderItem {
-        TextView tvEventDescription, tvOdometerReading, tvLocationDescription, tvTime,tvDate;
+        TextView tvEventDescription, tvOdometerReading, tvLocationDescription, tvTime, tvDate;
         ToggleButton swEventCode;
         LinearLayout lRow;
     }

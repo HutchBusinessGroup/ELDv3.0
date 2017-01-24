@@ -209,8 +209,9 @@ public class EventAdapter extends ArrayAdapter<EventBean> {
             } else if (eventCode == 4) {
                 shipStatus = " arrived at ";
             }
-
-            double odometerReading = Double.valueOf(eventItem.getOdometerReading()); // odometer from can bus is in km
+            double odometerReading = 0d;
+            if (eventItem.getOdometerReading() != null)
+                odometerReading = Double.valueOf(eventItem.getOdometerReading()); // odometer from can bus is in km
 
             String unit = " Kms";
             if (Utility._appSetting.getUnit() == 2) {

@@ -131,6 +131,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
                 ScoreCardGet();
             }
         });
+        ScoreCardGet();
 
     }
 
@@ -189,7 +190,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
         int drivingMinute = HourOfServiceDB.DrivingTimeGet(date, Utility.onScreenUserId);
         tvDrivingTime.setText("Driving points gained through time: " + drivingMinute + " Mins");
         drivingScore = (drivingMinute / 10) * 5;
-        tvDrivingScore.setText(drivingScore+"");
+        tvDrivingScore.setText(drivingScore + "");
         ArrayList<AlertBean> list = AlertDB.getScoreCard(Utility.onScreenUserId, date);
         for (AlertBean item : list) {
             int score = item.getScores();
@@ -204,7 +205,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
         if (drivingScore == 0) {
             drivingScore = 1;
         }
-        int percentage = (score / drivingScore) * 100;
+        int percentage = ((score * 100) / drivingScore);
         tvPer.setText(percentage + "%");
         tvCount.setText(count + "");
 

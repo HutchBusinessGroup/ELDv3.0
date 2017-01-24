@@ -99,7 +99,7 @@ public class VehicleInfoFragment extends Fragment {
                     value = value.equals("0") ? "N/A" : (String.format("%.0f", Double.parseDouble(value) * .2642d) + " Gallons");
                     break;
                 case " Km/h":
-                    value = value.equals("0") ? "N/A" : (String.format("%.0f", Double.parseDouble(value) * .62137d) + " Miles/h");
+                    value = value.equals("0") ? "N/A" : (String.format("%.0f", Double.parseDouble(value) * .62137d) + " MPH");
                     break;
                 default:
                     value = value.equals("0") ? "N/A" : (value + " " + unit);

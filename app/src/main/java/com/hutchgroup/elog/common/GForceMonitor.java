@@ -123,12 +123,11 @@ public class GForceMonitor implements SensorEventListener {
 
     }
 
-
     private int lrDirectionChangeCount = 0;
     private long lrFirstDirectionChangeTime = 0;
-    float SHARP_TURN_THRESHOLD = .25f;
-    float SHARP_TURN_MAX_DURATION_THRESHOLD = 1000f;
-    private static final int SHARP_TURN_MIN_DIRECTION_CHANGE = 2;
+    float SHARP_TURN_THRESHOLD = .20f;
+    float SHARP_TURN_MAX_DURATION_THRESHOLD = 250f;
+    private static final int SHARP_TURN_MIN_DIRECTION_CHANGE = 1;
 
     private void SharpTurnMonitor(float left_right_Force, boolean isLeft) {
         if (isLeft) {
@@ -167,14 +166,13 @@ public class GForceMonitor implements SensorEventListener {
     private int abDirectionChangeCount = 0;
     private long abFirstDirectionChangeTime = 0;
 
-    float HARD_ACCLERATION_THRESHOLD = .25f;
-    float HARD_BREAK_THRESHOLD = .40f;
+    float HARD_ACCLERATION_THRESHOLD = .20f;
+    float HARD_BREAK_THRESHOLD = .25f;
 
-    private static final int MAX_TOTAL_ACC_DURATION_OF_EVENT = 1000;
-    private static final int MAX_TOTAL_DURATION_OF_EVENT = 1000;
+    private static final int MAX_TOTAL_ACC_DURATION_OF_EVENT = 250;
+    private static final int MAX_TOTAL_DURATION_OF_EVENT = 250;
 
-    private static final int MIN_DIRECTION_CHANGE = 3;
-
+    private static final int MIN_DIRECTION_CHANGE = 2;
 
     double speed = 0;
 
@@ -191,9 +189,9 @@ public class GForceMonitor implements SensorEventListener {
             long now = System.currentTimeMillis();
             // store first movement time
             if (abFirstDirectionChangeTime == 0) {
-                double speed = Double.valueOf(CanMessages.Speed);
+                /*double speed = Double.valueOf(CanMessages.Speed);
                 if (speed < 30)
-                    return;
+                    return;*/
                 abFirstDirectionChangeTime = now;
             }
 

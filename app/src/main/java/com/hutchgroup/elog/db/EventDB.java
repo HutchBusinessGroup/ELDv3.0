@@ -428,6 +428,9 @@ public class EventDB {
                 bean.setLocationDescription(cursor.getString(cursor.getColumnIndex("LocationDescription")));
                 bean.setAnnotation(cursor.getString(cursor.getColumnIndex("Annotation")));
                 bean.setOdometerReading(cursor.getString(cursor.getColumnIndex("OdometerReading")));
+                if (bean.getOdometerReading() == null) {
+                    bean.setOdometerReading("0");
+                }
                 bean.setEngineHour(cursor.getString(cursor.getColumnIndex("EngineHour")));
                 bean.setAccumulatedVehicleMiles(cursor.getString(cursor.getColumnIndex("AccumulatedVehicleMiles")));
                 bean.setElaspsedEngineHour(cursor.getString(cursor.getColumnIndex("ElaspsedEngineHour")));
@@ -486,6 +489,9 @@ public class EventDB {
                 bean.setLongitude(cursor.getString(cursor.getColumnIndex("Longitude")));
                 bean.setLocationDescription(cursor.getString(cursor.getColumnIndex("LocationDescription")));
                 bean.setOdometerReading(cursor.getString(cursor.getColumnIndex("OdometerReading")));
+                if (bean.getOdometerReading() == null) {
+                    bean.setOdometerReading("0");
+                }
                 bean.setEventDateTime(cursor.getString(cursor.getColumnIndex("EventDateTime")));
                 bean.setShippingDocumentNo(cursor.getString(cursor.getColumnIndex("ShippingDocumentNo")));
                 bean.setDiagnosticCode(cursor.getString(cursor.getColumnIndex("DiagnosticCode")));
@@ -539,6 +545,9 @@ public class EventDB {
                 bean.setLocationDescription(cursor.getString(cursor.getColumnIndex("LocationDescription")));
                 bean.setAnnotation(cursor.getString(cursor.getColumnIndex("Annotation")));
                 bean.setOdometerReading(cursor.getString(cursor.getColumnIndex("OdometerReading")));
+                if (bean.getOdometerReading() == null) {
+                    bean.setOdometerReading("0");
+                }
                 bean.setEngineHour(cursor.getString(cursor.getColumnIndex("EngineHour")));
                 bean.setAccumulatedVehicleMiles(cursor.getString(cursor.getColumnIndex("AccumulatedVehicleMiles")));
                 bean.setElaspsedEngineHour(cursor.getString(cursor.getColumnIndex("ElaspsedEngineHour")));
@@ -596,6 +605,9 @@ public class EventDB {
                 bean.setEventType(eventType);
                 bean.setEventCode(eventCode);
                 bean.setOdometerReading(cursor.getString(cursor.getColumnIndex("OdometerReading")));
+                if (bean.getOdometerReading() == null) {
+                    bean.setOdometerReading("0");
+                }
                 bean.setEngineHour(cursor.getString(cursor.getColumnIndex("EngineHour")));
                 list.add(bean);
             }
@@ -638,6 +650,9 @@ public class EventDB {
                 bean.setLongitude(cursor.getString(cursor.getColumnIndex("Longitude")));
                 bean.setLocationDescription(cursor.getString(cursor.getColumnIndex("LocationDescription")));
                 bean.setOdometerReading(cursor.getString(cursor.getColumnIndex("OdometerReading")));
+                if (bean.getOdometerReading() == null) {
+                    bean.setOdometerReading("0");
+                }
                 bean.setEventDateTime(cursor.getString(cursor.getColumnIndex("EventDateTime")));
                 bean.setDailyLogId(cursor.getInt(cursor.getColumnIndex("DailyLogId")));
                 bean.setChecked(false);

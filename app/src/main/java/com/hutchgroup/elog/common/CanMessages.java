@@ -257,7 +257,7 @@ public class CanMessages {
                 }
             } catch (IOException e) {
                 Log.e(TAG, "Socket Type: " + mSocketType + "create() failed", e);
-                LogFile.write("Socket Type: " + mSocketType + "create() failed:" + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+                //LogFile.write("Socket Type: " + mSocketType + "create() failed:" + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
             }
             mmSocket = tmp;
         }
@@ -287,8 +287,8 @@ public class CanMessages {
                 } catch (IOException e2) {
                     Log.e(TAG, "unable to close() " + mSocketType +
                             " socket during connection failure", e2);
-                    LogFile.write("unable to close() " + mSocketType +
-                            " socket during connection failure: " + e2.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+                    //LogFile.write("unable to close() " + mSocketType +
+                    //      " socket during connection failure: " + e2.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
                 }
                 setState(STATE_LISTEN);
                 LogFile.write("Failed to connect:" + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
@@ -302,16 +302,16 @@ public class CanMessages {
                 } catch (IOException e2) {
                     Log.e(TAG, "unable to close() " + mSocketType +
                             " socket during connection failure", e2);
-                    LogFile.write("unable to close() " + mSocketType +
-                            " socket during connection failure: " + e2.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+                    //LogFile.write("unable to close() " + mSocketType +
+                    // " socket during connection failure: " + e2.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
                 } catch (Exception e1) {
                     Log.e(TAG, "unable to close() " + mSocketType +
                             " socket during connection failure" + e1.getMessage());
-                    LogFile.write("unable to close() " + mSocketType +
-                            " socket during connection failure: " + e1.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+                    //LogFile.write("unable to close() " + mSocketType +
+                    //      " socket during connection failure: " + e1.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
                 }
                 setState(STATE_LISTEN);
-                LogFile.write("Failed to connect:" + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+                //LogFile.write("Failed to connect:" + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
                 //121 LogFile.write("Failed to connect:" + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.CANBUS_LOG);
                 //connectionFailed();
                 return;
@@ -368,7 +368,7 @@ public class CanMessages {
                 initializeFilters(tmpOut);
             } catch (IOException e) {
                 Log.e(TAG, "temp sockets not created", e);
-                LogFile.write("temp sockets are not created: " + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+               // LogFile.write("temp sockets are not created: " + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
             }
 
             mmInStream = tmpIn;
@@ -422,7 +422,7 @@ public class CanMessages {
 
         private void error(String message) {
             setState(STATE_LISTEN);
-            LogFile.write(message, LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+           // LogFile.write(message, LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
 
         }
 
@@ -433,7 +433,7 @@ public class CanMessages {
                     mmSocket.close();
             } catch (IOException e) {
                 Log.e(TAG, "close() of connect socket failed", e);
-                LogFile.write("close() of connect socket failed: " + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+                //LogFile.write("close() of connect socket failed: " + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
             }
         }
 
@@ -464,7 +464,7 @@ public class CanMessages {
 
         } catch (Exception e) {
             Log.i(TAG, "BTB: parseMessage error:" + e.getMessage());
-            LogFile.write(CanMessages.class.getName() + "::parseMessage error: " + e.getMessage(), LogFile.CAN_BUS_READ, LogFile.ERROR_LOG);
+            //LogFile.write(CanMessages.class.getName() + "::parseMessage error: " + e.getMessage(), LogFile.CAN_BUS_READ, LogFile.ERROR_LOG);
             throw e;
         }
 
@@ -521,7 +521,7 @@ public class CanMessages {
         } catch (Exception e) {
             Log.i(TAG, "BTB: processCharFromBus error: " + e.getMessage() + " pgn: " + _pgn);
             System.out.println(e.getStackTrace()[0]);
-            LogFile.write(CanMessages.class.getName() + "::processCharFromBus error: " + e.getMessage() + " pgn: " + _pgn, LogFile.CAN_BUS_READ, LogFile.ERROR_LOG);
+            //LogFile.write(CanMessages.class.getName() + "::processCharFromBus error: " + e.getMessage() + " pgn: " + _pgn, LogFile.CAN_BUS_READ, LogFile.ERROR_LOG);
             //121 LogFile.write("Error when parsing char from bus: " + e.getMessage(), LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
             throw e;
         }
@@ -1471,7 +1471,7 @@ public class CanMessages {
                 outputStream.flush();
             } catch (IOException e) {
                 Log.e("J1939", "Send Command Socket Closed", e);
-                LogFile.write(CanMessages.class.getName() + "::sendCommand Error:" + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+                //LogFile.write(CanMessages.class.getName() + "::sendCommand Error:" + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
             }
         }
 

@@ -2645,13 +2645,13 @@ public class MainActivity extends ELogMainActivity
                 float speed = Float.parseFloat(CanMessages.Speed);
                 Double odometerReading = Double.parseDouble(CanMessages.OdometerReading);
                 float coolantTemp = Float.parseFloat(CanMessages.CoolantTemperature);
-                String speedUnit = " Kmph";
+                String speedUnit = " km/h";
                 String distanceUnit = " Kms";
                 String tempUnit = " ° F";
                 if (Utility._appSetting.getUnit() == 2) {
                     odometerReading = odometerReading * .62137d;
                     speed = speed * .62137f;
-                    speedUnit = " Mph";
+                    speedUnit = " MPH";
                     distanceUnit = " Miles";
                 } else {
                     coolantTemp = ((coolantTemp - 32) * 5) / 9;
