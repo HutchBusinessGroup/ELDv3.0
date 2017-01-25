@@ -59,6 +59,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -702,6 +703,7 @@ public class MainActivity extends ELogMainActivity
     ImageView icFreezeActiveUser;
 
     TextView tvLoginName, tvFreezeLoginName;
+    CheckBox chkRules;
 
     int canbusState;
     Bitmap batteryBmp;
@@ -1257,6 +1259,9 @@ public class MainActivity extends ELogMainActivity
             tvLoginName.setText(driverName);
             tvFreezeLoginName = (TextView) findViewById(R.id.tvFreezeLoginName);
             tvFreezeLoginName.setText(driverName);
+            chkRules = (CheckBox) findViewById(R.id.chkRules);
+            chkRules.setClickable(false);
+
             bEditEvent = false;
             bWebEvent = false;
 
@@ -2362,6 +2367,8 @@ public class MainActivity extends ELogMainActivity
         //you can leave it empty
     }
 
+    private static int currentRule = 1;
+
     //Implement method of ELogMainActivity
     @Override
     public void freezeLayout() {
@@ -2374,6 +2381,7 @@ public class MainActivity extends ELogMainActivity
                 tvLoginFreeze.setVisibility(View.GONE);
                 setDrawerState(true);
                 if (Utility.motionFg) {
+
                     toolbar.setVisibility(View.GONE);
                     flagBar.setVisibility(View.GONE);
                     if (Utility.user1.getAccountId() == 0 && Utility.user2.getAccountId() == 0) {
@@ -3764,6 +3772,14 @@ public class MainActivity extends ELogMainActivity
     }
 
     @Override
+    public void changeRule(int rule) {
+
+        currentRule =rule;
+        chkRules.setChecked(currentRule < 3);
+
+    }
+
+    @Override
     public void autologinSuccessfully() {
 
         //update inspection icon
@@ -3785,6 +3801,10 @@ public class MainActivity extends ELogMainActivity
 
 
         if (firstLogin) {
+
+            currentRule = DailyLogDB.getCurrentRule(Utility.activeUserId);
+            chkRules.setChecked(currentRule < 3);
+
             showSpecialCategory(false);
             // sync message
             new MessageSyncData(messageSyncDataPostTaskListener).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
@@ -3851,6 +3871,9 @@ public class MainActivity extends ELogMainActivity
 
 
         if (firstLogin) {
+
+            currentRule = DailyLogDB.getCurrentRule(Utility.activeUserId);
+            chkRules.setChecked(currentRule < 3);
             showSpecialCategory(false);
             // sync message
             new MessageSyncData(messageSyncDataPostTaskListener).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);

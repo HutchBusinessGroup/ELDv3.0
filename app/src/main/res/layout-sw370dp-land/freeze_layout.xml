@@ -494,13 +494,26 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <TextView
         android:id="@+id/tvFreezeLoginName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/green2"
         android:layout_gravity="bottom"
         android:padding="10dp"
-        android:textStyle="bold"
-        android:text="Deepak Sharma"/>
+        android:text="Deepak Sharma"
+        android:textColor="@color/green2"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/chkRules"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="6dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/transparent"
+        android:button="@drawable/checkbox_flag"
+        android:textOff=""
+        android:textOn="" />
 </FrameLayout>

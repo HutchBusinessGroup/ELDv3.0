@@ -190,6 +190,16 @@
                     android:textSize="12sp" />
             </FrameLayout>
 
+            <CheckBox
+                android:id="@+id/chkRules"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="132dp"
+                android:background="@android:color/transparent"
+                android:button="@drawable/checkbox_flag"
+                android:textOff=""
+                android:textOn="" />
             <FrameLayout
                 android:id="@+id/frameSpeedometer"
                 android:layout_width="442dp"
@@ -197,6 +207,8 @@
                 android:layout_gravity="top|center_horizontal"
                 android:background="@drawable/speedometer_gauge"
                 android:orientation="vertical">
+
+
 
                 <ImageView
                     android:id="@+id/imgreezeSpeed"

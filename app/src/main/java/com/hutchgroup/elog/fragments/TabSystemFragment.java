@@ -404,6 +404,9 @@ public class TabSystemFragment extends Fragment implements View.OnClickListener,
             tvRule.setText(listRules.get(currentRuleIdx - 1));
             Utility._appSetting.setDefaultRule(currentRuleIdx);
             SettingsDB.CreateSettings();
+            if (mListener != null) {
+                mListener.changeRule(rule);
+            }
         } catch (Exception e) {
             LogFile.write(TabSystemFragment.class.getName() + "::onSavedRule Error: " + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
         }
@@ -423,6 +426,8 @@ public class TabSystemFragment extends Fragment implements View.OnClickListener,
         // TODO: Update argument type and name
         //void onFragmentInteraction(Uri uri);
         void callCheckUpdate();
+
+        void changeRule(int rule);
     }
 
 }

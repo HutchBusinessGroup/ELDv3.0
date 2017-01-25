@@ -511,6 +511,8 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
 
+        void changeRule(int rule);
+
         void resetFlag();
 
         void setDutyStatus(int status);
@@ -1745,6 +1747,11 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 DailyLogDB.DailyLogSyncRevert(Utility.onScreenUserId, dailyLogId);
                 currentRule = rule;
                 chkRules.setChecked(currentRule < 3);
+
+                if (mListener != null) {
+                    mListener.changeRule(currentRule);
+                }
+
                 //tvCurrentRuleLabel.setText(getRule(currentRule - 1));
                 pbTotalCanadaRule.setMax(currentRule == 2 ? 120 * 60 : 70 * 60);
                 pbTotalUSRule.setMax(currentRule == 4 ? 60 * 60 : 70 * 60);
