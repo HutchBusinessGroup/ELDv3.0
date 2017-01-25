@@ -875,6 +875,7 @@ public class MainActivity extends ELogMainActivity
                 Utility.as = new AlarmSetter();
                 Utility.as.SetAlarm(this);
             }
+            setOrientation();
 
             new SPNMap(this);
             stopService = false;

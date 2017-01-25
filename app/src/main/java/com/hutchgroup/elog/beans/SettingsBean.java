@@ -15,7 +15,7 @@ public class SettingsBean implements Serializable {
     private int violationReading = 1; //0: disable, 1: enable (default)
     private int messageReading; //0: disable, 1: enable (default)
     private String startTime = "12"; //always 12AM
-    private int orientation = 0; //0: auto, 1: port, 2: landscape
+    private int orientation = 2; //0: auto, 1: port, 2: landscape
     private int visionMode; //0: day, 1: night
     //private int brightness;
     private int copyTrailer = 1; //0 disable, 1 enable
