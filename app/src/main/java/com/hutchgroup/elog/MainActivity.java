@@ -895,18 +895,6 @@ public class MainActivity extends ELogMainActivity
             //service to check and download if the new version is existed on server
             updateHandler.postDelayed(autoCheckUpdate, 1 * 60 * 1000);
 
-            if (!Utility.isLargeScreen(getApplicationContext())) {
-                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-            } else {
-                if (Utility._appSetting.getOrientation() == AppSettings.AppOrientation.PORTRAIT.ordinal()) {
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                } else if (Utility._appSetting.getOrientation() == AppSettings.AppOrientation.LANSCAPE.ordinal()) {
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                } else if (Utility._appSetting.getOrientation() == AppSettings.AppOrientation.AUTO.ordinal()) {
-                    Settings.System.putInt(getContentResolver(), Settings.System.ACCELEROMETER_ROTATION, 1);
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
-                }
-            }
 
             Log.d(TAG, "onCreate Activity");
             bBluetoothConnectionSuccess = false;
@@ -1331,6 +1319,23 @@ public class MainActivity extends ELogMainActivity
             VehicleDB.SensorInfoGet();
         } catch (Exception e) {
             LogFile.write(MainActivity.class.getName() + "::onCreate error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
+        }
+    }
+
+    private void setOrientation()
+    {
+
+        if (!Utility.isLargeScreen(getApplicationContext())) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        } else {
+            if (Utility._appSetting.getOrientation() == AppSettings.AppOrientation.PORTRAIT.ordinal()) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            } else if (Utility._appSetting.getOrientation() == AppSettings.AppOrientation.LANSCAPE.ordinal()) {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            } else if (Utility._appSetting.getOrientation() == AppSettings.AppOrientation.AUTO.ordinal()) {
+                Settings.System.putInt(getContentResolver(), Settings.System.ACCELEROMETER_ROTATION, 1);
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+            }
         }
     }
 
@@ -3804,6 +3809,7 @@ public class MainActivity extends ELogMainActivity
 
             currentRule = DailyLogDB.getCurrentRule(Utility.activeUserId);
             chkRules.setChecked(currentRule < 3);
+            setOrientation();
 
             showSpecialCategory(false);
             // sync message
@@ -3874,6 +3880,7 @@ public class MainActivity extends ELogMainActivity
 
             currentRule = DailyLogDB.getCurrentRule(Utility.activeUserId);
             chkRules.setChecked(currentRule < 3);
+            setOrientation();
             showSpecialCategory(false);
             // sync message
             new MessageSyncData(messageSyncDataPostTaskListener).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
