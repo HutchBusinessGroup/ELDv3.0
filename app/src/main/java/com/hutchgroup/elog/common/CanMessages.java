@@ -368,7 +368,7 @@ public class CanMessages {
                 initializeFilters(tmpOut);
             } catch (IOException e) {
                 Log.e(TAG, "temp sockets not created", e);
-               // LogFile.write("temp sockets are not created: " + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+                // LogFile.write("temp sockets are not created: " + e.getMessage(), LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
             }
 
             mmInStream = tmpIn;
@@ -422,7 +422,7 @@ public class CanMessages {
 
         private void error(String message) {
             setState(STATE_LISTEN);
-           // LogFile.write(message, LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
+            // LogFile.write(message, LogFile.BLUETOOTH_CONNECTIVITY, LogFile.ERROR_LOG);
 
         }
 
@@ -1080,7 +1080,7 @@ public class CanMessages {
                     if (num.equals(MAX_16))
                         break;
                     int sp = num / 256;
-                    if (sp != 255) {
+                    if (sp < 200) {
                         Speed = sp + ""; //String.format("%.0f", sp);
                         _vehicleInfo.setSpeed(Speed);
                         Log.i(TAG, "speed = " + Speed);
@@ -1225,8 +1225,10 @@ public class CanMessages {
                     break;
                 case 84:
                     d = (packet[6] & 0xFF) * 0.805;
-                    Speed = Math.round(d) + "";
-                    _vehicleInfo.setSpeed(Speed);
+                    if (d < 200d) {
+                        Speed = Math.round(d) + "";
+                        _vehicleInfo.setSpeed(Speed);
+                    }
                     break;
                 case 85:
                     i = (packet[6] & 0xFF);

@@ -24,7 +24,7 @@ public class AppSettings implements Serializable {
     private static int violationReading = 1; //0: disable, 1: enable (default)
     private static int messageReading = 1; //0: disable, 1: enable (default)
     private static String startTime = "12"; //always 12AM
-    private static int orientation = 2; //0: auto, 1: port, 2: landscape
+    private static int orientation = 0; //0: auto, 1: port, 2: landscape
     private static int visionMode = 0; //0: day, 1: night
     //private int brightness;
     private static int copyTrailer = 1; //0 disable, 1 enable

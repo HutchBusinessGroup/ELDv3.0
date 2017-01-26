@@ -2517,6 +2517,9 @@ public class MainActivity extends ELogMainActivity
         }
         int logId = DailyLogDB.DailyLogCreate(driverId, Utility.ShippingNumber, Utility.TrailerNumber, "");
         if (!bEventPowerOff) {
+            Utility.NightModeFg = false;
+            setUIMode();
+
             int evenCode = 3;
             String description = "Engine shut down with conventional location precision";
             if (activeCurrentDutyStatus == 5 || activeCurrentDutyStatus == 6) {
