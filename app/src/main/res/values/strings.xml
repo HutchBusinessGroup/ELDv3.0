@@ -80,10 +80,11 @@
     <string name="canada_rule_1">Canada 70hr/7days</string>
     <string name="canada_rule_2">Canada 120hr/14days</string>
     <string name="us_rule_1">US 70hr/8days</string>
-
+    <string name="us_rule_2">US 70hr/8days USV Exemption</string>
     <string name="phone_canada_rule_1">Canada\n70hr/7days</string>
     <string name="phone_canada_rule_2">Canada\n120hr/14days</string>
     <string name="phone_us_rule_1">US\n70hr/8days</string>
+    <string name="phone_us_rule_2">US\n70hr/8days USV Exemption</string>
     <!--<string name="us_rule_2">US 60hr/7days</string> -->
 
     <string name="login">IN</string>

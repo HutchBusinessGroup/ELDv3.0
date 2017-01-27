@@ -650,6 +650,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             tvCanadaRule = (TextView) view.findViewById(R.id.tvCanadaRule);
             tvCanadaRuleValue = (TextView) view.findViewById(R.id.tvCanadaRuleValue);
             tvUSRule = (TextView) view.findViewById(R.id.tvUSRule);
+            tvUSRule.setSelected(true);
             tvUSRuleValue = (TextView) view.findViewById(R.id.tvUSRuleValue);
 
             tvCoDriver = (TextView) view.findViewById(R.id.tvCoDriverValue);
@@ -1281,6 +1282,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             listRules.add(getResources().getString(R.string.canada_rule_1));
             listRules.add(getResources().getString(R.string.canada_rule_2));
             listRules.add(getResources().getString(R.string.us_rule_1));
+            listRules.add(getResources().getString(R.string.us_rule_2));
         } catch (Exception e) {
             LogFile.write(ELogFragment.class.getName() + "::getRules Error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
         }

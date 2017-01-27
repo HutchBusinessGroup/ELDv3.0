@@ -368,7 +368,6 @@ public class DetailFragment extends Fragment implements View.OnClickListener, In
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         currentDate = (Date) getArguments().getSerializable(ARG_Date);
-
     }
 
     @Override

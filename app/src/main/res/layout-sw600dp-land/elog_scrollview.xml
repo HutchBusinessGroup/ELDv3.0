@@ -68,8 +68,8 @@
                         android:layout_height="@dimen/remaining_time_height"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:textSize="20sp"
                         android:text="N/A"
+                        android:textSize="20sp"
                         android:visibility="visible" />
 
                     <Button
@@ -88,9 +88,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
-                android:layout_gravity="center_horizontal"
                 android:visibility="visible">
 
                 <TextView
@@ -98,8 +98,8 @@
                     style="@style/LabelTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="@string/time_zone" />
+                    android:text="@string/time_zone"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvTimeZoneValue"
@@ -108,9 +108,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_toRightOf="@+id/tvTimeZone"
-                    android:textSize="16sp"
                     android:gravity="right"
-                    android:text="UTC - 08:00" />
+                    android:text="UTC - 08:00"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvCoDriver"
@@ -118,8 +118,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvTimeZone"
-                    android:textSize="16sp"
-                    android:text="@string/co_driver" />
+                    android:text="@string/co_driver"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvCoDriverValue"
@@ -129,9 +129,9 @@
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/tvTimeZoneValue"
                     android:layout_toRightOf="@+id/tvCoDriver"
-                    android:textSize="16sp"
                     android:gravity="right"
-                    android:text="" />
+                    android:text=""
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvVehicleMiles"
@@ -139,8 +139,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvCoDriver"
-                    android:textSize="16sp"
-                    android:text="@string/total_miles_hours" />
+                    android:text="@string/total_miles_hours"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvVehicleMilesValue"
@@ -150,9 +150,9 @@
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/tvCoDriverValue"
                     android:layout_toRightOf="@+id/tvVehicleMiles"
-                    android:textSize="16sp"
                     android:gravity="right"
-                    android:text="--" />
+                    android:text="--"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvTotalDistance"
@@ -160,8 +160,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvVehicleMiles"
-                    android:textSize="16sp"
                     android:text="@string/total_distance"
+                    android:textSize="16sp"
                     android:visibility="gone" />
 
                 <TextView
@@ -172,9 +172,9 @@
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/tvVehicleMilesValue"
                     android:layout_toRightOf="@+id/tvTotalDistance"
-                    android:textSize="16sp"
                     android:gravity="right"
                     android:text="-"
+                    android:textSize="16sp"
                     android:visibility="gone" />
 
                 <TextView
@@ -183,8 +183,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvTotalDistance"
-                    android:textSize="16sp"
-                    android:text="Trip" />
+                    android:text="Trip"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvCurrentTrip"
@@ -194,18 +194,19 @@
                     android:layout_alignParentRight="true"
                     android:layout_below="@+id/tvTotalDistanceValue"
                     android:layout_toRightOf="@+id/tvMilesDriven"
-                    android:textSize="16sp"
                     android:gravity="right"
-                    android:text="--" />
+                    android:text="--"
+                    android:textSize="16sp" />
+
                 <CheckBox
                     android:id="@+id/chkRules"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
-                    android:gravity="center"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
-                    android:button="@drawable/checkbox_flag"
                     android:background="@android:color/transparent"
+                    android:button="@drawable/checkbox_flag"
+                    android:gravity="center"
                     android:textOff=""
                     android:textOn="" />
             </RelativeLayout>
@@ -232,10 +233,10 @@
                     android:layout_width="@dimen/width_percent_19"
                     android:layout_height="@dimen/width_percent_19"
                     android:layout_centerInParent="true"
+                    android:background="@drawable/black_circle_progressbar_bg"
                     android:indeterminate="false"
                     android:max="500"
                     android:progress="355"
-                    android:background="@drawable/black_circle_progressbar_bg"
                     android:progressDrawable="@drawable/yellow_circle_progressbar" />
 
                 <ProgressBar
@@ -244,10 +245,10 @@
                     android:layout_width="@dimen/width_percent_15"
                     android:layout_height="@dimen/width_percent_15"
                     android:layout_centerInParent="true"
+                    android:background="@drawable/black_circle_progressbar_bg"
                     android:indeterminate="false"
                     android:max="500"
                     android:progress="295"
-                    android:background="@drawable/black_circle_progressbar_bg"
                     android:progressDrawable="@drawable/blue_circle_progressbar" />
 
                 <ProgressBar
@@ -256,10 +257,10 @@
                     android:layout_width="@dimen/width_percent_11"
                     android:layout_height="@dimen/width_percent_11"
                     android:layout_centerInParent="true"
+                    android:background="@drawable/black_circle_progressbar_bg"
                     android:indeterminate="false"
                     android:max="500"
                     android:progress="250"
-                    android:background="@drawable/black_circle_progressbar_bg"
                     android:progressDrawable="@drawable/green_circle_progressbar" />
 
                 <ProgressBar
@@ -268,10 +269,10 @@
                     android:layout_width="@dimen/width_percent_7"
                     android:layout_height="@dimen/width_percent_7"
                     android:layout_centerInParent="true"
+                    android:background="@drawable/black_circle_progressbar_bg"
                     android:indeterminate="false"
                     android:max="500"
                     android:progress="180"
-                    android:background="@drawable/black_circle_progressbar_bg"
                     android:progressDrawable="@drawable/red_circle_progressbar" />
             </RelativeLayout>
 
@@ -288,8 +289,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/driving_hours"
-                    android:textSize="16sp"
-                    android:textColor="@color/yellow1" />
+                    android:textColor="@color/yellow1"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvDrivingHoursValue"
@@ -300,8 +301,8 @@
                     android:layout_toRightOf="@+id/tvDrivingHours"
                     android:gravity="right"
                     android:text="88:88"
-                    android:textSize="16sp"
-                    android:textColor="@color/yellow1" />
+                    android:textColor="@color/yellow1"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvWorkShift"
@@ -310,8 +311,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvDrivingHours"
                     android:text="@string/work_shift_hour"
-                    android:textSize="16sp"
-                    android:textColor="#00d7e5" />
+                    android:textColor="#00d7e5"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvWorkShiftValue"
@@ -322,9 +323,9 @@
                     android:layout_below="@+id/tvDrivingHoursValue"
                     android:layout_toRightOf="@+id/tvWorkShift"
                     android:gravity="right"
-                    android:textSize="16sp"
                     android:text="88:88"
-                    android:textColor="#00d7e5" />
+                    android:textColor="#00d7e5"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvCanadaRule"
@@ -333,8 +334,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvWorkShift"
                     android:text="@string/canada_rule_2"
-                    android:textSize="16sp"
-                    android:textColor="#aff00f" />
+                    android:textColor="#aff00f"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvCanadaRuleValue"
@@ -345,9 +346,10 @@
                     android:layout_below="@+id/tvWorkShiftValue"
                     android:layout_toRightOf="@+id/tvCanadaRule"
                     android:gravity="right"
-                    android:textSize="16sp"
                     android:text="88:88"
-                    android:textColor="#aff00f" />
+                    android:textColor="#aff00f"
+
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvUSRule"
@@ -355,9 +357,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvCanadaRule"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:maxWidth="190dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
                     android:text="@string/us_rule_1"
-                    android:textSize="16sp"
-                    android:textColor="#ffc9dc" />
+                    android:textColor="#ffc9dc"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvUSRuleValue"
@@ -368,9 +375,9 @@
                     android:layout_below="@+id/tvCanadaRule"
                     android:layout_toRightOf="@+id/tvUSRule"
                     android:gravity="right"
-                    android:textSize="16sp"
                     android:text="88:88"
-                    android:textColor="#ffc9dc" />
+                    android:textColor="#ffc9dc"
+                    android:textSize="16sp" />
 
             </RelativeLayout>
 
@@ -381,9 +388,9 @@
     <LinearLayout
         android:layout_width="942dp"
         android:layout_height="246dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        android:layout_gravity="center_horizontal"
         android:touchscreenBlocksFocus="false">
 
         <ImageView
@@ -414,9 +421,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:gravity="center"
+                android:text="12:22"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="12:22" />
+                android:textStyle="bold" />
 
 
             <TextView
@@ -424,9 +431,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:gravity="center"
+                android:text="08:45"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="08:45" />
+                android:textStyle="bold" />
 
 
             <TextView
@@ -434,9 +441,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:gravity="center"
+                android:text="05:37"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="05:37" />
+                android:textStyle="bold" />
 
 
             <TextView
@@ -444,9 +451,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:gravity="center"
+                android:text="00:33"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="00:33" />
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
@@ -454,9 +461,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
         android:layout_marginLeft="-6dp"
         android:layout_marginRight="-6dp"
+        android:layout_marginTop="6dp"
         android:background="@drawable/layout_bg_round_nine"
         android:padding="10dp"
         android:visibility="visible">
@@ -472,15 +479,15 @@
             android:id="@+id/tvViolation"
             style="@style/BoldBottomInformationTextStyle"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="20dp"
-            android:gravity="center_vertical"
-            android:singleLine="true"
+            android:layout_weight="1"
             android:ellipsize="marquee"
+            android:gravity="center_vertical"
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
+            android:singleLine="true"
             android:text="N/A" />
 
         <TextView
@@ -489,9 +496,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="right|center_vertical"
-            android:textSize="18sp"
+            android:paddingRight="8dp"
             android:textColor="@color/sixsix"
-            android:paddingRight="8dp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 

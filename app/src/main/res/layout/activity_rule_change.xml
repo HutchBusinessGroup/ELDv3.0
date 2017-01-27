@@ -2,11 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:clickable="true"
     android:focusableInTouchMode="true"
-    android:background="@color/white"
     android:orientation="vertical">
-
 
 
     <LinearLayout
@@ -16,9 +15,9 @@
         android:orientation="horizontal">
 
         <ImageView
+            style="@style/DialogIconStyle"
             android:layout_width="@dimen/dialog_icon_size"
-            android:layout_height="@dimen/dialog_icon_size"
-            style="@style/DialogIconStyle" />
+            android:layout_height="@dimen/dialog_icon_size" />
 
         <TextView
             style="@style/DialogTitleStyle"
@@ -30,9 +29,9 @@
 
         <ImageButton
             android:id="@+id/imgCancel"
+            style="@style/DialogCloseStyle"
             android:layout_width="@dimen/dialog_close_icon_size"
-            android:layout_height="@dimen/dialog_close_icon_size"
-            style="@style/DialogCloseStyle"/>
+            android:layout_height="@dimen/dialog_close_icon_size" />
     </LinearLayout>
 
     <View
@@ -41,7 +40,6 @@
         android:layout_height="2dp">
 
     </View>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -110,6 +108,29 @@
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:text="@string/us_rule_1" />
+        </LinearLayout>
+
+
+        <View
+            style="@style/SettingSeprator.ChangeRule"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+
+        </View>
+
+        <LinearLayout
+            android:id="@+id/layoutUSRule2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/rule_selector">
+
+            <TextView
+                android:id="@+id/tvUSRule2"
+                style="@style/RuleTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/us_rule_2" />
         </LinearLayout>
 
         <Button

@@ -385,6 +385,7 @@ public class TabSystemFragment extends Fragment implements View.OnClickListener,
         listRules.add(getResources().getString(R.string.canada_rule_1));
         listRules.add(getResources().getString(R.string.canada_rule_2));
         listRules.add(getResources().getString(R.string.us_rule_1));
+        listRules.add(getResources().getString(R.string.us_rule_2));
     }
 
     private void launchRuleChange() {

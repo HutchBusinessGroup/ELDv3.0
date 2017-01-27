@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.hutchgroup.elog.R;
 import com.hutchgroup.elog.common.LogFile;
 
-public class RuleChangeDialog extends DialogFragment implements View.OnClickListener{
+public class RuleChangeDialog extends DialogFragment implements View.OnClickListener {
 
     public RuleChangeDialogInterface mListener;
     private final int CANADA_RULE_1 = 1;
@@ -44,7 +44,7 @@ public class RuleChangeDialog extends DialogFragment implements View.OnClickList
     int currentRule = 1;
 
 
-    public RuleChangeDialog(){
+    public RuleChangeDialog() {
 
     }
 
@@ -95,7 +95,7 @@ public class RuleChangeDialog extends DialogFragment implements View.OnClickList
     @Override
     public void onResume() {
         ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
-        params.width =WindowManager.LayoutParams.MATCH_PARENT;
+        params.width = WindowManager.LayoutParams.MATCH_PARENT;
         params.height = WindowManager.LayoutParams.WRAP_CONTENT;
         getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
 
@@ -110,13 +110,13 @@ public class RuleChangeDialog extends DialogFragment implements View.OnClickList
             layoutCanadaRule2.setOnClickListener(this);
             layoutUSRule1 = (LinearLayout) view.findViewById(R.id.layoutUSRule1);
             layoutUSRule1.setOnClickListener(this);
-            //layoutUSRule2 = (LinearLayout) findViewById(R.id.layoutUSRule2);
-            //layoutUSRule2.setOnClickListener(this);
+            layoutUSRule2 = (LinearLayout) view.findViewById(R.id.layoutUSRule2);
+            layoutUSRule2.setOnClickListener(this);
 
             tvCanadaRule1 = (TextView) view.findViewById(R.id.tvCanadaRule1);
             tvCanadaRule2 = (TextView) view.findViewById(R.id.tvCanadaRule2);
             tvUSRule1 = (TextView) view.findViewById(R.id.tvUSRule1);
-            //tvUSRule2 = (TextView) findViewById(R.id.tvUSRule2);
+            tvUSRule2 = (TextView) view.findViewById(R.id.tvUSRule2);
 
             imgCancel = (ImageButton) view.findViewById(R.id.imgCancel);
             imgCancel.setOnClickListener(this);
@@ -140,8 +140,8 @@ public class RuleChangeDialog extends DialogFragment implements View.OnClickList
                     tvUSRule1.setSelected(true);
                     break;
                 case 4:
-                    //layoutUSRule2.setSelected(true);
-                    //tvUSRule2.setSelected(true);
+                    layoutUSRule2.setSelected(true);
+                    tvUSRule2.setSelected(true);
                     break;
             }
         } catch (Exception e) {
@@ -180,6 +180,15 @@ public class RuleChangeDialog extends DialogFragment implements View.OnClickList
                         currentRule = US_RULE_1;
                     }
                     break;
+                case R.id.layoutUSRule2:
+                    if (!layoutUSRule2.isSelected()) {
+                        clearRules();
+                        layoutUSRule2.setSelected(true);
+                        tvUSRule2.setSelected(true);
+                        butSave.setEnabled(true);
+                        currentRule = US_RULE_2;
+                    }
+                    break;
                 case R.id.imgCancel:
 
                     dismiss();
@@ -202,17 +211,17 @@ public class RuleChangeDialog extends DialogFragment implements View.OnClickList
             layoutCanadaRule1.setSelected(false);
             layoutCanadaRule2.setSelected(false);
             layoutUSRule1.setSelected(false);
-            //layoutUSRule2.setSelected(false);
+            layoutUSRule2.setSelected(false);
 
             tvCanadaRule1.setSelected(false);
             tvCanadaRule2.setSelected(false);
             tvUSRule1.setSelected(false);
-            //tvUSRule2.setSelected(false);
+            tvUSRule2.setSelected(false);
 
             tvCanadaRule1.setTextColor(ruleColorStateList);
             tvCanadaRule2.setTextColor(ruleColorStateList);
             tvUSRule1.setTextColor(ruleColorStateList);
-            //tvUSRule2.setTextColor(ruleColorStateList);
+            tvUSRule2.setTextColor(ruleColorStateList);
         } catch (Exception e) {
             LogFile.write(RuleChangeDialog.class.getName() + "::clearRules Error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
         }
