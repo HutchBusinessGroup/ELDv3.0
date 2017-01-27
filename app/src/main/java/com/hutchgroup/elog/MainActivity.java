@@ -2518,7 +2518,7 @@ public class MainActivity extends ELogMainActivity
         int logId = DailyLogDB.DailyLogCreate(driverId, Utility.ShippingNumber, Utility.TrailerNumber, "");
         if (!bEventPowerOff) {
             Utility.NightModeFg = false;
-            setUIMode();
+
 
             int evenCode = 3;
             String description = "Engine shut down with conventional location precision";
@@ -2538,6 +2538,7 @@ public class MainActivity extends ELogMainActivity
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    setUIMode();
                     if (elogFragment != null)
                         elogFragment.updateOdometer();
                 }

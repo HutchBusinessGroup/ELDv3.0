@@ -92,9 +92,9 @@ public class InspectLogFragment extends Fragment {
         adapter = new SlideAdapter(getFragmentManager());
         pager.setAdapter(adapter);
         int currentRule = DailyLogDB.getCurrentRule(Utility.onScreenUserId);
-        if (Utility.InspectorModeFg && currentRule > 2) {
-            totalPage = 8;
-        }
+       // if (Utility.InspectorModeFg && currentRule > 2) {
+       //     totalPage = 8;
+       // }
         startDate = Utility.dateOnlyGet(Utility.newDate());
         startDate = Utility.addDays(startDate, -(totalPage - 1));
 
