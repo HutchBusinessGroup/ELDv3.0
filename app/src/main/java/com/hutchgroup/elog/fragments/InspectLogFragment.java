@@ -98,7 +98,6 @@ public class InspectLogFragment extends Fragment {
         startDate = Utility.dateOnlyGet(Utility.newDate());
         startDate = Utility.addDays(startDate, -(totalPage - 1));
 
-
         if (position == -1) {
             position = totalPage - 1;
         } else {
