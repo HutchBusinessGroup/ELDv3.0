@@ -1412,8 +1412,8 @@ public class MainActivity extends ELogMainActivity
                 vAlertBorder.setBackgroundColor(getResources().getColor(R.color.yellow2));
                 tvAlertHeader.setTextColor(getResources().getColor(R.color.yellow3));
 
-                tvAlertHeader.setText("Start Engine");
-                tvAlertMessage.setText("Please start vehicle to continue...");
+                tvAlertHeader.setText("Turn On Ignition");
+                tvAlertMessage.setText("Please turn on your ignition...");
 
 
                 layoutAlertBTB.setVisibility(View.VISIBLE);
