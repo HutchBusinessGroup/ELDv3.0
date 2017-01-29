@@ -412,7 +412,7 @@ public class Tpms {
                 int pressure = Tpms.this.B2I(readBuf[9]);
                 float voltage = Tpms.this.B2I(readBuf[10]) / 50.0f;
                 SaveTpmsData(sensorId, temperature, pressure, voltage + "", tireNo);
-                //  Log.i(TAG, "SensorId: " + sensorId + ", Temperature: " + temperature + ", pressure: " + pressure + ", voltage: " + (voltage * 1.0f / 50.0f));
+                  Log.i(TAG, "SensorId: " + sensorId + ", Temperature: " + temperature + ", pressure: " + pressure + ", voltage: " + (voltage * 1.0f));
             }
         }
     }
