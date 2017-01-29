@@ -78,6 +78,7 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
 
     private void initialize(View view) {
         AxleRecycleAdapter.mListner = this;
+        Tpms.mListner = this;
         rvTPMS = (RecyclerView) view.findViewById(R.id.rvTPMS);
         Configuration config = getResources().getConfiguration();
         RecyclerView.LayoutManager mLayoutManager;
@@ -151,37 +152,44 @@ public class TpmsFragment extends Fragment implements View.OnClickListener, Tpms
     }
 
     @Override
-    public void update(TPMSBean data) {
-        for (int j = 0; j < list.size(); j++) {
-            AxleBean bean = list.get(j);
-            String[] sensorIds = bean.getSensorIdsAll();
-            for (int i = 0; i < sensorIds.length; i++) {
-                String sensorId = sensorIds[i];
-                if (sensorId.equals(data.getSensorId())) {
-                    switch (i) {
-                        case 0:
-                            bean.setPressure1(data.getPressure());
-                            bean.setTemperature1(data.getTemperature());
-                            break;
-                        case 1:
-                            bean.setPressure2(data.getPressure());
-                            bean.setTemperature2(data.getTemperature());
-                            break;
-                        case 2:
-                            bean.setPressure3(data.getPressure());
-                            bean.setTemperature3(data.getTemperature());
-                            break;
-                        case 3:
-                            bean.setPressure4(data.getPressure());
-                            bean.setTemperature4(data.getTemperature());
-                            break;
-                    }
-                    rAdapter.notifyItemChanged(j);
-                    return;
-                }
-            }
+    public void update(final TPMSBean data) {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
 
-        }
+                for (int j = 0; j < list.size(); j++) {
+                    AxleBean bean = list.get(j);
+                    String[] sensorIds = bean.getSensorIdsAll();
+                    for (int i = 0; i < sensorIds.length; i++) {
+                        String sensorId = sensorIds[i];
+                        if (sensorId.equals(data.getSensorId())) {
+                            switch (i) {
+                                case 0:
+                                    bean.setPressure1(data.getPressure());
+                                    bean.setTemperature1(data.getTemperature());
+                                    break;
+                                case 1:
+                                    bean.setPressure2(data.getPressure());
+                                    bean.setTemperature2(data.getTemperature());
+                                    break;
+                                case 2:
+                                    bean.setPressure3(data.getPressure());
+                                    bean.setTemperature3(data.getTemperature());
+                                    break;
+                                case 3:
+                                    bean.setPressure4(data.getPressure());
+                                    bean.setTemperature4(data.getTemperature());
+                                    break;
+                            }
+                            rAdapter.notifyItemChanged(j);
+                            return;
+                        }
+                    }
+
+                }
+
+            }
+        });
     }
 
     TrailerDialogFragment dialog;

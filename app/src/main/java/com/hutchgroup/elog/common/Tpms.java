@@ -412,7 +412,7 @@ public class Tpms {
                 int pressure = Tpms.this.B2I(readBuf[9]);
                 float voltage = Tpms.this.B2I(readBuf[10]) / 50.0f;
                 SaveTpmsData(sensorId, temperature, pressure, voltage + "", tireNo);
-                  Log.i(TAG, "SensorId: " + sensorId + ", Temperature: " + temperature + ", pressure: " + pressure + ", voltage: " + (voltage * 1.0f));
+                Log.i(TAG, "SensorId: " + sensorId + ", Temperature: " + temperature + ", pressure: " + pressure + ", voltage: " + (voltage * 1.0f));
             }
         }
     }
@@ -453,9 +453,13 @@ public class Tpms {
         String currentDate = Utility.getCurrentDateTime();
         for (TPMSBean bean : tpmsData) {
             if (sensorId.equals(bean.getSensorId())) {
+
+                if (mListner != null)
+                    mListner.update(bean);
                 float timestamp = Utility.getDiffMins(bean.getCreatedDate(), currentDate);
+                /*
                 if (timestamp < 300)
-                    return;
+                    return;*/
                 int prevTemp = bean.getTemperature();
                 int prevPressure = bean.getPressure();
                 String prevVoltage = bean.getVoltage();
@@ -469,6 +473,8 @@ public class Tpms {
                     bean.setDriverId(Utility.activeUserId);
                     bean.setTireNo(tireNo);
                     TpmsDB.Save(bean);
+                    if (mListner != null)
+                        mListner.update(bean);
                 }
                 break;
             }
@@ -494,7 +500,7 @@ public class Tpms {
 
     public static void removeSensorId(String[] sensorIds) {
         for (String sensorId : sensorIds) {
-            for(Iterator<TPMSBean> it = tpmsData.iterator(); it.hasNext();) {
+            for (Iterator<TPMSBean> it = tpmsData.iterator(); it.hasNext(); ) {
                 TPMSBean bean = it.next();
                 if (sensorId.equals(bean.getSensorId())) {
                     it.remove();

@@ -268,7 +268,8 @@ public class VehicleDB {
 
             cursor.close();
 
-            vehicleIds = vehicleIds.replaceAll(", $", "");
+            vehicleIds = vehicleIds.replaceAll(",$", "");
+
 
             cursor = database.rawQuery("select sensorIds from "
                             + MySQLiteOpenHelper.TABLE_AXLE_INFO + " Where VehicleId in (" + vehicleIds + ") order by frontTireFg desc,axlePosition"
