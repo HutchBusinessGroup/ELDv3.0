@@ -752,17 +752,19 @@ public class MainActivity extends ELogMainActivity
             bean.setIcon(R.drawable.ic_drawer_tpsm);
             lstDrawerItems.add(bean);
 
-            bean = new DrawerItemBean();
-            bean.setId(R.id.settings);
-            bean.setItem("Settings");
-            bean.setIcon(R.drawable.ic_drawer_settings);
-            lstDrawerItems.add(bean);
 
             bean = new DrawerItemBean();
             bean.setId(R.id.extra);
             bean.setItem("More");
             bean.setIcon(R.drawable.ic_drawer_more);
             lstDrawerItems.add(bean);
+
+            bean = new DrawerItemBean();
+            bean.setId(R.id.settings);
+            bean.setItem("Settings");
+            bean.setIcon(R.drawable.ic_drawer_settings);
+            lstDrawerItems.add(bean);
+
         }
 
 
@@ -824,7 +826,7 @@ public class MainActivity extends ELogMainActivity
             isOnDailyLog = false;
             bInspectDailylog = false;
             replaceFragment(ExtraFragment.newInstance());
-            getSupportActionBar().setTitle("Extra");
+            getSupportActionBar().setTitle("More");
             previousScreen = currentScreen;
             currentScreen = Extra;
         } else if (id == R.id.message) {
