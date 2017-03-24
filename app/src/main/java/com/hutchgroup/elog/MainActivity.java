@@ -142,6 +142,7 @@ import com.hutchgroup.elog.tasks.AppUpdateData;
 import com.hutchgroup.elog.tasks.AutoSyncData;
 import com.hutchgroup.elog.tasks.DownloadAPK;
 import com.hutchgroup.elog.tasks.MessageSyncData;
+import com.hutchgroup.elog.tasks.ReportIssue;
 import com.hutchgroup.elog.util.LetterSpacingTextView;
 
 import java.io.File;
@@ -4230,7 +4231,9 @@ public class MainActivity extends ELogMainActivity
 
     @Override
     public void callCheckUpdate() {
-        try {
+
+        new ReportIssue().execute("Can Data from device", "");
+      /*  try {
             if (!checkingUpdate) {
                 checkingUpdate = true;
                 manuallyUpdate = true;
@@ -4243,7 +4246,7 @@ public class MainActivity extends ELogMainActivity
             }
         } catch (Exception e) {
             Log.d(TAG, "Cannot find package info: " + e.getMessage());
-        }
+        }*/
     }
 
     private void showSpecialCategory(final boolean whenLogout) {
