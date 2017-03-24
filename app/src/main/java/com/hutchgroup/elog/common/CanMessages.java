@@ -676,7 +676,7 @@ public class CanMessages {
                     _vehicleInfo.setRPM(RPM);
                     Log.i(TAG, "RPM = " + CanMessages.RPM);
                     //odometerChanged();
-                    //LogFile.write(CanMessages.class.getName() + "::read RPM from J1939: " + RPM, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
+                    LogFile.write(CanMessages.class.getName() + "::read RPM from J1939: " + RPM, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     break;
 
                 case 64965:
@@ -1084,7 +1084,7 @@ public class CanMessages {
                         Speed = sp + ""; //String.format("%.0f", sp);
                         _vehicleInfo.setSpeed(Speed);
                         Log.i(TAG, "speed = " + Speed);
-                        //  LogFile.write(CanMessages.class.getName() + "::read Speed from J1939: " + Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
+                        LogFile.write(CanMessages.class.getName() + "::read Speed from J1939: " + Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     }
 
 
@@ -1228,6 +1228,8 @@ public class CanMessages {
                     if (d < 200d) {
                         Speed = Math.round(d) + "";
                         _vehicleInfo.setSpeed(Speed);
+
+                        LogFile.write(CanMessages.class.getName() + "::read Speed from J1708: " + Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     }
                     break;
                 case 85:
@@ -1360,6 +1362,7 @@ public class CanMessages {
                     d = ((packet[6] & 0xFF) | ((packet[7] & 0xFF) << 8)) * 0.25;
                     CanMessages.RPM = Math.round(d) + "";
                     _vehicleInfo.setRPM(RPM);
+                    LogFile.write(CanMessages.class.getName() + "::read RPM from J1708: " + RPM, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     break;
                 case 168:
                     d = ((packet[6] & 0xFF) | ((packet[7] & 0xFF) << 8)) * 0.05;

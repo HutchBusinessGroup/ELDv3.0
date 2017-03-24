@@ -180,6 +180,7 @@ public class ELogApplication extends Application {
                     currentStatus = 3;
                     int logId = DailyLogDB.DailyLogCreate(Utility.unIdentifiedDriverId, "", "", "");
                     //Log.i(TAG, "Save Unidentified Event with Duty Status is DRIVING");
+                    LogFile.write("Unidentified driving: RPM: -" + CanMessages.RPM + ", Speed:- " + CanMessages.Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     EventDB.EventCreate(Utility.getCurrentDateTime(), 1, 3, "Driver's Duty Status changed to DRIVING", 1, 1, logId, Utility.unIdentifiedDriverId, "");
                     bEventSavedWhenMoving = true;
                 }
@@ -218,6 +219,7 @@ public class ELogApplication extends Application {
                 currentStatus = 4;
                 int logId = DailyLogDB.DailyLogCreate(Utility.unIdentifiedDriverId, Utility.ShippingNumber, Utility.TrailerNumber, "");
                 Log.i(TAG, "Save Unidentified Event with Duty Status is ON DUTY");
+                LogFile.write("Unidentified On Duty: RPM: -" + CanMessages.RPM + ", Speed:- " + CanMessages.Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                 EventDB.EventCreate(Utility.getCurrentDateTime(), 1, 4, "Driver's Duty Status changed to ON DUTY", 1, 1, logId, Utility.unIdentifiedDriverId, "");
                 bEventSavedWhenStopping = true;
             }
@@ -253,6 +255,7 @@ public class ELogApplication extends Application {
                     if (Utility.onScreenUserId == 0) {
                         int logId = DailyLogDB.DailyLogCreate(Utility.unIdentifiedDriverId, "", "", "");
                         EventDB.EventCreate(Utility.getCurrentDateTime(), 6, 1, "Engine power-up with conventional location precision", 1, 1, logId, Utility.unIdentifiedDriverId, "");
+                        LogFile.write("Unidentified Engine Power Up: RPM: -" + CanMessages.RPM + ", Speed:- " + CanMessages.Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     } else {
                         activity.machineOn();
                     }
@@ -275,6 +278,7 @@ public class ELogApplication extends Application {
                     if (Utility.onScreenUserId == 0) {
                         int logId = DailyLogDB.DailyLogCreate(Utility.unIdentifiedDriverId, "", "", "");
                         EventDB.EventCreate(Utility.getCurrentDateTime(), 6, 3, "Engine shut down with conventional location precision", 1, 1, logId, Utility.unIdentifiedDriverId, "");
+                        LogFile.write("Unidentified Engine Power Down: RPM: -" + CanMessages.RPM + ", Speed:- " + CanMessages.Speed, LogFile.CAN_BUS_READ, LogFile.CANBUS_LOG);
                     } else {
                         activity.machineOff();
                     }
