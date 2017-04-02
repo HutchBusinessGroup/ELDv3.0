@@ -1,11 +1,13 @@
 package com.hutchgroup.elog.fragments;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.*;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import com.hutchgroup.elog.common.Utility;
 import com.hutchgroup.elog.db.DailyLogDB;
 
 import java.util.Date;
+import java.util.List;
 
 
 public class InspectLogFragment extends Fragment {
@@ -68,6 +71,22 @@ public class InspectLogFragment extends Fragment {
         return view;
     }
 
+/*    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        try {
+            LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            ViewGroup viewGroup = (ViewGroup) getView();
+            View view = inflater.inflate(R.layout.fragment_inspect_log, viewGroup, false);
+            viewGroup.removeAllViews();
+            viewGroup.addView(view);
+            initialize(view);
+
+        } catch (Exception exe) {
+        }
+    }*/
+
     private void initialize(View view) {
         pager = (ViewPager) view.findViewById(R.id.pager);
         adapter = new SlideAdapter(getFragmentManager());
@@ -103,7 +122,24 @@ public class InspectLogFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+        //pager.setAdapter(null);
         mListener = null;
+        try {
+            FragmentManager fragmentManager = getFragmentManager();
+            List<Fragment> fragments = fragmentManager.getFragments();
+            if (fragments != null) {
+                FragmentTransaction ft = fragmentManager.beginTransaction();
+                for (Fragment f : fragments) {
+                    //You can perform additional check to remove some (not all) fragments:
+                    if (f instanceof DetailFragment) {
+                        ft.remove(f);
+                    }
+                }
+
+                ft.commitAllowingStateLoss();
+            }
+        } catch (Exception exe) {
+        }
     }
 
     public interface OnFragmentInteractionListener {

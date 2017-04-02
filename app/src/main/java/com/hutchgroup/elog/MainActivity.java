@@ -1442,7 +1442,7 @@ public class MainActivity extends ELogMainActivity
 
     @Override
     public void onBackPressed() {
-        if (Utility.InspectorModeFg) {
+      /*  if (Utility.InspectorModeFg) {
             return;
         }
 
@@ -1501,7 +1501,7 @@ public class MainActivity extends ELogMainActivity
                 return;
             }
 
-        }
+        }*/
     }
 
     @Override
@@ -1967,6 +1967,7 @@ public class MainActivity extends ELogMainActivity
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        updateTitle = true;
         tvFreeze.setBackgroundResource(0);
         if (tvFreeze != null) {
             if (Utility.activeUserId == 0)

@@ -31,6 +31,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -87,7 +88,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
     Canvas canvas;
 
     Date currentDate;
-
+    CheckBox chkRules;
     TextView tvOffDutyTime, tvSleeperTime, tvDrivingTime, tvOnDutyTime, tvViolation, tvViolationDate, tvRemaingTime, tvCoDriver;
     TextView tvVehicleMiles, tvTotalDistance, tvCurrentTrip, tvCanadaRule, tvCanadaRuleValue, tvUSRule, tvUSRuleValue;
 
@@ -445,6 +446,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
             });
             thBitMap.setName("Elog-Bitmap2");
             thBitMap.start();
+            updateTitle();
 
         } catch (Exception e) {
             LogFile.write(ELogFragment.class.getName() + "::onConfigurationChanged Error:" + e.getMessage(), LogFile.USER_INTERACTION, LogFile.ERROR_LOG);
@@ -595,6 +597,8 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
 
     private void initializeControls(View view) {
         try {
+            chkRules = (CheckBox) view.findViewById(R.id.chkRules);
+            chkRules.setClickable(false);
             tvOffDutyTime = (TextView) view.findViewById(R.id.tvOffDutyTime);
             tvSleeperTime = (TextView) view.findViewById(R.id.tvSleeperTime);
             tvDrivingTime = (TextView) view.findViewById(R.id.tvDrivingTime);
@@ -668,7 +672,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
 
             getRules();
             currentRule = DailyLogDB.getCurrentRule(Utility.onScreenUserId);
-
+            chkRules.setChecked(currentRule < 3);
             pbTotalCanadaRule.setMax(currentRule == 2 ? 120 * 60 : 70 * 60);
             pbTotalUSRule.setMax(currentRule == 4 ? 60 * 60 : 70 * 60);
 
@@ -1157,6 +1161,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 ruleChangeDialog = new RuleChangeDialog();
                 ruleChangeDialog.mListener = this;
             }
+
             ruleChangeDialog.setCurrentRule(currentRule);
             ruleChangeDialog.show(getFragmentManager(), "rulechange_dialog");
         } catch (Exception e) {
@@ -1739,6 +1744,7 @@ public class ELogFragment extends Fragment implements View.OnClickListener, Rule
                 DailyLogDB.DailyLogRuleSave(Utility.onScreenUserId, rule, Utility.getCurrentDateTime(), Utility.getCurrentDateTime());
                 DailyLogDB.DailyLogSyncRevert(Utility.onScreenUserId, dailyLogId);
                 currentRule = rule;
+                chkRules.setChecked(currentRule < 3);
                 //tvCurrentRuleLabel.setText(getRule(currentRule - 1));
                 pbTotalCanadaRule.setMax(currentRule == 2 ? 120 * 60 : 70 * 60);
                 pbTotalUSRule.setMax(currentRule == 4 ? 60 * 60 : 70 * 60);
