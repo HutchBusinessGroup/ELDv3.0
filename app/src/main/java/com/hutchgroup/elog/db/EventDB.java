@@ -428,6 +428,9 @@ public class EventDB {
                 bean.setLocationDescription(cursor.getString(cursor.getColumnIndex("LocationDescription")));
                 bean.setAnnotation(cursor.getString(cursor.getColumnIndex("Annotation")));
                 bean.setOdometerReading(cursor.getString(cursor.getColumnIndex("OdometerReading")));
+                if (bean.getOdometerReading() == null) {
+                    bean.setOdometerReading("0");
+                }
                 bean.setEngineHour(cursor.getString(cursor.getColumnIndex("EngineHour")));
                 bean.setAccumulatedVehicleMiles(cursor.getString(cursor.getColumnIndex("AccumulatedVehicleMiles")));
                 bean.setElaspsedEngineHour(cursor.getString(cursor.getColumnIndex("ElaspsedEngineHour")));

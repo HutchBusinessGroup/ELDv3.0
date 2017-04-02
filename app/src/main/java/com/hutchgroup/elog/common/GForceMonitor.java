@@ -123,7 +123,6 @@ public class GForceMonitor implements SensorEventListener {
 
     }
 
-
     private int lrDirectionChangeCount = 0;
     private long lrFirstDirectionChangeTime = 0;
     float SHARP_TURN_THRESHOLD = .25f;

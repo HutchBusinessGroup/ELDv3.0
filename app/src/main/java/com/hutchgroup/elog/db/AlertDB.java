@@ -234,7 +234,7 @@ public class AlertDB {
             helper = new MySQLiteOpenHelper(Utility.context);
             database = helper.getWritableDatabase();
 
-            cursor = database.rawQuery("select AlertCode,AlertName,max(AlertDateTime) LastOccurrenceDate,sum(Duration) as Duration,sum(Scores) as Score from "
+            cursor = database.rawQuery("select AlertCode,AlertName,max(AlertDateTime) LastOccurrenceDate,sum(Duration) as Duration,sum(Scores) as Score,count(AlertCode) as TotalCount from "
                             + MySQLiteOpenHelper.TABLE_ALERT + " Where DriverId=? and AlertDateTime>=? group by AlertCode,AlertName order by max(AlertDateTime) desc "
                     , new String[]{driverId + "", date});
 
@@ -245,6 +245,7 @@ public class AlertDB {
                 obj.setAlertDateTime(cursor.getString(cursor.getColumnIndex("LastOccurrenceDate")));
                 obj.setDuration(cursor.getInt(cursor.getColumnIndex("Duration")));
                 obj.setScores(cursor.getInt(cursor.getColumnIndex("Score")));
+                obj.setCount(cursor.getInt(cursor.getColumnIndex("TotalCount")));
                 alertList.add(obj);
             }
 
