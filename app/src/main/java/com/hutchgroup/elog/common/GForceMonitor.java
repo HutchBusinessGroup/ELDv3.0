@@ -190,9 +190,9 @@ public class GForceMonitor implements SensorEventListener {
             long now = System.currentTimeMillis();
             // store first movement time
             if (abFirstDirectionChangeTime == 0) {
-                double speed = Double.valueOf(CanMessages.Speed);
+                /*double speed = Double.valueOf(CanMessages.Speed);
                 if (speed < 30)
-                    return;
+                    return;*/
                 abFirstDirectionChangeTime = now;
             }
 
