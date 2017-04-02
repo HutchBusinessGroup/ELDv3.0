@@ -131,6 +131,7 @@ public class ScoreCardFragment extends Fragment implements AlertDB.IScoreCard {
                 ScoreCardGet();
             }
         });
+        ScoreCardGet();
 
     }
 
