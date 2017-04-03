@@ -502,4 +502,15 @@
         android:padding="10dp"
         android:textStyle="bold"
         android:text="Deepak Sharma"/>
+    <CheckBox
+        android:id="@+id/chkRules"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="6dp"
+        android:layout_gravity="bottom|right"
+        android:button="@drawable/checkbox_flag"
+        android:background="@android:color/transparent"
+        android:textOff=""
+        android:textOn="" />
 </FrameLayout>
