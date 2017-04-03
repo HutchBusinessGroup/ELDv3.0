@@ -18,6 +18,7 @@ import com.hutchgroup.elog.beans.GPSData;
 import com.hutchgroup.elog.beans.TripInspectionBean;
 import com.hutchgroup.elog.common.LogFile;
 import com.hutchgroup.elog.common.Utility;
+import com.hutchgroup.elog.db.EventDB;
 import com.hutchgroup.elog.db.TripInspectionDB;
 
 import java.io.File;
@@ -167,7 +168,13 @@ public class DvirFragment extends Fragment implements View.OnClickListener, Insp
                 case R.id.btnNewInspection:
                     Log.d(TAG, "launch");
                     if (mListener != null) {
-                        mListener.newInspection();
+                        int currentStatus = EventDB.getCurrentDutyStatus(Utility.onScreenUserId);
+                        String message = "You must be on-duty to complete DVIR";
+                        if (currentStatus == 4 || currentStatus == 5) {
+                            mListener.newInspection();
+                        } else {
+                            Utility.showAlertMsg(message);
+                        }
                     }
                     break;
             }
